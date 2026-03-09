@@ -1,9 +1,33 @@
-.venv/
-.idea/
+# Python
 __pycache__/
 *.pyc
-data/datasets
+*.pyo
+*.pyd
 
+# Virtual environment
+.venv/
 
-artifacts/logs/
-artifacts/spamassassin_results/
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Docker runtime state
+docker/redis/
+docker/rspamd-state/
+docker/sa-state/
+docker/logs/
+
+# Large generated data
+data/output/
+data/datasets/
+
+# Optional: if you generate CSV results
+*.csv

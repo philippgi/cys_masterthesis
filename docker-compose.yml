@@ -1,0 +1,66 @@
+services:
+  redis:
+    image: redis:alpine
+    container_name: thesis-lab-rspamd-redis
+    volumes:
+      - ./docker/redis:/data
+    restart: unless-stopped
+
+  rspamd:
+    image: rspamd/rspamd:latest
+    container_name: thesis-lab-rspamd
+    depends_on:
+      - redis
+      - unbound
+    ports:
+      - "11332:11332"   # milter proxy
+      - "11333:11333"   # normal worker (rspamc scan + ANN-Train sammeln)
+      - "11334:11334"   # Web interface
+    volumes:
+      - ./configs/rspamd:/etc/rspamd/local.d
+      - ./docker/logs/rspamd:/var/log/rspamd
+      - ./docker/rspamd-state:/var/lib/rspamd
+      - ./data/spamham-corpus:/tmp/spamham-corpus
+    restart: unless-stopped
+
+  spamassassin:
+    image: instantlinux/spamassassin:latest
+    container_name: thesis-lab-spamassassin
+    ports:
+      - "783:783"
+    volumes:
+      - ./configs/spamassassin/local.cf:/etc/mail/spamassassin/local.cf:ro
+      - ./docker/sa-state:/var/lib/spamassassin
+      - ./docker/logs/spamassassin:/var/log/spamassassin
+      - ./data/sa-corpus:/corpus:ro
+    command: >
+      sh -lc "sa-update && spamd -F -i 0.0.0.0 -p 783 -c --username=debian-spamd --nouser-config"
+    restart: unless-stopped
+
+  unbound:
+    image: mvance/unbound:latest
+    container_name: rspamd-unbound
+    restart: unless-stopped
+
+  postfix:
+    image: boky/postfix
+    container_name: thesis-lab-postfix
+    hostname: mail.lab.local
+    environment:
+      - POSTFIX_smtpd_reject_unlisted_recipient=no
+      - POSTFIX_local_recipient_maps=
+      - POSTFIX_alias_maps=
+      - POSTFIX_alias_database=
+      - ALLOWED_SENDER_DOMAINS=*
+      - POSTFIX_myhostname=mail.lab.local
+      - POSTFIX_mydestination=mail.lab.local, localhost
+      - POSTFIX_mynetworks=0.0.0.0/0
+      - POSTFIX_smtpd_recipient_restrictions=permit_mynetworks,reject_unauth_destination,permit
+      - POSTFIX_smtpd_milters=inet:rspamd:11332
+      - POSTFIX_non_smtpd_milters=inet:rspamd:11332
+      - POSTFIX_milter_default_action=accept
+      - POSTFIX_milter_protocol=6
+    depends_on:
+      - rspamd
+    ports:
+      - "2525:25"

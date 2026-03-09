@@ -1,0 +1,9 @@
+.venv/
+.idea/
+__pycache__/
+*.pyc
+data/datasets
+
+
+artifacts/logs/
+artifacts/spamassassin_results/

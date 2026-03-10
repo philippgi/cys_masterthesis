@@ -1,13 +1,14 @@
 from pathlib import Path
 
 # =============================
-# Base Config
+# 0) Base Config
 # =============================
 
 BASE_DIR = Path(__file__).resolve().parent
+OUTPUT_ROOT = BASE_DIR / "data/output"
 
 # =============================
-# Config for dataset_split
+# 1) dataset_split
 # =============================
 
 DATASET_ROOT = BASE_DIR / "data/datasets/spamassassin_corpus"
@@ -19,8 +20,6 @@ RANDOM_SEED = 42
 # =============================
 # Config for trigger_vocabulary
 # =============================
-
-OUTPUT_DIR = BASE_DIR / "data/output/trigger_vocabulary"
 MIN_DF_SPAM = 5                     # Minimum spam document-frequency threshold
 MIN_DF_SPAM_PERCENTAGE = 0.01       # Minimum spam document-frequency threshold
 ALPHA = 1.0
@@ -29,7 +28,7 @@ ALPHA = 1.0
 # Config for salting_candidate_selection
 # =============================
 
-SALTING_VOCABULARY = "strict"   # "strict" or "extended"
+SALTING_VOCABULARY = "strict"       # "strict" or "extended"
 
 # =============================
 # Config for salted_email_generator
@@ -42,8 +41,8 @@ SALTED_CANDIDATES_CSV = SALTING_SELECTION_DIR / "salted_candidates.csv"
 SALTING_LOG_CSV = SALTED_EMAIL_OUTPUT_DIR / "salting_log.csv"
 SALTED_EMAILS_DIR = SALTED_EMAIL_OUTPUT_DIR / "salted_emails"
 
-STRICT_TRIGGER_WORDS_PATH = OUTPUT_DIR / "trigger_words_strict.json"
-EXTENDED_TRIGGER_WORDS_PATH = OUTPUT_DIR / "trigger_words_extended.json"
+STRICT_TRIGGER_WORDS_PATH = BASE_DIR / "trigger_vocabulary/trigger_words_strict.json"
+EXTENDED_TRIGGER_WORDS_PATH = BASE_DIR / "trigger_vocabulary/trigger_words_extended.json"
 
 TEST_SPAM_DIR = DATASET_SPLIT / "test" / "spam"
 
@@ -63,7 +62,6 @@ SALT_INSERT_AFTER_INDEX = 2
 # Config for utils
 # =============================
 
-OUTPUT_ROOT = BASE_DIR / "data/output"
 
 
 # =============================

@@ -1,19 +1,15 @@
 #!/usr/bin/env python3
 """
 This module implements the statistical core used to derive spam-indicative
-trigger_vocabulary words from document-frequency statistics.
+trigger vocabulary words from document-frequency statistics.
 """
 
 from math import log
-from config import ALPHA
 
 
 def logit(p: float) -> float:
     """
     Computes the logit transform of a probability.
-
-    The logit maps values from (0, 1) to (-inf, +inf) and allows differences
-    in class-conditional probabilities to be expressed as additive log-odds.
 
     Args:
         p (float): Probability value in (0, 1).

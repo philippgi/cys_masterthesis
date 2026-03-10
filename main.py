@@ -23,19 +23,17 @@ from src.spamassassin_evaluation.runner import run_spamassassin_evaluation
 
 def main():
     # Utils - HANDLE WITH CARE :D
-    #reset_pipeline_output()
+    # reset_pipeline_output()
     #run_full_pipeline()
 
     # Modules
     #run_dataset_split()
     #run_trigger_vocabulary()
     #run_trigger_coverage_analysis()
-    #run_salting_candidate_selection()
-    #run_salted_email_generator()
+    # run_salting_candidate_selection()
+    run_salted_email_generator()
     #run_spamassassin_training()
     #run_spamassassin_evaluation()
-
-
 
 
 if __name__ == "__main__":

@@ -1,14 +1,8 @@
 #!/usr/bin/env python3
 """
-This module contains the core logic for trigger coverage analysis.
-
-Its purpose is to determine, for each spam email in the test set,
+This module checks for each spam email in the test set,
 whether trigger words from the strict and extended trigger vocabularies
 occur in the subject and/or body.
-
-In contrast to document-frequency tokenization, repeated token occurrences
-are preserved because the coverage analysis must count how often trigger
-words appear in each email field.
 """
 
 from collections import Counter
@@ -17,8 +11,7 @@ import csv
 
 def tokenize_with_occurrences(text, cleanup_fn, token_regex, html_artifacts):
     """
-    Converts a text string into a list of normalized tokens while preserving
-    repeated occurrences.
+    Converts a text string into a list of normalized tokens.
 
     The function applies the same normalization steps that are used during
     trigger vocabulary construction:
@@ -27,17 +20,14 @@ def tokenize_with_occurrences(text, cleanup_fn, token_regex, html_artifacts):
     - regex-based token extraction
     - removal of known HTML artifacts
 
-    Unlike DF-based tokenization, this function does not collapse tokens into
-    a set. Repeated trigger words must remain visible for later counting.
-
     Args:
-        text: Raw input text (e.g., email subject or body).
-        cleanup_fn: Normalization function applied before token extraction.
-        token_regex: Compiled regex pattern defining valid tokens.
-        html_artifacts: Set of tokens that should be removed as HTML artifacts.
+        text: Raw input text (e.g., email subject or body)
+        cleanup_fn: Normalization function applied before token extraction
+        token_regex: Compiled regex pattern defining valid tokens
+        html_artifacts: Set of tokens that should be removed as HTML artifacts
 
     Returns:
-        A list of normalized tokens including repeated occurrences.
+        A list of normalized tokens including repeated occurrences
     """
     text = text.lower()
     text = cleanup_fn(text)
@@ -56,25 +46,17 @@ def count_trigger_occurrences(tokens, trigger_words):
     all tokens that are contained in the trigger word set.
 
     Args:
-        tokens: List of normalized tokens, possibly with repetitions.
-        trigger_words: Set of trigger words to check against.
+        tokens: List of normalized tokens, possibly with repetitions
+        trigger_words: Set of trigger words to check against
 
     Returns:
-        The total number of trigger token occurrences in the token list.
+        The total number of trigger token occurrences in the token list
     """
     counter = Counter(tokens)
     return sum(count for token, count in counter.items() if token in trigger_words)
 
 
-def analyze_single_email(
-    subject,
-    body,
-    strict_triggers,
-    extended_triggers,
-    cleanup_fn,
-    token_regex,
-    html_artifacts,
-):
+def analyze_single_email(subject, body, strict_triggers, extended_triggers, cleanup_fn, token_regex, html_artifacts):
     """
     Analyzes trigger coverage for a single email.
 
@@ -90,16 +72,16 @@ def analyze_single_email(
     - how many trigger occurrences appear in the body
 
     Args:
-        subject: Decoded email subject.
-        body: Decoded plain-text email body.
-        strict_triggers: Set of trigger words from the strict vocabulary.
-        extended_triggers: Set of trigger words from the extended vocabulary.
-        cleanup_fn: Normalization function applied before token extraction.
-        token_regex: Compiled regex pattern defining valid tokens.
-        html_artifacts: Set of tokens removed as HTML artifacts.
+        subject: Decoded email subject
+        body: Decoded plain-text email body
+        strict_triggers: Set of trigger words from the strict vocabulary
+        extended_triggers: Set of trigger words from the extended vocabulary
+        cleanup_fn: Normalization function applied before token extraction
+        token_regex: Compiled regex pattern defining valid tokens
+        html_artifacts: Set of tokens removed as HTML artifacts
 
     Returns:
-        A dictionary containing per-email trigger coverage statistics.
+        A dictionary containing per-email trigger coverage statistics
     """
     # Tokenize subject and body separately to preserve field-level coverage.
     subject_tokens = tokenize_with_occurrences(
@@ -130,7 +112,7 @@ def analyze_single_email(
 
 def write_csv(results, output_path):
     """
-    Writes per-email trigger coverage results to a CSV file.
+    Writes per-email trigger coverage results to a csv file.
 
     Each row represents one analyzed spam email from the test set.
     The CSV output is intended for later evaluation and documentation

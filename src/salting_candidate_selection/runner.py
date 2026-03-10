@@ -12,7 +12,7 @@ used in the salting experiment based on the selected salting vocabulary.
 
 import json
 
-from config import OUTPUT_DIR, SALTING_VOCABULARY
+from config import OUTPUT_ROOT, SALTING_VOCABULARY
 from src.salting_candidate_selection.selector import (
     read_coverage_results,
     select_candidates,
@@ -27,20 +27,18 @@ def run_salting_candidate_selection():
     Runs the salting candidate selection step.
 
     Workflow:
-    1. Load trigger coverage results from the trigger_coverage module.
-    2. Validate the configured salting vocabulary.
-    3. Select salted candidates according to the configured vocabulary.
-    4. Write candidate and exclusion lists to CSV files.
-    5. Write a JSON summary for later documentation in the thesis.
-    6. Print a compact terminal summary.
+    - Load trigger coverage results from the trigger_coverage module
+    - Validate the configured salting vocabulary
+    - Select salted candidates according to the configured vocabulary
+    - Write candidate and exclusion lists to csv files
+    - Write a summary for later documentation in the thesis
 
     Returns:
         None
     """
+    # Get input
     validate_salting_vocabulary(SALTING_VOCABULARY)
-
-    # Input produced by the trigger coverage analysis.
-    coverage_dir = OUTPUT_DIR.parent / "trigger_coverage"
+    coverage_dir = OUTPUT_ROOT.parent / "trigger_coverage"
     coverage_csv = coverage_dir / "coverage_results.csv"
 
     if not coverage_csv.exists():
@@ -48,11 +46,11 @@ def run_salting_candidate_selection():
             f"Missing trigger coverage file: {coverage_csv}"
         )
 
-    # Output directory for salting candidate selection artefacts.
-    selection_output_dir = OUTPUT_DIR.parent / "salting_candidate_selection"
+    # Set output directory
+    selection_output_dir = OUTPUT_ROOT.parent / "salting_candidate_selection"
     selection_output_dir.mkdir(parents=True, exist_ok=True)
 
-    # Read per-email trigger coverage statistics.
+    # Read per-email trigger coverage statistics
     coverage_rows = read_coverage_results(coverage_csv)
 
     # Apply selection logic based on the configured salting vocabulary.
@@ -61,11 +59,11 @@ def run_salting_candidate_selection():
         salting_vocabulary=SALTING_VOCABULARY,
     )
 
-    # Write the selected candidate pool and excluded emails to CSV.
+    # Write the selected candidate pool and excluded emails to csv
     write_csv(candidates, selection_output_dir / "salted_candidates.csv")
     write_csv(excluded, selection_output_dir / "excluded_spam.csv")
 
-    # Build and persist an aggregated summary.
+    # Write summary
     summary = build_summary(
         candidates=candidates,
         excluded=excluded,
@@ -79,14 +77,13 @@ def run_salting_candidate_selection():
     ) as f:
         json.dump(summary, f, indent=2)
 
-    # Print a compact summary for quick inspection.
     print("Salting Candidate Selection:")
     print(f"Salting vocabulary: {SALTING_VOCABULARY}")
     print(f"Spam test emails total: {summary['n_spam_test_total']}")
     print(f"Salted candidates: {summary['n_spam_salted_candidates']}")
     print(f"Excluded spam emails: {summary['n_spam_excluded']}")
 
-    # Additional sanity check for debugging and experiment control.
+    # Error handling
     if summary["n_spam_salted_candidates"] == 0:
         raise ValueError(
             "No salted candidates were selected. "

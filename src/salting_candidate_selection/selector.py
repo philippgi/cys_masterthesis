@@ -134,7 +134,7 @@ def select_candidates(rows, salting_vocabulary):
         strict_has_trigger = to_bool(row["strict_has_trigger"])
         extended_has_trigger = to_bool(row["extended_has_trigger"])
 
-        # Determine whether the email belongs to the candidate pool.
+        # Determine whether the email belongs to the candidate pool
         if salting_vocabulary == "strict":
             is_candidate = strict_has_trigger
         else:
@@ -150,11 +150,11 @@ def select_candidates(rows, salting_vocabulary):
 
 def write_csv(rows, output_path):
     """
-    Writes a list of dictionaries to a CSV file.
+    Writes a list of dictionaries to a csv file
 
     Args:
-        rows: List of dictionaries to be written.
-        output_path: Target CSV path.
+        rows: List of dictionaries to be written
+        output_path: Target CSV path
 
     Returns:
         None
@@ -175,12 +175,12 @@ def build_summary(candidates, excluded, salting_vocabulary):
     Builds a summary dictionary for the candidate selection step.
 
     Args:
-        candidates: List of selected spam emails.
-        excluded: List of excluded spam emails.
-        salting_vocabulary: Configured salting vocabulary.
+        candidates: List of selected spam emails
+        excluded: List of excluded spam emails
+        salting_vocabulary: Configured salting vocabulary
 
     Returns:
-        A dictionary with aggregated selection statistics.
+        A dictionary with aggregated selection statistics
     """
     summary = {
         "salting_vocabulary": salting_vocabulary,

@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
 """
 This module extracts the Subject header and the textual message body
-(text/plain parts only) from RFC 5322 compliant email files (.eml).
-
-The goal is not to fully reconstruct the rendered email, but to obtain a
-stable, text-based representation suitable for further processing.
+(text/plain) from emails.
 """
 from pathlib import Path
 from email import policy
@@ -16,7 +13,8 @@ def extract_subject_and_text_plain(path: Path) -> tuple[str, str]:
     """
     Extracts the Subject header and concatenated text/plain body from an email file.
 
-    This function represents a practical approximation of the receiver-side preprocessing pipeline:
+    This function represents a practical approximation of the receiver-side preprocessing pipeline,
+    described in the thesis:
     - Raw bytes are parsed into a MIME message
     - Transfer encodings and character sets are decoded
     - Only semantically relevant text/plain parts are retained
@@ -27,23 +25,17 @@ def extract_subject_and_text_plain(path: Path) -> tuple[str, str]:
             - subject (str): Decoded Subject header
             - body_plain (str): Normalized plain-text body
     """
-    # Read the email as raw bytes (byte-exact input)
     raw = path.read_bytes()
 
-    # The leading "From " line in the templates is NOT an RFC 822 header and must be removed
-    # before MIME parsing.
+    # The leading "From " line in the email templates is not an RFC 822 header and must be removed
     if raw.startswith(b"From "):
         first_nl = raw.find(b"\n")
         if first_nl != -1:
             raw = raw[first_nl + 1 :]
 
-    # Parse the message
+    # Parse, extract Subject header and get text/plain payload
     msg = BytesParser(policy=policy.default).parsebytes(raw)
-
-    # Extract Subject header
     subject = str(msg.get("Subject", "") or "").strip()
-
-    # Collected text/plain payloads
     text_parts: list[str] = []
 
     def is_attachment(part) -> bool:
@@ -52,19 +44,17 @@ def extract_subject_and_text_plain(path: Path) -> tuple[str, str]:
         """
         return part.get_content_disposition() == "attachment"
 
+    # Only consider plain-text parts and ignore file attachments
+    # Fallback for malformed messages: decode bytes manually -> use validated charset or UTF-8
     if msg.is_multipart():
-        # Walk over all MIME parts
         for part in msg.walk():
-            # Only consider plain-text parts and ignore file attachments
             if part.get_content_type() != "text/plain":
                 continue
             if is_attachment(part):
                 continue
             try:
-                # Preferred path: decodes Content-Transfer-Encoding -> applies declared charset
                 text_parts.append(part.get_content())
             except Exception:
-                # Fallback for malformed messages: decode bytes manually -> use validated charset or UTF-8
                 payload = part.get_payload(decode=True) or b""
                 charset = safe_charset(part.get_content_charset())
                 text_parts.append(payload.decode(charset, errors="replace"))

@@ -1,4 +1,3 @@
-from pathlib import Path
 import shutil
 from config import OUTPUT_ROOT, DATASET_SPLIT
 
@@ -23,7 +22,5 @@ def reset_pipeline_output():
     if DATASET_SPLIT.exists():
         print(f"Deleting output directory: {DATASET_SPLIT}")
         shutil.rmtree(DATASET_SPLIT)
-
-    DATASET_SPLIT.mkdir(parents=True, exist_ok=True)
 
     print("Pipeline output reset complete.")

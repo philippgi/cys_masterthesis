@@ -3,12 +3,12 @@
 This module converts each email into a set of normalized tokens and builds
 document-frequency (DF) counts separately for spam and ham.
 """
+
 import re
 from typing import Set
 from pathlib import Path
 from collections import Counter
 from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
-
 from src.trigger_vocabulary.email_extract import extract_subject_and_text_plain
 
 
@@ -83,33 +83,31 @@ def tokenize_for_df(subject: str, body: str) -> Set[str]:
 
 def build_df_counts(spam_dir: Path, ham_dir: Path):
     """
-    Builds separate document-frequency counters for spam and ham corpora.
+    Builds separate document-frequency counters for spam and ham.
     """
-    # Document-frequency counters
     df_spam = Counter()
     df_ham = Counter()
 
-    # Number of processed documents per class
     N_spam = 0
     N_ham = 0
 
     # Process spam corpus
     for p in spam_dir.iterdir():
-        # Skip non-regular files
         if not p.is_file():
             continue
+
         # Extract plain-text representation of the email with helper function
         # defined in 'email_extract.py'
         subj, body = extract_subject_and_text_plain(p)
 
-        # Convert the message into a  token set
+        # Convert the message into a token set
         tokens = tokenize_for_df(subj, body)
 
-        # Update DF counts: each token contributes +1 for this document
+        # Update DF counts, each token contributes +1 for this document
         df_spam.update(tokens)
         N_spam += 1
 
-    # Process ham corpus (documented in 'spam corpus')
+    # Process ham corpus
     for p in ham_dir.iterdir():
         if not p.is_file():
             continue

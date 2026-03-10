@@ -39,7 +39,7 @@ from pathlib import Path
 
 from tqdm import tqdm
 
-from config import DATASET_SPLIT, OUTPUT_DIR, SALTED_EMAILS_DIR, SALTING_LOG_CSV
+from config import DATASET_SPLIT, OUTPUT_ROOT, SALTED_EMAILS_DIR, SALTING_LOG_CSV
 
 
 # ---------------------------------------------------------------------------
@@ -55,7 +55,7 @@ SOCKET_TIMEOUT = 30
 # Output location
 # ---------------------------------------------------------------------------
 
-RESULT_DIR = OUTPUT_DIR / "spamassassin"
+RESULT_DIR = OUTPUT_ROOT / "spamassassin"
 RESULT_CSV = RESULT_DIR / "spamassassin_results.csv"
 
 

@@ -22,11 +22,11 @@ import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
-from config import DATASET_SPLIT, OUTPUT_DIR
+from config import DATASET_SPLIT, OUTPUT_ROOT
 
 
 SPAMASSASSIN_CONTAINER = "thesis-lab-spamassassin"
-SPAMASSASSIN_ARTIFACT_DIR = OUTPUT_DIR.parent / "spamassassin_training"
+SPAMASSASSIN_ARTIFACT_DIR = OUTPUT_ROOT.parent / "spamassassin_training"
 TRAINING_SNAPSHOT_JSON = SPAMASSASSIN_ARTIFACT_DIR / "training_snapshot.json"
 TRAINING_SNAPSHOT_TXT = SPAMASSASSIN_ARTIFACT_DIR / "training_snapshot.txt"
 

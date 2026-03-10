@@ -64,3 +64,11 @@ SALT_INSERT_AFTER_INDEX = 2
 # =============================
 
 OUTPUT_ROOT = BASE_DIR / "data/output"
+
+
+# =============================
+# Config for Spamassassin
+# =============================
+SPAMASSASSIN_CONTAINER = "thesis-lab-spamassassin"
+SPAMD_HOST = "127.0.0.1"
+SPAMD_PORT = 783

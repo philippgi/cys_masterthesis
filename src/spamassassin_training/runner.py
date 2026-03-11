@@ -3,16 +3,11 @@
 This module performs one reproducible SpamAssassin Bayes training run.
 
 Workflow:
-1) Verify that the SpamAssassin container is running
-2) Clear previous Bayes state
-3) Learn ham from /split/train/ham
-4) Learn spam from /split/train/spam
-5) Sync Bayes database
-6) Dump Bayes stats and write a snapshot artifact
-
-The training data is expected to be mounted into the container as:
-    /split/train/ham
-    /split/train/spam
+- Verify that the SpamAssassin docker container is running
+- Clear previous Bayes state
+- Learn ham from data/datasets/split/train/ham
+- Learn spam from data/datasets/split/train/spam
+- Dump Bayes stats and write a snapshot artifact
 """
 
 from __future__ import annotations
@@ -22,13 +17,7 @@ import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
-from config import DATASET_SPLIT, OUTPUT_ROOT
-
-
-SPAMASSASSIN_CONTAINER = "thesis-lab-spamassassin"
-SPAMASSASSIN_ARTIFACT_DIR = OUTPUT_ROOT.parent / "spamassassin_training"
-TRAINING_SNAPSHOT_JSON = SPAMASSASSIN_ARTIFACT_DIR / "training_snapshot.json"
-TRAINING_SNAPSHOT_TXT = SPAMASSASSIN_ARTIFACT_DIR / "training_snapshot.txt"
+from config import DATASET_SPLIT, OUTPUT_ROOT, SPAMASSASSIN_CONTAINER
 
 
 def run_command(command: list[str]) -> subprocess.CompletedProcess:
@@ -91,12 +80,23 @@ def count_files(directory: Path) -> int:
     return sum(1 for p in directory.iterdir() if p.is_file())
 
 
-def run_spamassassin_training() -> None:
+def run_spamassassin_training(
+    output_root: Path | None = None,
+    dataset_split_dir: Path | None = None,
+) -> None:
     """
-    Runs a full reproducible Bayes training cycle and stores a snapshot artifact.
+    Runs a Bayes training cycle and stores a snapshot artifact.
     """
-    train_ham_dir = DATASET_SPLIT / "train" / "ham"
-    train_spam_dir = DATASET_SPLIT / "train" / "spam"
+
+    output_root = OUTPUT_ROOT if output_root is None else output_root
+    dataset_split_dir = DATASET_SPLIT if dataset_split_dir is None else dataset_split_dir
+
+    spamassassin_output = output_root / "spamassassin_training"
+    training_snapshot_json = spamassassin_output / "training_snapshot.json"
+    training_snapshot_txt = spamassassin_output / "training_snapshot.txt"
+
+    train_ham_dir = dataset_split_dir / "train" / "ham"
+    train_spam_dir = dataset_split_dir / "train" / "spam"
 
     if not train_ham_dir.exists():
         raise FileNotFoundError(f"Missing ham training directory: {train_ham_dir}")
@@ -111,7 +111,7 @@ def run_spamassassin_training() -> None:
     if n_train_spam == 0:
         raise ValueError(f"No spam files found in: {train_spam_dir}")
 
-    SPAMASSASSIN_ARTIFACT_DIR.mkdir(parents=True, exist_ok=True)
+    spamassassin_output.mkdir(parents=True, exist_ok=True)
 
     print("--> Starting SpamAssassin training <--")
     print(f"Container: {SPAMASSASSIN_CONTAINER}")
@@ -120,23 +120,21 @@ def run_spamassassin_training() -> None:
 
     ensure_container_running()
 
-    # 1) Clear Bayes state to guarantee reproducibility
+    # Clear Bayes state
     print("Clearing previous Bayes state ...")
     clear_result = docker_exec("sa-learn", "--clear")
 
-    # 2) Learn ham
+    # Learn ham and spam
     print("Learning ham corpus ...")
     ham_result = docker_exec("sa-learn", "--ham", "/split/train/ham")
-
-    # 3) Learn spam
     print("Learning spam corpus ...")
     spam_result = docker_exec("sa-learn", "--spam", "/split/train/spam")
 
-    # 4) Sync Bayes database
+    # Sync Bayes database
     print("Syncing Bayes database ...")
     sync_result = docker_exec("sa-learn", "--sync")
 
-    # 5) Collect version and Bayes stats
+    # Collect version and Bayes stats
     print("Collecting SpamAssassin version and Bayes stats ...")
     version_result = docker_exec("spamassassin", "--version")
     dump_magic_result = docker_exec("sa-learn", "--dump", "magic")
@@ -176,10 +174,10 @@ def run_spamassassin_training() -> None:
         },
     }
 
-    with open(TRAINING_SNAPSHOT_JSON, "w", encoding="utf-8") as f:
+    with open(training_snapshot_json, "w", encoding="utf-8") as f:
         json.dump(snapshot, f, indent=2)
 
-    with open(TRAINING_SNAPSHOT_TXT, "w", encoding="utf-8") as f:
+    with open(training_snapshot_txt, "w", encoding="utf-8") as f:
         f.write("SpamAssassin Training Snapshot\n")
         f.write("=============================\n\n")
         f.write(f"Timestamp UTC: {timestamp_utc}\n")
@@ -193,5 +191,5 @@ def run_spamassassin_training() -> None:
         f.write(dump_magic_result.stdout)
 
     print("\nTraining completed successfully.")
-    print(f"Snapshot JSON: {TRAINING_SNAPSHOT_JSON}")
-    print(f"Snapshot TXT:  {TRAINING_SNAPSHOT_TXT}")
+    print(f"Snapshot JSON: {training_snapshot_json}")
+    print(f"Snapshot TXT:  {training_snapshot_txt}")

@@ -19,16 +19,19 @@ from src.trigger_vocabulary.tokenize_df import build_df_counts
 from src.trigger_vocabulary.trigger_scoring import compute_log_odds
 
 
-def run_trigger_vocabulary():
-    print("--> Starting trigger vocabulary creation <--")
+def run_trigger_vocabulary(output_root=None, dataset_split_dir=None):
+    output_root = OUTPUT_ROOT if output_root is None else output_root
+    dataset_split_dir = DATASET_SPLIT if dataset_split_dir is None else dataset_split_dir
 
-    output_dir = OUTPUT_ROOT / "trigger_vocabulary"
+    output_dir = output_root / "trigger_vocabulary"
     output_dir.mkdir(parents=True, exist_ok=True)
+
+    print("--> Starting trigger vocabulary creation <--")
 
     # Build DF counts from training corpus
     df_spam, df_ham, N_spam, N_ham = build_df_counts(
-        DATASET_SPLIT / "train" / "spam",
-        DATASET_SPLIT / "train" / "ham",
+        dataset_split_dir / "train" / "spam",
+        dataset_split_dir / "train" / "ham",
     )
 
     # Minimum spam DF threshold defined in config.py

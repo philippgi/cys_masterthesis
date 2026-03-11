@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
 Core logic for generating salted .eml files.
-
 This module creates salted variants of selected spam emails by inserting
 invisible Unicode characters into trigger words.
 
@@ -13,28 +12,28 @@ Salting strategy:
 The module preserves the original email structure as far as practical,
 while replacing only:
 - the Subject header
-- text/plain MIME parts
+- text/plain
 """
 
 import csv
 import json
 import re
+
 from copy import deepcopy
 from pathlib import Path
 from email import policy
+from email import encoders
 from email.parser import BytesParser
 from email.generator import BytesGenerator
-from io import BytesIO
 
 from src.trigger_vocabulary.email_extract import safe_charset
-
 
 TOKEN_RE = re.compile(r"[A-Za-z]{3,}")
 
 
 def read_candidate_rows(csv_path: Path) -> list[dict]:
     """
-    Reads the salted candidate CSV produced by the candidate selection step.
+    Reads the salted candidate CSV produced by the trigger_coverage step.
     """
     with open(csv_path, "r", encoding="utf-8", newline="") as f:
         reader = csv.DictReader(f)
@@ -43,7 +42,7 @@ def read_candidate_rows(csv_path: Path) -> list[dict]:
 
 def load_trigger_words(json_path: Path) -> set[str]:
     """
-    Loads trigger tokens from a trigger vocabulary JSON file.
+    Loads trigger tokens from a trigger vocabulary json file.
     """
     with open(json_path, "r", encoding="utf-8") as f:
         data = json.load(f)
@@ -59,18 +58,21 @@ def parse_email(email_path: Path):
     parsing because it is not part of the RFC 5322 header block.
     """
     raw = email_path.read_bytes()
+    mbox_from_line = None
 
     if raw.startswith(b"From "):
         first_nl = raw.find(b"\n")
         if first_nl != -1:
+            mbox_from_line = raw[: first_nl + 1]
             raw = raw[first_nl + 1:]
 
-    return BytesParser(policy=policy.default).parsebytes(raw)
+    msg = BytesParser(policy=policy.default).parsebytes(raw)
+    return msg, mbox_from_line
 
 
 def get_decoded_text_plain(part) -> str:
     """
-    Returns the decoded text/plain payload of a MIME part.
+    Returns the decoded text/plain payload.
     """
     try:
         return part.get_content()
@@ -78,6 +80,51 @@ def get_decoded_text_plain(part) -> str:
         payload = part.get_payload(decode=True) or b""
         charset = safe_charset(part.get_content_charset())
         return payload.decode(charset, errors="replace")
+
+def replace_text_plain_payload_preserve_format(part, new_text: str) -> None:
+    """
+    Replaces the payload of an explicit text/plain part while preserving the
+    original charset and Content-Transfer-Encoding as far as possible.
+    """
+    charset = safe_charset(part.get_content_charset())
+    original_cte = (part.get("Content-Transfer-Encoding") or "").lower().strip()
+
+    try:
+        new_bytes = new_text.encode(charset)
+    except Exception:
+        charset = "utf-8"
+        new_bytes = new_text.encode(charset)
+
+    # remove old payload + old CTE header
+    part.set_payload(new_bytes)
+    if part["Content-Transfer-Encoding"]:
+        del part["Content-Transfer-Encoding"]
+
+    # preserve/update charset on existing Content-Type header
+    if part.get("Content-Type") is not None:
+        part.set_param("charset", charset, header="Content-Type")
+
+    # re-apply original transfer encoding as far as possible
+    if original_cte == "base64":
+        encoders.encode_base64(part)
+    elif original_cte == "quoted-printable":
+        encoders.encode_quopri(part)
+    elif original_cte == "7bit":
+        # only valid for pure ASCII
+        try:
+            new_bytes.decode("ascii")
+            part["Content-Transfer-Encoding"] = "7bit"
+        except UnicodeDecodeError:
+            part["Content-Transfer-Encoding"] = "8bit"
+    elif original_cte in {"8bit", "binary"}:
+        part["Content-Transfer-Encoding"] = original_cte
+    else:
+        # fallback if header was missing/unknown
+        try:
+            new_bytes.decode("ascii")
+            part["Content-Transfer-Encoding"] = "7bit"
+        except UnicodeDecodeError:
+            part["Content-Transfer-Encoding"] = "8bit"
 
 
 def salt_token(token: str, codepoint: str, insert_after_index: int) -> str:
@@ -91,7 +138,6 @@ def salt_token(token: str, codepoint: str, insert_after_index: int) -> str:
 def find_trigger_matches(text: str, trigger_words: set[str]) -> list:
     """
     Finds trigger-word matches in a decoded text string.
-
     Matching is case-insensitive against the trigger vocabulary.
     """
     matches = []
@@ -152,17 +198,22 @@ def apply_salting_to_text(
 
 def iter_text_plain_parts(msg):
     """
-    Yields all non-attachment text/plain parts of a message.
+    Yields all non-attachment text/plain parts of a message,
+    but only if text/plain is explicitly declared in the Content-Type header.
+    This avoids implicitly treating malformed or type-less messages as plain text
+    and prevents unintended MIME rewriting during salting.
     """
     if msg.is_multipart():
         for part in msg.walk():
-            if part.get_content_type() != "text/plain":
-                continue
             if part.get_content_disposition() == "attachment":
+                continue
+            if part.get("Content-Type") is None:
+                continue
+            if part.get_content_type() != "text/plain":
                 continue
             yield part
     else:
-        if msg.get_content_type() == "text/plain":
+        if msg.get("Content-Type") is not None and msg.get_content_type() == "text/plain":
             yield msg
 
 
@@ -205,8 +256,11 @@ def apply_salting_to_message(
     remaining_body_insertions = body_max_insertions
     body_targets = []
     n_insert_body = 0
+    body_part_found = False
 
     for part in iter_text_plain_parts(msg):
+        body_part_found = True
+
         if remaining_body_insertions <= 0:
             break
 
@@ -221,12 +275,12 @@ def apply_salting_to_message(
         )
 
         if part_insertions > 0:
-            part.set_content(salted_text, subtype="plain", charset="utf-8")
+            replace_text_plain_payload_preserve_format(part, salted_text)
             body_targets.extend(part_targets)
             n_insert_body += part_insertions
             remaining_body_insertions -= part_insertions
 
-    return msg, subject_targets, body_targets, n_insert_subject, n_insert_body
+    return msg, subject_targets, body_targets, n_insert_subject, n_insert_body, body_part_found
 
 
 def build_variant_filename(
@@ -244,21 +298,23 @@ def build_variant_filename(
     return f"{stem}__salted__{vocab_type}__cp{codepoint_name}{suffix}"
 
 
-def write_email(msg, output_path: Path) -> None:
+def write_email(msg, output_path: Path, mbox_from_line: bytes | None = None) -> None:
     """
     Serializes an EmailMessage object to an .eml file.
     """
     with open(output_path, "wb") as f:
+        if mbox_from_line is not None:
+            f.write(mbox_from_line)
         generator = BytesGenerator(f, policy=policy.default)
         generator.flatten(msg)
 
 
 def write_salting_log(rows: list[dict], technical_csv: Path, readable_csv: Path) -> None:
     """
-    Writes both the technical salting log and a human readable report.
+    Writes both the technical salting log and a report.
 
     technical_csv:
-        Full log including JSON target structures (used later for analysis)
+        Full log including json target structures.
 
     readable_csv:
         Simplified log showing which tokens were modified.
@@ -281,6 +337,7 @@ def write_salting_log(rows: list[dict], technical_csv: Path, readable_csv: Path)
                 "codepoint": row["codepoint"],
                 "n_insert_subject": row["n_insert_subject"],
                 "n_insert_body": row["n_insert_body"],
+                "body_part_found": row["body_part_found"],
                 "subject_targets": json.dumps(row["subject_targets"], ensure_ascii=False),
                 "body_targets": json.dumps(row["body_targets"], ensure_ascii=False),
             }

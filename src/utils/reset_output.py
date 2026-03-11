@@ -20,7 +20,9 @@ def reset_pipeline_output():
     OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
 
     if DATASET_SPLIT.exists():
-        print(f"Deleting output directory: {DATASET_SPLIT}")
+        print(f"Deleting dataset split directory: {DATASET_SPLIT}")
         shutil.rmtree(DATASET_SPLIT)
+
+    DATASET_SPLIT.mkdir(parents=True, exist_ok=True)
 
     print("Pipeline output reset complete.")

@@ -25,7 +25,7 @@ MIN_DF_SPAM_PERCENTAGE = 0.01       # Minimum spam document-frequency threshold
 ALPHA = 1.0
 
 # =============================
-# Config for salting_candidate_selection
+# Config for trigger_coverage
 # =============================
 
 SALTING_VOCABULARY = "strict"       # "strict" or "extended"
@@ -34,18 +34,20 @@ SALTING_VOCABULARY = "strict"       # "strict" or "extended"
 # Config for salted_email_generator
 # =============================
 
-SALTING_SELECTION_DIR = BASE_DIR / "data/output/salting_candidate_selection"
-SALTED_EMAIL_OUTPUT_DIR = BASE_DIR / "data/output/salted_email_generator"
+SALTING_SELECTION_DIR = OUTPUT_ROOT / "salting_candidate_selection"
+SALTED_EMAIL_OUTPUT_DIR = OUTPUT_ROOT / "salted_email_generator"
 
+# Input
 SALTED_CANDIDATES_CSV = SALTING_SELECTION_DIR / "salted_candidates.csv"
+TEST_SPAM_DIR = DATASET_SPLIT / "test" / "spam"
+STRICT_TRIGGER_WORDS_PATH = OUTPUT_ROOT / "trigger_vocabulary/trigger_words_strict.json"
+EXTENDED_TRIGGER_WORDS_PATH = OUTPUT_ROOT / "trigger_vocabulary/trigger_words_extended.json"
+
+# Output
 SALTING_LOG_CSV = SALTED_EMAIL_OUTPUT_DIR / "salting_log.csv"
 SALTED_EMAILS_DIR = SALTED_EMAIL_OUTPUT_DIR / "salted_emails"
 
-STRICT_TRIGGER_WORDS_PATH = BASE_DIR / "trigger_vocabulary/trigger_words_strict.json"
-EXTENDED_TRIGGER_WORDS_PATH = BASE_DIR / "trigger_vocabulary/trigger_words_extended.json"
-
-TEST_SPAM_DIR = DATASET_SPLIT / "test" / "spam"
-
+# ZWC & Options
 SALT_CODEPOINTS = {
     "200B": "\u200B",   # Zero Width Space
     "200C": "\u200C",   # Zero Width Non-Joiner
@@ -53,20 +55,15 @@ SALT_CODEPOINTS = {
     "00AD": "\u00AD",   # Soft Hyphen
 }
 
-SALT_SUBJECT_MAX_INSERTIONS = 1
-SALT_BODY_MAX_INSERTIONS = 3
-SALT_INSERT_AFTER_INDEX = 2
-
-
-# =============================
-# Config for utils
-# =============================
-
+SALT_SUBJECT_MAX_INSERTIONS = 1     # Max 1 token per subject
+SALT_BODY_MAX_INSERTIONS = 3        # Max 3 token per body
+SALT_INSERT_AFTER_INDEX = 2         # Index for insertion
 
 
 # =============================
 # Config for Spamassassin
 # =============================
-SPAMASSASSIN_CONTAINER = "thesis-lab-spamassassin"
+SPAMASSASSIN_CONTAINER = "masterthesis-spamassassin"
 SPAMD_HOST = "127.0.0.1"
 SPAMD_PORT = 783
+SOCKET_TIMEOUT = 30

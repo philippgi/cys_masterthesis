@@ -95,7 +95,7 @@ def copy_files(files, target_dir):
 # MAIN FUNCTIONS
 # =============================
 
-def run_dataset_split():
+def run_dataset_split(train_ratio=None, dataset_split_dir=None):
     """
     Orchestrates dataset collection, partitioning, and export.
 
@@ -105,6 +105,9 @@ def run_dataset_split():
     3) Copy files into the output directory structure
     4) Print dataset statistics for documentation
     """
+
+    train_ratio = TRAIN_RATIO if train_ratio is None else train_ratio
+    dataset_split_dir = dataset_split_dir or DATASET_SPLIT
 
     random.seed(RANDOM_SEED)
     ham_files = []
@@ -144,10 +147,10 @@ def run_dataset_split():
     print(f"* Spam test: {len(spam_test)}")
 
     # Output files
-    train_ham_dir = os.path.join(DATASET_SPLIT, "train/ham")
-    train_spam_dir = os.path.join(DATASET_SPLIT, "train/spam")
-    test_ham_dir = os.path.join(DATASET_SPLIT, "test/ham")
-    test_spam_dir = os.path.join(DATASET_SPLIT, "test/spam")
+    train_ham_dir = os.path.join(dataset_split_dir, "train/ham")
+    train_spam_dir = os.path.join(dataset_split_dir, "train/spam")
+    test_ham_dir = os.path.join(dataset_split_dir, "test/ham")
+    test_spam_dir = os.path.join(dataset_split_dir, "test/spam")
 
     copy_files(ham_train, train_ham_dir)
     copy_files(spam_train, train_spam_dir)

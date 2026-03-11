@@ -1,14 +1,14 @@
 services:
   redis:
     image: redis:alpine
-    container_name: thesis-lab-rspamd-redis
+    container_name: masterthesis-rspamd-redis
     volumes:
       - ./docker/redis:/data
     restart: unless-stopped
 
   rspamd:
     image: rspamd/rspamd:latest
-    container_name: thesis-lab-rspamd
+    container_name: masterthesis-rspamd
     depends_on:
       - redis
       - unbound
@@ -24,7 +24,7 @@ services:
 
   spamassassin:
     image: instantlinux/spamassassin:latest
-    container_name: thesis-lab-spamassassin
+    container_name: masterthesis-spamassassin
     ports:
       - "783:783"
     volumes:
@@ -38,12 +38,12 @@ services:
 
   unbound:
     image: mvance/unbound:latest
-    container_name: rspamd-unbound
+    container_name: masterthesis-rspamd-unbound
     restart: unless-stopped
 
   postfix:
     image: boky/postfix
-    container_name: thesis-lab-postfix
+    container_name: masterthesis-postfix
     hostname: mail.lab.local
     environment:
       - POSTFIX_smtpd_reject_unlisted_recipient=no

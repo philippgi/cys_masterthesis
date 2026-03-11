@@ -1,26 +1,37 @@
 #!/usr/bin/env python3
 """
 This module orchestrates the trigger coverage analysis.
+
 It loads the previously constructed trigger vocabularies, iterates over all
 spam emails in the test split, extracts subject and body text, and checks if
-an email includes trigger words from "strict" or "extended".
+an email includes trigger words from the strict or extended vocabularies.
 
-The resulting per-email statistics are written to a csv file. In addition,
-the module prints a short summary showing how many spam test emails contain
-at least one strict or extended trigger word.
+The resulting per-email statistics are written to a master CSV file. In
+addition, derived compatibility outputs are written for downstream pipeline
+steps:
+- salted_candidates.csv
+- excluded_spam.csv
+- selection_summary.json
 """
 
 import json
 
-from config import DATASET_SPLIT, OUTPUT_ROOT
+from config import OUTPUT_ROOT, SALTING_VOCABULARY, DATASET_SPLIT
 from src.trigger_vocabulary.email_extract import extract_subject_and_text_plain
-from src.trigger_vocabulary.tokenize_df import PreTokenizationConfig, pre_tokenization_cleanup
-from src.trigger_coverage.coverage_analyzer import analyze_single_email, write_csv
+from src.trigger_vocabulary.tokenize_df import (
+    PreTokenizationConfig,
+    pre_tokenization_cleanup,
+)
+from src.trigger_coverage.coverage_analyzer import (
+    analyze_single_email,
+    write_csv,
+    write_selection_outputs,
+)
 
 
 def load_trigger_words(json_path):
     """
-    Loads trigger words output from trigger_vocabulary.
+    Loads trigger words from a trigger vocabulary JSON file.
 
     Args:
         json_path: Path to the trigger vocabulary JSON file.
@@ -34,53 +45,62 @@ def load_trigger_words(json_path):
     return {entry["token"] for entry in data["triggers"]}
 
 
-def run_trigger_coverage_analysis():
+def run_trigger_coverage(output_root=None, dataset_split_dir=None, salting_vocabulary=None):
     """
     Runs trigger coverage analysis for all spam emails in the test set.
     """
-    # Set directories
-    test_spam_dir = DATASET_SPLIT / "test" / "spam"
-    coverage_output_dir = OUTPUT_ROOT.parent / "trigger_coverage"
-    coverage_output_dir.mkdir(parents=True, exist_ok=True)
-    strict_path = OUTPUT_ROOT / "trigger_vocabulary/trigger_words_strict.json"
-    extended_path = OUTPUT_ROOT / "trigger_vocabulary/trigger_words_extended.json"
+    output_root = OUTPUT_ROOT if output_root is None else output_root
+    dataset_split_dir = DATASET_SPLIT if dataset_split_dir is None else dataset_split_dir
+    salting_vocabulary = SALTING_VOCABULARY if salting_vocabulary is None else salting_vocabulary
 
-    # Load trigger vocabularies as token sets
+    test_spam_dir = dataset_split_dir / "test" / "spam"
+    coverage_output_dir = output_root / "trigger_coverage"
+    coverage_output_dir.mkdir(parents=True, exist_ok=True)
+
+    strict_path = output_root / "trigger_vocabulary" / "trigger_words_strict.json"
+    extended_path = output_root / "trigger_vocabulary" / "trigger_words_extended.json"
+
     strict_triggers = load_trigger_words(strict_path)
     extended_triggers = load_trigger_words(extended_path)
 
     results = []
 
-    # Analyze each spam email in the test set individually
     for email_path in sorted(test_spam_dir.iterdir()):
         subject, body = extract_subject_and_text_plain(email_path)
-        result = analyze_single_email(
-            subject,
-            body,
-            strict_triggers,
-            extended_triggers,
-            pre_tokenization_cleanup,
-            PreTokenizationConfig.TOKEN_RE,
-            PreTokenizationConfig.HTML_ARTIFACTS,
+
+        analysis = analyze_single_email(
+            subject=subject,
+            body=body,
+            strict_triggers=strict_triggers,
+            extended_triggers=extended_triggers,
+            cleanup_fn=pre_tokenization_cleanup,
+            token_regex=PreTokenizationConfig.TOKEN_RE,
+            html_artifacts=PreTokenizationConfig.HTML_ARTIFACTS,
         )
 
-        # Store the file name as message identifier for statistics
-        result["message_id"] = email_path.name
+        result = {
+            "message_id": email_path.name,
+            **analysis,
+        }
         results.append(result)
 
-    # Write per-email coverage results to csv
-    write_csv(
-        results,
-        coverage_output_dir / "coverage_results.csv",
+    # Master output
+    write_csv(results, coverage_output_dir / "coverage_results.csv")
+
+    # Derived compatibility outputs for downstream steps
+    selection_output_dir = output_root / "salting_candidate_selection"
+    selection_output_dir.mkdir(parents=True, exist_ok=True)
+
+    summary = write_selection_outputs(
+        rows=results,
+        output_dir=selection_output_dir,
+        salting_vocabulary=salting_vocabulary,
     )
 
-    # Print summary
-    total = len(results)
-    with_strict = sum(1 for r in results if r["strict_has_trigger"])
-    with_extended = sum(1 for r in results if r["extended_has_trigger"])
-
-    print("Trigger Coverage Analysis")
-    print("-------------------------")
-    print(f"Spam test emails: {total}")
-    print(f"With strict trigger: {with_strict}")
-    print(f"With extended trigger: {with_extended}")
+    print("Trigger Coverage:")
+    print(f"Spam test emails analyzed: {len(results)}")
+    print(
+        f"Salted candidates ({salting_vocabulary}): "
+        f"{summary['n_spam_salted_candidates']}"
+    )
+    print(f"Excluded spam emails: {summary['n_spam_excluded']}")

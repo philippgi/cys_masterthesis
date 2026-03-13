@@ -1,6 +1,6 @@
 # automatisch erzeugt
-# in-scope rules + BAYES bleiben aktiv
-use_bayes 1
+# in-scope content-rules only, without Bayes
+use_bayes 0 
 bayes_auto_learn 0
 
 skip_rbl_checks 1
@@ -9,7 +9,6 @@ use_razor2 0
 use_pyzor 0
 use_dcc 0
 
-bayes_auto_learn 0
 score __0_TZ_1 0
 score __0_TZ_2 0
 score __0_TZ_3 0

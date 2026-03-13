@@ -1,46 +1,37 @@
 #!/usr/bin/env python3
 """
 This module orchestrates the build of a trigger vocabulary
-Input: Spam emails in data/datasets/split/train/spam
-Output: Trigger vocabulary "strict" and "extended" plus stats in data/output/trigger_vocabulary
-
-    Steps:
-    1) Load DF statistics from training corpus
-    2) Compute log-odds scores
-    3) Filter and rank candidate tokens
-    4) Persist statistics and trigger vocabulary
 """
 
 import json
 from math import ceil
 
 from config import DATASET_SPLIT, OUTPUT_ROOT, MIN_DF_SPAM, MIN_DF_SPAM_PERCENTAGE, ALPHA
-from src.trigger_vocabulary.tokenize_df import build_df_counts
-from src.trigger_vocabulary.trigger_scoring import compute_log_odds
+from src.main_evaluation.trigger_vocabulary.tokenize_df import build_df_counts
+from src.main_evaluation.trigger_vocabulary.trigger_scoring import compute_log_odds
+from src.utils.console import print_step, print_section, print_kv, print_end
 
 
 def run_trigger_vocabulary(output_root=None, dataset_split_dir=None):
+
     output_root = OUTPUT_ROOT if output_root is None else output_root
     dataset_split_dir = DATASET_SPLIT if dataset_split_dir is None else dataset_split_dir
 
     output_dir = output_root / "trigger_vocabulary"
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    print("--> Starting trigger vocabulary creation <--")
+    print_step("Trigger Vocabulary Creation")
 
-    # Build DF counts from training corpus
+    # Build DF counts
     df_spam, df_ham, N_spam, N_ham = build_df_counts(
         dataset_split_dir / "train" / "spam",
         dataset_split_dir / "train" / "ham",
     )
 
-    # Minimum spam DF threshold defined in config.py
     min_df_spam = max(MIN_DF_SPAM, ceil(MIN_DF_SPAM_PERCENTAGE * N_spam))
 
-    # Compute log-odds scores
     scores = compute_log_odds(df_spam, df_ham, N_spam, N_ham, ALPHA)
 
-    # Build candidate list
     candidates = [
         {
             "token": tok,
@@ -54,13 +45,11 @@ def run_trigger_vocabulary(output_root=None, dataset_split_dir=None):
         if df_spam[tok] >= min_df_spam
     ]
 
-    # Deterministic ranking, higher log-odds score -> higher spam DF -> lexicographic token order
     candidates.sort(
         key=lambda x: (x["score"], x["spam_df"], x["token"]),
         reverse=True,
     )
 
-    # Statistics for documentation
     stats = {
         "N_spam": N_spam,
         "N_ham": N_ham,
@@ -81,18 +70,18 @@ def run_trigger_vocabulary(output_root=None, dataset_split_dir=None):
         ),
     }
 
-    print("\nTrigger vocabulary statistics:")
+    print_section("Trigger vocabulary statistics")
+
     for k, v in stats.items():
+
         if isinstance(v, float):
-            print(f"{k:25s}: {v:.6f}")
+            print_kv(k, f"{v:.6f}")
         else:
-            print(f"{k:25s}: {v}")
-    print()
+            print_kv(k, v)
 
     with open(output_dir / "trigger_vocabulary_stats.json", "w", encoding="utf-8") as f:
         json.dump(stats, f, indent=2)
 
-    # Build trigger vocabulary
     strict_threshold = 3.0
     extended_threshold = 2.5
 
@@ -115,4 +104,4 @@ def run_trigger_vocabulary(output_root=None, dataset_split_dir=None):
     with open(output_dir / "trigger_words_extended.json", "w", encoding="utf-8") as f:
         json.dump({"metadata": metadata, "triggers": extended}, f, indent=2)
 
-    print("--> Trigger-Vocabulary creation completed <--")
+    print_end("Trigger Vocabulary Creation")

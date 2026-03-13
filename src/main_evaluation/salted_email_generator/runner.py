@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 """
 This module orchestrates the salted email generation step.
-
-It reads the selected spam candidates, loads the strict and extended trigger
-vocabularies, generates salted email variants, and writes an aggregated
-salting log for later evaluation.
 """
 
 from config import (
@@ -17,7 +13,9 @@ from config import (
     DATASET_SPLIT,
 )
 
-from src.salted_email_generator.generator import (
+from src.utils.console import print_step, print_section, print_kv, print_end
+
+from src.main_evaluation.salted_email_generator.generator import (
     read_candidate_rows,
     load_trigger_words,
     parse_email,
@@ -33,17 +31,6 @@ def run_salted_email_generator(
     dataset_split_dir=None,
     salting_vocabulary=None,
 ):
-    """
-    Runs the salted email generation step.
-
-    Workflow:
-    - Load the selected spam emails
-    - Load strict and extended trigger vocabularies
-    - Parse each original spam email
-    - Generate salted variants for all vocabulary/codepoint combinations
-    - Write one .eml file per generated variant
-    - Write an aggregated salting log
-    """
 
     output_root = OUTPUT_ROOT if output_root is None else output_root
     dataset_split_dir = DATASET_SPLIT if dataset_split_dir is None else dataset_split_dir
@@ -69,19 +56,17 @@ def run_salted_email_generator(
     salted_email_output_dir.mkdir(parents=True, exist_ok=True)
     salted_emails_dir.mkdir(parents=True, exist_ok=True)
 
+    print_step("Salted Email Generation")
+
     candidate_rows = read_candidate_rows(salted_candidates_csv)
 
     strict_triggers = load_trigger_words(strict_trigger_words_path)
     extended_triggers = load_trigger_words(extended_trigger_words_path)
 
     if salting_vocabulary == "strict":
-        vocabularies = {
-            "strict": strict_triggers,
-        }
+        vocabularies = {"strict": strict_triggers}
     elif salting_vocabulary == "extended":
-        vocabularies = {
-            "extended": extended_triggers,
-        }
+        vocabularies = {"extended": extended_triggers}
     else:
         raise ValueError(
             f"Invalid SALTING_VOCABULARY '{salting_vocabulary}'. "
@@ -96,13 +81,14 @@ def run_salted_email_generator(
         email_path = test_spam_dir / message_id
 
         if not email_path.is_file():
-            print(f"WARNING: source email not found: {message_id}")
+            print_section(f"WARNING: source email not found: {message_id}")
             continue
 
         original_msg, mbox_from_line = parse_email(email_path)
 
         for vocab_type, trigger_words in vocabularies.items():
             for codepoint_name, codepoint_char in SALT_CODEPOINTS.items():
+
                 salted_msg, subject_targets, body_targets, n_insert_subject, n_insert_body, body_part_found = apply_salting_to_message(
                     original_msg=original_msg,
                     trigger_words=trigger_words,
@@ -112,7 +98,6 @@ def run_salted_email_generator(
                     insert_after_index=SALT_INSERT_AFTER_INDEX,
                 )
 
-                # Skip variants with no actual modification.
                 if (n_insert_subject + n_insert_body) == 0:
                     continue
 
@@ -147,7 +132,9 @@ def run_salted_email_generator(
         readable_csv=salted_email_output_dir / "salting_log_readable.csv",
     )
 
-    print("Salted Email Generator:")
-    print(f"Candidate emails processed: {len(candidate_rows)}")
-    print(f"Salted variants generated: {total_variants}")
-    print(f"Output directory: {salted_email_output_dir}")
+    print_section("Generation summary")
+    print_kv("Candidate emails processed", len(candidate_rows))
+    print_kv("Salted variants generated", total_variants)
+    print_kv("Output directory", salted_email_output_dir)
+
+    print_end("Salted Email Generation")

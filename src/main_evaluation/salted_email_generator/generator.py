@@ -26,7 +26,7 @@ from email import encoders
 from email.parser import BytesParser
 from email.generator import BytesGenerator
 
-from src.trigger_vocabulary.email_extract import safe_charset
+from src.main_evaluation.trigger_vocabulary.email_extract import safe_charset
 
 TOKEN_RE = re.compile(r"[A-Za-z]{3,}")
 

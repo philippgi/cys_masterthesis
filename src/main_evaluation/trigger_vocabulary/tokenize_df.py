@@ -9,7 +9,7 @@ from typing import Set
 from pathlib import Path
 from collections import Counter
 from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
-from src.trigger_vocabulary.email_extract import extract_subject_and_text_plain
+from src.main_evaluation.trigger_vocabulary.email_extract import extract_subject_and_text_plain
 
 
 class PreTokenizationConfig:

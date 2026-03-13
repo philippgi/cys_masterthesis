@@ -45,6 +45,8 @@ from email.parser import BytesParser
 from pathlib import Path
 from statistics import mean
 from tqdm import tqdm
+from src.utils.console import print_step, print_section, print_kv, print_end
+
 
 from config import (
     DATASET_SPLIT,
@@ -423,7 +425,7 @@ def run_spamassassin_evaluation(output_root=None, dataset_split_dir=None):
     SALTED_EMAILS_DIR = output_root / "salted_email_generator" / "emails"
     SALTING_LOG_CSV = output_root / "salted_email_generator" / "salting_log.csv"
 
-    print("--> Starting SpamAssassin evaluation <--")
+    print_step("SpamAssassin Evaluation")
 
     test_spam_dir = dataset_split_dir / "test" / "spam"
     test_ham_dir = dataset_split_dir / "test" / "ham"
@@ -438,16 +440,17 @@ def run_spamassassin_evaluation(output_root=None, dataset_split_dir=None):
     ham_files = [p for p in sorted(test_ham_dir.iterdir()) if p.is_file()]
     salted_files = [p for p in sorted(SALTED_EMAILS_DIR.iterdir()) if p.is_file()]
 
-    print(f"\nBaseline spam files (paired only): {len(spam_files)}")
-    print(f"Baseline ham files               : {len(ham_files)}")
-    print(f"Salted spam files               : {len(salted_files)}")
-    print(f"Unique salted source emails     : {len(salted_source_ids)}")
+    print_section("Evaluation dataset")
+    print_kv("baseline_spam_paired", len(spam_files))
+    print_kv("baseline_ham", len(ham_files))
+    print_kv("salted_variants", len(salted_files))
+    print_kv("salted_source_emails", len(salted_source_ids))
 
     results = []
     client = SpamdClient(SPAMD_HOST, SPAMD_PORT, SOCKET_TIMEOUT)
 
     try:
-        print("\nScanning:")
+        print_section("Scanning emails")
 
         for path in tqdm(
             spam_files,
@@ -560,6 +563,8 @@ def run_spamassassin_evaluation(output_root=None, dataset_split_dir=None):
         writer.writeheader()
         writer.writerows(paired_rows)
 
-    print("\nSpamAssassin evaluation complete")
-    print(f"Variant-level CSV written to: {RESULT_CSV}")
-    print(f"Paired-level CSV written to : {PAIRED_RESULT_CSV}")
+    print_section("Output files")
+    print_kv("variant_results_csv", RESULT_CSV)
+    print_kv("paired_results_csv", PAIRED_RESULT_CSV)
+
+    print_end("SpamAssassin Evaluation")

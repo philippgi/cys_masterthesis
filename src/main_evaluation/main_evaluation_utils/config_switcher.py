@@ -1,6 +1,8 @@
 from pathlib import Path
 import shutil
+
 from config import BASE_DIR
+from src.utils.console import print_section
 
 
 LOCAL_CF = BASE_DIR / "configs/spamassassin/local.cf"
@@ -16,4 +18,4 @@ def activate_spamassassin_config(config_name: str):
 
     shutil.copy2(source, LOCAL_CF)
 
-    print(f"Activated SpamAssassin config: {config_name}")
+    print_section(f"Activated SpamAssassin config: {config_name}")

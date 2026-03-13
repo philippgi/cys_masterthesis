@@ -14,7 +14,7 @@ OUTPUT_ROOT = BASE_DIR / "data/output"
 DATASET_ROOT = BASE_DIR / "data/datasets/spamassassin_corpus"
 DATASET_SPLIT = BASE_DIR / "data/datasets/split"
 
-TRAIN_RATIO = 0.8
+TRAIN_RATIO = 0.8                   # Percentage of Trainset, rest is test-set. 1.0 -> 100% Train and 100% Test
 RANDOM_SEED = 42
 
 # =============================
@@ -59,6 +59,18 @@ SALT_SUBJECT_MAX_INSERTIONS = 1     # Max 1 token per subject
 SALT_BODY_MAX_INSERTIONS = 3        # Max 3 token per body
 SALT_INSERT_AFTER_INDEX = 2         # Index for insertion
 
+# =============================
+# Config for bayes_token_vocab_overlap
+# =============================
+
+ANALYSIS_OUTPUT_DIR = OUTPUT_ROOT / "analysis"
+
+BAYES_TOKEN_VOCAB_DATASET_DIR = DATASET_SPLIT
+BAYES_TOKEN_VOCAB_SAMPLE_SIZE = 10
+BAYES_TOKEN_VOCAB_THRESHOLD = 0.90
+
+BAYES_STRICT_TRIGGER_WORDS_PATH = OUTPUT_ROOT / "SA3" / "strict" / "trigger_vocabulary" / "trigger_words_strict.json"
+BAYES_EXTENDED_TRIGGER_WORDS_PATH = OUTPUT_ROOT / "SA3" / "extended" / "trigger_vocabulary" / "trigger_words_extended.json"
 
 # =============================
 # Config for Spamassassin

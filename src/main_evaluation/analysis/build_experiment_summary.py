@@ -7,6 +7,11 @@ import json
 from pathlib import Path
 from statistics import mean, median
 
+from src.main_evaluation.analysis.rule_loss_analysis import run_rule_loss_analysis
+from src.main_evaluation.analysis.bayes_analysis import run_bayes_analysis
+from src.utils.console import print_step, print_section, print_kv, print_end
+
+
 
 def _read_csv(path: Path) -> list[dict]:
     with open(path, "r", encoding="utf-8", newline="") as f:
@@ -254,6 +259,27 @@ def build_experiment_summary(
         }
 
     # -----------------------------
+    # Rule loss analysis
+    # -----------------------------
+    # -----------------------------
+    # Bayes analysis
+    # -----------------------------
+    bayes_summary = run_bayes_analysis(
+        results_csv=results_csv,
+        paired_csv=paired_csv,
+        output_dir=output_dir,
+    )
+
+    # -----------------------------
+    # Rule loss analysis
+    # -----------------------------
+    rule_loss_summary = run_rule_loss_analysis(
+        results_csv=results_csv,
+        paired_csv=paired_csv,
+        output_dir=output_dir,
+    )
+
+    # -----------------------------
     # Summary object
     # -----------------------------
     summary = {
@@ -308,6 +334,8 @@ def build_experiment_summary(
             "n_any_spam": n_any_spam,
         },
         "codepoints": codepoint_summary,
+        "bayes_analysis": bayes_summary,
+        "rule_loss_analysis": rule_loss_summary,
     }
 
     # -----------------------------
@@ -397,10 +425,100 @@ def build_experiment_summary(
             lines.append(f"  mean_rule_count             : {cp_data['mean_rule_count']}")
             lines.append("")
 
+    # -----------------------------
+    # Bayes analysis
+    # -----------------------------
+    lines.append("Bayes analysis")
+    lines.append("--------------")
+
+    bayes_data = summary.get("bayes_analysis", {})
+    baseline_bayes_counts = bayes_data.get("baseline_bayes_level_counts", {})
+    salted_bayes_counts = bayes_data.get("salted_bayes_level_counts", {})
+    bayes_transitions = bayes_data.get("bayes_transitions", [])
+
+    lines.append(f"Baseline-detected emails         : {bayes_data.get('n_baseline_detected_emails')}")
+    lines.append(f"Baseline emails with Bayes       : {bayes_data.get('n_baseline_with_bayes')}")
+    lines.append(f"Salted emails with any Bayes     : {bayes_data.get('n_salted_with_any_bayes')}")
+    lines.append(f"Bayes lost completely            : {bayes_data.get('n_bayes_lost_any')}")
+    lines.append(f"Bayes lost in at least one var.  : {bayes_data.get('n_bayes_lost_all')}")
+    lines.append("")
+
+    lines.append("Baseline Bayes rule levels")
+    lines.append("~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    if not baseline_bayes_counts:
+        lines.append("No Bayes data available.")
+    else:
+        for rule, count in baseline_bayes_counts.items():
+            lines.append(f"{rule}:")
+            lines.append(f"  count : {count}")
+            lines.append("")
+
+    lines.append("Salted Bayes rule levels")
+    lines.append("~~~~~~~~~~~~~~~~~~~~~~~~")
+    if not salted_bayes_counts:
+        lines.append("No Bayes data available.")
+    else:
+        for rule, count in salted_bayes_counts.items():
+            lines.append(f"{rule}:")
+            lines.append(f"  count : {count}")
+            lines.append("")
+
+    lines.append("Bayes transitions")
+    lines.append("~~~~~~~~~~~~~~~~~")
+    if not bayes_transitions:
+        lines.append("No Bayes transition data available.")
+    else:
+        for row in bayes_transitions:
+            lines.append(f"{row['baseline_bayes']} -> {row['salted_best_bayes']}:")
+            lines.append(f"  count : {row['count']}")
+            lines.append("")
+
+    # -----------------------------
+    # Rule loss analysis
+    # -----------------------------
+    lines.append("Rule loss analysis")
+    lines.append("------------------")
+
+    rule_loss = summary.get("rule_loss_analysis", {})
+    all_rule_loss = rule_loss.get("all_rule_loss", [])
+    all_bypass_rule_loss = rule_loss.get("all_bypass_rule_loss", [])
+
+    if not all_rule_loss:
+        lines.append("No rule loss data available.")
+    else:
+        lines.append("Lost rules (all)")
+        lines.append("~~~~~~~~~~~~~~~~")
+        for r in all_rule_loss:
+            lines.append(f"{r['rule']}:")
+            lines.append(f"  baseline_occurrences  : {r['baseline_occurrences']}")
+            lines.append(f"  lost_in_any_variant   : {r['lost_in_any_variant']}")
+            lines.append(f"  lost_in_all_variants  : {r['lost_in_all_variants']}")
+            lines.append(f"  lost_rate_any_variant : {r['lost_rate_any_variant']}")
+            lines.append(f"  lost_rate_all_variants: {r['lost_rate_all_variants']}")
+            lines.append("")
+
+    if not all_bypass_rule_loss:
+        lines.append("No bypass rule loss data available.")
+    else:
+        lines.append("Lost rules in bypass cases")
+        lines.append("~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        for r in all_bypass_rule_loss:
+            lines.append(f"{r['rule']}:")
+            lines.append(f"  lost_in_bypass_any  : {r['lost_in_bypass_any']}")
+            lines.append(f"  lost_in_bypass_all  : {r['lost_in_bypass_all']}")
+            lines.append(f"  bypass_loss_rate_any: {r['bypass_loss_rate_any']}")
+            lines.append(f"  bypass_loss_rate_all: {r['bypass_loss_rate_all']}")
+            lines.append("")
+
     with open(summary_txt_path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
 
-    print(f"Summary JSON written to: {summary_json_path}")
-    print(f"Summary TXT written to : {summary_txt_path}")
+    print_step("Experiment Summary")
+
+    print_section("Output files")
+    print_kv("summary_json", summary_json_path)
+    print_kv("summary_txt", summary_txt_path)
+
+    print_end("Experiment Summary")
 
     return summary

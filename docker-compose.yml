@@ -33,7 +33,7 @@ services:
       - ./docker/logs/spamassassin:/var/log/spamassassin
       - ./data/datasets/split:/split:ro
     command: >
-      sh -lc "sa-update && spamd -F -i 0.0.0.0 -p 783 -c --username=debian-spamd --nouser-config"
+      sh -lc "sa-update && spamd -i 0.0.0.0 -p 783 -c --username=debian-spamd --nouser-config --max-children 4"
     restart: unless-stopped
 
   unbound:

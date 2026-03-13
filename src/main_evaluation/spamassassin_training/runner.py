@@ -18,6 +18,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from config import DATASET_SPLIT, OUTPUT_ROOT, SPAMASSASSIN_CONTAINER
+from src.utils.console import print_step, print_section, print_kv, print_end
 
 
 def run_command(command: list[str]) -> subprocess.CompletedProcess:
@@ -44,10 +45,10 @@ def run_command(command: list[str]) -> subprocess.CompletedProcess:
 
 def docker_exec(*container_cmd: str) -> subprocess.CompletedProcess:
     """
-    Executes a command inside the SpamAssassin container.
+    Executes a command inside the SpamAssassin container as the spamd user.
     """
     return run_command(
-        ["docker", "exec", SPAMASSASSIN_CONTAINER, *container_cmd]
+        ["docker", "exec", "-u", "debian-spamd", SPAMASSASSIN_CONTAINER, *container_cmd]
     )
 
 
@@ -113,29 +114,31 @@ def run_spamassassin_training(
 
     spamassassin_output.mkdir(parents=True, exist_ok=True)
 
-    print("--> Starting SpamAssassin training <--")
-    print(f"Container: {SPAMASSASSIN_CONTAINER}")
-    print(f"Ham training files:  {n_train_ham}")
-    print(f"Spam training files: {n_train_spam}")
+    print_step("SpamAssassin Training")
+
+    print_section("Training dataset")
+    print_kv("container", SPAMASSASSIN_CONTAINER)
+    print_kv("ham_training_files", n_train_ham)
+    print_kv("spam_training_files", n_train_spam)
 
     ensure_container_running()
 
     # Clear Bayes state
-    print("Clearing previous Bayes state ...")
+    print_section("Clearing previous Bayes state")
     clear_result = docker_exec("sa-learn", "--clear")
 
     # Learn ham and spam
-    print("Learning ham corpus ...")
+    print_section("Learning ham corpus")
     ham_result = docker_exec("sa-learn", "--ham", "/split/train/ham")
-    print("Learning spam corpus ...")
+    print_section("Learning spam corpus")
     spam_result = docker_exec("sa-learn", "--spam", "/split/train/spam")
 
     # Sync Bayes database
-    print("Syncing Bayes database ...")
+    print_section("Syncing Bayes database")
     sync_result = docker_exec("sa-learn", "--sync")
 
     # Collect version and Bayes stats
-    print("Collecting SpamAssassin version and Bayes stats ...")
+    print_section("Collecting version and Bayes stats")
     version_result = docker_exec("spamassassin", "--version")
     dump_magic_result = docker_exec("sa-learn", "--dump", "magic")
 
@@ -190,6 +193,8 @@ def run_spamassassin_training(
         f.write("sa-learn --dump magic:\n")
         f.write(dump_magic_result.stdout)
 
-    print("\nTraining completed successfully.")
-    print(f"Snapshot JSON: {training_snapshot_json}")
-    print(f"Snapshot TXT:  {training_snapshot_txt}")
+    print_section("Output files")
+    print_kv("training_snapshot_json", training_snapshot_json)
+    print_kv("training_snapshot_txt", training_snapshot_txt)
+
+    print_end("SpamAssassin Training")

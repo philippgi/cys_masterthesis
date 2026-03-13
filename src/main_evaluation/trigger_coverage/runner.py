@@ -17,12 +17,13 @@ steps:
 import json
 
 from config import OUTPUT_ROOT, SALTING_VOCABULARY, DATASET_SPLIT
-from src.trigger_vocabulary.email_extract import extract_subject_and_text_plain
-from src.trigger_vocabulary.tokenize_df import (
+from src.main_evaluation.trigger_vocabulary.email_extract import extract_subject_and_text_plain
+from src.utils.console import print_step, print_section, print_kv, print_end
+from src.main_evaluation.trigger_vocabulary.tokenize_df import (
     PreTokenizationConfig,
     pre_tokenization_cleanup,
 )
-from src.trigger_coverage.coverage_analyzer import (
+from src.main_evaluation.trigger_coverage.coverage_analyzer import (
     analyze_single_email,
     write_csv,
     write_selection_outputs,
@@ -65,6 +66,11 @@ def run_trigger_coverage(output_root=None, dataset_split_dir=None, salting_vocab
 
     results = []
 
+    print_step("Trigger Coverage")
+
+    print_section("Input dataset")
+    print_kv("test_spam_dir", test_spam_dir)
+
     for email_path in sorted(test_spam_dir.iterdir()):
         subject, body = extract_subject_and_text_plain(email_path)
 
@@ -97,10 +103,9 @@ def run_trigger_coverage(output_root=None, dataset_split_dir=None, salting_vocab
         salting_vocabulary=salting_vocabulary,
     )
 
-    print("Trigger Coverage:")
-    print(f"Spam test emails analyzed: {len(results)}")
-    print(
-        f"Salted candidates ({salting_vocabulary}): "
-        f"{summary['n_spam_salted_candidates']}"
-    )
-    print(f"Excluded spam emails: {summary['n_spam_excluded']}")
+    print_section("Coverage summary")
+    print_kv("spam_test_emails", len(results))
+    print_kv(f"salted_candidates_{salting_vocabulary}", summary["n_spam_salted_candidates"])
+    print_kv("excluded_spam", summary["n_spam_excluded"])
+
+    print_end("Trigger Coverage")

@@ -1,0 +1,23 @@
+# SA-3: Extended local content + Bayes
+# Scope:
+# - keep local rules active
+# - enable Bayes
+# - keep external/network reputation disabled
+
+use_bayes 1
+bayes_auto_learn 0
+
+bayes_use_hapaxes 1
+bayes_use_chi2_combining 1
+bayes_use_header 0
+score ALL_TRUSTED 0
+
+skip_rbl_checks 1
+dns_available no
+
+use_razor2 0
+use_pyzor 0
+use_dcc 0
+
+score AWL 0
+score TXREP 0

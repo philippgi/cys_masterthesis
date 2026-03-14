@@ -39,7 +39,7 @@ def print_error(message: str) -> None:
 
 
 def print_end(title: str):
-    print(f"{Fore.CYAN}--- {title} completed ---{Style.RESET_ALL}")
+    print(f"{Fore.CYAN}OK{Style.RESET_ALL}")
 
 
 def progress(iterable, desc: str, unit: str = "item"):

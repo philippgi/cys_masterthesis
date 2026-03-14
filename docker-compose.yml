@@ -13,11 +13,10 @@ services:
       - redis
       - unbound
     ports:
-      - "11332:11332"   # milter proxy
       - "11333:11333"   # normal worker (rspamc scan + ANN-Train sammeln)
       - "11334:11334"   # Web interface
     volumes:
-      - ./configs/rspamd:/etc/rspamd/local.d
+      - ./configs/rspamd/active:/etc/rspamd/local.d
       - ./docker/logs/rspamd:/var/log/rspamd
       - ./docker/rspamd-state:/var/lib/rspamd
     restart: unless-stopped

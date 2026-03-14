@@ -5,7 +5,7 @@ from config import BASE_DIR
 from src.main_evaluation.dataset_split.runner import run_dataset_split
 from src.main_evaluation.spamassassin_training.runner import run_spamassassin_training
 from src.utils.reset_output import reset_pipeline_output
-from src.main_evaluation.main_evaluation_utils.config_switcher import activate_spamassassin_config
+from src.main_evaluation.main_evaluation_utils.sa_config_switcher import activate_spamassassin_config
 from src.main_evaluation.main_evaluation_utils.container_control import restart_spamassassin
 from src.utils.console import print_step, print_section
 

@@ -8,7 +8,7 @@ from src.main_evaluation.trigger_coverage.runner import run_trigger_coverage
 from src.main_evaluation.salted_email_generator.runner import run_salted_email_generator
 from src.main_evaluation.spamassassin_evaluation.runner import run_spamassassin_evaluation
 from src.utils.reset_output import reset_pipeline_output
-from src.main_evaluation.main_evaluation_utils.config_switcher import activate_spamassassin_config
+from src.main_evaluation.main_evaluation_utils.sa_config_switcher import activate_spamassassin_config
 from src.main_evaluation.main_evaluation_utils.container_control import restart_spamassassin
 from src.main_evaluation.analysis.build_experiment_summary import build_experiment_summary
 from src.utils.console import print_step, print_section

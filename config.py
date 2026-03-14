@@ -8,6 +8,22 @@ BASE_DIR = Path(__file__).resolve().parent
 OUTPUT_ROOT = BASE_DIR / "data/output"
 
 # =============================
+# Config for Spamassassin
+# =============================
+SPAMASSASSIN_CONTAINER = "masterthesis-spamassassin"
+SPAMD_HOST = "127.0.0.1"
+SPAMD_PORT = 783
+SOCKET_TIMEOUT = 30
+
+
+# =============================
+# Config for Rspamd
+# =============================
+RSPAMD_HOST = "127.0.0.1"
+RSPAMD_PORT = 11333
+RSPAMD_TIMEOUT = 30
+
+# =============================
 # 1) dataset_split
 # =============================
 
@@ -72,10 +88,4 @@ BAYES_TOKEN_VOCAB_THRESHOLD = 0.90
 BAYES_STRICT_TRIGGER_WORDS_PATH = OUTPUT_ROOT / "SA3" / "strict" / "trigger_vocabulary" / "trigger_words_strict.json"
 BAYES_EXTENDED_TRIGGER_WORDS_PATH = OUTPUT_ROOT / "SA3" / "extended" / "trigger_vocabulary" / "trigger_words_extended.json"
 
-# =============================
-# Config for Spamassassin
-# =============================
-SPAMASSASSIN_CONTAINER = "masterthesis-spamassassin"
-SPAMD_HOST = "127.0.0.1"
-SPAMD_PORT = 783
-SOCKET_TIMEOUT = 30
+

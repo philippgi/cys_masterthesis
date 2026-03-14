@@ -14,6 +14,8 @@ from src.main_evaluation.trigger_coverage.runner import run_trigger_coverage
 from src.main_evaluation.trigger_vocabulary.runner import run_trigger_vocabulary
 from src.utils.reset_output import reset_pipeline_output
 from src.main_evaluation.rspamd_evaluation.runner import run_rspamd_evaluation
+from src.main_evaluation.experiments.runner_rs2_train import run_rs2_train
+from src.main_evaluation.experiments.runner_rs2_eval import run_rs2_eval
 
 
 """
@@ -71,7 +73,9 @@ def main():
     #run_sa2()
     #run_sa3_train()
     #run_sa3_eval()
-    run_rs1()
+    #run_rs1()
+    run_rs2_train()
+    #run_rs2_eval()
 
 
 if __name__ == "__main__":

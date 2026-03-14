@@ -19,6 +19,7 @@ services:
       - ./configs/rspamd/active:/etc/rspamd/local.d
       - ./docker/logs/rspamd:/var/log/rspamd
       - ./docker/rspamd-state:/var/lib/rspamd
+      - ./data/datasets/split:/split:ro
     restart: unless-stopped
 
   spamassassin:

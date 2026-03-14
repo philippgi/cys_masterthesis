@@ -19,6 +19,12 @@ SOCKET_TIMEOUT = 30
 # =============================
 # Config for Rspamd
 # =============================
+RSPAMD_CONTAINER = "masterthesis-rspamd"
+RSPAMD_REDIS_CONTAINER = "masterthesis-rspamd-redis"
+
+RSPAMD_TRAIN_HAM_CONTAINER_DIR = "/split/train/ham"
+RSPAMD_TRAIN_SPAM_CONTAINER_DIR = "/split/train/spam"
+
 RSPAMD_HOST = "127.0.0.1"
 RSPAMD_PORT = 11333
 RSPAMD_TIMEOUT = 30

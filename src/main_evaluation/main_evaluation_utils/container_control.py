@@ -12,9 +12,11 @@ def restart_spamassassin():
 
 
 def restart_rspamd():
+    print_section("Recreating rspamd stack")
+
     subprocess.run(
-        ["docker", "compose", "restart", "rspamd"],
-        check=True
+        ["docker", "compose", "up", "-d", "--force-recreate", "redis", "unbound", "rspamd"],
+        check=True,
     )
 
     print_section("Rspamd restarted.")

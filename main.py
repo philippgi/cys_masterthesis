@@ -16,21 +16,8 @@ from src.utils.reset_output import reset_pipeline_output
 from src.main_evaluation.rspamd_evaluation.runner import run_rspamd_evaluation
 from src.main_evaluation.experiments.runner_rs2_train import run_rs2_train
 from src.main_evaluation.experiments.runner_rs2_eval import run_rs2_eval
-
-
-"""
-1 dataset_split
-2 trigger_vocabulary
-3 trigger_coverage_analysis
-4 candidate_selection
-5 salted_email_generator
-6 spamassassin training
-7 spamassassin evaluation
-8 Experiments 
-    8.1 SpamAssassin 1 (sa1)
-    8.2 SpamAssassin 2 (sa2)
-    8.3 SpamAssassin 3 (sa3) 
-"""
+from src.main_evaluation.experiments.runner_rs3_train import run_rs3_train
+from src.main_evaluation.experiments.runner_rs3_eval import run_rs3_eval
 
 
 def main():
@@ -75,7 +62,9 @@ def main():
     #run_sa3_eval()
     #run_rs1()
     #run_rs2_train()
-    run_rs2_eval()
+    #run_rs2_eval()
+    #run_rs3_train()
+    run_rs3_eval()
 
 
 if __name__ == "__main__":

@@ -153,42 +153,74 @@ def determine_spam_flag(score, threshold, action: str) -> bool:
     return action in {"add header", "reject", "soft reject"}
 
 
-def extract_symbols(symbols_dict: dict) -> tuple[list[str], bool, str, float | None]:
+def extract_symbols(symbols_dict: dict) -> tuple[
+    list[str],
+    bool,
+    str,
+    float | None,
+    bool,
+    str,
+    float | None,
+]:
     """
     Extracts symbol information from the Rspamd JSON response.
 
     Returns:
     - sorted list of all symbol names
     - has_bayes flag
-    - strongest Bayes symbol name (empty string if none)
-    - strongest Bayes symbol score (None if none)
+    - strongest Bayes symbol name
+    - strongest Bayes symbol score
+    - has_neural flag
+    - strongest Neural symbol name
+    - strongest Neural symbol score
 
-    "Strongest" is defined as the BAYES_* symbol with the highest score.
+    "Strongest" is defined as the symbol with the highest absolute score
+    within the respective family.
     """
     if not isinstance(symbols_dict, dict):
-        return [], False, "", None
+        return [], False, "", None, False, "", None
 
     symbol_names = sorted(symbols_dict.keys())
 
     best_bayes_symbol = ""
     best_bayes_score = None
 
-    for symbol_name, symbol_meta in symbols_dict.items():
-        if not str(symbol_name).startswith("BAYES_"):
-            continue
+    best_neural_symbol = ""
+    best_neural_score = None
 
+    for symbol_name, symbol_meta in symbols_dict.items():
         symbol_score = None
         if isinstance(symbol_meta, dict):
             symbol_score = to_float_or_none(symbol_meta.get("score"))
 
-        if best_bayes_score is None or (
-            symbol_score is not None and symbol_score > best_bayes_score
-        ):
-            best_bayes_symbol = str(symbol_name)
-            best_bayes_score = symbol_score
+        if str(symbol_name).startswith("BAYES_"):
+            if best_bayes_score is None or (
+                symbol_score is not None and symbol_score > best_bayes_score
+            ):
+                best_bayes_symbol = str(symbol_name)
+                best_bayes_score = symbol_score
+
+        if str(symbol_name).startswith("NEURAL_"):
+            if best_neural_score is None or (
+                symbol_score is not None and (
+                    best_neural_score is None or abs(symbol_score) > abs(best_neural_score)
+                )
+            ):
+                best_neural_symbol = str(symbol_name)
+                best_neural_score = symbol_score
 
     has_bayes = bool(best_bayes_symbol)
-    return symbol_names, has_bayes, best_bayes_symbol, best_bayes_score
+    has_neural = bool(best_neural_symbol)
+
+    return (
+        symbol_names,
+        has_bayes,
+        best_bayes_symbol,
+        best_bayes_score,
+        has_neural,
+        best_neural_symbol,
+        best_neural_score,
+    )
 
 
 def run_rspamd_scan(email_path: Path) -> dict:
@@ -238,7 +270,15 @@ def run_rspamd_scan(email_path: Path) -> dict:
     action = str(data.get("action", ""))
 
     symbols_dict = data.get("symbols", {}) or {}
-    symbol_names, has_bayes, bayes_symbol, bayes_score = extract_symbols(symbols_dict)
+    (
+        symbol_names,
+        has_bayes,
+        bayes_symbol,
+        bayes_score,
+        has_neural,
+        neural_symbol,
+        neural_score,
+    ) = extract_symbols(symbols_dict)
 
     spam_flag = determine_spam_flag(
         score=score,
@@ -256,6 +296,9 @@ def run_rspamd_scan(email_path: Path) -> dict:
         "has_bayes": has_bayes,
         "bayes_symbol": bayes_symbol,
         "bayes_score": bayes_score,
+        "has_neural": has_neural,
+        "neural_symbol": neural_symbol,
+        "neural_score": neural_score,
         "raw_output": json.dumps(data, ensure_ascii=False),
     }
 
@@ -297,6 +340,9 @@ def evaluate_email(
         "bayes_symbol": scan["bayes_symbol"],
         "bayes_score": scan["bayes_score"],
         "raw_output": scan["raw_output"],
+        "has_neural": scan["has_neural"],
+        "neural_symbol": scan["neural_symbol"],
+        "neural_score": scan["neural_score"],
     }
 
 
@@ -500,6 +546,9 @@ def run_rspamd_evaluation(output_root=None, dataset_split_dir=None):
                 "bayes_symbol",
                 "bayes_score",
                 "raw_output",
+                "has_neural",
+                "neural_symbol",
+                "neural_score",
             ],
             delimiter=";",
         )

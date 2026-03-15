@@ -1,2 +1,2 @@
 type = "console";
-level = "info";
+level = "warning";

@@ -32,10 +32,37 @@ def run_salted_email_generator(
     output_root=None,
     dataset_split_dir=None,
     salting_vocabulary=None,
+    subject_max_insertions=None,
+    body_max_insertions=None,
+    salt_mode=None,
+    insert_after_index=None,
+    fragment_max_positions=None,
 ):
     output_root = OUTPUT_ROOT if output_root is None else output_root
     dataset_split_dir = DATASET_SPLIT if dataset_split_dir is None else dataset_split_dir
     salting_vocabulary = SALTING_VOCABULARY if salting_vocabulary is None else salting_vocabulary
+
+    subject_max_insertions = (
+        SALT_SUBJECT_MAX_INSERTIONS
+        if subject_max_insertions is None
+        else subject_max_insertions
+    )
+    body_max_insertions = (
+        SALT_BODY_MAX_INSERTIONS
+        if body_max_insertions is None
+        else body_max_insertions
+    )
+    salt_mode = SALT_MODE if salt_mode is None else salt_mode
+    insert_after_index = (
+        SALT_INSERT_AFTER_INDEX
+        if insert_after_index is None
+        else insert_after_index
+    )
+    fragment_max_positions = (
+        SALT_FRAGMENT_MAX_POSITIONS
+        if fragment_max_positions is None
+        else fragment_max_positions
+    )
 
     salted_email_output_dir = output_root / "salted_email_generator"
     salted_emails_dir = salted_email_output_dir / "emails"
@@ -100,11 +127,11 @@ def run_salted_email_generator(
                     original_msg=original_msg,
                     trigger_words=trigger_words,
                     codepoint=codepoint_char,
-                    subject_max_insertions=SALT_SUBJECT_MAX_INSERTIONS,
-                    body_max_insertions=SALT_BODY_MAX_INSERTIONS,
-                    insert_after_index=SALT_INSERT_AFTER_INDEX,
-                    salt_mode=SALT_MODE,
-                    fragment_max_positions=SALT_FRAGMENT_MAX_POSITIONS,
+                    subject_max_insertions=subject_max_insertions,
+                    body_max_insertions=body_max_insertions,
+                    insert_after_index=insert_after_index,
+                    salt_mode=salt_mode,
+                    fragment_max_positions=fragment_max_positions,
                 )
 
                 if (n_insert_subject + n_insert_body) == 0:
@@ -114,7 +141,7 @@ def run_salted_email_generator(
                     original_filename=message_id,
                     vocab_type=vocab_type,
                     codepoint_name=codepoint_name,
-                    salt_mode=SALT_MODE,
+                    salt_mode=salt_mode,
                 )
 
                 output_path = salted_emails_dir / variant_filename
@@ -126,8 +153,8 @@ def run_salted_email_generator(
                         "variant_filename": variant_filename,
                         "vocab_type": vocab_type,
                         "codepoint": codepoint_name,
-                        "salt_mode": SALT_MODE,
-                        "fragment_max_positions": SALT_FRAGMENT_MAX_POSITIONS,
+                        "salt_mode": salt_mode,
+                        "fragment_max_positions": fragment_max_positions,
                         "n_insert_subject": n_insert_subject,
                         "n_insert_body": n_insert_body,
                         "body_part_found": body_part_found,
@@ -147,8 +174,11 @@ def run_salted_email_generator(
     print_section("Generation summary")
     print_kv("Candidate emails processed", len(candidate_rows))
     print_kv("Salted variants generated", total_variants)
-    print_kv("Salt mode", SALT_MODE)
-    print_kv("Fragment max positions", SALT_FRAGMENT_MAX_POSITIONS)
+    print_kv("Salt mode", salt_mode)
+    print_kv("Fragment max positions", fragment_max_positions)
+    print_kv("Subject max insertions", subject_max_insertions)
+    print_kv("Body max insertions", body_max_insertions)
+    print_kv("Insert after index", insert_after_index)
     print_kv("Output directory", salted_email_output_dir)
 
     print_end("Salted Email Generation")

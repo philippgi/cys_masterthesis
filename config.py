@@ -78,7 +78,7 @@ SALT_CODEPOINTS = {
 }
 
 SALT_SUBJECT_MAX_INSERTIONS = 1     # Max 1 token per subject
-SALT_BODY_MAX_INSERTIONS = 3        # Max 3 token per body
+SALT_BODY_MAX_INSERTIONS = 20       # Max 3 token per body
 
 SALT_MODE = "fragment"              # "single" or "fragment"
 SALT_INSERT_AFTER_INDEX = 2         # Index for insertion in "single mode"

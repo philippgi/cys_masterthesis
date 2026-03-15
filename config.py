@@ -15,7 +15,6 @@ SPAMD_HOST = "127.0.0.1"
 SPAMD_PORT = 783
 SOCKET_TIMEOUT = 30
 
-
 # =============================
 # Config for Rspamd
 # =============================
@@ -50,7 +49,7 @@ ALPHA = 1.0
 # Config for trigger_coverage
 # =============================
 
-SALTING_VOCABULARY = "strict"       # "strict" or "extended"
+SALTING_VOCABULARY = "strict"       # "strict" or "extended" or "broad"
 
 # =============================
 # Config for salted_email_generator
@@ -64,6 +63,7 @@ SALTED_CANDIDATES_CSV = SALTING_SELECTION_DIR / "salted_candidates.csv"
 TEST_SPAM_DIR = DATASET_SPLIT / "test" / "spam"
 STRICT_TRIGGER_WORDS_PATH = OUTPUT_ROOT / "trigger_vocabulary/trigger_words_strict.json"
 EXTENDED_TRIGGER_WORDS_PATH = OUTPUT_ROOT / "trigger_vocabulary/trigger_words_extended.json"
+BROAD_TRIGGER_WORDS_PATH = OUTPUT_ROOT / "trigger_vocabulary/trigger_words_broad.json"
 
 # Output
 SALTING_LOG_CSV = SALTED_EMAIL_OUTPUT_DIR / "salting_log.csv"
@@ -79,7 +79,10 @@ SALT_CODEPOINTS = {
 
 SALT_SUBJECT_MAX_INSERTIONS = 1     # Max 1 token per subject
 SALT_BODY_MAX_INSERTIONS = 3        # Max 3 token per body
-SALT_INSERT_AFTER_INDEX = 2         # Index for insertion
+
+SALT_MODE = "fragment"              # "single" or "fragment"
+SALT_INSERT_AFTER_INDEX = 2         # Index for insertion in "single mode"
+SALT_FRAGMENT_MAX_POSITIONS = None  # None = fragment across all possible positions in the token in "fragment mode"
 
 # =============================
 # Config for bayes_token_vocab_overlap

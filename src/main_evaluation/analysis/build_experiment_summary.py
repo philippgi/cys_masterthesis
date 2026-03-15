@@ -8,9 +8,9 @@ from pathlib import Path
 from statistics import mean, median
 
 from src.main_evaluation.analysis.rule_loss_analysis import run_rule_loss_analysis
-from src.main_evaluation.analysis.bayes_analysis import run_bayes_analysis
 from src.utils.console import print_step, print_section, print_kv, print_end
-
+from src.main_evaluation.analysis.bayes_analysis_spamassassin import run_bayes_analysis_spamassassin
+from src.main_evaluation.analysis.bayes_analysis_rspamd import run_bayes_analysis_rspamd
 
 
 def _read_csv(path: Path) -> list[dict]:
@@ -95,6 +95,8 @@ def build_experiment_summary(
                 "threshold": _to_float(row.get("threshold")),
                 "rule_count": _to_int(row.get("rule_count")),
                 "rules": row.get("rules", ""),
+                "n_insert_subject": _to_int(row.get("n_insert_subject")),
+                "n_insert_body": _to_int(row.get("n_insert_body")),
             }
         )
 
@@ -259,16 +261,59 @@ def build_experiment_summary(
         }
 
     # -----------------------------
-    # Rule loss analysis
+    # Salting intensity analysis
     # -----------------------------
+    subject_insertions = [
+        r["n_insert_subject"] for r in salted_spam_rows
+        if r.get("n_insert_subject") is not None
+    ]
+
+    body_insertions = [
+        r["n_insert_body"] for r in salted_spam_rows
+        if r.get("n_insert_body") is not None
+    ]
+
+    salting_intensity = {
+        "mean_subject_insertions": _round_or_none(_safe_mean(subject_insertions)),
+        "mean_body_insertions": _round_or_none(_safe_mean(body_insertions)),
+        "mean_total_insertions": _round_or_none(
+            _safe_mean([(s or 0) + (b or 0) for s, b in zip(subject_insertions, body_insertions)])
+        ),
+        "max_subject_insertions": max(subject_insertions) if subject_insertions else 0,
+        "max_body_insertions": max(body_insertions) if body_insertions else 0,
+    }
+
+    # -----------------------------
+    # Insertion distribution
+    # -----------------------------
+    total_insertions = [
+        (r.get("n_insert_subject") or 0) + (r.get("n_insert_body") or 0)
+        for r in salted_spam_rows
+    ]
+
+    insertion_distribution = {}
+
+    for v in total_insertions:
+        insertion_distribution[v] = insertion_distribution.get(v, 0) + 1
+
+    # sort by insertion count
+    insertion_distribution = dict(sorted(insertion_distribution.items()))
+
     # -----------------------------
     # Bayes analysis
     # -----------------------------
-    bayes_summary = run_bayes_analysis(
-        results_csv=results_csv,
-        paired_csv=paired_csv,
-        output_dir=output_dir,
-    )
+    if filter_name == "Rspamd":
+        bayes_summary = run_bayes_analysis_rspamd(
+            results_csv=results_csv,
+            paired_csv=paired_csv,
+            output_dir=output_dir,
+        )
+    else:
+        bayes_summary = run_bayes_analysis_spamassassin(
+            results_csv=results_csv,
+            paired_csv=paired_csv,
+            output_dir=output_dir,
+        )
 
     # -----------------------------
     # Rule loss analysis
@@ -334,6 +379,8 @@ def build_experiment_summary(
             "n_any_spam": n_any_spam,
         },
         "codepoints": codepoint_summary,
+        "salting_intensity": salting_intensity,
+        "insertion_distribution": insertion_distribution,
         "bayes_analysis": bayes_summary,
         "rule_loss_analysis": rule_loss_summary,
     }
@@ -425,53 +472,107 @@ def build_experiment_summary(
             lines.append(f"  mean_rule_count             : {cp_data['mean_rule_count']}")
             lines.append("")
 
+    lines.append("Salting intensity")
+    lines.append("-----------------")
+
+    si = summary.get("salting_intensity", {})
+
+    lines.append(f"Mean subject insertions : {si.get('mean_subject_insertions')}")
+    lines.append(f"Mean body insertions    : {si.get('mean_body_insertions')}")
+    lines.append(f"Mean total insertions   : {si.get('mean_total_insertions')}")
+    lines.append(f"Max subject insertions  : {si.get('max_subject_insertions')}")
+    lines.append(f"Max body insertions     : {si.get('max_body_insertions')}")
+    lines.append("")
+
     # -----------------------------
-    # Bayes analysis
+    # Insertion distribution
     # -----------------------------
+    lines.append("Insertion distribution")
+    lines.append("----------------------")
+
+    dist = summary.get("insertion_distribution", {})
+
+    if not dist:
+        lines.append("No insertion data available.")
+    else:
+        for k, v in dist.items():
+            lines.append(f"{k} insertions : {v}")
+
+    lines.append("")
+
     lines.append("Bayes analysis")
     lines.append("--------------")
 
     bayes_data = summary.get("bayes_analysis", {})
-    baseline_bayes_counts = bayes_data.get("baseline_bayes_level_counts", {})
-    salted_bayes_counts = bayes_data.get("salted_bayes_level_counts", {})
-    bayes_transitions = bayes_data.get("bayes_transitions", [])
 
     lines.append(f"Baseline-detected emails         : {bayes_data.get('n_baseline_detected_emails')}")
     lines.append(f"Baseline emails with Bayes       : {bayes_data.get('n_baseline_with_bayes')}")
     lines.append(f"Salted emails with any Bayes     : {bayes_data.get('n_salted_with_any_bayes')}")
-    lines.append(f"Bayes lost completely            : {bayes_data.get('n_bayes_lost_any')}")
-    lines.append(f"Bayes lost in at least one var.  : {bayes_data.get('n_bayes_lost_all')}")
+    lines.append(f"Bayes lost in at least one var.  : {bayes_data.get('n_bayes_lost_any')}")
+    lines.append(f"Bayes lost in all variants       : {bayes_data.get('n_bayes_lost_all')}")
     lines.append("")
 
-    lines.append("Baseline Bayes rule levels")
-    lines.append("~~~~~~~~~~~~~~~~~~~~~~~~~~")
-    if not baseline_bayes_counts:
-        lines.append("No Bayes data available.")
-    else:
-        for rule, count in baseline_bayes_counts.items():
-            lines.append(f"{rule}:")
-            lines.append(f"  count : {count}")
-            lines.append("")
+    if filter_name == "Rspamd":
+        baseline_bayes_counts = bayes_data.get("baseline_bayes_symbol_counts", {})
+        salted_bayes_counts = bayes_data.get("salted_bayes_symbol_counts", {})
 
-    lines.append("Salted Bayes rule levels")
-    lines.append("~~~~~~~~~~~~~~~~~~~~~~~~")
-    if not salted_bayes_counts:
-        lines.append("No Bayes data available.")
-    else:
-        for rule, count in salted_bayes_counts.items():
-            lines.append(f"{rule}:")
-            lines.append(f"  count : {count}")
-            lines.append("")
+        lines.append(f"Mean baseline Bayes score        : {bayes_data.get('baseline_bayes_score_mean')}")
+        lines.append(f"Mean salted Bayes score          : {bayes_data.get('salted_bayes_score_mean')}")
+        lines.append("")
 
-    lines.append("Bayes transitions")
-    lines.append("~~~~~~~~~~~~~~~~~")
-    if not bayes_transitions:
-        lines.append("No Bayes transition data available.")
+        lines.append("Baseline Bayes symbols")
+        lines.append("~~~~~~~~~~~~~~~~~~~~~~")
+        if not baseline_bayes_counts:
+            lines.append("No Bayes symbol data available.")
+        else:
+            for rule, count in baseline_bayes_counts.items():
+                lines.append(f"{rule}:")
+                lines.append(f"  count : {count}")
+                lines.append("")
+
+        lines.append("Salted Bayes symbols")
+        lines.append("~~~~~~~~~~~~~~~~~~~~")
+        if not salted_bayes_counts:
+            lines.append("No Bayes symbol data available.")
+        else:
+            for rule, count in salted_bayes_counts.items():
+                lines.append(f"{rule}:")
+                lines.append(f"  count : {count}")
+                lines.append("")
     else:
-        for row in bayes_transitions:
-            lines.append(f"{row['baseline_bayes']} -> {row['salted_best_bayes']}:")
-            lines.append(f"  count : {row['count']}")
-            lines.append("")
+        baseline_bayes_counts = bayes_data.get("baseline_bayes_level_counts", {})
+        salted_bayes_counts = bayes_data.get("salted_bayes_level_counts", {})
+        bayes_transitions = bayes_data.get("bayes_transitions", [])
+
+        lines.append("Baseline Bayes rule levels")
+        lines.append("~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        if not baseline_bayes_counts:
+            lines.append("No Bayes data available.")
+        else:
+            for rule, count in baseline_bayes_counts.items():
+                lines.append(f"{rule}:")
+                lines.append(f"  count : {count}")
+                lines.append("")
+
+        lines.append("Salted Bayes rule levels")
+        lines.append("~~~~~~~~~~~~~~~~~~~~~~~~")
+        if not salted_bayes_counts:
+            lines.append("No Bayes data available.")
+        else:
+            for rule, count in salted_bayes_counts.items():
+                lines.append(f"{rule}:")
+                lines.append(f"  count : {count}")
+                lines.append("")
+
+        lines.append("Bayes transitions")
+        lines.append("~~~~~~~~~~~~~~~~~")
+        if not bayes_transitions:
+            lines.append("No Bayes transition data available.")
+        else:
+            for row in bayes_transitions:
+                lines.append(f"{row['baseline_bayes']} -> {row['salted_best_bayes']}:")
+                lines.append(f"  count : {row['count']}")
+                lines.append("")
 
     # -----------------------------
     # Rule loss analysis

@@ -84,9 +84,11 @@ def run_trigger_vocabulary(output_root=None, dataset_split_dir=None):
 
     strict_threshold = 3.0
     extended_threshold = 2.5
+    broad_threshold = 1.5
 
     strict = [c for c in candidates if c["score"] >= strict_threshold]
     extended = [c for c in candidates if c["score"] >= extended_threshold]
+    broad = [c for c in candidates if c["score"] >= broad_threshold]
 
     metadata = {
         "alpha": ALPHA,
@@ -95,6 +97,7 @@ def run_trigger_vocabulary(output_root=None, dataset_split_dir=None):
         "N_ham": N_ham,
         "strict_threshold": strict_threshold,
         "extended_threshold": extended_threshold,
+        "broad_threshold": broad_threshold,
         "token_definition": stats["token_definition"],
     }
 
@@ -103,5 +106,8 @@ def run_trigger_vocabulary(output_root=None, dataset_split_dir=None):
 
     with open(output_dir / "trigger_words_extended.json", "w", encoding="utf-8") as f:
         json.dump({"metadata": metadata, "triggers": extended}, f, indent=2)
+
+    with open(output_dir / "trigger_words_broad.json", "w", encoding="utf-8") as f:
+        json.dump({"metadata": metadata, "triggers": broad}, f, indent=2)
 
     print_end("Trigger Vocabulary Creation")

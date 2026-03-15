@@ -60,9 +60,11 @@ def run_trigger_coverage(output_root=None, dataset_split_dir=None, salting_vocab
 
     strict_path = output_root / "trigger_vocabulary" / "trigger_words_strict.json"
     extended_path = output_root / "trigger_vocabulary" / "trigger_words_extended.json"
+    broad_path = output_root / "trigger_vocabulary" / "trigger_words_broad.json"
 
     strict_triggers = load_trigger_words(strict_path)
     extended_triggers = load_trigger_words(extended_path)
+    broad_triggers = load_trigger_words(broad_path)
 
     results = []
 
@@ -79,6 +81,7 @@ def run_trigger_coverage(output_root=None, dataset_split_dir=None, salting_vocab
             body=body,
             strict_triggers=strict_triggers,
             extended_triggers=extended_triggers,
+            broad_triggers=broad_triggers,
             cleanup_fn=pre_tokenization_cleanup,
             token_regex=PreTokenizationConfig.TOKEN_RE,
             html_artifacts=PreTokenizationConfig.HTML_ARTIFACTS,

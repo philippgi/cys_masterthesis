@@ -67,6 +67,7 @@ def analyze_single_email(
     body,
     strict_triggers,
     extended_triggers,
+    broad_triggers,
     cleanup_fn,
     token_regex,
     html_artifacts,
@@ -93,18 +94,26 @@ def analyze_single_email(
     extended_subject = count_trigger_occurrences(subject_tokens, extended_triggers)
     extended_body = count_trigger_occurrences(body_tokens, extended_triggers)
 
+    broad_subject = count_trigger_occurrences(subject_tokens, broad_triggers)
+    broad_body = count_trigger_occurrences(body_tokens, broad_triggers)
+
     strict_has_trigger = (strict_subject + strict_body) > 0
     extended_has_trigger = (extended_subject + extended_body) > 0
+    broad_has_trigger = (broad_subject + broad_body) > 0
 
     return {
         "strict_has_trigger": strict_has_trigger,
         "extended_has_trigger": extended_has_trigger,
+        "broad_has_trigger": broad_has_trigger,
         "strict_subject_count": strict_subject,
         "strict_body_count": strict_body,
         "extended_subject_count": extended_subject,
         "extended_body_count": extended_body,
+        "broad_subject_count": broad_subject,
+        "broad_body_count": broad_body,
         "is_candidate_strict": strict_has_trigger,
         "is_candidate_extended": extended_has_trigger,
+        "is_candidate_broad": broad_has_trigger,
     }
 
 
@@ -112,10 +121,10 @@ def validate_salting_vocabulary(salting_vocabulary):
     """
     Validates the configured salting vocabulary.
     """
-    if salting_vocabulary not in {"strict", "extended"}:
+    if salting_vocabulary not in {"strict", "extended", "broad"}:
         raise ValueError(
             f"Invalid SALTING_VOCABULARY '{salting_vocabulary}'. "
-            f"Expected 'strict' or 'extended'."
+            f"Expected 'strict', 'extended', or 'broad'."
         )
 
 
@@ -133,13 +142,15 @@ def select_candidates_from_coverage(rows, salting_vocabulary):
     for row in rows:
         if salting_vocabulary == "strict":
             is_candidate = bool(row["is_candidate_strict"])
-        else:
+        elif salting_vocabulary == "extended":
             is_candidate = bool(row["is_candidate_extended"])
+        else:
+            is_candidate = bool(row["is_candidate_broad"])
 
         if is_candidate:
-            candidates.append(dict(row))
+            candidates.append(row)
         else:
-            excluded.append(dict(row))
+            excluded.append(row)
 
     return candidates, excluded
 

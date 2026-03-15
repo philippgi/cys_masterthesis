@@ -8,6 +8,8 @@ from config import (
     SALT_SUBJECT_MAX_INSERTIONS,
     SALT_BODY_MAX_INSERTIONS,
     SALT_INSERT_AFTER_INDEX,
+    SALT_MODE,
+    SALT_FRAGMENT_MAX_POSITIONS,
     SALTING_VOCABULARY,
     OUTPUT_ROOT,
     DATASET_SPLIT,
@@ -31,7 +33,6 @@ def run_salted_email_generator(
     dataset_split_dir=None,
     salting_vocabulary=None,
 ):
-
     output_root = OUTPUT_ROOT if output_root is None else output_root
     dataset_split_dir = DATASET_SPLIT if dataset_split_dir is None else dataset_split_dir
     salting_vocabulary = SALTING_VOCABULARY if salting_vocabulary is None else salting_vocabulary
@@ -51,6 +52,10 @@ def run_salted_email_generator(
         output_root / "trigger_vocabulary" / "trigger_words_extended.json"
     )
 
+    broad_trigger_words_path = (
+        output_root / "trigger_vocabulary" / "trigger_words_broad.json"
+    )
+
     test_spam_dir = dataset_split_dir / "test" / "spam"
 
     salted_email_output_dir.mkdir(parents=True, exist_ok=True)
@@ -62,15 +67,18 @@ def run_salted_email_generator(
 
     strict_triggers = load_trigger_words(strict_trigger_words_path)
     extended_triggers = load_trigger_words(extended_trigger_words_path)
+    broad_triggers = load_trigger_words(broad_trigger_words_path)
 
     if salting_vocabulary == "strict":
         vocabularies = {"strict": strict_triggers}
     elif salting_vocabulary == "extended":
         vocabularies = {"extended": extended_triggers}
+    elif salting_vocabulary == "broad":
+        vocabularies = {"broad": broad_triggers}
     else:
         raise ValueError(
             f"Invalid SALTING_VOCABULARY '{salting_vocabulary}'. "
-            f"Expected 'strict' or 'extended'."
+            f"Expected 'strict', 'extended', or 'broad'."
         )
 
     salting_log_rows = []
@@ -88,7 +96,6 @@ def run_salted_email_generator(
 
         for vocab_type, trigger_words in vocabularies.items():
             for codepoint_name, codepoint_char in SALT_CODEPOINTS.items():
-
                 salted_msg, subject_targets, body_targets, n_insert_subject, n_insert_body, body_part_found = apply_salting_to_message(
                     original_msg=original_msg,
                     trigger_words=trigger_words,
@@ -96,6 +103,8 @@ def run_salted_email_generator(
                     subject_max_insertions=SALT_SUBJECT_MAX_INSERTIONS,
                     body_max_insertions=SALT_BODY_MAX_INSERTIONS,
                     insert_after_index=SALT_INSERT_AFTER_INDEX,
+                    salt_mode=SALT_MODE,
+                    fragment_max_positions=SALT_FRAGMENT_MAX_POSITIONS,
                 )
 
                 if (n_insert_subject + n_insert_body) == 0:
@@ -105,6 +114,7 @@ def run_salted_email_generator(
                     original_filename=message_id,
                     vocab_type=vocab_type,
                     codepoint_name=codepoint_name,
+                    salt_mode=SALT_MODE,
                 )
 
                 output_path = salted_emails_dir / variant_filename
@@ -116,6 +126,8 @@ def run_salted_email_generator(
                         "variant_filename": variant_filename,
                         "vocab_type": vocab_type,
                         "codepoint": codepoint_name,
+                        "salt_mode": SALT_MODE,
+                        "fragment_max_positions": SALT_FRAGMENT_MAX_POSITIONS,
                         "n_insert_subject": n_insert_subject,
                         "n_insert_body": n_insert_body,
                         "body_part_found": body_part_found,
@@ -135,6 +147,8 @@ def run_salted_email_generator(
     print_section("Generation summary")
     print_kv("Candidate emails processed", len(candidate_rows))
     print_kv("Salted variants generated", total_variants)
+    print_kv("Salt mode", SALT_MODE)
+    print_kv("Fragment max positions", SALT_FRAGMENT_MAX_POSITIONS)
     print_kv("Output directory", salted_email_output_dir)
 
     print_end("Salted Email Generation")

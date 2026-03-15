@@ -125,7 +125,7 @@ def _strongest_bayes_rule(bayes_rules: list[str]) -> str | None:
 # Main analysis function
 # --------------------------------------------------
 
-def run_bayes_analysis(
+def run_bayes_analysis_spamassassin(
     results_csv: Path,
     paired_csv: Path,
     output_dir: Path,

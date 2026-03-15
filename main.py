@@ -74,8 +74,8 @@ def main():
     #run_sa3_train()
     #run_sa3_eval()
     #run_rs1()
-    run_rs2_train()
-    #run_rs2_eval()
+    #run_rs2_train()
+    run_rs2_eval()
 
 
 if __name__ == "__main__":

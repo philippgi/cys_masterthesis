@@ -1,18 +1,21 @@
 #!/usr/bin/env python3
 """
 Core logic for generating salted .eml files.
+
 This module creates salted variants of selected spam emails by inserting
 invisible Unicode characters into trigger words.
 
-Salting strategy:
-- Subject: modify the first trigger occurrence
-- Body: modify the first three trigger occurrences
-- Position: insert the Unicode codepoint after the second character
+Supported salting modes:
+- single:
+    Insert one codepoint into the token at one configured position.
+- fragment:
+    Insert the codepoint after multiple positions inside the token,
+    effectively fragmenting the token.
 
 The module preserves the original email structure as far as practical,
 while replacing only:
 - the Subject header
-- text/plain
+- explicit text/plain parts
 """
 
 import csv
@@ -81,6 +84,7 @@ def get_decoded_text_plain(part) -> str:
         charset = safe_charset(part.get_content_charset())
         return payload.decode(charset, errors="replace")
 
+
 def replace_text_plain_payload_preserve_format(part, new_text: str) -> None:
     """
     Replaces the payload of an explicit text/plain part while preserving the
@@ -95,22 +99,21 @@ def replace_text_plain_payload_preserve_format(part, new_text: str) -> None:
         charset = "utf-8"
         new_bytes = new_text.encode(charset)
 
-    # remove old payload + old CTE header
+    # Remove old payload + old CTE header
     part.set_payload(new_bytes)
     if part["Content-Transfer-Encoding"]:
         del part["Content-Transfer-Encoding"]
 
-    # preserve/update charset on existing Content-Type header
+    # Preserve/update charset on existing Content-Type header
     if part.get("Content-Type") is not None:
         part.set_param("charset", charset, header="Content-Type")
 
-    # re-apply original transfer encoding as far as possible
+    # Re-apply original transfer encoding as far as possible
     if original_cte == "base64":
         encoders.encode_base64(part)
     elif original_cte == "quoted-printable":
         encoders.encode_quopri(part)
     elif original_cte == "7bit":
-        # only valid for pure ASCII
         try:
             new_bytes.decode("ascii")
             part["Content-Transfer-Encoding"] = "7bit"
@@ -119,7 +122,6 @@ def replace_text_plain_payload_preserve_format(part, new_text: str) -> None:
     elif original_cte in {"8bit", "binary"}:
         part["Content-Transfer-Encoding"] = original_cte
     else:
-        # fallback if header was missing/unknown
         try:
             new_bytes.decode("ascii")
             part["Content-Transfer-Encoding"] = "7bit"
@@ -127,12 +129,51 @@ def replace_text_plain_payload_preserve_format(part, new_text: str) -> None:
             part["Content-Transfer-Encoding"] = "8bit"
 
 
-def salt_token(token: str, codepoint: str, insert_after_index: int) -> str:
+def salt_token(
+    token: str,
+    codepoint: str,
+    insert_after_index: int,
+    mode: str = "single",
+    fragment_max_positions: int | None = None,
+) -> str:
     """
-    Inserts the given Unicode codepoint into a token after the configured
-    character index.
+    Salts a token according to the selected mode.
+
+    Modes:
+    - single:
+        Insert one codepoint at exactly one configured position.
+    - fragment:
+        Insert the codepoint after multiple character positions in the token,
+        effectively fragmenting the token internally.
     """
-    return token[:insert_after_index] + codepoint + token[insert_after_index:]
+    if len(token) < 2:
+        return token
+
+    if mode == "single":
+        safe_index = max(1, min(insert_after_index, len(token) - 1))
+        return token[:safe_index] + codepoint + token[safe_index:]
+
+    if mode == "fragment":
+        chars = list(token)
+
+        # Possible insertion positions are between characters.
+        # Example: "offer" -> positions after char 1, 2, 3, 4
+        possible_positions = list(range(1, len(chars)))
+
+        if fragment_max_positions is not None:
+            possible_positions = possible_positions[:fragment_max_positions]
+
+        salted_parts = []
+        for idx, ch in enumerate(chars, start=1):
+            salted_parts.append(ch)
+            if idx in possible_positions:
+                salted_parts.append(codepoint)
+
+        return "".join(salted_parts)
+
+    raise ValueError(
+        f"Invalid salt mode '{mode}'. Expected 'single' or 'fragment'."
+    )
 
 
 def find_trigger_matches(text: str, trigger_words: set[str]) -> list:
@@ -156,6 +197,8 @@ def apply_salting_to_text(
     codepoint: str,
     max_insertions: int,
     insert_after_index: int,
+    salt_mode: str = "single",
+    fragment_max_positions: int | None = None,
 ) -> tuple[str, list[dict], int]:
     """
     Applies salting to the first matching trigger occurrences in a text field.
@@ -173,9 +216,11 @@ def apply_salting_to_text(
     for match in reversed(selected_matches):
         original_token = match.group(0)
         salted_version = salt_token(
-            original_token,
-            codepoint,
-            insert_after_index,
+            token=original_token,
+            codepoint=codepoint,
+            insert_after_index=insert_after_index,
+            mode=salt_mode,
+            fragment_max_positions=fragment_max_positions,
         )
 
         start = match.start()
@@ -189,6 +234,8 @@ def apply_salting_to_text(
                 "salted_token": salted_version,
                 "start": start,
                 "end": end,
+                "salt_mode": salt_mode,
+                "fragment_max_positions": fragment_max_positions,
             }
         )
 
@@ -234,6 +281,8 @@ def apply_salting_to_message(
     subject_max_insertions: int,
     body_max_insertions: int,
     insert_after_index: int,
+    salt_mode: str = "single",
+    fragment_max_positions: int | None = None,
 ):
     """
     Applies subject/body salting to a parsed email message and returns a
@@ -249,6 +298,8 @@ def apply_salting_to_message(
         codepoint=codepoint,
         max_insertions=subject_max_insertions,
         insert_after_index=insert_after_index,
+        salt_mode=salt_mode,
+        fragment_max_positions=fragment_max_positions,
     )
     replace_subject(msg, salted_subject)
 
@@ -272,6 +323,8 @@ def apply_salting_to_message(
             codepoint=codepoint,
             max_insertions=remaining_body_insertions,
             insert_after_index=insert_after_index,
+            salt_mode=salt_mode,
+            fragment_max_positions=fragment_max_positions,
         )
 
         if part_insertions > 0:
@@ -287,6 +340,7 @@ def build_variant_filename(
     original_filename: str,
     vocab_type: str,
     codepoint_name: str,
+    salt_mode: str = "single",
 ) -> str:
     """
     Builds the salted output filename based on the original email filename.
@@ -295,7 +349,7 @@ def build_variant_filename(
     stem = source_path.stem
     suffix = source_path.suffix or ".eml"
 
-    return f"{stem}__salted__{vocab_type}__cp{codepoint_name}{suffix}"
+    return f"{stem}__salted__{vocab_type}__cp{codepoint_name}__{salt_mode}{suffix}"
 
 
 def write_email(msg, output_path: Path, mbox_from_line: bytes | None = None) -> None:
@@ -319,7 +373,6 @@ def write_salting_log(rows: list[dict], technical_csv: Path, readable_csv: Path)
     readable_csv:
         Simplified log showing which tokens were modified.
     """
-
     if not rows:
         return
 
@@ -327,14 +380,15 @@ def write_salting_log(rows: list[dict], technical_csv: Path, readable_csv: Path)
     readable_rows = []
 
     for row in rows:
-
-        # technical log (original format)
+        # Technical log
         tech_rows.append(
             {
                 "message_id": row["message_id"],
                 "variant_filename": row["variant_filename"],
                 "vocab_type": row["vocab_type"],
                 "codepoint": row["codepoint"],
+                "salt_mode": row["salt_mode"],
+                "fragment_max_positions": row["fragment_max_positions"],
                 "n_insert_subject": row["n_insert_subject"],
                 "n_insert_body": row["n_insert_body"],
                 "body_part_found": row["body_part_found"],
@@ -343,7 +397,7 @@ def write_salting_log(rows: list[dict], technical_csv: Path, readable_csv: Path)
             }
         )
 
-        # readable log
+        # Readable log
         subject_original = [t["original_token"] for t in row["subject_targets"]]
         subject_salted = [t["salted_token"] for t in row["subject_targets"]]
 
@@ -356,6 +410,8 @@ def write_salting_log(rows: list[dict], technical_csv: Path, readable_csv: Path)
                 "variant_filename": row["variant_filename"],
                 "vocab_type": row["vocab_type"],
                 "codepoint": row["codepoint"],
+                "salt_mode": row["salt_mode"],
+                "fragment_max_positions": row["fragment_max_positions"],
                 "subject_original_tokens": ", ".join(subject_original),
                 "subject_salted_tokens": ", ".join(subject_salted),
                 "body_original_tokens": ", ".join(body_original),
@@ -363,13 +419,11 @@ def write_salting_log(rows: list[dict], technical_csv: Path, readable_csv: Path)
             }
         )
 
-    # write technical CSV
     with open(technical_csv, "w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=tech_rows[0].keys())
         writer.writeheader()
         writer.writerows(tech_rows)
 
-    # write readable CSV
     with open(readable_csv, "w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=readable_rows[0].keys())
         writer.writeheader()

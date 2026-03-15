@@ -69,6 +69,7 @@ def build_experiment_summary(
     mechanism: str | None = None,
     rule_scope: str | None = None,
     salting_condition: str | None = None,
+    salting_config: dict | None = None,
 ):
     results_rows = _read_csv(results_csv)
     paired_rows = _read_csv(paired_csv)
@@ -333,6 +334,7 @@ def build_experiment_summary(
         "mechanism": mechanism,
         "rule_scope": rule_scope,
         "salting_condition": salting_condition,
+        "salting_config": salting_config,
         "inputs": {
             "results_csv": str(results_csv),
             "paired_csv": str(paired_csv),
@@ -402,6 +404,14 @@ def build_experiment_summary(
     lines.append(f"Mechanism           : {mechanism}")
     lines.append(f"Rule scope          : {rule_scope}")
     lines.append(f"Salting condition   : {salting_condition}")
+    lines.append("")
+    lines.append("Salting configuration")
+    lines.append("---------------------")
+    if salting_config:
+        for k, v in salting_config.items():
+            lines.append(f"{k:22}: {v}")
+    else:
+        lines.append("No explicit salting configuration provided.")
     lines.append("")
     lines.append("Input files")
     lines.append("-----------")

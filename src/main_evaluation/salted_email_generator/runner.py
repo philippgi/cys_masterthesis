@@ -40,7 +40,9 @@ def run_salted_email_generator(
 ):
     output_root = OUTPUT_ROOT if output_root is None else output_root
     dataset_split_dir = DATASET_SPLIT if dataset_split_dir is None else dataset_split_dir
-    salting_vocabulary = SALTING_VOCABULARY if salting_vocabulary is None else salting_vocabulary
+    salting_vocabulary = (
+        SALTING_VOCABULARY if salting_vocabulary is None else salting_vocabulary
+    )
 
     subject_max_insertions = (
         SALT_SUBJECT_MAX_INSERTIONS
@@ -58,11 +60,15 @@ def run_salted_email_generator(
         if insert_after_index is None
         else insert_after_index
     )
-    fragment_max_positions = (
-        SALT_FRAGMENT_MAX_POSITIONS
-        if fragment_max_positions is None
-        else fragment_max_positions
-    )
+
+    if salt_mode == "fragment":
+        fragment_max_positions = (
+            SALT_FRAGMENT_MAX_POSITIONS
+            if fragment_max_positions is None
+            else fragment_max_positions
+        )
+    else:
+        fragment_max_positions = None
 
     salted_email_output_dir = output_root / "salted_email_generator"
     salted_emails_dir = salted_email_output_dir / "emails"

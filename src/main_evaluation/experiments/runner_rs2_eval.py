@@ -31,149 +31,108 @@ from src.utils.console import print_step, print_section
 
 
 def run_rs2_eval():
-    """
-    Runs the full RS2 evaluation pipeline for all salting conditions.
-
-    RS2 means:
-    - Filter: Rspamd
-    - Mechanism: rules + Bayes
-    - Rule scope: extended local content
-    """
-    # Activate the experiment-specific Rspamd configuration first
-    activate_rspamd_config("rs2")
-
-    # Recreate the Rspamd stack so the active configuration is applied
-    restart_rspamd()
-
-    # Shared input dataset
     dataset_dir = BASE_DIR / "data/datasets/split"
-
-    # Experiment output root
     output_root = BASE_DIR / "data/output/RS2"
+
     strict_output = output_root / "strict"
     extended_output = output_root / "extended"
     broad_output = output_root / "broad"
 
+    experiments = [
+        {
+            "name": "STRICT",
+            "output_root": strict_output,
+            "experiment_id": "RS2_strict",
+            "salting_vocabulary": "strict",
+            "subject_max_insertions": 1,
+            "body_max_insertions": 3,
+            "salt_mode": "single",
+            "insert_after_index": 2,
+            "fragment_max_positions": None,
+        },
+        {
+            "name": "EXTENDED",
+            "output_root": extended_output,
+            "experiment_id": "RS2_extended",
+            "salting_vocabulary": "extended",
+            "subject_max_insertions": 1,
+            "body_max_insertions": 3,
+            "salt_mode": "single",
+            "insert_after_index": 2,
+            "fragment_max_positions": None,
+        },
+        {
+            "name": "BROAD",
+            "output_root": broad_output,
+            "experiment_id": "RS2_broad",
+            "salting_vocabulary": "broad",
+            "subject_max_insertions": 1,
+            "body_max_insertions": 3,
+            "salt_mode": "single",
+            "insert_after_index": 2,
+            "fragment_max_positions": None,
+        },
+    ]
+
     print_step("RS2 Evaluation")
+    activate_rspamd_config("rs2")
+    restart_rspamd()
 
-    # ---------------------------------------------------
-    # Trigger vocabulary
-    # ---------------------------------------------------
-    # Build the trigger vocabulary once for each experiment output root.
-    # This keeps the artifacts self-contained and reproducible.
     run_trigger_vocabulary(
         output_root=strict_output,
         dataset_split_dir=dataset_dir,
     )
-
     run_trigger_vocabulary(
         output_root=extended_output,
         dataset_split_dir=dataset_dir,
     )
-
     run_trigger_vocabulary(
         output_root=broad_output,
         dataset_split_dir=dataset_dir,
     )
 
-    # ===================================================
-    # STRICT experiment
-    # ===================================================
-    print_section("RS2 STRICT")
+    for exp in experiments:
+        print_section(f"RS2 {exp['name']}")
 
-    run_trigger_coverage(
-        output_root=strict_output,
-        dataset_split_dir=dataset_dir,
-        salting_vocabulary="strict",
-    )
+        run_trigger_coverage(
+            output_root=exp["output_root"],
+            dataset_split_dir=dataset_dir,
+            salting_vocabulary=exp["salting_vocabulary"],
+        )
 
-    run_salted_email_generator(
-        output_root=strict_output,
-        dataset_split_dir=dataset_dir,
-        salting_vocabulary="strict",
-    )
+        run_salted_email_generator(
+            output_root=exp["output_root"],
+            dataset_split_dir=dataset_dir,
+            salting_vocabulary=exp["salting_vocabulary"],
+            subject_max_insertions=exp["subject_max_insertions"],
+            body_max_insertions=exp["body_max_insertions"],
+            salt_mode=exp["salt_mode"],
+            insert_after_index=exp["insert_after_index"],
+            fragment_max_positions=exp["fragment_max_positions"],
+        )
 
-    run_rspamd_evaluation(
-        output_root=strict_output,
-        dataset_split_dir=dataset_dir,
-    )
+        run_rspamd_evaluation(
+            output_root=exp["output_root"],
+            dataset_split_dir=dataset_dir,
+        )
 
-    build_experiment_summary(
-        experiment_id="RS2_strict",
-        results_csv=strict_output / "rspamd_evaluation" / "rspamd_results.csv",
-        paired_csv=strict_output / "rspamd_evaluation" / "rspamd_results_paired.csv",
-        output_dir=strict_output,
-        filter_name="Rspamd",
-        mechanism="rules_plus_bayes",
-        rule_scope="extended_local_content",
-        salting_condition="strict",
-    )
-
-    # ===================================================
-    # EXTENDED experiment
-    # ===================================================
-    print_section("RS2 EXTENDED")
-
-    run_trigger_coverage(
-        output_root=extended_output,
-        dataset_split_dir=dataset_dir,
-        salting_vocabulary="extended",
-    )
-
-    run_salted_email_generator(
-        output_root=extended_output,
-        dataset_split_dir=dataset_dir,
-        salting_vocabulary="extended",
-    )
-
-    run_rspamd_evaluation(
-        output_root=extended_output,
-        dataset_split_dir=dataset_dir,
-    )
-
-    build_experiment_summary(
-        experiment_id="RS2_extended",
-        results_csv=extended_output / "rspamd_evaluation" / "rspamd_results.csv",
-        paired_csv=extended_output / "rspamd_evaluation" / "rspamd_results_paired.csv",
-        output_dir=extended_output,
-        filter_name="Rspamd",
-        mechanism="rules_plus_bayes",
-        rule_scope="extended_local_content",
-        salting_condition="extended",
-    )
-
-    # ===================================================
-    # BROAD experiment
-    # ===================================================
-    print_section("RS2 BROAD")
-
-    run_trigger_coverage(
-        output_root=broad_output,
-        dataset_split_dir=dataset_dir,
-        salting_vocabulary="broad",
-    )
-
-    run_salted_email_generator(
-        output_root=broad_output,
-        dataset_split_dir=dataset_dir,
-        salting_vocabulary="broad",
-    )
-
-    run_rspamd_evaluation(
-        output_root=broad_output,
-        dataset_split_dir=dataset_dir,
-    )
-
-    build_experiment_summary(
-        experiment_id="RS2_broad",
-        results_csv=broad_output / "rspamd_evaluation" / "rspamd_results.csv",
-        paired_csv=broad_output / "rspamd_evaluation" / "rspamd_results_paired.csv",
-        output_dir=broad_output,
-        filter_name="Rspamd",
-        mechanism="rules_plus_bayes",
-        rule_scope="extended_local_content",
-        salting_condition="broad",
-    )
+        build_experiment_summary(
+            experiment_id=exp["experiment_id"],
+            results_csv=exp["output_root"] / "rspamd_evaluation" / "rspamd_results.csv",
+            paired_csv=exp["output_root"] / "rspamd_evaluation" / "rspamd_results_paired.csv",
+            output_dir=exp["output_root"],
+            filter_name="Rspamd",
+            mechanism="rules_plus_bayes",
+            rule_scope="extended_local_content",
+            salting_condition=exp["salting_vocabulary"],
+            salting_config={
+                "subject_max_insertions": exp["subject_max_insertions"],
+                "body_max_insertions": exp["body_max_insertions"],
+                "salt_mode": exp["salt_mode"],
+                "insert_after_index": exp["insert_after_index"],
+                "fragment_max_positions": exp["fragment_max_positions"],
+            },
+        )
 
 
 if __name__ == "__main__":

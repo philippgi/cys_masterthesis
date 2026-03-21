@@ -1,3 +1,4 @@
+from src.email_pipeline.runner_email_pipeline import run_email_pipeline
 from src.main_evaluation.dataset_split.runner import run_dataset_split
 from src.pilot.spamassassin.bayes_based.runner_sa_pilot_bayes_discovery import run_sa_pilot_bayes_discovery
 from src.pilot.spamassassin.bayes_based.runner_sa_pilot_bayes_eval import run_sa_pilot_bayes_eval
@@ -12,6 +13,10 @@ def run_sa_pilot_bayes_discover():
 
 
 def main():
+    # ==========================================
+    # Email-Pipeline
+    # ==========================================
+    run_email_pipeline()
 
     # ==========================================
     # Pilot
@@ -26,7 +31,7 @@ def main():
     #run_sa_pilot_bayes_train()
     #run_sa_pilot_bayes_prepare()
     #run_sa_pilot_bayes_discovery()
-    run_sa_pilot_bayes_eval()
+    #run_sa_pilot_bayes_eval()
 
 
 

@@ -20,6 +20,7 @@ def run_rs1():
 
     strict_output = output_root / "strict"
     extended_output = output_root / "extended"
+    broad_output = output_root / "broad"
 
     experiments = [
         {
@@ -46,6 +47,18 @@ def run_rs1():
             "fragment_max_positions": None,
             "rule_scope": "strict_lexical",
         },
+        {
+            "name": "BROAD",
+            "output_root": broad_output,
+            "experiment_id": "RS1_broad",
+            "salting_vocabulary": "broad",
+            "subject_max_insertions": 1,
+            "body_max_insertions": 3,
+            "salt_mode": "single",
+            "insert_after_index": 2,
+            "fragment_max_positions": None,
+            "rule_scope": "strict_lexical",
+        },
     ]
 
     print_step("RS1 Experiment")
@@ -62,6 +75,10 @@ def run_rs1():
     )
     run_trigger_vocabulary(
         output_root=extended_output,
+        dataset_split_dir=dataset_dir,
+    )
+    run_trigger_vocabulary(
+        output_root=broad_output,
         dataset_split_dir=dataset_dir,
     )
 

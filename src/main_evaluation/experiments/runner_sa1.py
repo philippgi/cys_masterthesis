@@ -20,6 +20,7 @@ def run_sa1():
 
     strict_output = output_root / "strict"
     extended_output = output_root / "extended"
+    broad_output = output_root / "broad"
 
     experiments = [
         {
@@ -36,6 +37,13 @@ def run_sa1():
             "salting_vocabulary": "extended",
             "rule_scope": "strict_lexical",
         },
+        {
+            "name": "BROAD",
+            "output_root": broad_output,
+            "experiment_id": "SA1_broad",
+            "salting_vocabulary": "broad",
+            "rule_scope": "strict_lexical",
+        },
     ]
 
     print_step("SA1 Experiment")
@@ -48,6 +56,7 @@ def run_sa1():
 
     run_trigger_vocabulary(output_root=strict_output, dataset_split_dir=dataset_dir)
     run_trigger_vocabulary(output_root=extended_output, dataset_split_dir=dataset_dir)
+    run_trigger_vocabulary(output_root=broad_output, dataset_split_dir=dataset_dir)
 
     for exp in experiments:
         print_section(f"SA1 {exp['name']}")

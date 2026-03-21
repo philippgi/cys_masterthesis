@@ -18,6 +18,7 @@ def run_sa3_eval():
 
     strict_output = output_root / "strict"
     extended_output = output_root / "extended"
+    broad_output = output_root / "broad"
 
     experiments = [
         {
@@ -32,6 +33,12 @@ def run_sa3_eval():
             "experiment_id": "SA3_extended",
             "salting_vocabulary": "extended",
         },
+        {
+            "name": "BROAD",
+            "output_root": broad_output,
+            "experiment_id": "SA3_broad",
+            "salting_vocabulary": "broad",
+        },
     ]
 
     print_step("SA3 Evaluation")
@@ -41,6 +48,7 @@ def run_sa3_eval():
 
     run_trigger_vocabulary(output_root=strict_output, dataset_split_dir=dataset_dir)
     run_trigger_vocabulary(output_root=extended_output, dataset_split_dir=dataset_dir)
+    run_trigger_vocabulary(output_root=broad_output, dataset_split_dir=dataset_dir)
 
     for exp in experiments:
         print_section(f"SA3 {exp['name']}")

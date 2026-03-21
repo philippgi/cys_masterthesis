@@ -14,6 +14,7 @@ This step corresponds to the initial message representation on the receiver
 side, before any processing by MIME parsers or content-based filters.
 """
 
+
 def step1_read_raw_input(EML_PATH):
     """
     Reads the .eml file as raw bytes and prints different representations for inspection.

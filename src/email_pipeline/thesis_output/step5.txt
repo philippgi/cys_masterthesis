@@ -1,0 +1,5 @@
+=== STEP 5: UNICODE NORMALIZATION ===
+---- NORMALIZATION NFC ----
+'We detected unusual activity on your Pay\u200bpal account and have temporarily...'
+
+U+200B positions: [58]

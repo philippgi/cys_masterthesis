@@ -1,0 +1,6 @@
+=== STEP 1: RAW INPUT ===
+---- RAW BYTES (python representation) ----
+'... We detected unusual activity on your Pay\xe2\x80\x8bpal account and have temporarily ...'
+
+---- RAW BYTES (hex dump, full) ----
+['0x46', ... , '0x50', '0x61', '0x79', '0xe2', '0x80', '0x8b', '0x70', ... , '0xa']

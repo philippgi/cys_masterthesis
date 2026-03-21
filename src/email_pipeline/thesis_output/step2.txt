@@ -1,0 +1,12 @@
+=== STEP 2: MIME PARSING + PART SELECTION ===
+---- MIME STRUCTURE ----
+Not multipart.
+Content-Type: text/plain
+
+---- SELECTED PART ----
+Content-Type: text/plain
+Charset: utf-8
+Content-Transfer-Encoding: quoted-printable
+
+---- BODY PAYLOAD repr() (as stored) ----
+'... We detected unusual activity on your Pay\u200bpal account and have temporarily ...'

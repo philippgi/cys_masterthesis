@@ -1,0 +1,14 @@
+=== STEP 6: TOKENIZATION ===
+---- TOKENIZATION A: ASCII-only [0-9A-Za-z] ----
+'pay'
+'pal'
+'paypal'
+
+token count: 40
+
+---- TOKENIZATION B: Unicode \w+ ----
+'pay'
+'pal'
+'paypal'
+
+token count: 40

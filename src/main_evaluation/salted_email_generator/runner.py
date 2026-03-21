@@ -37,6 +37,7 @@ def run_salted_email_generator(
     salt_mode=None,
     insert_after_index=None,
     fragment_max_positions=None,
+    dataset_type: str = "test",
 ):
     output_root = OUTPUT_ROOT if output_root is None else output_root
     dataset_split_dir = DATASET_SPLIT if dataset_split_dir is None else dataset_split_dir
@@ -89,7 +90,7 @@ def run_salted_email_generator(
         output_root / "trigger_vocabulary" / "trigger_words_broad.json"
     )
 
-    test_spam_dir = dataset_split_dir / "test" / "spam"
+    spam_dir = dataset_split_dir / dataset_type / "spam"
 
     salted_email_output_dir.mkdir(parents=True, exist_ok=True)
     salted_emails_dir.mkdir(parents=True, exist_ok=True)
@@ -119,7 +120,7 @@ def run_salted_email_generator(
 
     for row in candidate_rows:
         message_id = row["message_id"]
-        email_path = test_spam_dir / message_id
+        email_path = spam_dir / message_id
 
         if not email_path.is_file():
             print_section(f"WARNING: source email not found: {message_id}")

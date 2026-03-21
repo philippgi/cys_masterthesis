@@ -18,6 +18,10 @@ from src.main_evaluation.experiments.runner_rs2_train import run_rs2_train
 from src.main_evaluation.experiments.runner_rs2_eval import run_rs2_eval
 from src.main_evaluation.experiments.runner_rs3_train import run_rs3_train
 from src.main_evaluation.experiments.runner_rs3_eval import run_rs3_eval
+from src.main_evaluation.experiments.runner_rs4_train import run_rs4_train
+from src.main_evaluation.experiments.runner_rs4_eval import run_rs4_eval
+
+
 
 
 def main():
@@ -64,7 +68,9 @@ def main():
     #run_rs2_train()
     #run_rs2_eval()
     #run_rs3_train()
-    run_rs3_eval()
+    #run_rs3_eval()
+    #run_rs4_train(0.25)
+    run_rs4_eval(0.25)
 
 
 if __name__ == "__main__":

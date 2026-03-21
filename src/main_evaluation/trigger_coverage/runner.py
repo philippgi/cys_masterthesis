@@ -46,7 +46,7 @@ def load_trigger_words(json_path):
     return {entry["token"] for entry in data["triggers"]}
 
 
-def run_trigger_coverage(output_root=None, dataset_split_dir=None, salting_vocabulary=None):
+def run_trigger_coverage(output_root=None, dataset_split_dir=None, salting_vocabulary=None, dataset_type: str = "test"):
     """
     Runs trigger coverage analysis for all spam emails in the test set.
     """
@@ -54,7 +54,7 @@ def run_trigger_coverage(output_root=None, dataset_split_dir=None, salting_vocab
     dataset_split_dir = DATASET_SPLIT if dataset_split_dir is None else dataset_split_dir
     salting_vocabulary = SALTING_VOCABULARY if salting_vocabulary is None else salting_vocabulary
 
-    test_spam_dir = dataset_split_dir / "test" / "spam"
+    spam_dir = dataset_split_dir / dataset_type / "spam"
     coverage_output_dir = output_root / "trigger_coverage"
     coverage_output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -71,9 +71,9 @@ def run_trigger_coverage(output_root=None, dataset_split_dir=None, salting_vocab
     print_step("Trigger Coverage")
 
     print_section("Input dataset")
-    print_kv("test_spam_dir", test_spam_dir)
+    print_kv(f"{dataset_type}_spam_dir", spam_dir)
 
-    for email_path in sorted(test_spam_dir.iterdir()):
+    for email_path in sorted(spam_dir.iterdir()):
         subject, body = extract_subject_and_text_plain(email_path)
 
         analysis = analyze_single_email(
@@ -107,7 +107,7 @@ def run_trigger_coverage(output_root=None, dataset_split_dir=None, salting_vocab
     )
 
     print_section("Coverage summary")
-    print_kv("spam_test_emails", len(results))
+    print_kv(f"spam_{dataset_type}_emails", len(results))
     print_kv(f"salted_candidates_{salting_vocabulary}", summary["n_spam_salted_candidates"])
     print_kv("excluded_spam", summary["n_spam_excluded"])
 

@@ -1,28 +1,13 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
-
-
-CODEPOINT_NAME = "U+200B"
 CODEPOINT_CHAR = "\u200b"
+CODEPOINT_NAME = "U+200B"
 
 
-@dataclass(frozen=True)
 class SABayesCase:
-    case_id: str
-    title: str
-    subject: str
-    body: str
-    from_addr: str = "pilot-test@example.test"
-    to_addr: str = "victim@example.test"
+    def __init__(self, case_id: str, title: str):
+        self.case_id = case_id
+        self.title = title
 
 
-SAB001 = SABayesCase(
-    case_id="SAB001",
-    title="Bayes signal reduction for verify-account-security vocabulary",
-    subject="Security verification notice",
-    body=(
-        "Your account security requires verification.\n"
-        "Verify your account password and login information now.\n"
-    ),
-)
+SAB001 = SABayesCase("SAB001", "Basic verification mail")

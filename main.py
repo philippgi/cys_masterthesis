@@ -1,9 +1,14 @@
 from src.main_evaluation.dataset_split.runner import run_dataset_split
+from src.pilot.spamassassin.bayes_based.runner_sa_pilot_bayes_discovery import run_sa_pilot_bayes_discovery
 from src.pilot.spamassassin.bayes_based.runner_sa_pilot_bayes_eval import run_sa_pilot_bayes_eval
 from src.pilot.spamassassin.bayes_based.runner_sa_pilot_bayes_prepare import run_sa_pilot_bayes_prepare
 from src.pilot.spamassassin.bayes_based.runner_sa_pilot_bayes_train import run_sa_pilot_bayes_train
 from src.pilot.spamassassin.rule_based.runner_sa_pilot_rules import run_sa_pilot_rules
 from src.utils.reset_output import reset_pipeline_output
+
+
+def run_sa_pilot_bayes_discover():
+    pass
 
 
 def main():
@@ -19,8 +24,9 @@ def main():
     ######## Bayes-Based
     #run_dataset_split()
     #run_sa_pilot_bayes_train()
-    run_sa_pilot_bayes_prepare()
-    #run_sa_pilot_bayes_eval()
+    #run_sa_pilot_bayes_prepare()
+    #run_sa_pilot_bayes_discovery()
+    run_sa_pilot_bayes_eval()
 
 
 

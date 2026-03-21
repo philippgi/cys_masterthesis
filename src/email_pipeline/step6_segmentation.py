@@ -22,6 +22,8 @@ Important note:
 
 import re
 
+from src.utils.console import print_section
+
 
 def step6_word_segmentation(text):
     """
@@ -42,7 +44,7 @@ def step6_word_segmentation(text):
 
     # Variant A: ASCII-only tokenization approximation.
     # This splits on any character outside [0-9A-Za-z], producing "word-like" tokens.
-    print("---- TOKENIZATION A: ASCII-only [0-9A-Za-z] ----")
+    print_section("TOKENIZATION A: ASCII-only [0-9A-Za-z]")
     tokens_ascii = re.split(r"[^0-9a-zA-Z]+", text_lower)
 
     # Remove empty tokens created by consecutive delimiters
@@ -54,7 +56,7 @@ def step6_word_segmentation(text):
 
     # Variant B: Unicode-aware tokenization approximation.
     # Pythons "re", \\w matches Unicode word characters by default.
-    print("\n---- TOKENIZATION B: Unicode \\w+ ----")
+    print_section("TOKENIZATION B: Unicode \\w+")
     tokens_unicode = re.findall(r"\w+", text_lower)
 
     for t in tokens_unicode:

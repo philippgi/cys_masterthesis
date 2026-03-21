@@ -24,6 +24,7 @@ from src.email_pipeline.step4_charset import step4_charset_decode
 from src.email_pipeline.step5_normalization import step5_normalize
 from src.email_pipeline.step6_segmentation import step6_word_segmentation
 from config import EML_PATH
+from src.utils.console import print_step
 
 
 def run_email_pipeline():
@@ -34,22 +35,22 @@ def run_email_pipeline():
     steps and logs intermediate representations to make representation changes observable.
     """
 
-    print("=== STEP 1: RAW INPUT ===")
+    print_step("STEP 1: RAW INPUT")
     raw_bytes = step1_read_raw_input(EML_PATH)
 
-    print("\n=== STEP 2: MIME PARSING + PART SELECTION ===")
+    print_step("STEP 2: MIME PARSING + PART SELECTION")
     msg, text_part = step2_parse_mime(raw_bytes)
 
-    print("\n=== STEP 3: CONTENT-TRANSFER DECODING (selected part) ===")
+    print_step("STEP 3: CONTENT-TRANSFER DECODING (selected part)")
     decoded_bytes = step3_transfer_decode_part(text_part)
 
-    print("\n=== STEP 4: CHARSET DECODING (declared charset) ===")
+    print_step("STEP 4: CHARSET DECODING (declared charset)")
     unicode_text = step4_charset_decode(text_part, decoded_bytes)
 
-    print("\n=== STEP 5: UNICODE NORMALIZATION ===")
+    print_step("STEP 5: UNICODE NORMALIZATION")
     normalized_text = step5_normalize(unicode_text, apply_form="NFC")
 
-    print("\n=== STEP 6: TOKENIZATION ===")
+    print_step("STEP 6: TOKENIZATION")
     _ = step6_word_segmentation(normalized_text)
 
 

@@ -18,6 +18,8 @@ This step operates entirely on Unicode text and does not modify the byte-level r
 
 import unicodedata
 
+from src.utils.console import print_section
+
 
 def step5_normalize(text, apply_form="NFC"):
     """
@@ -36,13 +38,14 @@ def step5_normalize(text, apply_form="NFC"):
     forms = ["NFC", "NFD", "NFKC", "NFKD"]
     results = {}
 
+    print_section("Show Normalization Forms")
+
     for form in forms:
         # Apply the selected Unicode normalization form.
         # Normalization operates on Unicode code points and does not remove
         # characters unless a canonical or compatibility mapping exists.
         norm = unicodedata.normalize(form, text)
         results[form] = norm
-
         print("\n---- NORMALIZATION", form, "----")
 
         # repr() is used to make invisible characters (e.g., U+200B) observable
@@ -58,5 +61,5 @@ def step5_normalize(text, apply_form="NFC"):
         return text
 
     # Select one normalized representation for further processing (Step 6)
-    print("\n---- SELECTED NORMALIZED OUTPUT (used for next step):", apply_form, "----")
+    print("SELECTED NORMALIZED OUTPUT (used for next step):", apply_form)
     return results[apply_form]

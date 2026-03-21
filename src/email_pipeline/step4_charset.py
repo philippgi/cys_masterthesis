@@ -15,6 +15,7 @@ Scope of this step:
 This step marks the transition from a byte-level representation to a
 character-level (Unicode) representation of the message body.
 """
+from src.utils.console import print_section
 
 
 def step4_charset_decode(text_part, decoded_bytes):
@@ -36,18 +37,18 @@ def step4_charset_decode(text_part, decoded_bytes):
     if charset is None:
         charset = "utf-8"
 
-    print("---- DECLARED CHARSET (effective) ----")
+    print_section("DECLARED CHARSET (effective)")
     print(charset)
 
     # Decode the byte stream into a Unicode string.
     # This operation reconstructs Unicode code points from the byte sequence.
     text = decoded_bytes.decode(charset)
 
-    print("\n---- UNICODE STRING (visible rendering) ----")
+    print_section("UNICODE STRING (visible rendering)")
     print(text)
 
     # Explicitly list Unicode code points to make invisible characters observable.
-    print("\n---- UNICODE CODEPOINTS (first 250 characters) ----")
+    print_section("UNICODE CODEPOINTS (first 250 characters)")
     codepoints = [hex(ord(c)) for c in text[:250]]
     print(codepoints)
 

@@ -13,6 +13,7 @@ byte sequence observable without modification.
 This step corresponds to the initial message representation on the receiver
 side, before any processing by MIME parsers or content-based filters.
 """
+from src.utils.console import print_section
 
 
 def step1_read_raw_input(EML_PATH):
@@ -28,11 +29,11 @@ def step1_read_raw_input(EML_PATH):
     f.close()
 
     # Python bytes representation (shows escape sequences explicitly)
-    print("---- RAW BYTES (python representation) ----")
+    print_section("RAW BYTES (python representation)")
     print(repr(raw_bytes))
 
     # Hexadecimal representation (byte-exact view)
-    print("\n---- RAW BYTES (hex dump) ----")
+    print_section("RAW BYTES (hex dump)")
     hex_list = []
     for b in raw_bytes:
         hex_list.append(hex(b))
@@ -60,10 +61,10 @@ def step1_read_raw_input(EML_PATH):
 
     window = raw_bytes[start:end]
 
-    print("\n---- RAW BYTES (body keyword window) ----")
+    print_section("RAW BYTES (body keyword window)")
     print(window)
 
-    print("\n---- HEX BYTES (body keyword window) ----")
+    print_section("HEX BYTES (body keyword window)")
     window_hex = []
     for b in window:
         window_hex.append(hex(b))

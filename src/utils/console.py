@@ -14,7 +14,7 @@ def print_step(title: str) -> None:
 
 
 def print_section(title: str) -> None:
-    print(f"{Fore.YELLOW}{title}{Style.RESET_ALL}")
+    print("\n"f"{Fore.YELLOW}{title}{Style.RESET_ALL}")
 
 
 def print_kv(key: str, value: Any) -> None:

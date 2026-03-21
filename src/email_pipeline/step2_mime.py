@@ -23,6 +23,8 @@ Implementation note:
 from email import policy
 from email.parser import BytesParser
 
+from src.utils.console import print_section
+
 
 def step2_parse_mime(raw_bytes):
     """
@@ -39,12 +41,12 @@ def step2_parse_mime(raw_bytes):
     msg = BytesParser(policy=policy.compat32).parsebytes(raw_bytes)
 
     # Top-level headers as interpreted by the parser
-    print("---- HEADERS (top-level) ----")
+    print_section("HEADERS (top-level)")
     for key, value in msg.items():
         print(f"{key}: {value}")
 
     # MIME structure: single-part vs multipart, and part enumeration
-    print("\n---- MIME STRUCTURE ----")
+    print_section("MIME STRUCTURE")
     if msg.is_multipart():
         print("Multipart email:")
         for part in msg.walk():
@@ -75,7 +77,7 @@ def step2_parse_mime(raw_bytes):
         return msg, None
 
     # Log metadata of the selected part (relevant for Steps 3-4)
-    print("\n---- SELECTED PART ----")
+    print_section("SELECTED PART")
     print("Content-Type:", text_part.get_content_type())
     print("Charset:", text_part.get_content_charset())
     print("Content-Transfer-Encoding:", text_part.get("Content-Transfer-Encoding"))
@@ -84,10 +86,10 @@ def step2_parse_mime(raw_bytes):
     # Using decode=False, because decoding is performed in Step 3
     payload_stored = text_part.get_payload(decode=False)
 
-    print("\n---- BODY PAYLOAD (as stored, CTE not decoded) ----")
+    print_section("BODY PAYLOAD (as stored, CTE not decoded)")
     print(payload_stored)
 
-    print("\n---- BODY PAYLOAD repr() (as stored) ----")
+    print_section("BODY PAYLOAD repr() (as stored)")
     print(repr(payload_stored))
 
     return msg, text_part

@@ -16,6 +16,7 @@ The resulting byte sequence represents the message body after MIME
 Content-Transfer-Encoding has been removed, but before any character
 set decoding is applied.
 """
+from src.utils.console import print_section
 
 
 def step3_transfer_decode_part(text_part):
@@ -36,11 +37,11 @@ def step3_transfer_decode_part(text_part):
         return None
 
     # Python bytes representation of the decoded payload
-    print("---- DECODED BYTES (python repr) ----")
+    print_section("DECODED BYTES (python repr)")
     print(repr(decoded_bytes))
 
     # Hexadecimal representation (byte-exact view, truncated for readability)
-    print("\n---- DECODED BYTES (hex, first 200 bytes) ----")
+    print_section("DECODED BYTES (hex, first 200 bytes)")
     hex_dump = [hex(b) for b in decoded_bytes[:200]]
     print(hex_dump)
 

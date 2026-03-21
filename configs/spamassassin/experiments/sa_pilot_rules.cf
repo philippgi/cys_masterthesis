@@ -1,0 +1,12 @@
+# local rules only, without Bayes
+use_bayes 0 
+bayes_auto_learn 0
+
+skip_rbl_checks 1
+dns_available no
+use_razor2 0
+use_pyzor 0
+use_dcc 0
+
+score AWL 0
+score TXREP 0

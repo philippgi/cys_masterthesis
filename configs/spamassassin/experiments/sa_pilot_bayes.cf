@@ -1,0 +1,17 @@
+use_bayes 1
+bayes_auto_learn 0
+bayes_token_sources header visible
+
+skip_rbl_checks 1
+dns_available no
+use_razor2 0
+use_pyzor 0
+use_dcc 0
+
+score AWL 0
+score TXREP 0
+
+add_header all Spammy _SPAMMYTOKENS(20,short)_
+add_header all Hammy _HAMMYTOKENS(20,short)_
+add_header all Spammy_Details _SPAMMYTOKENS(20,compact)_
+add_header all Hammy_Details _HAMMYTOKENS(20,compact)_

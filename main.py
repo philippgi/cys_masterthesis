@@ -60,11 +60,11 @@ def main():
     # ==========================================
 
     # Experiments (uses parameter in module)
-    #run_sa1()
+    run_sa1()
     #run_sa2()
     #run_sa3_train()
     #run_sa3_eval()
-    run_rs1()
+    #run_rs1()
     #run_rs2_train()
     #run_rs2_eval()
     #run_rs3_train()

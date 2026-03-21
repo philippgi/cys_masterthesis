@@ -64,13 +64,13 @@ def main():
     #run_sa2()
     #run_sa3_train()
     #run_sa3_eval()
-    #run_rs1()
+    run_rs1()
     #run_rs2_train()
     #run_rs2_eval()
     #run_rs3_train()
     #run_rs3_eval()
     #run_rs4_train(0.25)
-    run_rs4_eval(0.25)
+    #run_rs4_eval(0.25)
 
 
 if __name__ == "__main__":

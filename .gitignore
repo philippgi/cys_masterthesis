@@ -28,6 +28,7 @@ docker/logs/
 # Large generated data
 data/output/
 data/datasets/
+configs/rspamd/active/
 
 # Optional: if you generate CSV results
 *.csv

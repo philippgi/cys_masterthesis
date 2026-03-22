@@ -100,10 +100,10 @@ BAYES_EXTENDED_TRIGGER_WORDS_PATH = OUTPUT_ROOT / "SA3" / "extended" / "trigger_
 # =============================
 # Config for pilot bayes-based
 # =============================
-PILOT_SALT_SUBJECT_MAX_INSERTIONS = 1     # Max 1 token per subject
-PILOT_SALT_BODY_MAX_INSERTIONS = 20       # Max 3 token per body
+PILOT_SALT_SUBJECT_MAX_INSERTIONS = 10     # Max 1 token per subject
+PILOT_SALT_BODY_MAX_INSERTIONS = 40       # Max 3 token per body
 
-PILOT_SALT_MODE = "fragment"              # "single" or "fragment"
+PILOT_SALT_MODE = "single"              # "single" or "fragment"
 PILOT_SALT_INSERT_AFTER_INDEX = 2         # Index for insertion in "single mode"
 PILOT_SALT_FRAGMENT_MAX_POSITIONS = None  # None = fragment across all possible positions in the token in "fragment mode"
 

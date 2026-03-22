@@ -21,7 +21,6 @@ from src.utils.console import print_step, print_section, print_kv, print_end
 OUTPUT_ROOT = BASE_DIR / "data/output/pilot/rspamd/bayes"
 TEST_UNSALTED_DIR = OUTPUT_ROOT / "messages" / "unsalted"
 TEST_SALTED_DIR = OUTPUT_ROOT / "messages" / "salted"
-DISCOVERY_DIR = OUTPUT_ROOT / "discovery"
 RESULTS_DIR = OUTPUT_ROOT / "results"
 
 
@@ -46,31 +45,9 @@ def _tokenize_text(text: str) -> list[str]:
     return re.findall(r"[A-Za-z0-9_]+", text or "")
 
 
-def _unique_candidate_tokens(case) -> tuple[list[str], list[str]]:
-    subject_tokens = [t for t in _tokenize_text(case.subject) if len(t) >= 4]
-    body_tokens = [t for t in _tokenize_text(case.body) if len(t) >= 4]
-    return list(dict.fromkeys(subject_tokens)), list(dict.fromkeys(body_tokens))
-
-
-def _build_salted_variant(
-    case,
-    target_tokens_subject: tuple[str, ...],
-    target_tokens_body: tuple[str, ...],
-    suffix: str,
-) -> tuple[Path, dict]:
-    _, salted_bytes, counts = create_paired_bytes(
-        subject=case.subject,
-        body=case.body,
-        target_tokens_subject=target_tokens_subject,
-        target_tokens_body=target_tokens_body,
-        codepoint=CODEPOINT_CHAR,
-        from_addr="pilot@example.test",
-        to_addr="victim@example.test",
-    )
-
-    salted_path = TEST_SALTED_DIR / f"{case.case_id}_{suffix}.eml"
-    write_message(salted_path, salted_bytes)
-    return salted_path, counts
+def _unique_tokens(text: str) -> list[str]:
+    tokens = [token for token in _tokenize_text(text) if len(token) >= 4]
+    return list(dict.fromkeys(tokens))
 
 
 def _scan_summary(email_path: Path) -> dict:
@@ -110,6 +87,16 @@ def run_rspamd_pilot_bayes_eval() -> None:
     print_kv("case_id", case.case_id)
     print_kv("title", case.title)
 
+    subject_tokens = []
+    body_tokens = _unique_tokens(case.body)
+
+    print_section("Salting targets")
+    print_kv("subject_tokens", subject_tokens)
+    print_kv("body_tokens", body_tokens)
+    print_kv("salt_mode", PILOT_SALT_MODE)
+    print_kv("insert_after_index", PILOT_SALT_INSERT_AFTER_INDEX)
+    print_kv("fragment_max_positions", PILOT_SALT_FRAGMENT_MAX_POSITIONS)
+
     print_section("Baseline scan")
     baseline = _scan_summary(unsalted_path)
     print_kv("score", baseline["score"])
@@ -118,124 +105,26 @@ def run_rspamd_pilot_bayes_eval() -> None:
     print_kv("bayes_symbol", baseline["bayes_symbol"])
     print_kv("bayes_score", baseline["bayes_score"])
 
-    if not baseline["has_bayes"]:
-        raise RuntimeError(
-            "Pilot mail does not trigger any BAYES_* symbol. "
-            "Train Bayes first or choose a different spam mail."
-        )
+    salted_path = TEST_SALTED_DIR / f"{case.case_id}_salted_all_tokens.eml"
 
-    subject_candidates, body_candidates = _unique_candidate_tokens(case)
-
-    print_section("Discovery candidates")
-    print_kv("subject_candidates", subject_candidates)
-    print_kv("body_candidates", body_candidates)
-
-    discovery_rows: list[dict] = []
-
-    for token in subject_candidates:
-        salted_path, counts = _build_salted_variant(
-            case=case,
-            target_tokens_subject=(token,),
-            target_tokens_body=(),
-            suffix=f"discovery_subject_{token}",
-        )
-        salted = _scan_summary(salted_path)
-
-        discovery_rows.append(
-            {
-                "case_id": case.case_id,
-                "surface": "subject",
-                "token": token,
-                "n_insert_subject": counts["n_insert_subject"],
-                "n_insert_body": counts["n_insert_body"],
-                "unsalted_score": baseline["score"],
-                "salted_score": salted["score"],
-                "delta_score": _delta(baseline["score"], salted["score"]),
-                "unsalted_bayes_symbol": baseline["bayes_symbol"],
-                "salted_bayes_symbol": salted["bayes_symbol"],
-                "unsalted_bayes_score": baseline["bayes_score"],
-                "salted_bayes_score": salted["bayes_score"],
-                "delta_bayes_score": _delta(baseline["bayes_score"], salted["bayes_score"]),
-                "salted_has_bayes": salted["has_bayes"],
-                "salted_action": salted["action"],
-                "salted_spam_flag": salted["spam_flag"],
-            }
-        )
-
-    for token in body_candidates:
-        salted_path, counts = _build_salted_variant(
-            case=case,
-            target_tokens_subject=(),
-            target_tokens_body=(token,),
-            suffix=f"discovery_body_{token}",
-        )
-        salted = _scan_summary(salted_path)
-
-        discovery_rows.append(
-            {
-                "case_id": case.case_id,
-                "surface": "body",
-                "token": token,
-                "n_insert_subject": counts["n_insert_subject"],
-                "n_insert_body": counts["n_insert_body"],
-                "unsalted_score": baseline["score"],
-                "salted_score": salted["score"],
-                "delta_score": _delta(baseline["score"], salted["score"]),
-                "unsalted_bayes_symbol": baseline["bayes_symbol"],
-                "salted_bayes_symbol": salted["bayes_symbol"],
-                "unsalted_bayes_score": baseline["bayes_score"],
-                "salted_bayes_score": salted["bayes_score"],
-                "delta_bayes_score": _delta(baseline["bayes_score"], salted["bayes_score"]),
-                "salted_has_bayes": salted["has_bayes"],
-                "salted_action": salted["action"],
-                "salted_spam_flag": salted["spam_flag"],
-            }
-        )
-
-    discovery_rows = sorted(
-        discovery_rows,
-        key=lambda row: (
-            row["delta_bayes_score"] is None,
-            row["delta_bayes_score"] if row["delta_bayes_score"] is not None else 9999,
-            row["delta_score"] if row["delta_score"] is not None else 9999,
-        )
+    _, salted_bytes, counts = create_paired_bytes(
+        subject=case.subject,
+        body=case.body,
+        target_tokens_subject=tuple(subject_tokens),
+        target_tokens_body=tuple(body_tokens),
+        codepoint=CODEPOINT_CHAR,
+        from_addr="pilot@example.test",
+        to_addr="victim@example.test",
     )
+    write_message(salted_path, salted_bytes)
 
-    discovery_csv = DISCOVERY_DIR / f"{case.case_id}_bayes_token_impact.csv"
-    discovery_json = DISCOVERY_DIR / f"{case.case_id}_bayes_token_impact_summary.json"
-    _write_csv(discovery_csv, discovery_rows)
-
-    top_rows = [row for row in discovery_rows if row["delta_bayes_score"] is not None][:5]
-
-    target_tokens_subject = tuple(row["token"] for row in top_rows if row["surface"] == "subject")
-    target_tokens_body = tuple(row["token"] for row in top_rows if row["surface"] == "body")
-
-    discovery_summary = {
-        "case_id": case.case_id,
-        "title": case.title,
-        "baseline": baseline,
-        "salt_mode": PILOT_SALT_MODE,
-        "insert_after_index": PILOT_SALT_INSERT_AFTER_INDEX,
-        "fragment_max_positions": PILOT_SALT_FRAGMENT_MAX_POSITIONS,
-        "top_rows": top_rows,
-        "selected_tokens_subject": list(target_tokens_subject),
-        "selected_tokens_body": list(target_tokens_body),
-    }
-    _write_json(discovery_json, discovery_summary)
-
-    print_section("Discovery summary")
-    print_kv("discovery_csv", discovery_csv)
-    print_kv("selected_tokens_subject", list(target_tokens_subject))
-    print_kv("selected_tokens_body", list(target_tokens_body))
-
-    print_section("Final eval")
-    final_salted_path, final_counts = _build_salted_variant(
-        case=case,
-        target_tokens_subject=target_tokens_subject,
-        target_tokens_body=target_tokens_body,
-        suffix="salted_final",
-    )
-    final_salted = _scan_summary(final_salted_path)
+    print_section("Salted scan")
+    salted = _scan_summary(salted_path)
+    print_kv("score", salted["score"])
+    print_kv("action", salted["action"])
+    print_kv("has_bayes", salted["has_bayes"])
+    print_kv("bayes_symbol", salted["bayes_symbol"])
+    print_kv("bayes_score", salted["bayes_score"])
 
     results_csv = RESULTS_DIR / "rspamd_pilot_bayes_results.csv"
     results_json = RESULTS_DIR / "rspamd_pilot_bayes_summary.json"
@@ -261,18 +150,18 @@ def run_rspamd_pilot_bayes_eval() -> None:
         {
             "case_id": case.case_id,
             "variant": "salted",
-            "score": final_salted["score"],
-            "threshold": final_salted["threshold"],
-            "action": final_salted["action"],
-            "spam_flag": final_salted["spam_flag"],
-            "has_bayes": final_salted["has_bayes"],
-            "bayes_symbol": final_salted["bayes_symbol"],
-            "bayes_score": final_salted["bayes_score"],
-            "n_insert_subject": final_counts["n_insert_subject"],
-            "n_insert_body": final_counts["n_insert_body"],
-            "target_tokens_subject": "|".join(target_tokens_subject),
-            "target_tokens_body": "|".join(target_tokens_body),
-            "message_path": str(final_salted_path),
+            "score": salted["score"],
+            "threshold": salted["threshold"],
+            "action": salted["action"],
+            "spam_flag": salted["spam_flag"],
+            "has_bayes": salted["has_bayes"],
+            "bayes_symbol": salted["bayes_symbol"],
+            "bayes_score": salted["bayes_score"],
+            "n_insert_subject": counts["n_insert_subject"],
+            "n_insert_body": counts["n_insert_body"],
+            "target_tokens_subject": "|".join(subject_tokens),
+            "target_tokens_body": "|".join(body_tokens),
+            "message_path": str(salted_path),
         },
     ]
     _write_csv(results_csv, rows)
@@ -283,57 +172,43 @@ def run_rspamd_pilot_bayes_eval() -> None:
         "salt_mode": PILOT_SALT_MODE,
         "insert_after_index": PILOT_SALT_INSERT_AFTER_INDEX,
         "fragment_max_positions": PILOT_SALT_FRAGMENT_MAX_POSITIONS,
-        "selected_tokens_subject": list(target_tokens_subject),
-        "selected_tokens_body": list(target_tokens_body),
+        "selected_tokens_subject": subject_tokens,
+        "selected_tokens_body": body_tokens,
         "unsalted_score": baseline["score"],
-        "salted_score": final_salted["score"],
-        "delta_score": _delta(baseline["score"], final_salted["score"]),
+        "salted_score": salted["score"],
+        "delta_score": _delta(baseline["score"], salted["score"]),
         "unsalted_bayes_symbol": baseline["bayes_symbol"],
-        "salted_bayes_symbol": final_salted["bayes_symbol"],
+        "salted_bayes_symbol": salted["bayes_symbol"],
         "unsalted_bayes_score": baseline["bayes_score"],
-        "salted_bayes_score": final_salted["bayes_score"],
-        "delta_bayes_score": _delta(baseline["bayes_score"], final_salted["bayes_score"]),
+        "salted_bayes_score": salted["bayes_score"],
+        "delta_bayes_score": _delta(baseline["bayes_score"], salted["bayes_score"]),
         "unsalted_action": baseline["action"],
-        "salted_action": final_salted["action"],
+        "salted_action": salted["action"],
         "unsalted_spam_flag": baseline["spam_flag"],
-        "salted_spam_flag": final_salted["spam_flag"],
+        "salted_spam_flag": salted["spam_flag"],
     }
     _write_json(results_json, summary)
 
     manifest = {
         "case_id": case.case_id,
         "codepoint": CODEPOINT_NAME,
-        "target_tokens_subject": list(target_tokens_subject),
-        "target_tokens_body": list(target_tokens_body),
+        "target_tokens_subject": subject_tokens,
+        "target_tokens_body": body_tokens,
         "salt_mode": PILOT_SALT_MODE,
         "insert_after_index": PILOT_SALT_INSERT_AFTER_INDEX,
         "fragment_max_positions": PILOT_SALT_FRAGMENT_MAX_POSITIONS,
-        "n_insert_subject": final_counts["n_insert_subject"],
-        "n_insert_body": final_counts["n_insert_body"],
+        "n_insert_subject": counts["n_insert_subject"],
+        "n_insert_body": counts["n_insert_body"],
     }
     _write_json(manifest_json, manifest)
 
-    print_section("Unsalted")
-    print_kv("score", baseline["score"])
-    print_kv("action", baseline["action"])
-    print_kv("bayes_symbol", baseline["bayes_symbol"])
-    print_kv("bayes_score", baseline["bayes_score"])
-
-    print_section("Salted")
-    print_kv("score", final_salted["score"])
-    print_kv("action", final_salted["action"])
-    print_kv("bayes_symbol", final_salted["bayes_symbol"])
-    print_kv("bayes_score", final_salted["bayes_score"])
-
-    print_section("Salting")
-    print_kv("target_tokens_subject", list(target_tokens_subject))
-    print_kv("target_tokens_body", list(target_tokens_body))
-    print_kv("n_insert_subject", final_counts["n_insert_subject"])
-    print_kv("n_insert_body", final_counts["n_insert_body"])
+    print_section("Comparison")
+    print_kv("delta_score", _delta(baseline["score"], salted["score"]))
+    print_kv("delta_bayes_score", _delta(baseline["bayes_score"], salted["bayes_score"]))
+    print_kv("spam_flag_unsalted", baseline["spam_flag"])
+    print_kv("spam_flag_salted", salted["spam_flag"])
 
     print_section("Output files")
-    print_kv("discovery_csv", discovery_csv)
-    print_kv("discovery_json", discovery_json)
     print_kv("results_csv", results_csv)
     print_kv("results_json", results_json)
     print_kv("manifest_json", manifest_json)

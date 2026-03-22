@@ -15,7 +15,7 @@ Workflow:
 7. Build the experiment summary for all salting conditions
 
 The evaluation itself is implemented in:
-    src/main_evaluation/rspamd_evaluation/runner.py
+    src/main_evaluation/rspamd_evaluation/neural_runner_rs3.py
 """
 
 from config import BASE_DIR

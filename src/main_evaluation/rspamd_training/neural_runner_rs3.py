@@ -108,7 +108,7 @@ def _learn_directory(directory: Path, ann_class: str):
             )
 
 
-def run_rspamd_training():
+def run_rspamd_neural_training():
     """
     RS3 training runner.
 
@@ -149,4 +149,4 @@ def run_rspamd_training():
 
 
 if __name__ == "__main__":
-    run_rspamd_training()
+    run_rspamd_neural_training()

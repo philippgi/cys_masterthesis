@@ -1,5 +1,14 @@
 from src.email_pipeline.runner_email_pipeline import run_email_pipeline
 from src.main_evaluation.dataset_split.runner import run_dataset_split
+from src.main_evaluation.experiments.runner_rs2_eval import run_rs2_eval
+from src.main_evaluation.experiments.runner_rs2_train import run_rs2_train
+from src.main_evaluation.experiments.runner_rs3_train import run_rs3_train
+from src.pilot.rspamd.bayes_based.runner_rspamd_pilot_bayes_eval import run_rspamd_pilot_bayes_eval
+
+from src.pilot.rspamd.bayes_based.runner_rspamd_pilot_bayes_prepare import run_rspamd_pilot_bayes_prepare
+from src.pilot.rspamd.bayes_based.runner_rspamd_pilot_bayes_train import run_rspamd_pilot_bayes_train
+from src.pilot.rspamd.rule_based.rule_discovery import run_rspamd_rule_discovery
+from src.pilot.rspamd.rule_based.runner_rspamd_pilot_rules import run_rspamd_pilot_rules
 from src.pilot.spamassassin.bayes_based.runner_sa_pilot_bayes_discovery import run_sa_pilot_bayes_discovery
 from src.pilot.spamassassin.bayes_based.runner_sa_pilot_bayes_eval import run_sa_pilot_bayes_eval
 from src.pilot.spamassassin.bayes_based.runner_sa_pilot_bayes_prepare import run_sa_pilot_bayes_prepare
@@ -8,18 +17,14 @@ from src.pilot.spamassassin.rule_based.runner_sa_pilot_rules import run_sa_pilot
 from src.utils.reset_output import reset_pipeline_output
 
 
-def run_sa_pilot_bayes_discover():
-    pass
-
-
 def main():
     # ==========================================
     # Email-Pipeline
     # ==========================================
-    run_email_pipeline()
+    #run_email_pipeline()
 
     # ==========================================
-    # Pilot
+    # Pilot Spamassassin
     # ==========================================
     ######## Rule-Based
     #run_sa_rule_discovery()
@@ -33,13 +38,17 @@ def main():
     #run_sa_pilot_bayes_discovery()
     #run_sa_pilot_bayes_eval()
 
+    # ==========================================
+    # Pilot Rspamd
+    # ==========================================
+    ######## Rule-Based
+    #run_rspamd_rule_discovery()
+    #run_rspamd_pilot_rules()
 
-
-
-
-
-
-
+    ######## Bayes-Based
+    #run_rspamd_pilot_bayes_train()
+    #run_rspamd_pilot_bayes_prepare()
+    run_rspamd_pilot_bayes_eval()
 
     # ==========================================
     # Utilities HANDLE WITH CARE :D

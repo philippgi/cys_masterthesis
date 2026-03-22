@@ -8,7 +8,6 @@ import sys
 import random
 
 from tqdm import tqdm
-
 from config import BASE_DIR
 
 from src.main_evaluation.dataset_split.runner import run_dataset_split
@@ -107,15 +106,7 @@ def _learn_directory(files, ann_class: str):
 # MAIN RS4 TRAINING
 # =============================
 
-def run_rspamd_training_rs4(train_salt_ratio: float = 0.25):
-    """
-    RS4 training:
-    Rules + Neural + Adversarial retraining
-
-    train_salt_ratio:
-        Fraction of train/spam selected for salting attempt
-    """
-
+def run_rspamd_neural_training_rs4(train_salt_ratio: float = 0.25):
     print_step(f"RS4 Training (ratio={train_salt_ratio})")
 
     # 👉 reproducibility
@@ -185,24 +176,17 @@ def run_rspamd_training_rs4(train_salt_ratio: float = 0.25):
     )
 
     salted_dir = rs4_output / "salted_email_generator" / "emails"
-    salted_files = [p for p in salted_dir.iterdir() if p.is_file()]
+    salted_files = sorted(p for p in salted_dir.iterdir() if p.is_file())
 
     sampled_ids = {p.stem for p in sampled}
 
-    salted_selected = []
+    salted_map = {}
     for f in salted_files:
-        salted_id = f.name.split("__")[0]  # z.B. 00041
+        salted_id = f.name.split("__")[0]
+        if salted_id in sampled_ids and salted_id not in salted_map:
+            salted_map[salted_id] = f
 
-        if salted_id in sampled_ids:
-            salted_map = {}
-
-            for f in salted_files:
-                salted_id = f.name.split("__")[0]
-
-                if salted_id in sampled_ids and salted_id not in salted_map:
-                    salted_map[salted_id] = f
-
-            salted_selected = list(salted_map.values())
+    salted_selected = list(salted_map.values())
 
     print_section("Salting result")
     print_kv("Salted generated", len(salted_files))

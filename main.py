@@ -7,6 +7,9 @@ from src.pilot.rspamd.bayes_based.runner_rspamd_pilot_bayes_eval import run_rspa
 
 from src.pilot.rspamd.bayes_based.runner_rspamd_pilot_bayes_prepare import run_rspamd_pilot_bayes_prepare
 from src.pilot.rspamd.bayes_based.runner_rspamd_pilot_bayes_train import run_rspamd_pilot_bayes_train
+from src.pilot.rspamd.neural_based.runner_rspamd_pilot_neural_eval import run_rspamd_pilot_neural_eval
+from src.pilot.rspamd.neural_based.runner_rspamd_pilot_neural_prepare import run_rspamd_pilot_neural_prepare
+from src.pilot.rspamd.neural_based.runner_rspamd_pilot_neural_train import run_rspamd_pilot_neural_train
 from src.pilot.rspamd.rule_based.rule_discovery import run_rspamd_rule_discovery
 from src.pilot.rspamd.rule_based.runner_rspamd_pilot_rules import run_rspamd_pilot_rules
 from src.pilot.spamassassin.bayes_based.runner_sa_pilot_bayes_discovery import run_sa_pilot_bayes_discovery
@@ -38,6 +41,11 @@ def main():
     #run_sa_pilot_bayes_discovery()
     #run_sa_pilot_bayes_eval()
 
+    ######## Neural-Based
+    #run_rspamd_pilot_neural_prepare()
+    #run_rspamd_pilot_neural_train()
+    run_rspamd_pilot_neural_eval()
+
     # ==========================================
     # Pilot Rspamd
     # ==========================================
@@ -48,7 +56,7 @@ def main():
     ######## Bayes-Based
     #run_rspamd_pilot_bayes_train()
     #run_rspamd_pilot_bayes_prepare()
-    run_rspamd_pilot_bayes_eval()
+    #run_rspamd_pilot_bayes_eval()
 
     # ==========================================
     # Utilities HANDLE WITH CARE :D

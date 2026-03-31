@@ -29,7 +29,7 @@ RSPAMD_PORT = 11333
 RSPAMD_TIMEOUT = 30
 
 # =============================
-# 1) dataset_split
+# Config for dataset_split
 # =============================
 
 DATASET_ROOT = BASE_DIR / "data/datasets/spamassassin_corpus"
@@ -96,6 +96,8 @@ BAYES_TOKEN_VOCAB_THRESHOLD = 0.90
 
 BAYES_STRICT_TRIGGER_WORDS_PATH = OUTPUT_ROOT / "SA3" / "strict" / "trigger_vocabulary" / "trigger_words_strict.json"
 BAYES_EXTENDED_TRIGGER_WORDS_PATH = OUTPUT_ROOT / "SA3" / "extended" / "trigger_vocabulary" / "trigger_words_extended.json"
+BAYES_BROAD_TRIGGER_WORDS_PATH = OUTPUT_ROOT / "SA3" / "broad" / "trigger_vocabulary" / "trigger_words_broad.json"
+
 
 # =============================
 # Config for pilot bayes-based

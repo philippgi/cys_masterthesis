@@ -19,6 +19,7 @@ from src.pilot.spamassassin.bayes_based.runner_sa_pilot_bayes_discovery import r
 from src.pilot.spamassassin.bayes_based.runner_sa_pilot_bayes_eval import run_sa_pilot_bayes_eval
 from src.pilot.spamassassin.bayes_based.runner_sa_pilot_bayes_prepare import run_sa_pilot_bayes_prepare
 from src.pilot.spamassassin.bayes_based.runner_sa_pilot_bayes_train import run_sa_pilot_bayes_train
+from src.pilot.spamassassin.rule_based.rule_discovery import run_sa_rule_discovery
 from src.pilot.spamassassin.rule_based.runner_sa_pilot_rules import run_sa_pilot_rules
 from src.utils.reset_output import reset_pipeline_output
 

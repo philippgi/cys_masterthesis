@@ -25,9 +25,9 @@ def _run_in_container(command: str) -> str:
         ["docker", "exec", SPAMASSASSIN_CONTAINER, "sh", "-lc", command],
         check=True,
         capture_output=True,
-        text=True,
+        text=False,
     )
-    return result.stdout
+    return result.stdout.decode("utf-8", errors="replace")
 
 
 def _find_rule_files() -> list[str]:
@@ -45,7 +45,11 @@ for d in $dirs; do
 done | sort -u
 """
     output = _run_in_container(cmd)
-    files = [line.strip() for line in output.splitlines() if line.strip().endswith(".cf")]
+    files = [
+        line.strip()
+        for line in output.splitlines()
+        if line.strip().endswith((".cf", ".pre"))
+    ]
     return files
 
 
@@ -124,8 +128,14 @@ def _parse_rule_files(rule_files: list[str]) -> list[dict]:
 
     for file_path in rule_files:
         try:
-            content = _read_rule_file(file_path)
-        except subprocess.CalledProcessError:
+            content = _read_rule_file(file_path) or ""
+        except subprocess.CalledProcessError as exc:
+            print_kv("skip_file", file_path)
+            print_kv("reason", f"docker exec failed: {exc}")
+            continue
+        except Exception as exc:
+            print_kv("skip_file", file_path)
+            print_kv("reason", f"unexpected read error: {exc}")
             continue
 
         for line_number, raw_line in enumerate(content.splitlines(), start=1):
@@ -194,10 +204,12 @@ def _parse_rule_files(rule_files: list[str]) -> list[dict]:
 
 def _write_csv(path: Path, rows: list[dict]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    if not rows:
-        return
 
     with open(path, "w", encoding="utf-8", newline="") as f:
+        if not rows:
+            f.write("")
+            return
+
         writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()), delimiter=";")
         writer.writeheader()
         writer.writerows(rows)

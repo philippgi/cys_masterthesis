@@ -1,3 +1,60 @@
+"""
+SpamAssassin pilot - rule-based evaluation.
+
+This module executes the rule-based pilot for SpamAssassin by evaluating
+paired email samples (unsalted vs. salted) against predefined rule cases.
+
+Purpose
+-------
+The goal of this pilot is to demonstrate that specific SpamAssassin rules
+can be selectively broken (or preserved) by inserting zero-width Unicode
+characters (e.g. U+200B) into targeted tokens.
+
+Each test case represents a controlled scenario where:
+- a specific rule is expected to trigger
+- selected tokens are modified via salting
+- the impact on rule triggering is observed
+
+Workflow
+--------
+1. Activate pilot-specific SpamAssassin configuration.
+2. Restart the container to ensure a clean and consistent state.
+3. Wait until SpamAssassin is ready to accept requests.
+4. For each test case:
+   - generate paired emails (unsalted + salted)
+   - write both variants to disk
+   - evaluate both via spamd
+   - extract triggered rules
+   - compare expected rule behavior
+5. Determine whether:
+   - the rule was successfully broken (break_success)
+   - the case behaved as expected (case_success)
+6. Export detailed results and aggregated summaries.
+
+Concept
+-------
+Each case defines:
+- a target rule (expected_rule)
+- a set of tokens to modify
+- an expected behavior:
+    - "break": rule should disappear after salting
+    - "preserve": rule should still trigger
+
+This allows controlled demonstration of rule-level weaknesses.
+
+Outputs
+-------
+- CSV with per-variant results (unsalted / salted)
+- JSON summary with paired comparisons
+
+Notes
+-----
+- This is a white-box pilot designed to validate rule behavior, not a
+  large-scale evaluation.
+- The focus is on rule triggering, not classification accuracy.
+- All messages are generated synthetically to isolate specific effects.
+"""
+
 from __future__ import annotations
 
 import time
@@ -15,6 +72,22 @@ OUTPUT_ROOT = BASE_DIR / "data/output/pilot/sa/rules"
 
 
 def wait_until_spamd_ready(probe_path, timeout_seconds: int = 90, poll_interval: float = 2.0) -> None:
+    """
+        Wait until SpamAssassin is ready to process requests.
+
+        This function repeatedly sends a probe email to spamd until a successful
+        response is received or a timeout occurs. It is used after container
+        restarts to ensure that the service is fully initialized.
+
+        Args:
+            probe_path: Path to a test email used as readiness probe.
+            timeout_seconds: Maximum time to wait.
+            poll_interval: Time between retry attempts.
+
+        Raises:
+            TimeoutError: If SpamAssassin does not become ready in time.
+        """
+
     deadline = time.time() + timeout_seconds
     last_error = None
 
@@ -39,6 +112,30 @@ def wait_until_spamd_ready(probe_path, timeout_seconds: int = 90, poll_interval:
 
 
 def run_sa_pilot_rules() -> None:
+    def run_sa_pilot_rules() -> None:
+        """
+        Run the SpamAssassin rule-based pilot.
+
+        This function orchestrates the full pilot workflow:
+        - activates the pilot configuration
+        - restarts SpamAssassin
+        - generates paired test emails for each case
+        - evaluates both variants via spamd
+        - compares rule triggering behavior
+
+        For each case, it determines:
+        - whether the expected rule is triggered (unsalted vs salted)
+        - whether salting successfully breaks the rule
+        - whether the observed behavior matches the expected behavior
+
+        Output:
+            - CSV file with detailed per-variant results
+            - JSON file with paired summaries
+
+        The results are intended to demonstrate concrete rule-level effects of
+        Unicode salting in a controlled setting.
+        """
+
     print("=== SA Pilot: rule cases ===")
 
     activate_spamassassin_config("sa_pilot_rules.cf")

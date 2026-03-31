@@ -1,3 +1,42 @@
+"""
+SpamAssassin pilot rule selection.
+
+This module performs a filtering and prioritization step on the rule
+candidates discovered in the rule discovery phase.
+
+Purpose
+-------
+The goal is to reduce the large set of discovered SpamAssassin rules to a
+manageable subset of high-quality candidates for the manual rule-based pilot.
+
+The selection focuses on rules that:
+- operate on lexical surfaces (subject or body)
+- are likely breakable via U+200B salting
+- do not belong to structural or metadata-based categories (e.g. MIME, DKIM)
+
+Workflow
+--------
+1. Load candidate rules from the discovery CSV.
+2. Apply filtering criteria to remove:
+   - structural rules (headers, encoding, transport)
+   - non-lexical rules
+   - rules unlikely to be affected by salting
+3. Split remaining candidates into:
+   - subject-based rules
+   - body-based rules
+4. Rank candidates using a simple priority heuristic:
+   - lexical relevance (keywords like "verify", "password", ...)
+   - presence of description
+   - absolute rule score
+5. Export top-N candidates (top 50 each) for manual inspection.
+
+Notes
+-----
+- This is a heuristic pre-selection step for the pilot, not a formal rule analysis.
+- The output is intended to guide manual test case construction.
+- The ranking is deliberately simple and interpretable.
+"""
+
 from __future__ import annotations
 
 import csv

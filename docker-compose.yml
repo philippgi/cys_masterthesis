@@ -1,13 +1,13 @@
 services:
   redis:
-    image: redis:alpine
+    image: redis:8.6.2-alpine3.23@sha256:81b6f81d6a6c5b9019231a2e8eb10085e3a139a34f833dcc965a8a959b040b72
     container_name: masterthesis-rspamd-redis
     volumes:
       - ./docker/redis:/data
     restart: unless-stopped
 
   rspamd:
-    image: rspamd/rspamd:latest
+    image: rspamd/rspamd:3.14.2@sha256:a17125b9cdcb7f80c6ee0df8248be333b97ab1fa8f7f81d60e5216d47b6c6358
     container_name: masterthesis-rspamd
     depends_on:
       - redis
@@ -23,7 +23,7 @@ services:
     restart: unless-stopped
 
   spamassassin:
-    image: instantlinux/spamassassin:latest
+    image: instantlinux/spamassassin:4.0.1-5@sha256:0c663024dc20238e93ad9b1054783743eb194b74dadb6faf031fb957c85400b0
     container_name: masterthesis-spamassassin
     ports:
       - "783:783"
@@ -33,16 +33,16 @@ services:
       - ./docker/logs/spamassassin:/var/log/spamassassin
       - ./data/datasets/split:/split:ro
     command: >
-      sh -lc "sa-update && spamd -i 0.0.0.0 -p 783 -c --username=debian-spamd --nouser-config --max-children 4"
+      sh -lc "spamd -i 0.0.0.0 -p 783 -c --username=debian-spamd --nouser-config --max-children 4"
     restart: unless-stopped
 
   unbound:
-    image: mvance/unbound:latest
+    image: mvance/unbound:1.22.0@sha256:76906da36d1806f3387338f15dcf8b357c51ce6897fb6450d6ce010460927e90
     container_name: masterthesis-rspamd-unbound
     restart: unless-stopped
 
   postfix:
-    image: boky/postfix
+    image: boky/postfix:v5.1.0-alpine@sha256:6e761312e833947f77af755072c0e77b67d298d127595470a79e9454008dd594
     container_name: masterthesis-postfix
     hostname: mail.lab.local
     environment:

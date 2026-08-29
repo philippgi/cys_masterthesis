@@ -1,0 +1,689 @@
+Experiment Summary: SA1_extended
+================================
+
+Filter              : SpamAssassin
+Mechanism           : rules_only
+Rule scope          : strict_lexical
+Salting condition   : extended
+
+Salting configuration
+---------------------
+subject_max_insertions: 1
+body_max_insertions   : 3
+salt_mode             : single
+insert_after_index    : 2
+fragment_max_positions: None
+
+Input files
+-----------
+results.csv         : C:\Projekte\masterthesis_cys\data\output\experiments\SA1\extended\spamassassin_evaluation\spamassassin_results.csv
+results_paired.csv  : C:\Projekte\masterthesis_cys\data\output\experiments\SA1\extended\spamassassin_evaluation\spamassassin_results_paired.csv
+
+Counts
+------
+Variant rows total              : 8860
+Paired rows total               : 992
+Baseline spam                   : 992
+Baseline ham                    : 3900
+Salted variants                 : 3968
+Unique salted source emails     : 992
+Baseline-detected spam          : 138
+Baseline-not-detected spam      : 854
+Baseline spam detected (variant): 138
+Baseline ham false positives    : 14
+
+Rates
+-----
+Baseline spam detection rate    : 0.139113
+Baseline ham FP rate            : 0.00359
+Bypass rate (any)               : 0.166667
+Bypass rate (all)               : 0.166667
+Classification stability (all)  : 0.833333
+Classification stability (any)  : 0.833333
+
+Means
+-----
+Mean baseline score             : 7.891304
+Mean salted score               : 7.117029
+Mean salted min score           : 7.089855
+Mean score drop                 : 0.774275
+Mean best-case score drop       : 0.801449
+Mean baseline rule count        : 5.847826
+Mean salted rule count          : 5.442029
+Mean rule loss                  : 0.405797
+
+Medians
+-------
+Median score drop               : 0.0
+Median best-case score drop     : 0.0
+Median rule loss                : 0.0
+
+Classification counts
+---------------------
+n_any_bypass                    : 23
+n_all_bypass                    : 23
+n_all_spam                      : 115
+n_any_spam                      : 115
+
+Codepoint analysis
+------------------
+00AD:
+  n_variants                  : 992
+  n_unique_sources            : 992
+  n_baseline_detected_sources : 138
+  bypass_rate                 : 0.166667
+  spam_rate                   : 0.833333
+  mean_score                  : 7.089855
+  median_score                : 6.8
+  mean_rule_count             : 5.398551
+
+200B:
+  n_variants                  : 992
+  n_unique_sources            : 992
+  n_baseline_detected_sources : 138
+  bypass_rate                 : 0.166667
+  spam_rate                   : 0.833333
+  mean_score                  : 7.126087
+  median_score                : 6.9
+  mean_rule_count             : 5.456522
+
+200C:
+  n_variants                  : 992
+  n_unique_sources            : 992
+  n_baseline_detected_sources : 138
+  bypass_rate                 : 0.166667
+  spam_rate                   : 0.833333
+  mean_score                  : 7.126087
+  median_score                : 6.9
+  mean_rule_count             : 5.456522
+
+200D:
+  n_variants                  : 992
+  n_unique_sources            : 992
+  n_baseline_detected_sources : 138
+  bypass_rate                 : 0.166667
+  spam_rate                   : 0.833333
+  mean_score                  : 7.126087
+  median_score                : 6.9
+  mean_rule_count             : 5.456522
+
+Salting intensity
+-----------------
+Mean subject insertions : 0.436492
+Mean body insertions    : 1.884073
+Mean total insertions   : 2.320565
+Max subject insertions  : 1
+Max body insertions     : 3
+
+Insertion distribution
+----------------------
+1 insertions : 1448
+2 insertions : 308
+3 insertions : 1704
+4 insertions : 508
+
+Bayes analysis
+--------------
+Baseline-detected emails         : None
+Baseline emails with Bayes       : None
+Salted emails with any Bayes     : None
+Bayes lost in at least one var.  : None
+Bayes lost in all variants       : None
+
+Neural analysis
+---------------
+Baseline-detected emails          : None
+Baseline emails with Neural       : None
+Salted emails with any Neural     : None
+Neural lost in at least one var.  : None
+Neural lost in all variants       : None
+Mean baseline Neural score        : None
+Mean salted Neural score          : None
+
+Baseline Neural symbols
+~~~~~~~~~~~~~~~~~~~~~~~
+No Neural symbol data available.
+Salted Neural symbols
+~~~~~~~~~~~~~~~~~~~~~
+No Neural symbol data available.
+Baseline Bayes rule levels
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+No Bayes data available.
+Salted Bayes rule levels
+~~~~~~~~~~~~~~~~~~~~~~~~
+No Bayes data available.
+Bayes transitions
+~~~~~~~~~~~~~~~~~
+No Bayes transition data available.
+Rule loss analysis
+------------------
+Lost rules (all)
+~~~~~~~~~~~~~~~~
+ENGLISH_UCE_SUBJECT:
+  baseline_occurrences  : 51
+  lost_in_any_variant   : 51
+  lost_in_all_variants  : 51
+  lost_rate_any_variant : 1.0
+  lost_rate_all_variants: 1.0
+
+ENGLISH_UCE_SUBJECT	autolearn=disabled:
+  baseline_occurrences  : 20
+  lost_in_any_variant   : 20
+  lost_in_all_variants  : 20
+  lost_rate_any_variant : 1.0
+  lost_rate_all_variants: 1.0
+
+PP_MIME_FAKE_ASCII_TEXT:
+  baseline_occurrences  : 16
+  lost_in_any_variant   : 16
+  lost_in_all_variants  : 16
+  lost_rate_any_variant : 1.0
+  lost_rate_all_variants: 1.0
+
+FSL_CTYPE_WIN1251:
+  baseline_occurrences  : 3
+  lost_in_any_variant   : 3
+  lost_in_all_variants  : 3
+  lost_rate_any_variant : 1.0
+  lost_rate_all_variants: 1.0
+
+NAME_EMAIL_DIFF	autolearn=disabled:
+  baseline_occurrences  : 2
+  lost_in_any_variant   : 2
+  lost_in_all_variants  : 2
+  lost_rate_any_variant : 1.0
+  lost_rate_all_variants: 1.0
+
+FROM_ILLEGAL_CHARS:
+  baseline_occurrences  : 2
+  lost_in_any_variant   : 2
+  lost_in_all_variants  : 2
+  lost_rate_any_variant : 1.0
+  lost_rate_all_variants: 1.0
+
+T_OBFU_DOC_ATTACH:
+  baseline_occurrences  : 1
+  lost_in_any_variant   : 1
+  lost_in_all_variants  : 1
+  lost_rate_any_variant : 1.0
+  lost_rate_all_variants: 1.0
+
+TEQF_USR_POLITE	autolearn=disabled:
+  baseline_occurrences  : 1
+  lost_in_any_variant   : 1
+  lost_in_all_variants  : 1
+  lost_rate_any_variant : 1.0
+  lost_rate_all_variants: 1.0
+
+SUBJ_ILLEGAL_CHARS:
+  baseline_occurrences  : 1
+  lost_in_any_variant   : 1
+  lost_in_all_variants  : 1
+  lost_rate_any_variant : 1.0
+  lost_rate_all_variants: 1.0
+
+ONE_TIME	autolearn=disabled:
+  baseline_occurrences  : 1
+  lost_in_any_variant   : 1
+  lost_in_all_variants  : 1
+  lost_rate_any_variant : 1.0
+  lost_rate_all_variants: 1.0
+
+FIN_FREE	autolearn=disabled:
+  baseline_occurrences  : 1
+  lost_in_any_variant   : 1
+  lost_in_all_variants  : 1
+  lost_rate_any_variant : 1.0
+  lost_rate_all_variants: 1.0
+
+UNCLAIMED_MONEY	autolearn=disabled:
+  baseline_occurrences  : 2
+  lost_in_any_variant   : 2
+  lost_in_all_variants  : 1
+  lost_rate_any_variant : 1.0
+  lost_rate_all_variants: 0.5
+
+LOW_PRICE	autolearn=disabled:
+  baseline_occurrences  : 3
+  lost_in_any_variant   : 3
+  lost_in_all_variants  : 0
+  lost_rate_any_variant : 1.0
+  lost_rate_all_variants: 0.0
+
+UNDISC_FREEM	autolearn=disabled:
+  baseline_occurrences  : 1
+  lost_in_any_variant   : 1
+  lost_in_all_variants  : 0
+  lost_rate_any_variant : 1.0
+  lost_rate_all_variants: 0.0
+
+DEAR_SOMETHING:
+  baseline_occurrences  : 49
+  lost_in_any_variant   : 38
+  lost_in_all_variants  : 37
+  lost_rate_any_variant : 0.77551
+  lost_rate_all_variants: 0.755102
+
+PP_MIME_FAKE_ASCII_TEXT	autolearn=disabled:
+  baseline_occurrences  : 4
+  lost_in_any_variant   : 3
+  lost_in_all_variants  : 3
+  lost_rate_any_variant : 0.75
+  lost_rate_all_variants: 0.75
+
+DEAR_SOMETHING	autolearn=disabled:
+  baseline_occurrences  : 4
+  lost_in_any_variant   : 3
+  lost_in_all_variants  : 3
+  lost_rate_any_variant : 0.75
+  lost_rate_all_variants: 0.75
+
+FREE_QUOTE_INSTANT:
+  baseline_occurrences  : 24
+  lost_in_any_variant   : 17
+  lost_in_all_variants  : 17
+  lost_rate_any_variant : 0.708333
+  lost_rate_all_variants: 0.708333
+
+T_TVD_MIME_NO_HEADERS:
+  baseline_occurrences  : 3
+  lost_in_any_variant   : 2
+  lost_in_all_variants  : 2
+  lost_rate_any_variant : 0.666667
+  lost_rate_all_variants: 0.666667
+
+DRUG_ED_CAPS:
+  baseline_occurrences  : 15
+  lost_in_any_variant   : 9
+  lost_in_all_variants  : 9
+  lost_rate_any_variant : 0.6
+  lost_rate_all_variants: 0.6
+
+DRUG_ED_ONLINE	autolearn=disabled:
+  baseline_occurrences  : 5
+  lost_in_any_variant   : 3
+  lost_in_all_variants  : 3
+  lost_rate_any_variant : 0.6
+  lost_rate_all_variants: 0.6
+
+DRUG_ED_ONLINE:
+  baseline_occurrences  : 5
+  lost_in_any_variant   : 3
+  lost_in_all_variants  : 3
+  lost_rate_any_variant : 0.6
+  lost_rate_all_variants: 0.6
+
+EXCUSE_REMOVE:
+  baseline_occurrences  : 22
+  lost_in_any_variant   : 13
+  lost_in_all_variants  : 13
+  lost_rate_any_variant : 0.590909
+  lost_rate_all_variants: 0.590909
+
+ADVANCE_FEE_4_NEW_MONEY:
+  baseline_occurrences  : 8
+  lost_in_any_variant   : 4
+  lost_in_all_variants  : 4
+  lost_rate_any_variant : 0.5
+  lost_rate_all_variants: 0.5
+
+THIS_AD	autolearn=disabled:
+  baseline_occurrences  : 6
+  lost_in_any_variant   : 3
+  lost_in_all_variants  : 3
+  lost_rate_any_variant : 0.5
+  lost_rate_all_variants: 0.5
+
+TVD_RCVD_IP4	autolearn=disabled:
+  baseline_occurrences  : 2
+  lost_in_any_variant   : 1
+  lost_in_all_variants  : 1
+  lost_rate_any_variant : 0.5
+  lost_rate_all_variants: 0.5
+
+EXCUSE_REMOVE	autolearn=disabled:
+  baseline_occurrences  : 5
+  lost_in_any_variant   : 2
+  lost_in_all_variants  : 2
+  lost_rate_any_variant : 0.4
+  lost_rate_all_variants: 0.4
+
+THIS_AD:
+  baseline_occurrences  : 18
+  lost_in_any_variant   : 6
+  lost_in_all_variants  : 6
+  lost_rate_any_variant : 0.333333
+  lost_rate_all_variants: 0.333333
+
+XM_RANDOM	autolearn=disabled:
+  baseline_occurrences  : 3
+  lost_in_any_variant   : 1
+  lost_in_all_variants  : 1
+  lost_rate_any_variant : 0.333333
+  lost_rate_all_variants: 0.333333
+
+NO_PRESCRIPTION:
+  baseline_occurrences  : 3
+  lost_in_any_variant   : 1
+  lost_in_all_variants  : 1
+  lost_rate_any_variant : 0.333333
+  lost_rate_all_variants: 0.333333
+
+MSOE_MID_WRONG_CASE	autolearn=disabled:
+  baseline_occurrences  : 34
+  lost_in_any_variant   : 11
+  lost_in_all_variants  : 3
+  lost_rate_any_variant : 0.323529
+  lost_rate_all_variants: 0.088235
+
+MIXED_HREF_CASE	autolearn=disabled:
+  baseline_occurrences  : 14
+  lost_in_any_variant   : 4
+  lost_in_all_variants  : 2
+  lost_rate_any_variant : 0.285714
+  lost_rate_all_variants: 0.142857
+
+BANG_GUAR:
+  baseline_occurrences  : 68
+  lost_in_any_variant   : 19
+  lost_in_all_variants  : 19
+  lost_rate_any_variant : 0.279412
+  lost_rate_all_variants: 0.279412
+
+END_FUTURE_EMAILS:
+  baseline_occurrences  : 67
+  lost_in_any_variant   : 18
+  lost_in_all_variants  : 18
+  lost_rate_any_variant : 0.268657
+  lost_rate_all_variants: 0.268657
+
+EXCUSE_24:
+  baseline_occurrences  : 20
+  lost_in_any_variant   : 5
+  lost_in_all_variants  : 5
+  lost_rate_any_variant : 0.25
+  lost_rate_all_variants: 0.25
+
+T_MONEY_PERCENT	autolearn=disabled:
+  baseline_occurrences  : 12
+  lost_in_any_variant   : 3
+  lost_in_all_variants  : 3
+  lost_rate_any_variant : 0.25
+  lost_rate_all_variants: 0.25
+
+T_TVD_MIME_EPI	autolearn=disabled:
+  baseline_occurrences  : 10
+  lost_in_any_variant   : 2
+  lost_in_all_variants  : 1
+  lost_rate_any_variant : 0.2
+  lost_rate_all_variants: 0.1
+
+WEIRD_QUOTING	autolearn=disabled:
+  baseline_occurrences  : 5
+  lost_in_any_variant   : 1
+  lost_in_all_variants  : 0
+  lost_rate_any_variant : 0.2
+  lost_rate_all_variants: 0.0
+
+TEQF_USR_POLITE:
+  baseline_occurrences  : 6
+  lost_in_any_variant   : 1
+  lost_in_all_variants  : 1
+  lost_rate_any_variant : 0.166667
+  lost_rate_all_variants: 0.166667
+
+T_KAM_HTML_FONT_INVALID	autolearn=disabled:
+  baseline_occurrences  : 6
+  lost_in_any_variant   : 1
+  lost_in_all_variants  : 0
+  lost_rate_any_variant : 0.166667
+  lost_rate_all_variants: 0.0
+
+T_TVD_MIME_EPI:
+  baseline_occurrences  : 19
+  lost_in_any_variant   : 3
+  lost_in_all_variants  : 0
+  lost_rate_any_variant : 0.157895
+  lost_rate_all_variants: 0.0
+
+T_MONEY_PERCENT:
+  baseline_occurrences  : 40
+  lost_in_any_variant   : 6
+  lost_in_all_variants  : 6
+  lost_rate_any_variant : 0.15
+  lost_rate_all_variants: 0.15
+
+SUBJECT_DIET:
+  baseline_occurrences  : 8
+  lost_in_any_variant   : 1
+  lost_in_all_variants  : 1
+  lost_rate_any_variant : 0.125
+  lost_rate_all_variants: 0.125
+
+GUARANTEED_100_PERCENT:
+  baseline_occurrences  : 35
+  lost_in_any_variant   : 4
+  lost_in_all_variants  : 3
+  lost_rate_any_variant : 0.114286
+  lost_rate_all_variants: 0.085714
+
+MONEY_BACK:
+  baseline_occurrences  : 10
+  lost_in_any_variant   : 1
+  lost_in_all_variants  : 1
+  lost_rate_any_variant : 0.1
+  lost_rate_all_variants: 0.1
+
+END_FUTURE_EMAILS	autolearn=disabled:
+  baseline_occurrences  : 10
+  lost_in_any_variant   : 1
+  lost_in_all_variants  : 0
+  lost_rate_any_variant : 0.1
+  lost_rate_all_variants: 0.0
+
+HK_RANDOM_REPLYTO:
+  baseline_occurrences  : 11
+  lost_in_any_variant   : 1
+  lost_in_all_variants  : 1
+  lost_rate_any_variant : 0.090909
+  lost_rate_all_variants: 0.090909
+
+LOTS_OF_MONEY:
+  baseline_occurrences  : 193
+  lost_in_any_variant   : 15
+  lost_in_all_variants  : 15
+  lost_rate_any_variant : 0.07772
+  lost_rate_all_variants: 0.07772
+
+T_KAM_HTML_FONT_INVALID:
+  baseline_occurrences  : 13
+  lost_in_any_variant   : 1
+  lost_in_all_variants  : 1
+  lost_rate_any_variant : 0.076923
+  lost_rate_all_variants: 0.076923
+
+MSOE_MID_WRONG_CASE:
+  baseline_occurrences  : 105
+  lost_in_any_variant   : 8
+  lost_in_all_variants  : 5
+  lost_rate_any_variant : 0.07619
+  lost_rate_all_variants: 0.047619
+
+ADVANCE_FEE_5_NEW_MONEY:
+  baseline_occurrences  : 68
+  lost_in_any_variant   : 5
+  lost_in_all_variants  : 4
+  lost_rate_any_variant : 0.073529
+  lost_rate_all_variants: 0.058824
+
+HEADER_FROM_DIFFERENT_DOMAINS:
+  baseline_occurrences  : 177
+  lost_in_any_variant   : 12
+  lost_in_all_variants  : 11
+  lost_rate_any_variant : 0.067797
+  lost_rate_all_variants: 0.062147
+
+LOW_PRICE:
+  baseline_occurrences  : 30
+  lost_in_any_variant   : 2
+  lost_in_all_variants  : 1
+  lost_rate_any_variant : 0.066667
+  lost_rate_all_variants: 0.033333
+
+MIXED_HREF_CASE:
+  baseline_occurrences  : 38
+  lost_in_any_variant   : 2
+  lost_in_all_variants  : 1
+  lost_rate_any_variant : 0.052632
+  lost_rate_all_variants: 0.026316
+
+NA_DOLLARS:
+  baseline_occurrences  : 21
+  lost_in_any_variant   : 1
+  lost_in_all_variants  : 1
+  lost_rate_any_variant : 0.047619
+  lost_rate_all_variants: 0.047619
+
+HEADER_FROM_DIFFERENT_DOMAINS	autolearn=disabled:
+  baseline_occurrences  : 66
+  lost_in_any_variant   : 2
+  lost_in_all_variants  : 0
+  lost_rate_any_variant : 0.030303
+  lost_rate_all_variants: 0.0
+
+MILLION_USD:
+  baseline_occurrences  : 38
+  lost_in_any_variant   : 1
+  lost_in_all_variants  : 1
+  lost_rate_any_variant : 0.026316
+  lost_rate_all_variants: 0.026316
+
+LOTS_OF_MONEY	autolearn=disabled:
+  baseline_occurrences  : 41
+  lost_in_any_variant   : 1
+  lost_in_all_variants  : 1
+  lost_rate_any_variant : 0.02439
+  lost_rate_all_variants: 0.02439
+
+Lost rules in bypass cases
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+DEAR_SOMETHING:
+  lost_in_bypass_any  : 8
+  lost_in_bypass_all  : 8
+  bypass_loss_rate_any: 0.347826
+  bypass_loss_rate_all: 0.347826
+
+MSOE_MID_WRONG_CASE:
+  lost_in_bypass_any  : 6
+  lost_in_bypass_all  : 3
+  bypass_loss_rate_any: 0.26087
+  bypass_loss_rate_all: 0.130435
+
+EXCUSE_REMOVE:
+  lost_in_bypass_any  : 4
+  lost_in_bypass_all  : 4
+  bypass_loss_rate_any: 0.173913
+  bypass_loss_rate_all: 0.173913
+
+ENGLISH_UCE_SUBJECT:
+  lost_in_bypass_any  : 4
+  lost_in_bypass_all  : 4
+  bypass_loss_rate_any: 0.173913
+  bypass_loss_rate_all: 0.173913
+
+END_FUTURE_EMAILS:
+  lost_in_bypass_any  : 4
+  lost_in_bypass_all  : 4
+  bypass_loss_rate_any: 0.173913
+  bypass_loss_rate_all: 0.173913
+
+PP_MIME_FAKE_ASCII_TEXT:
+  lost_in_bypass_any  : 3
+  lost_in_bypass_all  : 3
+  bypass_loss_rate_any: 0.130435
+  bypass_loss_rate_all: 0.130435
+
+ADVANCE_FEE_5_NEW_MONEY:
+  lost_in_bypass_any  : 3
+  lost_in_bypass_all  : 3
+  bypass_loss_rate_any: 0.130435
+  bypass_loss_rate_all: 0.130435
+
+T_MONEY_PERCENT:
+  lost_in_bypass_any  : 2
+  lost_in_bypass_all  : 2
+  bypass_loss_rate_any: 0.086957
+  bypass_loss_rate_all: 0.086957
+
+THIS_AD:
+  lost_in_bypass_any  : 2
+  lost_in_bypass_all  : 2
+  bypass_loss_rate_any: 0.086957
+  bypass_loss_rate_all: 0.086957
+
+MSOE_MID_WRONG_CASE	autolearn=disabled:
+  lost_in_bypass_any  : 2
+  lost_in_bypass_all  : 2
+  bypass_loss_rate_any: 0.086957
+  bypass_loss_rate_all: 0.086957
+
+GUARANTEED_100_PERCENT:
+  lost_in_bypass_any  : 2
+  lost_in_bypass_all  : 2
+  bypass_loss_rate_any: 0.086957
+  bypass_loss_rate_all: 0.086957
+
+FSL_CTYPE_WIN1251:
+  lost_in_bypass_any  : 2
+  lost_in_bypass_all  : 2
+  bypass_loss_rate_any: 0.086957
+  bypass_loss_rate_all: 0.086957
+
+XM_RANDOM	autolearn=disabled:
+  lost_in_bypass_any  : 1
+  lost_in_bypass_all  : 1
+  bypass_loss_rate_any: 0.043478
+  bypass_loss_rate_all: 0.043478
+
+TEQF_USR_POLITE	autolearn=disabled:
+  lost_in_bypass_any  : 1
+  lost_in_bypass_all  : 1
+  bypass_loss_rate_any: 0.043478
+  bypass_loss_rate_all: 0.043478
+
+NA_DOLLARS:
+  lost_in_bypass_any  : 1
+  lost_in_bypass_all  : 1
+  bypass_loss_rate_any: 0.043478
+  bypass_loss_rate_all: 0.043478
+
+MILLION_USD:
+  lost_in_bypass_any  : 1
+  lost_in_bypass_all  : 1
+  bypass_loss_rate_any: 0.043478
+  bypass_loss_rate_all: 0.043478
+
+FROM_ILLEGAL_CHARS:
+  lost_in_bypass_any  : 1
+  lost_in_bypass_all  : 1
+  bypass_loss_rate_any: 0.043478
+  bypass_loss_rate_all: 0.043478
+
+EXCUSE_24:
+  lost_in_bypass_any  : 1
+  lost_in_bypass_all  : 1
+  bypass_loss_rate_any: 0.043478
+  bypass_loss_rate_all: 0.043478
+
+BANG_GUAR:
+  lost_in_bypass_any  : 1
+  lost_in_bypass_all  : 1
+  bypass_loss_rate_any: 0.043478
+  bypass_loss_rate_all: 0.043478
+
+HEADER_FROM_DIFFERENT_DOMAINS	autolearn=disabled:
+  lost_in_bypass_any  : 1
+  lost_in_bypass_all  : 0
+  bypass_loss_rate_any: 0.043478
+  bypass_loss_rate_all: 0.0
+

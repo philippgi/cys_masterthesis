@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+"""
+Trains the Rspamd Bayes classifier on the configured training split.
+
+Existing Bayes state is cleared before spam and ham training. Learned-message
+counters are inspected before and after each training phase to validate that
+the expected number of messages was processed.
+"""
 
 from __future__ import annotations
 
@@ -23,10 +30,30 @@ from src.utils.console import print_step, print_section, print_kv
 
 
 def _count_files(directory: Path) -> int:
+    """
+    Count regular files in a directory.
+
+    Args:
+        directory (Path): Directory to inspect.
+
+    Returns:
+        int: Number of files.
+    """
+
     return sum(1 for p in directory.iterdir() if p.is_file())
 
 
 def _wait_for_rspamd_ready(timeout: int = RSPAMD_TIMEOUT):
+    """
+    Wait until the Rspamd HTTP endpoint responds successfully.
+
+    Args:
+        timeout (int): Maximum number of readiness checks.
+
+    Raises:
+        RuntimeError: If Rspamd does not become ready within the timeout.
+    """
+
     print_section("Waiting for Rspamd to become ready")
 
     for _ in range(timeout):
@@ -55,8 +82,16 @@ def _wait_for_rspamd_ready(timeout: int = RSPAMD_TIMEOUT):
 
 
 def _reset_bayes():
+    """
+    Clear the Redis state used by Rspamd before Bayes training.
+
+    Raises:
+        RuntimeError: If the Redis reset command fails.
+    """
+
     print_section("Resetting Bayes data")
 
+    # Clear previously learned state to ensure an independent training run.
     result = subprocess.run(
         [
             "docker",
@@ -82,6 +117,20 @@ def _reset_bayes():
 
 
 def _parse_learned_value(stat_output: str, statfile_name: str) -> int:
+    """
+    Extract the learned-message counter for a Bayes statfile.
+
+    Args:
+        stat_output (str): Output produced by rspamc stat.
+        statfile_name (str): Bayes statfile name to locate.
+
+    Returns:
+        int: Reported learned-message count.
+
+    Raises:
+        RuntimeError: If the statfile or learned counter cannot be found.
+    """
+
     for line in stat_output.splitlines():
         if f"Statfile: {statfile_name} " in line:
             marker = "learned:"
@@ -98,6 +147,16 @@ def _parse_learned_value(stat_output: str, statfile_name: str) -> int:
 
 
 def _get_bayes_counters() -> dict[str, int]:
+    """
+    Read the current Rspamd Bayes learning counters.
+
+    Returns:
+        dict[str, int]: Learned spam, ham, and total message counts.
+
+    Raises:
+        RuntimeError: If rspamc stat fails.
+    """
+
     result = subprocess.run(
         [
             "docker",
@@ -130,6 +189,10 @@ def _get_bayes_counters() -> dict[str, int]:
 
 
 def _print_bayes_counter_snapshot(title: str, counters: dict[str, int]):
+    """
+    Print a snapshot of the current Bayes learning counters.
+    """
+
     print_section(title)
     print_kv("bayes_spam", counters["bayes_spam"])
     print_kv("bayes_ham", counters["bayes_ham"])
@@ -141,6 +204,10 @@ def _print_bayes_counter_delta(
     before: dict[str, int],
     after: dict[str, int],
 ):
+    """
+    Print the difference between two Bayes counter snapshots.
+    """
+
     print_section(title)
     print_kv("delta_spam", after["bayes_spam"] - before["bayes_spam"])
     print_kv("delta_ham", after["bayes_ham"] - before["bayes_ham"])
@@ -152,6 +219,19 @@ def _learn_directory_bayes(
     container_directory: str,
     bayes_class: str,
 ):
+    """
+    Train Rspamd Bayes with all messages of one class.
+
+    Args:
+        host_directory (Path): Host directory containing the training messages.
+        container_directory (str): Corresponding directory inside the Rspamd container.
+        bayes_class (str): Training class, either "spam" or "ham".
+
+    Raises:
+        ValueError: If an unsupported Bayes class is provided.
+        RuntimeError: If one or more messages fail during training.
+    """
+
     if bayes_class not in {"spam", "ham"}:
         raise ValueError("bayes_class must be 'spam' or 'ham'")
 
@@ -170,6 +250,7 @@ def _learn_directory_bayes(
     ):
         container_file = f"{container_directory}/{path.name}"
 
+        # Submit each message to the corresponding Rspamd Bayes learning command.
         cmd = (
             f"rspamc learn_{bayes_class} < '{container_file}'"
         )
@@ -209,6 +290,10 @@ def _learn_directory_bayes(
 
 
 def _print_bayes_stats():
+    """
+    Print the complete Rspamd Bayes statistics after training.
+    """
+
     print_section("Rspamd Bayes stats")
 
     result = subprocess.run(
@@ -236,6 +321,13 @@ def _print_bayes_stats():
 
 
 def run_rspamd_bayes_training(dataset_split_dir: Path):
+    """
+    Reset and train the Rspamd Bayes classifier on the training split.
+
+    Args:
+        dataset_split_dir (Path): Directory containing the spam and ham training sets.
+    """
+
     print_step("Rspamd Bayes Training")
 
     train_spam_dir = dataset_split_dir / "train" / "spam"
@@ -254,13 +346,16 @@ def run_rspamd_bayes_training(dataset_split_dir: Path):
 
     _wait_for_rspamd_ready()
 
+    # Reset previously learned state and restart Rspamd before training.
     _reset_bayes()
     restart_rspamd()
     _wait_for_rspamd_ready()
 
+    # Capture the initial counters for subsequent training validation.
     counters_before = _get_bayes_counters()
     _print_bayes_counter_snapshot("Bayes counters before learning", counters_before)
 
+    # Train spam first and verify the resulting Bayes counter increase.
     _learn_directory_bayes(
         host_directory=train_spam_dir,
         container_directory=RSPAMD_TRAIN_SPAM_CONTAINER_DIR,
@@ -278,6 +373,7 @@ def run_rspamd_bayes_training(dataset_split_dir: Path):
         counters_after_spam,
     )
 
+    # Train ham separately and verify its counter increase.
     _learn_directory_bayes(
         host_directory=train_ham_dir,
         container_directory=RSPAMD_TRAIN_HAM_CONTAINER_DIR,
@@ -300,6 +396,7 @@ def run_rspamd_bayes_training(dataset_split_dir: Path):
         counters_after_ham,
     )
 
+    # Compare learned-message counter changes with the expected training-set sizes.
     actual_spam_delta = counters_after_spam["bayes_spam"] - counters_before["bayes_spam"]
     actual_ham_delta = counters_after_ham["bayes_ham"] - counters_after_spam["bayes_ham"]
 

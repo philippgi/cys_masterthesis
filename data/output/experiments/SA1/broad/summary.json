@@ -1,0 +1,878 @@
+{
+  "experiment_id": "SA1_broad",
+  "filter": "SpamAssassin",
+  "mechanism": "rules_only",
+  "rule_scope": "strict_lexical",
+  "salting_condition": "broad",
+  "salting_config": {
+    "subject_max_insertions": 1,
+    "body_max_insertions": 3,
+    "salt_mode": "single",
+    "insert_after_index": 2,
+    "fragment_max_positions": null
+  },
+  "inputs": {
+    "results_csv": "C:\\Projekte\\masterthesis_cys\\data\\output\\experiments\\SA1\\broad\\spamassassin_evaluation\\spamassassin_results.csv",
+    "paired_csv": "C:\\Projekte\\masterthesis_cys\\data\\output\\experiments\\SA1\\broad\\spamassassin_evaluation\\spamassassin_results_paired.csv"
+  },
+  "counts": {
+    "n_variant_rows_total": 10195,
+    "n_paired_rows_total": 1259,
+    "n_baseline_spam": 1259,
+    "n_baseline_ham": 3900,
+    "n_salted_variants": 5036,
+    "n_unique_salted_sources": 1259,
+    "n_baseline_detected_spam": 156,
+    "n_baseline_not_detected_spam": 1103,
+    "n_baseline_spam_detected_variant_level": 156,
+    "n_baseline_ham_false_positive": 14
+  },
+  "rates": {
+    "baseline_spam_detection_rate": 0.123908,
+    "baseline_ham_false_positive_rate": 0.00359,
+    "bypass_rate_any": 0.141026,
+    "bypass_rate_all": 0.141026,
+    "classification_stability_all_spam": 0.858974,
+    "classification_stability_any_spam": 0.858974
+  },
+  "means": {
+    "mean_baseline_score": 7.829487,
+    "mean_salted_score_mean": 7.069712,
+    "mean_salted_score_min": 7.062821,
+    "mean_score_drop": 0.759776,
+    "mean_best_case_score_drop": 0.766667,
+    "mean_baseline_rule_count": 5.769231,
+    "mean_salted_rule_count": 5.455128,
+    "mean_rule_loss": 0.314103
+  },
+  "medians": {
+    "median_score_drop": 0.0,
+    "median_best_case_score_drop": 0.0,
+    "median_rule_loss": 0.0
+  },
+  "classification_counts": {
+    "n_any_bypass": 22,
+    "n_all_bypass": 22,
+    "n_all_spam": 134,
+    "n_any_spam": 134
+  },
+  "codepoints": {
+    "00AD": {
+      "n_variants": 1259,
+      "n_unique_sources": 1259,
+      "n_baseline_detected_sources": 156,
+      "bypass_rate": 0.141026,
+      "spam_rate": 0.858974,
+      "mean_score": 7.067308,
+      "median_score": 6.8,
+      "mean_rule_count": 5.378205
+    },
+    "200B": {
+      "n_variants": 1259,
+      "n_unique_sources": 1259,
+      "n_baseline_detected_sources": 156,
+      "bypass_rate": 0.141026,
+      "spam_rate": 0.858974,
+      "mean_score": 7.070513,
+      "median_score": 6.8,
+      "mean_rule_count": 5.480769
+    },
+    "200C": {
+      "n_variants": 1259,
+      "n_unique_sources": 1259,
+      "n_baseline_detected_sources": 156,
+      "bypass_rate": 0.141026,
+      "spam_rate": 0.858974,
+      "mean_score": 7.070513,
+      "median_score": 6.8,
+      "mean_rule_count": 5.480769
+    },
+    "200D": {
+      "n_variants": 1259,
+      "n_unique_sources": 1259,
+      "n_baseline_detected_sources": 156,
+      "bypass_rate": 0.141026,
+      "spam_rate": 0.858974,
+      "mean_score": 7.070513,
+      "median_score": 6.8,
+      "mean_rule_count": 5.480769
+    }
+  },
+  "salting_intensity": {
+    "mean_subject_insertions": 0.662431,
+    "mean_body_insertions": 1.752979,
+    "mean_total_insertions": 2.415409,
+    "max_subject_insertions": 1,
+    "max_body_insertions": 3
+  },
+  "insertion_distribution": {
+    "1": 2080,
+    "2": 88,
+    "3": 1564,
+    "4": 1304
+  },
+  "bayes_analysis": null,
+  "neural_analysis": null,
+  "rule_loss_analysis": {
+    "all_rule_loss": [
+      {
+        "rule": "ENGLISH_UCE_SUBJECT",
+        "baseline_occurrences": 51,
+        "lost_in_any_variant": 51,
+        "lost_in_all_variants": 51,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "ENGLISH_UCE_SUBJECT\tautolearn=disabled",
+        "baseline_occurrences": 20,
+        "lost_in_any_variant": 20,
+        "lost_in_all_variants": 20,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "PP_MIME_FAKE_ASCII_TEXT\tautolearn=disabled",
+        "baseline_occurrences": 4,
+        "lost_in_any_variant": 4,
+        "lost_in_all_variants": 4,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "TVD_APPROVED\tautolearn=disabled",
+        "baseline_occurrences": 3,
+        "lost_in_any_variant": 3,
+        "lost_in_all_variants": 3,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "FSL_CTYPE_WIN1251",
+        "baseline_occurrences": 3,
+        "lost_in_any_variant": 3,
+        "lost_in_all_variants": 3,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "DEAR_EMAIL",
+        "baseline_occurrences": 3,
+        "lost_in_any_variant": 3,
+        "lost_in_all_variants": 3,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "TVD_SUBJ_WIPE_DEBT",
+        "baseline_occurrences": 2,
+        "lost_in_any_variant": 2,
+        "lost_in_all_variants": 2,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "GB_CUSTOM_HTM_URI",
+        "baseline_occurrences": 2,
+        "lost_in_any_variant": 2,
+        "lost_in_all_variants": 2,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "FROM_ILLEGAL_CHARS",
+        "baseline_occurrences": 2,
+        "lost_in_any_variant": 2,
+        "lost_in_all_variants": 2,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "T_OBFU_DOC_ATTACH",
+        "baseline_occurrences": 1,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "TVD_SUBJ_WIPE_DEBT\tautolearn=disabled",
+        "baseline_occurrences": 1,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "TEQF_USR_POLITE\tautolearn=disabled",
+        "baseline_occurrences": 1,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "SUBJ_ILLEGAL_CHARS",
+        "baseline_occurrences": 1,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "ONE_TIME\tautolearn=disabled",
+        "baseline_occurrences": 1,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "NOT_SPAM\tautolearn=disabled",
+        "baseline_occurrences": 1,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "ADVANCE_FEE_5_NEW\tautolearn=disabled",
+        "baseline_occurrences": 1,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "UNCLAIMED_MONEY\tautolearn=disabled",
+        "baseline_occurrences": 2,
+        "lost_in_any_variant": 2,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 0.5
+      },
+      {
+        "rule": "TO_EQ_FM_DIRECT_MX\tautolearn=disabled",
+        "baseline_occurrences": 1,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 0,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 0.0
+      },
+      {
+        "rule": "BIGNUM_EMAILS_MANY\tautolearn=disabled",
+        "baseline_occurrences": 1,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 0,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 0.0
+      },
+      {
+        "rule": "TVD_APPROVED",
+        "baseline_occurrences": 4,
+        "lost_in_any_variant": 3,
+        "lost_in_all_variants": 3,
+        "lost_rate_any_variant": 0.75,
+        "lost_rate_all_variants": 0.75
+      },
+      {
+        "rule": "LOW_PRICE\tautolearn=disabled",
+        "baseline_occurrences": 4,
+        "lost_in_any_variant": 3,
+        "lost_in_all_variants": 3,
+        "lost_rate_any_variant": 0.75,
+        "lost_rate_all_variants": 0.75
+      },
+      {
+        "rule": "PP_MIME_FAKE_ASCII_TEXT",
+        "baseline_occurrences": 23,
+        "lost_in_any_variant": 17,
+        "lost_in_all_variants": 17,
+        "lost_rate_any_variant": 0.73913,
+        "lost_rate_all_variants": 0.73913
+      },
+      {
+        "rule": "FREE_QUOTE_INSTANT",
+        "baseline_occurrences": 25,
+        "lost_in_any_variant": 17,
+        "lost_in_all_variants": 17,
+        "lost_rate_any_variant": 0.68,
+        "lost_rate_all_variants": 0.68
+      },
+      {
+        "rule": "T_TVD_MIME_NO_HEADERS",
+        "baseline_occurrences": 3,
+        "lost_in_any_variant": 2,
+        "lost_in_all_variants": 2,
+        "lost_rate_any_variant": 0.666667,
+        "lost_rate_all_variants": 0.666667
+      },
+      {
+        "rule": "ADVANCE_FEE_4_NEW_MONEY",
+        "baseline_occurrences": 8,
+        "lost_in_any_variant": 5,
+        "lost_in_all_variants": 5,
+        "lost_rate_any_variant": 0.625,
+        "lost_rate_all_variants": 0.625
+      },
+      {
+        "rule": "DEAR_SOMETHING",
+        "baseline_occurrences": 58,
+        "lost_in_any_variant": 35,
+        "lost_in_all_variants": 35,
+        "lost_rate_any_variant": 0.603448,
+        "lost_rate_all_variants": 0.603448
+      },
+      {
+        "rule": "SUBJECT_DIET",
+        "baseline_occurrences": 10,
+        "lost_in_any_variant": 6,
+        "lost_in_all_variants": 6,
+        "lost_rate_any_variant": 0.6,
+        "lost_rate_all_variants": 0.6
+      },
+      {
+        "rule": "DRUG_ED_ONLINE\tautolearn=disabled",
+        "baseline_occurrences": 5,
+        "lost_in_any_variant": 3,
+        "lost_in_all_variants": 3,
+        "lost_rate_any_variant": 0.6,
+        "lost_rate_all_variants": 0.6
+      },
+      {
+        "rule": "DRUG_ED_ONLINE",
+        "baseline_occurrences": 5,
+        "lost_in_any_variant": 3,
+        "lost_in_all_variants": 3,
+        "lost_rate_any_variant": 0.6,
+        "lost_rate_all_variants": 0.6
+      },
+      {
+        "rule": "DEAR_SOMETHING\tautolearn=disabled",
+        "baseline_occurrences": 5,
+        "lost_in_any_variant": 3,
+        "lost_in_all_variants": 3,
+        "lost_rate_any_variant": 0.6,
+        "lost_rate_all_variants": 0.6
+      },
+      {
+        "rule": "DEAR_FRIEND",
+        "baseline_occurrences": 15,
+        "lost_in_any_variant": 8,
+        "lost_in_all_variants": 8,
+        "lost_rate_any_variant": 0.533333,
+        "lost_rate_all_variants": 0.533333
+      },
+      {
+        "rule": "TVD_RCVD_IP4\tautolearn=disabled",
+        "baseline_occurrences": 2,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.5,
+        "lost_rate_all_variants": 0.5
+      },
+      {
+        "rule": "NA_DOLLARS\tautolearn=disabled",
+        "baseline_occurrences": 2,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.5,
+        "lost_rate_all_variants": 0.5
+      },
+      {
+        "rule": "MILLION_USD\tautolearn=disabled",
+        "baseline_occurrences": 2,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.5,
+        "lost_rate_all_variants": 0.5
+      },
+      {
+        "rule": "FIN_FREE\tautolearn=disabled",
+        "baseline_occurrences": 2,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.5,
+        "lost_rate_all_variants": 0.5
+      },
+      {
+        "rule": "DRUG_ED_CAPS",
+        "baseline_occurrences": 15,
+        "lost_in_any_variant": 7,
+        "lost_in_all_variants": 7,
+        "lost_rate_any_variant": 0.466667,
+        "lost_rate_all_variants": 0.466667
+      },
+      {
+        "rule": "MONEY_BACK",
+        "baseline_occurrences": 13,
+        "lost_in_any_variant": 6,
+        "lost_in_all_variants": 6,
+        "lost_rate_any_variant": 0.461538,
+        "lost_rate_all_variants": 0.461538
+      },
+      {
+        "rule": "SUBJECT_DIET\tautolearn=disabled",
+        "baseline_occurrences": 7,
+        "lost_in_any_variant": 3,
+        "lost_in_all_variants": 3,
+        "lost_rate_any_variant": 0.428571,
+        "lost_rate_all_variants": 0.428571
+      },
+      {
+        "rule": "FSL_NEW_HELO_USER",
+        "baseline_occurrences": 5,
+        "lost_in_any_variant": 2,
+        "lost_in_all_variants": 2,
+        "lost_rate_any_variant": 0.4,
+        "lost_rate_all_variants": 0.4
+      },
+      {
+        "rule": "EXCUSE_REMOVE\tautolearn=disabled",
+        "baseline_occurrences": 6,
+        "lost_in_any_variant": 2,
+        "lost_in_all_variants": 2,
+        "lost_rate_any_variant": 0.333333,
+        "lost_rate_all_variants": 0.333333
+      },
+      {
+        "rule": "XM_RANDOM\tautolearn=disabled",
+        "baseline_occurrences": 3,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.333333,
+        "lost_rate_all_variants": 0.333333
+      },
+      {
+        "rule": "NO_PRESCRIPTION",
+        "baseline_occurrences": 3,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.333333,
+        "lost_rate_all_variants": 0.333333
+      },
+      {
+        "rule": "FROM_MISSPACED",
+        "baseline_occurrences": 3,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.333333,
+        "lost_rate_all_variants": 0.333333
+      },
+      {
+        "rule": "LOW_PRICE",
+        "baseline_occurrences": 32,
+        "lost_in_any_variant": 10,
+        "lost_in_all_variants": 10,
+        "lost_rate_any_variant": 0.3125,
+        "lost_rate_all_variants": 0.3125
+      },
+      {
+        "rule": "WEIRD_QUOTING\tautolearn=disabled",
+        "baseline_occurrences": 5,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 0,
+        "lost_rate_any_variant": 0.2,
+        "lost_rate_all_variants": 0.0
+      },
+      {
+        "rule": "EXCUSE_24\tautolearn=disabled",
+        "baseline_occurrences": 5,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 0,
+        "lost_rate_any_variant": 0.2,
+        "lost_rate_all_variants": 0.0
+      },
+      {
+        "rule": "MSOE_MID_WRONG_CASE\tautolearn=disabled",
+        "baseline_occurrences": 42,
+        "lost_in_any_variant": 8,
+        "lost_in_all_variants": 2,
+        "lost_rate_any_variant": 0.190476,
+        "lost_rate_all_variants": 0.047619
+      },
+      {
+        "rule": "T_MONEY_PERCENT",
+        "baseline_occurrences": 43,
+        "lost_in_any_variant": 8,
+        "lost_in_all_variants": 5,
+        "lost_rate_any_variant": 0.186047,
+        "lost_rate_all_variants": 0.116279
+      },
+      {
+        "rule": "THIS_AD",
+        "baseline_occurrences": 23,
+        "lost_in_any_variant": 4,
+        "lost_in_all_variants": 4,
+        "lost_rate_any_variant": 0.173913,
+        "lost_rate_all_variants": 0.173913
+      },
+      {
+        "rule": "NA_DOLLARS",
+        "baseline_occurrences": 23,
+        "lost_in_any_variant": 4,
+        "lost_in_all_variants": 2,
+        "lost_rate_any_variant": 0.173913,
+        "lost_rate_all_variants": 0.086957
+      },
+      {
+        "rule": "T_TVD_MIME_EPI\tautolearn=disabled",
+        "baseline_occurrences": 12,
+        "lost_in_any_variant": 2,
+        "lost_in_all_variants": 2,
+        "lost_rate_any_variant": 0.166667,
+        "lost_rate_all_variants": 0.166667
+      },
+      {
+        "rule": "MIXED_HREF_CASE\tautolearn=disabled",
+        "baseline_occurrences": 25,
+        "lost_in_any_variant": 4,
+        "lost_in_all_variants": 2,
+        "lost_rate_any_variant": 0.16,
+        "lost_rate_all_variants": 0.08
+      },
+      {
+        "rule": "BAD_CREDIT",
+        "baseline_occurrences": 58,
+        "lost_in_any_variant": 9,
+        "lost_in_all_variants": 9,
+        "lost_rate_any_variant": 0.155172,
+        "lost_rate_all_variants": 0.155172
+      },
+      {
+        "rule": "TEQF_USR_POLITE",
+        "baseline_occurrences": 7,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.142857,
+        "lost_rate_all_variants": 0.142857
+      },
+      {
+        "rule": "T_MONEY_PERCENT\tautolearn=disabled",
+        "baseline_occurrences": 15,
+        "lost_in_any_variant": 2,
+        "lost_in_all_variants": 2,
+        "lost_rate_any_variant": 0.133333,
+        "lost_rate_all_variants": 0.133333
+      },
+      {
+        "rule": "BIGNUM_EMAILS_MANY",
+        "baseline_occurrences": 27,
+        "lost_in_any_variant": 3,
+        "lost_in_all_variants": 3,
+        "lost_rate_any_variant": 0.111111,
+        "lost_rate_all_variants": 0.111111
+      },
+      {
+        "rule": "UNCLAIMED_MONEY",
+        "baseline_occurrences": 9,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 0,
+        "lost_rate_any_variant": 0.111111,
+        "lost_rate_all_variants": 0.0
+      },
+      {
+        "rule": "END_FUTURE_EMAILS",
+        "baseline_occurrences": 90,
+        "lost_in_any_variant": 9,
+        "lost_in_all_variants": 9,
+        "lost_rate_any_variant": 0.1,
+        "lost_rate_all_variants": 0.1
+      },
+      {
+        "rule": "ADVANCE_FEE_5_NEW_MONEY",
+        "baseline_occurrences": 70,
+        "lost_in_any_variant": 7,
+        "lost_in_all_variants": 7,
+        "lost_rate_any_variant": 0.1,
+        "lost_rate_all_variants": 0.1
+      },
+      {
+        "rule": "LOTS_OF_MONEY",
+        "baseline_occurrences": 228,
+        "lost_in_any_variant": 19,
+        "lost_in_all_variants": 19,
+        "lost_rate_any_variant": 0.083333,
+        "lost_rate_all_variants": 0.083333
+      },
+      {
+        "rule": "T_TVD_MIME_EPI",
+        "baseline_occurrences": 24,
+        "lost_in_any_variant": 2,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.083333,
+        "lost_rate_all_variants": 0.041667
+      },
+      {
+        "rule": "FIN_FREE",
+        "baseline_occurrences": 38,
+        "lost_in_any_variant": 3,
+        "lost_in_all_variants": 3,
+        "lost_rate_any_variant": 0.078947,
+        "lost_rate_all_variants": 0.078947
+      },
+      {
+        "rule": "FSL_HELO_BARE_IP_1",
+        "baseline_occurrences": 13,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.076923,
+        "lost_rate_all_variants": 0.076923
+      },
+      {
+        "rule": "HEADER_FROM_DIFFERENT_DOMAINS\tautolearn=disabled",
+        "baseline_occurrences": 82,
+        "lost_in_any_variant": 6,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.073171,
+        "lost_rate_all_variants": 0.012195
+      },
+      {
+        "rule": "HEADER_FROM_DIFFERENT_DOMAINS",
+        "baseline_occurrences": 220,
+        "lost_in_any_variant": 16,
+        "lost_in_all_variants": 13,
+        "lost_rate_any_variant": 0.072727,
+        "lost_rate_all_variants": 0.059091
+      },
+      {
+        "rule": "HK_RANDOM_REPLYTO",
+        "baseline_occurrences": 15,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.066667,
+        "lost_rate_all_variants": 0.066667
+      },
+      {
+        "rule": "MIXED_HREF_CASE",
+        "baseline_occurrences": 49,
+        "lost_in_any_variant": 3,
+        "lost_in_all_variants": 3,
+        "lost_rate_any_variant": 0.061224,
+        "lost_rate_all_variants": 0.061224
+      },
+      {
+        "rule": "MILLION_USD",
+        "baseline_occurrences": 38,
+        "lost_in_any_variant": 2,
+        "lost_in_all_variants": 2,
+        "lost_rate_any_variant": 0.052632,
+        "lost_rate_all_variants": 0.052632
+      },
+      {
+        "rule": "END_FUTURE_EMAILS\tautolearn=disabled",
+        "baseline_occurrences": 21,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 0,
+        "lost_rate_any_variant": 0.047619,
+        "lost_rate_all_variants": 0.0
+      },
+      {
+        "rule": "T_KAM_HTML_FONT_INVALID",
+        "baseline_occurrences": 24,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.041667,
+        "lost_rate_all_variants": 0.041667
+      },
+      {
+        "rule": "MSOE_MID_WRONG_CASE",
+        "baseline_occurrences": 122,
+        "lost_in_any_variant": 5,
+        "lost_in_all_variants": 4,
+        "lost_rate_any_variant": 0.040984,
+        "lost_rate_all_variants": 0.032787
+      },
+      {
+        "rule": "EXCUSE_24",
+        "baseline_occurrences": 27,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.037037,
+        "lost_rate_all_variants": 0.037037
+      },
+      {
+        "rule": "EXCUSE_REMOVE",
+        "baseline_occurrences": 30,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.033333,
+        "lost_rate_all_variants": 0.033333
+      },
+      {
+        "rule": "HELO_NO_DOMAIN",
+        "baseline_occurrences": 31,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 0,
+        "lost_rate_any_variant": 0.032258,
+        "lost_rate_all_variants": 0.0
+      },
+      {
+        "rule": "GUARANTEED_100_PERCENT",
+        "baseline_occurrences": 36,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.027778,
+        "lost_rate_all_variants": 0.027778
+      },
+      {
+        "rule": "LOTS_OF_MONEY\tautolearn=disabled",
+        "baseline_occurrences": 46,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.021739,
+        "lost_rate_all_variants": 0.021739
+      },
+      {
+        "rule": "BANG_GUAR",
+        "baseline_occurrences": 78,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.012821,
+        "lost_rate_all_variants": 0.012821
+      }
+    ],
+    "all_bypass_rule_loss": [
+      {
+        "rule": "DEAR_SOMETHING",
+        "lost_in_bypass_any": 7,
+        "lost_in_bypass_all": 7,
+        "bypass_loss_rate_any": 0.318182,
+        "bypass_loss_rate_all": 0.318182
+      },
+      {
+        "rule": "ADVANCE_FEE_5_NEW_MONEY",
+        "lost_in_bypass_any": 5,
+        "lost_in_bypass_all": 5,
+        "bypass_loss_rate_any": 0.227273,
+        "bypass_loss_rate_all": 0.227273
+      },
+      {
+        "rule": "PP_MIME_FAKE_ASCII_TEXT",
+        "lost_in_bypass_any": 3,
+        "lost_in_bypass_all": 3,
+        "bypass_loss_rate_any": 0.136364,
+        "bypass_loss_rate_all": 0.136364
+      },
+      {
+        "rule": "ENGLISH_UCE_SUBJECT",
+        "lost_in_bypass_any": 3,
+        "lost_in_bypass_all": 3,
+        "bypass_loss_rate_any": 0.136364,
+        "bypass_loss_rate_all": 0.136364
+      },
+      {
+        "rule": "SUBJECT_DIET",
+        "lost_in_bypass_any": 2,
+        "lost_in_bypass_all": 2,
+        "bypass_loss_rate_any": 0.090909,
+        "bypass_loss_rate_all": 0.090909
+      },
+      {
+        "rule": "FSL_CTYPE_WIN1251",
+        "lost_in_bypass_any": 2,
+        "lost_in_bypass_all": 2,
+        "bypass_loss_rate_any": 0.090909,
+        "bypass_loss_rate_all": 0.090909
+      },
+      {
+        "rule": "DEAR_FRIEND",
+        "lost_in_bypass_any": 2,
+        "lost_in_bypass_all": 2,
+        "bypass_loss_rate_any": 0.090909,
+        "bypass_loss_rate_all": 0.090909
+      },
+      {
+        "rule": "T_MONEY_PERCENT",
+        "lost_in_bypass_any": 2,
+        "lost_in_bypass_all": 1,
+        "bypass_loss_rate_any": 0.090909,
+        "bypass_loss_rate_all": 0.045455
+      },
+      {
+        "rule": "MSOE_MID_WRONG_CASE",
+        "lost_in_bypass_any": 2,
+        "lost_in_bypass_all": 1,
+        "bypass_loss_rate_any": 0.090909,
+        "bypass_loss_rate_all": 0.045455
+      },
+      {
+        "rule": "XM_RANDOM\tautolearn=disabled",
+        "lost_in_bypass_any": 1,
+        "lost_in_bypass_all": 1,
+        "bypass_loss_rate_any": 0.045455,
+        "bypass_loss_rate_all": 0.045455
+      },
+      {
+        "rule": "TVD_SUBJ_WIPE_DEBT",
+        "lost_in_bypass_any": 1,
+        "lost_in_bypass_all": 1,
+        "bypass_loss_rate_any": 0.045455,
+        "bypass_loss_rate_all": 0.045455
+      },
+      {
+        "rule": "TEQF_USR_POLITE\tautolearn=disabled",
+        "lost_in_bypass_any": 1,
+        "lost_in_bypass_all": 1,
+        "bypass_loss_rate_any": 0.045455,
+        "bypass_loss_rate_all": 0.045455
+      },
+      {
+        "rule": "NA_DOLLARS",
+        "lost_in_bypass_any": 1,
+        "lost_in_bypass_all": 1,
+        "bypass_loss_rate_any": 0.045455,
+        "bypass_loss_rate_all": 0.045455
+      },
+      {
+        "rule": "MSOE_MID_WRONG_CASE\tautolearn=disabled",
+        "lost_in_bypass_any": 1,
+        "lost_in_bypass_all": 1,
+        "bypass_loss_rate_any": 0.045455,
+        "bypass_loss_rate_all": 0.045455
+      },
+      {
+        "rule": "MILLION_USD",
+        "lost_in_bypass_any": 1,
+        "lost_in_bypass_all": 1,
+        "bypass_loss_rate_any": 0.045455,
+        "bypass_loss_rate_all": 0.045455
+      },
+      {
+        "rule": "HEADER_FROM_DIFFERENT_DOMAINS\tautolearn=disabled",
+        "lost_in_bypass_any": 1,
+        "lost_in_bypass_all": 1,
+        "bypass_loss_rate_any": 0.045455,
+        "bypass_loss_rate_all": 0.045455
+      },
+      {
+        "rule": "GUARANTEED_100_PERCENT",
+        "lost_in_bypass_any": 1,
+        "lost_in_bypass_all": 1,
+        "bypass_loss_rate_any": 0.045455,
+        "bypass_loss_rate_all": 0.045455
+      },
+      {
+        "rule": "FROM_ILLEGAL_CHARS",
+        "lost_in_bypass_any": 1,
+        "lost_in_bypass_all": 1,
+        "bypass_loss_rate_any": 0.045455,
+        "bypass_loss_rate_all": 0.045455
+      },
+      {
+        "rule": "BIGNUM_EMAILS_MANY",
+        "lost_in_bypass_any": 1,
+        "lost_in_bypass_all": 1,
+        "bypass_loss_rate_any": 0.045455,
+        "bypass_loss_rate_all": 0.045455
+      },
+      {
+        "rule": "BANG_GUAR",
+        "lost_in_bypass_any": 1,
+        "lost_in_bypass_all": 1,
+        "bypass_loss_rate_any": 0.045455,
+        "bypass_loss_rate_all": 0.045455
+      }
+    ]
+  }
+}

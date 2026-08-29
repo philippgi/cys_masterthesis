@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+"""
+Evaluates the effect of zero-width Unicode salting on the Rspamd Bayes pilot case.
+
+The unsalted pilot message is scanned as the baseline. A salted variant is
+generated from the case body, scanned under the same configuration, and compared
+with respect to the overall and Bayesian scores and classification results.
+"""
+
 from __future__ import annotations
 
 import csv
@@ -7,18 +15,19 @@ import re
 from pathlib import Path
 
 from config import (
-    BASE_DIR,
-    PILOT_SALT_FRAGMENT_MAX_POSITIONS,
-    PILOT_SALT_INSERT_AFTER_INDEX,
-    PILOT_SALT_MODE,
+    PILOT_RS_BAYES_OUTPUT_DIR,
+    PILOT_RS_BAYES_FROM_ADDR,
+    PILOT_RS_BAYES_TO_ADDR,
+    PILOT_RS_BAYES_SALT_MODE,
+    PILOT_RS_BAYES_INSERT_AFTER_INDEX,
 )
 from src.main_evaluation.rspamd_evaluation.runner import run_rspamd_scan
 from src.pilot.rspamd.bayes_based.cases import BAYES_CASES, CODEPOINT_CHAR, CODEPOINT_NAME
-from src.pilot.rspamd.rule_based.template_builder import create_paired_bytes, write_message
 from src.utils.console import print_step, print_section, print_kv, print_end
+from src.pilot.rspamd.bayes_based.template_builder import create_paired_bytes, write_message
 
 
-OUTPUT_ROOT = BASE_DIR / "data/output/pilot/rspamd/bayes"
+OUTPUT_ROOT = PILOT_RS_BAYES_OUTPUT_DIR
 TEST_UNSALTED_DIR = OUTPUT_ROOT / "messages" / "unsalted"
 TEST_SALTED_DIR = OUTPUT_ROOT / "messages" / "salted"
 RESULTS_DIR = OUTPUT_ROOT / "results"
@@ -42,15 +51,36 @@ def _write_json(path: Path, data: dict) -> None:
 
 
 def _tokenize_text(text: str) -> list[str]:
+    """Extract ASCII alphanumeric tokens from text."""
     return re.findall(r"[A-Za-z0-9_]+", text or "")
 
 
 def _unique_tokens(text: str) -> list[str]:
+    """
+    Extract unique candidate tokens of at least four characters.
+
+    Args:
+        text (str): Text from which tokens are extracted.
+
+    Returns:
+        list[str]: Unique tokens in their original order.
+    """
+
     tokens = [token for token in _tokenize_text(text) if len(token) >= 4]
     return list(dict.fromkeys(tokens))
 
 
 def _scan_summary(email_path: Path) -> dict:
+    """
+    Scan an email and extract the Rspamd and Bayes results used by the pilot.
+
+    Args:
+        email_path (Path): Path to the email message.
+
+    Returns:
+        dict: Selected scan and Bayes result fields.
+    """
+
     scan = run_rspamd_scan(email_path)
     return {
         "spam_flag": scan["spam_flag"],
@@ -66,12 +96,18 @@ def _scan_summary(email_path: Path) -> dict:
 
 
 def _delta(a, b):
+    """Return the difference from baseline to salted value."""
+
     if a is None or b is None:
         return None
     return b - a
 
 
 def run_rspamd_pilot_bayes_eval() -> None:
+    """
+    Run the paired unsalted and salted Rspamd Bayes pilot evaluation.
+    """
+
     print_step("Rspamd Pilot - Bayes Eval")
 
     case = BAYES_CASES[0]
@@ -88,14 +124,15 @@ def run_rspamd_pilot_bayes_eval() -> None:
     print_kv("title", case.title)
 
     subject_tokens = []
+
+    # Salt all unique body tokens of at least four characters.
     body_tokens = _unique_tokens(case.body)
 
     print_section("Salting targets")
     print_kv("subject_tokens", subject_tokens)
     print_kv("body_tokens", body_tokens)
-    print_kv("salt_mode", PILOT_SALT_MODE)
-    print_kv("insert_after_index", PILOT_SALT_INSERT_AFTER_INDEX)
-    print_kv("fragment_max_positions", PILOT_SALT_FRAGMENT_MAX_POSITIONS)
+    print_kv("salt_mode", PILOT_RS_BAYES_SALT_MODE)
+    print_kv("insert_after_index", PILOT_RS_BAYES_INSERT_AFTER_INDEX)
 
     print_section("Baseline scan")
     baseline = _scan_summary(unsalted_path)
@@ -113,8 +150,8 @@ def run_rspamd_pilot_bayes_eval() -> None:
         target_tokens_subject=tuple(subject_tokens),
         target_tokens_body=tuple(body_tokens),
         codepoint=CODEPOINT_CHAR,
-        from_addr="pilot@example.test",
-        to_addr="victim@example.test",
+        from_addr=PILOT_RS_BAYES_FROM_ADDR,
+        to_addr=PILOT_RS_BAYES_TO_ADDR,
     )
     write_message(salted_path, salted_bytes)
 
@@ -169,9 +206,8 @@ def run_rspamd_pilot_bayes_eval() -> None:
     summary = {
         "case_id": case.case_id,
         "title": case.title,
-        "salt_mode": PILOT_SALT_MODE,
-        "insert_after_index": PILOT_SALT_INSERT_AFTER_INDEX,
-        "fragment_max_positions": PILOT_SALT_FRAGMENT_MAX_POSITIONS,
+        "salt_mode": PILOT_RS_BAYES_SALT_MODE,
+        "insert_after_index": PILOT_RS_BAYES_INSERT_AFTER_INDEX,
         "selected_tokens_subject": subject_tokens,
         "selected_tokens_body": body_tokens,
         "unsalted_score": baseline["score"],
@@ -194,9 +230,8 @@ def run_rspamd_pilot_bayes_eval() -> None:
         "codepoint": CODEPOINT_NAME,
         "target_tokens_subject": subject_tokens,
         "target_tokens_body": body_tokens,
-        "salt_mode": PILOT_SALT_MODE,
-        "insert_after_index": PILOT_SALT_INSERT_AFTER_INDEX,
-        "fragment_max_positions": PILOT_SALT_FRAGMENT_MAX_POSITIONS,
+        "salt_mode": PILOT_RS_BAYES_SALT_MODE,
+        "insert_after_index": PILOT_RS_BAYES_INSERT_AFTER_INDEX,
         "n_insert_subject": counts["n_insert_subject"],
         "n_insert_body": counts["n_insert_body"],
     }

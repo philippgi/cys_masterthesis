@@ -1,0 +1,5 @@
+rule;baseline_occurrences;lost_in_any_variant;lost_in_all_variants;lost_rate_any_variant;lost_rate_all_variants
+FROM_NEEDS_ENCODING;1;1;1;1.0;1.0
+MIME_BASE64_TEXT_BOGUS;6;5;5;0.833333;0.833333
+R_MISSING_CHARSET;16;10;10;0.625;0.625
+R_BAD_CTE_7BIT;10;6;6;0.6;0.6

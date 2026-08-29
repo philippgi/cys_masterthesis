@@ -1,10 +1,19 @@
 #!/usr/bin/env python3
+"""
+Prepares the unsalted message used for the Rspamd Bayes pilot evaluation.
+"""
+
 from __future__ import annotations
 
 import time
-from pathlib import Path
 
-from config import BASE_DIR
+from config import (
+    PILOT_RS_BAYES_OUTPUT_DIR,
+    PILOT_RS_BAYES_CONFIG_NAME,
+    PILOT_RS_BAYES_READY_SLEEP_SECONDS,
+    PILOT_RS_BAYES_FROM_ADDR,
+    PILOT_RS_BAYES_TO_ADDR,
+)
 from src.main_evaluation.main_evaluation_utils.container_control import restart_rspamd
 from src.main_evaluation.main_evaluation_utils.rs_config_switcher import activate_rspamd_config
 from src.pilot.rspamd.bayes_based.cases import BAYES_CASES, CODEPOINT_CHAR
@@ -12,18 +21,21 @@ from src.pilot.rspamd.rule_based.template_builder import create_paired_bytes, wr
 from src.utils.console import print_step, print_section, print_kv, print_end
 
 
-OUTPUT_ROOT = BASE_DIR / "data/output/pilot/rspamd/bayes"
+OUTPUT_ROOT = PILOT_RS_BAYES_OUTPUT_DIR
 TEST_UNSALTED_DIR = OUTPUT_ROOT / "messages" / "unsalted"
 
 
 def run_rspamd_pilot_bayes_prepare() -> None:
+    """
+    Activate the pilot configuration and create the unsalted pilot message.
+    """
     print_step("Rspamd Pilot - Bayes Prepare")
 
     case = BAYES_CASES[0]
 
-    activate_rspamd_config("rs_pilot_bayes")
+    activate_rspamd_config(PILOT_RS_BAYES_CONFIG_NAME)
     restart_rspamd()
-    time.sleep(5)
+    time.sleep(PILOT_RS_BAYES_READY_SLEEP_SECONDS)
 
     print_section("Pilot case")
     print_kv("case_id", case.case_id)
@@ -35,8 +47,8 @@ def run_rspamd_pilot_bayes_prepare() -> None:
         target_tokens_subject=(),
         target_tokens_body=(),
         codepoint=CODEPOINT_CHAR,
-        from_addr="pilot@example.test",
-        to_addr="victim@example.test",
+        from_addr=PILOT_RS_BAYES_FROM_ADDR,
+        to_addr=PILOT_RS_BAYES_TO_ADDR,
     )
 
     unsalted_path = TEST_UNSALTED_DIR / f"{case.case_id}_unsalted.eml"

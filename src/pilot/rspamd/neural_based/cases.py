@@ -1,10 +1,18 @@
+"""
+Defines the Rspamd neural pilot cases and configured salting code point.
+"""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
 
+from config import (
+    PILOT_RS_NEURAL_CODEPOINT_NAME,
+    PILOT_RS_NEURAL_CODEPOINT_CHAR,
+)
 
-CODEPOINT_NAME = "U+200B"
-CODEPOINT_CHAR = "\u200b"
+CODEPOINT_NAME = PILOT_RS_NEURAL_CODEPOINT_NAME
+CODEPOINT_CHAR = PILOT_RS_NEURAL_CODEPOINT_CHAR
 
 
 @dataclass(frozen=True)
@@ -17,7 +25,7 @@ class RspamdNeuralPilotCase:
 
 
 RSN001 = RspamdNeuralPilotCase(
-    case_id="RSN001",
+    case_id="RSN01",
     title="Rspamd Neural pilot mortgage spam case",
     subject="Hello Martin",
     body=(

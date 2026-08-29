@@ -1,13 +1,18 @@
+"""
+Defines the Rspamd Bayes pilot cases and configured salting code point.
+"""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
 
+from config import (
+    PILOT_RS_BAYES_CODEPOINT_NAME,
+    PILOT_RS_BAYES_CODEPOINT_CHAR,
+)
 
-#CODEPOINT_NAME = "U+00AD"
-#CODEPOINT_CHAR = "\u00ad"
-
-CODEPOINT_NAME = "Random-String"
-CODEPOINT_CHAR = "xyk"
+CODEPOINT_NAME = PILOT_RS_BAYES_CODEPOINT_NAME
+CODEPOINT_CHAR = PILOT_RS_BAYES_CODEPOINT_CHAR
 
 
 @dataclass(frozen=True)
@@ -20,7 +25,7 @@ class RspamdBayesPilotCase:
 
 
 RSB001 = RspamdBayesPilotCase(
-    case_id="RSB001",
+    case_id="RSB01",
     title="Rspamd Bayes pilot mortgage spam case",
     subject="Hello Friend",
     body=(

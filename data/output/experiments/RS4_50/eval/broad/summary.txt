@@ -1,0 +1,214 @@
+Experiment Summary: RS4_broad_50
+================================
+
+Filter              : Rspamd
+Mechanism           : rules__plus_neural_retrained
+Rule scope          : extended_local_content
+Salting condition   : broad
+
+Salting configuration
+---------------------
+subject_max_insertions: 1
+body_max_insertions   : 3
+salt_mode             : single
+insert_after_index    : 2
+fragment_max_positions: None
+
+Input files
+-----------
+results.csv         : C:\Projekte\masterthesis_cys\data\output\experiments\RS4_50\eval\broad\rspamd_evaluation\rspamd_results.csv
+results_paired.csv  : C:\Projekte\masterthesis_cys\data\output\experiments\RS4_50\eval\broad\rspamd_evaluation\rspamd_results_paired.csv
+
+Counts
+------
+Variant rows total              : 2005
+Paired rows total               : 245
+Baseline spam                   : 245
+Baseline ham                    : 780
+Salted variants                 : 980
+Unique salted source emails     : 245
+Baseline-detected spam          : 204
+Baseline-not-detected spam      : 41
+Baseline spam detected (variant): 204
+Baseline ham false positives    : 26
+
+Rates
+-----
+Baseline spam detection rate    : 0.832653
+Baseline ham FP rate            : 0.033333
+Bypass rate (any)               : 0.019608
+Bypass rate (all)               : 0.019608
+Classification stability (all)  : 0.980392
+Classification stability (any)  : 0.980392
+
+Means
+-----
+Mean baseline score             : 10.75549
+Mean salted score               : 10.631918
+Mean salted min score           : 10.606172
+Mean score drop                 : 0.123572
+Mean best-case score drop       : 0.149318
+Mean baseline rule count        : 20.995098
+Mean salted rule count          : 20.900735
+Mean rule loss                  : 0.094363
+
+Medians
+-------
+Median score drop               : 0.0
+Median best-case score drop     : 0.0
+Median rule loss                : 0.0
+
+Classification counts
+---------------------
+n_any_bypass                    : 4
+n_all_bypass                    : 4
+n_all_spam                      : 200
+n_any_spam                      : 200
+
+Codepoint analysis
+------------------
+00AD:
+  n_variants                  : 245
+  n_unique_sources            : 245
+  n_baseline_detected_sources : 204
+  bypass_rate                 : 0.019608
+  spam_rate                   : 0.980392
+  mean_score                  : 10.640486
+  median_score                : 10.3
+  mean_rule_count             : 20.901961
+
+200B:
+  n_variants                  : 245
+  n_unique_sources            : 245
+  n_baseline_detected_sources : 204
+  bypass_rate                 : 0.019608
+  spam_rate                   : 0.980392
+  mean_score                  : 10.640499
+  median_score                : 10.3
+  mean_rule_count             : 20.901961
+
+200C:
+  n_variants                  : 245
+  n_unique_sources            : 245
+  n_baseline_detected_sources : 204
+  bypass_rate                 : 0.019608
+  spam_rate                   : 0.980392
+  mean_score                  : 10.640499
+  median_score                : 10.3
+  mean_rule_count             : 20.901961
+
+200D:
+  n_variants                  : 245
+  n_unique_sources            : 245
+  n_baseline_detected_sources : 204
+  bypass_rate                 : 0.019608
+  spam_rate                   : 0.980392
+  mean_score                  : 10.606186
+  median_score                : 10.3
+  mean_rule_count             : 20.897059
+
+Salting intensity
+-----------------
+Mean subject insertions : 0.632653
+Mean body insertions    : 1.779592
+Mean total insertions   : 2.412245
+Max subject insertions  : 1
+Max body insertions     : 3
+
+Insertion distribution
+----------------------
+1 insertions : 396
+2 insertions : 16
+3 insertions : 336
+4 insertions : 232
+
+Bayes analysis
+--------------
+Baseline-detected emails         : None
+Baseline emails with Bayes       : None
+Salted emails with any Bayes     : None
+Bayes lost in at least one var.  : None
+Bayes lost in all variants       : None
+
+Neural analysis
+---------------
+Baseline-detected emails          : 204
+Baseline emails with Neural       : 204
+Salted emails with any Neural     : 204
+Neural lost in at least one var.  : 0
+Neural lost in all variants       : 0
+Mean baseline Neural score        : 2.966991
+Mean salted Neural score          : 2.966703
+
+Baseline Neural symbols
+~~~~~~~~~~~~~~~~~~~~~~~
+NEURAL_HAM:
+  count : 1
+
+NEURAL_SPAM:
+  count : 203
+
+Salted Neural symbols
+~~~~~~~~~~~~~~~~~~~~~
+NEURAL_HAM:
+  count : 4
+
+NEURAL_SPAM:
+  count : 812
+
+Mean baseline Bayes score        : None
+Mean salted Bayes score          : None
+
+Baseline Bayes symbols
+~~~~~~~~~~~~~~~~~~~~~~
+No Bayes symbol data available.
+Salted Bayes symbols
+~~~~~~~~~~~~~~~~~~~~
+No Bayes symbol data available.
+Rule loss analysis
+------------------
+Lost rules (all)
+~~~~~~~~~~~~~~~~
+FROM_NEEDS_ENCODING:
+  baseline_occurrences  : 1
+  lost_in_any_variant   : 1
+  lost_in_all_variants  : 1
+  lost_rate_any_variant : 1.0
+  lost_rate_all_variants: 1.0
+
+MIME_BASE64_TEXT_BOGUS:
+  baseline_occurrences  : 9
+  lost_in_any_variant   : 6
+  lost_in_all_variants  : 6
+  lost_rate_any_variant : 0.666667
+  lost_rate_all_variants: 0.666667
+
+R_MISSING_CHARSET:
+  baseline_occurrences  : 26
+  lost_in_any_variant   : 11
+  lost_in_all_variants  : 11
+  lost_rate_any_variant : 0.423077
+  lost_rate_all_variants: 0.423077
+
+R_BAD_CTE_7BIT:
+  baseline_occurrences  : 16
+  lost_in_any_variant   : 6
+  lost_in_all_variants  : 6
+  lost_rate_any_variant : 0.375
+  lost_rate_all_variants: 0.375
+
+NEURAL_HAM:
+  baseline_occurrences  : 9
+  lost_in_any_variant   : 1
+  lost_in_all_variants  : 1
+  lost_rate_any_variant : 0.111111
+  lost_rate_all_variants: 0.111111
+
+Lost rules in bypass cases
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+R_BAD_CTE_7BIT:
+  lost_in_bypass_any  : 4
+  lost_in_bypass_all  : 4
+  bypass_loss_rate_any: 1.0
+  bypass_loss_rate_all: 1.0
+

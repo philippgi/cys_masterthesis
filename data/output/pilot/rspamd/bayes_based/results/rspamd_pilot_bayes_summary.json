@@ -1,0 +1,31 @@
+{
+  "case_id": "RSB01",
+  "title": "Rspamd Bayes pilot mortgage spam case",
+  "salt_mode": "fragment",
+  "insert_after_index": 2,
+  "selected_tokens_subject": [],
+  "selected_tokens_body": [
+    "your",
+    "free",
+    "mortgage",
+    "rate",
+    "quote",
+    "much",
+    "could",
+    "save",
+    "every",
+    "month"
+  ],
+  "unsalted_score": 7.16279,
+  "salted_score": 7.16279,
+  "delta_score": 0.0,
+  "unsalted_bayes_symbol": "BAYES_SPAM",
+  "salted_bayes_symbol": "BAYES_SPAM",
+  "unsalted_bayes_score": 4.66279,
+  "salted_bayes_score": 4.66279,
+  "delta_bayes_score": 0.0,
+  "unsalted_action": "add header",
+  "salted_action": "add header",
+  "unsalted_spam_flag": true,
+  "salted_spam_flag": true
+}

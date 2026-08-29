@@ -1,0 +1,15 @@
+{
+  "N_spam": 1516,
+  "N_ham": 3120,
+  "alpha": 1.0,
+  "min_df_spam": 16,
+  "total_candidates": 1276,
+  "count_score_ge_3_0": 50,
+  "count_score_ge_2_5": 98,
+  "count_score_ge_1_5": 258,
+  "score_at_50": 3.0230928719166776,
+  "score_at_100": 2.4966241646357017,
+  "score_at_200": 1.7819203916430668,
+  "score_at_500": 0.8188436186861767,
+  "token_definition": "lowercase, alphabetic tokens >=3 chars, URLs removed, English stopwords removed, HTML tags/entities stripped, common HTML artifacts removed"
+}

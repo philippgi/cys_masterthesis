@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+"""
+Analyzes the overlap between SpamAssassin Bayes-relevant tokens and the
+strict, extended, and broad trigger vocabularies.
+
+A reproducible sample of training spam emails is inspected using SpamAssassin's
+Bayes debug output. Bayes-relevant lexical tokens are extracted and compared
+against the three trigger vocabulary scopes.
+"""
 
 from __future__ import annotations
 
@@ -26,6 +34,16 @@ from src.utils.console import print_step, print_section, print_kv, print_end
 
 
 def _load_trigger_word_set(path: Path) -> set[str]:
+    """
+    Load trigger tokens from a generated vocabulary file.
+
+    Args:
+        path (Path): Path to the trigger vocabulary JSON file.
+
+    Returns:
+        set[str]: Trigger tokens contained in the vocabulary.
+    """
+
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
@@ -33,10 +51,31 @@ def _load_trigger_word_set(path: Path) -> set[str]:
 
 
 def _safe_rate(num: int, denom: int) -> float:
+    """
+    Calculate a ratio while avoiding division by zero.
+
+    Args:
+        num (int): Numerator.
+        denom (int): Denominator.
+
+    Returns:
+        float: Calculated ratio, or 0.0 if the denominator is zero.
+    """
+
     return num / denom if denom else 0.0
 
 
 def _is_lexical_token(token: str) -> bool:
+    """
+    Determine whether a Bayes token represents a lexical word-like token.
+
+    Args:
+        token (str): Token extracted from SpamAssassin Bayes output.
+
+    Returns:
+        bool: True if the token matches the lexical token pattern.
+    """
+
     return bool(re.fullmatch(r"[a-z]{3,}(?:[,'-][a-z]{2,})*", token))
 
 
@@ -44,6 +83,20 @@ def _extract_bayes_relevant_tokens(
     email_path: Path,
     bayes_threshold: float,
 ) -> list[str]:
+    """
+    Extract Bayes-relevant tokens from SpamAssassin debug output.
+
+    Args:
+        email_path (Path): Spam email to inspect.
+        bayes_threshold (float): Minimum Bayes token probability to retain.
+
+    Returns:
+        list[str]: Unique tokens meeting the configured Bayes threshold.
+
+    Raises:
+        RuntimeError: If the SpamAssassin debug command fails.
+    """
+
     cmd = [
         "docker",
         "exec",
@@ -93,6 +146,7 @@ def _extract_bayes_relevant_tokens(
         except ValueError:
             continue
 
+        # Retain the highest observed probability for each token above the threshold.
         if prob >= bayes_threshold:
             if token not in token_to_prob or prob > token_to_prob[token]:
                 token_to_prob[token] = prob
@@ -101,6 +155,13 @@ def _extract_bayes_relevant_tokens(
 
 
 def run_bayes_token_vocab_overlap() -> None:
+    """
+    Compare SpamAssassin Bayes-relevant tokens with the trigger vocabularies.
+
+    A reproducible sample of training spam emails is analyzed and overlap statistics
+    are exported for the strict, extended, and broad vocabulary scopes.
+    """
+
     dataset_split_dir = BAYES_TOKEN_VOCAB_DATASET_DIR
     sample_size = BAYES_TOKEN_VOCAB_SAMPLE_SIZE
     bayes_threshold = BAYES_TOKEN_VOCAB_THRESHOLD
@@ -149,6 +210,7 @@ def run_bayes_token_vocab_overlap() -> None:
             bayes_threshold=bayes_threshold,
         )
 
+        # Exclude non-lexical Bayes tokens before comparing them with trigger words.
         bayes_lexical_tokens = sorted([t for t in bayes_tokens if _is_lexical_token(t)])
 
         strict_matches = sorted(set(bayes_lexical_tokens) & strict_tokens)

@@ -1,16 +1,17 @@
+"""
+Provides a helper for resetting generated experiment output.
+
+The pipeline output and dataset split directories are removed and recreated
+to ensure a clean state before a new experiment run.
+"""
+
 import shutil
 from config import OUTPUT_ROOT, DATASET_SPLIT
 
 
 def reset_pipeline_output():
     """
-    Deletes all generated pipeline output.
-
-    This removes the entire output directory used by the experiment
-    pipeline so that the pipeline can be executed from a clean state.
-
-    The directory is recreated afterwards to ensure that subsequent
-    pipeline steps can write their artefacts without errors.
+    Remove and recreate all generated pipeline output directories.
     """
 
     if OUTPUT_ROOT.exists():

@@ -1,23 +1,11 @@
 #!/usr/bin/env python3
 
 """
-Step 2 - RFC 5322 + MIME Parsing (Structural Representation)
-This step transforms the raw RFC 5322 message source (byte stream) into a
-structured message object by parsing headers and MIME structure.
+Parses the RFC 5322 and MIME structure of the email message.
 
-Scope of this step:
-- Inspect the top-level headers as parsed by a standard-compliant MIME parser.
-- Inspect whether the message is multipart and enumerate MIME parts.
-- Select the relevant "text/plain" body part for further processing.
-
-Important note:
-- This step focuses on "structural parsing" (representation: bytes -> structured message).
-- It does NOT perform content-transfer decoding (quoted-printable/base64) or charset
-  decoding to Unicode text. Those transformations are handled explicitly in Steps 3-4.
-
-Implementation note:
-- Parsing is performed using Pythons standard library "email" package
-  ("email.parser.BytesParser" with "policy=compat32").
+This stage converts the raw byte stream into a structured message object,
+inspects its MIME structure, and selects the relevant text/plain part.
+Content-transfer and charset decoding are deferred to subsequent stages.
 """
 
 from email import policy
@@ -28,16 +16,17 @@ from src.utils.console import print_section
 
 def step2_parse_mime(raw_bytes):
     """
-    Parse raw RFC 5322 bytes into a structured MIME message and select the "text/plain" body part.
+    Parse the raw message and select the relevant text/plain MIME part.
+
     Args:
-        raw_bytes (bytes): Raw RFC 5322 message source as received from Step 1.
+        raw_bytes (bytes): Serialized RFC 5322 message.
+
     Returns:
-        tuple:
-            msg: Parsed EmailMessage (structured headers + MIME tree).
-            text_part: Selected MIME part (EmailMessage) of type "text/plain", or None if no such part exists.
+        tuple: Parsed message object and selected text/plain part, or None
+        if no matching part is available.
     """
 
-    # Parse raw bytes into a structured EmailMessage (RFC 5322 + MIME structure)
+    # Parse the serialized message without decoding the body payload.
     msg = BytesParser(policy=policy.compat32).parsebytes(raw_bytes)
 
     # Top-level headers as interpreted by the parser
@@ -61,8 +50,7 @@ def step2_parse_mime(raw_bytes):
         print("Not multipart.")
         print("Content-Type:", msg.get_content_type())
 
-    # Select the relevant "text/plain" body part (used for subsequent steps).
-    # For single-part messages, the message itself is the relevant part.
+    # Use the message itself for single-part emails; otherwise select the first text/plain part.
     if not msg.is_multipart():
         text_part = msg
     else:
@@ -82,8 +70,7 @@ def step2_parse_mime(raw_bytes):
     print("Charset:", text_part.get_content_charset())
     print("Content-Transfer-Encoding:", text_part.get("Content-Transfer-Encoding"))
 
-    # Payload as stored in the MIME part
-    # Using decode=False, because decoding is performed in Step 3
+    # Keep the stored payload unchanged, content-transfer decoding is performed in Step 3.
     payload_stored = text_part.get_payload(decode=False)
 
     print_section("BODY PAYLOAD (as stored, CTE not decoded)")

@@ -14,7 +14,7 @@ from src.utils.console import print_step, print_section
 
 def run_sa3_eval():
     dataset_dir = BASE_DIR / "data/datasets/split"
-    output_root = BASE_DIR / "data/output/SA3"
+    output_root = BASE_DIR / "data/output/experiments/SA3"
 
     strict_output = output_root / "strict"
     extended_output = output_root / "extended"
@@ -26,18 +26,33 @@ def run_sa3_eval():
             "output_root": strict_output,
             "experiment_id": "SA3_strict",
             "salting_vocabulary": "strict",
+            "subject_max_insertions": 1,
+            "body_max_insertions": 3,
+            "salt_mode": "single",
+            "insert_after_index": 2,
+            "fragment_max_positions": None,
         },
         {
             "name": "EXTENDED",
             "output_root": extended_output,
             "experiment_id": "SA3_extended",
             "salting_vocabulary": "extended",
+            "subject_max_insertions": 1,
+            "body_max_insertions": 3,
+            "salt_mode": "single",
+            "insert_after_index": 2,
+            "fragment_max_positions": None,
         },
         {
             "name": "BROAD",
             "output_root": broad_output,
             "experiment_id": "SA3_broad",
             "salting_vocabulary": "broad",
+            "subject_max_insertions": 1,
+            "body_max_insertions": 3,
+            "salt_mode": "single",
+            "insert_after_index": 2,
+            "fragment_max_positions": None,
         },
     ]
 
@@ -63,6 +78,11 @@ def run_sa3_eval():
             output_root=exp["output_root"],
             dataset_split_dir=dataset_dir,
             salting_vocabulary=exp["salting_vocabulary"],
+            subject_max_insertions=exp["subject_max_insertions"],
+            body_max_insertions=exp["body_max_insertions"],
+            salt_mode=exp["salt_mode"],
+            insert_after_index=exp["insert_after_index"],
+            fragment_max_positions=exp["fragment_max_positions"],
         )
 
         run_spamassassin_evaluation(
@@ -79,6 +99,13 @@ def run_sa3_eval():
             mechanism="rules_plus_bayes",
             rule_scope="extended_local_content",
             salting_condition=exp["salting_vocabulary"],
+            salting_config={
+                "subject_max_insertions": exp["subject_max_insertions"],
+                "body_max_insertions": exp["body_max_insertions"],
+                "salt_mode": exp["salt_mode"],
+                "insert_after_index": exp["insert_after_index"],
+                "fragment_max_positions": exp["fragment_max_positions"],
+            },
         )
 
 

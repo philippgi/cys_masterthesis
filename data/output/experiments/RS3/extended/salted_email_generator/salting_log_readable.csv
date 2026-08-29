@@ -1,0 +1,793 @@
+message_id,variant_filename,vocab_type,codepoint,salt_mode,fragment_max_positions,subject_original_tokens,subject_salted_tokens,body_original_tokens,body_salted_tokens
+00002.d94f1b97e48ed3b553b3508d116e6a09,00002__salted__extended__cp200B__single.d94f1b97e48ed3b553b3508d116e6a09,extended,200B,single,,Guaranteed,Gu​aranteed,Guaranteed,Gu​aranteed
+00002.d94f1b97e48ed3b553b3508d116e6a09,00002__salted__extended__cp200C__single.d94f1b97e48ed3b553b3508d116e6a09,extended,200C,single,,Guaranteed,Gu‌aranteed,Guaranteed,Gu‌aranteed
+00002.d94f1b97e48ed3b553b3508d116e6a09,00002__salted__extended__cp200D__single.d94f1b97e48ed3b553b3508d116e6a09,extended,200D,single,,Guaranteed,Gu‍aranteed,Guaranteed,Gu‍aranteed
+00002.d94f1b97e48ed3b553b3508d116e6a09,00002__salted__extended__cp00AD__single.d94f1b97e48ed3b553b3508d116e6a09,extended,00AD,single,,Guaranteed,Gu­aranteed,Guaranteed,Gu­aranteed
+00003.2ee33bc6eacdb11f38d052c44819ba6c,00003__salted__extended__cp200B__single.2ee33bc6eacdb11f38d052c44819ba6c,extended,200B,single,,Guaranteed,Gu​aranteed,Guaranteed,Gu​aranteed
+00003.2ee33bc6eacdb11f38d052c44819ba6c,00003__salted__extended__cp200C__single.2ee33bc6eacdb11f38d052c44819ba6c,extended,200C,single,,Guaranteed,Gu‌aranteed,Guaranteed,Gu‌aranteed
+00003.2ee33bc6eacdb11f38d052c44819ba6c,00003__salted__extended__cp200D__single.2ee33bc6eacdb11f38d052c44819ba6c,extended,200D,single,,Guaranteed,Gu‍aranteed,Guaranteed,Gu‍aranteed
+00003.2ee33bc6eacdb11f38d052c44819ba6c,00003__salted__extended__cp00AD__single.2ee33bc6eacdb11f38d052c44819ba6c,extended,00AD,single,,Guaranteed,Gu­aranteed,Guaranteed,Gu­aranteed
+00004.eac8de8d759b7e74154f142194282724,00004__salted__extended__cp200B__single.eac8de8d759b7e74154f142194282724,extended,200B,single,,,,"Click, Removal, advertisement","Cl​ick, Re​moval, ad​vertisement"
+00004.eac8de8d759b7e74154f142194282724,00004__salted__extended__cp200C__single.eac8de8d759b7e74154f142194282724,extended,200C,single,,,,"Click, Removal, advertisement","Cl‌ick, Re‌moval, ad‌vertisement"
+00004.eac8de8d759b7e74154f142194282724,00004__salted__extended__cp200D__single.eac8de8d759b7e74154f142194282724,extended,200D,single,,,,"Click, Removal, advertisement","Cl‍ick, Re‍moval, ad‍vertisement"
+00004.eac8de8d759b7e74154f142194282724,00004__salted__extended__cp00AD__single.eac8de8d759b7e74154f142194282724,extended,00AD,single,,,,"Click, Removal, advertisement","Cl­ick, Re­moval, ad­vertisement"
+00009.1e1a8cb4b57532ab38aa23287523659d,00009__salted__extended__cp200B__single.1e1a8cb4b57532ab38aa23287523659d,extended,200B,single,,,,"DEAR, SIR, USD","DE​AR, SI​R, US​D"
+00009.1e1a8cb4b57532ab38aa23287523659d,00009__salted__extended__cp200C__single.1e1a8cb4b57532ab38aa23287523659d,extended,200C,single,,,,"DEAR, SIR, USD","DE‌AR, SI‌R, US‌D"
+00009.1e1a8cb4b57532ab38aa23287523659d,00009__salted__extended__cp200D__single.1e1a8cb4b57532ab38aa23287523659d,extended,200D,single,,,,"DEAR, SIR, USD","DE‍AR, SI‍R, US‍D"
+00009.1e1a8cb4b57532ab38aa23287523659d,00009__salted__extended__cp00AD__single.1e1a8cb4b57532ab38aa23287523659d,extended,00AD,single,,,,"DEAR, SIR, USD","DE­AR, SI­R, US­D"
+00024.6b5437b14d403176c3f046c871b5b52f,00024__salted__extended__cp200B__single.6b5437b14d403176c3f046c871b5b52f,extended,200B,single,,,,"Fees, receive, receive","Fe​es, re​ceive, re​ceive"
+00024.6b5437b14d403176c3f046c871b5b52f,00024__salted__extended__cp200C__single.6b5437b14d403176c3f046c871b5b52f,extended,200C,single,,,,"Fees, receive, receive","Fe‌es, re‌ceive, re‌ceive"
+00024.6b5437b14d403176c3f046c871b5b52f,00024__salted__extended__cp200D__single.6b5437b14d403176c3f046c871b5b52f,extended,200D,single,,,,"Fees, receive, receive","Fe‍es, re‍ceive, re‍ceive"
+00024.6b5437b14d403176c3f046c871b5b52f,00024__salted__extended__cp00AD__single.6b5437b14d403176c3f046c871b5b52f,extended,00AD,single,,,,"Fees, receive, receive","Fe­es, re­ceive, re­ceive"
+00040.949a3d300eadb91d8745f1c1dab51133,00040__salted__extended__cp200B__single.949a3d300eadb91d8745f1c1dab51133,extended,200B,single,,,,"Dear, Sir, Madam","De​ar, Si​r, Ma​dam"
+00040.949a3d300eadb91d8745f1c1dab51133,00040__salted__extended__cp200C__single.949a3d300eadb91d8745f1c1dab51133,extended,200C,single,,,,"Dear, Sir, Madam","De‌ar, Si‌r, Ma‌dam"
+00040.949a3d300eadb91d8745f1c1dab51133,00040__salted__extended__cp200D__single.949a3d300eadb91d8745f1c1dab51133,extended,200D,single,,,,"Dear, Sir, Madam","De‍ar, Si‍r, Ma‍dam"
+00040.949a3d300eadb91d8745f1c1dab51133,00040__salted__extended__cp00AD__single.949a3d300eadb91d8745f1c1dab51133,extended,00AD,single,,,,"Dear, Sir, Madam","De­ar, Si­r, Ma­dam"
+00041.f1b3402799046db3c1f143a911dc085d,00041__salted__extended__cp200B__single.f1b3402799046db3c1f143a911dc085d,extended,200B,single,,,,"Dear, Sir, Madam","De​ar, Si​r, Ma​dam"
+00041.f1b3402799046db3c1f143a911dc085d,00041__salted__extended__cp200C__single.f1b3402799046db3c1f143a911dc085d,extended,200C,single,,,,"Dear, Sir, Madam","De‌ar, Si‌r, Ma‌dam"
+00041.f1b3402799046db3c1f143a911dc085d,00041__salted__extended__cp200D__single.f1b3402799046db3c1f143a911dc085d,extended,200D,single,,,,"Dear, Sir, Madam","De‍ar, Si‍r, Ma‍dam"
+00041.f1b3402799046db3c1f143a911dc085d,00041__salted__extended__cp00AD__single.f1b3402799046db3c1f143a911dc085d,extended,00AD,single,,,,"Dear, Sir, Madam","De­ar, Si­r, Ma­dam"
+00045.7282c2c4e009744f2f3450d370009235,00045__salted__extended__cp200B__single.7282c2c4e009744f2f3450d370009235,extended,200B,single,,,,Guaranteed,Gu​aranteed
+00045.7282c2c4e009744f2f3450d370009235,00045__salted__extended__cp200C__single.7282c2c4e009744f2f3450d370009235,extended,200C,single,,,,Guaranteed,Gu‌aranteed
+00045.7282c2c4e009744f2f3450d370009235,00045__salted__extended__cp200D__single.7282c2c4e009744f2f3450d370009235,extended,200D,single,,,,Guaranteed,Gu‍aranteed
+00045.7282c2c4e009744f2f3450d370009235,00045__salted__extended__cp00AD__single.7282c2c4e009744f2f3450d370009235,extended,00AD,single,,,,Guaranteed,Gu­aranteed
+00054.62863160db27f89df8c73275b6dae134,00054__salted__extended__cp200B__single.62863160db27f89df8c73275b6dae134,extended,200B,single,,ADV,AD​V,,
+00054.62863160db27f89df8c73275b6dae134,00054__salted__extended__cp200C__single.62863160db27f89df8c73275b6dae134,extended,200C,single,,ADV,AD‌V,,
+00054.62863160db27f89df8c73275b6dae134,00054__salted__extended__cp200D__single.62863160db27f89df8c73275b6dae134,extended,200D,single,,ADV,AD‍V,,
+00054.62863160db27f89df8c73275b6dae134,00054__salted__extended__cp00AD__single.62863160db27f89df8c73275b6dae134,extended,00AD,single,,ADV,AD­V,,
+00058.64bb1902c4e561fb3e521a6dbf8625be,00058__salted__extended__cp200B__single.64bb1902c4e561fb3e521a6dbf8625be,extended,200B,single,,Insurance,In​surance,,
+00058.64bb1902c4e561fb3e521a6dbf8625be,00058__salted__extended__cp200C__single.64bb1902c4e561fb3e521a6dbf8625be,extended,200C,single,,Insurance,In‌surance,,
+00058.64bb1902c4e561fb3e521a6dbf8625be,00058__salted__extended__cp200D__single.64bb1902c4e561fb3e521a6dbf8625be,extended,200D,single,,Insurance,In‍surance,,
+00058.64bb1902c4e561fb3e521a6dbf8625be,00058__salted__extended__cp00AD__single.64bb1902c4e561fb3e521a6dbf8625be,extended,00AD,single,,Insurance,In­surance,,
+00064.65b95365450ebe5eef61e7f1c60edc5e,00064__salted__extended__cp200B__single.65b95365450ebe5eef61e7f1c60edc5e,extended,200B,single,,,,"Premium, Earn","Pr​emium, Ea​rn"
+00064.65b95365450ebe5eef61e7f1c60edc5e,00064__salted__extended__cp200C__single.65b95365450ebe5eef61e7f1c60edc5e,extended,200C,single,,,,"Premium, Earn","Pr‌emium, Ea‌rn"
+00064.65b95365450ebe5eef61e7f1c60edc5e,00064__salted__extended__cp200D__single.65b95365450ebe5eef61e7f1c60edc5e,extended,200D,single,,,,"Premium, Earn","Pr‍emium, Ea‍rn"
+00064.65b95365450ebe5eef61e7f1c60edc5e,00064__salted__extended__cp00AD__single.65b95365450ebe5eef61e7f1c60edc5e,extended,00AD,single,,,,"Premium, Earn","Pr­emium, Ea­rn"
+00067.ec108870b01dc3ccb8fabc5def869ca5,00067__salted__extended__cp200B__single.ec108870b01dc3ccb8fabc5def869ca5,extended,200B,single,,SYSTEMWORKS,SY​STEMWORKS,,
+00067.ec108870b01dc3ccb8fabc5def869ca5,00067__salted__extended__cp200C__single.ec108870b01dc3ccb8fabc5def869ca5,extended,200C,single,,SYSTEMWORKS,SY‌STEMWORKS,,
+00067.ec108870b01dc3ccb8fabc5def869ca5,00067__salted__extended__cp200D__single.ec108870b01dc3ccb8fabc5def869ca5,extended,200D,single,,SYSTEMWORKS,SY‍STEMWORKS,,
+00067.ec108870b01dc3ccb8fabc5def869ca5,00067__salted__extended__cp00AD__single.ec108870b01dc3ccb8fabc5def869ca5,extended,00AD,single,,SYSTEMWORKS,SY­STEMWORKS,,
+00090.52630c4c07cd069c7bc7658c1a7a7253,00090__salted__extended__cp200B__single.52630c4c07cd069c7bc7658c1a7a7253,extended,200B,single,,,,"annuity, Earn, annuity","an​nuity, Ea​rn, an​nuity"
+00090.52630c4c07cd069c7bc7658c1a7a7253,00090__salted__extended__cp200C__single.52630c4c07cd069c7bc7658c1a7a7253,extended,200C,single,,,,"annuity, Earn, annuity","an‌nuity, Ea‌rn, an‌nuity"
+00090.52630c4c07cd069c7bc7658c1a7a7253,00090__salted__extended__cp200D__single.52630c4c07cd069c7bc7658c1a7a7253,extended,200D,single,,,,"annuity, Earn, annuity","an‍nuity, Ea‍rn, an‍nuity"
+00090.52630c4c07cd069c7bc7658c1a7a7253,00090__salted__extended__cp00AD__single.52630c4c07cd069c7bc7658c1a7a7253,extended,00AD,single,,,,"annuity, Earn, annuity","an­nuity, Ea­rn, an­nuity"
+00105.d8f25617befc5289aa4ed9602457050b,00105__salted__extended__cp200B__single.d8f25617befc5289aa4ed9602457050b,extended,200B,single,,Loans,Lo​ans,,
+00105.d8f25617befc5289aa4ed9602457050b,00105__salted__extended__cp200C__single.d8f25617befc5289aa4ed9602457050b,extended,200C,single,,Loans,Lo‌ans,,
+00105.d8f25617befc5289aa4ed9602457050b,00105__salted__extended__cp200D__single.d8f25617befc5289aa4ed9602457050b,extended,200D,single,,Loans,Lo‍ans,,
+00105.d8f25617befc5289aa4ed9602457050b,00105__salted__extended__cp00AD__single.d8f25617befc5289aa4ed9602457050b,extended,00AD,single,,Loans,Lo­ans,,
+00115.c97af50ef7ccd816f95bbdc6f4d226b2,00115__salted__extended__cp200B__single.c97af50ef7ccd816f95bbdc6f4d226b2,extended,200B,single,,,,click,cl​ick
+00115.c97af50ef7ccd816f95bbdc6f4d226b2,00115__salted__extended__cp200C__single.c97af50ef7ccd816f95bbdc6f4d226b2,extended,200C,single,,,,click,cl‌ick
+00115.c97af50ef7ccd816f95bbdc6f4d226b2,00115__salted__extended__cp200D__single.c97af50ef7ccd816f95bbdc6f4d226b2,extended,200D,single,,,,click,cl‍ick
+00115.c97af50ef7ccd816f95bbdc6f4d226b2,00115__salted__extended__cp00AD__single.c97af50ef7ccd816f95bbdc6f4d226b2,extended,00AD,single,,,,click,cl­ick
+00120.58579af867ff9a702cff23e7b8818a59,00120__salted__extended__cp200B__single.58579af867ff9a702cff23e7b8818a59,extended,200B,single,,,,Guaranteed,Gu​aranteed
+00120.58579af867ff9a702cff23e7b8818a59,00120__salted__extended__cp200C__single.58579af867ff9a702cff23e7b8818a59,extended,200C,single,,,,Guaranteed,Gu‌aranteed
+00120.58579af867ff9a702cff23e7b8818a59,00120__salted__extended__cp200D__single.58579af867ff9a702cff23e7b8818a59,extended,200D,single,,,,Guaranteed,Gu‍aranteed
+00120.58579af867ff9a702cff23e7b8818a59,00120__salted__extended__cp00AD__single.58579af867ff9a702cff23e7b8818a59,extended,00AD,single,,,,Guaranteed,Gu­aranteed
+00127.3500d109361b544b0937523adb763588,00127__salted__extended__cp200B__single.3500d109361b544b0937523adb763588,extended,200B,single,,,,"Guaranteed, herbal, Click","Gu​aranteed, he​rbal, Cl​ick"
+00127.3500d109361b544b0937523adb763588,00127__salted__extended__cp200C__single.3500d109361b544b0937523adb763588,extended,200C,single,,,,"Guaranteed, herbal, Click","Gu‌aranteed, he‌rbal, Cl‌ick"
+00127.3500d109361b544b0937523adb763588,00127__salted__extended__cp200D__single.3500d109361b544b0937523adb763588,extended,200D,single,,,,"Guaranteed, herbal, Click","Gu‍aranteed, he‍rbal, Cl‍ick"
+00127.3500d109361b544b0937523adb763588,00127__salted__extended__cp00AD__single.3500d109361b544b0937523adb763588,extended,00AD,single,,,,"Guaranteed, herbal, Click","Gu­aranteed, he­rbal, Cl­ick"
+00128.721b6b20d5834d490662e2ae8c5c0684,00128__salted__extended__cp200B__single.721b6b20d5834d490662e2ae8c5c0684,extended,200B,single,,,,click,cl​ick
+00128.721b6b20d5834d490662e2ae8c5c0684,00128__salted__extended__cp200C__single.721b6b20d5834d490662e2ae8c5c0684,extended,200C,single,,,,click,cl‌ick
+00128.721b6b20d5834d490662e2ae8c5c0684,00128__salted__extended__cp200D__single.721b6b20d5834d490662e2ae8c5c0684,extended,200D,single,,,,click,cl‍ick
+00128.721b6b20d5834d490662e2ae8c5c0684,00128__salted__extended__cp00AD__single.721b6b20d5834d490662e2ae8c5c0684,extended,00AD,single,,,,click,cl­ick
+00153.6a5ffe584834ea334041ab958cadcadb,00153__salted__extended__cp200B__single.6a5ffe584834ea334041ab958cadcadb,extended,200B,single,,Recruiting,Re​cruiting,"recruiting, Click, click","re​cruiting, Cl​ick, cl​ick"
+00153.6a5ffe584834ea334041ab958cadcadb,00153__salted__extended__cp200C__single.6a5ffe584834ea334041ab958cadcadb,extended,200C,single,,Recruiting,Re‌cruiting,"recruiting, Click, click","re‌cruiting, Cl‌ick, cl‌ick"
+00153.6a5ffe584834ea334041ab958cadcadb,00153__salted__extended__cp200D__single.6a5ffe584834ea334041ab958cadcadb,extended,200D,single,,Recruiting,Re‍cruiting,"recruiting, Click, click","re‍cruiting, Cl‍ick, cl‍ick"
+00153.6a5ffe584834ea334041ab958cadcadb,00153__salted__extended__cp00AD__single.6a5ffe584834ea334041ab958cadcadb,extended,00AD,single,,Recruiting,Re­cruiting,"recruiting, Click, click","re­cruiting, Cl­ick, cl­ick"
+00154.b6c448ccff434e2dbe2c7c200a36aa31,00154__salted__extended__cp200B__single.b6c448ccff434e2dbe2c7c200a36aa31,extended,200B,single,,,,receive,re​ceive
+00154.b6c448ccff434e2dbe2c7c200a36aa31,00154__salted__extended__cp200C__single.b6c448ccff434e2dbe2c7c200a36aa31,extended,200C,single,,,,receive,re‌ceive
+00154.b6c448ccff434e2dbe2c7c200a36aa31,00154__salted__extended__cp200D__single.b6c448ccff434e2dbe2c7c200a36aa31,extended,200D,single,,,,receive,re‍ceive
+00154.b6c448ccff434e2dbe2c7c200a36aa31,00154__salted__extended__cp00AD__single.b6c448ccff434e2dbe2c7c200a36aa31,extended,00AD,single,,,,receive,re­ceive
+00159.6b641c70d79fd5a69b84a94b4e88150a,00159__salted__extended__cp200B__single.6b641c70d79fd5a69b84a94b4e88150a,extended,200B,single,,,,"receive, receive","re​ceive, re​ceive"
+00159.6b641c70d79fd5a69b84a94b4e88150a,00159__salted__extended__cp200C__single.6b641c70d79fd5a69b84a94b4e88150a,extended,200C,single,,,,"receive, receive","re‌ceive, re‌ceive"
+00159.6b641c70d79fd5a69b84a94b4e88150a,00159__salted__extended__cp200D__single.6b641c70d79fd5a69b84a94b4e88150a,extended,200D,single,,,,"receive, receive","re‍ceive, re‍ceive"
+00159.6b641c70d79fd5a69b84a94b4e88150a,00159__salted__extended__cp00AD__single.6b641c70d79fd5a69b84a94b4e88150a,extended,00AD,single,,,,"receive, receive","re­ceive, re­ceive"
+00160.cec5f611ae665ff0add6c4928d47f2be,00160__salted__extended__cp200B__single.cec5f611ae665ff0add6c4928d47f2be,extended,200B,single,,HGH,HG​H,"HGH, NBC, CBS","HG​H, NB​C, CB​S"
+00160.cec5f611ae665ff0add6c4928d47f2be,00160__salted__extended__cp200C__single.cec5f611ae665ff0add6c4928d47f2be,extended,200C,single,,HGH,HG‌H,"HGH, NBC, CBS","HG‌H, NB‌C, CB‌S"
+00160.cec5f611ae665ff0add6c4928d47f2be,00160__salted__extended__cp200D__single.cec5f611ae665ff0add6c4928d47f2be,extended,200D,single,,HGH,HG‍H,"HGH, NBC, CBS","HG‍H, NB‍C, CB‍S"
+00160.cec5f611ae665ff0add6c4928d47f2be,00160__salted__extended__cp00AD__single.cec5f611ae665ff0add6c4928d47f2be,extended,00AD,single,,HGH,HG­H,"HGH, NBC, CBS","HG­H, NB­C, CB­S"
+00163.2ceade6f8b0c1c342f5f95d57ac551f5,00163__salted__extended__cp200B__single.2ceade6f8b0c1c342f5f95d57ac551f5,extended,200B,single,,,,"receive, receive","re​ceive, re​ceive"
+00163.2ceade6f8b0c1c342f5f95d57ac551f5,00163__salted__extended__cp200C__single.2ceade6f8b0c1c342f5f95d57ac551f5,extended,200C,single,,,,"receive, receive","re‌ceive, re‌ceive"
+00163.2ceade6f8b0c1c342f5f95d57ac551f5,00163__salted__extended__cp200D__single.2ceade6f8b0c1c342f5f95d57ac551f5,extended,200D,single,,,,"receive, receive","re‍ceive, re‍ceive"
+00163.2ceade6f8b0c1c342f5f95d57ac551f5,00163__salted__extended__cp00AD__single.2ceade6f8b0c1c342f5f95d57ac551f5,extended,00AD,single,,,,"receive, receive","re­ceive, re­ceive"
+00169.86268e75abd1bd4bda4d6c129681df34,00169__salted__extended__cp200B__single.86268e75abd1bd4bda4d6c129681df34,extended,200B,single,,,,"earn, Removal, mailings","ea​rn, Re​moval, ma​ilings"
+00169.86268e75abd1bd4bda4d6c129681df34,00169__salted__extended__cp200C__single.86268e75abd1bd4bda4d6c129681df34,extended,200C,single,,,,"earn, Removal, mailings","ea‌rn, Re‌moval, ma‌ilings"
+00169.86268e75abd1bd4bda4d6c129681df34,00169__salted__extended__cp200D__single.86268e75abd1bd4bda4d6c129681df34,extended,200D,single,,,,"earn, Removal, mailings","ea‍rn, Re‍moval, ma‍ilings"
+00169.86268e75abd1bd4bda4d6c129681df34,00169__salted__extended__cp00AD__single.86268e75abd1bd4bda4d6c129681df34,extended,00AD,single,,,,"earn, Removal, mailings","ea­rn, Re­moval, ma­ilings"
+00172.0935a6d0aef9a3d6d64e07e3f6c453ec,00172__salted__extended__cp200B__single.0935a6d0aef9a3d6d64e07e3f6c453ec,extended,200B,single,,,,communication,co​mmunication
+00172.0935a6d0aef9a3d6d64e07e3f6c453ec,00172__salted__extended__cp200C__single.0935a6d0aef9a3d6d64e07e3f6c453ec,extended,200C,single,,,,communication,co‌mmunication
+00172.0935a6d0aef9a3d6d64e07e3f6c453ec,00172__salted__extended__cp200D__single.0935a6d0aef9a3d6d64e07e3f6c453ec,extended,200D,single,,,,communication,co‍mmunication
+00172.0935a6d0aef9a3d6d64e07e3f6c453ec,00172__salted__extended__cp00AD__single.0935a6d0aef9a3d6d64e07e3f6c453ec,extended,00AD,single,,,,communication,co­mmunication
+00173.e10eb62e2c7808674c43d6a5e9e08a1c,00173__salted__extended__cp200B__single.e10eb62e2c7808674c43d6a5e9e08a1c,extended,200B,single,,HGH,HG​H,,
+00173.e10eb62e2c7808674c43d6a5e9e08a1c,00173__salted__extended__cp200C__single.e10eb62e2c7808674c43d6a5e9e08a1c,extended,200C,single,,HGH,HG‌H,,
+00173.e10eb62e2c7808674c43d6a5e9e08a1c,00173__salted__extended__cp200D__single.e10eb62e2c7808674c43d6a5e9e08a1c,extended,200D,single,,HGH,HG‍H,,
+00173.e10eb62e2c7808674c43d6a5e9e08a1c,00173__salted__extended__cp00AD__single.e10eb62e2c7808674c43d6a5e9e08a1c,extended,00AD,single,,HGH,HG­H,,
+00179.ef2f7cf60806a96b59f4477b025580ee,00179__salted__extended__cp200B__single.ef2f7cf60806a96b59f4477b025580ee,extended,200B,single,,,,"pains, NIGERIA, NIGERIA","pa​ins, NI​GERIA, NI​GERIA"
+00179.ef2f7cf60806a96b59f4477b025580ee,00179__salted__extended__cp200C__single.ef2f7cf60806a96b59f4477b025580ee,extended,200C,single,,,,"pains, NIGERIA, NIGERIA","pa‌ins, NI‌GERIA, NI‌GERIA"
+00179.ef2f7cf60806a96b59f4477b025580ee,00179__salted__extended__cp200D__single.ef2f7cf60806a96b59f4477b025580ee,extended,200D,single,,,,"pains, NIGERIA, NIGERIA","pa‍ins, NI‍GERIA, NI‍GERIA"
+00179.ef2f7cf60806a96b59f4477b025580ee,00179__salted__extended__cp00AD__single.ef2f7cf60806a96b59f4477b025580ee,extended,00AD,single,,,,"pains, NIGERIA, NIGERIA","pa­ins, NI­GERIA, NI­GERIA"
+00180.751cb63992e172566b3a296d970c425d,00180__salted__extended__cp200B__single.751cb63992e172566b3a296d970c425d,extended,200B,single,,,,"qualified, promotion, receive","qu​alified, pr​omotion, re​ceive"
+00180.751cb63992e172566b3a296d970c425d,00180__salted__extended__cp200C__single.751cb63992e172566b3a296d970c425d,extended,200C,single,,,,"qualified, promotion, receive","qu‌alified, pr‌omotion, re‌ceive"
+00180.751cb63992e172566b3a296d970c425d,00180__salted__extended__cp200D__single.751cb63992e172566b3a296d970c425d,extended,200D,single,,,,"qualified, promotion, receive","qu‍alified, pr‍omotion, re‍ceive"
+00180.751cb63992e172566b3a296d970c425d,00180__salted__extended__cp00AD__single.751cb63992e172566b3a296d970c425d,extended,00AD,single,,,,"qualified, promotion, receive","qu­alified, pr­omotion, re­ceive"
+00182.1b9ba0f95506a6f2bf256f40fad0687d,00182__salted__extended__cp200B__single.1b9ba0f95506a6f2bf256f40fad0687d,extended,200B,single,,,,"mailings, removal, bills","ma​ilings, re​moval, bi​lls"
+00182.1b9ba0f95506a6f2bf256f40fad0687d,00182__salted__extended__cp200C__single.1b9ba0f95506a6f2bf256f40fad0687d,extended,200C,single,,,,"mailings, removal, bills","ma‌ilings, re‌moval, bi‌lls"
+00182.1b9ba0f95506a6f2bf256f40fad0687d,00182__salted__extended__cp200D__single.1b9ba0f95506a6f2bf256f40fad0687d,extended,200D,single,,,,"mailings, removal, bills","ma‍ilings, re‍moval, bi‍lls"
+00182.1b9ba0f95506a6f2bf256f40fad0687d,00182__salted__extended__cp00AD__single.1b9ba0f95506a6f2bf256f40fad0687d,extended,00AD,single,,,,"mailings, removal, bills","ma­ilings, re­moval, bi­lls"
+00185.8ca19012fa3f2a906f23c3b41f11ffed,00185__salted__extended__cp200B__single.8ca19012fa3f2a906f23c3b41f11ffed,extended,200B,single,,,,click,cl​ick
+00185.8ca19012fa3f2a906f23c3b41f11ffed,00185__salted__extended__cp200C__single.8ca19012fa3f2a906f23c3b41f11ffed,extended,200C,single,,,,click,cl‌ick
+00185.8ca19012fa3f2a906f23c3b41f11ffed,00185__salted__extended__cp200D__single.8ca19012fa3f2a906f23c3b41f11ffed,extended,200D,single,,,,click,cl‍ick
+00185.8ca19012fa3f2a906f23c3b41f11ffed,00185__salted__extended__cp00AD__single.8ca19012fa3f2a906f23c3b41f11ffed,extended,00AD,single,,,,click,cl­ick
+00186.a66b4fc4ab114c9cb37e1a31d1ea1aeb,00186__salted__extended__cp200B__single.a66b4fc4ab114c9cb37e1a31d1ea1aeb,extended,200B,single,,,,"Click, receive, mailings","Cl​ick, re​ceive, ma​ilings"
+00186.a66b4fc4ab114c9cb37e1a31d1ea1aeb,00186__salted__extended__cp200C__single.a66b4fc4ab114c9cb37e1a31d1ea1aeb,extended,200C,single,,,,"Click, receive, mailings","Cl‌ick, re‌ceive, ma‌ilings"
+00186.a66b4fc4ab114c9cb37e1a31d1ea1aeb,00186__salted__extended__cp200D__single.a66b4fc4ab114c9cb37e1a31d1ea1aeb,extended,200D,single,,,,"Click, receive, mailings","Cl‍ick, re‍ceive, ma‍ilings"
+00186.a66b4fc4ab114c9cb37e1a31d1ea1aeb,00186__salted__extended__cp00AD__single.a66b4fc4ab114c9cb37e1a31d1ea1aeb,extended,00AD,single,,,,"Click, receive, mailings","Cl­ick, re­ceive, ma­ilings"
+00187.efd97ab2034b3384606e21db00014ecb,00187__salted__extended__cp200B__single.efd97ab2034b3384606e21db00014ecb,extended,200B,single,,,,compliance,co​mpliance
+00187.efd97ab2034b3384606e21db00014ecb,00187__salted__extended__cp200C__single.efd97ab2034b3384606e21db00014ecb,extended,200C,single,,,,compliance,co‌mpliance
+00187.efd97ab2034b3384606e21db00014ecb,00187__salted__extended__cp200D__single.efd97ab2034b3384606e21db00014ecb,extended,200D,single,,,,compliance,co‍mpliance
+00187.efd97ab2034b3384606e21db00014ecb,00187__salted__extended__cp00AD__single.efd97ab2034b3384606e21db00014ecb,extended,00AD,single,,,,compliance,co­mpliance
+00188.b12197b37ceb97fa0cd802566c1e08db,00188__salted__extended__cp200B__single.b12197b37ceb97fa0cd802566c1e08db,extended,200B,single,,,,"toll, monthly, promotion","to​ll, mo​nthly, pr​omotion"
+00188.b12197b37ceb97fa0cd802566c1e08db,00188__salted__extended__cp200C__single.b12197b37ceb97fa0cd802566c1e08db,extended,200C,single,,,,"toll, monthly, promotion","to‌ll, mo‌nthly, pr‌omotion"
+00188.b12197b37ceb97fa0cd802566c1e08db,00188__salted__extended__cp200D__single.b12197b37ceb97fa0cd802566c1e08db,extended,200D,single,,,,"toll, monthly, promotion","to‍ll, mo‍nthly, pr‍omotion"
+00188.b12197b37ceb97fa0cd802566c1e08db,00188__salted__extended__cp00AD__single.b12197b37ceb97fa0cd802566c1e08db,extended,00AD,single,,,,"toll, monthly, promotion","to­ll, mo­nthly, pr­omotion"
+00190.ee2ea200e7efa602221c6492f9d9d8c0,00190__salted__extended__cp200B__single.ee2ea200e7efa602221c6492f9d9d8c0,extended,200B,single,,,,"toll, monthly, promotion","to​ll, mo​nthly, pr​omotion"
+00190.ee2ea200e7efa602221c6492f9d9d8c0,00190__salted__extended__cp200C__single.ee2ea200e7efa602221c6492f9d9d8c0,extended,200C,single,,,,"toll, monthly, promotion","to‌ll, mo‌nthly, pr‌omotion"
+00190.ee2ea200e7efa602221c6492f9d9d8c0,00190__salted__extended__cp200D__single.ee2ea200e7efa602221c6492f9d9d8c0,extended,200D,single,,,,"toll, monthly, promotion","to‍ll, mo‍nthly, pr‍omotion"
+00190.ee2ea200e7efa602221c6492f9d9d8c0,00190__salted__extended__cp00AD__single.ee2ea200e7efa602221c6492f9d9d8c0,extended,00AD,single,,,,"toll, monthly, promotion","to­ll, mo­nthly, pr­omotion"
+00191.9ff80a41f015b7a6c409732e41c0df07,00191__salted__extended__cp200B__single.9ff80a41f015b7a6c409732e41c0df07,extended,200B,single,,,,"promotion, receive","pr​omotion, re​ceive"
+00191.9ff80a41f015b7a6c409732e41c0df07,00191__salted__extended__cp200C__single.9ff80a41f015b7a6c409732e41c0df07,extended,200C,single,,,,"promotion, receive","pr‌omotion, re‌ceive"
+00191.9ff80a41f015b7a6c409732e41c0df07,00191__salted__extended__cp200D__single.9ff80a41f015b7a6c409732e41c0df07,extended,200D,single,,,,"promotion, receive","pr‍omotion, re‍ceive"
+00191.9ff80a41f015b7a6c409732e41c0df07,00191__salted__extended__cp00AD__single.9ff80a41f015b7a6c409732e41c0df07,extended,00AD,single,,,,"promotion, receive","pr­omotion, re­ceive"
+00194.767c323b4ae7a4909397e42cbd0c56a4,00194__salted__extended__cp200B__single.767c323b4ae7a4909397e42cbd0c56a4,extended,200B,single,,,,receive,re​ceive
+00194.767c323b4ae7a4909397e42cbd0c56a4,00194__salted__extended__cp200C__single.767c323b4ae7a4909397e42cbd0c56a4,extended,200C,single,,,,receive,re‌ceive
+00194.767c323b4ae7a4909397e42cbd0c56a4,00194__salted__extended__cp200D__single.767c323b4ae7a4909397e42cbd0c56a4,extended,200D,single,,,,receive,re‍ceive
+00194.767c323b4ae7a4909397e42cbd0c56a4,00194__salted__extended__cp00AD__single.767c323b4ae7a4909397e42cbd0c56a4,extended,00AD,single,,,,receive,re­ceive
+00196.dd21040c7757d477c967ae71b537810e,00196__salted__extended__cp200B__single.dd21040c7757d477c967ae71b537810e,extended,200B,single,,SYSTEMWORKS,SY​STEMWORKS,,
+00196.dd21040c7757d477c967ae71b537810e,00196__salted__extended__cp200C__single.dd21040c7757d477c967ae71b537810e,extended,200C,single,,SYSTEMWORKS,SY‌STEMWORKS,,
+00196.dd21040c7757d477c967ae71b537810e,00196__salted__extended__cp200D__single.dd21040c7757d477c967ae71b537810e,extended,200D,single,,SYSTEMWORKS,SY‍STEMWORKS,,
+00196.dd21040c7757d477c967ae71b537810e,00196__salted__extended__cp00AD__single.dd21040c7757d477c967ae71b537810e,extended,00AD,single,,SYSTEMWORKS,SY­STEMWORKS,,
+00198.150ad975a44e356b479b88d8b57edc40,00198__salted__extended__cp200B__single.150ad975a44e356b479b88d8b57edc40,extended,200B,single,,,,"communication, toll, fees","co​mmunication, to​ll, fe​es"
+00198.150ad975a44e356b479b88d8b57edc40,00198__salted__extended__cp200C__single.150ad975a44e356b479b88d8b57edc40,extended,200C,single,,,,"communication, toll, fees","co‌mmunication, to‌ll, fe‌es"
+00198.150ad975a44e356b479b88d8b57edc40,00198__salted__extended__cp200D__single.150ad975a44e356b479b88d8b57edc40,extended,200D,single,,,,"communication, toll, fees","co‍mmunication, to‍ll, fe‍es"
+00198.150ad975a44e356b479b88d8b57edc40,00198__salted__extended__cp00AD__single.150ad975a44e356b479b88d8b57edc40,extended,00AD,single,,,,"communication, toll, fees","co­mmunication, to­ll, fe­es"
+00207.0b71ac81a360455c1514f5872564b1e1,00207__salted__extended__cp200B__single.0b71ac81a360455c1514f5872564b1e1,extended,200B,single,,,,"Mailings, Removal","Ma​ilings, Re​moval"
+00207.0b71ac81a360455c1514f5872564b1e1,00207__salted__extended__cp200C__single.0b71ac81a360455c1514f5872564b1e1,extended,200C,single,,,,"Mailings, Removal","Ma‌ilings, Re‌moval"
+00207.0b71ac81a360455c1514f5872564b1e1,00207__salted__extended__cp200D__single.0b71ac81a360455c1514f5872564b1e1,extended,200D,single,,,,"Mailings, Removal","Ma‍ilings, Re‍moval"
+00207.0b71ac81a360455c1514f5872564b1e1,00207__salted__extended__cp00AD__single.0b71ac81a360455c1514f5872564b1e1,extended,00AD,single,,,,"Mailings, Removal","Ma­ilings, Re­moval"
+00209.5276f967533f2ce0209c1eff631a86ff,00209__salted__extended__cp200B__single.5276f967533f2ce0209c1eff631a86ff,extended,200B,single,,,,"receive, mailings, communication","re​ceive, ma​ilings, co​mmunication"
+00209.5276f967533f2ce0209c1eff631a86ff,00209__salted__extended__cp200C__single.5276f967533f2ce0209c1eff631a86ff,extended,200C,single,,,,"receive, mailings, communication","re‌ceive, ma‌ilings, co‌mmunication"
+00209.5276f967533f2ce0209c1eff631a86ff,00209__salted__extended__cp200D__single.5276f967533f2ce0209c1eff631a86ff,extended,200D,single,,,,"receive, mailings, communication","re‍ceive, ma‍ilings, co‍mmunication"
+00209.5276f967533f2ce0209c1eff631a86ff,00209__salted__extended__cp00AD__single.5276f967533f2ce0209c1eff631a86ff,extended,00AD,single,,,,"receive, mailings, communication","re­ceive, ma­ilings, co­mmunication"
+00211.4a52fb081c7087c4a82402342751e755,00211__salted__extended__cp200B__single.4a52fb081c7087c4a82402342751e755,extended,200B,single,,ADV,AD​V,"toll, Sincerely","to​ll, Si​ncerely"
+00211.4a52fb081c7087c4a82402342751e755,00211__salted__extended__cp200C__single.4a52fb081c7087c4a82402342751e755,extended,200C,single,,ADV,AD‌V,"toll, Sincerely","to‌ll, Si‌ncerely"
+00211.4a52fb081c7087c4a82402342751e755,00211__salted__extended__cp200D__single.4a52fb081c7087c4a82402342751e755,extended,200D,single,,ADV,AD‍V,"toll, Sincerely","to‍ll, Si‍ncerely"
+00211.4a52fb081c7087c4a82402342751e755,00211__salted__extended__cp00AD__single.4a52fb081c7087c4a82402342751e755,extended,00AD,single,,ADV,AD­V,"toll, Sincerely","to­ll, Si­ncerely"
+00214.1367039e50dc6b7adb0f2aa8aba83216,00214__salted__extended__cp200B__single.1367039e50dc6b7adb0f2aa8aba83216,extended,200B,single,,Dare,Da​re,"dare, annuity, Guaranteed","da​re, an​nuity, Gu​aranteed"
+00214.1367039e50dc6b7adb0f2aa8aba83216,00214__salted__extended__cp200C__single.1367039e50dc6b7adb0f2aa8aba83216,extended,200C,single,,Dare,Da‌re,"dare, annuity, Guaranteed","da‌re, an‌nuity, Gu‌aranteed"
+00214.1367039e50dc6b7adb0f2aa8aba83216,00214__salted__extended__cp200D__single.1367039e50dc6b7adb0f2aa8aba83216,extended,200D,single,,Dare,Da‍re,"dare, annuity, Guaranteed","da‍re, an‍nuity, Gu‍aranteed"
+00214.1367039e50dc6b7adb0f2aa8aba83216,00214__salted__extended__cp00AD__single.1367039e50dc6b7adb0f2aa8aba83216,extended,00AD,single,,Dare,Da­re,"dare, annuity, Guaranteed","da­re, an­nuity, Gu­aranteed"
+00217.43b4ef3d9c56cf42be9c37b546a19e78,00217__salted__extended__cp200B__single.43b4ef3d9c56cf42be9c37b546a19e78,extended,200B,single,,MLM,ML​M,,
+00217.43b4ef3d9c56cf42be9c37b546a19e78,00217__salted__extended__cp200C__single.43b4ef3d9c56cf42be9c37b546a19e78,extended,200C,single,,MLM,ML‌M,,
+00217.43b4ef3d9c56cf42be9c37b546a19e78,00217__salted__extended__cp200D__single.43b4ef3d9c56cf42be9c37b546a19e78,extended,200D,single,,MLM,ML‍M,,
+00217.43b4ef3d9c56cf42be9c37b546a19e78,00217__salted__extended__cp00AD__single.43b4ef3d9c56cf42be9c37b546a19e78,extended,00AD,single,,MLM,ML­M,,
+00224.0654fe0af51e1dcefa0eb66eb932f55f,00224__salted__extended__cp200B__single.0654fe0af51e1dcefa0eb66eb932f55f,extended,200B,single,,ASSISTANCE,AS​SISTANCE,"Dear, sir, dear","De​ar, si​r, de​ar"
+00224.0654fe0af51e1dcefa0eb66eb932f55f,00224__salted__extended__cp200C__single.0654fe0af51e1dcefa0eb66eb932f55f,extended,200C,single,,ASSISTANCE,AS‌SISTANCE,"Dear, sir, dear","De‌ar, si‌r, de‌ar"
+00224.0654fe0af51e1dcefa0eb66eb932f55f,00224__salted__extended__cp200D__single.0654fe0af51e1dcefa0eb66eb932f55f,extended,200D,single,,ASSISTANCE,AS‍SISTANCE,"Dear, sir, dear","De‍ar, si‍r, de‍ar"
+00224.0654fe0af51e1dcefa0eb66eb932f55f,00224__salted__extended__cp00AD__single.0654fe0af51e1dcefa0eb66eb932f55f,extended,00AD,single,,ASSISTANCE,AS­SISTANCE,"Dear, sir, dear","De­ar, si­r, de­ar"
+00228.cf58326ab05a757c7e759acc8d6b360d,00228__salted__extended__cp200B__single.cf58326ab05a757c7e759acc8d6b360d,extended,200B,single,,kindly,ki​ndly,"ASSISTANCE, assistance, receive","AS​SISTANCE, as​sistance, re​ceive"
+00228.cf58326ab05a757c7e759acc8d6b360d,00228__salted__extended__cp200C__single.cf58326ab05a757c7e759acc8d6b360d,extended,200C,single,,kindly,ki‌ndly,"ASSISTANCE, assistance, receive","AS‌SISTANCE, as‌sistance, re‌ceive"
+00228.cf58326ab05a757c7e759acc8d6b360d,00228__salted__extended__cp200D__single.cf58326ab05a757c7e759acc8d6b360d,extended,200D,single,,kindly,ki‍ndly,"ASSISTANCE, assistance, receive","AS‍SISTANCE, as‍sistance, re‍ceive"
+00228.cf58326ab05a757c7e759acc8d6b360d,00228__salted__extended__cp00AD__single.cf58326ab05a757c7e759acc8d6b360d,extended,00AD,single,,kindly,ki­ndly,"ASSISTANCE, assistance, receive","AS­SISTANCE, as­sistance, re­ceive"
+00231.8c72952de376293bc38d30834c0bb580,00231__salted__extended__cp200B__single.8c72952de376293bc38d30834c0bb580,extended,200B,single,,HGH,HG​H,,
+00231.8c72952de376293bc38d30834c0bb580,00231__salted__extended__cp200C__single.8c72952de376293bc38d30834c0bb580,extended,200C,single,,HGH,HG‌H,,
+00231.8c72952de376293bc38d30834c0bb580,00231__salted__extended__cp200D__single.8c72952de376293bc38d30834c0bb580,extended,200D,single,,HGH,HG‍H,,
+00231.8c72952de376293bc38d30834c0bb580,00231__salted__extended__cp00AD__single.8c72952de376293bc38d30834c0bb580,extended,00AD,single,,HGH,HG­H,,
+00233.3c32285387ebc0675adb029b9e20e581,00233__salted__extended__cp200B__single.3c32285387ebc0675adb029b9e20e581,extended,200B,single,,Guaranteed,Gu​aranteed,"receive, mailings, communication","re​ceive, ma​ilings, co​mmunication"
+00233.3c32285387ebc0675adb029b9e20e581,00233__salted__extended__cp200C__single.3c32285387ebc0675adb029b9e20e581,extended,200C,single,,Guaranteed,Gu‌aranteed,"receive, mailings, communication","re‌ceive, ma‌ilings, co‌mmunication"
+00233.3c32285387ebc0675adb029b9e20e581,00233__salted__extended__cp200D__single.3c32285387ebc0675adb029b9e20e581,extended,200D,single,,Guaranteed,Gu‍aranteed,"receive, mailings, communication","re‍ceive, ma‍ilings, co‍mmunication"
+00233.3c32285387ebc0675adb029b9e20e581,00233__salted__extended__cp00AD__single.3c32285387ebc0675adb029b9e20e581,extended,00AD,single,,Guaranteed,Gu­aranteed,"receive, mailings, communication","re­ceive, ma­ilings, co­mmunication"
+00236.a46588c69d43e80c618038b95eff2893,00236__salted__extended__cp200B__single.a46588c69d43e80c618038b95eff2893,extended,200B,single,,,,"MASTERCARD, payable, Postal","MA​STERCARD, pa​yable, Po​stal"
+00236.a46588c69d43e80c618038b95eff2893,00236__salted__extended__cp200C__single.a46588c69d43e80c618038b95eff2893,extended,200C,single,,,,"MASTERCARD, payable, Postal","MA‌STERCARD, pa‌yable, Po‌stal"
+00236.a46588c69d43e80c618038b95eff2893,00236__salted__extended__cp200D__single.a46588c69d43e80c618038b95eff2893,extended,200D,single,,,,"MASTERCARD, payable, Postal","MA‍STERCARD, pa‍yable, Po‍stal"
+00236.a46588c69d43e80c618038b95eff2893,00236__salted__extended__cp00AD__single.a46588c69d43e80c618038b95eff2893,extended,00AD,single,,,,"MASTERCARD, payable, Postal","MA­STERCARD, pa­yable, Po­stal"
+00248.b243bca51ee69d6e428ca2f45f0fe41b,00248__salted__extended__cp200B__single.b243bca51ee69d6e428ca2f45f0fe41b,extended,200B,single,,,,"Qualified, receive, mailings","Qu​alified, re​ceive, ma​ilings"
+00248.b243bca51ee69d6e428ca2f45f0fe41b,00248__salted__extended__cp200C__single.b243bca51ee69d6e428ca2f45f0fe41b,extended,200C,single,,,,"Qualified, receive, mailings","Qu‌alified, re‌ceive, ma‌ilings"
+00248.b243bca51ee69d6e428ca2f45f0fe41b,00248__salted__extended__cp200D__single.b243bca51ee69d6e428ca2f45f0fe41b,extended,200D,single,,,,"Qualified, receive, mailings","Qu‍alified, re‍ceive, ma‍ilings"
+00248.b243bca51ee69d6e428ca2f45f0fe41b,00248__salted__extended__cp00AD__single.b243bca51ee69d6e428ca2f45f0fe41b,extended,00AD,single,,,,"Qualified, receive, mailings","Qu­alified, re­ceive, ma­ilings"
+00249.5f45607c1bffe89f60ba1ec9f878039a,00249__salted__extended__cp200B__single.5f45607c1bffe89f60ba1ec9f878039a,extended,200B,single,,mortgage,mo​rtgage,"Dear, lenders, Refinance","De​ar, le​nders, Re​finance"
+00249.5f45607c1bffe89f60ba1ec9f878039a,00249__salted__extended__cp200C__single.5f45607c1bffe89f60ba1ec9f878039a,extended,200C,single,,mortgage,mo‌rtgage,"Dear, lenders, Refinance","De‌ar, le‌nders, Re‌finance"
+00249.5f45607c1bffe89f60ba1ec9f878039a,00249__salted__extended__cp200D__single.5f45607c1bffe89f60ba1ec9f878039a,extended,200D,single,,mortgage,mo‍rtgage,"Dear, lenders, Refinance","De‍ar, le‍nders, Re‍finance"
+00249.5f45607c1bffe89f60ba1ec9f878039a,00249__salted__extended__cp00AD__single.5f45607c1bffe89f60ba1ec9f878039a,extended,00AD,single,,mortgage,mo­rtgage,"Dear, lenders, Refinance","De­ar, le­nders, Re­finance"
+00251.6b4b7e79e1706156839a00817d774e37,00251__salted__extended__cp200B__single.6b4b7e79e1706156839a00817d774e37,extended,200B,single,,SYSTEMWORKS,SY​STEMWORKS,,
+00251.6b4b7e79e1706156839a00817d774e37,00251__salted__extended__cp200C__single.6b4b7e79e1706156839a00817d774e37,extended,200C,single,,SYSTEMWORKS,SY‌STEMWORKS,,
+00251.6b4b7e79e1706156839a00817d774e37,00251__salted__extended__cp200D__single.6b4b7e79e1706156839a00817d774e37,extended,200D,single,,SYSTEMWORKS,SY‍STEMWORKS,,
+00251.6b4b7e79e1706156839a00817d774e37,00251__salted__extended__cp00AD__single.6b4b7e79e1706156839a00817d774e37,extended,00AD,single,,SYSTEMWORKS,SY­STEMWORKS,,
+00261.12b64e557e52daf5fc5a52e47df2f4e3,00261__salted__extended__cp200B__single.12b64e557e52daf5fc5a52e47df2f4e3,extended,200B,single,,,,"Mastercard, opted, receive","Ma​stercard, op​ted, re​ceive"
+00261.12b64e557e52daf5fc5a52e47df2f4e3,00261__salted__extended__cp200C__single.12b64e557e52daf5fc5a52e47df2f4e3,extended,200C,single,,,,"Mastercard, opted, receive","Ma‌stercard, op‌ted, re‌ceive"
+00261.12b64e557e52daf5fc5a52e47df2f4e3,00261__salted__extended__cp200D__single.12b64e557e52daf5fc5a52e47df2f4e3,extended,200D,single,,,,"Mastercard, opted, receive","Ma‍stercard, op‍ted, re‍ceive"
+00261.12b64e557e52daf5fc5a52e47df2f4e3,00261__salted__extended__cp00AD__single.12b64e557e52daf5fc5a52e47df2f4e3,extended,00AD,single,,,,"Mastercard, opted, receive","Ma­stercard, op­ted, re­ceive"
+00263.32b258c4cc08d235b2ca36fc16074f08,00263__salted__extended__cp200B__single.32b258c4cc08d235b2ca36fc16074f08,extended,200B,single,,,,"Click, click, Click","Cl​ick, cl​ick, Cl​ick"
+00263.32b258c4cc08d235b2ca36fc16074f08,00263__salted__extended__cp200C__single.32b258c4cc08d235b2ca36fc16074f08,extended,200C,single,,,,"Click, click, Click","Cl‌ick, cl‌ick, Cl‌ick"
+00263.32b258c4cc08d235b2ca36fc16074f08,00263__salted__extended__cp200D__single.32b258c4cc08d235b2ca36fc16074f08,extended,200D,single,,,,"Click, click, Click","Cl‍ick, cl‍ick, Cl‍ick"
+00263.32b258c4cc08d235b2ca36fc16074f08,00263__salted__extended__cp00AD__single.32b258c4cc08d235b2ca36fc16074f08,extended,00AD,single,,,,"Click, click, Click","Cl­ick, cl­ick, Cl­ick"
+00264.02b614f34aa0d5970959123b9386b285,00264__salted__extended__cp200B__single.02b614f34aa0d5970959123b9386b285,extended,200B,single,,,,"promotion, receive","pr​omotion, re​ceive"
+00264.02b614f34aa0d5970959123b9386b285,00264__salted__extended__cp200C__single.02b614f34aa0d5970959123b9386b285,extended,200C,single,,,,"promotion, receive","pr‌omotion, re‌ceive"
+00264.02b614f34aa0d5970959123b9386b285,00264__salted__extended__cp200D__single.02b614f34aa0d5970959123b9386b285,extended,200D,single,,,,"promotion, receive","pr‍omotion, re‍ceive"
+00264.02b614f34aa0d5970959123b9386b285,00264__salted__extended__cp00AD__single.02b614f34aa0d5970959123b9386b285,extended,00AD,single,,,,"promotion, receive","pr­omotion, re­ceive"
+00279.1d58a13e343c1e53aca2ed2121a3f815,00279__salted__extended__cp200B__single.1d58a13e343c1e53aca2ed2121a3f815,extended,200B,single,,assistance,as​sistance,"DEAR, SIR, presently","DE​AR, SI​R, pr​esently"
+00279.1d58a13e343c1e53aca2ed2121a3f815,00279__salted__extended__cp200C__single.1d58a13e343c1e53aca2ed2121a3f815,extended,200C,single,,assistance,as‌sistance,"DEAR, SIR, presently","DE‌AR, SI‌R, pr‌esently"
+00279.1d58a13e343c1e53aca2ed2121a3f815,00279__salted__extended__cp200D__single.1d58a13e343c1e53aca2ed2121a3f815,extended,200D,single,,assistance,as‍sistance,"DEAR, SIR, presently","DE‍AR, SI‍R, pr‍esently"
+00279.1d58a13e343c1e53aca2ed2121a3f815,00279__salted__extended__cp00AD__single.1d58a13e343c1e53aca2ed2121a3f815,extended,00AD,single,,assistance,as­sistance,"DEAR, SIR, presently","DE­AR, SI­R, pr­esently"
+00280.026da2bd191f11081b8d8428134b0c66,00280__salted__extended__cp200B__single.026da2bd191f11081b8d8428134b0c66,extended,200B,single,,,,"Promotion, Deposit, click","Pr​omotion, De​posit, cl​ick"
+00280.026da2bd191f11081b8d8428134b0c66,00280__salted__extended__cp200C__single.026da2bd191f11081b8d8428134b0c66,extended,200C,single,,,,"Promotion, Deposit, click","Pr‌omotion, De‌posit, cl‌ick"
+00280.026da2bd191f11081b8d8428134b0c66,00280__salted__extended__cp200D__single.026da2bd191f11081b8d8428134b0c66,extended,200D,single,,,,"Promotion, Deposit, click","Pr‍omotion, De‍posit, cl‍ick"
+00280.026da2bd191f11081b8d8428134b0c66,00280__salted__extended__cp00AD__single.026da2bd191f11081b8d8428134b0c66,extended,00AD,single,,,,"Promotion, Deposit, click","Pr­omotion, De­posit, cl­ick"
+00284.227c1ebb961320cd2086d904d698c49b,00284__salted__extended__cp200B__single.227c1ebb961320cd2086d904d698c49b,extended,200B,single,,,,"Premium, Tobacco, insurance","Pr​emium, To​bacco, in​surance"
+00284.227c1ebb961320cd2086d904d698c49b,00284__salted__extended__cp200C__single.227c1ebb961320cd2086d904d698c49b,extended,200C,single,,,,"Premium, Tobacco, insurance","Pr‌emium, To‌bacco, in‌surance"
+00284.227c1ebb961320cd2086d904d698c49b,00284__salted__extended__cp200D__single.227c1ebb961320cd2086d904d698c49b,extended,200D,single,,,,"Premium, Tobacco, insurance","Pr‍emium, To‍bacco, in‍surance"
+00284.227c1ebb961320cd2086d904d698c49b,00284__salted__extended__cp00AD__single.227c1ebb961320cd2086d904d698c49b,extended,00AD,single,,,,"Premium, Tobacco, insurance","Pr­emium, To­bacco, in­surance"
+00287.b0495a4dbdff36654c3b3ee2f92bdbf3,00287__salted__extended__cp200B__single.b0495a4dbdff36654c3b3ee2f92bdbf3,extended,200B,single,,,,receive,re​ceive
+00287.b0495a4dbdff36654c3b3ee2f92bdbf3,00287__salted__extended__cp200C__single.b0495a4dbdff36654c3b3ee2f92bdbf3,extended,200C,single,,,,receive,re‌ceive
+00287.b0495a4dbdff36654c3b3ee2f92bdbf3,00287__salted__extended__cp200D__single.b0495a4dbdff36654c3b3ee2f92bdbf3,extended,200D,single,,,,receive,re‍ceive
+00287.b0495a4dbdff36654c3b3ee2f92bdbf3,00287__salted__extended__cp00AD__single.b0495a4dbdff36654c3b3ee2f92bdbf3,extended,00AD,single,,,,receive,re­ceive
+00291.7aa227e74e89bdd529a3875459d0d5a2,00291__salted__extended__cp200B__single.7aa227e74e89bdd529a3875459d0d5a2,extended,200B,single,,,,"Click, receive, mailings","Cl​ick, re​ceive, ma​ilings"
+00291.7aa227e74e89bdd529a3875459d0d5a2,00291__salted__extended__cp200C__single.7aa227e74e89bdd529a3875459d0d5a2,extended,200C,single,,,,"Click, receive, mailings","Cl‌ick, re‌ceive, ma‌ilings"
+00291.7aa227e74e89bdd529a3875459d0d5a2,00291__salted__extended__cp200D__single.7aa227e74e89bdd529a3875459d0d5a2,extended,200D,single,,,,"Click, receive, mailings","Cl‍ick, re‍ceive, ma‍ilings"
+00291.7aa227e74e89bdd529a3875459d0d5a2,00291__salted__extended__cp00AD__single.7aa227e74e89bdd529a3875459d0d5a2,extended,00AD,single,,,,"Click, receive, mailings","Cl­ick, re­ceive, ma­ilings"
+00292.dbf78a2aaa230d288eb80ab843804252,00292__salted__extended__cp200B__single.dbf78a2aaa230d288eb80ab843804252,extended,200B,single,,,,"fees, Sincerely, promotional","fe​es, Si​ncerely, pr​omotional"
+00292.dbf78a2aaa230d288eb80ab843804252,00292__salted__extended__cp200C__single.dbf78a2aaa230d288eb80ab843804252,extended,200C,single,,,,"fees, Sincerely, promotional","fe‌es, Si‌ncerely, pr‌omotional"
+00292.dbf78a2aaa230d288eb80ab843804252,00292__salted__extended__cp200D__single.dbf78a2aaa230d288eb80ab843804252,extended,200D,single,,,,"fees, Sincerely, promotional","fe‍es, Si‍ncerely, pr‍omotional"
+00292.dbf78a2aaa230d288eb80ab843804252,00292__salted__extended__cp00AD__single.dbf78a2aaa230d288eb80ab843804252,extended,00AD,single,,,,"fees, Sincerely, promotional","fe­es, Si­ncerely, pr­omotional"
+00296.85aa16f800e0aaf8755cdf23d7e035ff,00296__salted__extended__cp200B__single.85aa16f800e0aaf8755cdf23d7e035ff,extended,200B,single,,Annuity,An​nuity,"annuity, Guaranteed, receive","an​nuity, Gu​aranteed, re​ceive"
+00296.85aa16f800e0aaf8755cdf23d7e035ff,00296__salted__extended__cp200C__single.85aa16f800e0aaf8755cdf23d7e035ff,extended,200C,single,,Annuity,An‌nuity,"annuity, Guaranteed, receive","an‌nuity, Gu‌aranteed, re‌ceive"
+00296.85aa16f800e0aaf8755cdf23d7e035ff,00296__salted__extended__cp200D__single.85aa16f800e0aaf8755cdf23d7e035ff,extended,200D,single,,Annuity,An‍nuity,"annuity, Guaranteed, receive","an‍nuity, Gu‍aranteed, re‍ceive"
+00296.85aa16f800e0aaf8755cdf23d7e035ff,00296__salted__extended__cp00AD__single.85aa16f800e0aaf8755cdf23d7e035ff,extended,00AD,single,,Annuity,An­nuity,"annuity, Guaranteed, receive","an­nuity, Gu­aranteed, re­ceive"
+00302.7f695c69d4cbe06e91cddd2ca7cddf33,00302__salted__extended__cp200B__single.7f695c69d4cbe06e91cddd2ca7cddf33,extended,200B,single,,,,"Guaranteed, herbal, Click","Gu​aranteed, he​rbal, Cl​ick"
+00302.7f695c69d4cbe06e91cddd2ca7cddf33,00302__salted__extended__cp200C__single.7f695c69d4cbe06e91cddd2ca7cddf33,extended,200C,single,,,,"Guaranteed, herbal, Click","Gu‌aranteed, he‌rbal, Cl‌ick"
+00302.7f695c69d4cbe06e91cddd2ca7cddf33,00302__salted__extended__cp200D__single.7f695c69d4cbe06e91cddd2ca7cddf33,extended,200D,single,,,,"Guaranteed, herbal, Click","Gu‍aranteed, he‍rbal, Cl‍ick"
+00302.7f695c69d4cbe06e91cddd2ca7cddf33,00302__salted__extended__cp00AD__single.7f695c69d4cbe06e91cddd2ca7cddf33,extended,00AD,single,,,,"Guaranteed, herbal, Click","Gu­aranteed, he­rbal, Cl­ick"
+00303.22239f1393297a691eb5df3dfe7a5001,00303__salted__extended__cp200B__single.22239f1393297a691eb5df3dfe7a5001,extended,200B,single,,,,compliance,co​mpliance
+00303.22239f1393297a691eb5df3dfe7a5001,00303__salted__extended__cp200C__single.22239f1393297a691eb5df3dfe7a5001,extended,200C,single,,,,compliance,co‌mpliance
+00303.22239f1393297a691eb5df3dfe7a5001,00303__salted__extended__cp200D__single.22239f1393297a691eb5df3dfe7a5001,extended,200D,single,,,,compliance,co‍mpliance
+00303.22239f1393297a691eb5df3dfe7a5001,00303__salted__extended__cp00AD__single.22239f1393297a691eb5df3dfe7a5001,extended,00AD,single,,,,compliance,co­mpliance
+00305.1f2a712e25638b0a4868155b37022cf1,00305__salted__extended__cp200B__single.1f2a712e25638b0a4868155b37022cf1,extended,200B,single,,HGH,HG​H,,
+00305.1f2a712e25638b0a4868155b37022cf1,00305__salted__extended__cp200C__single.1f2a712e25638b0a4868155b37022cf1,extended,200C,single,,HGH,HG‌H,,
+00305.1f2a712e25638b0a4868155b37022cf1,00305__salted__extended__cp200D__single.1f2a712e25638b0a4868155b37022cf1,extended,200D,single,,HGH,HG‍H,,
+00305.1f2a712e25638b0a4868155b37022cf1,00305__salted__extended__cp00AD__single.1f2a712e25638b0a4868155b37022cf1,extended,00AD,single,,HGH,HG­H,,
+00305.f80c21904d6d4f6facd036450a588b0d,00305__salted__extended__cp200B__single.f80c21904d6d4f6facd036450a588b0d,extended,200B,single,,,,"guaranteed, receive, receive","gu​aranteed, re​ceive, re​ceive"
+00305.f80c21904d6d4f6facd036450a588b0d,00305__salted__extended__cp200C__single.f80c21904d6d4f6facd036450a588b0d,extended,200C,single,,,,"guaranteed, receive, receive","gu‌aranteed, re‌ceive, re‌ceive"
+00305.f80c21904d6d4f6facd036450a588b0d,00305__salted__extended__cp200D__single.f80c21904d6d4f6facd036450a588b0d,extended,200D,single,,,,"guaranteed, receive, receive","gu‍aranteed, re‍ceive, re‍ceive"
+00305.f80c21904d6d4f6facd036450a588b0d,00305__salted__extended__cp00AD__single.f80c21904d6d4f6facd036450a588b0d,extended,00AD,single,,,,"guaranteed, receive, receive","gu­aranteed, re­ceive, re­ceive"
+00308.fc90f8aab51648329b9e705c9021b204,00308__salted__extended__cp200B__single.fc90f8aab51648329b9e705c9021b204,extended,200B,single,,,,"premium, receive, mailings","pr​emium, re​ceive, ma​ilings"
+00308.fc90f8aab51648329b9e705c9021b204,00308__salted__extended__cp200C__single.fc90f8aab51648329b9e705c9021b204,extended,200C,single,,,,"premium, receive, mailings","pr‌emium, re‌ceive, ma‌ilings"
+00308.fc90f8aab51648329b9e705c9021b204,00308__salted__extended__cp200D__single.fc90f8aab51648329b9e705c9021b204,extended,200D,single,,,,"premium, receive, mailings","pr‍emium, re‍ceive, ma‍ilings"
+00308.fc90f8aab51648329b9e705c9021b204,00308__salted__extended__cp00AD__single.fc90f8aab51648329b9e705c9021b204,extended,00AD,single,,,,"premium, receive, mailings","pr­emium, re­ceive, ma­ilings"
+00312.5034fee7d265abd7a4194e9300de24bf,00312__salted__extended__cp200B__single.5034fee7d265abd7a4194e9300de24bf,extended,200B,single,,HGH,HG​H,,
+00312.5034fee7d265abd7a4194e9300de24bf,00312__salted__extended__cp200C__single.5034fee7d265abd7a4194e9300de24bf,extended,200C,single,,HGH,HG‌H,,
+00312.5034fee7d265abd7a4194e9300de24bf,00312__salted__extended__cp200D__single.5034fee7d265abd7a4194e9300de24bf,extended,200D,single,,HGH,HG‍H,,
+00312.5034fee7d265abd7a4194e9300de24bf,00312__salted__extended__cp00AD__single.5034fee7d265abd7a4194e9300de24bf,extended,00AD,single,,HGH,HG­H,,
+00319.a99dff9c010e00ec182ed5701556d330,00319__salted__extended__cp200B__single.a99dff9c010e00ec182ed5701556d330,extended,200B,single,,,,"dare, dear","da​re, de​ar"
+00319.a99dff9c010e00ec182ed5701556d330,00319__salted__extended__cp200C__single.a99dff9c010e00ec182ed5701556d330,extended,200C,single,,,,"dare, dear","da‌re, de‌ar"
+00319.a99dff9c010e00ec182ed5701556d330,00319__salted__extended__cp200D__single.a99dff9c010e00ec182ed5701556d330,extended,200D,single,,,,"dare, dear","da‍re, de‍ar"
+00319.a99dff9c010e00ec182ed5701556d330,00319__salted__extended__cp00AD__single.a99dff9c010e00ec182ed5701556d330,extended,00AD,single,,,,"dare, dear","da­re, de­ar"
+00337.813498483bc80a24c002e6e7e8e0f2cb,00337__salted__extended__cp200B__single.813498483bc80a24c002e6e7e8e0f2cb,extended,200B,single,,,,"invest, loan, qualified","in​vest, lo​an, qu​alified"
+00337.813498483bc80a24c002e6e7e8e0f2cb,00337__salted__extended__cp200C__single.813498483bc80a24c002e6e7e8e0f2cb,extended,200C,single,,,,"invest, loan, qualified","in‌vest, lo‌an, qu‌alified"
+00337.813498483bc80a24c002e6e7e8e0f2cb,00337__salted__extended__cp200D__single.813498483bc80a24c002e6e7e8e0f2cb,extended,200D,single,,,,"invest, loan, qualified","in‍vest, lo‍an, qu‍alified"
+00337.813498483bc80a24c002e6e7e8e0f2cb,00337__salted__extended__cp00AD__single.813498483bc80a24c002e6e7e8e0f2cb,extended,00AD,single,,,,"invest, loan, qualified","in­vest, lo­an, qu­alified"
+00344.17882edad13c2c761e6d8d99eef5a346,00344__salted__extended__cp200B__single.17882edad13c2c761e6d8d99eef5a346,extended,200B,single,,,,"Purchase, Click, receive","Pu​rchase, Cl​ick, re​ceive"
+00344.17882edad13c2c761e6d8d99eef5a346,00344__salted__extended__cp200C__single.17882edad13c2c761e6d8d99eef5a346,extended,200C,single,,,,"Purchase, Click, receive","Pu‌rchase, Cl‌ick, re‌ceive"
+00344.17882edad13c2c761e6d8d99eef5a346,00344__salted__extended__cp200D__single.17882edad13c2c761e6d8d99eef5a346,extended,200D,single,,,,"Purchase, Click, receive","Pu‍rchase, Cl‍ick, re‍ceive"
+00344.17882edad13c2c761e6d8d99eef5a346,00344__salted__extended__cp00AD__single.17882edad13c2c761e6d8d99eef5a346,extended,00AD,single,,,,"Purchase, Click, receive","Pu­rchase, Cl­ick, re­ceive"
+00344.e6463530b23a12554d2e6f0e08ae10a7,00344__salted__extended__cp200B__single.e6463530b23a12554d2e6f0e08ae10a7,extended,200B,single,,,,TOLL,TO​LL
+00344.e6463530b23a12554d2e6f0e08ae10a7,00344__salted__extended__cp200C__single.e6463530b23a12554d2e6f0e08ae10a7,extended,200C,single,,,,TOLL,TO‌LL
+00344.e6463530b23a12554d2e6f0e08ae10a7,00344__salted__extended__cp200D__single.e6463530b23a12554d2e6f0e08ae10a7,extended,200D,single,,,,TOLL,TO‍LL
+00344.e6463530b23a12554d2e6f0e08ae10a7,00344__salted__extended__cp00AD__single.e6463530b23a12554d2e6f0e08ae10a7,extended,00AD,single,,,,TOLL,TO­LL
+00345.613b3c2aeac033eebb379c91b8ce9fba,00345__salted__extended__cp200B__single.613b3c2aeac033eebb379c91b8ce9fba,extended,200B,single,,Monthly,Mo​nthly,,
+00345.613b3c2aeac033eebb379c91b8ce9fba,00345__salted__extended__cp200C__single.613b3c2aeac033eebb379c91b8ce9fba,extended,200C,single,,Monthly,Mo‌nthly,,
+00345.613b3c2aeac033eebb379c91b8ce9fba,00345__salted__extended__cp200D__single.613b3c2aeac033eebb379c91b8ce9fba,extended,200D,single,,Monthly,Mo‍nthly,,
+00345.613b3c2aeac033eebb379c91b8ce9fba,00345__salted__extended__cp00AD__single.613b3c2aeac033eebb379c91b8ce9fba,extended,00AD,single,,Monthly,Mo­nthly,,
+00346.d93a823fb3350a5da8f0c612ce1156cd,00346__salted__extended__cp200B__single.d93a823fb3350a5da8f0c612ce1156cd,extended,200B,single,,,,"Dear, Sir, deposit","De​ar, Si​r, de​posit"
+00346.d93a823fb3350a5da8f0c612ce1156cd,00346__salted__extended__cp200C__single.d93a823fb3350a5da8f0c612ce1156cd,extended,200C,single,,,,"Dear, Sir, deposit","De‌ar, Si‌r, de‌posit"
+00346.d93a823fb3350a5da8f0c612ce1156cd,00346__salted__extended__cp200D__single.d93a823fb3350a5da8f0c612ce1156cd,extended,200D,single,,,,"Dear, Sir, deposit","De‍ar, Si‍r, de‍posit"
+00346.d93a823fb3350a5da8f0c612ce1156cd,00346__salted__extended__cp00AD__single.d93a823fb3350a5da8f0c612ce1156cd,extended,00AD,single,,,,"Dear, Sir, deposit","De­ar, Si­r, de­posit"
+00354.dca4b8984863a76ffd01a33888498288,00354__salted__extended__cp200B__single.dca4b8984863a76ffd01a33888498288,extended,200B,single,,,,"Click, Removal, advertisement","Cl​ick, Re​moval, ad​vertisement"
+00354.dca4b8984863a76ffd01a33888498288,00354__salted__extended__cp200C__single.dca4b8984863a76ffd01a33888498288,extended,200C,single,,,,"Click, Removal, advertisement","Cl‌ick, Re‌moval, ad‌vertisement"
+00354.dca4b8984863a76ffd01a33888498288,00354__salted__extended__cp200D__single.dca4b8984863a76ffd01a33888498288,extended,200D,single,,,,"Click, Removal, advertisement","Cl‍ick, Re‍moval, ad‍vertisement"
+00354.dca4b8984863a76ffd01a33888498288,00354__salted__extended__cp00AD__single.dca4b8984863a76ffd01a33888498288,extended,00AD,single,,,,"Click, Removal, advertisement","Cl­ick, Re­moval, ad­vertisement"
+00356.ea7eb32330fa6bf65270023c0d99e2c5,00356__salted__extended__cp200B__single.ea7eb32330fa6bf65270023c0d99e2c5,extended,200B,single,,,,"SystemWorks, WHOLESALE, CLICK","Sy​stemWorks, WH​OLESALE, CL​ICK"
+00356.ea7eb32330fa6bf65270023c0d99e2c5,00356__salted__extended__cp200C__single.ea7eb32330fa6bf65270023c0d99e2c5,extended,200C,single,,,,"SystemWorks, WHOLESALE, CLICK","Sy‌stemWorks, WH‌OLESALE, CL‌ICK"
+00356.ea7eb32330fa6bf65270023c0d99e2c5,00356__salted__extended__cp200D__single.ea7eb32330fa6bf65270023c0d99e2c5,extended,200D,single,,,,"SystemWorks, WHOLESALE, CLICK","Sy‍stemWorks, WH‍OLESALE, CL‍ICK"
+00356.ea7eb32330fa6bf65270023c0d99e2c5,00356__salted__extended__cp00AD__single.ea7eb32330fa6bf65270023c0d99e2c5,extended,00AD,single,,,,"SystemWorks, WHOLESALE, CLICK","Sy­stemWorks, WH­OLESALE, CL­ICK"
+00359.90bec90ebeaf05f024f48594e7d7b0d5,00359__salted__extended__cp200B__single.90bec90ebeaf05f024f48594e7d7b0d5,extended,200B,single,,,,"DEAR, SIR, confidentiality","DE​AR, SI​R, co​nfidentiality"
+00359.90bec90ebeaf05f024f48594e7d7b0d5,00359__salted__extended__cp200C__single.90bec90ebeaf05f024f48594e7d7b0d5,extended,200C,single,,,,"DEAR, SIR, confidentiality","DE‌AR, SI‌R, co‌nfidentiality"
+00359.90bec90ebeaf05f024f48594e7d7b0d5,00359__salted__extended__cp200D__single.90bec90ebeaf05f024f48594e7d7b0d5,extended,200D,single,,,,"DEAR, SIR, confidentiality","DE‍AR, SI‍R, co‍nfidentiality"
+00359.90bec90ebeaf05f024f48594e7d7b0d5,00359__salted__extended__cp00AD__single.90bec90ebeaf05f024f48594e7d7b0d5,extended,00AD,single,,,,"DEAR, SIR, confidentiality","DE­AR, SI­R, co­nfidentiality"
+00361.e91ac048b0ede961d3f51009eee1c620,00361__salted__extended__cp200B__single.e91ac048b0ede961d3f51009eee1c620,extended,200B,single,,,,"LAGOS, ATTN, Nigeria","LA​GOS, AT​TN, Ni​geria"
+00361.e91ac048b0ede961d3f51009eee1c620,00361__salted__extended__cp200C__single.e91ac048b0ede961d3f51009eee1c620,extended,200C,single,,,,"LAGOS, ATTN, Nigeria","LA‌GOS, AT‌TN, Ni‌geria"
+00361.e91ac048b0ede961d3f51009eee1c620,00361__salted__extended__cp200D__single.e91ac048b0ede961d3f51009eee1c620,extended,200D,single,,,,"LAGOS, ATTN, Nigeria","LA‍GOS, AT‍TN, Ni‍geria"
+00361.e91ac048b0ede961d3f51009eee1c620,00361__salted__extended__cp00AD__single.e91ac048b0ede961d3f51009eee1c620,extended,00AD,single,,,,"LAGOS, ATTN, Nigeria","LA­GOS, AT­TN, Ni­geria"
+00369.845eeb9573484bd88a6a6224c7068d81,00369__salted__extended__cp200B__single.845eeb9573484bd88a6a6224c7068d81,extended,200B,single,,cartridges,ca​rtridges,,
+00369.845eeb9573484bd88a6a6224c7068d81,00369__salted__extended__cp200C__single.845eeb9573484bd88a6a6224c7068d81,extended,200C,single,,cartridges,ca‌rtridges,,
+00369.845eeb9573484bd88a6a6224c7068d81,00369__salted__extended__cp200D__single.845eeb9573484bd88a6a6224c7068d81,extended,200D,single,,cartridges,ca‍rtridges,,
+00369.845eeb9573484bd88a6a6224c7068d81,00369__salted__extended__cp00AD__single.845eeb9573484bd88a6a6224c7068d81,extended,00AD,single,,cartridges,ca­rtridges,,
+00373.ebe8670ac56b04125c25100a36ab0510,00373__salted__extended__cp200B__single.ebe8670ac56b04125c25100a36ab0510,extended,200B,single,,,,"SystemWorks, compliance","Sy​stemWorks, co​mpliance"
+00373.ebe8670ac56b04125c25100a36ab0510,00373__salted__extended__cp200C__single.ebe8670ac56b04125c25100a36ab0510,extended,200C,single,,,,"SystemWorks, compliance","Sy‌stemWorks, co‌mpliance"
+00373.ebe8670ac56b04125c25100a36ab0510,00373__salted__extended__cp200D__single.ebe8670ac56b04125c25100a36ab0510,extended,200D,single,,,,"SystemWorks, compliance","Sy‍stemWorks, co‍mpliance"
+00373.ebe8670ac56b04125c25100a36ab0510,00373__salted__extended__cp00AD__single.ebe8670ac56b04125c25100a36ab0510,extended,00AD,single,,,,"SystemWorks, compliance","Sy­stemWorks, co­mpliance"
+00384.2054d62f06fd10e4018a43e156b32acf,00384__salted__extended__cp200B__single.2054d62f06fd10e4018a43e156b32acf,extended,200B,single,,Guaranteed,Gu​aranteed,"annuity, annuity, Guaranteed","an​nuity, an​nuity, Gu​aranteed"
+00384.2054d62f06fd10e4018a43e156b32acf,00384__salted__extended__cp200C__single.2054d62f06fd10e4018a43e156b32acf,extended,200C,single,,Guaranteed,Gu‌aranteed,"annuity, annuity, Guaranteed","an‌nuity, an‌nuity, Gu‌aranteed"
+00384.2054d62f06fd10e4018a43e156b32acf,00384__salted__extended__cp200D__single.2054d62f06fd10e4018a43e156b32acf,extended,200D,single,,Guaranteed,Gu‍aranteed,"annuity, annuity, Guaranteed","an‍nuity, an‍nuity, Gu‍aranteed"
+00384.2054d62f06fd10e4018a43e156b32acf,00384__salted__extended__cp00AD__single.2054d62f06fd10e4018a43e156b32acf,extended,00AD,single,,Guaranteed,Gu­aranteed,"annuity, annuity, Guaranteed","an­nuity, an­nuity, Gu­aranteed"
+00386.6074f269f0bd1aec1546f9e654e8fcfe,00386__salted__extended__cp200B__single.6074f269f0bd1aec1546f9e654e8fcfe,extended,200B,single,,,,"earn, click, click","ea​rn, cl​ick, cl​ick"
+00386.6074f269f0bd1aec1546f9e654e8fcfe,00386__salted__extended__cp200C__single.6074f269f0bd1aec1546f9e654e8fcfe,extended,200C,single,,,,"earn, click, click","ea‌rn, cl‌ick, cl‌ick"
+00386.6074f269f0bd1aec1546f9e654e8fcfe,00386__salted__extended__cp200D__single.6074f269f0bd1aec1546f9e654e8fcfe,extended,200D,single,,,,"earn, click, click","ea‍rn, cl‍ick, cl‍ick"
+00386.6074f269f0bd1aec1546f9e654e8fcfe,00386__salted__extended__cp00AD__single.6074f269f0bd1aec1546f9e654e8fcfe,extended,00AD,single,,,,"earn, click, click","ea­rn, cl­ick, cl­ick"
+00388.a884c42d4423d7e4718db0145b3b9d9b,00388__salted__extended__cp200B__single.a884c42d4423d7e4718db0145b3b9d9b,extended,200B,single,,,,GUARANTEED,GU​ARANTEED
+00388.a884c42d4423d7e4718db0145b3b9d9b,00388__salted__extended__cp200C__single.a884c42d4423d7e4718db0145b3b9d9b,extended,200C,single,,,,GUARANTEED,GU‌ARANTEED
+00388.a884c42d4423d7e4718db0145b3b9d9b,00388__salted__extended__cp200D__single.a884c42d4423d7e4718db0145b3b9d9b,extended,200D,single,,,,GUARANTEED,GU‍ARANTEED
+00388.a884c42d4423d7e4718db0145b3b9d9b,00388__salted__extended__cp00AD__single.a884c42d4423d7e4718db0145b3b9d9b,extended,00AD,single,,,,GUARANTEED,GU­ARANTEED
+00395.74aee42fac915ca758047506ec59a21f,00395__salted__extended__cp200B__single.74aee42fac915ca758047506ec59a21f,extended,200B,single,,ADV,AD​V,,
+00395.74aee42fac915ca758047506ec59a21f,00395__salted__extended__cp200C__single.74aee42fac915ca758047506ec59a21f,extended,200C,single,,ADV,AD‌V,,
+00395.74aee42fac915ca758047506ec59a21f,00395__salted__extended__cp200D__single.74aee42fac915ca758047506ec59a21f,extended,200D,single,,ADV,AD‍V,,
+00395.74aee42fac915ca758047506ec59a21f,00395__salted__extended__cp00AD__single.74aee42fac915ca758047506ec59a21f,extended,00AD,single,,ADV,AD­V,,
+00409.e59f63e813b6766a9a4ddf0790634ca3,00409__salted__extended__cp200B__single.e59f63e813b6766a9a4ddf0790634ca3,extended,200B,single,,,,"guaranteed, profitable, Receive","gu​aranteed, pr​ofitable, Re​ceive"
+00409.e59f63e813b6766a9a4ddf0790634ca3,00409__salted__extended__cp200C__single.e59f63e813b6766a9a4ddf0790634ca3,extended,200C,single,,,,"guaranteed, profitable, Receive","gu‌aranteed, pr‌ofitable, Re‌ceive"
+00409.e59f63e813b6766a9a4ddf0790634ca3,00409__salted__extended__cp200D__single.e59f63e813b6766a9a4ddf0790634ca3,extended,200D,single,,,,"guaranteed, profitable, Receive","gu‍aranteed, pr‍ofitable, Re‍ceive"
+00409.e59f63e813b6766a9a4ddf0790634ca3,00409__salted__extended__cp00AD__single.e59f63e813b6766a9a4ddf0790634ca3,extended,00AD,single,,,,"guaranteed, profitable, Receive","gu­aranteed, pr­ofitable, Re­ceive"
+00415.4af357c0282481dba8f1765f0bf09c09,00415__salted__extended__cp200B__single.4af357c0282481dba8f1765f0bf09c09,extended,200B,single,,,,"Annuity, Premium, receive","An​nuity, Pr​emium, re​ceive"
+00415.4af357c0282481dba8f1765f0bf09c09,00415__salted__extended__cp200C__single.4af357c0282481dba8f1765f0bf09c09,extended,200C,single,,,,"Annuity, Premium, receive","An‌nuity, Pr‌emium, re‌ceive"
+00415.4af357c0282481dba8f1765f0bf09c09,00415__salted__extended__cp200D__single.4af357c0282481dba8f1765f0bf09c09,extended,200D,single,,,,"Annuity, Premium, receive","An‍nuity, Pr‍emium, re‍ceive"
+00415.4af357c0282481dba8f1765f0bf09c09,00415__salted__extended__cp00AD__single.4af357c0282481dba8f1765f0bf09c09,extended,00AD,single,,,,"Annuity, Premium, receive","An­nuity, Pr­emium, re­ceive"
+00416.bff1badad869f205fdb54f311f060734,00416__salted__extended__cp200B__single.bff1badad869f205fdb54f311f060734,extended,200B,single,,Guaranteed,Gu​aranteed,,
+00416.bff1badad869f205fdb54f311f060734,00416__salted__extended__cp200C__single.bff1badad869f205fdb54f311f060734,extended,200C,single,,Guaranteed,Gu‌aranteed,,
+00416.bff1badad869f205fdb54f311f060734,00416__salted__extended__cp200D__single.bff1badad869f205fdb54f311f060734,extended,200D,single,,Guaranteed,Gu‍aranteed,,
+00416.bff1badad869f205fdb54f311f060734,00416__salted__extended__cp00AD__single.bff1badad869f205fdb54f311f060734,extended,00AD,single,,Guaranteed,Gu­aranteed,,
+00426.36b36cbe96efe9001c4d80363ea7ed4e,00426__salted__extended__cp200B__single.36b36cbe96efe9001c4d80363ea7ed4e,extended,200B,single,,,,"mortgage, loan, fees","mo​rtgage, lo​an, fe​es"
+00426.36b36cbe96efe9001c4d80363ea7ed4e,00426__salted__extended__cp200C__single.36b36cbe96efe9001c4d80363ea7ed4e,extended,200C,single,,,,"mortgage, loan, fees","mo‌rtgage, lo‌an, fe‌es"
+00426.36b36cbe96efe9001c4d80363ea7ed4e,00426__salted__extended__cp200D__single.36b36cbe96efe9001c4d80363ea7ed4e,extended,200D,single,,,,"mortgage, loan, fees","mo‍rtgage, lo‍an, fe‍es"
+00426.36b36cbe96efe9001c4d80363ea7ed4e,00426__salted__extended__cp00AD__single.36b36cbe96efe9001c4d80363ea7ed4e,extended,00AD,single,,,,"mortgage, loan, fees","mo­rtgage, lo­an, fe­es"
+00426.c743511223777504c01a35f90914b230,00426__salted__extended__cp200B__single.c743511223777504c01a35f90914b230,extended,200B,single,,Fees,Fe​es,,
+00426.c743511223777504c01a35f90914b230,00426__salted__extended__cp200C__single.c743511223777504c01a35f90914b230,extended,200C,single,,Fees,Fe‌es,,
+00426.c743511223777504c01a35f90914b230,00426__salted__extended__cp200D__single.c743511223777504c01a35f90914b230,extended,200D,single,,Fees,Fe‍es,,
+00426.c743511223777504c01a35f90914b230,00426__salted__extended__cp00AD__single.c743511223777504c01a35f90914b230,extended,00AD,single,,Fees,Fe­es,,
+00428.5fe2c974b49315a6fbf9f3b09b47f030,00428__salted__extended__cp200B__single.5fe2c974b49315a6fbf9f3b09b47f030,extended,200B,single,,Insurance,In​surance,,
+00428.5fe2c974b49315a6fbf9f3b09b47f030,00428__salted__extended__cp200C__single.5fe2c974b49315a6fbf9f3b09b47f030,extended,200C,single,,Insurance,In‌surance,,
+00428.5fe2c974b49315a6fbf9f3b09b47f030,00428__salted__extended__cp200D__single.5fe2c974b49315a6fbf9f3b09b47f030,extended,200D,single,,Insurance,In‍surance,,
+00428.5fe2c974b49315a6fbf9f3b09b47f030,00428__salted__extended__cp00AD__single.5fe2c974b49315a6fbf9f3b09b47f030,extended,00AD,single,,Insurance,In­surance,,
+00430.d2179c2841013fea688db8bbcf60b3b0,00430__salted__extended__cp200B__single.d2179c2841013fea688db8bbcf60b3b0,extended,200B,single,,Fees,Fe​es,,
+00430.d2179c2841013fea688db8bbcf60b3b0,00430__salted__extended__cp200C__single.d2179c2841013fea688db8bbcf60b3b0,extended,200C,single,,Fees,Fe‌es,,
+00430.d2179c2841013fea688db8bbcf60b3b0,00430__salted__extended__cp200D__single.d2179c2841013fea688db8bbcf60b3b0,extended,200D,single,,Fees,Fe‍es,,
+00430.d2179c2841013fea688db8bbcf60b3b0,00430__salted__extended__cp00AD__single.d2179c2841013fea688db8bbcf60b3b0,extended,00AD,single,,Fees,Fe­es,,
+00439.eacffbae5543e6be58178c0d3eb95041,00439__salted__extended__cp200B__single.eacffbae5543e6be58178c0d3eb95041,extended,200B,single,,,,"secrets, Click, receive","se​crets, Cl​ick, re​ceive"
+00439.eacffbae5543e6be58178c0d3eb95041,00439__salted__extended__cp200C__single.eacffbae5543e6be58178c0d3eb95041,extended,200C,single,,,,"secrets, Click, receive","se‌crets, Cl‌ick, re‌ceive"
+00439.eacffbae5543e6be58178c0d3eb95041,00439__salted__extended__cp200D__single.eacffbae5543e6be58178c0d3eb95041,extended,200D,single,,,,"secrets, Click, receive","se‍crets, Cl‍ick, re‍ceive"
+00439.eacffbae5543e6be58178c0d3eb95041,00439__salted__extended__cp00AD__single.eacffbae5543e6be58178c0d3eb95041,extended,00AD,single,,,,"secrets, Click, receive","se­crets, Cl­ick, re­ceive"
+00440.647d9eb44fd0cb069ea92be204966a8e,00440__salted__extended__cp200B__single.647d9eb44fd0cb069ea92be204966a8e,extended,200B,single,,SYSTEMWORKS,SY​STEMWORKS,,
+00440.647d9eb44fd0cb069ea92be204966a8e,00440__salted__extended__cp200C__single.647d9eb44fd0cb069ea92be204966a8e,extended,200C,single,,SYSTEMWORKS,SY‌STEMWORKS,,
+00440.647d9eb44fd0cb069ea92be204966a8e,00440__salted__extended__cp200D__single.647d9eb44fd0cb069ea92be204966a8e,extended,200D,single,,SYSTEMWORKS,SY‍STEMWORKS,,
+00440.647d9eb44fd0cb069ea92be204966a8e,00440__salted__extended__cp00AD__single.647d9eb44fd0cb069ea92be204966a8e,extended,00AD,single,,SYSTEMWORKS,SY­STEMWORKS,,
+00441.77768298934252b2fa200e7d9482993b,00441__salted__extended__cp200B__single.77768298934252b2fa200e7d9482993b,extended,200B,single,,Bills,Bi​lls,,
+00441.77768298934252b2fa200e7d9482993b,00441__salted__extended__cp200C__single.77768298934252b2fa200e7d9482993b,extended,200C,single,,Bills,Bi‌lls,,
+00441.77768298934252b2fa200e7d9482993b,00441__salted__extended__cp200D__single.77768298934252b2fa200e7d9482993b,extended,200D,single,,Bills,Bi‍lls,,
+00441.77768298934252b2fa200e7d9482993b,00441__salted__extended__cp00AD__single.77768298934252b2fa200e7d9482993b,extended,00AD,single,,Bills,Bi­lls,,
+00445.a5edbd936b830407d1a56b31ff3b82c0,00445__salted__extended__cp200B__single.a5edbd936b830407d1a56b31ff3b82c0,extended,200B,single,,Herbal,He​rbal,,
+00445.a5edbd936b830407d1a56b31ff3b82c0,00445__salted__extended__cp200C__single.a5edbd936b830407d1a56b31ff3b82c0,extended,200C,single,,Herbal,He‌rbal,,
+00445.a5edbd936b830407d1a56b31ff3b82c0,00445__salted__extended__cp200D__single.a5edbd936b830407d1a56b31ff3b82c0,extended,200D,single,,Herbal,He‍rbal,,
+00445.a5edbd936b830407d1a56b31ff3b82c0,00445__salted__extended__cp00AD__single.a5edbd936b830407d1a56b31ff3b82c0,extended,00AD,single,,Herbal,He­rbal,,
+00447.32e588c3a1d8888d737f360f825713b8,00447__salted__extended__cp200B__single.32e588c3a1d8888d737f360f825713b8,extended,200B,single,,,,"guaranteed, premium, attained","gu​aranteed, pr​emium, at​tained"
+00447.32e588c3a1d8888d737f360f825713b8,00447__salted__extended__cp200C__single.32e588c3a1d8888d737f360f825713b8,extended,200C,single,,,,"guaranteed, premium, attained","gu‌aranteed, pr‌emium, at‌tained"
+00447.32e588c3a1d8888d737f360f825713b8,00447__salted__extended__cp200D__single.32e588c3a1d8888d737f360f825713b8,extended,200D,single,,,,"guaranteed, premium, attained","gu‍aranteed, pr‍emium, at‍tained"
+00447.32e588c3a1d8888d737f360f825713b8,00447__salted__extended__cp00AD__single.32e588c3a1d8888d737f360f825713b8,extended,00AD,single,,,,"guaranteed, premium, attained","gu­aranteed, pr­emium, at­tained"
+00455.8ccdcb205b6f8c3958bb3b2d39edca46,00455__salted__extended__cp200B__single.8ccdcb205b6f8c3958bb3b2d39edca46,extended,200B,single,,ADV,AD​V,,
+00455.8ccdcb205b6f8c3958bb3b2d39edca46,00455__salted__extended__cp200C__single.8ccdcb205b6f8c3958bb3b2d39edca46,extended,200C,single,,ADV,AD‌V,,
+00455.8ccdcb205b6f8c3958bb3b2d39edca46,00455__salted__extended__cp200D__single.8ccdcb205b6f8c3958bb3b2d39edca46,extended,200D,single,,ADV,AD‍V,,
+00455.8ccdcb205b6f8c3958bb3b2d39edca46,00455__salted__extended__cp00AD__single.8ccdcb205b6f8c3958bb3b2d39edca46,extended,00AD,single,,ADV,AD­V,,
+00458.62211764fde0dd7128ea4146268b40dd,00458__salted__extended__cp200B__single.62211764fde0dd7128ea4146268b40dd,extended,200B,single,,,,"earn, click, click","ea​rn, cl​ick, cl​ick"
+00458.62211764fde0dd7128ea4146268b40dd,00458__salted__extended__cp200C__single.62211764fde0dd7128ea4146268b40dd,extended,200C,single,,,,"earn, click, click","ea‌rn, cl‌ick, cl‌ick"
+00458.62211764fde0dd7128ea4146268b40dd,00458__salted__extended__cp200D__single.62211764fde0dd7128ea4146268b40dd,extended,200D,single,,,,"earn, click, click","ea‍rn, cl‍ick, cl‍ick"
+00458.62211764fde0dd7128ea4146268b40dd,00458__salted__extended__cp00AD__single.62211764fde0dd7128ea4146268b40dd,extended,00AD,single,,,,"earn, click, click","ea­rn, cl­ick, cl­ick"
+00467.3748c927c32a9c4e8988dad52a843b5c,00467__salted__extended__cp200B__single.3748c927c32a9c4e8988dad52a843b5c,extended,200B,single,,,,"qualified, Click, receive","qu​alified, Cl​ick, re​ceive"
+00467.3748c927c32a9c4e8988dad52a843b5c,00467__salted__extended__cp200C__single.3748c927c32a9c4e8988dad52a843b5c,extended,200C,single,,,,"qualified, Click, receive","qu‌alified, Cl‌ick, re‌ceive"
+00467.3748c927c32a9c4e8988dad52a843b5c,00467__salted__extended__cp200D__single.3748c927c32a9c4e8988dad52a843b5c,extended,200D,single,,,,"qualified, Click, receive","qu‍alified, Cl‍ick, re‍ceive"
+00467.3748c927c32a9c4e8988dad52a843b5c,00467__salted__extended__cp00AD__single.3748c927c32a9c4e8988dad52a843b5c,extended,00AD,single,,,,"qualified, Click, receive","qu­alified, Cl­ick, re­ceive"
+00475.71f75afb1960d619af86e1c64dcb11fc,00475__salted__extended__cp200B__single.71f75afb1960d619af86e1c64dcb11fc,extended,200B,single,,Commissions,Co​mmissions,"Premium, receive, receive","Pr​emium, re​ceive, re​ceive"
+00475.71f75afb1960d619af86e1c64dcb11fc,00475__salted__extended__cp200C__single.71f75afb1960d619af86e1c64dcb11fc,extended,200C,single,,Commissions,Co‌mmissions,"Premium, receive, receive","Pr‌emium, re‌ceive, re‌ceive"
+00475.71f75afb1960d619af86e1c64dcb11fc,00475__salted__extended__cp200D__single.71f75afb1960d619af86e1c64dcb11fc,extended,200D,single,,Commissions,Co‍mmissions,"Premium, receive, receive","Pr‍emium, re‍ceive, re‍ceive"
+00475.71f75afb1960d619af86e1c64dcb11fc,00475__salted__extended__cp00AD__single.71f75afb1960d619af86e1c64dcb11fc,extended,00AD,single,,Commissions,Co­mmissions,"Premium, receive, receive","Pr­emium, re­ceive, re­ceive"
+00482.f839ea522f1ee459661a6b2fbd71e823,00482__salted__extended__cp200B__single.f839ea522f1ee459661a6b2fbd71e823,extended,200B,single,,ADV,AD​V,,
+00482.f839ea522f1ee459661a6b2fbd71e823,00482__salted__extended__cp200C__single.f839ea522f1ee459661a6b2fbd71e823,extended,200C,single,,ADV,AD‌V,,
+00482.f839ea522f1ee459661a6b2fbd71e823,00482__salted__extended__cp200D__single.f839ea522f1ee459661a6b2fbd71e823,extended,200D,single,,ADV,AD‍V,,
+00482.f839ea522f1ee459661a6b2fbd71e823,00482__salted__extended__cp00AD__single.f839ea522f1ee459661a6b2fbd71e823,extended,00AD,single,,ADV,AD­V,,
+00483.e583ffb0efd3958cdef2e9f3b043ef0d,00483__salted__extended__cp200B__single.e583ffb0efd3958cdef2e9f3b043ef0d,extended,200B,single,,Herbal,He​rbal,,
+00483.e583ffb0efd3958cdef2e9f3b043ef0d,00483__salted__extended__cp200C__single.e583ffb0efd3958cdef2e9f3b043ef0d,extended,200C,single,,Herbal,He‌rbal,,
+00483.e583ffb0efd3958cdef2e9f3b043ef0d,00483__salted__extended__cp200D__single.e583ffb0efd3958cdef2e9f3b043ef0d,extended,200D,single,,Herbal,He‍rbal,,
+00483.e583ffb0efd3958cdef2e9f3b043ef0d,00483__salted__extended__cp00AD__single.e583ffb0efd3958cdef2e9f3b043ef0d,extended,00AD,single,,Herbal,He­rbal,,
+00485.a5d28b804adbceff7fd75ed9fc8138bb,00485__salted__extended__cp200B__single.a5d28b804adbceff7fd75ed9fc8138bb,extended,200B,single,,,,"MLM, promotion, affordable","ML​M, pr​omotion, af​fordable"
+00485.a5d28b804adbceff7fd75ed9fc8138bb,00485__salted__extended__cp200C__single.a5d28b804adbceff7fd75ed9fc8138bb,extended,200C,single,,,,"MLM, promotion, affordable","ML‌M, pr‌omotion, af‌fordable"
+00485.a5d28b804adbceff7fd75ed9fc8138bb,00485__salted__extended__cp200D__single.a5d28b804adbceff7fd75ed9fc8138bb,extended,200D,single,,,,"MLM, promotion, affordable","ML‍M, pr‍omotion, af‍fordable"
+00485.a5d28b804adbceff7fd75ed9fc8138bb,00485__salted__extended__cp00AD__single.a5d28b804adbceff7fd75ed9fc8138bb,extended,00AD,single,,,,"MLM, promotion, affordable","ML­M, pr­omotion, af­fordable"
+00494.6d13d2217c5cc00c26b72d97c7fe6014,00494__salted__extended__cp200B__single.6d13d2217c5cc00c26b72d97c7fe6014,extended,200B,single,,insurance,in​surance,,
+00494.6d13d2217c5cc00c26b72d97c7fe6014,00494__salted__extended__cp200C__single.6d13d2217c5cc00c26b72d97c7fe6014,extended,200C,single,,insurance,in‌surance,,
+00494.6d13d2217c5cc00c26b72d97c7fe6014,00494__salted__extended__cp200D__single.6d13d2217c5cc00c26b72d97c7fe6014,extended,200D,single,,insurance,in‍surance,,
+00494.6d13d2217c5cc00c26b72d97c7fe6014,00494__salted__extended__cp00AD__single.6d13d2217c5cc00c26b72d97c7fe6014,extended,00AD,single,,insurance,in­surance,,
+00494.fd2efa67e63247ee89cdcf3a6fe7906d,00494__salted__extended__cp200B__single.fd2efa67e63247ee89cdcf3a6fe7906d,extended,200B,single,,,,"ATTN, SIR, assistance","AT​TN, SI​R, as​sistance"
+00494.fd2efa67e63247ee89cdcf3a6fe7906d,00494__salted__extended__cp200C__single.fd2efa67e63247ee89cdcf3a6fe7906d,extended,200C,single,,,,"ATTN, SIR, assistance","AT‌TN, SI‌R, as‌sistance"
+00494.fd2efa67e63247ee89cdcf3a6fe7906d,00494__salted__extended__cp200D__single.fd2efa67e63247ee89cdcf3a6fe7906d,extended,200D,single,,,,"ATTN, SIR, assistance","AT‍TN, SI‍R, as‍sistance"
+00494.fd2efa67e63247ee89cdcf3a6fe7906d,00494__salted__extended__cp00AD__single.fd2efa67e63247ee89cdcf3a6fe7906d,extended,00AD,single,,,,"ATTN, SIR, assistance","AT­TN, SI­R, as­sistance"
+00506.85af6cd716febc6265ac7b362a4a1da6,00506__salted__extended__cp200B__single.85af6cd716febc6265ac7b362a4a1da6,extended,200B,single,,MORTGAGE,MO​RTGAGE,,
+00506.85af6cd716febc6265ac7b362a4a1da6,00506__salted__extended__cp200C__single.85af6cd716febc6265ac7b362a4a1da6,extended,200C,single,,MORTGAGE,MO‌RTGAGE,,
+00506.85af6cd716febc6265ac7b362a4a1da6,00506__salted__extended__cp200D__single.85af6cd716febc6265ac7b362a4a1da6,extended,200D,single,,MORTGAGE,MO‍RTGAGE,,
+00506.85af6cd716febc6265ac7b362a4a1da6,00506__salted__extended__cp00AD__single.85af6cd716febc6265ac7b362a4a1da6,extended,00AD,single,,MORTGAGE,MO­RTGAGE,,
+00509.385c788f39e46a86be4c6af8679a0c80,00509__salted__extended__cp200B__single.385c788f39e46a86be4c6af8679a0c80,extended,200B,single,,,,"Postal, MasterCard, Postal","Po​stal, Ma​sterCard, Po​stal"
+00509.385c788f39e46a86be4c6af8679a0c80,00509__salted__extended__cp200C__single.385c788f39e46a86be4c6af8679a0c80,extended,200C,single,,,,"Postal, MasterCard, Postal","Po‌stal, Ma‌sterCard, Po‌stal"
+00509.385c788f39e46a86be4c6af8679a0c80,00509__salted__extended__cp200D__single.385c788f39e46a86be4c6af8679a0c80,extended,200D,single,,,,"Postal, MasterCard, Postal","Po‍stal, Ma‍sterCard, Po‍stal"
+00509.385c788f39e46a86be4c6af8679a0c80,00509__salted__extended__cp00AD__single.385c788f39e46a86be4c6af8679a0c80,extended,00AD,single,,,,"Postal, MasterCard, Postal","Po­stal, Ma­sterCard, Po­stal"
+00510.ce04ead27e498e82285ea6dbb0837c13,00510__salted__extended__cp200B__single.ce04ead27e498e82285ea6dbb0837c13,extended,200B,single,,adv,ad​v,"Dear, Click","De​ar, Cl​ick"
+00510.ce04ead27e498e82285ea6dbb0837c13,00510__salted__extended__cp200C__single.ce04ead27e498e82285ea6dbb0837c13,extended,200C,single,,adv,ad‌v,"Dear, Click","De‌ar, Cl‌ick"
+00510.ce04ead27e498e82285ea6dbb0837c13,00510__salted__extended__cp200D__single.ce04ead27e498e82285ea6dbb0837c13,extended,200D,single,,adv,ad‍v,"Dear, Click","De‍ar, Cl‍ick"
+00510.ce04ead27e498e82285ea6dbb0837c13,00510__salted__extended__cp00AD__single.ce04ead27e498e82285ea6dbb0837c13,extended,00AD,single,,adv,ad­v,"Dear, Click","De­ar, Cl­ick"
+00523.8dad1340c87f606b1f0696df64d9063c,00523__salted__extended__cp200B__single.8dad1340c87f606b1f0696df64d9063c,extended,200B,single,,MORTGAGE,MO​RTGAGE,,
+00523.8dad1340c87f606b1f0696df64d9063c,00523__salted__extended__cp200C__single.8dad1340c87f606b1f0696df64d9063c,extended,200C,single,,MORTGAGE,MO‌RTGAGE,,
+00523.8dad1340c87f606b1f0696df64d9063c,00523__salted__extended__cp200D__single.8dad1340c87f606b1f0696df64d9063c,extended,200D,single,,MORTGAGE,MO‍RTGAGE,,
+00523.8dad1340c87f606b1f0696df64d9063c,00523__salted__extended__cp00AD__single.8dad1340c87f606b1f0696df64d9063c,extended,00AD,single,,MORTGAGE,MO­RTGAGE,,
+00531.f3fffa4504c7009a03dd0d44a4562a84,00531__salted__extended__cp200B__single.f3fffa4504c7009a03dd0d44a4562a84,extended,200B,single,,ordering,or​dering,,
+00531.f3fffa4504c7009a03dd0d44a4562a84,00531__salted__extended__cp200C__single.f3fffa4504c7009a03dd0d44a4562a84,extended,200C,single,,ordering,or‌dering,,
+00531.f3fffa4504c7009a03dd0d44a4562a84,00531__salted__extended__cp200D__single.f3fffa4504c7009a03dd0d44a4562a84,extended,200D,single,,ordering,or‍dering,,
+00531.f3fffa4504c7009a03dd0d44a4562a84,00531__salted__extended__cp00AD__single.f3fffa4504c7009a03dd0d44a4562a84,extended,00AD,single,,ordering,or­dering,,
+00554.c325ab7400fb7e3f053ed0cac4ed7545,00554__salted__extended__cp200B__single.c325ab7400fb7e3f053ed0cac4ed7545,extended,200B,single,,Assistance,As​sistance,"confidentiality, Nigeria, presently","co​nfidentiality, Ni​geria, pr​esently"
+00554.c325ab7400fb7e3f053ed0cac4ed7545,00554__salted__extended__cp200C__single.c325ab7400fb7e3f053ed0cac4ed7545,extended,200C,single,,Assistance,As‌sistance,"confidentiality, Nigeria, presently","co‌nfidentiality, Ni‌geria, pr‌esently"
+00554.c325ab7400fb7e3f053ed0cac4ed7545,00554__salted__extended__cp200D__single.c325ab7400fb7e3f053ed0cac4ed7545,extended,200D,single,,Assistance,As‍sistance,"confidentiality, Nigeria, presently","co‍nfidentiality, Ni‍geria, pr‍esently"
+00554.c325ab7400fb7e3f053ed0cac4ed7545,00554__salted__extended__cp00AD__single.c325ab7400fb7e3f053ed0cac4ed7545,extended,00AD,single,,Assistance,As­sistance,"confidentiality, Nigeria, presently","co­nfidentiality, Ni­geria, pr­esently"
+00568.9099cfcce869f4ecf337fc666f04c11d,00568__salted__extended__cp200B__single.9099cfcce869f4ecf337fc666f04c11d,extended,200B,single,,,,Click,Cl​ick
+00568.9099cfcce869f4ecf337fc666f04c11d,00568__salted__extended__cp200C__single.9099cfcce869f4ecf337fc666f04c11d,extended,200C,single,,,,Click,Cl‌ick
+00568.9099cfcce869f4ecf337fc666f04c11d,00568__salted__extended__cp200D__single.9099cfcce869f4ecf337fc666f04c11d,extended,200D,single,,,,Click,Cl‍ick
+00568.9099cfcce869f4ecf337fc666f04c11d,00568__salted__extended__cp00AD__single.9099cfcce869f4ecf337fc666f04c11d,extended,00AD,single,,,,Click,Cl­ick
+00582.2db3b12f1cbf87ef3a64d26c35561a5b,00582__salted__extended__cp200B__single.2db3b12f1cbf87ef3a64d26c35561a5b,extended,200B,single,,ADV,AD​V,,
+00582.2db3b12f1cbf87ef3a64d26c35561a5b,00582__salted__extended__cp200C__single.2db3b12f1cbf87ef3a64d26c35561a5b,extended,200C,single,,ADV,AD‌V,,
+00582.2db3b12f1cbf87ef3a64d26c35561a5b,00582__salted__extended__cp200D__single.2db3b12f1cbf87ef3a64d26c35561a5b,extended,200D,single,,ADV,AD‍V,,
+00582.2db3b12f1cbf87ef3a64d26c35561a5b,00582__salted__extended__cp00AD__single.2db3b12f1cbf87ef3a64d26c35561a5b,extended,00AD,single,,ADV,AD­V,,
+00602.8b839b13833d7ca3abd6f6179ccc0286,00602__salted__extended__cp200B__single.8b839b13833d7ca3abd6f6179ccc0286,extended,200B,single,,Loan,Lo​an,,
+00602.8b839b13833d7ca3abd6f6179ccc0286,00602__salted__extended__cp200C__single.8b839b13833d7ca3abd6f6179ccc0286,extended,200C,single,,Loan,Lo‌an,,
+00602.8b839b13833d7ca3abd6f6179ccc0286,00602__salted__extended__cp200D__single.8b839b13833d7ca3abd6f6179ccc0286,extended,200D,single,,Loan,Lo‍an,,
+00602.8b839b13833d7ca3abd6f6179ccc0286,00602__salted__extended__cp00AD__single.8b839b13833d7ca3abd6f6179ccc0286,extended,00AD,single,,Loan,Lo­an,,
+00615.e47bff6118d4ff6d98581fa6f40ab871,00615__salted__extended__cp200B__single.e47bff6118d4ff6d98581fa6f40ab871,extended,200B,single,,,,"lagos, Nigeria, Attn","la​gos, Ni​geria, At​tn"
+00615.e47bff6118d4ff6d98581fa6f40ab871,00615__salted__extended__cp200C__single.e47bff6118d4ff6d98581fa6f40ab871,extended,200C,single,,,,"lagos, Nigeria, Attn","la‌gos, Ni‌geria, At‌tn"
+00615.e47bff6118d4ff6d98581fa6f40ab871,00615__salted__extended__cp200D__single.e47bff6118d4ff6d98581fa6f40ab871,extended,200D,single,,,,"lagos, Nigeria, Attn","la‍gos, Ni‍geria, At‍tn"
+00615.e47bff6118d4ff6d98581fa6f40ab871,00615__salted__extended__cp00AD__single.e47bff6118d4ff6d98581fa6f40ab871,extended,00AD,single,,,,"lagos, Nigeria, Attn","la­gos, Ni­geria, At­tn"
+00631.5b4f290bc474889ff457b314996553b1,00631__salted__extended__cp200B__single.5b4f290bc474889ff457b314996553b1,extended,200B,single,,Guaranteed,Gu​aranteed,,
+00631.5b4f290bc474889ff457b314996553b1,00631__salted__extended__cp200C__single.5b4f290bc474889ff457b314996553b1,extended,200C,single,,Guaranteed,Gu‌aranteed,,
+00631.5b4f290bc474889ff457b314996553b1,00631__salted__extended__cp200D__single.5b4f290bc474889ff457b314996553b1,extended,200D,single,,Guaranteed,Gu‍aranteed,,
+00631.5b4f290bc474889ff457b314996553b1,00631__salted__extended__cp00AD__single.5b4f290bc474889ff457b314996553b1,extended,00AD,single,,Guaranteed,Gu­aranteed,,
+00632.f90d0f620d4a4c4976e1c5884333f329,00632__salted__extended__cp200B__single.f90d0f620d4a4c4976e1c5884333f329,extended,200B,single,,,,"resell, GUARANTEED, click","re​sell, GU​ARANTEED, cl​ick"
+00632.f90d0f620d4a4c4976e1c5884333f329,00632__salted__extended__cp200C__single.f90d0f620d4a4c4976e1c5884333f329,extended,200C,single,,,,"resell, GUARANTEED, click","re‌sell, GU‌ARANTEED, cl‌ick"
+00632.f90d0f620d4a4c4976e1c5884333f329,00632__salted__extended__cp200D__single.f90d0f620d4a4c4976e1c5884333f329,extended,200D,single,,,,"resell, GUARANTEED, click","re‍sell, GU‍ARANTEED, cl‍ick"
+00632.f90d0f620d4a4c4976e1c5884333f329,00632__salted__extended__cp00AD__single.f90d0f620d4a4c4976e1c5884333f329,extended,00AD,single,,,,"resell, GUARANTEED, click","re­sell, GU­ARANTEED, cl­ick"
+00643.d177c04238b4299813b7d8cca9fb2f18,00643__salted__extended__cp200B__single.d177c04238b4299813b7d8cca9fb2f18,extended,200B,single,,,,"Insurance, click, Insurance","In​surance, cl​ick, In​surance"
+00643.d177c04238b4299813b7d8cca9fb2f18,00643__salted__extended__cp200C__single.d177c04238b4299813b7d8cca9fb2f18,extended,200C,single,,,,"Insurance, click, Insurance","In‌surance, cl‌ick, In‌surance"
+00643.d177c04238b4299813b7d8cca9fb2f18,00643__salted__extended__cp200D__single.d177c04238b4299813b7d8cca9fb2f18,extended,200D,single,,,,"Insurance, click, Insurance","In‍surance, cl‍ick, In‍surance"
+00643.d177c04238b4299813b7d8cca9fb2f18,00643__salted__extended__cp00AD__single.d177c04238b4299813b7d8cca9fb2f18,extended,00AD,single,,,,"Insurance, click, Insurance","In­surance, cl­ick, In­surance"
+00658.2324b3351e766248275bace98fd3c7b3,00658__salted__extended__cp200B__single.2324b3351e766248275bace98fd3c7b3,extended,200B,single,,,,"affordable, affordable, fees","af​fordable, af​fordable, fe​es"
+00658.2324b3351e766248275bace98fd3c7b3,00658__salted__extended__cp200C__single.2324b3351e766248275bace98fd3c7b3,extended,200C,single,,,,"affordable, affordable, fees","af‌fordable, af‌fordable, fe‌es"
+00658.2324b3351e766248275bace98fd3c7b3,00658__salted__extended__cp200D__single.2324b3351e766248275bace98fd3c7b3,extended,200D,single,,,,"affordable, affordable, fees","af‍fordable, af‍fordable, fe‍es"
+00658.2324b3351e766248275bace98fd3c7b3,00658__salted__extended__cp00AD__single.2324b3351e766248275bace98fd3c7b3,extended,00AD,single,,,,"affordable, affordable, fees","af­fordable, af­fordable, fe­es"
+00659.668ba8daca71e86de0ee5e412b177015,00659__salted__extended__cp200B__single.668ba8daca71e86de0ee5e412b177015,extended,200B,single,,,,"CONSULTATION, GUARANTEED","CO​NSULTATION, GU​ARANTEED"
+00659.668ba8daca71e86de0ee5e412b177015,00659__salted__extended__cp200C__single.668ba8daca71e86de0ee5e412b177015,extended,200C,single,,,,"CONSULTATION, GUARANTEED","CO‌NSULTATION, GU‌ARANTEED"
+00659.668ba8daca71e86de0ee5e412b177015,00659__salted__extended__cp200D__single.668ba8daca71e86de0ee5e412b177015,extended,200D,single,,,,"CONSULTATION, GUARANTEED","CO‍NSULTATION, GU‍ARANTEED"
+00659.668ba8daca71e86de0ee5e412b177015,00659__salted__extended__cp00AD__single.668ba8daca71e86de0ee5e412b177015,extended,00AD,single,,,,"CONSULTATION, GUARANTEED","CO­NSULTATION, GU­ARANTEED"
+00663.4baa9521293a04306b038be1f65d4471,00663__salted__extended__cp200B__single.4baa9521293a04306b038be1f65d4471,extended,200B,single,,,,"CONSULTATION, GUARANTEED","CO​NSULTATION, GU​ARANTEED"
+00663.4baa9521293a04306b038be1f65d4471,00663__salted__extended__cp200C__single.4baa9521293a04306b038be1f65d4471,extended,200C,single,,,,"CONSULTATION, GUARANTEED","CO‌NSULTATION, GU‌ARANTEED"
+00663.4baa9521293a04306b038be1f65d4471,00663__salted__extended__cp200D__single.4baa9521293a04306b038be1f65d4471,extended,200D,single,,,,"CONSULTATION, GUARANTEED","CO‍NSULTATION, GU‍ARANTEED"
+00663.4baa9521293a04306b038be1f65d4471,00663__salted__extended__cp00AD__single.4baa9521293a04306b038be1f65d4471,extended,00AD,single,,,,"CONSULTATION, GUARANTEED","CO­NSULTATION, GU­ARANTEED"
+00667.6bf743b1b5bdfe9340d438c0661e4bff,00667__salted__extended__cp200B__single.6bf743b1b5bdfe9340d438c0661e4bff,extended,200B,single,,,,"Earn, Annuity, Annuity","Ea​rn, An​nuity, An​nuity"
+00667.6bf743b1b5bdfe9340d438c0661e4bff,00667__salted__extended__cp200C__single.6bf743b1b5bdfe9340d438c0661e4bff,extended,200C,single,,,,"Earn, Annuity, Annuity","Ea‌rn, An‌nuity, An‌nuity"
+00667.6bf743b1b5bdfe9340d438c0661e4bff,00667__salted__extended__cp200D__single.6bf743b1b5bdfe9340d438c0661e4bff,extended,200D,single,,,,"Earn, Annuity, Annuity","Ea‍rn, An‍nuity, An‍nuity"
+00667.6bf743b1b5bdfe9340d438c0661e4bff,00667__salted__extended__cp00AD__single.6bf743b1b5bdfe9340d438c0661e4bff,extended,00AD,single,,,,"Earn, Annuity, Annuity","Ea­rn, An­nuity, An­nuity"
+00678.7c54f6e0fac3e7d26a9513d2c60e2b98,00678__salted__extended__cp200B__single.7c54f6e0fac3e7d26a9513d2c60e2b98,extended,200B,single,,Mortgage,Mo​rtgage,"mortgage, loan, loan","mo​rtgage, lo​an, lo​an"
+00678.7c54f6e0fac3e7d26a9513d2c60e2b98,00678__salted__extended__cp200C__single.7c54f6e0fac3e7d26a9513d2c60e2b98,extended,200C,single,,Mortgage,Mo‌rtgage,"mortgage, loan, loan","mo‌rtgage, lo‌an, lo‌an"
+00678.7c54f6e0fac3e7d26a9513d2c60e2b98,00678__salted__extended__cp200D__single.7c54f6e0fac3e7d26a9513d2c60e2b98,extended,200D,single,,Mortgage,Mo‍rtgage,"mortgage, loan, loan","mo‍rtgage, lo‍an, lo‍an"
+00678.7c54f6e0fac3e7d26a9513d2c60e2b98,00678__salted__extended__cp00AD__single.7c54f6e0fac3e7d26a9513d2c60e2b98,extended,00AD,single,,Mortgage,Mo­rtgage,"mortgage, loan, loan","mo­rtgage, lo­an, lo­an"
+00680.e8df67f239cb166c5a8a78401eeeb1ba,00680__salted__extended__cp200B__single.e8df67f239cb166c5a8a78401eeeb1ba,extended,200B,single,,Ordering,Or​dering,,
+00680.e8df67f239cb166c5a8a78401eeeb1ba,00680__salted__extended__cp200C__single.e8df67f239cb166c5a8a78401eeeb1ba,extended,200C,single,,Ordering,Or‌dering,,
+00680.e8df67f239cb166c5a8a78401eeeb1ba,00680__salted__extended__cp200D__single.e8df67f239cb166c5a8a78401eeeb1ba,extended,200D,single,,Ordering,Or‍dering,,
+00680.e8df67f239cb166c5a8a78401eeeb1ba,00680__salted__extended__cp00AD__single.e8df67f239cb166c5a8a78401eeeb1ba,extended,00AD,single,,Ordering,Or­dering,,
+00694.3aca5f2a3d0d2ccbc47ef868eb051abd,00694__salted__extended__cp200B__single.3aca5f2a3d0d2ccbc47ef868eb051abd,extended,200B,single,,,,"Guaranteed, herbal, Click","Gu​aranteed, he​rbal, Cl​ick"
+00694.3aca5f2a3d0d2ccbc47ef868eb051abd,00694__salted__extended__cp200C__single.3aca5f2a3d0d2ccbc47ef868eb051abd,extended,200C,single,,,,"Guaranteed, herbal, Click","Gu‌aranteed, he‌rbal, Cl‌ick"
+00694.3aca5f2a3d0d2ccbc47ef868eb051abd,00694__salted__extended__cp200D__single.3aca5f2a3d0d2ccbc47ef868eb051abd,extended,200D,single,,,,"Guaranteed, herbal, Click","Gu‍aranteed, he‍rbal, Cl‍ick"
+00694.3aca5f2a3d0d2ccbc47ef868eb051abd,00694__salted__extended__cp00AD__single.3aca5f2a3d0d2ccbc47ef868eb051abd,extended,00AD,single,,,,"Guaranteed, herbal, Click","Gu­aranteed, he­rbal, Cl­ick"
+00697.2d221d167d2814a6a6bc7a74b65bcb0e,00697__salted__extended__cp200B__single.2d221d167d2814a6a6bc7a74b65bcb0e,extended,200B,single,,adv,ad​v,,
+00697.2d221d167d2814a6a6bc7a74b65bcb0e,00697__salted__extended__cp200C__single.2d221d167d2814a6a6bc7a74b65bcb0e,extended,200C,single,,adv,ad‌v,,
+00697.2d221d167d2814a6a6bc7a74b65bcb0e,00697__salted__extended__cp200D__single.2d221d167d2814a6a6bc7a74b65bcb0e,extended,200D,single,,adv,ad‍v,,
+00697.2d221d167d2814a6a6bc7a74b65bcb0e,00697__salted__extended__cp00AD__single.2d221d167d2814a6a6bc7a74b65bcb0e,extended,00AD,single,,adv,ad­v,,
+00701.ea27d8eea96c7d361ea78613d0a3c481,00701__salted__extended__cp200B__single.ea27d8eea96c7d361ea78613d0a3c481,extended,200B,single,,Mortgage,Mo​rtgage,,
+00701.ea27d8eea96c7d361ea78613d0a3c481,00701__salted__extended__cp200C__single.ea27d8eea96c7d361ea78613d0a3c481,extended,200C,single,,Mortgage,Mo‌rtgage,,
+00701.ea27d8eea96c7d361ea78613d0a3c481,00701__salted__extended__cp200D__single.ea27d8eea96c7d361ea78613d0a3c481,extended,200D,single,,Mortgage,Mo‍rtgage,,
+00701.ea27d8eea96c7d361ea78613d0a3c481,00701__salted__extended__cp00AD__single.ea27d8eea96c7d361ea78613d0a3c481,extended,00AD,single,,Mortgage,Mo­rtgage,,
+00705.df125edb37f19c87784942c7b2b164a1,00705__salted__extended__cp200B__single.df125edb37f19c87784942c7b2b164a1,extended,200B,single,,Monthly,Mo​nthly,,
+00705.df125edb37f19c87784942c7b2b164a1,00705__salted__extended__cp200C__single.df125edb37f19c87784942c7b2b164a1,extended,200C,single,,Monthly,Mo‌nthly,,
+00705.df125edb37f19c87784942c7b2b164a1,00705__salted__extended__cp200D__single.df125edb37f19c87784942c7b2b164a1,extended,200D,single,,Monthly,Mo‍nthly,,
+00705.df125edb37f19c87784942c7b2b164a1,00705__salted__extended__cp00AD__single.df125edb37f19c87784942c7b2b164a1,extended,00AD,single,,Monthly,Mo­nthly,,
+00706.5116018237368c3633823b2d24f8ac86,00706__salted__extended__cp200B__single.5116018237368c3633823b2d24f8ac86,extended,200B,single,,,,"Sightings, Sightings, sightings","Si​ghtings, Si​ghtings, si​ghtings"
+00706.5116018237368c3633823b2d24f8ac86,00706__salted__extended__cp200C__single.5116018237368c3633823b2d24f8ac86,extended,200C,single,,,,"Sightings, Sightings, sightings","Si‌ghtings, Si‌ghtings, si‌ghtings"
+00706.5116018237368c3633823b2d24f8ac86,00706__salted__extended__cp200D__single.5116018237368c3633823b2d24f8ac86,extended,200D,single,,,,"Sightings, Sightings, sightings","Si‍ghtings, Si‍ghtings, si‍ghtings"
+00706.5116018237368c3633823b2d24f8ac86,00706__salted__extended__cp00AD__single.5116018237368c3633823b2d24f8ac86,extended,00AD,single,,,,"Sightings, Sightings, sightings","Si­ghtings, Si­ghtings, si­ghtings"
+00718.2495a50c4eab3755f338b5fe589dd52d,00718__salted__extended__cp200B__single.2495a50c4eab3755f338b5fe589dd52d,extended,200B,single,,WHOLESALE,WH​OLESALE,,
+00718.2495a50c4eab3755f338b5fe589dd52d,00718__salted__extended__cp200C__single.2495a50c4eab3755f338b5fe589dd52d,extended,200C,single,,WHOLESALE,WH‌OLESALE,,
+00718.2495a50c4eab3755f338b5fe589dd52d,00718__salted__extended__cp200D__single.2495a50c4eab3755f338b5fe589dd52d,extended,200D,single,,WHOLESALE,WH‍OLESALE,,
+00718.2495a50c4eab3755f338b5fe589dd52d,00718__salted__extended__cp00AD__single.2495a50c4eab3755f338b5fe589dd52d,extended,00AD,single,,WHOLESALE,WH­OLESALE,,
+00738.10deb784a63c0bdc5e78b019720f3e9f,00738__salted__extended__cp200B__single.10deb784a63c0bdc5e78b019720f3e9f,extended,200B,single,,Adv,Ad​v,"premium, receive, receive","pr​emium, re​ceive, re​ceive"
+00738.10deb784a63c0bdc5e78b019720f3e9f,00738__salted__extended__cp200C__single.10deb784a63c0bdc5e78b019720f3e9f,extended,200C,single,,Adv,Ad‌v,"premium, receive, receive","pr‌emium, re‌ceive, re‌ceive"
+00738.10deb784a63c0bdc5e78b019720f3e9f,00738__salted__extended__cp200D__single.10deb784a63c0bdc5e78b019720f3e9f,extended,200D,single,,Adv,Ad‍v,"premium, receive, receive","pr‍emium, re‍ceive, re‍ceive"
+00738.10deb784a63c0bdc5e78b019720f3e9f,00738__salted__extended__cp00AD__single.10deb784a63c0bdc5e78b019720f3e9f,extended,00AD,single,,Adv,Ad­v,"premium, receive, receive","pr­emium, re­ceive, re­ceive"
+00740.ce4777381c2bc6bee30bef6bd274233f,00740__salted__extended__cp200B__single.ce4777381c2bc6bee30bef6bd274233f,extended,200B,single,,Mortgage,Mo​rtgage,"mortgage, loan, loan","mo​rtgage, lo​an, lo​an"
+00740.ce4777381c2bc6bee30bef6bd274233f,00740__salted__extended__cp200C__single.ce4777381c2bc6bee30bef6bd274233f,extended,200C,single,,Mortgage,Mo‌rtgage,"mortgage, loan, loan","mo‌rtgage, lo‌an, lo‌an"
+00740.ce4777381c2bc6bee30bef6bd274233f,00740__salted__extended__cp200D__single.ce4777381c2bc6bee30bef6bd274233f,extended,200D,single,,Mortgage,Mo‍rtgage,"mortgage, loan, loan","mo‍rtgage, lo‍an, lo‍an"
+00740.ce4777381c2bc6bee30bef6bd274233f,00740__salted__extended__cp00AD__single.ce4777381c2bc6bee30bef6bd274233f,extended,00AD,single,,Mortgage,Mo­rtgage,"mortgage, loan, loan","mo­rtgage, lo­an, lo­an"
+00757.c2da75286819a139e27438ca5c5ba762,00757__salted__extended__cp200B__single.c2da75286819a139e27438ca5c5ba762,extended,200B,single,,,,ordering,or​dering
+00757.c2da75286819a139e27438ca5c5ba762,00757__salted__extended__cp200C__single.c2da75286819a139e27438ca5c5ba762,extended,200C,single,,,,ordering,or‌dering
+00757.c2da75286819a139e27438ca5c5ba762,00757__salted__extended__cp200D__single.c2da75286819a139e27438ca5c5ba762,extended,200D,single,,,,ordering,or‍dering
+00757.c2da75286819a139e27438ca5c5ba762,00757__salted__extended__cp00AD__single.c2da75286819a139e27438ca5c5ba762,extended,00AD,single,,,,ordering,or­dering
+00762.e31568dff471c947d42869ae2f8f0779,00762__salted__extended__cp200B__single.e31568dff471c947d42869ae2f8f0779,extended,200B,single,,Insurance,In​surance,,
+00762.e31568dff471c947d42869ae2f8f0779,00762__salted__extended__cp200C__single.e31568dff471c947d42869ae2f8f0779,extended,200C,single,,Insurance,In‌surance,,
+00762.e31568dff471c947d42869ae2f8f0779,00762__salted__extended__cp200D__single.e31568dff471c947d42869ae2f8f0779,extended,200D,single,,Insurance,In‍surance,,
+00762.e31568dff471c947d42869ae2f8f0779,00762__salted__extended__cp00AD__single.e31568dff471c947d42869ae2f8f0779,extended,00AD,single,,Insurance,In­surance,,
+00795.61fe820f7755e4b4e66e715ea667b338,00795__salted__extended__cp200B__single.61fe820f7755e4b4e66e715ea667b338,extended,200B,single,,,,"earn, secrets, receive","ea​rn, se​crets, re​ceive"
+00795.61fe820f7755e4b4e66e715ea667b338,00795__salted__extended__cp200C__single.61fe820f7755e4b4e66e715ea667b338,extended,200C,single,,,,"earn, secrets, receive","ea‌rn, se‌crets, re‌ceive"
+00795.61fe820f7755e4b4e66e715ea667b338,00795__salted__extended__cp200D__single.61fe820f7755e4b4e66e715ea667b338,extended,200D,single,,,,"earn, secrets, receive","ea‍rn, se‍crets, re‍ceive"
+00795.61fe820f7755e4b4e66e715ea667b338,00795__salted__extended__cp00AD__single.61fe820f7755e4b4e66e715ea667b338,extended,00AD,single,,,,"earn, secrets, receive","ea­rn, se­crets, re­ceive"
+00796.1f29c490fd2bd8581d19e3e193978a3d,00796__salted__extended__cp200B__single.1f29c490fd2bd8581d19e3e193978a3d,extended,200B,single,,GUARANTEED,GU​ARANTEED,,
+00796.1f29c490fd2bd8581d19e3e193978a3d,00796__salted__extended__cp200C__single.1f29c490fd2bd8581d19e3e193978a3d,extended,200C,single,,GUARANTEED,GU‌ARANTEED,,
+00796.1f29c490fd2bd8581d19e3e193978a3d,00796__salted__extended__cp200D__single.1f29c490fd2bd8581d19e3e193978a3d,extended,200D,single,,GUARANTEED,GU‍ARANTEED,,
+00796.1f29c490fd2bd8581d19e3e193978a3d,00796__salted__extended__cp00AD__single.1f29c490fd2bd8581d19e3e193978a3d,extended,00AD,single,,GUARANTEED,GU­ARANTEED,,
+00807.8abdd26ba778758f5e46b84a54ac62f4,00807__salted__extended__cp200B__single.8abdd26ba778758f5e46b84a54ac62f4,extended,200B,single,,,,"mortgage, loan, fees","mo​rtgage, lo​an, fe​es"
+00807.8abdd26ba778758f5e46b84a54ac62f4,00807__salted__extended__cp200C__single.8abdd26ba778758f5e46b84a54ac62f4,extended,200C,single,,,,"mortgage, loan, fees","mo‌rtgage, lo‌an, fe‌es"
+00807.8abdd26ba778758f5e46b84a54ac62f4,00807__salted__extended__cp200D__single.8abdd26ba778758f5e46b84a54ac62f4,extended,200D,single,,,,"mortgage, loan, fees","mo‍rtgage, lo‍an, fe‍es"
+00807.8abdd26ba778758f5e46b84a54ac62f4,00807__salted__extended__cp00AD__single.8abdd26ba778758f5e46b84a54ac62f4,extended,00AD,single,,,,"mortgage, loan, fees","mo­rtgage, lo­an, fe­es"
+00810.bceaa748f9cee012c466212d8a608acf,00810__salted__extended__cp200B__single.bceaa748f9cee012c466212d8a608acf,extended,200B,single,,,,"earning, Secrets, MLM","ea​rning, Se​crets, ML​M"
+00810.bceaa748f9cee012c466212d8a608acf,00810__salted__extended__cp200C__single.bceaa748f9cee012c466212d8a608acf,extended,200C,single,,,,"earning, Secrets, MLM","ea‌rning, Se‌crets, ML‌M"
+00810.bceaa748f9cee012c466212d8a608acf,00810__salted__extended__cp200D__single.bceaa748f9cee012c466212d8a608acf,extended,200D,single,,,,"earning, Secrets, MLM","ea‍rning, Se‍crets, ML‍M"
+00810.bceaa748f9cee012c466212d8a608acf,00810__salted__extended__cp00AD__single.bceaa748f9cee012c466212d8a608acf,extended,00AD,single,,,,"earning, Secrets, MLM","ea­rning, Se­crets, ML­M"
+00830.079ed7d24f78024e023b82417a6fe2ca,00830__salted__extended__cp200B__single.079ed7d24f78024e023b82417a6fe2ca,extended,200B,single,,,,"earn, participation, GUARANTEED","ea​rn, pa​rticipation, GU​ARANTEED"
+00830.079ed7d24f78024e023b82417a6fe2ca,00830__salted__extended__cp200C__single.079ed7d24f78024e023b82417a6fe2ca,extended,200C,single,,,,"earn, participation, GUARANTEED","ea‌rn, pa‌rticipation, GU‌ARANTEED"
+00830.079ed7d24f78024e023b82417a6fe2ca,00830__salted__extended__cp200D__single.079ed7d24f78024e023b82417a6fe2ca,extended,200D,single,,,,"earn, participation, GUARANTEED","ea‍rn, pa‍rticipation, GU‍ARANTEED"
+00830.079ed7d24f78024e023b82417a6fe2ca,00830__salted__extended__cp00AD__single.079ed7d24f78024e023b82417a6fe2ca,extended,00AD,single,,,,"earn, participation, GUARANTEED","ea­rn, pa­rticipation, GU­ARANTEED"
+00861.e8b94fc9514d2d2cbb541b01e2dda726,00861__salted__extended__cp200B__single.e8b94fc9514d2d2cbb541b01e2dda726,extended,200B,single,,,,"promotion, Click, receive","pr​omotion, Cl​ick, re​ceive"
+00861.e8b94fc9514d2d2cbb541b01e2dda726,00861__salted__extended__cp200C__single.e8b94fc9514d2d2cbb541b01e2dda726,extended,200C,single,,,,"promotion, Click, receive","pr‌omotion, Cl‌ick, re‌ceive"
+00861.e8b94fc9514d2d2cbb541b01e2dda726,00861__salted__extended__cp200D__single.e8b94fc9514d2d2cbb541b01e2dda726,extended,200D,single,,,,"promotion, Click, receive","pr‍omotion, Cl‍ick, re‍ceive"
+00861.e8b94fc9514d2d2cbb541b01e2dda726,00861__salted__extended__cp00AD__single.e8b94fc9514d2d2cbb541b01e2dda726,extended,00AD,single,,,,"promotion, Click, receive","pr­omotion, Cl­ick, re­ceive"
+00891.730d12d96dcfa7812a51d12d9a3b6a1c,00891__salted__extended__cp200B__single.730d12d96dcfa7812a51d12d9a3b6a1c,extended,200B,single,,,,"receive, sincerely, assistance","re​ceive, si​ncerely, as​sistance"
+00891.730d12d96dcfa7812a51d12d9a3b6a1c,00891__salted__extended__cp200C__single.730d12d96dcfa7812a51d12d9a3b6a1c,extended,200C,single,,,,"receive, sincerely, assistance","re‌ceive, si‌ncerely, as‌sistance"
+00891.730d12d96dcfa7812a51d12d9a3b6a1c,00891__salted__extended__cp200D__single.730d12d96dcfa7812a51d12d9a3b6a1c,extended,200D,single,,,,"receive, sincerely, assistance","re‍ceive, si‍ncerely, as‍sistance"
+00891.730d12d96dcfa7812a51d12d9a3b6a1c,00891__salted__extended__cp00AD__single.730d12d96dcfa7812a51d12d9a3b6a1c,extended,00AD,single,,,,"receive, sincerely, assistance","re­ceive, si­ncerely, as­sistance"
+00925.6ba2770acb214c661a26e54b4d03c119,00925__salted__extended__cp200B__single.6ba2770acb214c661a26e54b4d03c119,extended,200B,single,,ADV,AD​V,"toll, Sincerely","to​ll, Si​ncerely"
+00925.6ba2770acb214c661a26e54b4d03c119,00925__salted__extended__cp200C__single.6ba2770acb214c661a26e54b4d03c119,extended,200C,single,,ADV,AD‌V,"toll, Sincerely","to‌ll, Si‌ncerely"
+00925.6ba2770acb214c661a26e54b4d03c119,00925__salted__extended__cp200D__single.6ba2770acb214c661a26e54b4d03c119,extended,200D,single,,ADV,AD‍V,"toll, Sincerely","to‍ll, Si‍ncerely"
+00925.6ba2770acb214c661a26e54b4d03c119,00925__salted__extended__cp00AD__single.6ba2770acb214c661a26e54b4d03c119,extended,00AD,single,,ADV,AD­V,"toll, Sincerely","to­ll, Si­ncerely"
+00939.8d335bc76836e51b449de9f6b38aa0f8,00939__salted__extended__cp200B__single.8d335bc76836e51b449de9f6b38aa0f8,extended,200B,single,,,,"receive, Click, promotion","re​ceive, Cl​ick, pr​omotion"
+00939.8d335bc76836e51b449de9f6b38aa0f8,00939__salted__extended__cp200C__single.8d335bc76836e51b449de9f6b38aa0f8,extended,200C,single,,,,"receive, Click, promotion","re‌ceive, Cl‌ick, pr‌omotion"
+00939.8d335bc76836e51b449de9f6b38aa0f8,00939__salted__extended__cp200D__single.8d335bc76836e51b449de9f6b38aa0f8,extended,200D,single,,,,"receive, Click, promotion","re‍ceive, Cl‍ick, pr‍omotion"
+00939.8d335bc76836e51b449de9f6b38aa0f8,00939__salted__extended__cp00AD__single.8d335bc76836e51b449de9f6b38aa0f8,extended,00AD,single,,,,"receive, Click, promotion","re­ceive, Cl­ick, pr­omotion"
+00940.33bee147237876bc1f28b1bf21b586a0,00940__salted__extended__cp200B__single.33bee147237876bc1f28b1bf21b586a0,extended,200B,single,,Assistance,As​sistance,"Dear, Sir, Nigeria","De​ar, Si​r, Ni​geria"
+00940.33bee147237876bc1f28b1bf21b586a0,00940__salted__extended__cp200C__single.33bee147237876bc1f28b1bf21b586a0,extended,200C,single,,Assistance,As‌sistance,"Dear, Sir, Nigeria","De‌ar, Si‌r, Ni‌geria"
+00940.33bee147237876bc1f28b1bf21b586a0,00940__salted__extended__cp200D__single.33bee147237876bc1f28b1bf21b586a0,extended,200D,single,,Assistance,As‍sistance,"Dear, Sir, Nigeria","De‍ar, Si‍r, Ni‍geria"
+00940.33bee147237876bc1f28b1bf21b586a0,00940__salted__extended__cp00AD__single.33bee147237876bc1f28b1bf21b586a0,extended,00AD,single,,Assistance,As­sistance,"Dear, Sir, Nigeria","De­ar, Si­r, Ni­geria"
+00947.e4d80402e902f1ea42cfc539bb279afd,00947__salted__extended__cp200B__single.e4d80402e902f1ea42cfc539bb279afd,extended,200B,single,,cartridges,ca​rtridges,,
+00947.e4d80402e902f1ea42cfc539bb279afd,00947__salted__extended__cp200C__single.e4d80402e902f1ea42cfc539bb279afd,extended,200C,single,,cartridges,ca‌rtridges,,
+00947.e4d80402e902f1ea42cfc539bb279afd,00947__salted__extended__cp200D__single.e4d80402e902f1ea42cfc539bb279afd,extended,200D,single,,cartridges,ca‍rtridges,,
+00947.e4d80402e902f1ea42cfc539bb279afd,00947__salted__extended__cp00AD__single.e4d80402e902f1ea42cfc539bb279afd,extended,00AD,single,,cartridges,ca­rtridges,,
+00948.674250d39ae9ea6d1c054fd6f7b52cee,00948__salted__extended__cp200B__single.674250d39ae9ea6d1c054fd6f7b52cee,extended,200B,single,,,,incurred,in​curred
+00948.674250d39ae9ea6d1c054fd6f7b52cee,00948__salted__extended__cp200C__single.674250d39ae9ea6d1c054fd6f7b52cee,extended,200C,single,,,,incurred,in‌curred
+00948.674250d39ae9ea6d1c054fd6f7b52cee,00948__salted__extended__cp200D__single.674250d39ae9ea6d1c054fd6f7b52cee,extended,200D,single,,,,incurred,in‍curred
+00948.674250d39ae9ea6d1c054fd6f7b52cee,00948__salted__extended__cp00AD__single.674250d39ae9ea6d1c054fd6f7b52cee,extended,00AD,single,,,,incurred,in­curred
+00956.bd15831ffe9661a5395b8ec491a4fed2,00956__salted__extended__cp200B__single.bd15831ffe9661a5395b8ec491a4fed2,extended,200B,single,,Cartridges,Ca​rtridges,,
+00956.bd15831ffe9661a5395b8ec491a4fed2,00956__salted__extended__cp200C__single.bd15831ffe9661a5395b8ec491a4fed2,extended,200C,single,,Cartridges,Ca‌rtridges,,
+00956.bd15831ffe9661a5395b8ec491a4fed2,00956__salted__extended__cp200D__single.bd15831ffe9661a5395b8ec491a4fed2,extended,200D,single,,Cartridges,Ca‍rtridges,,
+00956.bd15831ffe9661a5395b8ec491a4fed2,00956__salted__extended__cp00AD__single.bd15831ffe9661a5395b8ec491a4fed2,extended,00AD,single,,Cartridges,Ca­rtridges,,
+00962.452e4bd0724bf1139c9bc4eb9ec0fe43,00962__salted__extended__cp200B__single.452e4bd0724bf1139c9bc4eb9ec0fe43,extended,200B,single,,cartridges,ca​rtridges,,
+00962.452e4bd0724bf1139c9bc4eb9ec0fe43,00962__salted__extended__cp200C__single.452e4bd0724bf1139c9bc4eb9ec0fe43,extended,200C,single,,cartridges,ca‌rtridges,,
+00962.452e4bd0724bf1139c9bc4eb9ec0fe43,00962__salted__extended__cp200D__single.452e4bd0724bf1139c9bc4eb9ec0fe43,extended,200D,single,,cartridges,ca‍rtridges,,
+00962.452e4bd0724bf1139c9bc4eb9ec0fe43,00962__salted__extended__cp00AD__single.452e4bd0724bf1139c9bc4eb9ec0fe43,extended,00AD,single,,cartridges,ca­rtridges,,
+00973.ca8a425093e9994271e922f4d60f775c,00973__salted__extended__cp200B__single.ca8a425093e9994271e922f4d60f775c,extended,200B,single,,,,"receive, DeathToSpamDeathToSpamDeathToSpam, Sightings","re​ceive, De​athToSpamDeathToSpamDeathToSpam, Si​ghtings"
+00973.ca8a425093e9994271e922f4d60f775c,00973__salted__extended__cp200C__single.ca8a425093e9994271e922f4d60f775c,extended,200C,single,,,,"receive, DeathToSpamDeathToSpamDeathToSpam, Sightings","re‌ceive, De‌athToSpamDeathToSpamDeathToSpam, Si‌ghtings"
+00973.ca8a425093e9994271e922f4d60f775c,00973__salted__extended__cp200D__single.ca8a425093e9994271e922f4d60f775c,extended,200D,single,,,,"receive, DeathToSpamDeathToSpamDeathToSpam, Sightings","re‍ceive, De‍athToSpamDeathToSpamDeathToSpam, Si‍ghtings"
+00973.ca8a425093e9994271e922f4d60f775c,00973__salted__extended__cp00AD__single.ca8a425093e9994271e922f4d60f775c,extended,00AD,single,,,,"receive, DeathToSpamDeathToSpamDeathToSpam, Sightings","re­ceive, De­athToSpamDeathToSpamDeathToSpam, Si­ghtings"
+01008.5e932696d8f33950af53eb9461a014a2,01008__salted__extended__cp200B__single.5e932696d8f33950af53eb9461a014a2,extended,200B,single,,,,"Dear, promotional, guaranteed","De​ar, pr​omotional, gu​aranteed"
+01008.5e932696d8f33950af53eb9461a014a2,01008__salted__extended__cp200C__single.5e932696d8f33950af53eb9461a014a2,extended,200C,single,,,,"Dear, promotional, guaranteed","De‌ar, pr‌omotional, gu‌aranteed"
+01008.5e932696d8f33950af53eb9461a014a2,01008__salted__extended__cp200D__single.5e932696d8f33950af53eb9461a014a2,extended,200D,single,,,,"Dear, promotional, guaranteed","De‍ar, pr‍omotional, gu‍aranteed"
+01008.5e932696d8f33950af53eb9461a014a2,01008__salted__extended__cp00AD__single.5e932696d8f33950af53eb9461a014a2,extended,00AD,single,,,,"Dear, promotional, guaranteed","De­ar, pr­omotional, gu­aranteed"
+01011.d4812088cad8553fb214dab8003add9b,01011__salted__extended__cp200B__single.d4812088cad8553fb214dab8003add9b,extended,200B,single,,,,"DEAR, SIR, assistance","DE​AR, SI​R, as​sistance"
+01011.d4812088cad8553fb214dab8003add9b,01011__salted__extended__cp200C__single.d4812088cad8553fb214dab8003add9b,extended,200C,single,,,,"DEAR, SIR, assistance","DE‌AR, SI‌R, as‌sistance"
+01011.d4812088cad8553fb214dab8003add9b,01011__salted__extended__cp200D__single.d4812088cad8553fb214dab8003add9b,extended,200D,single,,,,"DEAR, SIR, assistance","DE‍AR, SI‍R, as‍sistance"
+01011.d4812088cad8553fb214dab8003add9b,01011__salted__extended__cp00AD__single.d4812088cad8553fb214dab8003add9b,extended,00AD,single,,,,"DEAR, SIR, assistance","DE­AR, SI­R, as­sistance"
+01014.98c1d0a70f88efb979d9ca65e945363e,01014__salted__extended__cp200B__single.98c1d0a70f88efb979d9ca65e945363e,extended,200B,single,,,,mailings,ma​ilings
+01014.98c1d0a70f88efb979d9ca65e945363e,01014__salted__extended__cp200C__single.98c1d0a70f88efb979d9ca65e945363e,extended,200C,single,,,,mailings,ma‌ilings
+01014.98c1d0a70f88efb979d9ca65e945363e,01014__salted__extended__cp200D__single.98c1d0a70f88efb979d9ca65e945363e,extended,200D,single,,,,mailings,ma‍ilings
+01014.98c1d0a70f88efb979d9ca65e945363e,01014__salted__extended__cp00AD__single.98c1d0a70f88efb979d9ca65e945363e,extended,00AD,single,,,,mailings,ma­ilings
+01016.ac6ce255291deba2f46cdd8ddba3ea01,01016__salted__extended__cp200B__single.ac6ce255291deba2f46cdd8ddba3ea01,extended,200B,single,,cartridges,ca​rtridges,,
+01016.ac6ce255291deba2f46cdd8ddba3ea01,01016__salted__extended__cp200C__single.ac6ce255291deba2f46cdd8ddba3ea01,extended,200C,single,,cartridges,ca‌rtridges,,
+01016.ac6ce255291deba2f46cdd8ddba3ea01,01016__salted__extended__cp200D__single.ac6ce255291deba2f46cdd8ddba3ea01,extended,200D,single,,cartridges,ca‍rtridges,,
+01016.ac6ce255291deba2f46cdd8ddba3ea01,01016__salted__extended__cp00AD__single.ac6ce255291deba2f46cdd8ddba3ea01,extended,00AD,single,,cartridges,ca­rtridges,,
+01036.87c1f0b55cb48bd36c8863cf700cd485,01036__salted__extended__cp200B__single.87c1f0b55cb48bd36c8863cf700cd485,extended,200B,single,,,,Click,Cl​ick
+01036.87c1f0b55cb48bd36c8863cf700cd485,01036__salted__extended__cp200C__single.87c1f0b55cb48bd36c8863cf700cd485,extended,200C,single,,,,Click,Cl‌ick
+01036.87c1f0b55cb48bd36c8863cf700cd485,01036__salted__extended__cp200D__single.87c1f0b55cb48bd36c8863cf700cd485,extended,200D,single,,,,Click,Cl‍ick
+01036.87c1f0b55cb48bd36c8863cf700cd485,01036__salted__extended__cp00AD__single.87c1f0b55cb48bd36c8863cf700cd485,extended,00AD,single,,,,Click,Cl­ick
+01075.07ee7f1ab5ad6659c47baa5ef3691a80,01075__salted__extended__cp200B__single.07ee7f1ab5ad6659c47baa5ef3691a80,extended,200B,single,,,,"Removal, advertisement, opted","Re​moval, ad​vertisement, op​ted"
+01075.07ee7f1ab5ad6659c47baa5ef3691a80,01075__salted__extended__cp200C__single.07ee7f1ab5ad6659c47baa5ef3691a80,extended,200C,single,,,,"Removal, advertisement, opted","Re‌moval, ad‌vertisement, op‌ted"
+01075.07ee7f1ab5ad6659c47baa5ef3691a80,01075__salted__extended__cp200D__single.07ee7f1ab5ad6659c47baa5ef3691a80,extended,200D,single,,,,"Removal, advertisement, opted","Re‍moval, ad‍vertisement, op‍ted"
+01075.07ee7f1ab5ad6659c47baa5ef3691a80,01075__salted__extended__cp00AD__single.07ee7f1ab5ad6659c47baa5ef3691a80,extended,00AD,single,,,,"Removal, advertisement, opted","Re­moval, ad­vertisement, op­ted"
+01079.9eb95fd88f3d9d551f8c64359470ae7e,01079__salted__extended__cp200B__single.9eb95fd88f3d9d551f8c64359470ae7e,extended,200B,single,,cartridges,ca​rtridges,,
+01079.9eb95fd88f3d9d551f8c64359470ae7e,01079__salted__extended__cp200C__single.9eb95fd88f3d9d551f8c64359470ae7e,extended,200C,single,,cartridges,ca‌rtridges,,
+01079.9eb95fd88f3d9d551f8c64359470ae7e,01079__salted__extended__cp200D__single.9eb95fd88f3d9d551f8c64359470ae7e,extended,200D,single,,cartridges,ca‍rtridges,,
+01079.9eb95fd88f3d9d551f8c64359470ae7e,01079__salted__extended__cp00AD__single.9eb95fd88f3d9d551f8c64359470ae7e,extended,00AD,single,,cartridges,ca­rtridges,,
+01082.9f69cd26a420837850841e71d6147a57,01082__salted__extended__cp200B__single.9f69cd26a420837850841e71d6147a57,extended,200B,single,,,,Click,Cl​ick
+01082.9f69cd26a420837850841e71d6147a57,01082__salted__extended__cp200C__single.9f69cd26a420837850841e71d6147a57,extended,200C,single,,,,Click,Cl‌ick
+01082.9f69cd26a420837850841e71d6147a57,01082__salted__extended__cp200D__single.9f69cd26a420837850841e71d6147a57,extended,200D,single,,,,Click,Cl‍ick
+01082.9f69cd26a420837850841e71d6147a57,01082__salted__extended__cp00AD__single.9f69cd26a420837850841e71d6147a57,extended,00AD,single,,,,Click,Cl­ick
+01104.ec267abf01fe81c42dc90dfd16c930bc,01104__salted__extended__cp200B__single.ec267abf01fe81c42dc90dfd16c930bc,extended,200B,single,,,,"Dear, Sir, USD","De​ar, Si​r, US​D"
+01104.ec267abf01fe81c42dc90dfd16c930bc,01104__salted__extended__cp200C__single.ec267abf01fe81c42dc90dfd16c930bc,extended,200C,single,,,,"Dear, Sir, USD","De‌ar, Si‌r, US‌D"
+01104.ec267abf01fe81c42dc90dfd16c930bc,01104__salted__extended__cp200D__single.ec267abf01fe81c42dc90dfd16c930bc,extended,200D,single,,,,"Dear, Sir, USD","De‍ar, Si‍r, US‍D"
+01104.ec267abf01fe81c42dc90dfd16c930bc,01104__salted__extended__cp00AD__single.ec267abf01fe81c42dc90dfd16c930bc,extended,00AD,single,,,,"Dear, Sir, USD","De­ar, Si­r, US­D"
+01105.2582a4afba9b0b06bed5d48e3e8b29df,01105__salted__extended__cp200B__single.2582a4afba9b0b06bed5d48e3e8b29df,extended,200B,single,,,,"Dear, Sir, USD","De​ar, Si​r, US​D"
+01105.2582a4afba9b0b06bed5d48e3e8b29df,01105__salted__extended__cp200C__single.2582a4afba9b0b06bed5d48e3e8b29df,extended,200C,single,,,,"Dear, Sir, USD","De‌ar, Si‌r, US‌D"
+01105.2582a4afba9b0b06bed5d48e3e8b29df,01105__salted__extended__cp200D__single.2582a4afba9b0b06bed5d48e3e8b29df,extended,200D,single,,,,"Dear, Sir, USD","De‍ar, Si‍r, US‍D"
+01105.2582a4afba9b0b06bed5d48e3e8b29df,01105__salted__extended__cp00AD__single.2582a4afba9b0b06bed5d48e3e8b29df,extended,00AD,single,,,,"Dear, Sir, USD","De­ar, Si­r, US­D"
+01106.37f316c0f77e739cb5fe0e37aaea2046,01106__salted__extended__cp200B__single.37f316c0f77e739cb5fe0e37aaea2046,extended,200B,single,,,,"Dear, Sir, USD","De​ar, Si​r, US​D"
+01106.37f316c0f77e739cb5fe0e37aaea2046,01106__salted__extended__cp200C__single.37f316c0f77e739cb5fe0e37aaea2046,extended,200C,single,,,,"Dear, Sir, USD","De‌ar, Si‌r, US‌D"
+01106.37f316c0f77e739cb5fe0e37aaea2046,01106__salted__extended__cp200D__single.37f316c0f77e739cb5fe0e37aaea2046,extended,200D,single,,,,"Dear, Sir, USD","De‍ar, Si‍r, US‍D"
+01106.37f316c0f77e739cb5fe0e37aaea2046,01106__salted__extended__cp00AD__single.37f316c0f77e739cb5fe0e37aaea2046,extended,00AD,single,,,,"Dear, Sir, USD","De­ar, Si­r, US­D"
+01130.f286229e3c2eeb5c682204de85d903c0,01130__salted__extended__cp200B__single.f286229e3c2eeb5c682204de85d903c0,extended,200B,single,,SYSTEMWORKS,SY​STEMWORKS,,
+01130.f286229e3c2eeb5c682204de85d903c0,01130__salted__extended__cp200C__single.f286229e3c2eeb5c682204de85d903c0,extended,200C,single,,SYSTEMWORKS,SY‌STEMWORKS,,
+01130.f286229e3c2eeb5c682204de85d903c0,01130__salted__extended__cp200D__single.f286229e3c2eeb5c682204de85d903c0,extended,200D,single,,SYSTEMWORKS,SY‍STEMWORKS,,
+01130.f286229e3c2eeb5c682204de85d903c0,01130__salted__extended__cp00AD__single.f286229e3c2eeb5c682204de85d903c0,extended,00AD,single,,SYSTEMWORKS,SY­STEMWORKS,,
+01131.c9bb07673bf9f048916cd2b9b1813724,01131__salted__extended__cp200B__single.c9bb07673bf9f048916cd2b9b1813724,extended,200B,single,,,,"receive, CLICK","re​ceive, CL​ICK"
+01131.c9bb07673bf9f048916cd2b9b1813724,01131__salted__extended__cp200C__single.c9bb07673bf9f048916cd2b9b1813724,extended,200C,single,,,,"receive, CLICK","re‌ceive, CL‌ICK"
+01131.c9bb07673bf9f048916cd2b9b1813724,01131__salted__extended__cp200D__single.c9bb07673bf9f048916cd2b9b1813724,extended,200D,single,,,,"receive, CLICK","re‍ceive, CL‍ICK"
+01131.c9bb07673bf9f048916cd2b9b1813724,01131__salted__extended__cp00AD__single.c9bb07673bf9f048916cd2b9b1813724,extended,00AD,single,,,,"receive, CLICK","re­ceive, CL­ICK"
+01132.3d0e60ced92087634f1433f12810096d,01132__salted__extended__cp200B__single.3d0e60ced92087634f1433f12810096d,extended,200B,single,,,,"Obligation, click, guaranteed","Ob​ligation, cl​ick, gu​aranteed"
+01132.3d0e60ced92087634f1433f12810096d,01132__salted__extended__cp200C__single.3d0e60ced92087634f1433f12810096d,extended,200C,single,,,,"Obligation, click, guaranteed","Ob‌ligation, cl‌ick, gu‌aranteed"
+01132.3d0e60ced92087634f1433f12810096d,01132__salted__extended__cp200D__single.3d0e60ced92087634f1433f12810096d,extended,200D,single,,,,"Obligation, click, guaranteed","Ob‍ligation, cl‍ick, gu‍aranteed"
+01132.3d0e60ced92087634f1433f12810096d,01132__salted__extended__cp00AD__single.3d0e60ced92087634f1433f12810096d,extended,00AD,single,,,,"Obligation, click, guaranteed","Ob­ligation, cl­ick, gu­aranteed"
+01145.a34477ade6db9376e4f8ccbfa8607881,01145__salted__extended__cp200B__single.a34477ade6db9376e4f8ccbfa8607881,extended,200B,single,,MORTGAGE,MO​RTGAGE,"lenders, loan, Loans","le​nders, lo​an, Lo​ans"
+01145.a34477ade6db9376e4f8ccbfa8607881,01145__salted__extended__cp200C__single.a34477ade6db9376e4f8ccbfa8607881,extended,200C,single,,MORTGAGE,MO‌RTGAGE,"lenders, loan, Loans","le‌nders, lo‌an, Lo‌ans"
+01145.a34477ade6db9376e4f8ccbfa8607881,01145__salted__extended__cp200D__single.a34477ade6db9376e4f8ccbfa8607881,extended,200D,single,,MORTGAGE,MO‍RTGAGE,"lenders, loan, Loans","le‍nders, lo‍an, Lo‍ans"
+01145.a34477ade6db9376e4f8ccbfa8607881,01145__salted__extended__cp00AD__single.a34477ade6db9376e4f8ccbfa8607881,extended,00AD,single,,MORTGAGE,MO­RTGAGE,"lenders, loan, Loans","le­nders, lo­an, Lo­ans"
+01151.e295c81d698d58f43f17bde22076cbef,01151__salted__extended__cp200B__single.e295c81d698d58f43f17bde22076cbef,extended,200B,single,,,,"Dear, click, Nigeria","De​ar, cl​ick, Ni​geria"
+01151.e295c81d698d58f43f17bde22076cbef,01151__salted__extended__cp200C__single.e295c81d698d58f43f17bde22076cbef,extended,200C,single,,,,"Dear, click, Nigeria","De‌ar, cl‌ick, Ni‌geria"
+01151.e295c81d698d58f43f17bde22076cbef,01151__salted__extended__cp200D__single.e295c81d698d58f43f17bde22076cbef,extended,200D,single,,,,"Dear, click, Nigeria","De‍ar, cl‍ick, Ni‍geria"
+01151.e295c81d698d58f43f17bde22076cbef,01151__salted__extended__cp00AD__single.e295c81d698d58f43f17bde22076cbef,extended,00AD,single,,,,"Dear, click, Nigeria","De­ar, cl­ick, Ni­geria"
+01158.5acbdb7eb695f96c08d960a56058481d,01158__salted__extended__cp200B__single.5acbdb7eb695f96c08d960a56058481d,extended,200B,single,,Refinance,Re​finance,"Refinance, mortgage, Mortgage","Re​finance, mo​rtgage, Mo​rtgage"
+01158.5acbdb7eb695f96c08d960a56058481d,01158__salted__extended__cp200C__single.5acbdb7eb695f96c08d960a56058481d,extended,200C,single,,Refinance,Re‌finance,"Refinance, mortgage, Mortgage","Re‌finance, mo‌rtgage, Mo‌rtgage"
+01158.5acbdb7eb695f96c08d960a56058481d,01158__salted__extended__cp200D__single.5acbdb7eb695f96c08d960a56058481d,extended,200D,single,,Refinance,Re‍finance,"Refinance, mortgage, Mortgage","Re‍finance, mo‍rtgage, Mo‍rtgage"
+01158.5acbdb7eb695f96c08d960a56058481d,01158__salted__extended__cp00AD__single.5acbdb7eb695f96c08d960a56058481d,extended,00AD,single,,Refinance,Re­finance,"Refinance, mortgage, Mortgage","Re­finance, mo­rtgage, Mo­rtgage"
+01161.174f2cb358ca3f08f4308f87ca64842f,01161__salted__extended__cp200B__single.174f2cb358ca3f08f4308f87ca64842f,extended,200B,single,,,,"receive, monthly, monthly","re​ceive, mo​nthly, mo​nthly"
+01161.174f2cb358ca3f08f4308f87ca64842f,01161__salted__extended__cp200C__single.174f2cb358ca3f08f4308f87ca64842f,extended,200C,single,,,,"receive, monthly, monthly","re‌ceive, mo‌nthly, mo‌nthly"
+01161.174f2cb358ca3f08f4308f87ca64842f,01161__salted__extended__cp200D__single.174f2cb358ca3f08f4308f87ca64842f,extended,200D,single,,,,"receive, monthly, monthly","re‍ceive, mo‍nthly, mo‍nthly"
+01161.174f2cb358ca3f08f4308f87ca64842f,01161__salted__extended__cp00AD__single.174f2cb358ca3f08f4308f87ca64842f,extended,00AD,single,,,,"receive, monthly, monthly","re­ceive, mo­nthly, mo­nthly"
+01165.8c661bf07a1a7a5fe8a9efc2439d17a1,01165__salted__extended__cp200B__single.8c661bf07a1a7a5fe8a9efc2439d17a1,extended,200B,single,,,,"mortgage, loan, loan","mo​rtgage, lo​an, lo​an"
+01165.8c661bf07a1a7a5fe8a9efc2439d17a1,01165__salted__extended__cp200C__single.8c661bf07a1a7a5fe8a9efc2439d17a1,extended,200C,single,,,,"mortgage, loan, loan","mo‌rtgage, lo‌an, lo‌an"
+01165.8c661bf07a1a7a5fe8a9efc2439d17a1,01165__salted__extended__cp200D__single.8c661bf07a1a7a5fe8a9efc2439d17a1,extended,200D,single,,,,"mortgage, loan, loan","mo‍rtgage, lo‍an, lo‍an"
+01165.8c661bf07a1a7a5fe8a9efc2439d17a1,01165__salted__extended__cp00AD__single.8c661bf07a1a7a5fe8a9efc2439d17a1,extended,00AD,single,,,,"mortgage, loan, loan","mo­rtgage, lo­an, lo­an"
+01167.2ac57a0189fa2b8713202b84e587b707,01167__salted__extended__cp200B__single.2ac57a0189fa2b8713202b84e587b707,extended,200B,single,,Postal,Po​stal,,
+01167.2ac57a0189fa2b8713202b84e587b707,01167__salted__extended__cp200C__single.2ac57a0189fa2b8713202b84e587b707,extended,200C,single,,Postal,Po‌stal,,
+01167.2ac57a0189fa2b8713202b84e587b707,01167__salted__extended__cp200D__single.2ac57a0189fa2b8713202b84e587b707,extended,200D,single,,Postal,Po‍stal,,
+01167.2ac57a0189fa2b8713202b84e587b707,01167__salted__extended__cp00AD__single.2ac57a0189fa2b8713202b84e587b707,extended,00AD,single,,Postal,Po­stal,,
+01169.4e5cf6c3e8863047dbba1bfca2ebab97,01169__salted__extended__cp200B__single.4e5cf6c3e8863047dbba1bfca2ebab97,extended,200B,single,,,,"CLICK, GUARANTEED","CL​ICK, GU​ARANTEED"
+01169.4e5cf6c3e8863047dbba1bfca2ebab97,01169__salted__extended__cp200C__single.4e5cf6c3e8863047dbba1bfca2ebab97,extended,200C,single,,,,"CLICK, GUARANTEED","CL‌ICK, GU‌ARANTEED"
+01169.4e5cf6c3e8863047dbba1bfca2ebab97,01169__salted__extended__cp200D__single.4e5cf6c3e8863047dbba1bfca2ebab97,extended,200D,single,,,,"CLICK, GUARANTEED","CL‍ICK, GU‍ARANTEED"
+01169.4e5cf6c3e8863047dbba1bfca2ebab97,01169__salted__extended__cp00AD__single.4e5cf6c3e8863047dbba1bfca2ebab97,extended,00AD,single,,,,"CLICK, GUARANTEED","CL­ICK, GU­ARANTEED"
+01182.209dbb3bedae1ecd5ed23fb03049244e,01182__salted__extended__cp200B__single.209dbb3bedae1ecd5ed23fb03049244e,extended,200B,single,,,,"Dear, communication, affordable","De​ar, co​mmunication, af​fordable"
+01182.209dbb3bedae1ecd5ed23fb03049244e,01182__salted__extended__cp200C__single.209dbb3bedae1ecd5ed23fb03049244e,extended,200C,single,,,,"Dear, communication, affordable","De‌ar, co‌mmunication, af‌fordable"
+01182.209dbb3bedae1ecd5ed23fb03049244e,01182__salted__extended__cp200D__single.209dbb3bedae1ecd5ed23fb03049244e,extended,200D,single,,,,"Dear, communication, affordable","De‍ar, co‍mmunication, af‍fordable"
+01182.209dbb3bedae1ecd5ed23fb03049244e,01182__salted__extended__cp00AD__single.209dbb3bedae1ecd5ed23fb03049244e,extended,00AD,single,,,,"Dear, communication, affordable","De­ar, co­mmunication, af­fordable"
+01184.5216074bef5bb01e0b1301d375283c51,01184__salted__extended__cp200B__single.5216074bef5bb01e0b1301d375283c51,extended,200B,single,,CLICK,CL​ICK,,
+01184.5216074bef5bb01e0b1301d375283c51,01184__salted__extended__cp200C__single.5216074bef5bb01e0b1301d375283c51,extended,200C,single,,CLICK,CL‌ICK,,
+01184.5216074bef5bb01e0b1301d375283c51,01184__salted__extended__cp200D__single.5216074bef5bb01e0b1301d375283c51,extended,200D,single,,CLICK,CL‍ICK,,
+01184.5216074bef5bb01e0b1301d375283c51,01184__salted__extended__cp00AD__single.5216074bef5bb01e0b1301d375283c51,extended,00AD,single,,CLICK,CL­ICK,,
+01203.f4c9144a594fb81ff323053fbd626a55,01203__salted__extended__cp200B__single.f4c9144a594fb81ff323053fbd626a55,extended,200B,single,,GUARANTEED,GU​ARANTEED,"mortgage, loan, fees","mo​rtgage, lo​an, fe​es"
+01203.f4c9144a594fb81ff323053fbd626a55,01203__salted__extended__cp200C__single.f4c9144a594fb81ff323053fbd626a55,extended,200C,single,,GUARANTEED,GU‌ARANTEED,"mortgage, loan, fees","mo‌rtgage, lo‌an, fe‌es"
+01203.f4c9144a594fb81ff323053fbd626a55,01203__salted__extended__cp200D__single.f4c9144a594fb81ff323053fbd626a55,extended,200D,single,,GUARANTEED,GU‍ARANTEED,"mortgage, loan, fees","mo‍rtgage, lo‍an, fe‍es"
+01203.f4c9144a594fb81ff323053fbd626a55,01203__salted__extended__cp00AD__single.f4c9144a594fb81ff323053fbd626a55,extended,00AD,single,,GUARANTEED,GU­ARANTEED,"mortgage, loan, fees","mo­rtgage, lo­an, fe­es"
+01216.e293653cab0c486ba135cf8fbe6700fc,01216__salted__extended__cp200B__single.e293653cab0c486ba135cf8fbe6700fc,extended,200B,single,,HGH,HG​H,,
+01216.e293653cab0c486ba135cf8fbe6700fc,01216__salted__extended__cp200C__single.e293653cab0c486ba135cf8fbe6700fc,extended,200C,single,,HGH,HG‌H,,
+01216.e293653cab0c486ba135cf8fbe6700fc,01216__salted__extended__cp200D__single.e293653cab0c486ba135cf8fbe6700fc,extended,200D,single,,HGH,HG‍H,,
+01216.e293653cab0c486ba135cf8fbe6700fc,01216__salted__extended__cp00AD__single.e293653cab0c486ba135cf8fbe6700fc,extended,00AD,single,,HGH,HG­H,,
+01230.0589bade8df0c343a49c6712f62dfca0,01230__salted__extended__cp200B__single.0589bade8df0c343a49c6712f62dfca0,extended,200B,single,,,,"tobacco, Guaranteed, Guaranteed","to​bacco, Gu​aranteed, Gu​aranteed"
+01230.0589bade8df0c343a49c6712f62dfca0,01230__salted__extended__cp200C__single.0589bade8df0c343a49c6712f62dfca0,extended,200C,single,,,,"tobacco, Guaranteed, Guaranteed","to‌bacco, Gu‌aranteed, Gu‌aranteed"
+01230.0589bade8df0c343a49c6712f62dfca0,01230__salted__extended__cp200D__single.0589bade8df0c343a49c6712f62dfca0,extended,200D,single,,,,"tobacco, Guaranteed, Guaranteed","to‍bacco, Gu‍aranteed, Gu‍aranteed"
+01230.0589bade8df0c343a49c6712f62dfca0,01230__salted__extended__cp00AD__single.0589bade8df0c343a49c6712f62dfca0,extended,00AD,single,,,,"tobacco, Guaranteed, Guaranteed","to­bacco, Gu­aranteed, Gu­aranteed"
+01236.903d52340bf3ed1a328b039bcd94e1c9,01236__salted__extended__cp200B__single.903d52340bf3ed1a328b039bcd94e1c9,extended,200B,single,,cartridges,ca​rtridges,,
+01236.903d52340bf3ed1a328b039bcd94e1c9,01236__salted__extended__cp200C__single.903d52340bf3ed1a328b039bcd94e1c9,extended,200C,single,,cartridges,ca‌rtridges,,
+01236.903d52340bf3ed1a328b039bcd94e1c9,01236__salted__extended__cp200D__single.903d52340bf3ed1a328b039bcd94e1c9,extended,200D,single,,cartridges,ca‍rtridges,,
+01236.903d52340bf3ed1a328b039bcd94e1c9,01236__salted__extended__cp00AD__single.903d52340bf3ed1a328b039bcd94e1c9,extended,00AD,single,,cartridges,ca­rtridges,,
+01240.7d6ae3682a3dd3fe457516b188eb105c,01240__salted__extended__cp200B__single.7d6ae3682a3dd3fe457516b188eb105c,extended,200B,single,,assistance,as​sistance,"PRESENTLY, NIGERIA, PRESENTLY","PR​ESENTLY, NI​GERIA, PR​ESENTLY"
+01240.7d6ae3682a3dd3fe457516b188eb105c,01240__salted__extended__cp200C__single.7d6ae3682a3dd3fe457516b188eb105c,extended,200C,single,,assistance,as‌sistance,"PRESENTLY, NIGERIA, PRESENTLY","PR‌ESENTLY, NI‌GERIA, PR‌ESENTLY"
+01240.7d6ae3682a3dd3fe457516b188eb105c,01240__salted__extended__cp200D__single.7d6ae3682a3dd3fe457516b188eb105c,extended,200D,single,,assistance,as‍sistance,"PRESENTLY, NIGERIA, PRESENTLY","PR‍ESENTLY, NI‍GERIA, PR‍ESENTLY"
+01240.7d6ae3682a3dd3fe457516b188eb105c,01240__salted__extended__cp00AD__single.7d6ae3682a3dd3fe457516b188eb105c,extended,00AD,single,,assistance,as­sistance,"PRESENTLY, NIGERIA, PRESENTLY","PR­ESENTLY, NI­GERIA, PR­ESENTLY"
+01242.3743099b115c6a8a273d8eca34a9c738,01242__salted__extended__cp200B__single.3743099b115c6a8a273d8eca34a9c738,extended,200B,single,,Cartridges,Ca​rtridges,,
+01242.3743099b115c6a8a273d8eca34a9c738,01242__salted__extended__cp200C__single.3743099b115c6a8a273d8eca34a9c738,extended,200C,single,,Cartridges,Ca‌rtridges,,
+01242.3743099b115c6a8a273d8eca34a9c738,01242__salted__extended__cp200D__single.3743099b115c6a8a273d8eca34a9c738,extended,200D,single,,Cartridges,Ca‍rtridges,,
+01242.3743099b115c6a8a273d8eca34a9c738,01242__salted__extended__cp00AD__single.3743099b115c6a8a273d8eca34a9c738,extended,00AD,single,,Cartridges,Ca­rtridges,,
+01250.2bfc033f9ced1c70e480ec75b0094431,01250__salted__extended__cp200B__single.2bfc033f9ced1c70e480ec75b0094431,extended,200B,single,,,,"Receive, receive, mailings","Re​ceive, re​ceive, ma​ilings"
+01250.2bfc033f9ced1c70e480ec75b0094431,01250__salted__extended__cp200C__single.2bfc033f9ced1c70e480ec75b0094431,extended,200C,single,,,,"Receive, receive, mailings","Re‌ceive, re‌ceive, ma‌ilings"
+01250.2bfc033f9ced1c70e480ec75b0094431,01250__salted__extended__cp200D__single.2bfc033f9ced1c70e480ec75b0094431,extended,200D,single,,,,"Receive, receive, mailings","Re‍ceive, re‍ceive, ma‍ilings"
+01250.2bfc033f9ced1c70e480ec75b0094431,01250__salted__extended__cp00AD__single.2bfc033f9ced1c70e480ec75b0094431,extended,00AD,single,,,,"Receive, receive, mailings","Re­ceive, re­ceive, ma­ilings"
+01253.26e421b9623002d636c29f79f68a58fb,01253__salted__extended__cp200B__single.26e421b9623002d636c29f79f68a58fb,extended,200B,single,,cartridges,ca​rtridges,,
+01253.26e421b9623002d636c29f79f68a58fb,01253__salted__extended__cp200C__single.26e421b9623002d636c29f79f68a58fb,extended,200C,single,,cartridges,ca‌rtridges,,
+01253.26e421b9623002d636c29f79f68a58fb,01253__salted__extended__cp200D__single.26e421b9623002d636c29f79f68a58fb,extended,200D,single,,cartridges,ca‍rtridges,,
+01253.26e421b9623002d636c29f79f68a58fb,01253__salted__extended__cp00AD__single.26e421b9623002d636c29f79f68a58fb,extended,00AD,single,,cartridges,ca­rtridges,,
+01255.e04eae4539f81463a930dfe44ebd6af8,01255__salted__extended__cp200B__single.e04eae4539f81463a930dfe44ebd6af8,extended,200B,single,,HGH,HG​H,,
+01255.e04eae4539f81463a930dfe44ebd6af8,01255__salted__extended__cp200C__single.e04eae4539f81463a930dfe44ebd6af8,extended,200C,single,,HGH,HG‌H,,
+01255.e04eae4539f81463a930dfe44ebd6af8,01255__salted__extended__cp200D__single.e04eae4539f81463a930dfe44ebd6af8,extended,200D,single,,HGH,HG‍H,,
+01255.e04eae4539f81463a930dfe44ebd6af8,01255__salted__extended__cp00AD__single.e04eae4539f81463a930dfe44ebd6af8,extended,00AD,single,,HGH,HG­H,,
+01257.f5908ef0550cdf91bd6ae55120ecb5ce,01257__salted__extended__cp200B__single.f5908ef0550cdf91bd6ae55120ecb5ce,extended,200B,single,,,,"click, obligation","cl​ick, ob​ligation"
+01257.f5908ef0550cdf91bd6ae55120ecb5ce,01257__salted__extended__cp200C__single.f5908ef0550cdf91bd6ae55120ecb5ce,extended,200C,single,,,,"click, obligation","cl‌ick, ob‌ligation"
+01257.f5908ef0550cdf91bd6ae55120ecb5ce,01257__salted__extended__cp200D__single.f5908ef0550cdf91bd6ae55120ecb5ce,extended,200D,single,,,,"click, obligation","cl‍ick, ob‍ligation"
+01257.f5908ef0550cdf91bd6ae55120ecb5ce,01257__salted__extended__cp00AD__single.f5908ef0550cdf91bd6ae55120ecb5ce,extended,00AD,single,,,,"click, obligation","cl­ick, ob­ligation"
+01259.b4dff1ed93bc931b271888cd42e41b85,01259__salted__extended__cp200B__single.b4dff1ed93bc931b271888cd42e41b85,extended,200B,single,,,,"SLEEP, tobacco, attained","SL​EEP, to​bacco, at​tained"
+01259.b4dff1ed93bc931b271888cd42e41b85,01259__salted__extended__cp200C__single.b4dff1ed93bc931b271888cd42e41b85,extended,200C,single,,,,"SLEEP, tobacco, attained","SL‌EEP, to‌bacco, at‌tained"
+01259.b4dff1ed93bc931b271888cd42e41b85,01259__salted__extended__cp200D__single.b4dff1ed93bc931b271888cd42e41b85,extended,200D,single,,,,"SLEEP, tobacco, attained","SL‍EEP, to‍bacco, at‍tained"
+01259.b4dff1ed93bc931b271888cd42e41b85,01259__salted__extended__cp00AD__single.b4dff1ed93bc931b271888cd42e41b85,extended,00AD,single,,,,"SLEEP, tobacco, attained","SL­EEP, to­bacco, at­tained"
+01267.6e9de9ba20f59c26028ebdb4550685fb,01267__salted__extended__cp200B__single.6e9de9ba20f59c26028ebdb4550685fb,extended,200B,single,,SYSTEMWORKS,SY​STEMWORKS,,
+01267.6e9de9ba20f59c26028ebdb4550685fb,01267__salted__extended__cp200C__single.6e9de9ba20f59c26028ebdb4550685fb,extended,200C,single,,SYSTEMWORKS,SY‌STEMWORKS,,
+01267.6e9de9ba20f59c26028ebdb4550685fb,01267__salted__extended__cp200D__single.6e9de9ba20f59c26028ebdb4550685fb,extended,200D,single,,SYSTEMWORKS,SY‍STEMWORKS,,
+01267.6e9de9ba20f59c26028ebdb4550685fb,01267__salted__extended__cp00AD__single.6e9de9ba20f59c26028ebdb4550685fb,extended,00AD,single,,SYSTEMWORKS,SY­STEMWORKS,,
+01280.34dde162b3c6b2e873fc9f094d28b0fd,01280__salted__extended__cp200B__single.34dde162b3c6b2e873fc9f094d28b0fd,extended,200B,single,,,,"wholesale, commissions, obligation","wh​olesale, co​mmissions, ob​ligation"
+01280.34dde162b3c6b2e873fc9f094d28b0fd,01280__salted__extended__cp200C__single.34dde162b3c6b2e873fc9f094d28b0fd,extended,200C,single,,,,"wholesale, commissions, obligation","wh‌olesale, co‌mmissions, ob‌ligation"
+01280.34dde162b3c6b2e873fc9f094d28b0fd,01280__salted__extended__cp200D__single.34dde162b3c6b2e873fc9f094d28b0fd,extended,200D,single,,,,"wholesale, commissions, obligation","wh‍olesale, co‍mmissions, ob‍ligation"
+01280.34dde162b3c6b2e873fc9f094d28b0fd,01280__salted__extended__cp00AD__single.34dde162b3c6b2e873fc9f094d28b0fd,extended,00AD,single,,,,"wholesale, commissions, obligation","wh­olesale, co­mmissions, ob­ligation"
+01308.c46f1215ccd8cedf162e0cf308b94dcd,01308__salted__extended__cp200B__single.c46f1215ccd8cedf162e0cf308b94dcd,extended,200B,single,,,,"participation, ATTAINED, profitable","pa​rticipation, AT​TAINED, pr​ofitable"
+01308.c46f1215ccd8cedf162e0cf308b94dcd,01308__salted__extended__cp200C__single.c46f1215ccd8cedf162e0cf308b94dcd,extended,200C,single,,,,"participation, ATTAINED, profitable","pa‌rticipation, AT‌TAINED, pr‌ofitable"
+01308.c46f1215ccd8cedf162e0cf308b94dcd,01308__salted__extended__cp200D__single.c46f1215ccd8cedf162e0cf308b94dcd,extended,200D,single,,,,"participation, ATTAINED, profitable","pa‍rticipation, AT‍TAINED, pr‍ofitable"
+01308.c46f1215ccd8cedf162e0cf308b94dcd,01308__salted__extended__cp00AD__single.c46f1215ccd8cedf162e0cf308b94dcd,extended,00AD,single,,,,"participation, ATTAINED, profitable","pa­rticipation, AT­TAINED, pr­ofitable"
+01311.43bfe86df65d53c5f7ca2365dc12582b,01311__salted__extended__cp200B__single.43bfe86df65d53c5f7ca2365dc12582b,extended,200B,single,,mortgage,mo​rtgage,,
+01311.43bfe86df65d53c5f7ca2365dc12582b,01311__salted__extended__cp200C__single.43bfe86df65d53c5f7ca2365dc12582b,extended,200C,single,,mortgage,mo‌rtgage,,
+01311.43bfe86df65d53c5f7ca2365dc12582b,01311__salted__extended__cp200D__single.43bfe86df65d53c5f7ca2365dc12582b,extended,200D,single,,mortgage,mo‍rtgage,,
+01311.43bfe86df65d53c5f7ca2365dc12582b,01311__salted__extended__cp00AD__single.43bfe86df65d53c5f7ca2365dc12582b,extended,00AD,single,,mortgage,mo­rtgage,,
+01335.ca70ab7f2d1accef8b3cf646e3004ef8,01335__salted__extended__cp200B__single.ca70ab7f2d1accef8b3cf646e3004ef8,extended,200B,single,,mortgage,mo​rtgage,,
+01335.ca70ab7f2d1accef8b3cf646e3004ef8,01335__salted__extended__cp200C__single.ca70ab7f2d1accef8b3cf646e3004ef8,extended,200C,single,,mortgage,mo‌rtgage,,
+01335.ca70ab7f2d1accef8b3cf646e3004ef8,01335__salted__extended__cp200D__single.ca70ab7f2d1accef8b3cf646e3004ef8,extended,200D,single,,mortgage,mo‍rtgage,,
+01335.ca70ab7f2d1accef8b3cf646e3004ef8,01335__salted__extended__cp00AD__single.ca70ab7f2d1accef8b3cf646e3004ef8,extended,00AD,single,,mortgage,mo­rtgage,,
+01339.d94a16532a6f42497266dcc327a40163,01339__salted__extended__cp200B__single.d94a16532a6f42497266dcc327a40163,extended,200B,single,,mortgage,mo​rtgage,,
+01339.d94a16532a6f42497266dcc327a40163,01339__salted__extended__cp200C__single.d94a16532a6f42497266dcc327a40163,extended,200C,single,,mortgage,mo‌rtgage,,
+01339.d94a16532a6f42497266dcc327a40163,01339__salted__extended__cp200D__single.d94a16532a6f42497266dcc327a40163,extended,200D,single,,mortgage,mo‍rtgage,,
+01339.d94a16532a6f42497266dcc327a40163,01339__salted__extended__cp00AD__single.d94a16532a6f42497266dcc327a40163,extended,00AD,single,,mortgage,mo­rtgage,,
+01342.7f89acf56fb4398340a0b07481e3193f,01342__salted__extended__cp200B__single.7f89acf56fb4398340a0b07481e3193f,extended,200B,single,,,,"purchase, Postal, MasterCard","pu​rchase, Po​stal, Ma​sterCard"
+01342.7f89acf56fb4398340a0b07481e3193f,01342__salted__extended__cp200C__single.7f89acf56fb4398340a0b07481e3193f,extended,200C,single,,,,"purchase, Postal, MasterCard","pu‌rchase, Po‌stal, Ma‌sterCard"
+01342.7f89acf56fb4398340a0b07481e3193f,01342__salted__extended__cp200D__single.7f89acf56fb4398340a0b07481e3193f,extended,200D,single,,,,"purchase, Postal, MasterCard","pu‍rchase, Po‍stal, Ma‍sterCard"
+01342.7f89acf56fb4398340a0b07481e3193f,01342__salted__extended__cp00AD__single.7f89acf56fb4398340a0b07481e3193f,extended,00AD,single,,,,"purchase, Postal, MasterCard","pu­rchase, Po­stal, Ma­sterCard"
+01355.a47c042a6e16456c5b49c18d5b3868cb,01355__salted__extended__cp200B__single.a47c042a6e16456c5b49c18d5b3868cb,extended,200B,single,,,,"receive, mailings","re​ceive, ma​ilings"
+01355.a47c042a6e16456c5b49c18d5b3868cb,01355__salted__extended__cp200C__single.a47c042a6e16456c5b49c18d5b3868cb,extended,200C,single,,,,"receive, mailings","re‌ceive, ma‌ilings"
+01355.a47c042a6e16456c5b49c18d5b3868cb,01355__salted__extended__cp200D__single.a47c042a6e16456c5b49c18d5b3868cb,extended,200D,single,,,,"receive, mailings","re‍ceive, ma‍ilings"
+01355.a47c042a6e16456c5b49c18d5b3868cb,01355__salted__extended__cp00AD__single.a47c042a6e16456c5b49c18d5b3868cb,extended,00AD,single,,,,"receive, mailings","re­ceive, ma­ilings"
+01359.deafa1d42658c6624c6809a446b7f369,01359__salted__extended__cp200B__single.deafa1d42658c6624c6809a446b7f369,extended,200B,single,,,,"Dear, Sir, kindly","De​ar, Si​r, ki​ndly"
+01359.deafa1d42658c6624c6809a446b7f369,01359__salted__extended__cp200C__single.deafa1d42658c6624c6809a446b7f369,extended,200C,single,,,,"Dear, Sir, kindly","De‌ar, Si‌r, ki‌ndly"
+01359.deafa1d42658c6624c6809a446b7f369,01359__salted__extended__cp200D__single.deafa1d42658c6624c6809a446b7f369,extended,200D,single,,,,"Dear, Sir, kindly","De‍ar, Si‍r, ki‍ndly"
+01359.deafa1d42658c6624c6809a446b7f369,01359__salted__extended__cp00AD__single.deafa1d42658c6624c6809a446b7f369,extended,00AD,single,,,,"Dear, Sir, kindly","De­ar, Si­r, ki­ndly"
+01363.85518bca7c7cb9f35e57f3adda762ac9,01363__salted__extended__cp200B__single.85518bca7c7cb9f35e57f3adda762ac9,extended,200B,single,,,,"Click, promotion","Cl​ick, pr​omotion"
+01363.85518bca7c7cb9f35e57f3adda762ac9,01363__salted__extended__cp200C__single.85518bca7c7cb9f35e57f3adda762ac9,extended,200C,single,,,,"Click, promotion","Cl‌ick, pr‌omotion"
+01363.85518bca7c7cb9f35e57f3adda762ac9,01363__salted__extended__cp200D__single.85518bca7c7cb9f35e57f3adda762ac9,extended,200D,single,,,,"Click, promotion","Cl‍ick, pr‍omotion"
+01363.85518bca7c7cb9f35e57f3adda762ac9,01363__salted__extended__cp00AD__single.85518bca7c7cb9f35e57f3adda762ac9,extended,00AD,single,,,,"Click, promotion","Cl­ick, pr­omotion"
+01372.5d236077d94148a0ca71751f8f0a2e58,01372__salted__extended__cp200B__single.5d236077d94148a0ca71751f8f0a2e58,extended,200B,single,,Herbal,He​rbal,,
+01372.5d236077d94148a0ca71751f8f0a2e58,01372__salted__extended__cp200C__single.5d236077d94148a0ca71751f8f0a2e58,extended,200C,single,,Herbal,He‌rbal,,
+01372.5d236077d94148a0ca71751f8f0a2e58,01372__salted__extended__cp200D__single.5d236077d94148a0ca71751f8f0a2e58,extended,200D,single,,Herbal,He‍rbal,,
+01372.5d236077d94148a0ca71751f8f0a2e58,01372__salted__extended__cp00AD__single.5d236077d94148a0ca71751f8f0a2e58,extended,00AD,single,,Herbal,He­rbal,,
+01374.b902d53d7f737be700d6de60a42122d9,01374__salted__extended__cp200B__single.b902d53d7f737be700d6de60a42122d9,extended,200B,single,,,,Dear,De​ar
+01374.b902d53d7f737be700d6de60a42122d9,01374__salted__extended__cp200C__single.b902d53d7f737be700d6de60a42122d9,extended,200C,single,,,,Dear,De‌ar
+01374.b902d53d7f737be700d6de60a42122d9,01374__salted__extended__cp200D__single.b902d53d7f737be700d6de60a42122d9,extended,200D,single,,,,Dear,De‍ar
+01374.b902d53d7f737be700d6de60a42122d9,01374__salted__extended__cp00AD__single.b902d53d7f737be700d6de60a42122d9,extended,00AD,single,,,,Dear,De­ar
+01382.37400f7a1f36cd45165c2a72a9ec8baa,01382__salted__extended__cp200B__single.37400f7a1f36cd45165c2a72a9ec8baa,extended,200B,single,,,,"earn, promotion, receive","ea​rn, pr​omotion, re​ceive"
+01382.37400f7a1f36cd45165c2a72a9ec8baa,01382__salted__extended__cp200C__single.37400f7a1f36cd45165c2a72a9ec8baa,extended,200C,single,,,,"earn, promotion, receive","ea‌rn, pr‌omotion, re‌ceive"
+01382.37400f7a1f36cd45165c2a72a9ec8baa,01382__salted__extended__cp200D__single.37400f7a1f36cd45165c2a72a9ec8baa,extended,200D,single,,,,"earn, promotion, receive","ea‍rn, pr‍omotion, re‍ceive"
+01382.37400f7a1f36cd45165c2a72a9ec8baa,01382__salted__extended__cp00AD__single.37400f7a1f36cd45165c2a72a9ec8baa,extended,00AD,single,,,,"earn, promotion, receive","ea­rn, pr­omotion, re­ceive"
+01384.e23f94030a4393f0825eacd9de99eb31,01384__salted__extended__cp200B__single.e23f94030a4393f0825eacd9de99eb31,extended,200B,single,,Invest,In​vest,"consultation, Sincerely, click","co​nsultation, Si​ncerely, cl​ick"
+01384.e23f94030a4393f0825eacd9de99eb31,01384__salted__extended__cp200C__single.e23f94030a4393f0825eacd9de99eb31,extended,200C,single,,Invest,In‌vest,"consultation, Sincerely, click","co‌nsultation, Si‌ncerely, cl‌ick"
+01384.e23f94030a4393f0825eacd9de99eb31,01384__salted__extended__cp200D__single.e23f94030a4393f0825eacd9de99eb31,extended,200D,single,,Invest,In‍vest,"consultation, Sincerely, click","co‍nsultation, Si‍ncerely, cl‍ick"
+01384.e23f94030a4393f0825eacd9de99eb31,01384__salted__extended__cp00AD__single.e23f94030a4393f0825eacd9de99eb31,extended,00AD,single,,Invest,In­vest,"consultation, Sincerely, click","co­nsultation, Si­ncerely, cl­ick"
+01388.dba0966da5886e99fab13981da6c3834,01388__salted__extended__cp200B__single.dba0966da5886e99fab13981da6c3834,extended,200B,single,,,,"obligation, Sincerely, removal","ob​ligation, Si​ncerely, re​moval"
+01388.dba0966da5886e99fab13981da6c3834,01388__salted__extended__cp200C__single.dba0966da5886e99fab13981da6c3834,extended,200C,single,,,,"obligation, Sincerely, removal","ob‌ligation, Si‌ncerely, re‌moval"
+01388.dba0966da5886e99fab13981da6c3834,01388__salted__extended__cp200D__single.dba0966da5886e99fab13981da6c3834,extended,200D,single,,,,"obligation, Sincerely, removal","ob‍ligation, Si‍ncerely, re‍moval"
+01388.dba0966da5886e99fab13981da6c3834,01388__salted__extended__cp00AD__single.dba0966da5886e99fab13981da6c3834,extended,00AD,single,,,,"obligation, Sincerely, removal","ob­ligation, Si­ncerely, re­moval"
+01395.cb33d1d72f42e4ab9268729917bf428b,01395__salted__extended__cp200B__single.cb33d1d72f42e4ab9268729917bf428b,extended,200B,single,,ADV,AD​V,,
+01395.cb33d1d72f42e4ab9268729917bf428b,01395__salted__extended__cp200C__single.cb33d1d72f42e4ab9268729917bf428b,extended,200C,single,,ADV,AD‌V,,
+01395.cb33d1d72f42e4ab9268729917bf428b,01395__salted__extended__cp200D__single.cb33d1d72f42e4ab9268729917bf428b,extended,200D,single,,ADV,AD‍V,,
+01395.cb33d1d72f42e4ab9268729917bf428b,01395__salted__extended__cp00AD__single.cb33d1d72f42e4ab9268729917bf428b,extended,00AD,single,,ADV,AD­V,,

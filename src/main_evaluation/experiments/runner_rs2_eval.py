@@ -1,22 +1,5 @@
 #!/usr/bin/env python3
-"""
-RS2 evaluation runner.
 
-This module orchestrates the complete RS2 experiment for Rspamd
-(rules + Bayes) on the test split.
-
-Workflow:
-1. Activate the dedicated Rspamd configuration for RS2
-2. Recreate the Rspamd stack so that the active config is loaded
-3. Build trigger vocabularies for strict, extended, and broad salting
-4. Run trigger coverage
-5. Generate salted email variants
-6. Evaluate baseline spam, baseline ham, and salted spam with Rspamd
-7. Build the experiment summary for all salting conditions
-
-The evaluation itself is implemented in:
-    src/main_evaluation/rspamd_evaluation/neural_runner_rs3.py
-"""
 
 from config import BASE_DIR
 
@@ -32,7 +15,7 @@ from src.utils.console import print_step, print_section
 
 def run_rs2_eval():
     dataset_dir = BASE_DIR / "data/datasets/split"
-    output_root = BASE_DIR / "data/output/RS2"
+    output_root = BASE_DIR / "data/output/experiments/RS2"
 
     strict_output = output_root / "strict"
     extended_output = output_root / "extended"

@@ -1,0 +1,6 @@
+{
+  "salting_vocabulary": "broad",
+  "n_spam_test_total": 380,
+  "n_spam_salted_candidates": 276,
+  "n_spam_excluded": 104
+}

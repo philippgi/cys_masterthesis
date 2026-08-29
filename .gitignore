@@ -28,5 +28,4 @@ configs/spamassassin/local.cf
 configs/rspamd/active/
 
 # Large generated data
-data/output/
 data/datasets/

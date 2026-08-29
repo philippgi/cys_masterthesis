@@ -1,45 +1,10 @@
 #!/usr/bin/env python3
 """
-Rule-loss analysis for SpamAssassin experiments.
+Analyzes rule loss for SpamAssassin and Rspamd experiments.
 
-This module analyzes how Unicode salting affects SpamAssassin rule triggering.
-
-Purpose
--------
-The goal of this analysis step is to determine which SpamAssassin rules
-stop firing after Unicode salting has been applied to spam emails.
-
-Two analyses are performed:
-
-1. Global rule loss
-   For every rule that fires on baseline spam emails, the module measures
-   how often this rule disappears in salted variants.
-
-2. Bypass rule loss
-   For emails where salting causes a classification bypass
-   (i.e. baseline detected as spam but salted classified as ham),
-   the module identifies which rules were lost.
-
-These results help explain why a filter score decreases after salting.
-
-Inputs
-------
-spamassassin_results.csv
-    Variant-level evaluation results produced by the SpamAssassin runner.
-
-spamassassin_results_paired.csv
-    Paired baseline vs salted comparison results.
-
-Outputs
--------
-rule_loss_analysis.csv
-    Global statistics on rule disappearance rates.
-
-bypass_rule_loss.csv
-    Rules that disappear specifically in successful bypass cases.
-
-The results are also returned as a dictionary so that they can be integrated
-into the experiment summary.
+The analysis compares triggered rules between baseline spam emails and their
+salted variants. Rule loss is evaluated globally and separately for messages
+where salting causes a classification bypass.
 """
 
 from __future__ import annotations
@@ -49,21 +14,19 @@ from collections import Counter
 from pathlib import Path
 
 from src.utils.console import print_step, print_section, print_kv, print_end
-from src.utils.console import print_step, print_section
 
 
 def _parse_rules(rule_string: str) -> set[str]:
     """
-    Convert the rule string stored in the results CSV into a Python set.
+    Parse a pipe-separated rule string into a set of rule names.
 
-    SpamAssassin rules are stored as a pipe-separated string, e.g.
+    Args:
+        rule_string (str): Serialized rule list from the evaluation results.
 
-        HTML_MESSAGE|DRUGS_ERECTILE|SUBJ_FREE
-
-    This function converts the string into a set for easier comparison.
-
-    The value "none" is ignored because it does not represent a real rule.
+    Returns:
+        set[str]: Parsed rule names excluding empty and "none" entries.
     """
+
     if not rule_string:
         return set()
 
@@ -80,19 +43,17 @@ def run_rule_loss_analysis(
     output_dir: Path,
 ):
     """
-    Perform rule-loss analysis.
+    Analyze rule loss between baseline spam emails and their salted variants.
 
-    Parameters
-    ----------
-    results_csv
-        Path to spamassassin_results.csv.
+    Args:
+        results_csv (Path): Variant-level evaluation results.
+        paired_csv (Path): Paired baseline and salted evaluation results.
+        output_dir (Path): Directory for analysis artifacts.
 
-    paired_csv
-        Path to spamassassin_results_paired.csv.
-
-    output_dir
-        Directory where analysis outputs will be written.
+    Returns:
+        dict: Global and bypass-specific rule-loss statistics.
     """
+
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # --------------------------------------------------
@@ -121,10 +82,6 @@ def run_rule_loss_analysis(
     # --------------------------------------------------
     # Global rule-loss statistics
     # --------------------------------------------------
-    # Important:
-    # We count loss on the original-email level, not on the variant level.
-    # This keeps loss rates in the range [0, 1].
-    # --------------------------------------------------
 
     baseline_occurrences = Counter()
     lost_in_any_variant = Counter()
@@ -139,6 +96,7 @@ def run_rule_loss_analysis(
         for rule in base_rules:
             baseline_occurrences[rule] += 1
 
+            # Track whether the baseline rule disappears in each salted variant.
             lost_flags = [rule not in variant_rules for variant_rules in variant_rule_sets]
 
             if any(lost_flags):
@@ -213,8 +171,6 @@ def run_rule_loss_analysis(
 
     # --------------------------------------------------
     # Bypass rule loss analysis
-    # --------------------------------------------------
-    # Again, count on original-email level.
     # --------------------------------------------------
 
     bypass_rule_any = Counter()

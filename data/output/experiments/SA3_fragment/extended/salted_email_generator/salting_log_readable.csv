@@ -1,0 +1,793 @@
+message_id,variant_filename,vocab_type,codepoint,salt_mode,fragment_max_positions,subject_original_tokens,subject_salted_tokens,body_original_tokens,body_salted_tokens
+00002.d94f1b97e48ed3b553b3508d116e6a09,00002__salted__extended__cp200B__fragment.d94f1b97e48ed3b553b3508d116e6a09,extended,200B,fragment,,Guaranteed,G​u​a​r​a​n​t​e​e​d,Guaranteed,G​u​a​r​a​n​t​e​e​d
+00002.d94f1b97e48ed3b553b3508d116e6a09,00002__salted__extended__cp200C__fragment.d94f1b97e48ed3b553b3508d116e6a09,extended,200C,fragment,,Guaranteed,G‌u‌a‌r‌a‌n‌t‌e‌e‌d,Guaranteed,G‌u‌a‌r‌a‌n‌t‌e‌e‌d
+00002.d94f1b97e48ed3b553b3508d116e6a09,00002__salted__extended__cp200D__fragment.d94f1b97e48ed3b553b3508d116e6a09,extended,200D,fragment,,Guaranteed,G‍u‍a‍r‍a‍n‍t‍e‍e‍d,Guaranteed,G‍u‍a‍r‍a‍n‍t‍e‍e‍d
+00002.d94f1b97e48ed3b553b3508d116e6a09,00002__salted__extended__cp00AD__fragment.d94f1b97e48ed3b553b3508d116e6a09,extended,00AD,fragment,,Guaranteed,G­u­a­r­a­n­t­e­e­d,Guaranteed,G­u­a­r­a­n­t­e­e­d
+00003.2ee33bc6eacdb11f38d052c44819ba6c,00003__salted__extended__cp200B__fragment.2ee33bc6eacdb11f38d052c44819ba6c,extended,200B,fragment,,Guaranteed,G​u​a​r​a​n​t​e​e​d,Guaranteed,G​u​a​r​a​n​t​e​e​d
+00003.2ee33bc6eacdb11f38d052c44819ba6c,00003__salted__extended__cp200C__fragment.2ee33bc6eacdb11f38d052c44819ba6c,extended,200C,fragment,,Guaranteed,G‌u‌a‌r‌a‌n‌t‌e‌e‌d,Guaranteed,G‌u‌a‌r‌a‌n‌t‌e‌e‌d
+00003.2ee33bc6eacdb11f38d052c44819ba6c,00003__salted__extended__cp200D__fragment.2ee33bc6eacdb11f38d052c44819ba6c,extended,200D,fragment,,Guaranteed,G‍u‍a‍r‍a‍n‍t‍e‍e‍d,Guaranteed,G‍u‍a‍r‍a‍n‍t‍e‍e‍d
+00003.2ee33bc6eacdb11f38d052c44819ba6c,00003__salted__extended__cp00AD__fragment.2ee33bc6eacdb11f38d052c44819ba6c,extended,00AD,fragment,,Guaranteed,G­u­a­r­a­n­t­e­e­d,Guaranteed,G­u­a­r­a­n­t­e­e­d
+00004.eac8de8d759b7e74154f142194282724,00004__salted__extended__cp200B__fragment.eac8de8d759b7e74154f142194282724,extended,200B,fragment,,,,"Click, Removal, advertisement","C​l​i​c​k, R​e​m​o​v​a​l, a​d​v​e​r​t​i​s​e​m​e​n​t"
+00004.eac8de8d759b7e74154f142194282724,00004__salted__extended__cp200C__fragment.eac8de8d759b7e74154f142194282724,extended,200C,fragment,,,,"Click, Removal, advertisement","C‌l‌i‌c‌k, R‌e‌m‌o‌v‌a‌l, a‌d‌v‌e‌r‌t‌i‌s‌e‌m‌e‌n‌t"
+00004.eac8de8d759b7e74154f142194282724,00004__salted__extended__cp200D__fragment.eac8de8d759b7e74154f142194282724,extended,200D,fragment,,,,"Click, Removal, advertisement","C‍l‍i‍c‍k, R‍e‍m‍o‍v‍a‍l, a‍d‍v‍e‍r‍t‍i‍s‍e‍m‍e‍n‍t"
+00004.eac8de8d759b7e74154f142194282724,00004__salted__extended__cp00AD__fragment.eac8de8d759b7e74154f142194282724,extended,00AD,fragment,,,,"Click, Removal, advertisement","C­l­i­c­k, R­e­m­o­v­a­l, a­d­v­e­r­t­i­s­e­m­e­n­t"
+00009.1e1a8cb4b57532ab38aa23287523659d,00009__salted__extended__cp200B__fragment.1e1a8cb4b57532ab38aa23287523659d,extended,200B,fragment,,,,"DEAR, SIR, USD","D​E​A​R, S​I​R, U​S​D"
+00009.1e1a8cb4b57532ab38aa23287523659d,00009__salted__extended__cp200C__fragment.1e1a8cb4b57532ab38aa23287523659d,extended,200C,fragment,,,,"DEAR, SIR, USD","D‌E‌A‌R, S‌I‌R, U‌S‌D"
+00009.1e1a8cb4b57532ab38aa23287523659d,00009__salted__extended__cp200D__fragment.1e1a8cb4b57532ab38aa23287523659d,extended,200D,fragment,,,,"DEAR, SIR, USD","D‍E‍A‍R, S‍I‍R, U‍S‍D"
+00009.1e1a8cb4b57532ab38aa23287523659d,00009__salted__extended__cp00AD__fragment.1e1a8cb4b57532ab38aa23287523659d,extended,00AD,fragment,,,,"DEAR, SIR, USD","D­E­A­R, S­I­R, U­S­D"
+00024.6b5437b14d403176c3f046c871b5b52f,00024__salted__extended__cp200B__fragment.6b5437b14d403176c3f046c871b5b52f,extended,200B,fragment,,,,"Fees, receive, receive","F​e​e​s, r​e​c​e​i​v​e, r​e​c​e​i​v​e"
+00024.6b5437b14d403176c3f046c871b5b52f,00024__salted__extended__cp200C__fragment.6b5437b14d403176c3f046c871b5b52f,extended,200C,fragment,,,,"Fees, receive, receive","F‌e‌e‌s, r‌e‌c‌e‌i‌v‌e, r‌e‌c‌e‌i‌v‌e"
+00024.6b5437b14d403176c3f046c871b5b52f,00024__salted__extended__cp200D__fragment.6b5437b14d403176c3f046c871b5b52f,extended,200D,fragment,,,,"Fees, receive, receive","F‍e‍e‍s, r‍e‍c‍e‍i‍v‍e, r‍e‍c‍e‍i‍v‍e"
+00024.6b5437b14d403176c3f046c871b5b52f,00024__salted__extended__cp00AD__fragment.6b5437b14d403176c3f046c871b5b52f,extended,00AD,fragment,,,,"Fees, receive, receive","F­e­e­s, r­e­c­e­i­v­e, r­e­c­e­i­v­e"
+00040.949a3d300eadb91d8745f1c1dab51133,00040__salted__extended__cp200B__fragment.949a3d300eadb91d8745f1c1dab51133,extended,200B,fragment,,,,"Dear, Sir, Madam","D​e​a​r, S​i​r, M​a​d​a​m"
+00040.949a3d300eadb91d8745f1c1dab51133,00040__salted__extended__cp200C__fragment.949a3d300eadb91d8745f1c1dab51133,extended,200C,fragment,,,,"Dear, Sir, Madam","D‌e‌a‌r, S‌i‌r, M‌a‌d‌a‌m"
+00040.949a3d300eadb91d8745f1c1dab51133,00040__salted__extended__cp200D__fragment.949a3d300eadb91d8745f1c1dab51133,extended,200D,fragment,,,,"Dear, Sir, Madam","D‍e‍a‍r, S‍i‍r, M‍a‍d‍a‍m"
+00040.949a3d300eadb91d8745f1c1dab51133,00040__salted__extended__cp00AD__fragment.949a3d300eadb91d8745f1c1dab51133,extended,00AD,fragment,,,,"Dear, Sir, Madam","D­e­a­r, S­i­r, M­a­d­a­m"
+00041.f1b3402799046db3c1f143a911dc085d,00041__salted__extended__cp200B__fragment.f1b3402799046db3c1f143a911dc085d,extended,200B,fragment,,,,"Dear, Sir, Madam","D​e​a​r, S​i​r, M​a​d​a​m"
+00041.f1b3402799046db3c1f143a911dc085d,00041__salted__extended__cp200C__fragment.f1b3402799046db3c1f143a911dc085d,extended,200C,fragment,,,,"Dear, Sir, Madam","D‌e‌a‌r, S‌i‌r, M‌a‌d‌a‌m"
+00041.f1b3402799046db3c1f143a911dc085d,00041__salted__extended__cp200D__fragment.f1b3402799046db3c1f143a911dc085d,extended,200D,fragment,,,,"Dear, Sir, Madam","D‍e‍a‍r, S‍i‍r, M‍a‍d‍a‍m"
+00041.f1b3402799046db3c1f143a911dc085d,00041__salted__extended__cp00AD__fragment.f1b3402799046db3c1f143a911dc085d,extended,00AD,fragment,,,,"Dear, Sir, Madam","D­e­a­r, S­i­r, M­a­d­a­m"
+00045.7282c2c4e009744f2f3450d370009235,00045__salted__extended__cp200B__fragment.7282c2c4e009744f2f3450d370009235,extended,200B,fragment,,,,Guaranteed,G​u​a​r​a​n​t​e​e​d
+00045.7282c2c4e009744f2f3450d370009235,00045__salted__extended__cp200C__fragment.7282c2c4e009744f2f3450d370009235,extended,200C,fragment,,,,Guaranteed,G‌u‌a‌r‌a‌n‌t‌e‌e‌d
+00045.7282c2c4e009744f2f3450d370009235,00045__salted__extended__cp200D__fragment.7282c2c4e009744f2f3450d370009235,extended,200D,fragment,,,,Guaranteed,G‍u‍a‍r‍a‍n‍t‍e‍e‍d
+00045.7282c2c4e009744f2f3450d370009235,00045__salted__extended__cp00AD__fragment.7282c2c4e009744f2f3450d370009235,extended,00AD,fragment,,,,Guaranteed,G­u­a­r­a­n­t­e­e­d
+00054.62863160db27f89df8c73275b6dae134,00054__salted__extended__cp200B__fragment.62863160db27f89df8c73275b6dae134,extended,200B,fragment,,ADV,A​D​V,,
+00054.62863160db27f89df8c73275b6dae134,00054__salted__extended__cp200C__fragment.62863160db27f89df8c73275b6dae134,extended,200C,fragment,,ADV,A‌D‌V,,
+00054.62863160db27f89df8c73275b6dae134,00054__salted__extended__cp200D__fragment.62863160db27f89df8c73275b6dae134,extended,200D,fragment,,ADV,A‍D‍V,,
+00054.62863160db27f89df8c73275b6dae134,00054__salted__extended__cp00AD__fragment.62863160db27f89df8c73275b6dae134,extended,00AD,fragment,,ADV,A­D­V,,
+00058.64bb1902c4e561fb3e521a6dbf8625be,00058__salted__extended__cp200B__fragment.64bb1902c4e561fb3e521a6dbf8625be,extended,200B,fragment,,Insurance,I​n​s​u​r​a​n​c​e,,
+00058.64bb1902c4e561fb3e521a6dbf8625be,00058__salted__extended__cp200C__fragment.64bb1902c4e561fb3e521a6dbf8625be,extended,200C,fragment,,Insurance,I‌n‌s‌u‌r‌a‌n‌c‌e,,
+00058.64bb1902c4e561fb3e521a6dbf8625be,00058__salted__extended__cp200D__fragment.64bb1902c4e561fb3e521a6dbf8625be,extended,200D,fragment,,Insurance,I‍n‍s‍u‍r‍a‍n‍c‍e,,
+00058.64bb1902c4e561fb3e521a6dbf8625be,00058__salted__extended__cp00AD__fragment.64bb1902c4e561fb3e521a6dbf8625be,extended,00AD,fragment,,Insurance,I­n­s­u­r­a­n­c­e,,
+00064.65b95365450ebe5eef61e7f1c60edc5e,00064__salted__extended__cp200B__fragment.65b95365450ebe5eef61e7f1c60edc5e,extended,200B,fragment,,,,"Premium, Earn","P​r​e​m​i​u​m, E​a​r​n"
+00064.65b95365450ebe5eef61e7f1c60edc5e,00064__salted__extended__cp200C__fragment.65b95365450ebe5eef61e7f1c60edc5e,extended,200C,fragment,,,,"Premium, Earn","P‌r‌e‌m‌i‌u‌m, E‌a‌r‌n"
+00064.65b95365450ebe5eef61e7f1c60edc5e,00064__salted__extended__cp200D__fragment.65b95365450ebe5eef61e7f1c60edc5e,extended,200D,fragment,,,,"Premium, Earn","P‍r‍e‍m‍i‍u‍m, E‍a‍r‍n"
+00064.65b95365450ebe5eef61e7f1c60edc5e,00064__salted__extended__cp00AD__fragment.65b95365450ebe5eef61e7f1c60edc5e,extended,00AD,fragment,,,,"Premium, Earn","P­r­e­m­i­u­m, E­a­r­n"
+00067.ec108870b01dc3ccb8fabc5def869ca5,00067__salted__extended__cp200B__fragment.ec108870b01dc3ccb8fabc5def869ca5,extended,200B,fragment,,SYSTEMWORKS,S​Y​S​T​E​M​W​O​R​K​S,,
+00067.ec108870b01dc3ccb8fabc5def869ca5,00067__salted__extended__cp200C__fragment.ec108870b01dc3ccb8fabc5def869ca5,extended,200C,fragment,,SYSTEMWORKS,S‌Y‌S‌T‌E‌M‌W‌O‌R‌K‌S,,
+00067.ec108870b01dc3ccb8fabc5def869ca5,00067__salted__extended__cp200D__fragment.ec108870b01dc3ccb8fabc5def869ca5,extended,200D,fragment,,SYSTEMWORKS,S‍Y‍S‍T‍E‍M‍W‍O‍R‍K‍S,,
+00067.ec108870b01dc3ccb8fabc5def869ca5,00067__salted__extended__cp00AD__fragment.ec108870b01dc3ccb8fabc5def869ca5,extended,00AD,fragment,,SYSTEMWORKS,S­Y­S­T­E­M­W­O­R­K­S,,
+00090.52630c4c07cd069c7bc7658c1a7a7253,00090__salted__extended__cp200B__fragment.52630c4c07cd069c7bc7658c1a7a7253,extended,200B,fragment,,,,"annuity, Earn, annuity","a​n​n​u​i​t​y, E​a​r​n, a​n​n​u​i​t​y"
+00090.52630c4c07cd069c7bc7658c1a7a7253,00090__salted__extended__cp200C__fragment.52630c4c07cd069c7bc7658c1a7a7253,extended,200C,fragment,,,,"annuity, Earn, annuity","a‌n‌n‌u‌i‌t‌y, E‌a‌r‌n, a‌n‌n‌u‌i‌t‌y"
+00090.52630c4c07cd069c7bc7658c1a7a7253,00090__salted__extended__cp200D__fragment.52630c4c07cd069c7bc7658c1a7a7253,extended,200D,fragment,,,,"annuity, Earn, annuity","a‍n‍n‍u‍i‍t‍y, E‍a‍r‍n, a‍n‍n‍u‍i‍t‍y"
+00090.52630c4c07cd069c7bc7658c1a7a7253,00090__salted__extended__cp00AD__fragment.52630c4c07cd069c7bc7658c1a7a7253,extended,00AD,fragment,,,,"annuity, Earn, annuity","a­n­n­u­i­t­y, E­a­r­n, a­n­n­u­i­t­y"
+00105.d8f25617befc5289aa4ed9602457050b,00105__salted__extended__cp200B__fragment.d8f25617befc5289aa4ed9602457050b,extended,200B,fragment,,Loans,L​o​a​n​s,,
+00105.d8f25617befc5289aa4ed9602457050b,00105__salted__extended__cp200C__fragment.d8f25617befc5289aa4ed9602457050b,extended,200C,fragment,,Loans,L‌o‌a‌n‌s,,
+00105.d8f25617befc5289aa4ed9602457050b,00105__salted__extended__cp200D__fragment.d8f25617befc5289aa4ed9602457050b,extended,200D,fragment,,Loans,L‍o‍a‍n‍s,,
+00105.d8f25617befc5289aa4ed9602457050b,00105__salted__extended__cp00AD__fragment.d8f25617befc5289aa4ed9602457050b,extended,00AD,fragment,,Loans,L­o­a­n­s,,
+00115.c97af50ef7ccd816f95bbdc6f4d226b2,00115__salted__extended__cp200B__fragment.c97af50ef7ccd816f95bbdc6f4d226b2,extended,200B,fragment,,,,click,c​l​i​c​k
+00115.c97af50ef7ccd816f95bbdc6f4d226b2,00115__salted__extended__cp200C__fragment.c97af50ef7ccd816f95bbdc6f4d226b2,extended,200C,fragment,,,,click,c‌l‌i‌c‌k
+00115.c97af50ef7ccd816f95bbdc6f4d226b2,00115__salted__extended__cp200D__fragment.c97af50ef7ccd816f95bbdc6f4d226b2,extended,200D,fragment,,,,click,c‍l‍i‍c‍k
+00115.c97af50ef7ccd816f95bbdc6f4d226b2,00115__salted__extended__cp00AD__fragment.c97af50ef7ccd816f95bbdc6f4d226b2,extended,00AD,fragment,,,,click,c­l­i­c­k
+00120.58579af867ff9a702cff23e7b8818a59,00120__salted__extended__cp200B__fragment.58579af867ff9a702cff23e7b8818a59,extended,200B,fragment,,,,Guaranteed,G​u​a​r​a​n​t​e​e​d
+00120.58579af867ff9a702cff23e7b8818a59,00120__salted__extended__cp200C__fragment.58579af867ff9a702cff23e7b8818a59,extended,200C,fragment,,,,Guaranteed,G‌u‌a‌r‌a‌n‌t‌e‌e‌d
+00120.58579af867ff9a702cff23e7b8818a59,00120__salted__extended__cp200D__fragment.58579af867ff9a702cff23e7b8818a59,extended,200D,fragment,,,,Guaranteed,G‍u‍a‍r‍a‍n‍t‍e‍e‍d
+00120.58579af867ff9a702cff23e7b8818a59,00120__salted__extended__cp00AD__fragment.58579af867ff9a702cff23e7b8818a59,extended,00AD,fragment,,,,Guaranteed,G­u­a­r­a­n­t­e­e­d
+00127.3500d109361b544b0937523adb763588,00127__salted__extended__cp200B__fragment.3500d109361b544b0937523adb763588,extended,200B,fragment,,,,"Guaranteed, herbal, Click","G​u​a​r​a​n​t​e​e​d, h​e​r​b​a​l, C​l​i​c​k"
+00127.3500d109361b544b0937523adb763588,00127__salted__extended__cp200C__fragment.3500d109361b544b0937523adb763588,extended,200C,fragment,,,,"Guaranteed, herbal, Click","G‌u‌a‌r‌a‌n‌t‌e‌e‌d, h‌e‌r‌b‌a‌l, C‌l‌i‌c‌k"
+00127.3500d109361b544b0937523adb763588,00127__salted__extended__cp200D__fragment.3500d109361b544b0937523adb763588,extended,200D,fragment,,,,"Guaranteed, herbal, Click","G‍u‍a‍r‍a‍n‍t‍e‍e‍d, h‍e‍r‍b‍a‍l, C‍l‍i‍c‍k"
+00127.3500d109361b544b0937523adb763588,00127__salted__extended__cp00AD__fragment.3500d109361b544b0937523adb763588,extended,00AD,fragment,,,,"Guaranteed, herbal, Click","G­u­a­r­a­n­t­e­e­d, h­e­r­b­a­l, C­l­i­c­k"
+00128.721b6b20d5834d490662e2ae8c5c0684,00128__salted__extended__cp200B__fragment.721b6b20d5834d490662e2ae8c5c0684,extended,200B,fragment,,,,click,c​l​i​c​k
+00128.721b6b20d5834d490662e2ae8c5c0684,00128__salted__extended__cp200C__fragment.721b6b20d5834d490662e2ae8c5c0684,extended,200C,fragment,,,,click,c‌l‌i‌c‌k
+00128.721b6b20d5834d490662e2ae8c5c0684,00128__salted__extended__cp200D__fragment.721b6b20d5834d490662e2ae8c5c0684,extended,200D,fragment,,,,click,c‍l‍i‍c‍k
+00128.721b6b20d5834d490662e2ae8c5c0684,00128__salted__extended__cp00AD__fragment.721b6b20d5834d490662e2ae8c5c0684,extended,00AD,fragment,,,,click,c­l­i­c­k
+00153.6a5ffe584834ea334041ab958cadcadb,00153__salted__extended__cp200B__fragment.6a5ffe584834ea334041ab958cadcadb,extended,200B,fragment,,Recruiting,R​e​c​r​u​i​t​i​n​g,"recruiting, Click, click","r​e​c​r​u​i​t​i​n​g, C​l​i​c​k, c​l​i​c​k"
+00153.6a5ffe584834ea334041ab958cadcadb,00153__salted__extended__cp200C__fragment.6a5ffe584834ea334041ab958cadcadb,extended,200C,fragment,,Recruiting,R‌e‌c‌r‌u‌i‌t‌i‌n‌g,"recruiting, Click, click","r‌e‌c‌r‌u‌i‌t‌i‌n‌g, C‌l‌i‌c‌k, c‌l‌i‌c‌k"
+00153.6a5ffe584834ea334041ab958cadcadb,00153__salted__extended__cp200D__fragment.6a5ffe584834ea334041ab958cadcadb,extended,200D,fragment,,Recruiting,R‍e‍c‍r‍u‍i‍t‍i‍n‍g,"recruiting, Click, click","r‍e‍c‍r‍u‍i‍t‍i‍n‍g, C‍l‍i‍c‍k, c‍l‍i‍c‍k"
+00153.6a5ffe584834ea334041ab958cadcadb,00153__salted__extended__cp00AD__fragment.6a5ffe584834ea334041ab958cadcadb,extended,00AD,fragment,,Recruiting,R­e­c­r­u­i­t­i­n­g,"recruiting, Click, click","r­e­c­r­u­i­t­i­n­g, C­l­i­c­k, c­l­i­c­k"
+00154.b6c448ccff434e2dbe2c7c200a36aa31,00154__salted__extended__cp200B__fragment.b6c448ccff434e2dbe2c7c200a36aa31,extended,200B,fragment,,,,receive,r​e​c​e​i​v​e
+00154.b6c448ccff434e2dbe2c7c200a36aa31,00154__salted__extended__cp200C__fragment.b6c448ccff434e2dbe2c7c200a36aa31,extended,200C,fragment,,,,receive,r‌e‌c‌e‌i‌v‌e
+00154.b6c448ccff434e2dbe2c7c200a36aa31,00154__salted__extended__cp200D__fragment.b6c448ccff434e2dbe2c7c200a36aa31,extended,200D,fragment,,,,receive,r‍e‍c‍e‍i‍v‍e
+00154.b6c448ccff434e2dbe2c7c200a36aa31,00154__salted__extended__cp00AD__fragment.b6c448ccff434e2dbe2c7c200a36aa31,extended,00AD,fragment,,,,receive,r­e­c­e­i­v­e
+00159.6b641c70d79fd5a69b84a94b4e88150a,00159__salted__extended__cp200B__fragment.6b641c70d79fd5a69b84a94b4e88150a,extended,200B,fragment,,,,"receive, receive","r​e​c​e​i​v​e, r​e​c​e​i​v​e"
+00159.6b641c70d79fd5a69b84a94b4e88150a,00159__salted__extended__cp200C__fragment.6b641c70d79fd5a69b84a94b4e88150a,extended,200C,fragment,,,,"receive, receive","r‌e‌c‌e‌i‌v‌e, r‌e‌c‌e‌i‌v‌e"
+00159.6b641c70d79fd5a69b84a94b4e88150a,00159__salted__extended__cp200D__fragment.6b641c70d79fd5a69b84a94b4e88150a,extended,200D,fragment,,,,"receive, receive","r‍e‍c‍e‍i‍v‍e, r‍e‍c‍e‍i‍v‍e"
+00159.6b641c70d79fd5a69b84a94b4e88150a,00159__salted__extended__cp00AD__fragment.6b641c70d79fd5a69b84a94b4e88150a,extended,00AD,fragment,,,,"receive, receive","r­e­c­e­i­v­e, r­e­c­e­i­v­e"
+00160.cec5f611ae665ff0add6c4928d47f2be,00160__salted__extended__cp200B__fragment.cec5f611ae665ff0add6c4928d47f2be,extended,200B,fragment,,HGH,H​G​H,"HGH, NBC, CBS","H​G​H, N​B​C, C​B​S"
+00160.cec5f611ae665ff0add6c4928d47f2be,00160__salted__extended__cp200C__fragment.cec5f611ae665ff0add6c4928d47f2be,extended,200C,fragment,,HGH,H‌G‌H,"HGH, NBC, CBS","H‌G‌H, N‌B‌C, C‌B‌S"
+00160.cec5f611ae665ff0add6c4928d47f2be,00160__salted__extended__cp200D__fragment.cec5f611ae665ff0add6c4928d47f2be,extended,200D,fragment,,HGH,H‍G‍H,"HGH, NBC, CBS","H‍G‍H, N‍B‍C, C‍B‍S"
+00160.cec5f611ae665ff0add6c4928d47f2be,00160__salted__extended__cp00AD__fragment.cec5f611ae665ff0add6c4928d47f2be,extended,00AD,fragment,,HGH,H­G­H,"HGH, NBC, CBS","H­G­H, N­B­C, C­B­S"
+00163.2ceade6f8b0c1c342f5f95d57ac551f5,00163__salted__extended__cp200B__fragment.2ceade6f8b0c1c342f5f95d57ac551f5,extended,200B,fragment,,,,"receive, receive","r​e​c​e​i​v​e, r​e​c​e​i​v​e"
+00163.2ceade6f8b0c1c342f5f95d57ac551f5,00163__salted__extended__cp200C__fragment.2ceade6f8b0c1c342f5f95d57ac551f5,extended,200C,fragment,,,,"receive, receive","r‌e‌c‌e‌i‌v‌e, r‌e‌c‌e‌i‌v‌e"
+00163.2ceade6f8b0c1c342f5f95d57ac551f5,00163__salted__extended__cp200D__fragment.2ceade6f8b0c1c342f5f95d57ac551f5,extended,200D,fragment,,,,"receive, receive","r‍e‍c‍e‍i‍v‍e, r‍e‍c‍e‍i‍v‍e"
+00163.2ceade6f8b0c1c342f5f95d57ac551f5,00163__salted__extended__cp00AD__fragment.2ceade6f8b0c1c342f5f95d57ac551f5,extended,00AD,fragment,,,,"receive, receive","r­e­c­e­i­v­e, r­e­c­e­i­v­e"
+00169.86268e75abd1bd4bda4d6c129681df34,00169__salted__extended__cp200B__fragment.86268e75abd1bd4bda4d6c129681df34,extended,200B,fragment,,,,"earn, Removal, mailings","e​a​r​n, R​e​m​o​v​a​l, m​a​i​l​i​n​g​s"
+00169.86268e75abd1bd4bda4d6c129681df34,00169__salted__extended__cp200C__fragment.86268e75abd1bd4bda4d6c129681df34,extended,200C,fragment,,,,"earn, Removal, mailings","e‌a‌r‌n, R‌e‌m‌o‌v‌a‌l, m‌a‌i‌l‌i‌n‌g‌s"
+00169.86268e75abd1bd4bda4d6c129681df34,00169__salted__extended__cp200D__fragment.86268e75abd1bd4bda4d6c129681df34,extended,200D,fragment,,,,"earn, Removal, mailings","e‍a‍r‍n, R‍e‍m‍o‍v‍a‍l, m‍a‍i‍l‍i‍n‍g‍s"
+00169.86268e75abd1bd4bda4d6c129681df34,00169__salted__extended__cp00AD__fragment.86268e75abd1bd4bda4d6c129681df34,extended,00AD,fragment,,,,"earn, Removal, mailings","e­a­r­n, R­e­m­o­v­a­l, m­a­i­l­i­n­g­s"
+00172.0935a6d0aef9a3d6d64e07e3f6c453ec,00172__salted__extended__cp200B__fragment.0935a6d0aef9a3d6d64e07e3f6c453ec,extended,200B,fragment,,,,communication,c​o​m​m​u​n​i​c​a​t​i​o​n
+00172.0935a6d0aef9a3d6d64e07e3f6c453ec,00172__salted__extended__cp200C__fragment.0935a6d0aef9a3d6d64e07e3f6c453ec,extended,200C,fragment,,,,communication,c‌o‌m‌m‌u‌n‌i‌c‌a‌t‌i‌o‌n
+00172.0935a6d0aef9a3d6d64e07e3f6c453ec,00172__salted__extended__cp200D__fragment.0935a6d0aef9a3d6d64e07e3f6c453ec,extended,200D,fragment,,,,communication,c‍o‍m‍m‍u‍n‍i‍c‍a‍t‍i‍o‍n
+00172.0935a6d0aef9a3d6d64e07e3f6c453ec,00172__salted__extended__cp00AD__fragment.0935a6d0aef9a3d6d64e07e3f6c453ec,extended,00AD,fragment,,,,communication,c­o­m­m­u­n­i­c­a­t­i­o­n
+00173.e10eb62e2c7808674c43d6a5e9e08a1c,00173__salted__extended__cp200B__fragment.e10eb62e2c7808674c43d6a5e9e08a1c,extended,200B,fragment,,HGH,H​G​H,,
+00173.e10eb62e2c7808674c43d6a5e9e08a1c,00173__salted__extended__cp200C__fragment.e10eb62e2c7808674c43d6a5e9e08a1c,extended,200C,fragment,,HGH,H‌G‌H,,
+00173.e10eb62e2c7808674c43d6a5e9e08a1c,00173__salted__extended__cp200D__fragment.e10eb62e2c7808674c43d6a5e9e08a1c,extended,200D,fragment,,HGH,H‍G‍H,,
+00173.e10eb62e2c7808674c43d6a5e9e08a1c,00173__salted__extended__cp00AD__fragment.e10eb62e2c7808674c43d6a5e9e08a1c,extended,00AD,fragment,,HGH,H­G­H,,
+00179.ef2f7cf60806a96b59f4477b025580ee,00179__salted__extended__cp200B__fragment.ef2f7cf60806a96b59f4477b025580ee,extended,200B,fragment,,,,"pains, NIGERIA, NIGERIA","p​a​i​n​s, N​I​G​E​R​I​A, N​I​G​E​R​I​A"
+00179.ef2f7cf60806a96b59f4477b025580ee,00179__salted__extended__cp200C__fragment.ef2f7cf60806a96b59f4477b025580ee,extended,200C,fragment,,,,"pains, NIGERIA, NIGERIA","p‌a‌i‌n‌s, N‌I‌G‌E‌R‌I‌A, N‌I‌G‌E‌R‌I‌A"
+00179.ef2f7cf60806a96b59f4477b025580ee,00179__salted__extended__cp200D__fragment.ef2f7cf60806a96b59f4477b025580ee,extended,200D,fragment,,,,"pains, NIGERIA, NIGERIA","p‍a‍i‍n‍s, N‍I‍G‍E‍R‍I‍A, N‍I‍G‍E‍R‍I‍A"
+00179.ef2f7cf60806a96b59f4477b025580ee,00179__salted__extended__cp00AD__fragment.ef2f7cf60806a96b59f4477b025580ee,extended,00AD,fragment,,,,"pains, NIGERIA, NIGERIA","p­a­i­n­s, N­I­G­E­R­I­A, N­I­G­E­R­I­A"
+00180.751cb63992e172566b3a296d970c425d,00180__salted__extended__cp200B__fragment.751cb63992e172566b3a296d970c425d,extended,200B,fragment,,,,"qualified, promotion, receive","q​u​a​l​i​f​i​e​d, p​r​o​m​o​t​i​o​n, r​e​c​e​i​v​e"
+00180.751cb63992e172566b3a296d970c425d,00180__salted__extended__cp200C__fragment.751cb63992e172566b3a296d970c425d,extended,200C,fragment,,,,"qualified, promotion, receive","q‌u‌a‌l‌i‌f‌i‌e‌d, p‌r‌o‌m‌o‌t‌i‌o‌n, r‌e‌c‌e‌i‌v‌e"
+00180.751cb63992e172566b3a296d970c425d,00180__salted__extended__cp200D__fragment.751cb63992e172566b3a296d970c425d,extended,200D,fragment,,,,"qualified, promotion, receive","q‍u‍a‍l‍i‍f‍i‍e‍d, p‍r‍o‍m‍o‍t‍i‍o‍n, r‍e‍c‍e‍i‍v‍e"
+00180.751cb63992e172566b3a296d970c425d,00180__salted__extended__cp00AD__fragment.751cb63992e172566b3a296d970c425d,extended,00AD,fragment,,,,"qualified, promotion, receive","q­u­a­l­i­f­i­e­d, p­r­o­m­o­t­i­o­n, r­e­c­e­i­v­e"
+00182.1b9ba0f95506a6f2bf256f40fad0687d,00182__salted__extended__cp200B__fragment.1b9ba0f95506a6f2bf256f40fad0687d,extended,200B,fragment,,,,"mailings, removal, bills","m​a​i​l​i​n​g​s, r​e​m​o​v​a​l, b​i​l​l​s"
+00182.1b9ba0f95506a6f2bf256f40fad0687d,00182__salted__extended__cp200C__fragment.1b9ba0f95506a6f2bf256f40fad0687d,extended,200C,fragment,,,,"mailings, removal, bills","m‌a‌i‌l‌i‌n‌g‌s, r‌e‌m‌o‌v‌a‌l, b‌i‌l‌l‌s"
+00182.1b9ba0f95506a6f2bf256f40fad0687d,00182__salted__extended__cp200D__fragment.1b9ba0f95506a6f2bf256f40fad0687d,extended,200D,fragment,,,,"mailings, removal, bills","m‍a‍i‍l‍i‍n‍g‍s, r‍e‍m‍o‍v‍a‍l, b‍i‍l‍l‍s"
+00182.1b9ba0f95506a6f2bf256f40fad0687d,00182__salted__extended__cp00AD__fragment.1b9ba0f95506a6f2bf256f40fad0687d,extended,00AD,fragment,,,,"mailings, removal, bills","m­a­i­l­i­n­g­s, r­e­m­o­v­a­l, b­i­l­l­s"
+00185.8ca19012fa3f2a906f23c3b41f11ffed,00185__salted__extended__cp200B__fragment.8ca19012fa3f2a906f23c3b41f11ffed,extended,200B,fragment,,,,click,c​l​i​c​k
+00185.8ca19012fa3f2a906f23c3b41f11ffed,00185__salted__extended__cp200C__fragment.8ca19012fa3f2a906f23c3b41f11ffed,extended,200C,fragment,,,,click,c‌l‌i‌c‌k
+00185.8ca19012fa3f2a906f23c3b41f11ffed,00185__salted__extended__cp200D__fragment.8ca19012fa3f2a906f23c3b41f11ffed,extended,200D,fragment,,,,click,c‍l‍i‍c‍k
+00185.8ca19012fa3f2a906f23c3b41f11ffed,00185__salted__extended__cp00AD__fragment.8ca19012fa3f2a906f23c3b41f11ffed,extended,00AD,fragment,,,,click,c­l­i­c­k
+00186.a66b4fc4ab114c9cb37e1a31d1ea1aeb,00186__salted__extended__cp200B__fragment.a66b4fc4ab114c9cb37e1a31d1ea1aeb,extended,200B,fragment,,,,"Click, receive, mailings","C​l​i​c​k, r​e​c​e​i​v​e, m​a​i​l​i​n​g​s"
+00186.a66b4fc4ab114c9cb37e1a31d1ea1aeb,00186__salted__extended__cp200C__fragment.a66b4fc4ab114c9cb37e1a31d1ea1aeb,extended,200C,fragment,,,,"Click, receive, mailings","C‌l‌i‌c‌k, r‌e‌c‌e‌i‌v‌e, m‌a‌i‌l‌i‌n‌g‌s"
+00186.a66b4fc4ab114c9cb37e1a31d1ea1aeb,00186__salted__extended__cp200D__fragment.a66b4fc4ab114c9cb37e1a31d1ea1aeb,extended,200D,fragment,,,,"Click, receive, mailings","C‍l‍i‍c‍k, r‍e‍c‍e‍i‍v‍e, m‍a‍i‍l‍i‍n‍g‍s"
+00186.a66b4fc4ab114c9cb37e1a31d1ea1aeb,00186__salted__extended__cp00AD__fragment.a66b4fc4ab114c9cb37e1a31d1ea1aeb,extended,00AD,fragment,,,,"Click, receive, mailings","C­l­i­c­k, r­e­c­e­i­v­e, m­a­i­l­i­n­g­s"
+00187.efd97ab2034b3384606e21db00014ecb,00187__salted__extended__cp200B__fragment.efd97ab2034b3384606e21db00014ecb,extended,200B,fragment,,,,compliance,c​o​m​p​l​i​a​n​c​e
+00187.efd97ab2034b3384606e21db00014ecb,00187__salted__extended__cp200C__fragment.efd97ab2034b3384606e21db00014ecb,extended,200C,fragment,,,,compliance,c‌o‌m‌p‌l‌i‌a‌n‌c‌e
+00187.efd97ab2034b3384606e21db00014ecb,00187__salted__extended__cp200D__fragment.efd97ab2034b3384606e21db00014ecb,extended,200D,fragment,,,,compliance,c‍o‍m‍p‍l‍i‍a‍n‍c‍e
+00187.efd97ab2034b3384606e21db00014ecb,00187__salted__extended__cp00AD__fragment.efd97ab2034b3384606e21db00014ecb,extended,00AD,fragment,,,,compliance,c­o­m­p­l­i­a­n­c­e
+00188.b12197b37ceb97fa0cd802566c1e08db,00188__salted__extended__cp200B__fragment.b12197b37ceb97fa0cd802566c1e08db,extended,200B,fragment,,,,"toll, monthly, promotion","t​o​l​l, m​o​n​t​h​l​y, p​r​o​m​o​t​i​o​n"
+00188.b12197b37ceb97fa0cd802566c1e08db,00188__salted__extended__cp200C__fragment.b12197b37ceb97fa0cd802566c1e08db,extended,200C,fragment,,,,"toll, monthly, promotion","t‌o‌l‌l, m‌o‌n‌t‌h‌l‌y, p‌r‌o‌m‌o‌t‌i‌o‌n"
+00188.b12197b37ceb97fa0cd802566c1e08db,00188__salted__extended__cp200D__fragment.b12197b37ceb97fa0cd802566c1e08db,extended,200D,fragment,,,,"toll, monthly, promotion","t‍o‍l‍l, m‍o‍n‍t‍h‍l‍y, p‍r‍o‍m‍o‍t‍i‍o‍n"
+00188.b12197b37ceb97fa0cd802566c1e08db,00188__salted__extended__cp00AD__fragment.b12197b37ceb97fa0cd802566c1e08db,extended,00AD,fragment,,,,"toll, monthly, promotion","t­o­l­l, m­o­n­t­h­l­y, p­r­o­m­o­t­i­o­n"
+00190.ee2ea200e7efa602221c6492f9d9d8c0,00190__salted__extended__cp200B__fragment.ee2ea200e7efa602221c6492f9d9d8c0,extended,200B,fragment,,,,"toll, monthly, promotion","t​o​l​l, m​o​n​t​h​l​y, p​r​o​m​o​t​i​o​n"
+00190.ee2ea200e7efa602221c6492f9d9d8c0,00190__salted__extended__cp200C__fragment.ee2ea200e7efa602221c6492f9d9d8c0,extended,200C,fragment,,,,"toll, monthly, promotion","t‌o‌l‌l, m‌o‌n‌t‌h‌l‌y, p‌r‌o‌m‌o‌t‌i‌o‌n"
+00190.ee2ea200e7efa602221c6492f9d9d8c0,00190__salted__extended__cp200D__fragment.ee2ea200e7efa602221c6492f9d9d8c0,extended,200D,fragment,,,,"toll, monthly, promotion","t‍o‍l‍l, m‍o‍n‍t‍h‍l‍y, p‍r‍o‍m‍o‍t‍i‍o‍n"
+00190.ee2ea200e7efa602221c6492f9d9d8c0,00190__salted__extended__cp00AD__fragment.ee2ea200e7efa602221c6492f9d9d8c0,extended,00AD,fragment,,,,"toll, monthly, promotion","t­o­l­l, m­o­n­t­h­l­y, p­r­o­m­o­t­i­o­n"
+00191.9ff80a41f015b7a6c409732e41c0df07,00191__salted__extended__cp200B__fragment.9ff80a41f015b7a6c409732e41c0df07,extended,200B,fragment,,,,"promotion, receive","p​r​o​m​o​t​i​o​n, r​e​c​e​i​v​e"
+00191.9ff80a41f015b7a6c409732e41c0df07,00191__salted__extended__cp200C__fragment.9ff80a41f015b7a6c409732e41c0df07,extended,200C,fragment,,,,"promotion, receive","p‌r‌o‌m‌o‌t‌i‌o‌n, r‌e‌c‌e‌i‌v‌e"
+00191.9ff80a41f015b7a6c409732e41c0df07,00191__salted__extended__cp200D__fragment.9ff80a41f015b7a6c409732e41c0df07,extended,200D,fragment,,,,"promotion, receive","p‍r‍o‍m‍o‍t‍i‍o‍n, r‍e‍c‍e‍i‍v‍e"
+00191.9ff80a41f015b7a6c409732e41c0df07,00191__salted__extended__cp00AD__fragment.9ff80a41f015b7a6c409732e41c0df07,extended,00AD,fragment,,,,"promotion, receive","p­r­o­m­o­t­i­o­n, r­e­c­e­i­v­e"
+00194.767c323b4ae7a4909397e42cbd0c56a4,00194__salted__extended__cp200B__fragment.767c323b4ae7a4909397e42cbd0c56a4,extended,200B,fragment,,,,receive,r​e​c​e​i​v​e
+00194.767c323b4ae7a4909397e42cbd0c56a4,00194__salted__extended__cp200C__fragment.767c323b4ae7a4909397e42cbd0c56a4,extended,200C,fragment,,,,receive,r‌e‌c‌e‌i‌v‌e
+00194.767c323b4ae7a4909397e42cbd0c56a4,00194__salted__extended__cp200D__fragment.767c323b4ae7a4909397e42cbd0c56a4,extended,200D,fragment,,,,receive,r‍e‍c‍e‍i‍v‍e
+00194.767c323b4ae7a4909397e42cbd0c56a4,00194__salted__extended__cp00AD__fragment.767c323b4ae7a4909397e42cbd0c56a4,extended,00AD,fragment,,,,receive,r­e­c­e­i­v­e
+00196.dd21040c7757d477c967ae71b537810e,00196__salted__extended__cp200B__fragment.dd21040c7757d477c967ae71b537810e,extended,200B,fragment,,SYSTEMWORKS,S​Y​S​T​E​M​W​O​R​K​S,,
+00196.dd21040c7757d477c967ae71b537810e,00196__salted__extended__cp200C__fragment.dd21040c7757d477c967ae71b537810e,extended,200C,fragment,,SYSTEMWORKS,S‌Y‌S‌T‌E‌M‌W‌O‌R‌K‌S,,
+00196.dd21040c7757d477c967ae71b537810e,00196__salted__extended__cp200D__fragment.dd21040c7757d477c967ae71b537810e,extended,200D,fragment,,SYSTEMWORKS,S‍Y‍S‍T‍E‍M‍W‍O‍R‍K‍S,,
+00196.dd21040c7757d477c967ae71b537810e,00196__salted__extended__cp00AD__fragment.dd21040c7757d477c967ae71b537810e,extended,00AD,fragment,,SYSTEMWORKS,S­Y­S­T­E­M­W­O­R­K­S,,
+00198.150ad975a44e356b479b88d8b57edc40,00198__salted__extended__cp200B__fragment.150ad975a44e356b479b88d8b57edc40,extended,200B,fragment,,,,"communication, toll, fees","c​o​m​m​u​n​i​c​a​t​i​o​n, t​o​l​l, f​e​e​s"
+00198.150ad975a44e356b479b88d8b57edc40,00198__salted__extended__cp200C__fragment.150ad975a44e356b479b88d8b57edc40,extended,200C,fragment,,,,"communication, toll, fees","c‌o‌m‌m‌u‌n‌i‌c‌a‌t‌i‌o‌n, t‌o‌l‌l, f‌e‌e‌s"
+00198.150ad975a44e356b479b88d8b57edc40,00198__salted__extended__cp200D__fragment.150ad975a44e356b479b88d8b57edc40,extended,200D,fragment,,,,"communication, toll, fees","c‍o‍m‍m‍u‍n‍i‍c‍a‍t‍i‍o‍n, t‍o‍l‍l, f‍e‍e‍s"
+00198.150ad975a44e356b479b88d8b57edc40,00198__salted__extended__cp00AD__fragment.150ad975a44e356b479b88d8b57edc40,extended,00AD,fragment,,,,"communication, toll, fees","c­o­m­m­u­n­i­c­a­t­i­o­n, t­o­l­l, f­e­e­s"
+00207.0b71ac81a360455c1514f5872564b1e1,00207__salted__extended__cp200B__fragment.0b71ac81a360455c1514f5872564b1e1,extended,200B,fragment,,,,"Mailings, Removal","M​a​i​l​i​n​g​s, R​e​m​o​v​a​l"
+00207.0b71ac81a360455c1514f5872564b1e1,00207__salted__extended__cp200C__fragment.0b71ac81a360455c1514f5872564b1e1,extended,200C,fragment,,,,"Mailings, Removal","M‌a‌i‌l‌i‌n‌g‌s, R‌e‌m‌o‌v‌a‌l"
+00207.0b71ac81a360455c1514f5872564b1e1,00207__salted__extended__cp200D__fragment.0b71ac81a360455c1514f5872564b1e1,extended,200D,fragment,,,,"Mailings, Removal","M‍a‍i‍l‍i‍n‍g‍s, R‍e‍m‍o‍v‍a‍l"
+00207.0b71ac81a360455c1514f5872564b1e1,00207__salted__extended__cp00AD__fragment.0b71ac81a360455c1514f5872564b1e1,extended,00AD,fragment,,,,"Mailings, Removal","M­a­i­l­i­n­g­s, R­e­m­o­v­a­l"
+00209.5276f967533f2ce0209c1eff631a86ff,00209__salted__extended__cp200B__fragment.5276f967533f2ce0209c1eff631a86ff,extended,200B,fragment,,,,"receive, mailings, communication","r​e​c​e​i​v​e, m​a​i​l​i​n​g​s, c​o​m​m​u​n​i​c​a​t​i​o​n"
+00209.5276f967533f2ce0209c1eff631a86ff,00209__salted__extended__cp200C__fragment.5276f967533f2ce0209c1eff631a86ff,extended,200C,fragment,,,,"receive, mailings, communication","r‌e‌c‌e‌i‌v‌e, m‌a‌i‌l‌i‌n‌g‌s, c‌o‌m‌m‌u‌n‌i‌c‌a‌t‌i‌o‌n"
+00209.5276f967533f2ce0209c1eff631a86ff,00209__salted__extended__cp200D__fragment.5276f967533f2ce0209c1eff631a86ff,extended,200D,fragment,,,,"receive, mailings, communication","r‍e‍c‍e‍i‍v‍e, m‍a‍i‍l‍i‍n‍g‍s, c‍o‍m‍m‍u‍n‍i‍c‍a‍t‍i‍o‍n"
+00209.5276f967533f2ce0209c1eff631a86ff,00209__salted__extended__cp00AD__fragment.5276f967533f2ce0209c1eff631a86ff,extended,00AD,fragment,,,,"receive, mailings, communication","r­e­c­e­i­v­e, m­a­i­l­i­n­g­s, c­o­m­m­u­n­i­c­a­t­i­o­n"
+00211.4a52fb081c7087c4a82402342751e755,00211__salted__extended__cp200B__fragment.4a52fb081c7087c4a82402342751e755,extended,200B,fragment,,ADV,A​D​V,"toll, Sincerely","t​o​l​l, S​i​n​c​e​r​e​l​y"
+00211.4a52fb081c7087c4a82402342751e755,00211__salted__extended__cp200C__fragment.4a52fb081c7087c4a82402342751e755,extended,200C,fragment,,ADV,A‌D‌V,"toll, Sincerely","t‌o‌l‌l, S‌i‌n‌c‌e‌r‌e‌l‌y"
+00211.4a52fb081c7087c4a82402342751e755,00211__salted__extended__cp200D__fragment.4a52fb081c7087c4a82402342751e755,extended,200D,fragment,,ADV,A‍D‍V,"toll, Sincerely","t‍o‍l‍l, S‍i‍n‍c‍e‍r‍e‍l‍y"
+00211.4a52fb081c7087c4a82402342751e755,00211__salted__extended__cp00AD__fragment.4a52fb081c7087c4a82402342751e755,extended,00AD,fragment,,ADV,A­D­V,"toll, Sincerely","t­o­l­l, S­i­n­c­e­r­e­l­y"
+00214.1367039e50dc6b7adb0f2aa8aba83216,00214__salted__extended__cp200B__fragment.1367039e50dc6b7adb0f2aa8aba83216,extended,200B,fragment,,Dare,D​a​r​e,"dare, annuity, Guaranteed","d​a​r​e, a​n​n​u​i​t​y, G​u​a​r​a​n​t​e​e​d"
+00214.1367039e50dc6b7adb0f2aa8aba83216,00214__salted__extended__cp200C__fragment.1367039e50dc6b7adb0f2aa8aba83216,extended,200C,fragment,,Dare,D‌a‌r‌e,"dare, annuity, Guaranteed","d‌a‌r‌e, a‌n‌n‌u‌i‌t‌y, G‌u‌a‌r‌a‌n‌t‌e‌e‌d"
+00214.1367039e50dc6b7adb0f2aa8aba83216,00214__salted__extended__cp200D__fragment.1367039e50dc6b7adb0f2aa8aba83216,extended,200D,fragment,,Dare,D‍a‍r‍e,"dare, annuity, Guaranteed","d‍a‍r‍e, a‍n‍n‍u‍i‍t‍y, G‍u‍a‍r‍a‍n‍t‍e‍e‍d"
+00214.1367039e50dc6b7adb0f2aa8aba83216,00214__salted__extended__cp00AD__fragment.1367039e50dc6b7adb0f2aa8aba83216,extended,00AD,fragment,,Dare,D­a­r­e,"dare, annuity, Guaranteed","d­a­r­e, a­n­n­u­i­t­y, G­u­a­r­a­n­t­e­e­d"
+00217.43b4ef3d9c56cf42be9c37b546a19e78,00217__salted__extended__cp200B__fragment.43b4ef3d9c56cf42be9c37b546a19e78,extended,200B,fragment,,MLM,M​L​M,,
+00217.43b4ef3d9c56cf42be9c37b546a19e78,00217__salted__extended__cp200C__fragment.43b4ef3d9c56cf42be9c37b546a19e78,extended,200C,fragment,,MLM,M‌L‌M,,
+00217.43b4ef3d9c56cf42be9c37b546a19e78,00217__salted__extended__cp200D__fragment.43b4ef3d9c56cf42be9c37b546a19e78,extended,200D,fragment,,MLM,M‍L‍M,,
+00217.43b4ef3d9c56cf42be9c37b546a19e78,00217__salted__extended__cp00AD__fragment.43b4ef3d9c56cf42be9c37b546a19e78,extended,00AD,fragment,,MLM,M­L­M,,
+00224.0654fe0af51e1dcefa0eb66eb932f55f,00224__salted__extended__cp200B__fragment.0654fe0af51e1dcefa0eb66eb932f55f,extended,200B,fragment,,ASSISTANCE,A​S​S​I​S​T​A​N​C​E,"Dear, sir, dear","D​e​a​r, s​i​r, d​e​a​r"
+00224.0654fe0af51e1dcefa0eb66eb932f55f,00224__salted__extended__cp200C__fragment.0654fe0af51e1dcefa0eb66eb932f55f,extended,200C,fragment,,ASSISTANCE,A‌S‌S‌I‌S‌T‌A‌N‌C‌E,"Dear, sir, dear","D‌e‌a‌r, s‌i‌r, d‌e‌a‌r"
+00224.0654fe0af51e1dcefa0eb66eb932f55f,00224__salted__extended__cp200D__fragment.0654fe0af51e1dcefa0eb66eb932f55f,extended,200D,fragment,,ASSISTANCE,A‍S‍S‍I‍S‍T‍A‍N‍C‍E,"Dear, sir, dear","D‍e‍a‍r, s‍i‍r, d‍e‍a‍r"
+00224.0654fe0af51e1dcefa0eb66eb932f55f,00224__salted__extended__cp00AD__fragment.0654fe0af51e1dcefa0eb66eb932f55f,extended,00AD,fragment,,ASSISTANCE,A­S­S­I­S­T­A­N­C­E,"Dear, sir, dear","D­e­a­r, s­i­r, d­e­a­r"
+00228.cf58326ab05a757c7e759acc8d6b360d,00228__salted__extended__cp200B__fragment.cf58326ab05a757c7e759acc8d6b360d,extended,200B,fragment,,kindly,k​i​n​d​l​y,"ASSISTANCE, assistance, receive","A​S​S​I​S​T​A​N​C​E, a​s​s​i​s​t​a​n​c​e, r​e​c​e​i​v​e"
+00228.cf58326ab05a757c7e759acc8d6b360d,00228__salted__extended__cp200C__fragment.cf58326ab05a757c7e759acc8d6b360d,extended,200C,fragment,,kindly,k‌i‌n‌d‌l‌y,"ASSISTANCE, assistance, receive","A‌S‌S‌I‌S‌T‌A‌N‌C‌E, a‌s‌s‌i‌s‌t‌a‌n‌c‌e, r‌e‌c‌e‌i‌v‌e"
+00228.cf58326ab05a757c7e759acc8d6b360d,00228__salted__extended__cp200D__fragment.cf58326ab05a757c7e759acc8d6b360d,extended,200D,fragment,,kindly,k‍i‍n‍d‍l‍y,"ASSISTANCE, assistance, receive","A‍S‍S‍I‍S‍T‍A‍N‍C‍E, a‍s‍s‍i‍s‍t‍a‍n‍c‍e, r‍e‍c‍e‍i‍v‍e"
+00228.cf58326ab05a757c7e759acc8d6b360d,00228__salted__extended__cp00AD__fragment.cf58326ab05a757c7e759acc8d6b360d,extended,00AD,fragment,,kindly,k­i­n­d­l­y,"ASSISTANCE, assistance, receive","A­S­S­I­S­T­A­N­C­E, a­s­s­i­s­t­a­n­c­e, r­e­c­e­i­v­e"
+00231.8c72952de376293bc38d30834c0bb580,00231__salted__extended__cp200B__fragment.8c72952de376293bc38d30834c0bb580,extended,200B,fragment,,HGH,H​G​H,,
+00231.8c72952de376293bc38d30834c0bb580,00231__salted__extended__cp200C__fragment.8c72952de376293bc38d30834c0bb580,extended,200C,fragment,,HGH,H‌G‌H,,
+00231.8c72952de376293bc38d30834c0bb580,00231__salted__extended__cp200D__fragment.8c72952de376293bc38d30834c0bb580,extended,200D,fragment,,HGH,H‍G‍H,,
+00231.8c72952de376293bc38d30834c0bb580,00231__salted__extended__cp00AD__fragment.8c72952de376293bc38d30834c0bb580,extended,00AD,fragment,,HGH,H­G­H,,
+00233.3c32285387ebc0675adb029b9e20e581,00233__salted__extended__cp200B__fragment.3c32285387ebc0675adb029b9e20e581,extended,200B,fragment,,Guaranteed,G​u​a​r​a​n​t​e​e​d,"receive, mailings, communication","r​e​c​e​i​v​e, m​a​i​l​i​n​g​s, c​o​m​m​u​n​i​c​a​t​i​o​n"
+00233.3c32285387ebc0675adb029b9e20e581,00233__salted__extended__cp200C__fragment.3c32285387ebc0675adb029b9e20e581,extended,200C,fragment,,Guaranteed,G‌u‌a‌r‌a‌n‌t‌e‌e‌d,"receive, mailings, communication","r‌e‌c‌e‌i‌v‌e, m‌a‌i‌l‌i‌n‌g‌s, c‌o‌m‌m‌u‌n‌i‌c‌a‌t‌i‌o‌n"
+00233.3c32285387ebc0675adb029b9e20e581,00233__salted__extended__cp200D__fragment.3c32285387ebc0675adb029b9e20e581,extended,200D,fragment,,Guaranteed,G‍u‍a‍r‍a‍n‍t‍e‍e‍d,"receive, mailings, communication","r‍e‍c‍e‍i‍v‍e, m‍a‍i‍l‍i‍n‍g‍s, c‍o‍m‍m‍u‍n‍i‍c‍a‍t‍i‍o‍n"
+00233.3c32285387ebc0675adb029b9e20e581,00233__salted__extended__cp00AD__fragment.3c32285387ebc0675adb029b9e20e581,extended,00AD,fragment,,Guaranteed,G­u­a­r­a­n­t­e­e­d,"receive, mailings, communication","r­e­c­e­i­v­e, m­a­i­l­i­n­g­s, c­o­m­m­u­n­i­c­a­t­i­o­n"
+00236.a46588c69d43e80c618038b95eff2893,00236__salted__extended__cp200B__fragment.a46588c69d43e80c618038b95eff2893,extended,200B,fragment,,,,"MASTERCARD, payable, Postal","M​A​S​T​E​R​C​A​R​D, p​a​y​a​b​l​e, P​o​s​t​a​l"
+00236.a46588c69d43e80c618038b95eff2893,00236__salted__extended__cp200C__fragment.a46588c69d43e80c618038b95eff2893,extended,200C,fragment,,,,"MASTERCARD, payable, Postal","M‌A‌S‌T‌E‌R‌C‌A‌R‌D, p‌a‌y‌a‌b‌l‌e, P‌o‌s‌t‌a‌l"
+00236.a46588c69d43e80c618038b95eff2893,00236__salted__extended__cp200D__fragment.a46588c69d43e80c618038b95eff2893,extended,200D,fragment,,,,"MASTERCARD, payable, Postal","M‍A‍S‍T‍E‍R‍C‍A‍R‍D, p‍a‍y‍a‍b‍l‍e, P‍o‍s‍t‍a‍l"
+00236.a46588c69d43e80c618038b95eff2893,00236__salted__extended__cp00AD__fragment.a46588c69d43e80c618038b95eff2893,extended,00AD,fragment,,,,"MASTERCARD, payable, Postal","M­A­S­T­E­R­C­A­R­D, p­a­y­a­b­l­e, P­o­s­t­a­l"
+00248.b243bca51ee69d6e428ca2f45f0fe41b,00248__salted__extended__cp200B__fragment.b243bca51ee69d6e428ca2f45f0fe41b,extended,200B,fragment,,,,"Qualified, receive, mailings","Q​u​a​l​i​f​i​e​d, r​e​c​e​i​v​e, m​a​i​l​i​n​g​s"
+00248.b243bca51ee69d6e428ca2f45f0fe41b,00248__salted__extended__cp200C__fragment.b243bca51ee69d6e428ca2f45f0fe41b,extended,200C,fragment,,,,"Qualified, receive, mailings","Q‌u‌a‌l‌i‌f‌i‌e‌d, r‌e‌c‌e‌i‌v‌e, m‌a‌i‌l‌i‌n‌g‌s"
+00248.b243bca51ee69d6e428ca2f45f0fe41b,00248__salted__extended__cp200D__fragment.b243bca51ee69d6e428ca2f45f0fe41b,extended,200D,fragment,,,,"Qualified, receive, mailings","Q‍u‍a‍l‍i‍f‍i‍e‍d, r‍e‍c‍e‍i‍v‍e, m‍a‍i‍l‍i‍n‍g‍s"
+00248.b243bca51ee69d6e428ca2f45f0fe41b,00248__salted__extended__cp00AD__fragment.b243bca51ee69d6e428ca2f45f0fe41b,extended,00AD,fragment,,,,"Qualified, receive, mailings","Q­u­a­l­i­f­i­e­d, r­e­c­e­i­v­e, m­a­i­l­i­n­g­s"
+00249.5f45607c1bffe89f60ba1ec9f878039a,00249__salted__extended__cp200B__fragment.5f45607c1bffe89f60ba1ec9f878039a,extended,200B,fragment,,mortgage,m​o​r​t​g​a​g​e,"Dear, lenders, Refinance","D​e​a​r, l​e​n​d​e​r​s, R​e​f​i​n​a​n​c​e"
+00249.5f45607c1bffe89f60ba1ec9f878039a,00249__salted__extended__cp200C__fragment.5f45607c1bffe89f60ba1ec9f878039a,extended,200C,fragment,,mortgage,m‌o‌r‌t‌g‌a‌g‌e,"Dear, lenders, Refinance","D‌e‌a‌r, l‌e‌n‌d‌e‌r‌s, R‌e‌f‌i‌n‌a‌n‌c‌e"
+00249.5f45607c1bffe89f60ba1ec9f878039a,00249__salted__extended__cp200D__fragment.5f45607c1bffe89f60ba1ec9f878039a,extended,200D,fragment,,mortgage,m‍o‍r‍t‍g‍a‍g‍e,"Dear, lenders, Refinance","D‍e‍a‍r, l‍e‍n‍d‍e‍r‍s, R‍e‍f‍i‍n‍a‍n‍c‍e"
+00249.5f45607c1bffe89f60ba1ec9f878039a,00249__salted__extended__cp00AD__fragment.5f45607c1bffe89f60ba1ec9f878039a,extended,00AD,fragment,,mortgage,m­o­r­t­g­a­g­e,"Dear, lenders, Refinance","D­e­a­r, l­e­n­d­e­r­s, R­e­f­i­n­a­n­c­e"
+00251.6b4b7e79e1706156839a00817d774e37,00251__salted__extended__cp200B__fragment.6b4b7e79e1706156839a00817d774e37,extended,200B,fragment,,SYSTEMWORKS,S​Y​S​T​E​M​W​O​R​K​S,,
+00251.6b4b7e79e1706156839a00817d774e37,00251__salted__extended__cp200C__fragment.6b4b7e79e1706156839a00817d774e37,extended,200C,fragment,,SYSTEMWORKS,S‌Y‌S‌T‌E‌M‌W‌O‌R‌K‌S,,
+00251.6b4b7e79e1706156839a00817d774e37,00251__salted__extended__cp200D__fragment.6b4b7e79e1706156839a00817d774e37,extended,200D,fragment,,SYSTEMWORKS,S‍Y‍S‍T‍E‍M‍W‍O‍R‍K‍S,,
+00251.6b4b7e79e1706156839a00817d774e37,00251__salted__extended__cp00AD__fragment.6b4b7e79e1706156839a00817d774e37,extended,00AD,fragment,,SYSTEMWORKS,S­Y­S­T­E­M­W­O­R­K­S,,
+00261.12b64e557e52daf5fc5a52e47df2f4e3,00261__salted__extended__cp200B__fragment.12b64e557e52daf5fc5a52e47df2f4e3,extended,200B,fragment,,,,"Mastercard, opted, receive","M​a​s​t​e​r​c​a​r​d, o​p​t​e​d, r​e​c​e​i​v​e"
+00261.12b64e557e52daf5fc5a52e47df2f4e3,00261__salted__extended__cp200C__fragment.12b64e557e52daf5fc5a52e47df2f4e3,extended,200C,fragment,,,,"Mastercard, opted, receive","M‌a‌s‌t‌e‌r‌c‌a‌r‌d, o‌p‌t‌e‌d, r‌e‌c‌e‌i‌v‌e"
+00261.12b64e557e52daf5fc5a52e47df2f4e3,00261__salted__extended__cp200D__fragment.12b64e557e52daf5fc5a52e47df2f4e3,extended,200D,fragment,,,,"Mastercard, opted, receive","M‍a‍s‍t‍e‍r‍c‍a‍r‍d, o‍p‍t‍e‍d, r‍e‍c‍e‍i‍v‍e"
+00261.12b64e557e52daf5fc5a52e47df2f4e3,00261__salted__extended__cp00AD__fragment.12b64e557e52daf5fc5a52e47df2f4e3,extended,00AD,fragment,,,,"Mastercard, opted, receive","M­a­s­t­e­r­c­a­r­d, o­p­t­e­d, r­e­c­e­i­v­e"
+00263.32b258c4cc08d235b2ca36fc16074f08,00263__salted__extended__cp200B__fragment.32b258c4cc08d235b2ca36fc16074f08,extended,200B,fragment,,,,"Click, click, Click","C​l​i​c​k, c​l​i​c​k, C​l​i​c​k"
+00263.32b258c4cc08d235b2ca36fc16074f08,00263__salted__extended__cp200C__fragment.32b258c4cc08d235b2ca36fc16074f08,extended,200C,fragment,,,,"Click, click, Click","C‌l‌i‌c‌k, c‌l‌i‌c‌k, C‌l‌i‌c‌k"
+00263.32b258c4cc08d235b2ca36fc16074f08,00263__salted__extended__cp200D__fragment.32b258c4cc08d235b2ca36fc16074f08,extended,200D,fragment,,,,"Click, click, Click","C‍l‍i‍c‍k, c‍l‍i‍c‍k, C‍l‍i‍c‍k"
+00263.32b258c4cc08d235b2ca36fc16074f08,00263__salted__extended__cp00AD__fragment.32b258c4cc08d235b2ca36fc16074f08,extended,00AD,fragment,,,,"Click, click, Click","C­l­i­c­k, c­l­i­c­k, C­l­i­c­k"
+00264.02b614f34aa0d5970959123b9386b285,00264__salted__extended__cp200B__fragment.02b614f34aa0d5970959123b9386b285,extended,200B,fragment,,,,"promotion, receive","p​r​o​m​o​t​i​o​n, r​e​c​e​i​v​e"
+00264.02b614f34aa0d5970959123b9386b285,00264__salted__extended__cp200C__fragment.02b614f34aa0d5970959123b9386b285,extended,200C,fragment,,,,"promotion, receive","p‌r‌o‌m‌o‌t‌i‌o‌n, r‌e‌c‌e‌i‌v‌e"
+00264.02b614f34aa0d5970959123b9386b285,00264__salted__extended__cp200D__fragment.02b614f34aa0d5970959123b9386b285,extended,200D,fragment,,,,"promotion, receive","p‍r‍o‍m‍o‍t‍i‍o‍n, r‍e‍c‍e‍i‍v‍e"
+00264.02b614f34aa0d5970959123b9386b285,00264__salted__extended__cp00AD__fragment.02b614f34aa0d5970959123b9386b285,extended,00AD,fragment,,,,"promotion, receive","p­r­o­m­o­t­i­o­n, r­e­c­e­i­v­e"
+00279.1d58a13e343c1e53aca2ed2121a3f815,00279__salted__extended__cp200B__fragment.1d58a13e343c1e53aca2ed2121a3f815,extended,200B,fragment,,assistance,a​s​s​i​s​t​a​n​c​e,"DEAR, SIR, presently","D​E​A​R, S​I​R, p​r​e​s​e​n​t​l​y"
+00279.1d58a13e343c1e53aca2ed2121a3f815,00279__salted__extended__cp200C__fragment.1d58a13e343c1e53aca2ed2121a3f815,extended,200C,fragment,,assistance,a‌s‌s‌i‌s‌t‌a‌n‌c‌e,"DEAR, SIR, presently","D‌E‌A‌R, S‌I‌R, p‌r‌e‌s‌e‌n‌t‌l‌y"
+00279.1d58a13e343c1e53aca2ed2121a3f815,00279__salted__extended__cp200D__fragment.1d58a13e343c1e53aca2ed2121a3f815,extended,200D,fragment,,assistance,a‍s‍s‍i‍s‍t‍a‍n‍c‍e,"DEAR, SIR, presently","D‍E‍A‍R, S‍I‍R, p‍r‍e‍s‍e‍n‍t‍l‍y"
+00279.1d58a13e343c1e53aca2ed2121a3f815,00279__salted__extended__cp00AD__fragment.1d58a13e343c1e53aca2ed2121a3f815,extended,00AD,fragment,,assistance,a­s­s­i­s­t­a­n­c­e,"DEAR, SIR, presently","D­E­A­R, S­I­R, p­r­e­s­e­n­t­l­y"
+00280.026da2bd191f11081b8d8428134b0c66,00280__salted__extended__cp200B__fragment.026da2bd191f11081b8d8428134b0c66,extended,200B,fragment,,,,"Promotion, Deposit, click","P​r​o​m​o​t​i​o​n, D​e​p​o​s​i​t, c​l​i​c​k"
+00280.026da2bd191f11081b8d8428134b0c66,00280__salted__extended__cp200C__fragment.026da2bd191f11081b8d8428134b0c66,extended,200C,fragment,,,,"Promotion, Deposit, click","P‌r‌o‌m‌o‌t‌i‌o‌n, D‌e‌p‌o‌s‌i‌t, c‌l‌i‌c‌k"
+00280.026da2bd191f11081b8d8428134b0c66,00280__salted__extended__cp200D__fragment.026da2bd191f11081b8d8428134b0c66,extended,200D,fragment,,,,"Promotion, Deposit, click","P‍r‍o‍m‍o‍t‍i‍o‍n, D‍e‍p‍o‍s‍i‍t, c‍l‍i‍c‍k"
+00280.026da2bd191f11081b8d8428134b0c66,00280__salted__extended__cp00AD__fragment.026da2bd191f11081b8d8428134b0c66,extended,00AD,fragment,,,,"Promotion, Deposit, click","P­r­o­m­o­t­i­o­n, D­e­p­o­s­i­t, c­l­i­c­k"
+00284.227c1ebb961320cd2086d904d698c49b,00284__salted__extended__cp200B__fragment.227c1ebb961320cd2086d904d698c49b,extended,200B,fragment,,,,"Premium, Tobacco, insurance","P​r​e​m​i​u​m, T​o​b​a​c​c​o, i​n​s​u​r​a​n​c​e"
+00284.227c1ebb961320cd2086d904d698c49b,00284__salted__extended__cp200C__fragment.227c1ebb961320cd2086d904d698c49b,extended,200C,fragment,,,,"Premium, Tobacco, insurance","P‌r‌e‌m‌i‌u‌m, T‌o‌b‌a‌c‌c‌o, i‌n‌s‌u‌r‌a‌n‌c‌e"
+00284.227c1ebb961320cd2086d904d698c49b,00284__salted__extended__cp200D__fragment.227c1ebb961320cd2086d904d698c49b,extended,200D,fragment,,,,"Premium, Tobacco, insurance","P‍r‍e‍m‍i‍u‍m, T‍o‍b‍a‍c‍c‍o, i‍n‍s‍u‍r‍a‍n‍c‍e"
+00284.227c1ebb961320cd2086d904d698c49b,00284__salted__extended__cp00AD__fragment.227c1ebb961320cd2086d904d698c49b,extended,00AD,fragment,,,,"Premium, Tobacco, insurance","P­r­e­m­i­u­m, T­o­b­a­c­c­o, i­n­s­u­r­a­n­c­e"
+00287.b0495a4dbdff36654c3b3ee2f92bdbf3,00287__salted__extended__cp200B__fragment.b0495a4dbdff36654c3b3ee2f92bdbf3,extended,200B,fragment,,,,receive,r​e​c​e​i​v​e
+00287.b0495a4dbdff36654c3b3ee2f92bdbf3,00287__salted__extended__cp200C__fragment.b0495a4dbdff36654c3b3ee2f92bdbf3,extended,200C,fragment,,,,receive,r‌e‌c‌e‌i‌v‌e
+00287.b0495a4dbdff36654c3b3ee2f92bdbf3,00287__salted__extended__cp200D__fragment.b0495a4dbdff36654c3b3ee2f92bdbf3,extended,200D,fragment,,,,receive,r‍e‍c‍e‍i‍v‍e
+00287.b0495a4dbdff36654c3b3ee2f92bdbf3,00287__salted__extended__cp00AD__fragment.b0495a4dbdff36654c3b3ee2f92bdbf3,extended,00AD,fragment,,,,receive,r­e­c­e­i­v­e
+00291.7aa227e74e89bdd529a3875459d0d5a2,00291__salted__extended__cp200B__fragment.7aa227e74e89bdd529a3875459d0d5a2,extended,200B,fragment,,,,"Click, receive, mailings","C​l​i​c​k, r​e​c​e​i​v​e, m​a​i​l​i​n​g​s"
+00291.7aa227e74e89bdd529a3875459d0d5a2,00291__salted__extended__cp200C__fragment.7aa227e74e89bdd529a3875459d0d5a2,extended,200C,fragment,,,,"Click, receive, mailings","C‌l‌i‌c‌k, r‌e‌c‌e‌i‌v‌e, m‌a‌i‌l‌i‌n‌g‌s"
+00291.7aa227e74e89bdd529a3875459d0d5a2,00291__salted__extended__cp200D__fragment.7aa227e74e89bdd529a3875459d0d5a2,extended,200D,fragment,,,,"Click, receive, mailings","C‍l‍i‍c‍k, r‍e‍c‍e‍i‍v‍e, m‍a‍i‍l‍i‍n‍g‍s"
+00291.7aa227e74e89bdd529a3875459d0d5a2,00291__salted__extended__cp00AD__fragment.7aa227e74e89bdd529a3875459d0d5a2,extended,00AD,fragment,,,,"Click, receive, mailings","C­l­i­c­k, r­e­c­e­i­v­e, m­a­i­l­i­n­g­s"
+00292.dbf78a2aaa230d288eb80ab843804252,00292__salted__extended__cp200B__fragment.dbf78a2aaa230d288eb80ab843804252,extended,200B,fragment,,,,"fees, Sincerely, promotional","f​e​e​s, S​i​n​c​e​r​e​l​y, p​r​o​m​o​t​i​o​n​a​l"
+00292.dbf78a2aaa230d288eb80ab843804252,00292__salted__extended__cp200C__fragment.dbf78a2aaa230d288eb80ab843804252,extended,200C,fragment,,,,"fees, Sincerely, promotional","f‌e‌e‌s, S‌i‌n‌c‌e‌r‌e‌l‌y, p‌r‌o‌m‌o‌t‌i‌o‌n‌a‌l"
+00292.dbf78a2aaa230d288eb80ab843804252,00292__salted__extended__cp200D__fragment.dbf78a2aaa230d288eb80ab843804252,extended,200D,fragment,,,,"fees, Sincerely, promotional","f‍e‍e‍s, S‍i‍n‍c‍e‍r‍e‍l‍y, p‍r‍o‍m‍o‍t‍i‍o‍n‍a‍l"
+00292.dbf78a2aaa230d288eb80ab843804252,00292__salted__extended__cp00AD__fragment.dbf78a2aaa230d288eb80ab843804252,extended,00AD,fragment,,,,"fees, Sincerely, promotional","f­e­e­s, S­i­n­c­e­r­e­l­y, p­r­o­m­o­t­i­o­n­a­l"
+00296.85aa16f800e0aaf8755cdf23d7e035ff,00296__salted__extended__cp200B__fragment.85aa16f800e0aaf8755cdf23d7e035ff,extended,200B,fragment,,Annuity,A​n​n​u​i​t​y,"annuity, Guaranteed, receive","a​n​n​u​i​t​y, G​u​a​r​a​n​t​e​e​d, r​e​c​e​i​v​e"
+00296.85aa16f800e0aaf8755cdf23d7e035ff,00296__salted__extended__cp200C__fragment.85aa16f800e0aaf8755cdf23d7e035ff,extended,200C,fragment,,Annuity,A‌n‌n‌u‌i‌t‌y,"annuity, Guaranteed, receive","a‌n‌n‌u‌i‌t‌y, G‌u‌a‌r‌a‌n‌t‌e‌e‌d, r‌e‌c‌e‌i‌v‌e"
+00296.85aa16f800e0aaf8755cdf23d7e035ff,00296__salted__extended__cp200D__fragment.85aa16f800e0aaf8755cdf23d7e035ff,extended,200D,fragment,,Annuity,A‍n‍n‍u‍i‍t‍y,"annuity, Guaranteed, receive","a‍n‍n‍u‍i‍t‍y, G‍u‍a‍r‍a‍n‍t‍e‍e‍d, r‍e‍c‍e‍i‍v‍e"
+00296.85aa16f800e0aaf8755cdf23d7e035ff,00296__salted__extended__cp00AD__fragment.85aa16f800e0aaf8755cdf23d7e035ff,extended,00AD,fragment,,Annuity,A­n­n­u­i­t­y,"annuity, Guaranteed, receive","a­n­n­u­i­t­y, G­u­a­r­a­n­t­e­e­d, r­e­c­e­i­v­e"
+00302.7f695c69d4cbe06e91cddd2ca7cddf33,00302__salted__extended__cp200B__fragment.7f695c69d4cbe06e91cddd2ca7cddf33,extended,200B,fragment,,,,"Guaranteed, herbal, Click","G​u​a​r​a​n​t​e​e​d, h​e​r​b​a​l, C​l​i​c​k"
+00302.7f695c69d4cbe06e91cddd2ca7cddf33,00302__salted__extended__cp200C__fragment.7f695c69d4cbe06e91cddd2ca7cddf33,extended,200C,fragment,,,,"Guaranteed, herbal, Click","G‌u‌a‌r‌a‌n‌t‌e‌e‌d, h‌e‌r‌b‌a‌l, C‌l‌i‌c‌k"
+00302.7f695c69d4cbe06e91cddd2ca7cddf33,00302__salted__extended__cp200D__fragment.7f695c69d4cbe06e91cddd2ca7cddf33,extended,200D,fragment,,,,"Guaranteed, herbal, Click","G‍u‍a‍r‍a‍n‍t‍e‍e‍d, h‍e‍r‍b‍a‍l, C‍l‍i‍c‍k"
+00302.7f695c69d4cbe06e91cddd2ca7cddf33,00302__salted__extended__cp00AD__fragment.7f695c69d4cbe06e91cddd2ca7cddf33,extended,00AD,fragment,,,,"Guaranteed, herbal, Click","G­u­a­r­a­n­t­e­e­d, h­e­r­b­a­l, C­l­i­c­k"
+00303.22239f1393297a691eb5df3dfe7a5001,00303__salted__extended__cp200B__fragment.22239f1393297a691eb5df3dfe7a5001,extended,200B,fragment,,,,compliance,c​o​m​p​l​i​a​n​c​e
+00303.22239f1393297a691eb5df3dfe7a5001,00303__salted__extended__cp200C__fragment.22239f1393297a691eb5df3dfe7a5001,extended,200C,fragment,,,,compliance,c‌o‌m‌p‌l‌i‌a‌n‌c‌e
+00303.22239f1393297a691eb5df3dfe7a5001,00303__salted__extended__cp200D__fragment.22239f1393297a691eb5df3dfe7a5001,extended,200D,fragment,,,,compliance,c‍o‍m‍p‍l‍i‍a‍n‍c‍e
+00303.22239f1393297a691eb5df3dfe7a5001,00303__salted__extended__cp00AD__fragment.22239f1393297a691eb5df3dfe7a5001,extended,00AD,fragment,,,,compliance,c­o­m­p­l­i­a­n­c­e
+00305.1f2a712e25638b0a4868155b37022cf1,00305__salted__extended__cp200B__fragment.1f2a712e25638b0a4868155b37022cf1,extended,200B,fragment,,HGH,H​G​H,,
+00305.1f2a712e25638b0a4868155b37022cf1,00305__salted__extended__cp200C__fragment.1f2a712e25638b0a4868155b37022cf1,extended,200C,fragment,,HGH,H‌G‌H,,
+00305.1f2a712e25638b0a4868155b37022cf1,00305__salted__extended__cp200D__fragment.1f2a712e25638b0a4868155b37022cf1,extended,200D,fragment,,HGH,H‍G‍H,,
+00305.1f2a712e25638b0a4868155b37022cf1,00305__salted__extended__cp00AD__fragment.1f2a712e25638b0a4868155b37022cf1,extended,00AD,fragment,,HGH,H­G­H,,
+00305.f80c21904d6d4f6facd036450a588b0d,00305__salted__extended__cp200B__fragment.f80c21904d6d4f6facd036450a588b0d,extended,200B,fragment,,,,"guaranteed, receive, receive","g​u​a​r​a​n​t​e​e​d, r​e​c​e​i​v​e, r​e​c​e​i​v​e"
+00305.f80c21904d6d4f6facd036450a588b0d,00305__salted__extended__cp200C__fragment.f80c21904d6d4f6facd036450a588b0d,extended,200C,fragment,,,,"guaranteed, receive, receive","g‌u‌a‌r‌a‌n‌t‌e‌e‌d, r‌e‌c‌e‌i‌v‌e, r‌e‌c‌e‌i‌v‌e"
+00305.f80c21904d6d4f6facd036450a588b0d,00305__salted__extended__cp200D__fragment.f80c21904d6d4f6facd036450a588b0d,extended,200D,fragment,,,,"guaranteed, receive, receive","g‍u‍a‍r‍a‍n‍t‍e‍e‍d, r‍e‍c‍e‍i‍v‍e, r‍e‍c‍e‍i‍v‍e"
+00305.f80c21904d6d4f6facd036450a588b0d,00305__salted__extended__cp00AD__fragment.f80c21904d6d4f6facd036450a588b0d,extended,00AD,fragment,,,,"guaranteed, receive, receive","g­u­a­r­a­n­t­e­e­d, r­e­c­e­i­v­e, r­e­c­e­i­v­e"
+00308.fc90f8aab51648329b9e705c9021b204,00308__salted__extended__cp200B__fragment.fc90f8aab51648329b9e705c9021b204,extended,200B,fragment,,,,"premium, receive, mailings","p​r​e​m​i​u​m, r​e​c​e​i​v​e, m​a​i​l​i​n​g​s"
+00308.fc90f8aab51648329b9e705c9021b204,00308__salted__extended__cp200C__fragment.fc90f8aab51648329b9e705c9021b204,extended,200C,fragment,,,,"premium, receive, mailings","p‌r‌e‌m‌i‌u‌m, r‌e‌c‌e‌i‌v‌e, m‌a‌i‌l‌i‌n‌g‌s"
+00308.fc90f8aab51648329b9e705c9021b204,00308__salted__extended__cp200D__fragment.fc90f8aab51648329b9e705c9021b204,extended,200D,fragment,,,,"premium, receive, mailings","p‍r‍e‍m‍i‍u‍m, r‍e‍c‍e‍i‍v‍e, m‍a‍i‍l‍i‍n‍g‍s"
+00308.fc90f8aab51648329b9e705c9021b204,00308__salted__extended__cp00AD__fragment.fc90f8aab51648329b9e705c9021b204,extended,00AD,fragment,,,,"premium, receive, mailings","p­r­e­m­i­u­m, r­e­c­e­i­v­e, m­a­i­l­i­n­g­s"
+00312.5034fee7d265abd7a4194e9300de24bf,00312__salted__extended__cp200B__fragment.5034fee7d265abd7a4194e9300de24bf,extended,200B,fragment,,HGH,H​G​H,,
+00312.5034fee7d265abd7a4194e9300de24bf,00312__salted__extended__cp200C__fragment.5034fee7d265abd7a4194e9300de24bf,extended,200C,fragment,,HGH,H‌G‌H,,
+00312.5034fee7d265abd7a4194e9300de24bf,00312__salted__extended__cp200D__fragment.5034fee7d265abd7a4194e9300de24bf,extended,200D,fragment,,HGH,H‍G‍H,,
+00312.5034fee7d265abd7a4194e9300de24bf,00312__salted__extended__cp00AD__fragment.5034fee7d265abd7a4194e9300de24bf,extended,00AD,fragment,,HGH,H­G­H,,
+00319.a99dff9c010e00ec182ed5701556d330,00319__salted__extended__cp200B__fragment.a99dff9c010e00ec182ed5701556d330,extended,200B,fragment,,,,"dare, dear","d​a​r​e, d​e​a​r"
+00319.a99dff9c010e00ec182ed5701556d330,00319__salted__extended__cp200C__fragment.a99dff9c010e00ec182ed5701556d330,extended,200C,fragment,,,,"dare, dear","d‌a‌r‌e, d‌e‌a‌r"
+00319.a99dff9c010e00ec182ed5701556d330,00319__salted__extended__cp200D__fragment.a99dff9c010e00ec182ed5701556d330,extended,200D,fragment,,,,"dare, dear","d‍a‍r‍e, d‍e‍a‍r"
+00319.a99dff9c010e00ec182ed5701556d330,00319__salted__extended__cp00AD__fragment.a99dff9c010e00ec182ed5701556d330,extended,00AD,fragment,,,,"dare, dear","d­a­r­e, d­e­a­r"
+00337.813498483bc80a24c002e6e7e8e0f2cb,00337__salted__extended__cp200B__fragment.813498483bc80a24c002e6e7e8e0f2cb,extended,200B,fragment,,,,"invest, loan, qualified","i​n​v​e​s​t, l​o​a​n, q​u​a​l​i​f​i​e​d"
+00337.813498483bc80a24c002e6e7e8e0f2cb,00337__salted__extended__cp200C__fragment.813498483bc80a24c002e6e7e8e0f2cb,extended,200C,fragment,,,,"invest, loan, qualified","i‌n‌v‌e‌s‌t, l‌o‌a‌n, q‌u‌a‌l‌i‌f‌i‌e‌d"
+00337.813498483bc80a24c002e6e7e8e0f2cb,00337__salted__extended__cp200D__fragment.813498483bc80a24c002e6e7e8e0f2cb,extended,200D,fragment,,,,"invest, loan, qualified","i‍n‍v‍e‍s‍t, l‍o‍a‍n, q‍u‍a‍l‍i‍f‍i‍e‍d"
+00337.813498483bc80a24c002e6e7e8e0f2cb,00337__salted__extended__cp00AD__fragment.813498483bc80a24c002e6e7e8e0f2cb,extended,00AD,fragment,,,,"invest, loan, qualified","i­n­v­e­s­t, l­o­a­n, q­u­a­l­i­f­i­e­d"
+00344.17882edad13c2c761e6d8d99eef5a346,00344__salted__extended__cp200B__fragment.17882edad13c2c761e6d8d99eef5a346,extended,200B,fragment,,,,"Purchase, Click, receive","P​u​r​c​h​a​s​e, C​l​i​c​k, r​e​c​e​i​v​e"
+00344.17882edad13c2c761e6d8d99eef5a346,00344__salted__extended__cp200C__fragment.17882edad13c2c761e6d8d99eef5a346,extended,200C,fragment,,,,"Purchase, Click, receive","P‌u‌r‌c‌h‌a‌s‌e, C‌l‌i‌c‌k, r‌e‌c‌e‌i‌v‌e"
+00344.17882edad13c2c761e6d8d99eef5a346,00344__salted__extended__cp200D__fragment.17882edad13c2c761e6d8d99eef5a346,extended,200D,fragment,,,,"Purchase, Click, receive","P‍u‍r‍c‍h‍a‍s‍e, C‍l‍i‍c‍k, r‍e‍c‍e‍i‍v‍e"
+00344.17882edad13c2c761e6d8d99eef5a346,00344__salted__extended__cp00AD__fragment.17882edad13c2c761e6d8d99eef5a346,extended,00AD,fragment,,,,"Purchase, Click, receive","P­u­r­c­h­a­s­e, C­l­i­c­k, r­e­c­e­i­v­e"
+00344.e6463530b23a12554d2e6f0e08ae10a7,00344__salted__extended__cp200B__fragment.e6463530b23a12554d2e6f0e08ae10a7,extended,200B,fragment,,,,TOLL,T​O​L​L
+00344.e6463530b23a12554d2e6f0e08ae10a7,00344__salted__extended__cp200C__fragment.e6463530b23a12554d2e6f0e08ae10a7,extended,200C,fragment,,,,TOLL,T‌O‌L‌L
+00344.e6463530b23a12554d2e6f0e08ae10a7,00344__salted__extended__cp200D__fragment.e6463530b23a12554d2e6f0e08ae10a7,extended,200D,fragment,,,,TOLL,T‍O‍L‍L
+00344.e6463530b23a12554d2e6f0e08ae10a7,00344__salted__extended__cp00AD__fragment.e6463530b23a12554d2e6f0e08ae10a7,extended,00AD,fragment,,,,TOLL,T­O­L­L
+00345.613b3c2aeac033eebb379c91b8ce9fba,00345__salted__extended__cp200B__fragment.613b3c2aeac033eebb379c91b8ce9fba,extended,200B,fragment,,Monthly,M​o​n​t​h​l​y,,
+00345.613b3c2aeac033eebb379c91b8ce9fba,00345__salted__extended__cp200C__fragment.613b3c2aeac033eebb379c91b8ce9fba,extended,200C,fragment,,Monthly,M‌o‌n‌t‌h‌l‌y,,
+00345.613b3c2aeac033eebb379c91b8ce9fba,00345__salted__extended__cp200D__fragment.613b3c2aeac033eebb379c91b8ce9fba,extended,200D,fragment,,Monthly,M‍o‍n‍t‍h‍l‍y,,
+00345.613b3c2aeac033eebb379c91b8ce9fba,00345__salted__extended__cp00AD__fragment.613b3c2aeac033eebb379c91b8ce9fba,extended,00AD,fragment,,Monthly,M­o­n­t­h­l­y,,
+00346.d93a823fb3350a5da8f0c612ce1156cd,00346__salted__extended__cp200B__fragment.d93a823fb3350a5da8f0c612ce1156cd,extended,200B,fragment,,,,"Dear, Sir, deposit","D​e​a​r, S​i​r, d​e​p​o​s​i​t"
+00346.d93a823fb3350a5da8f0c612ce1156cd,00346__salted__extended__cp200C__fragment.d93a823fb3350a5da8f0c612ce1156cd,extended,200C,fragment,,,,"Dear, Sir, deposit","D‌e‌a‌r, S‌i‌r, d‌e‌p‌o‌s‌i‌t"
+00346.d93a823fb3350a5da8f0c612ce1156cd,00346__salted__extended__cp200D__fragment.d93a823fb3350a5da8f0c612ce1156cd,extended,200D,fragment,,,,"Dear, Sir, deposit","D‍e‍a‍r, S‍i‍r, d‍e‍p‍o‍s‍i‍t"
+00346.d93a823fb3350a5da8f0c612ce1156cd,00346__salted__extended__cp00AD__fragment.d93a823fb3350a5da8f0c612ce1156cd,extended,00AD,fragment,,,,"Dear, Sir, deposit","D­e­a­r, S­i­r, d­e­p­o­s­i­t"
+00354.dca4b8984863a76ffd01a33888498288,00354__salted__extended__cp200B__fragment.dca4b8984863a76ffd01a33888498288,extended,200B,fragment,,,,"Click, Removal, advertisement","C​l​i​c​k, R​e​m​o​v​a​l, a​d​v​e​r​t​i​s​e​m​e​n​t"
+00354.dca4b8984863a76ffd01a33888498288,00354__salted__extended__cp200C__fragment.dca4b8984863a76ffd01a33888498288,extended,200C,fragment,,,,"Click, Removal, advertisement","C‌l‌i‌c‌k, R‌e‌m‌o‌v‌a‌l, a‌d‌v‌e‌r‌t‌i‌s‌e‌m‌e‌n‌t"
+00354.dca4b8984863a76ffd01a33888498288,00354__salted__extended__cp200D__fragment.dca4b8984863a76ffd01a33888498288,extended,200D,fragment,,,,"Click, Removal, advertisement","C‍l‍i‍c‍k, R‍e‍m‍o‍v‍a‍l, a‍d‍v‍e‍r‍t‍i‍s‍e‍m‍e‍n‍t"
+00354.dca4b8984863a76ffd01a33888498288,00354__salted__extended__cp00AD__fragment.dca4b8984863a76ffd01a33888498288,extended,00AD,fragment,,,,"Click, Removal, advertisement","C­l­i­c­k, R­e­m­o­v­a­l, a­d­v­e­r­t­i­s­e­m­e­n­t"
+00356.ea7eb32330fa6bf65270023c0d99e2c5,00356__salted__extended__cp200B__fragment.ea7eb32330fa6bf65270023c0d99e2c5,extended,200B,fragment,,,,"SystemWorks, WHOLESALE, CLICK","S​y​s​t​e​m​W​o​r​k​s, W​H​O​L​E​S​A​L​E, C​L​I​C​K"
+00356.ea7eb32330fa6bf65270023c0d99e2c5,00356__salted__extended__cp200C__fragment.ea7eb32330fa6bf65270023c0d99e2c5,extended,200C,fragment,,,,"SystemWorks, WHOLESALE, CLICK","S‌y‌s‌t‌e‌m‌W‌o‌r‌k‌s, W‌H‌O‌L‌E‌S‌A‌L‌E, C‌L‌I‌C‌K"
+00356.ea7eb32330fa6bf65270023c0d99e2c5,00356__salted__extended__cp200D__fragment.ea7eb32330fa6bf65270023c0d99e2c5,extended,200D,fragment,,,,"SystemWorks, WHOLESALE, CLICK","S‍y‍s‍t‍e‍m‍W‍o‍r‍k‍s, W‍H‍O‍L‍E‍S‍A‍L‍E, C‍L‍I‍C‍K"
+00356.ea7eb32330fa6bf65270023c0d99e2c5,00356__salted__extended__cp00AD__fragment.ea7eb32330fa6bf65270023c0d99e2c5,extended,00AD,fragment,,,,"SystemWorks, WHOLESALE, CLICK","S­y­s­t­e­m­W­o­r­k­s, W­H­O­L­E­S­A­L­E, C­L­I­C­K"
+00359.90bec90ebeaf05f024f48594e7d7b0d5,00359__salted__extended__cp200B__fragment.90bec90ebeaf05f024f48594e7d7b0d5,extended,200B,fragment,,,,"DEAR, SIR, confidentiality","D​E​A​R, S​I​R, c​o​n​f​i​d​e​n​t​i​a​l​i​t​y"
+00359.90bec90ebeaf05f024f48594e7d7b0d5,00359__salted__extended__cp200C__fragment.90bec90ebeaf05f024f48594e7d7b0d5,extended,200C,fragment,,,,"DEAR, SIR, confidentiality","D‌E‌A‌R, S‌I‌R, c‌o‌n‌f‌i‌d‌e‌n‌t‌i‌a‌l‌i‌t‌y"
+00359.90bec90ebeaf05f024f48594e7d7b0d5,00359__salted__extended__cp200D__fragment.90bec90ebeaf05f024f48594e7d7b0d5,extended,200D,fragment,,,,"DEAR, SIR, confidentiality","D‍E‍A‍R, S‍I‍R, c‍o‍n‍f‍i‍d‍e‍n‍t‍i‍a‍l‍i‍t‍y"
+00359.90bec90ebeaf05f024f48594e7d7b0d5,00359__salted__extended__cp00AD__fragment.90bec90ebeaf05f024f48594e7d7b0d5,extended,00AD,fragment,,,,"DEAR, SIR, confidentiality","D­E­A­R, S­I­R, c­o­n­f­i­d­e­n­t­i­a­l­i­t­y"
+00361.e91ac048b0ede961d3f51009eee1c620,00361__salted__extended__cp200B__fragment.e91ac048b0ede961d3f51009eee1c620,extended,200B,fragment,,,,"LAGOS, ATTN, Nigeria","L​A​G​O​S, A​T​T​N, N​i​g​e​r​i​a"
+00361.e91ac048b0ede961d3f51009eee1c620,00361__salted__extended__cp200C__fragment.e91ac048b0ede961d3f51009eee1c620,extended,200C,fragment,,,,"LAGOS, ATTN, Nigeria","L‌A‌G‌O‌S, A‌T‌T‌N, N‌i‌g‌e‌r‌i‌a"
+00361.e91ac048b0ede961d3f51009eee1c620,00361__salted__extended__cp200D__fragment.e91ac048b0ede961d3f51009eee1c620,extended,200D,fragment,,,,"LAGOS, ATTN, Nigeria","L‍A‍G‍O‍S, A‍T‍T‍N, N‍i‍g‍e‍r‍i‍a"
+00361.e91ac048b0ede961d3f51009eee1c620,00361__salted__extended__cp00AD__fragment.e91ac048b0ede961d3f51009eee1c620,extended,00AD,fragment,,,,"LAGOS, ATTN, Nigeria","L­A­G­O­S, A­T­T­N, N­i­g­e­r­i­a"
+00369.845eeb9573484bd88a6a6224c7068d81,00369__salted__extended__cp200B__fragment.845eeb9573484bd88a6a6224c7068d81,extended,200B,fragment,,cartridges,c​a​r​t​r​i​d​g​e​s,,
+00369.845eeb9573484bd88a6a6224c7068d81,00369__salted__extended__cp200C__fragment.845eeb9573484bd88a6a6224c7068d81,extended,200C,fragment,,cartridges,c‌a‌r‌t‌r‌i‌d‌g‌e‌s,,
+00369.845eeb9573484bd88a6a6224c7068d81,00369__salted__extended__cp200D__fragment.845eeb9573484bd88a6a6224c7068d81,extended,200D,fragment,,cartridges,c‍a‍r‍t‍r‍i‍d‍g‍e‍s,,
+00369.845eeb9573484bd88a6a6224c7068d81,00369__salted__extended__cp00AD__fragment.845eeb9573484bd88a6a6224c7068d81,extended,00AD,fragment,,cartridges,c­a­r­t­r­i­d­g­e­s,,
+00373.ebe8670ac56b04125c25100a36ab0510,00373__salted__extended__cp200B__fragment.ebe8670ac56b04125c25100a36ab0510,extended,200B,fragment,,,,"SystemWorks, compliance","S​y​s​t​e​m​W​o​r​k​s, c​o​m​p​l​i​a​n​c​e"
+00373.ebe8670ac56b04125c25100a36ab0510,00373__salted__extended__cp200C__fragment.ebe8670ac56b04125c25100a36ab0510,extended,200C,fragment,,,,"SystemWorks, compliance","S‌y‌s‌t‌e‌m‌W‌o‌r‌k‌s, c‌o‌m‌p‌l‌i‌a‌n‌c‌e"
+00373.ebe8670ac56b04125c25100a36ab0510,00373__salted__extended__cp200D__fragment.ebe8670ac56b04125c25100a36ab0510,extended,200D,fragment,,,,"SystemWorks, compliance","S‍y‍s‍t‍e‍m‍W‍o‍r‍k‍s, c‍o‍m‍p‍l‍i‍a‍n‍c‍e"
+00373.ebe8670ac56b04125c25100a36ab0510,00373__salted__extended__cp00AD__fragment.ebe8670ac56b04125c25100a36ab0510,extended,00AD,fragment,,,,"SystemWorks, compliance","S­y­s­t­e­m­W­o­r­k­s, c­o­m­p­l­i­a­n­c­e"
+00384.2054d62f06fd10e4018a43e156b32acf,00384__salted__extended__cp200B__fragment.2054d62f06fd10e4018a43e156b32acf,extended,200B,fragment,,Guaranteed,G​u​a​r​a​n​t​e​e​d,"annuity, annuity, Guaranteed","a​n​n​u​i​t​y, a​n​n​u​i​t​y, G​u​a​r​a​n​t​e​e​d"
+00384.2054d62f06fd10e4018a43e156b32acf,00384__salted__extended__cp200C__fragment.2054d62f06fd10e4018a43e156b32acf,extended,200C,fragment,,Guaranteed,G‌u‌a‌r‌a‌n‌t‌e‌e‌d,"annuity, annuity, Guaranteed","a‌n‌n‌u‌i‌t‌y, a‌n‌n‌u‌i‌t‌y, G‌u‌a‌r‌a‌n‌t‌e‌e‌d"
+00384.2054d62f06fd10e4018a43e156b32acf,00384__salted__extended__cp200D__fragment.2054d62f06fd10e4018a43e156b32acf,extended,200D,fragment,,Guaranteed,G‍u‍a‍r‍a‍n‍t‍e‍e‍d,"annuity, annuity, Guaranteed","a‍n‍n‍u‍i‍t‍y, a‍n‍n‍u‍i‍t‍y, G‍u‍a‍r‍a‍n‍t‍e‍e‍d"
+00384.2054d62f06fd10e4018a43e156b32acf,00384__salted__extended__cp00AD__fragment.2054d62f06fd10e4018a43e156b32acf,extended,00AD,fragment,,Guaranteed,G­u­a­r­a­n­t­e­e­d,"annuity, annuity, Guaranteed","a­n­n­u­i­t­y, a­n­n­u­i­t­y, G­u­a­r­a­n­t­e­e­d"
+00386.6074f269f0bd1aec1546f9e654e8fcfe,00386__salted__extended__cp200B__fragment.6074f269f0bd1aec1546f9e654e8fcfe,extended,200B,fragment,,,,"earn, click, click","e​a​r​n, c​l​i​c​k, c​l​i​c​k"
+00386.6074f269f0bd1aec1546f9e654e8fcfe,00386__salted__extended__cp200C__fragment.6074f269f0bd1aec1546f9e654e8fcfe,extended,200C,fragment,,,,"earn, click, click","e‌a‌r‌n, c‌l‌i‌c‌k, c‌l‌i‌c‌k"
+00386.6074f269f0bd1aec1546f9e654e8fcfe,00386__salted__extended__cp200D__fragment.6074f269f0bd1aec1546f9e654e8fcfe,extended,200D,fragment,,,,"earn, click, click","e‍a‍r‍n, c‍l‍i‍c‍k, c‍l‍i‍c‍k"
+00386.6074f269f0bd1aec1546f9e654e8fcfe,00386__salted__extended__cp00AD__fragment.6074f269f0bd1aec1546f9e654e8fcfe,extended,00AD,fragment,,,,"earn, click, click","e­a­r­n, c­l­i­c­k, c­l­i­c­k"
+00388.a884c42d4423d7e4718db0145b3b9d9b,00388__salted__extended__cp200B__fragment.a884c42d4423d7e4718db0145b3b9d9b,extended,200B,fragment,,,,GUARANTEED,G​U​A​R​A​N​T​E​E​D
+00388.a884c42d4423d7e4718db0145b3b9d9b,00388__salted__extended__cp200C__fragment.a884c42d4423d7e4718db0145b3b9d9b,extended,200C,fragment,,,,GUARANTEED,G‌U‌A‌R‌A‌N‌T‌E‌E‌D
+00388.a884c42d4423d7e4718db0145b3b9d9b,00388__salted__extended__cp200D__fragment.a884c42d4423d7e4718db0145b3b9d9b,extended,200D,fragment,,,,GUARANTEED,G‍U‍A‍R‍A‍N‍T‍E‍E‍D
+00388.a884c42d4423d7e4718db0145b3b9d9b,00388__salted__extended__cp00AD__fragment.a884c42d4423d7e4718db0145b3b9d9b,extended,00AD,fragment,,,,GUARANTEED,G­U­A­R­A­N­T­E­E­D
+00395.74aee42fac915ca758047506ec59a21f,00395__salted__extended__cp200B__fragment.74aee42fac915ca758047506ec59a21f,extended,200B,fragment,,ADV,A​D​V,,
+00395.74aee42fac915ca758047506ec59a21f,00395__salted__extended__cp200C__fragment.74aee42fac915ca758047506ec59a21f,extended,200C,fragment,,ADV,A‌D‌V,,
+00395.74aee42fac915ca758047506ec59a21f,00395__salted__extended__cp200D__fragment.74aee42fac915ca758047506ec59a21f,extended,200D,fragment,,ADV,A‍D‍V,,
+00395.74aee42fac915ca758047506ec59a21f,00395__salted__extended__cp00AD__fragment.74aee42fac915ca758047506ec59a21f,extended,00AD,fragment,,ADV,A­D­V,,
+00409.e59f63e813b6766a9a4ddf0790634ca3,00409__salted__extended__cp200B__fragment.e59f63e813b6766a9a4ddf0790634ca3,extended,200B,fragment,,,,"guaranteed, profitable, Receive","g​u​a​r​a​n​t​e​e​d, p​r​o​f​i​t​a​b​l​e, R​e​c​e​i​v​e"
+00409.e59f63e813b6766a9a4ddf0790634ca3,00409__salted__extended__cp200C__fragment.e59f63e813b6766a9a4ddf0790634ca3,extended,200C,fragment,,,,"guaranteed, profitable, Receive","g‌u‌a‌r‌a‌n‌t‌e‌e‌d, p‌r‌o‌f‌i‌t‌a‌b‌l‌e, R‌e‌c‌e‌i‌v‌e"
+00409.e59f63e813b6766a9a4ddf0790634ca3,00409__salted__extended__cp200D__fragment.e59f63e813b6766a9a4ddf0790634ca3,extended,200D,fragment,,,,"guaranteed, profitable, Receive","g‍u‍a‍r‍a‍n‍t‍e‍e‍d, p‍r‍o‍f‍i‍t‍a‍b‍l‍e, R‍e‍c‍e‍i‍v‍e"
+00409.e59f63e813b6766a9a4ddf0790634ca3,00409__salted__extended__cp00AD__fragment.e59f63e813b6766a9a4ddf0790634ca3,extended,00AD,fragment,,,,"guaranteed, profitable, Receive","g­u­a­r­a­n­t­e­e­d, p­r­o­f­i­t­a­b­l­e, R­e­c­e­i­v­e"
+00415.4af357c0282481dba8f1765f0bf09c09,00415__salted__extended__cp200B__fragment.4af357c0282481dba8f1765f0bf09c09,extended,200B,fragment,,,,"Annuity, Premium, receive","A​n​n​u​i​t​y, P​r​e​m​i​u​m, r​e​c​e​i​v​e"
+00415.4af357c0282481dba8f1765f0bf09c09,00415__salted__extended__cp200C__fragment.4af357c0282481dba8f1765f0bf09c09,extended,200C,fragment,,,,"Annuity, Premium, receive","A‌n‌n‌u‌i‌t‌y, P‌r‌e‌m‌i‌u‌m, r‌e‌c‌e‌i‌v‌e"
+00415.4af357c0282481dba8f1765f0bf09c09,00415__salted__extended__cp200D__fragment.4af357c0282481dba8f1765f0bf09c09,extended,200D,fragment,,,,"Annuity, Premium, receive","A‍n‍n‍u‍i‍t‍y, P‍r‍e‍m‍i‍u‍m, r‍e‍c‍e‍i‍v‍e"
+00415.4af357c0282481dba8f1765f0bf09c09,00415__salted__extended__cp00AD__fragment.4af357c0282481dba8f1765f0bf09c09,extended,00AD,fragment,,,,"Annuity, Premium, receive","A­n­n­u­i­t­y, P­r­e­m­i­u­m, r­e­c­e­i­v­e"
+00416.bff1badad869f205fdb54f311f060734,00416__salted__extended__cp200B__fragment.bff1badad869f205fdb54f311f060734,extended,200B,fragment,,Guaranteed,G​u​a​r​a​n​t​e​e​d,,
+00416.bff1badad869f205fdb54f311f060734,00416__salted__extended__cp200C__fragment.bff1badad869f205fdb54f311f060734,extended,200C,fragment,,Guaranteed,G‌u‌a‌r‌a‌n‌t‌e‌e‌d,,
+00416.bff1badad869f205fdb54f311f060734,00416__salted__extended__cp200D__fragment.bff1badad869f205fdb54f311f060734,extended,200D,fragment,,Guaranteed,G‍u‍a‍r‍a‍n‍t‍e‍e‍d,,
+00416.bff1badad869f205fdb54f311f060734,00416__salted__extended__cp00AD__fragment.bff1badad869f205fdb54f311f060734,extended,00AD,fragment,,Guaranteed,G­u­a­r­a­n­t­e­e­d,,
+00426.36b36cbe96efe9001c4d80363ea7ed4e,00426__salted__extended__cp200B__fragment.36b36cbe96efe9001c4d80363ea7ed4e,extended,200B,fragment,,,,"mortgage, loan, fees","m​o​r​t​g​a​g​e, l​o​a​n, f​e​e​s"
+00426.36b36cbe96efe9001c4d80363ea7ed4e,00426__salted__extended__cp200C__fragment.36b36cbe96efe9001c4d80363ea7ed4e,extended,200C,fragment,,,,"mortgage, loan, fees","m‌o‌r‌t‌g‌a‌g‌e, l‌o‌a‌n, f‌e‌e‌s"
+00426.36b36cbe96efe9001c4d80363ea7ed4e,00426__salted__extended__cp200D__fragment.36b36cbe96efe9001c4d80363ea7ed4e,extended,200D,fragment,,,,"mortgage, loan, fees","m‍o‍r‍t‍g‍a‍g‍e, l‍o‍a‍n, f‍e‍e‍s"
+00426.36b36cbe96efe9001c4d80363ea7ed4e,00426__salted__extended__cp00AD__fragment.36b36cbe96efe9001c4d80363ea7ed4e,extended,00AD,fragment,,,,"mortgage, loan, fees","m­o­r­t­g­a­g­e, l­o­a­n, f­e­e­s"
+00426.c743511223777504c01a35f90914b230,00426__salted__extended__cp200B__fragment.c743511223777504c01a35f90914b230,extended,200B,fragment,,Fees,F​e​e​s,,
+00426.c743511223777504c01a35f90914b230,00426__salted__extended__cp200C__fragment.c743511223777504c01a35f90914b230,extended,200C,fragment,,Fees,F‌e‌e‌s,,
+00426.c743511223777504c01a35f90914b230,00426__salted__extended__cp200D__fragment.c743511223777504c01a35f90914b230,extended,200D,fragment,,Fees,F‍e‍e‍s,,
+00426.c743511223777504c01a35f90914b230,00426__salted__extended__cp00AD__fragment.c743511223777504c01a35f90914b230,extended,00AD,fragment,,Fees,F­e­e­s,,
+00428.5fe2c974b49315a6fbf9f3b09b47f030,00428__salted__extended__cp200B__fragment.5fe2c974b49315a6fbf9f3b09b47f030,extended,200B,fragment,,Insurance,I​n​s​u​r​a​n​c​e,,
+00428.5fe2c974b49315a6fbf9f3b09b47f030,00428__salted__extended__cp200C__fragment.5fe2c974b49315a6fbf9f3b09b47f030,extended,200C,fragment,,Insurance,I‌n‌s‌u‌r‌a‌n‌c‌e,,
+00428.5fe2c974b49315a6fbf9f3b09b47f030,00428__salted__extended__cp200D__fragment.5fe2c974b49315a6fbf9f3b09b47f030,extended,200D,fragment,,Insurance,I‍n‍s‍u‍r‍a‍n‍c‍e,,
+00428.5fe2c974b49315a6fbf9f3b09b47f030,00428__salted__extended__cp00AD__fragment.5fe2c974b49315a6fbf9f3b09b47f030,extended,00AD,fragment,,Insurance,I­n­s­u­r­a­n­c­e,,
+00430.d2179c2841013fea688db8bbcf60b3b0,00430__salted__extended__cp200B__fragment.d2179c2841013fea688db8bbcf60b3b0,extended,200B,fragment,,Fees,F​e​e​s,,
+00430.d2179c2841013fea688db8bbcf60b3b0,00430__salted__extended__cp200C__fragment.d2179c2841013fea688db8bbcf60b3b0,extended,200C,fragment,,Fees,F‌e‌e‌s,,
+00430.d2179c2841013fea688db8bbcf60b3b0,00430__salted__extended__cp200D__fragment.d2179c2841013fea688db8bbcf60b3b0,extended,200D,fragment,,Fees,F‍e‍e‍s,,
+00430.d2179c2841013fea688db8bbcf60b3b0,00430__salted__extended__cp00AD__fragment.d2179c2841013fea688db8bbcf60b3b0,extended,00AD,fragment,,Fees,F­e­e­s,,
+00439.eacffbae5543e6be58178c0d3eb95041,00439__salted__extended__cp200B__fragment.eacffbae5543e6be58178c0d3eb95041,extended,200B,fragment,,,,"secrets, Click, receive","s​e​c​r​e​t​s, C​l​i​c​k, r​e​c​e​i​v​e"
+00439.eacffbae5543e6be58178c0d3eb95041,00439__salted__extended__cp200C__fragment.eacffbae5543e6be58178c0d3eb95041,extended,200C,fragment,,,,"secrets, Click, receive","s‌e‌c‌r‌e‌t‌s, C‌l‌i‌c‌k, r‌e‌c‌e‌i‌v‌e"
+00439.eacffbae5543e6be58178c0d3eb95041,00439__salted__extended__cp200D__fragment.eacffbae5543e6be58178c0d3eb95041,extended,200D,fragment,,,,"secrets, Click, receive","s‍e‍c‍r‍e‍t‍s, C‍l‍i‍c‍k, r‍e‍c‍e‍i‍v‍e"
+00439.eacffbae5543e6be58178c0d3eb95041,00439__salted__extended__cp00AD__fragment.eacffbae5543e6be58178c0d3eb95041,extended,00AD,fragment,,,,"secrets, Click, receive","s­e­c­r­e­t­s, C­l­i­c­k, r­e­c­e­i­v­e"
+00440.647d9eb44fd0cb069ea92be204966a8e,00440__salted__extended__cp200B__fragment.647d9eb44fd0cb069ea92be204966a8e,extended,200B,fragment,,SYSTEMWORKS,S​Y​S​T​E​M​W​O​R​K​S,,
+00440.647d9eb44fd0cb069ea92be204966a8e,00440__salted__extended__cp200C__fragment.647d9eb44fd0cb069ea92be204966a8e,extended,200C,fragment,,SYSTEMWORKS,S‌Y‌S‌T‌E‌M‌W‌O‌R‌K‌S,,
+00440.647d9eb44fd0cb069ea92be204966a8e,00440__salted__extended__cp200D__fragment.647d9eb44fd0cb069ea92be204966a8e,extended,200D,fragment,,SYSTEMWORKS,S‍Y‍S‍T‍E‍M‍W‍O‍R‍K‍S,,
+00440.647d9eb44fd0cb069ea92be204966a8e,00440__salted__extended__cp00AD__fragment.647d9eb44fd0cb069ea92be204966a8e,extended,00AD,fragment,,SYSTEMWORKS,S­Y­S­T­E­M­W­O­R­K­S,,
+00441.77768298934252b2fa200e7d9482993b,00441__salted__extended__cp200B__fragment.77768298934252b2fa200e7d9482993b,extended,200B,fragment,,Bills,B​i​l​l​s,,
+00441.77768298934252b2fa200e7d9482993b,00441__salted__extended__cp200C__fragment.77768298934252b2fa200e7d9482993b,extended,200C,fragment,,Bills,B‌i‌l‌l‌s,,
+00441.77768298934252b2fa200e7d9482993b,00441__salted__extended__cp200D__fragment.77768298934252b2fa200e7d9482993b,extended,200D,fragment,,Bills,B‍i‍l‍l‍s,,
+00441.77768298934252b2fa200e7d9482993b,00441__salted__extended__cp00AD__fragment.77768298934252b2fa200e7d9482993b,extended,00AD,fragment,,Bills,B­i­l­l­s,,
+00445.a5edbd936b830407d1a56b31ff3b82c0,00445__salted__extended__cp200B__fragment.a5edbd936b830407d1a56b31ff3b82c0,extended,200B,fragment,,Herbal,H​e​r​b​a​l,,
+00445.a5edbd936b830407d1a56b31ff3b82c0,00445__salted__extended__cp200C__fragment.a5edbd936b830407d1a56b31ff3b82c0,extended,200C,fragment,,Herbal,H‌e‌r‌b‌a‌l,,
+00445.a5edbd936b830407d1a56b31ff3b82c0,00445__salted__extended__cp200D__fragment.a5edbd936b830407d1a56b31ff3b82c0,extended,200D,fragment,,Herbal,H‍e‍r‍b‍a‍l,,
+00445.a5edbd936b830407d1a56b31ff3b82c0,00445__salted__extended__cp00AD__fragment.a5edbd936b830407d1a56b31ff3b82c0,extended,00AD,fragment,,Herbal,H­e­r­b­a­l,,
+00447.32e588c3a1d8888d737f360f825713b8,00447__salted__extended__cp200B__fragment.32e588c3a1d8888d737f360f825713b8,extended,200B,fragment,,,,"guaranteed, premium, attained","g​u​a​r​a​n​t​e​e​d, p​r​e​m​i​u​m, a​t​t​a​i​n​e​d"
+00447.32e588c3a1d8888d737f360f825713b8,00447__salted__extended__cp200C__fragment.32e588c3a1d8888d737f360f825713b8,extended,200C,fragment,,,,"guaranteed, premium, attained","g‌u‌a‌r‌a‌n‌t‌e‌e‌d, p‌r‌e‌m‌i‌u‌m, a‌t‌t‌a‌i‌n‌e‌d"
+00447.32e588c3a1d8888d737f360f825713b8,00447__salted__extended__cp200D__fragment.32e588c3a1d8888d737f360f825713b8,extended,200D,fragment,,,,"guaranteed, premium, attained","g‍u‍a‍r‍a‍n‍t‍e‍e‍d, p‍r‍e‍m‍i‍u‍m, a‍t‍t‍a‍i‍n‍e‍d"
+00447.32e588c3a1d8888d737f360f825713b8,00447__salted__extended__cp00AD__fragment.32e588c3a1d8888d737f360f825713b8,extended,00AD,fragment,,,,"guaranteed, premium, attained","g­u­a­r­a­n­t­e­e­d, p­r­e­m­i­u­m, a­t­t­a­i­n­e­d"
+00455.8ccdcb205b6f8c3958bb3b2d39edca46,00455__salted__extended__cp200B__fragment.8ccdcb205b6f8c3958bb3b2d39edca46,extended,200B,fragment,,ADV,A​D​V,,
+00455.8ccdcb205b6f8c3958bb3b2d39edca46,00455__salted__extended__cp200C__fragment.8ccdcb205b6f8c3958bb3b2d39edca46,extended,200C,fragment,,ADV,A‌D‌V,,
+00455.8ccdcb205b6f8c3958bb3b2d39edca46,00455__salted__extended__cp200D__fragment.8ccdcb205b6f8c3958bb3b2d39edca46,extended,200D,fragment,,ADV,A‍D‍V,,
+00455.8ccdcb205b6f8c3958bb3b2d39edca46,00455__salted__extended__cp00AD__fragment.8ccdcb205b6f8c3958bb3b2d39edca46,extended,00AD,fragment,,ADV,A­D­V,,
+00458.62211764fde0dd7128ea4146268b40dd,00458__salted__extended__cp200B__fragment.62211764fde0dd7128ea4146268b40dd,extended,200B,fragment,,,,"earn, click, click","e​a​r​n, c​l​i​c​k, c​l​i​c​k"
+00458.62211764fde0dd7128ea4146268b40dd,00458__salted__extended__cp200C__fragment.62211764fde0dd7128ea4146268b40dd,extended,200C,fragment,,,,"earn, click, click","e‌a‌r‌n, c‌l‌i‌c‌k, c‌l‌i‌c‌k"
+00458.62211764fde0dd7128ea4146268b40dd,00458__salted__extended__cp200D__fragment.62211764fde0dd7128ea4146268b40dd,extended,200D,fragment,,,,"earn, click, click","e‍a‍r‍n, c‍l‍i‍c‍k, c‍l‍i‍c‍k"
+00458.62211764fde0dd7128ea4146268b40dd,00458__salted__extended__cp00AD__fragment.62211764fde0dd7128ea4146268b40dd,extended,00AD,fragment,,,,"earn, click, click","e­a­r­n, c­l­i­c­k, c­l­i­c­k"
+00467.3748c927c32a9c4e8988dad52a843b5c,00467__salted__extended__cp200B__fragment.3748c927c32a9c4e8988dad52a843b5c,extended,200B,fragment,,,,"qualified, Click, receive","q​u​a​l​i​f​i​e​d, C​l​i​c​k, r​e​c​e​i​v​e"
+00467.3748c927c32a9c4e8988dad52a843b5c,00467__salted__extended__cp200C__fragment.3748c927c32a9c4e8988dad52a843b5c,extended,200C,fragment,,,,"qualified, Click, receive","q‌u‌a‌l‌i‌f‌i‌e‌d, C‌l‌i‌c‌k, r‌e‌c‌e‌i‌v‌e"
+00467.3748c927c32a9c4e8988dad52a843b5c,00467__salted__extended__cp200D__fragment.3748c927c32a9c4e8988dad52a843b5c,extended,200D,fragment,,,,"qualified, Click, receive","q‍u‍a‍l‍i‍f‍i‍e‍d, C‍l‍i‍c‍k, r‍e‍c‍e‍i‍v‍e"
+00467.3748c927c32a9c4e8988dad52a843b5c,00467__salted__extended__cp00AD__fragment.3748c927c32a9c4e8988dad52a843b5c,extended,00AD,fragment,,,,"qualified, Click, receive","q­u­a­l­i­f­i­e­d, C­l­i­c­k, r­e­c­e­i­v­e"
+00475.71f75afb1960d619af86e1c64dcb11fc,00475__salted__extended__cp200B__fragment.71f75afb1960d619af86e1c64dcb11fc,extended,200B,fragment,,Commissions,C​o​m​m​i​s​s​i​o​n​s,"Premium, receive, receive","P​r​e​m​i​u​m, r​e​c​e​i​v​e, r​e​c​e​i​v​e"
+00475.71f75afb1960d619af86e1c64dcb11fc,00475__salted__extended__cp200C__fragment.71f75afb1960d619af86e1c64dcb11fc,extended,200C,fragment,,Commissions,C‌o‌m‌m‌i‌s‌s‌i‌o‌n‌s,"Premium, receive, receive","P‌r‌e‌m‌i‌u‌m, r‌e‌c‌e‌i‌v‌e, r‌e‌c‌e‌i‌v‌e"
+00475.71f75afb1960d619af86e1c64dcb11fc,00475__salted__extended__cp200D__fragment.71f75afb1960d619af86e1c64dcb11fc,extended,200D,fragment,,Commissions,C‍o‍m‍m‍i‍s‍s‍i‍o‍n‍s,"Premium, receive, receive","P‍r‍e‍m‍i‍u‍m, r‍e‍c‍e‍i‍v‍e, r‍e‍c‍e‍i‍v‍e"
+00475.71f75afb1960d619af86e1c64dcb11fc,00475__salted__extended__cp00AD__fragment.71f75afb1960d619af86e1c64dcb11fc,extended,00AD,fragment,,Commissions,C­o­m­m­i­s­s­i­o­n­s,"Premium, receive, receive","P­r­e­m­i­u­m, r­e­c­e­i­v­e, r­e­c­e­i­v­e"
+00482.f839ea522f1ee459661a6b2fbd71e823,00482__salted__extended__cp200B__fragment.f839ea522f1ee459661a6b2fbd71e823,extended,200B,fragment,,ADV,A​D​V,,
+00482.f839ea522f1ee459661a6b2fbd71e823,00482__salted__extended__cp200C__fragment.f839ea522f1ee459661a6b2fbd71e823,extended,200C,fragment,,ADV,A‌D‌V,,
+00482.f839ea522f1ee459661a6b2fbd71e823,00482__salted__extended__cp200D__fragment.f839ea522f1ee459661a6b2fbd71e823,extended,200D,fragment,,ADV,A‍D‍V,,
+00482.f839ea522f1ee459661a6b2fbd71e823,00482__salted__extended__cp00AD__fragment.f839ea522f1ee459661a6b2fbd71e823,extended,00AD,fragment,,ADV,A­D­V,,
+00483.e583ffb0efd3958cdef2e9f3b043ef0d,00483__salted__extended__cp200B__fragment.e583ffb0efd3958cdef2e9f3b043ef0d,extended,200B,fragment,,Herbal,H​e​r​b​a​l,,
+00483.e583ffb0efd3958cdef2e9f3b043ef0d,00483__salted__extended__cp200C__fragment.e583ffb0efd3958cdef2e9f3b043ef0d,extended,200C,fragment,,Herbal,H‌e‌r‌b‌a‌l,,
+00483.e583ffb0efd3958cdef2e9f3b043ef0d,00483__salted__extended__cp200D__fragment.e583ffb0efd3958cdef2e9f3b043ef0d,extended,200D,fragment,,Herbal,H‍e‍r‍b‍a‍l,,
+00483.e583ffb0efd3958cdef2e9f3b043ef0d,00483__salted__extended__cp00AD__fragment.e583ffb0efd3958cdef2e9f3b043ef0d,extended,00AD,fragment,,Herbal,H­e­r­b­a­l,,
+00485.a5d28b804adbceff7fd75ed9fc8138bb,00485__salted__extended__cp200B__fragment.a5d28b804adbceff7fd75ed9fc8138bb,extended,200B,fragment,,,,"MLM, promotion, affordable","M​L​M, p​r​o​m​o​t​i​o​n, a​f​f​o​r​d​a​b​l​e"
+00485.a5d28b804adbceff7fd75ed9fc8138bb,00485__salted__extended__cp200C__fragment.a5d28b804adbceff7fd75ed9fc8138bb,extended,200C,fragment,,,,"MLM, promotion, affordable","M‌L‌M, p‌r‌o‌m‌o‌t‌i‌o‌n, a‌f‌f‌o‌r‌d‌a‌b‌l‌e"
+00485.a5d28b804adbceff7fd75ed9fc8138bb,00485__salted__extended__cp200D__fragment.a5d28b804adbceff7fd75ed9fc8138bb,extended,200D,fragment,,,,"MLM, promotion, affordable","M‍L‍M, p‍r‍o‍m‍o‍t‍i‍o‍n, a‍f‍f‍o‍r‍d‍a‍b‍l‍e"
+00485.a5d28b804adbceff7fd75ed9fc8138bb,00485__salted__extended__cp00AD__fragment.a5d28b804adbceff7fd75ed9fc8138bb,extended,00AD,fragment,,,,"MLM, promotion, affordable","M­L­M, p­r­o­m­o­t­i­o­n, a­f­f­o­r­d­a­b­l­e"
+00494.6d13d2217c5cc00c26b72d97c7fe6014,00494__salted__extended__cp200B__fragment.6d13d2217c5cc00c26b72d97c7fe6014,extended,200B,fragment,,insurance,i​n​s​u​r​a​n​c​e,,
+00494.6d13d2217c5cc00c26b72d97c7fe6014,00494__salted__extended__cp200C__fragment.6d13d2217c5cc00c26b72d97c7fe6014,extended,200C,fragment,,insurance,i‌n‌s‌u‌r‌a‌n‌c‌e,,
+00494.6d13d2217c5cc00c26b72d97c7fe6014,00494__salted__extended__cp200D__fragment.6d13d2217c5cc00c26b72d97c7fe6014,extended,200D,fragment,,insurance,i‍n‍s‍u‍r‍a‍n‍c‍e,,
+00494.6d13d2217c5cc00c26b72d97c7fe6014,00494__salted__extended__cp00AD__fragment.6d13d2217c5cc00c26b72d97c7fe6014,extended,00AD,fragment,,insurance,i­n­s­u­r­a­n­c­e,,
+00494.fd2efa67e63247ee89cdcf3a6fe7906d,00494__salted__extended__cp200B__fragment.fd2efa67e63247ee89cdcf3a6fe7906d,extended,200B,fragment,,,,"ATTN, SIR, assistance","A​T​T​N, S​I​R, a​s​s​i​s​t​a​n​c​e"
+00494.fd2efa67e63247ee89cdcf3a6fe7906d,00494__salted__extended__cp200C__fragment.fd2efa67e63247ee89cdcf3a6fe7906d,extended,200C,fragment,,,,"ATTN, SIR, assistance","A‌T‌T‌N, S‌I‌R, a‌s‌s‌i‌s‌t‌a‌n‌c‌e"
+00494.fd2efa67e63247ee89cdcf3a6fe7906d,00494__salted__extended__cp200D__fragment.fd2efa67e63247ee89cdcf3a6fe7906d,extended,200D,fragment,,,,"ATTN, SIR, assistance","A‍T‍T‍N, S‍I‍R, a‍s‍s‍i‍s‍t‍a‍n‍c‍e"
+00494.fd2efa67e63247ee89cdcf3a6fe7906d,00494__salted__extended__cp00AD__fragment.fd2efa67e63247ee89cdcf3a6fe7906d,extended,00AD,fragment,,,,"ATTN, SIR, assistance","A­T­T­N, S­I­R, a­s­s­i­s­t­a­n­c­e"
+00506.85af6cd716febc6265ac7b362a4a1da6,00506__salted__extended__cp200B__fragment.85af6cd716febc6265ac7b362a4a1da6,extended,200B,fragment,,MORTGAGE,M​O​R​T​G​A​G​E,,
+00506.85af6cd716febc6265ac7b362a4a1da6,00506__salted__extended__cp200C__fragment.85af6cd716febc6265ac7b362a4a1da6,extended,200C,fragment,,MORTGAGE,M‌O‌R‌T‌G‌A‌G‌E,,
+00506.85af6cd716febc6265ac7b362a4a1da6,00506__salted__extended__cp200D__fragment.85af6cd716febc6265ac7b362a4a1da6,extended,200D,fragment,,MORTGAGE,M‍O‍R‍T‍G‍A‍G‍E,,
+00506.85af6cd716febc6265ac7b362a4a1da6,00506__salted__extended__cp00AD__fragment.85af6cd716febc6265ac7b362a4a1da6,extended,00AD,fragment,,MORTGAGE,M­O­R­T­G­A­G­E,,
+00509.385c788f39e46a86be4c6af8679a0c80,00509__salted__extended__cp200B__fragment.385c788f39e46a86be4c6af8679a0c80,extended,200B,fragment,,,,"Postal, MasterCard, Postal","P​o​s​t​a​l, M​a​s​t​e​r​C​a​r​d, P​o​s​t​a​l"
+00509.385c788f39e46a86be4c6af8679a0c80,00509__salted__extended__cp200C__fragment.385c788f39e46a86be4c6af8679a0c80,extended,200C,fragment,,,,"Postal, MasterCard, Postal","P‌o‌s‌t‌a‌l, M‌a‌s‌t‌e‌r‌C‌a‌r‌d, P‌o‌s‌t‌a‌l"
+00509.385c788f39e46a86be4c6af8679a0c80,00509__salted__extended__cp200D__fragment.385c788f39e46a86be4c6af8679a0c80,extended,200D,fragment,,,,"Postal, MasterCard, Postal","P‍o‍s‍t‍a‍l, M‍a‍s‍t‍e‍r‍C‍a‍r‍d, P‍o‍s‍t‍a‍l"
+00509.385c788f39e46a86be4c6af8679a0c80,00509__salted__extended__cp00AD__fragment.385c788f39e46a86be4c6af8679a0c80,extended,00AD,fragment,,,,"Postal, MasterCard, Postal","P­o­s­t­a­l, M­a­s­t­e­r­C­a­r­d, P­o­s­t­a­l"
+00510.ce04ead27e498e82285ea6dbb0837c13,00510__salted__extended__cp200B__fragment.ce04ead27e498e82285ea6dbb0837c13,extended,200B,fragment,,adv,a​d​v,"Dear, Click","D​e​a​r, C​l​i​c​k"
+00510.ce04ead27e498e82285ea6dbb0837c13,00510__salted__extended__cp200C__fragment.ce04ead27e498e82285ea6dbb0837c13,extended,200C,fragment,,adv,a‌d‌v,"Dear, Click","D‌e‌a‌r, C‌l‌i‌c‌k"
+00510.ce04ead27e498e82285ea6dbb0837c13,00510__salted__extended__cp200D__fragment.ce04ead27e498e82285ea6dbb0837c13,extended,200D,fragment,,adv,a‍d‍v,"Dear, Click","D‍e‍a‍r, C‍l‍i‍c‍k"
+00510.ce04ead27e498e82285ea6dbb0837c13,00510__salted__extended__cp00AD__fragment.ce04ead27e498e82285ea6dbb0837c13,extended,00AD,fragment,,adv,a­d­v,"Dear, Click","D­e­a­r, C­l­i­c­k"
+00523.8dad1340c87f606b1f0696df64d9063c,00523__salted__extended__cp200B__fragment.8dad1340c87f606b1f0696df64d9063c,extended,200B,fragment,,MORTGAGE,M​O​R​T​G​A​G​E,,
+00523.8dad1340c87f606b1f0696df64d9063c,00523__salted__extended__cp200C__fragment.8dad1340c87f606b1f0696df64d9063c,extended,200C,fragment,,MORTGAGE,M‌O‌R‌T‌G‌A‌G‌E,,
+00523.8dad1340c87f606b1f0696df64d9063c,00523__salted__extended__cp200D__fragment.8dad1340c87f606b1f0696df64d9063c,extended,200D,fragment,,MORTGAGE,M‍O‍R‍T‍G‍A‍G‍E,,
+00523.8dad1340c87f606b1f0696df64d9063c,00523__salted__extended__cp00AD__fragment.8dad1340c87f606b1f0696df64d9063c,extended,00AD,fragment,,MORTGAGE,M­O­R­T­G­A­G­E,,
+00531.f3fffa4504c7009a03dd0d44a4562a84,00531__salted__extended__cp200B__fragment.f3fffa4504c7009a03dd0d44a4562a84,extended,200B,fragment,,ordering,o​r​d​e​r​i​n​g,,
+00531.f3fffa4504c7009a03dd0d44a4562a84,00531__salted__extended__cp200C__fragment.f3fffa4504c7009a03dd0d44a4562a84,extended,200C,fragment,,ordering,o‌r‌d‌e‌r‌i‌n‌g,,
+00531.f3fffa4504c7009a03dd0d44a4562a84,00531__salted__extended__cp200D__fragment.f3fffa4504c7009a03dd0d44a4562a84,extended,200D,fragment,,ordering,o‍r‍d‍e‍r‍i‍n‍g,,
+00531.f3fffa4504c7009a03dd0d44a4562a84,00531__salted__extended__cp00AD__fragment.f3fffa4504c7009a03dd0d44a4562a84,extended,00AD,fragment,,ordering,o­r­d­e­r­i­n­g,,
+00554.c325ab7400fb7e3f053ed0cac4ed7545,00554__salted__extended__cp200B__fragment.c325ab7400fb7e3f053ed0cac4ed7545,extended,200B,fragment,,Assistance,A​s​s​i​s​t​a​n​c​e,"confidentiality, Nigeria, presently","c​o​n​f​i​d​e​n​t​i​a​l​i​t​y, N​i​g​e​r​i​a, p​r​e​s​e​n​t​l​y"
+00554.c325ab7400fb7e3f053ed0cac4ed7545,00554__salted__extended__cp200C__fragment.c325ab7400fb7e3f053ed0cac4ed7545,extended,200C,fragment,,Assistance,A‌s‌s‌i‌s‌t‌a‌n‌c‌e,"confidentiality, Nigeria, presently","c‌o‌n‌f‌i‌d‌e‌n‌t‌i‌a‌l‌i‌t‌y, N‌i‌g‌e‌r‌i‌a, p‌r‌e‌s‌e‌n‌t‌l‌y"
+00554.c325ab7400fb7e3f053ed0cac4ed7545,00554__salted__extended__cp200D__fragment.c325ab7400fb7e3f053ed0cac4ed7545,extended,200D,fragment,,Assistance,A‍s‍s‍i‍s‍t‍a‍n‍c‍e,"confidentiality, Nigeria, presently","c‍o‍n‍f‍i‍d‍e‍n‍t‍i‍a‍l‍i‍t‍y, N‍i‍g‍e‍r‍i‍a, p‍r‍e‍s‍e‍n‍t‍l‍y"
+00554.c325ab7400fb7e3f053ed0cac4ed7545,00554__salted__extended__cp00AD__fragment.c325ab7400fb7e3f053ed0cac4ed7545,extended,00AD,fragment,,Assistance,A­s­s­i­s­t­a­n­c­e,"confidentiality, Nigeria, presently","c­o­n­f­i­d­e­n­t­i­a­l­i­t­y, N­i­g­e­r­i­a, p­r­e­s­e­n­t­l­y"
+00568.9099cfcce869f4ecf337fc666f04c11d,00568__salted__extended__cp200B__fragment.9099cfcce869f4ecf337fc666f04c11d,extended,200B,fragment,,,,Click,C​l​i​c​k
+00568.9099cfcce869f4ecf337fc666f04c11d,00568__salted__extended__cp200C__fragment.9099cfcce869f4ecf337fc666f04c11d,extended,200C,fragment,,,,Click,C‌l‌i‌c‌k
+00568.9099cfcce869f4ecf337fc666f04c11d,00568__salted__extended__cp200D__fragment.9099cfcce869f4ecf337fc666f04c11d,extended,200D,fragment,,,,Click,C‍l‍i‍c‍k
+00568.9099cfcce869f4ecf337fc666f04c11d,00568__salted__extended__cp00AD__fragment.9099cfcce869f4ecf337fc666f04c11d,extended,00AD,fragment,,,,Click,C­l­i­c­k
+00582.2db3b12f1cbf87ef3a64d26c35561a5b,00582__salted__extended__cp200B__fragment.2db3b12f1cbf87ef3a64d26c35561a5b,extended,200B,fragment,,ADV,A​D​V,,
+00582.2db3b12f1cbf87ef3a64d26c35561a5b,00582__salted__extended__cp200C__fragment.2db3b12f1cbf87ef3a64d26c35561a5b,extended,200C,fragment,,ADV,A‌D‌V,,
+00582.2db3b12f1cbf87ef3a64d26c35561a5b,00582__salted__extended__cp200D__fragment.2db3b12f1cbf87ef3a64d26c35561a5b,extended,200D,fragment,,ADV,A‍D‍V,,
+00582.2db3b12f1cbf87ef3a64d26c35561a5b,00582__salted__extended__cp00AD__fragment.2db3b12f1cbf87ef3a64d26c35561a5b,extended,00AD,fragment,,ADV,A­D­V,,
+00602.8b839b13833d7ca3abd6f6179ccc0286,00602__salted__extended__cp200B__fragment.8b839b13833d7ca3abd6f6179ccc0286,extended,200B,fragment,,Loan,L​o​a​n,,
+00602.8b839b13833d7ca3abd6f6179ccc0286,00602__salted__extended__cp200C__fragment.8b839b13833d7ca3abd6f6179ccc0286,extended,200C,fragment,,Loan,L‌o‌a‌n,,
+00602.8b839b13833d7ca3abd6f6179ccc0286,00602__salted__extended__cp200D__fragment.8b839b13833d7ca3abd6f6179ccc0286,extended,200D,fragment,,Loan,L‍o‍a‍n,,
+00602.8b839b13833d7ca3abd6f6179ccc0286,00602__salted__extended__cp00AD__fragment.8b839b13833d7ca3abd6f6179ccc0286,extended,00AD,fragment,,Loan,L­o­a­n,,
+00615.e47bff6118d4ff6d98581fa6f40ab871,00615__salted__extended__cp200B__fragment.e47bff6118d4ff6d98581fa6f40ab871,extended,200B,fragment,,,,"lagos, Nigeria, Attn","l​a​g​o​s, N​i​g​e​r​i​a, A​t​t​n"
+00615.e47bff6118d4ff6d98581fa6f40ab871,00615__salted__extended__cp200C__fragment.e47bff6118d4ff6d98581fa6f40ab871,extended,200C,fragment,,,,"lagos, Nigeria, Attn","l‌a‌g‌o‌s, N‌i‌g‌e‌r‌i‌a, A‌t‌t‌n"
+00615.e47bff6118d4ff6d98581fa6f40ab871,00615__salted__extended__cp200D__fragment.e47bff6118d4ff6d98581fa6f40ab871,extended,200D,fragment,,,,"lagos, Nigeria, Attn","l‍a‍g‍o‍s, N‍i‍g‍e‍r‍i‍a, A‍t‍t‍n"
+00615.e47bff6118d4ff6d98581fa6f40ab871,00615__salted__extended__cp00AD__fragment.e47bff6118d4ff6d98581fa6f40ab871,extended,00AD,fragment,,,,"lagos, Nigeria, Attn","l­a­g­o­s, N­i­g­e­r­i­a, A­t­t­n"
+00631.5b4f290bc474889ff457b314996553b1,00631__salted__extended__cp200B__fragment.5b4f290bc474889ff457b314996553b1,extended,200B,fragment,,Guaranteed,G​u​a​r​a​n​t​e​e​d,,
+00631.5b4f290bc474889ff457b314996553b1,00631__salted__extended__cp200C__fragment.5b4f290bc474889ff457b314996553b1,extended,200C,fragment,,Guaranteed,G‌u‌a‌r‌a‌n‌t‌e‌e‌d,,
+00631.5b4f290bc474889ff457b314996553b1,00631__salted__extended__cp200D__fragment.5b4f290bc474889ff457b314996553b1,extended,200D,fragment,,Guaranteed,G‍u‍a‍r‍a‍n‍t‍e‍e‍d,,
+00631.5b4f290bc474889ff457b314996553b1,00631__salted__extended__cp00AD__fragment.5b4f290bc474889ff457b314996553b1,extended,00AD,fragment,,Guaranteed,G­u­a­r­a­n­t­e­e­d,,
+00632.f90d0f620d4a4c4976e1c5884333f329,00632__salted__extended__cp200B__fragment.f90d0f620d4a4c4976e1c5884333f329,extended,200B,fragment,,,,"resell, GUARANTEED, click","r​e​s​e​l​l, G​U​A​R​A​N​T​E​E​D, c​l​i​c​k"
+00632.f90d0f620d4a4c4976e1c5884333f329,00632__salted__extended__cp200C__fragment.f90d0f620d4a4c4976e1c5884333f329,extended,200C,fragment,,,,"resell, GUARANTEED, click","r‌e‌s‌e‌l‌l, G‌U‌A‌R‌A‌N‌T‌E‌E‌D, c‌l‌i‌c‌k"
+00632.f90d0f620d4a4c4976e1c5884333f329,00632__salted__extended__cp200D__fragment.f90d0f620d4a4c4976e1c5884333f329,extended,200D,fragment,,,,"resell, GUARANTEED, click","r‍e‍s‍e‍l‍l, G‍U‍A‍R‍A‍N‍T‍E‍E‍D, c‍l‍i‍c‍k"
+00632.f90d0f620d4a4c4976e1c5884333f329,00632__salted__extended__cp00AD__fragment.f90d0f620d4a4c4976e1c5884333f329,extended,00AD,fragment,,,,"resell, GUARANTEED, click","r­e­s­e­l­l, G­U­A­R­A­N­T­E­E­D, c­l­i­c­k"
+00643.d177c04238b4299813b7d8cca9fb2f18,00643__salted__extended__cp200B__fragment.d177c04238b4299813b7d8cca9fb2f18,extended,200B,fragment,,,,"Insurance, click, Insurance","I​n​s​u​r​a​n​c​e, c​l​i​c​k, I​n​s​u​r​a​n​c​e"
+00643.d177c04238b4299813b7d8cca9fb2f18,00643__salted__extended__cp200C__fragment.d177c04238b4299813b7d8cca9fb2f18,extended,200C,fragment,,,,"Insurance, click, Insurance","I‌n‌s‌u‌r‌a‌n‌c‌e, c‌l‌i‌c‌k, I‌n‌s‌u‌r‌a‌n‌c‌e"
+00643.d177c04238b4299813b7d8cca9fb2f18,00643__salted__extended__cp200D__fragment.d177c04238b4299813b7d8cca9fb2f18,extended,200D,fragment,,,,"Insurance, click, Insurance","I‍n‍s‍u‍r‍a‍n‍c‍e, c‍l‍i‍c‍k, I‍n‍s‍u‍r‍a‍n‍c‍e"
+00643.d177c04238b4299813b7d8cca9fb2f18,00643__salted__extended__cp00AD__fragment.d177c04238b4299813b7d8cca9fb2f18,extended,00AD,fragment,,,,"Insurance, click, Insurance","I­n­s­u­r­a­n­c­e, c­l­i­c­k, I­n­s­u­r­a­n­c­e"
+00658.2324b3351e766248275bace98fd3c7b3,00658__salted__extended__cp200B__fragment.2324b3351e766248275bace98fd3c7b3,extended,200B,fragment,,,,"affordable, affordable, fees","a​f​f​o​r​d​a​b​l​e, a​f​f​o​r​d​a​b​l​e, f​e​e​s"
+00658.2324b3351e766248275bace98fd3c7b3,00658__salted__extended__cp200C__fragment.2324b3351e766248275bace98fd3c7b3,extended,200C,fragment,,,,"affordable, affordable, fees","a‌f‌f‌o‌r‌d‌a‌b‌l‌e, a‌f‌f‌o‌r‌d‌a‌b‌l‌e, f‌e‌e‌s"
+00658.2324b3351e766248275bace98fd3c7b3,00658__salted__extended__cp200D__fragment.2324b3351e766248275bace98fd3c7b3,extended,200D,fragment,,,,"affordable, affordable, fees","a‍f‍f‍o‍r‍d‍a‍b‍l‍e, a‍f‍f‍o‍r‍d‍a‍b‍l‍e, f‍e‍e‍s"
+00658.2324b3351e766248275bace98fd3c7b3,00658__salted__extended__cp00AD__fragment.2324b3351e766248275bace98fd3c7b3,extended,00AD,fragment,,,,"affordable, affordable, fees","a­f­f­o­r­d­a­b­l­e, a­f­f­o­r­d­a­b­l­e, f­e­e­s"
+00659.668ba8daca71e86de0ee5e412b177015,00659__salted__extended__cp200B__fragment.668ba8daca71e86de0ee5e412b177015,extended,200B,fragment,,,,"CONSULTATION, GUARANTEED","C​O​N​S​U​L​T​A​T​I​O​N, G​U​A​R​A​N​T​E​E​D"
+00659.668ba8daca71e86de0ee5e412b177015,00659__salted__extended__cp200C__fragment.668ba8daca71e86de0ee5e412b177015,extended,200C,fragment,,,,"CONSULTATION, GUARANTEED","C‌O‌N‌S‌U‌L‌T‌A‌T‌I‌O‌N, G‌U‌A‌R‌A‌N‌T‌E‌E‌D"
+00659.668ba8daca71e86de0ee5e412b177015,00659__salted__extended__cp200D__fragment.668ba8daca71e86de0ee5e412b177015,extended,200D,fragment,,,,"CONSULTATION, GUARANTEED","C‍O‍N‍S‍U‍L‍T‍A‍T‍I‍O‍N, G‍U‍A‍R‍A‍N‍T‍E‍E‍D"
+00659.668ba8daca71e86de0ee5e412b177015,00659__salted__extended__cp00AD__fragment.668ba8daca71e86de0ee5e412b177015,extended,00AD,fragment,,,,"CONSULTATION, GUARANTEED","C­O­N­S­U­L­T­A­T­I­O­N, G­U­A­R­A­N­T­E­E­D"
+00663.4baa9521293a04306b038be1f65d4471,00663__salted__extended__cp200B__fragment.4baa9521293a04306b038be1f65d4471,extended,200B,fragment,,,,"CONSULTATION, GUARANTEED","C​O​N​S​U​L​T​A​T​I​O​N, G​U​A​R​A​N​T​E​E​D"
+00663.4baa9521293a04306b038be1f65d4471,00663__salted__extended__cp200C__fragment.4baa9521293a04306b038be1f65d4471,extended,200C,fragment,,,,"CONSULTATION, GUARANTEED","C‌O‌N‌S‌U‌L‌T‌A‌T‌I‌O‌N, G‌U‌A‌R‌A‌N‌T‌E‌E‌D"
+00663.4baa9521293a04306b038be1f65d4471,00663__salted__extended__cp200D__fragment.4baa9521293a04306b038be1f65d4471,extended,200D,fragment,,,,"CONSULTATION, GUARANTEED","C‍O‍N‍S‍U‍L‍T‍A‍T‍I‍O‍N, G‍U‍A‍R‍A‍N‍T‍E‍E‍D"
+00663.4baa9521293a04306b038be1f65d4471,00663__salted__extended__cp00AD__fragment.4baa9521293a04306b038be1f65d4471,extended,00AD,fragment,,,,"CONSULTATION, GUARANTEED","C­O­N­S­U­L­T­A­T­I­O­N, G­U­A­R­A­N­T­E­E­D"
+00667.6bf743b1b5bdfe9340d438c0661e4bff,00667__salted__extended__cp200B__fragment.6bf743b1b5bdfe9340d438c0661e4bff,extended,200B,fragment,,,,"Earn, Annuity, Annuity","E​a​r​n, A​n​n​u​i​t​y, A​n​n​u​i​t​y"
+00667.6bf743b1b5bdfe9340d438c0661e4bff,00667__salted__extended__cp200C__fragment.6bf743b1b5bdfe9340d438c0661e4bff,extended,200C,fragment,,,,"Earn, Annuity, Annuity","E‌a‌r‌n, A‌n‌n‌u‌i‌t‌y, A‌n‌n‌u‌i‌t‌y"
+00667.6bf743b1b5bdfe9340d438c0661e4bff,00667__salted__extended__cp200D__fragment.6bf743b1b5bdfe9340d438c0661e4bff,extended,200D,fragment,,,,"Earn, Annuity, Annuity","E‍a‍r‍n, A‍n‍n‍u‍i‍t‍y, A‍n‍n‍u‍i‍t‍y"
+00667.6bf743b1b5bdfe9340d438c0661e4bff,00667__salted__extended__cp00AD__fragment.6bf743b1b5bdfe9340d438c0661e4bff,extended,00AD,fragment,,,,"Earn, Annuity, Annuity","E­a­r­n, A­n­n­u­i­t­y, A­n­n­u­i­t­y"
+00678.7c54f6e0fac3e7d26a9513d2c60e2b98,00678__salted__extended__cp200B__fragment.7c54f6e0fac3e7d26a9513d2c60e2b98,extended,200B,fragment,,Mortgage,M​o​r​t​g​a​g​e,"mortgage, loan, loan","m​o​r​t​g​a​g​e, l​o​a​n, l​o​a​n"
+00678.7c54f6e0fac3e7d26a9513d2c60e2b98,00678__salted__extended__cp200C__fragment.7c54f6e0fac3e7d26a9513d2c60e2b98,extended,200C,fragment,,Mortgage,M‌o‌r‌t‌g‌a‌g‌e,"mortgage, loan, loan","m‌o‌r‌t‌g‌a‌g‌e, l‌o‌a‌n, l‌o‌a‌n"
+00678.7c54f6e0fac3e7d26a9513d2c60e2b98,00678__salted__extended__cp200D__fragment.7c54f6e0fac3e7d26a9513d2c60e2b98,extended,200D,fragment,,Mortgage,M‍o‍r‍t‍g‍a‍g‍e,"mortgage, loan, loan","m‍o‍r‍t‍g‍a‍g‍e, l‍o‍a‍n, l‍o‍a‍n"
+00678.7c54f6e0fac3e7d26a9513d2c60e2b98,00678__salted__extended__cp00AD__fragment.7c54f6e0fac3e7d26a9513d2c60e2b98,extended,00AD,fragment,,Mortgage,M­o­r­t­g­a­g­e,"mortgage, loan, loan","m­o­r­t­g­a­g­e, l­o­a­n, l­o­a­n"
+00680.e8df67f239cb166c5a8a78401eeeb1ba,00680__salted__extended__cp200B__fragment.e8df67f239cb166c5a8a78401eeeb1ba,extended,200B,fragment,,Ordering,O​r​d​e​r​i​n​g,,
+00680.e8df67f239cb166c5a8a78401eeeb1ba,00680__salted__extended__cp200C__fragment.e8df67f239cb166c5a8a78401eeeb1ba,extended,200C,fragment,,Ordering,O‌r‌d‌e‌r‌i‌n‌g,,
+00680.e8df67f239cb166c5a8a78401eeeb1ba,00680__salted__extended__cp200D__fragment.e8df67f239cb166c5a8a78401eeeb1ba,extended,200D,fragment,,Ordering,O‍r‍d‍e‍r‍i‍n‍g,,
+00680.e8df67f239cb166c5a8a78401eeeb1ba,00680__salted__extended__cp00AD__fragment.e8df67f239cb166c5a8a78401eeeb1ba,extended,00AD,fragment,,Ordering,O­r­d­e­r­i­n­g,,
+00694.3aca5f2a3d0d2ccbc47ef868eb051abd,00694__salted__extended__cp200B__fragment.3aca5f2a3d0d2ccbc47ef868eb051abd,extended,200B,fragment,,,,"Guaranteed, herbal, Click","G​u​a​r​a​n​t​e​e​d, h​e​r​b​a​l, C​l​i​c​k"
+00694.3aca5f2a3d0d2ccbc47ef868eb051abd,00694__salted__extended__cp200C__fragment.3aca5f2a3d0d2ccbc47ef868eb051abd,extended,200C,fragment,,,,"Guaranteed, herbal, Click","G‌u‌a‌r‌a‌n‌t‌e‌e‌d, h‌e‌r‌b‌a‌l, C‌l‌i‌c‌k"
+00694.3aca5f2a3d0d2ccbc47ef868eb051abd,00694__salted__extended__cp200D__fragment.3aca5f2a3d0d2ccbc47ef868eb051abd,extended,200D,fragment,,,,"Guaranteed, herbal, Click","G‍u‍a‍r‍a‍n‍t‍e‍e‍d, h‍e‍r‍b‍a‍l, C‍l‍i‍c‍k"
+00694.3aca5f2a3d0d2ccbc47ef868eb051abd,00694__salted__extended__cp00AD__fragment.3aca5f2a3d0d2ccbc47ef868eb051abd,extended,00AD,fragment,,,,"Guaranteed, herbal, Click","G­u­a­r­a­n­t­e­e­d, h­e­r­b­a­l, C­l­i­c­k"
+00697.2d221d167d2814a6a6bc7a74b65bcb0e,00697__salted__extended__cp200B__fragment.2d221d167d2814a6a6bc7a74b65bcb0e,extended,200B,fragment,,adv,a​d​v,,
+00697.2d221d167d2814a6a6bc7a74b65bcb0e,00697__salted__extended__cp200C__fragment.2d221d167d2814a6a6bc7a74b65bcb0e,extended,200C,fragment,,adv,a‌d‌v,,
+00697.2d221d167d2814a6a6bc7a74b65bcb0e,00697__salted__extended__cp200D__fragment.2d221d167d2814a6a6bc7a74b65bcb0e,extended,200D,fragment,,adv,a‍d‍v,,
+00697.2d221d167d2814a6a6bc7a74b65bcb0e,00697__salted__extended__cp00AD__fragment.2d221d167d2814a6a6bc7a74b65bcb0e,extended,00AD,fragment,,adv,a­d­v,,
+00701.ea27d8eea96c7d361ea78613d0a3c481,00701__salted__extended__cp200B__fragment.ea27d8eea96c7d361ea78613d0a3c481,extended,200B,fragment,,Mortgage,M​o​r​t​g​a​g​e,,
+00701.ea27d8eea96c7d361ea78613d0a3c481,00701__salted__extended__cp200C__fragment.ea27d8eea96c7d361ea78613d0a3c481,extended,200C,fragment,,Mortgage,M‌o‌r‌t‌g‌a‌g‌e,,
+00701.ea27d8eea96c7d361ea78613d0a3c481,00701__salted__extended__cp200D__fragment.ea27d8eea96c7d361ea78613d0a3c481,extended,200D,fragment,,Mortgage,M‍o‍r‍t‍g‍a‍g‍e,,
+00701.ea27d8eea96c7d361ea78613d0a3c481,00701__salted__extended__cp00AD__fragment.ea27d8eea96c7d361ea78613d0a3c481,extended,00AD,fragment,,Mortgage,M­o­r­t­g­a­g­e,,
+00705.df125edb37f19c87784942c7b2b164a1,00705__salted__extended__cp200B__fragment.df125edb37f19c87784942c7b2b164a1,extended,200B,fragment,,Monthly,M​o​n​t​h​l​y,,
+00705.df125edb37f19c87784942c7b2b164a1,00705__salted__extended__cp200C__fragment.df125edb37f19c87784942c7b2b164a1,extended,200C,fragment,,Monthly,M‌o‌n‌t‌h‌l‌y,,
+00705.df125edb37f19c87784942c7b2b164a1,00705__salted__extended__cp200D__fragment.df125edb37f19c87784942c7b2b164a1,extended,200D,fragment,,Monthly,M‍o‍n‍t‍h‍l‍y,,
+00705.df125edb37f19c87784942c7b2b164a1,00705__salted__extended__cp00AD__fragment.df125edb37f19c87784942c7b2b164a1,extended,00AD,fragment,,Monthly,M­o­n­t­h­l­y,,
+00706.5116018237368c3633823b2d24f8ac86,00706__salted__extended__cp200B__fragment.5116018237368c3633823b2d24f8ac86,extended,200B,fragment,,,,"Sightings, Sightings, sightings","S​i​g​h​t​i​n​g​s, S​i​g​h​t​i​n​g​s, s​i​g​h​t​i​n​g​s"
+00706.5116018237368c3633823b2d24f8ac86,00706__salted__extended__cp200C__fragment.5116018237368c3633823b2d24f8ac86,extended,200C,fragment,,,,"Sightings, Sightings, sightings","S‌i‌g‌h‌t‌i‌n‌g‌s, S‌i‌g‌h‌t‌i‌n‌g‌s, s‌i‌g‌h‌t‌i‌n‌g‌s"
+00706.5116018237368c3633823b2d24f8ac86,00706__salted__extended__cp200D__fragment.5116018237368c3633823b2d24f8ac86,extended,200D,fragment,,,,"Sightings, Sightings, sightings","S‍i‍g‍h‍t‍i‍n‍g‍s, S‍i‍g‍h‍t‍i‍n‍g‍s, s‍i‍g‍h‍t‍i‍n‍g‍s"
+00706.5116018237368c3633823b2d24f8ac86,00706__salted__extended__cp00AD__fragment.5116018237368c3633823b2d24f8ac86,extended,00AD,fragment,,,,"Sightings, Sightings, sightings","S­i­g­h­t­i­n­g­s, S­i­g­h­t­i­n­g­s, s­i­g­h­t­i­n­g­s"
+00718.2495a50c4eab3755f338b5fe589dd52d,00718__salted__extended__cp200B__fragment.2495a50c4eab3755f338b5fe589dd52d,extended,200B,fragment,,WHOLESALE,W​H​O​L​E​S​A​L​E,,
+00718.2495a50c4eab3755f338b5fe589dd52d,00718__salted__extended__cp200C__fragment.2495a50c4eab3755f338b5fe589dd52d,extended,200C,fragment,,WHOLESALE,W‌H‌O‌L‌E‌S‌A‌L‌E,,
+00718.2495a50c4eab3755f338b5fe589dd52d,00718__salted__extended__cp200D__fragment.2495a50c4eab3755f338b5fe589dd52d,extended,200D,fragment,,WHOLESALE,W‍H‍O‍L‍E‍S‍A‍L‍E,,
+00718.2495a50c4eab3755f338b5fe589dd52d,00718__salted__extended__cp00AD__fragment.2495a50c4eab3755f338b5fe589dd52d,extended,00AD,fragment,,WHOLESALE,W­H­O­L­E­S­A­L­E,,
+00738.10deb784a63c0bdc5e78b019720f3e9f,00738__salted__extended__cp200B__fragment.10deb784a63c0bdc5e78b019720f3e9f,extended,200B,fragment,,Adv,A​d​v,"premium, receive, receive","p​r​e​m​i​u​m, r​e​c​e​i​v​e, r​e​c​e​i​v​e"
+00738.10deb784a63c0bdc5e78b019720f3e9f,00738__salted__extended__cp200C__fragment.10deb784a63c0bdc5e78b019720f3e9f,extended,200C,fragment,,Adv,A‌d‌v,"premium, receive, receive","p‌r‌e‌m‌i‌u‌m, r‌e‌c‌e‌i‌v‌e, r‌e‌c‌e‌i‌v‌e"
+00738.10deb784a63c0bdc5e78b019720f3e9f,00738__salted__extended__cp200D__fragment.10deb784a63c0bdc5e78b019720f3e9f,extended,200D,fragment,,Adv,A‍d‍v,"premium, receive, receive","p‍r‍e‍m‍i‍u‍m, r‍e‍c‍e‍i‍v‍e, r‍e‍c‍e‍i‍v‍e"
+00738.10deb784a63c0bdc5e78b019720f3e9f,00738__salted__extended__cp00AD__fragment.10deb784a63c0bdc5e78b019720f3e9f,extended,00AD,fragment,,Adv,A­d­v,"premium, receive, receive","p­r­e­m­i­u­m, r­e­c­e­i­v­e, r­e­c­e­i­v­e"
+00740.ce4777381c2bc6bee30bef6bd274233f,00740__salted__extended__cp200B__fragment.ce4777381c2bc6bee30bef6bd274233f,extended,200B,fragment,,Mortgage,M​o​r​t​g​a​g​e,"mortgage, loan, loan","m​o​r​t​g​a​g​e, l​o​a​n, l​o​a​n"
+00740.ce4777381c2bc6bee30bef6bd274233f,00740__salted__extended__cp200C__fragment.ce4777381c2bc6bee30bef6bd274233f,extended,200C,fragment,,Mortgage,M‌o‌r‌t‌g‌a‌g‌e,"mortgage, loan, loan","m‌o‌r‌t‌g‌a‌g‌e, l‌o‌a‌n, l‌o‌a‌n"
+00740.ce4777381c2bc6bee30bef6bd274233f,00740__salted__extended__cp200D__fragment.ce4777381c2bc6bee30bef6bd274233f,extended,200D,fragment,,Mortgage,M‍o‍r‍t‍g‍a‍g‍e,"mortgage, loan, loan","m‍o‍r‍t‍g‍a‍g‍e, l‍o‍a‍n, l‍o‍a‍n"
+00740.ce4777381c2bc6bee30bef6bd274233f,00740__salted__extended__cp00AD__fragment.ce4777381c2bc6bee30bef6bd274233f,extended,00AD,fragment,,Mortgage,M­o­r­t­g­a­g­e,"mortgage, loan, loan","m­o­r­t­g­a­g­e, l­o­a­n, l­o­a­n"
+00757.c2da75286819a139e27438ca5c5ba762,00757__salted__extended__cp200B__fragment.c2da75286819a139e27438ca5c5ba762,extended,200B,fragment,,,,ordering,o​r​d​e​r​i​n​g
+00757.c2da75286819a139e27438ca5c5ba762,00757__salted__extended__cp200C__fragment.c2da75286819a139e27438ca5c5ba762,extended,200C,fragment,,,,ordering,o‌r‌d‌e‌r‌i‌n‌g
+00757.c2da75286819a139e27438ca5c5ba762,00757__salted__extended__cp200D__fragment.c2da75286819a139e27438ca5c5ba762,extended,200D,fragment,,,,ordering,o‍r‍d‍e‍r‍i‍n‍g
+00757.c2da75286819a139e27438ca5c5ba762,00757__salted__extended__cp00AD__fragment.c2da75286819a139e27438ca5c5ba762,extended,00AD,fragment,,,,ordering,o­r­d­e­r­i­n­g
+00762.e31568dff471c947d42869ae2f8f0779,00762__salted__extended__cp200B__fragment.e31568dff471c947d42869ae2f8f0779,extended,200B,fragment,,Insurance,I​n​s​u​r​a​n​c​e,,
+00762.e31568dff471c947d42869ae2f8f0779,00762__salted__extended__cp200C__fragment.e31568dff471c947d42869ae2f8f0779,extended,200C,fragment,,Insurance,I‌n‌s‌u‌r‌a‌n‌c‌e,,
+00762.e31568dff471c947d42869ae2f8f0779,00762__salted__extended__cp200D__fragment.e31568dff471c947d42869ae2f8f0779,extended,200D,fragment,,Insurance,I‍n‍s‍u‍r‍a‍n‍c‍e,,
+00762.e31568dff471c947d42869ae2f8f0779,00762__salted__extended__cp00AD__fragment.e31568dff471c947d42869ae2f8f0779,extended,00AD,fragment,,Insurance,I­n­s­u­r­a­n­c­e,,
+00795.61fe820f7755e4b4e66e715ea667b338,00795__salted__extended__cp200B__fragment.61fe820f7755e4b4e66e715ea667b338,extended,200B,fragment,,,,"earn, secrets, receive","e​a​r​n, s​e​c​r​e​t​s, r​e​c​e​i​v​e"
+00795.61fe820f7755e4b4e66e715ea667b338,00795__salted__extended__cp200C__fragment.61fe820f7755e4b4e66e715ea667b338,extended,200C,fragment,,,,"earn, secrets, receive","e‌a‌r‌n, s‌e‌c‌r‌e‌t‌s, r‌e‌c‌e‌i‌v‌e"
+00795.61fe820f7755e4b4e66e715ea667b338,00795__salted__extended__cp200D__fragment.61fe820f7755e4b4e66e715ea667b338,extended,200D,fragment,,,,"earn, secrets, receive","e‍a‍r‍n, s‍e‍c‍r‍e‍t‍s, r‍e‍c‍e‍i‍v‍e"
+00795.61fe820f7755e4b4e66e715ea667b338,00795__salted__extended__cp00AD__fragment.61fe820f7755e4b4e66e715ea667b338,extended,00AD,fragment,,,,"earn, secrets, receive","e­a­r­n, s­e­c­r­e­t­s, r­e­c­e­i­v­e"
+00796.1f29c490fd2bd8581d19e3e193978a3d,00796__salted__extended__cp200B__fragment.1f29c490fd2bd8581d19e3e193978a3d,extended,200B,fragment,,GUARANTEED,G​U​A​R​A​N​T​E​E​D,,
+00796.1f29c490fd2bd8581d19e3e193978a3d,00796__salted__extended__cp200C__fragment.1f29c490fd2bd8581d19e3e193978a3d,extended,200C,fragment,,GUARANTEED,G‌U‌A‌R‌A‌N‌T‌E‌E‌D,,
+00796.1f29c490fd2bd8581d19e3e193978a3d,00796__salted__extended__cp200D__fragment.1f29c490fd2bd8581d19e3e193978a3d,extended,200D,fragment,,GUARANTEED,G‍U‍A‍R‍A‍N‍T‍E‍E‍D,,
+00796.1f29c490fd2bd8581d19e3e193978a3d,00796__salted__extended__cp00AD__fragment.1f29c490fd2bd8581d19e3e193978a3d,extended,00AD,fragment,,GUARANTEED,G­U­A­R­A­N­T­E­E­D,,
+00807.8abdd26ba778758f5e46b84a54ac62f4,00807__salted__extended__cp200B__fragment.8abdd26ba778758f5e46b84a54ac62f4,extended,200B,fragment,,,,"mortgage, loan, fees","m​o​r​t​g​a​g​e, l​o​a​n, f​e​e​s"
+00807.8abdd26ba778758f5e46b84a54ac62f4,00807__salted__extended__cp200C__fragment.8abdd26ba778758f5e46b84a54ac62f4,extended,200C,fragment,,,,"mortgage, loan, fees","m‌o‌r‌t‌g‌a‌g‌e, l‌o‌a‌n, f‌e‌e‌s"
+00807.8abdd26ba778758f5e46b84a54ac62f4,00807__salted__extended__cp200D__fragment.8abdd26ba778758f5e46b84a54ac62f4,extended,200D,fragment,,,,"mortgage, loan, fees","m‍o‍r‍t‍g‍a‍g‍e, l‍o‍a‍n, f‍e‍e‍s"
+00807.8abdd26ba778758f5e46b84a54ac62f4,00807__salted__extended__cp00AD__fragment.8abdd26ba778758f5e46b84a54ac62f4,extended,00AD,fragment,,,,"mortgage, loan, fees","m­o­r­t­g­a­g­e, l­o­a­n, f­e­e­s"
+00810.bceaa748f9cee012c466212d8a608acf,00810__salted__extended__cp200B__fragment.bceaa748f9cee012c466212d8a608acf,extended,200B,fragment,,,,"earning, Secrets, MLM","e​a​r​n​i​n​g, S​e​c​r​e​t​s, M​L​M"
+00810.bceaa748f9cee012c466212d8a608acf,00810__salted__extended__cp200C__fragment.bceaa748f9cee012c466212d8a608acf,extended,200C,fragment,,,,"earning, Secrets, MLM","e‌a‌r‌n‌i‌n‌g, S‌e‌c‌r‌e‌t‌s, M‌L‌M"
+00810.bceaa748f9cee012c466212d8a608acf,00810__salted__extended__cp200D__fragment.bceaa748f9cee012c466212d8a608acf,extended,200D,fragment,,,,"earning, Secrets, MLM","e‍a‍r‍n‍i‍n‍g, S‍e‍c‍r‍e‍t‍s, M‍L‍M"
+00810.bceaa748f9cee012c466212d8a608acf,00810__salted__extended__cp00AD__fragment.bceaa748f9cee012c466212d8a608acf,extended,00AD,fragment,,,,"earning, Secrets, MLM","e­a­r­n­i­n­g, S­e­c­r­e­t­s, M­L­M"
+00830.079ed7d24f78024e023b82417a6fe2ca,00830__salted__extended__cp200B__fragment.079ed7d24f78024e023b82417a6fe2ca,extended,200B,fragment,,,,"earn, participation, GUARANTEED","e​a​r​n, p​a​r​t​i​c​i​p​a​t​i​o​n, G​U​A​R​A​N​T​E​E​D"
+00830.079ed7d24f78024e023b82417a6fe2ca,00830__salted__extended__cp200C__fragment.079ed7d24f78024e023b82417a6fe2ca,extended,200C,fragment,,,,"earn, participation, GUARANTEED","e‌a‌r‌n, p‌a‌r‌t‌i‌c‌i‌p‌a‌t‌i‌o‌n, G‌U‌A‌R‌A‌N‌T‌E‌E‌D"
+00830.079ed7d24f78024e023b82417a6fe2ca,00830__salted__extended__cp200D__fragment.079ed7d24f78024e023b82417a6fe2ca,extended,200D,fragment,,,,"earn, participation, GUARANTEED","e‍a‍r‍n, p‍a‍r‍t‍i‍c‍i‍p‍a‍t‍i‍o‍n, G‍U‍A‍R‍A‍N‍T‍E‍E‍D"
+00830.079ed7d24f78024e023b82417a6fe2ca,00830__salted__extended__cp00AD__fragment.079ed7d24f78024e023b82417a6fe2ca,extended,00AD,fragment,,,,"earn, participation, GUARANTEED","e­a­r­n, p­a­r­t­i­c­i­p­a­t­i­o­n, G­U­A­R­A­N­T­E­E­D"
+00861.e8b94fc9514d2d2cbb541b01e2dda726,00861__salted__extended__cp200B__fragment.e8b94fc9514d2d2cbb541b01e2dda726,extended,200B,fragment,,,,"promotion, Click, receive","p​r​o​m​o​t​i​o​n, C​l​i​c​k, r​e​c​e​i​v​e"
+00861.e8b94fc9514d2d2cbb541b01e2dda726,00861__salted__extended__cp200C__fragment.e8b94fc9514d2d2cbb541b01e2dda726,extended,200C,fragment,,,,"promotion, Click, receive","p‌r‌o‌m‌o‌t‌i‌o‌n, C‌l‌i‌c‌k, r‌e‌c‌e‌i‌v‌e"
+00861.e8b94fc9514d2d2cbb541b01e2dda726,00861__salted__extended__cp200D__fragment.e8b94fc9514d2d2cbb541b01e2dda726,extended,200D,fragment,,,,"promotion, Click, receive","p‍r‍o‍m‍o‍t‍i‍o‍n, C‍l‍i‍c‍k, r‍e‍c‍e‍i‍v‍e"
+00861.e8b94fc9514d2d2cbb541b01e2dda726,00861__salted__extended__cp00AD__fragment.e8b94fc9514d2d2cbb541b01e2dda726,extended,00AD,fragment,,,,"promotion, Click, receive","p­r­o­m­o­t­i­o­n, C­l­i­c­k, r­e­c­e­i­v­e"
+00891.730d12d96dcfa7812a51d12d9a3b6a1c,00891__salted__extended__cp200B__fragment.730d12d96dcfa7812a51d12d9a3b6a1c,extended,200B,fragment,,,,"receive, sincerely, assistance","r​e​c​e​i​v​e, s​i​n​c​e​r​e​l​y, a​s​s​i​s​t​a​n​c​e"
+00891.730d12d96dcfa7812a51d12d9a3b6a1c,00891__salted__extended__cp200C__fragment.730d12d96dcfa7812a51d12d9a3b6a1c,extended,200C,fragment,,,,"receive, sincerely, assistance","r‌e‌c‌e‌i‌v‌e, s‌i‌n‌c‌e‌r‌e‌l‌y, a‌s‌s‌i‌s‌t‌a‌n‌c‌e"
+00891.730d12d96dcfa7812a51d12d9a3b6a1c,00891__salted__extended__cp200D__fragment.730d12d96dcfa7812a51d12d9a3b6a1c,extended,200D,fragment,,,,"receive, sincerely, assistance","r‍e‍c‍e‍i‍v‍e, s‍i‍n‍c‍e‍r‍e‍l‍y, a‍s‍s‍i‍s‍t‍a‍n‍c‍e"
+00891.730d12d96dcfa7812a51d12d9a3b6a1c,00891__salted__extended__cp00AD__fragment.730d12d96dcfa7812a51d12d9a3b6a1c,extended,00AD,fragment,,,,"receive, sincerely, assistance","r­e­c­e­i­v­e, s­i­n­c­e­r­e­l­y, a­s­s­i­s­t­a­n­c­e"
+00925.6ba2770acb214c661a26e54b4d03c119,00925__salted__extended__cp200B__fragment.6ba2770acb214c661a26e54b4d03c119,extended,200B,fragment,,ADV,A​D​V,"toll, Sincerely","t​o​l​l, S​i​n​c​e​r​e​l​y"
+00925.6ba2770acb214c661a26e54b4d03c119,00925__salted__extended__cp200C__fragment.6ba2770acb214c661a26e54b4d03c119,extended,200C,fragment,,ADV,A‌D‌V,"toll, Sincerely","t‌o‌l‌l, S‌i‌n‌c‌e‌r‌e‌l‌y"
+00925.6ba2770acb214c661a26e54b4d03c119,00925__salted__extended__cp200D__fragment.6ba2770acb214c661a26e54b4d03c119,extended,200D,fragment,,ADV,A‍D‍V,"toll, Sincerely","t‍o‍l‍l, S‍i‍n‍c‍e‍r‍e‍l‍y"
+00925.6ba2770acb214c661a26e54b4d03c119,00925__salted__extended__cp00AD__fragment.6ba2770acb214c661a26e54b4d03c119,extended,00AD,fragment,,ADV,A­D­V,"toll, Sincerely","t­o­l­l, S­i­n­c­e­r­e­l­y"
+00939.8d335bc76836e51b449de9f6b38aa0f8,00939__salted__extended__cp200B__fragment.8d335bc76836e51b449de9f6b38aa0f8,extended,200B,fragment,,,,"receive, Click, promotion","r​e​c​e​i​v​e, C​l​i​c​k, p​r​o​m​o​t​i​o​n"
+00939.8d335bc76836e51b449de9f6b38aa0f8,00939__salted__extended__cp200C__fragment.8d335bc76836e51b449de9f6b38aa0f8,extended,200C,fragment,,,,"receive, Click, promotion","r‌e‌c‌e‌i‌v‌e, C‌l‌i‌c‌k, p‌r‌o‌m‌o‌t‌i‌o‌n"
+00939.8d335bc76836e51b449de9f6b38aa0f8,00939__salted__extended__cp200D__fragment.8d335bc76836e51b449de9f6b38aa0f8,extended,200D,fragment,,,,"receive, Click, promotion","r‍e‍c‍e‍i‍v‍e, C‍l‍i‍c‍k, p‍r‍o‍m‍o‍t‍i‍o‍n"
+00939.8d335bc76836e51b449de9f6b38aa0f8,00939__salted__extended__cp00AD__fragment.8d335bc76836e51b449de9f6b38aa0f8,extended,00AD,fragment,,,,"receive, Click, promotion","r­e­c­e­i­v­e, C­l­i­c­k, p­r­o­m­o­t­i­o­n"
+00940.33bee147237876bc1f28b1bf21b586a0,00940__salted__extended__cp200B__fragment.33bee147237876bc1f28b1bf21b586a0,extended,200B,fragment,,Assistance,A​s​s​i​s​t​a​n​c​e,"Dear, Sir, Nigeria","D​e​a​r, S​i​r, N​i​g​e​r​i​a"
+00940.33bee147237876bc1f28b1bf21b586a0,00940__salted__extended__cp200C__fragment.33bee147237876bc1f28b1bf21b586a0,extended,200C,fragment,,Assistance,A‌s‌s‌i‌s‌t‌a‌n‌c‌e,"Dear, Sir, Nigeria","D‌e‌a‌r, S‌i‌r, N‌i‌g‌e‌r‌i‌a"
+00940.33bee147237876bc1f28b1bf21b586a0,00940__salted__extended__cp200D__fragment.33bee147237876bc1f28b1bf21b586a0,extended,200D,fragment,,Assistance,A‍s‍s‍i‍s‍t‍a‍n‍c‍e,"Dear, Sir, Nigeria","D‍e‍a‍r, S‍i‍r, N‍i‍g‍e‍r‍i‍a"
+00940.33bee147237876bc1f28b1bf21b586a0,00940__salted__extended__cp00AD__fragment.33bee147237876bc1f28b1bf21b586a0,extended,00AD,fragment,,Assistance,A­s­s­i­s­t­a­n­c­e,"Dear, Sir, Nigeria","D­e­a­r, S­i­r, N­i­g­e­r­i­a"
+00947.e4d80402e902f1ea42cfc539bb279afd,00947__salted__extended__cp200B__fragment.e4d80402e902f1ea42cfc539bb279afd,extended,200B,fragment,,cartridges,c​a​r​t​r​i​d​g​e​s,,
+00947.e4d80402e902f1ea42cfc539bb279afd,00947__salted__extended__cp200C__fragment.e4d80402e902f1ea42cfc539bb279afd,extended,200C,fragment,,cartridges,c‌a‌r‌t‌r‌i‌d‌g‌e‌s,,
+00947.e4d80402e902f1ea42cfc539bb279afd,00947__salted__extended__cp200D__fragment.e4d80402e902f1ea42cfc539bb279afd,extended,200D,fragment,,cartridges,c‍a‍r‍t‍r‍i‍d‍g‍e‍s,,
+00947.e4d80402e902f1ea42cfc539bb279afd,00947__salted__extended__cp00AD__fragment.e4d80402e902f1ea42cfc539bb279afd,extended,00AD,fragment,,cartridges,c­a­r­t­r­i­d­g­e­s,,
+00948.674250d39ae9ea6d1c054fd6f7b52cee,00948__salted__extended__cp200B__fragment.674250d39ae9ea6d1c054fd6f7b52cee,extended,200B,fragment,,,,incurred,i​n​c​u​r​r​e​d
+00948.674250d39ae9ea6d1c054fd6f7b52cee,00948__salted__extended__cp200C__fragment.674250d39ae9ea6d1c054fd6f7b52cee,extended,200C,fragment,,,,incurred,i‌n‌c‌u‌r‌r‌e‌d
+00948.674250d39ae9ea6d1c054fd6f7b52cee,00948__salted__extended__cp200D__fragment.674250d39ae9ea6d1c054fd6f7b52cee,extended,200D,fragment,,,,incurred,i‍n‍c‍u‍r‍r‍e‍d
+00948.674250d39ae9ea6d1c054fd6f7b52cee,00948__salted__extended__cp00AD__fragment.674250d39ae9ea6d1c054fd6f7b52cee,extended,00AD,fragment,,,,incurred,i­n­c­u­r­r­e­d
+00956.bd15831ffe9661a5395b8ec491a4fed2,00956__salted__extended__cp200B__fragment.bd15831ffe9661a5395b8ec491a4fed2,extended,200B,fragment,,Cartridges,C​a​r​t​r​i​d​g​e​s,,
+00956.bd15831ffe9661a5395b8ec491a4fed2,00956__salted__extended__cp200C__fragment.bd15831ffe9661a5395b8ec491a4fed2,extended,200C,fragment,,Cartridges,C‌a‌r‌t‌r‌i‌d‌g‌e‌s,,
+00956.bd15831ffe9661a5395b8ec491a4fed2,00956__salted__extended__cp200D__fragment.bd15831ffe9661a5395b8ec491a4fed2,extended,200D,fragment,,Cartridges,C‍a‍r‍t‍r‍i‍d‍g‍e‍s,,
+00956.bd15831ffe9661a5395b8ec491a4fed2,00956__salted__extended__cp00AD__fragment.bd15831ffe9661a5395b8ec491a4fed2,extended,00AD,fragment,,Cartridges,C­a­r­t­r­i­d­g­e­s,,
+00962.452e4bd0724bf1139c9bc4eb9ec0fe43,00962__salted__extended__cp200B__fragment.452e4bd0724bf1139c9bc4eb9ec0fe43,extended,200B,fragment,,cartridges,c​a​r​t​r​i​d​g​e​s,,
+00962.452e4bd0724bf1139c9bc4eb9ec0fe43,00962__salted__extended__cp200C__fragment.452e4bd0724bf1139c9bc4eb9ec0fe43,extended,200C,fragment,,cartridges,c‌a‌r‌t‌r‌i‌d‌g‌e‌s,,
+00962.452e4bd0724bf1139c9bc4eb9ec0fe43,00962__salted__extended__cp200D__fragment.452e4bd0724bf1139c9bc4eb9ec0fe43,extended,200D,fragment,,cartridges,c‍a‍r‍t‍r‍i‍d‍g‍e‍s,,
+00962.452e4bd0724bf1139c9bc4eb9ec0fe43,00962__salted__extended__cp00AD__fragment.452e4bd0724bf1139c9bc4eb9ec0fe43,extended,00AD,fragment,,cartridges,c­a­r­t­r­i­d­g­e­s,,
+00973.ca8a425093e9994271e922f4d60f775c,00973__salted__extended__cp200B__fragment.ca8a425093e9994271e922f4d60f775c,extended,200B,fragment,,,,"receive, DeathToSpamDeathToSpamDeathToSpam, Sightings","r​e​c​e​i​v​e, D​e​a​t​h​T​o​S​p​a​m​D​e​a​t​h​T​o​S​p​a​m​D​e​a​t​h​T​o​S​p​a​m, S​i​g​h​t​i​n​g​s"
+00973.ca8a425093e9994271e922f4d60f775c,00973__salted__extended__cp200C__fragment.ca8a425093e9994271e922f4d60f775c,extended,200C,fragment,,,,"receive, DeathToSpamDeathToSpamDeathToSpam, Sightings","r‌e‌c‌e‌i‌v‌e, D‌e‌a‌t‌h‌T‌o‌S‌p‌a‌m‌D‌e‌a‌t‌h‌T‌o‌S‌p‌a‌m‌D‌e‌a‌t‌h‌T‌o‌S‌p‌a‌m, S‌i‌g‌h‌t‌i‌n‌g‌s"
+00973.ca8a425093e9994271e922f4d60f775c,00973__salted__extended__cp200D__fragment.ca8a425093e9994271e922f4d60f775c,extended,200D,fragment,,,,"receive, DeathToSpamDeathToSpamDeathToSpam, Sightings","r‍e‍c‍e‍i‍v‍e, D‍e‍a‍t‍h‍T‍o‍S‍p‍a‍m‍D‍e‍a‍t‍h‍T‍o‍S‍p‍a‍m‍D‍e‍a‍t‍h‍T‍o‍S‍p‍a‍m, S‍i‍g‍h‍t‍i‍n‍g‍s"
+00973.ca8a425093e9994271e922f4d60f775c,00973__salted__extended__cp00AD__fragment.ca8a425093e9994271e922f4d60f775c,extended,00AD,fragment,,,,"receive, DeathToSpamDeathToSpamDeathToSpam, Sightings","r­e­c­e­i­v­e, D­e­a­t­h­T­o­S­p­a­m­D­e­a­t­h­T­o­S­p­a­m­D­e­a­t­h­T­o­S­p­a­m, S­i­g­h­t­i­n­g­s"
+01008.5e932696d8f33950af53eb9461a014a2,01008__salted__extended__cp200B__fragment.5e932696d8f33950af53eb9461a014a2,extended,200B,fragment,,,,"Dear, promotional, guaranteed","D​e​a​r, p​r​o​m​o​t​i​o​n​a​l, g​u​a​r​a​n​t​e​e​d"
+01008.5e932696d8f33950af53eb9461a014a2,01008__salted__extended__cp200C__fragment.5e932696d8f33950af53eb9461a014a2,extended,200C,fragment,,,,"Dear, promotional, guaranteed","D‌e‌a‌r, p‌r‌o‌m‌o‌t‌i‌o‌n‌a‌l, g‌u‌a‌r‌a‌n‌t‌e‌e‌d"
+01008.5e932696d8f33950af53eb9461a014a2,01008__salted__extended__cp200D__fragment.5e932696d8f33950af53eb9461a014a2,extended,200D,fragment,,,,"Dear, promotional, guaranteed","D‍e‍a‍r, p‍r‍o‍m‍o‍t‍i‍o‍n‍a‍l, g‍u‍a‍r‍a‍n‍t‍e‍e‍d"
+01008.5e932696d8f33950af53eb9461a014a2,01008__salted__extended__cp00AD__fragment.5e932696d8f33950af53eb9461a014a2,extended,00AD,fragment,,,,"Dear, promotional, guaranteed","D­e­a­r, p­r­o­m­o­t­i­o­n­a­l, g­u­a­r­a­n­t­e­e­d"
+01011.d4812088cad8553fb214dab8003add9b,01011__salted__extended__cp200B__fragment.d4812088cad8553fb214dab8003add9b,extended,200B,fragment,,,,"DEAR, SIR, assistance","D​E​A​R, S​I​R, a​s​s​i​s​t​a​n​c​e"
+01011.d4812088cad8553fb214dab8003add9b,01011__salted__extended__cp200C__fragment.d4812088cad8553fb214dab8003add9b,extended,200C,fragment,,,,"DEAR, SIR, assistance","D‌E‌A‌R, S‌I‌R, a‌s‌s‌i‌s‌t‌a‌n‌c‌e"
+01011.d4812088cad8553fb214dab8003add9b,01011__salted__extended__cp200D__fragment.d4812088cad8553fb214dab8003add9b,extended,200D,fragment,,,,"DEAR, SIR, assistance","D‍E‍A‍R, S‍I‍R, a‍s‍s‍i‍s‍t‍a‍n‍c‍e"
+01011.d4812088cad8553fb214dab8003add9b,01011__salted__extended__cp00AD__fragment.d4812088cad8553fb214dab8003add9b,extended,00AD,fragment,,,,"DEAR, SIR, assistance","D­E­A­R, S­I­R, a­s­s­i­s­t­a­n­c­e"
+01014.98c1d0a70f88efb979d9ca65e945363e,01014__salted__extended__cp200B__fragment.98c1d0a70f88efb979d9ca65e945363e,extended,200B,fragment,,,,mailings,m​a​i​l​i​n​g​s
+01014.98c1d0a70f88efb979d9ca65e945363e,01014__salted__extended__cp200C__fragment.98c1d0a70f88efb979d9ca65e945363e,extended,200C,fragment,,,,mailings,m‌a‌i‌l‌i‌n‌g‌s
+01014.98c1d0a70f88efb979d9ca65e945363e,01014__salted__extended__cp200D__fragment.98c1d0a70f88efb979d9ca65e945363e,extended,200D,fragment,,,,mailings,m‍a‍i‍l‍i‍n‍g‍s
+01014.98c1d0a70f88efb979d9ca65e945363e,01014__salted__extended__cp00AD__fragment.98c1d0a70f88efb979d9ca65e945363e,extended,00AD,fragment,,,,mailings,m­a­i­l­i­n­g­s
+01016.ac6ce255291deba2f46cdd8ddba3ea01,01016__salted__extended__cp200B__fragment.ac6ce255291deba2f46cdd8ddba3ea01,extended,200B,fragment,,cartridges,c​a​r​t​r​i​d​g​e​s,,
+01016.ac6ce255291deba2f46cdd8ddba3ea01,01016__salted__extended__cp200C__fragment.ac6ce255291deba2f46cdd8ddba3ea01,extended,200C,fragment,,cartridges,c‌a‌r‌t‌r‌i‌d‌g‌e‌s,,
+01016.ac6ce255291deba2f46cdd8ddba3ea01,01016__salted__extended__cp200D__fragment.ac6ce255291deba2f46cdd8ddba3ea01,extended,200D,fragment,,cartridges,c‍a‍r‍t‍r‍i‍d‍g‍e‍s,,
+01016.ac6ce255291deba2f46cdd8ddba3ea01,01016__salted__extended__cp00AD__fragment.ac6ce255291deba2f46cdd8ddba3ea01,extended,00AD,fragment,,cartridges,c­a­r­t­r­i­d­g­e­s,,
+01036.87c1f0b55cb48bd36c8863cf700cd485,01036__salted__extended__cp200B__fragment.87c1f0b55cb48bd36c8863cf700cd485,extended,200B,fragment,,,,Click,C​l​i​c​k
+01036.87c1f0b55cb48bd36c8863cf700cd485,01036__salted__extended__cp200C__fragment.87c1f0b55cb48bd36c8863cf700cd485,extended,200C,fragment,,,,Click,C‌l‌i‌c‌k
+01036.87c1f0b55cb48bd36c8863cf700cd485,01036__salted__extended__cp200D__fragment.87c1f0b55cb48bd36c8863cf700cd485,extended,200D,fragment,,,,Click,C‍l‍i‍c‍k
+01036.87c1f0b55cb48bd36c8863cf700cd485,01036__salted__extended__cp00AD__fragment.87c1f0b55cb48bd36c8863cf700cd485,extended,00AD,fragment,,,,Click,C­l­i­c­k
+01075.07ee7f1ab5ad6659c47baa5ef3691a80,01075__salted__extended__cp200B__fragment.07ee7f1ab5ad6659c47baa5ef3691a80,extended,200B,fragment,,,,"Removal, advertisement, opted","R​e​m​o​v​a​l, a​d​v​e​r​t​i​s​e​m​e​n​t, o​p​t​e​d"
+01075.07ee7f1ab5ad6659c47baa5ef3691a80,01075__salted__extended__cp200C__fragment.07ee7f1ab5ad6659c47baa5ef3691a80,extended,200C,fragment,,,,"Removal, advertisement, opted","R‌e‌m‌o‌v‌a‌l, a‌d‌v‌e‌r‌t‌i‌s‌e‌m‌e‌n‌t, o‌p‌t‌e‌d"
+01075.07ee7f1ab5ad6659c47baa5ef3691a80,01075__salted__extended__cp200D__fragment.07ee7f1ab5ad6659c47baa5ef3691a80,extended,200D,fragment,,,,"Removal, advertisement, opted","R‍e‍m‍o‍v‍a‍l, a‍d‍v‍e‍r‍t‍i‍s‍e‍m‍e‍n‍t, o‍p‍t‍e‍d"
+01075.07ee7f1ab5ad6659c47baa5ef3691a80,01075__salted__extended__cp00AD__fragment.07ee7f1ab5ad6659c47baa5ef3691a80,extended,00AD,fragment,,,,"Removal, advertisement, opted","R­e­m­o­v­a­l, a­d­v­e­r­t­i­s­e­m­e­n­t, o­p­t­e­d"
+01079.9eb95fd88f3d9d551f8c64359470ae7e,01079__salted__extended__cp200B__fragment.9eb95fd88f3d9d551f8c64359470ae7e,extended,200B,fragment,,cartridges,c​a​r​t​r​i​d​g​e​s,,
+01079.9eb95fd88f3d9d551f8c64359470ae7e,01079__salted__extended__cp200C__fragment.9eb95fd88f3d9d551f8c64359470ae7e,extended,200C,fragment,,cartridges,c‌a‌r‌t‌r‌i‌d‌g‌e‌s,,
+01079.9eb95fd88f3d9d551f8c64359470ae7e,01079__salted__extended__cp200D__fragment.9eb95fd88f3d9d551f8c64359470ae7e,extended,200D,fragment,,cartridges,c‍a‍r‍t‍r‍i‍d‍g‍e‍s,,
+01079.9eb95fd88f3d9d551f8c64359470ae7e,01079__salted__extended__cp00AD__fragment.9eb95fd88f3d9d551f8c64359470ae7e,extended,00AD,fragment,,cartridges,c­a­r­t­r­i­d­g­e­s,,
+01082.9f69cd26a420837850841e71d6147a57,01082__salted__extended__cp200B__fragment.9f69cd26a420837850841e71d6147a57,extended,200B,fragment,,,,Click,C​l​i​c​k
+01082.9f69cd26a420837850841e71d6147a57,01082__salted__extended__cp200C__fragment.9f69cd26a420837850841e71d6147a57,extended,200C,fragment,,,,Click,C‌l‌i‌c‌k
+01082.9f69cd26a420837850841e71d6147a57,01082__salted__extended__cp200D__fragment.9f69cd26a420837850841e71d6147a57,extended,200D,fragment,,,,Click,C‍l‍i‍c‍k
+01082.9f69cd26a420837850841e71d6147a57,01082__salted__extended__cp00AD__fragment.9f69cd26a420837850841e71d6147a57,extended,00AD,fragment,,,,Click,C­l­i­c­k
+01104.ec267abf01fe81c42dc90dfd16c930bc,01104__salted__extended__cp200B__fragment.ec267abf01fe81c42dc90dfd16c930bc,extended,200B,fragment,,,,"Dear, Sir, USD","D​e​a​r, S​i​r, U​S​D"
+01104.ec267abf01fe81c42dc90dfd16c930bc,01104__salted__extended__cp200C__fragment.ec267abf01fe81c42dc90dfd16c930bc,extended,200C,fragment,,,,"Dear, Sir, USD","D‌e‌a‌r, S‌i‌r, U‌S‌D"
+01104.ec267abf01fe81c42dc90dfd16c930bc,01104__salted__extended__cp200D__fragment.ec267abf01fe81c42dc90dfd16c930bc,extended,200D,fragment,,,,"Dear, Sir, USD","D‍e‍a‍r, S‍i‍r, U‍S‍D"
+01104.ec267abf01fe81c42dc90dfd16c930bc,01104__salted__extended__cp00AD__fragment.ec267abf01fe81c42dc90dfd16c930bc,extended,00AD,fragment,,,,"Dear, Sir, USD","D­e­a­r, S­i­r, U­S­D"
+01105.2582a4afba9b0b06bed5d48e3e8b29df,01105__salted__extended__cp200B__fragment.2582a4afba9b0b06bed5d48e3e8b29df,extended,200B,fragment,,,,"Dear, Sir, USD","D​e​a​r, S​i​r, U​S​D"
+01105.2582a4afba9b0b06bed5d48e3e8b29df,01105__salted__extended__cp200C__fragment.2582a4afba9b0b06bed5d48e3e8b29df,extended,200C,fragment,,,,"Dear, Sir, USD","D‌e‌a‌r, S‌i‌r, U‌S‌D"
+01105.2582a4afba9b0b06bed5d48e3e8b29df,01105__salted__extended__cp200D__fragment.2582a4afba9b0b06bed5d48e3e8b29df,extended,200D,fragment,,,,"Dear, Sir, USD","D‍e‍a‍r, S‍i‍r, U‍S‍D"
+01105.2582a4afba9b0b06bed5d48e3e8b29df,01105__salted__extended__cp00AD__fragment.2582a4afba9b0b06bed5d48e3e8b29df,extended,00AD,fragment,,,,"Dear, Sir, USD","D­e­a­r, S­i­r, U­S­D"
+01106.37f316c0f77e739cb5fe0e37aaea2046,01106__salted__extended__cp200B__fragment.37f316c0f77e739cb5fe0e37aaea2046,extended,200B,fragment,,,,"Dear, Sir, USD","D​e​a​r, S​i​r, U​S​D"
+01106.37f316c0f77e739cb5fe0e37aaea2046,01106__salted__extended__cp200C__fragment.37f316c0f77e739cb5fe0e37aaea2046,extended,200C,fragment,,,,"Dear, Sir, USD","D‌e‌a‌r, S‌i‌r, U‌S‌D"
+01106.37f316c0f77e739cb5fe0e37aaea2046,01106__salted__extended__cp200D__fragment.37f316c0f77e739cb5fe0e37aaea2046,extended,200D,fragment,,,,"Dear, Sir, USD","D‍e‍a‍r, S‍i‍r, U‍S‍D"
+01106.37f316c0f77e739cb5fe0e37aaea2046,01106__salted__extended__cp00AD__fragment.37f316c0f77e739cb5fe0e37aaea2046,extended,00AD,fragment,,,,"Dear, Sir, USD","D­e­a­r, S­i­r, U­S­D"
+01130.f286229e3c2eeb5c682204de85d903c0,01130__salted__extended__cp200B__fragment.f286229e3c2eeb5c682204de85d903c0,extended,200B,fragment,,SYSTEMWORKS,S​Y​S​T​E​M​W​O​R​K​S,,
+01130.f286229e3c2eeb5c682204de85d903c0,01130__salted__extended__cp200C__fragment.f286229e3c2eeb5c682204de85d903c0,extended,200C,fragment,,SYSTEMWORKS,S‌Y‌S‌T‌E‌M‌W‌O‌R‌K‌S,,
+01130.f286229e3c2eeb5c682204de85d903c0,01130__salted__extended__cp200D__fragment.f286229e3c2eeb5c682204de85d903c0,extended,200D,fragment,,SYSTEMWORKS,S‍Y‍S‍T‍E‍M‍W‍O‍R‍K‍S,,
+01130.f286229e3c2eeb5c682204de85d903c0,01130__salted__extended__cp00AD__fragment.f286229e3c2eeb5c682204de85d903c0,extended,00AD,fragment,,SYSTEMWORKS,S­Y­S­T­E­M­W­O­R­K­S,,
+01131.c9bb07673bf9f048916cd2b9b1813724,01131__salted__extended__cp200B__fragment.c9bb07673bf9f048916cd2b9b1813724,extended,200B,fragment,,,,"receive, CLICK","r​e​c​e​i​v​e, C​L​I​C​K"
+01131.c9bb07673bf9f048916cd2b9b1813724,01131__salted__extended__cp200C__fragment.c9bb07673bf9f048916cd2b9b1813724,extended,200C,fragment,,,,"receive, CLICK","r‌e‌c‌e‌i‌v‌e, C‌L‌I‌C‌K"
+01131.c9bb07673bf9f048916cd2b9b1813724,01131__salted__extended__cp200D__fragment.c9bb07673bf9f048916cd2b9b1813724,extended,200D,fragment,,,,"receive, CLICK","r‍e‍c‍e‍i‍v‍e, C‍L‍I‍C‍K"
+01131.c9bb07673bf9f048916cd2b9b1813724,01131__salted__extended__cp00AD__fragment.c9bb07673bf9f048916cd2b9b1813724,extended,00AD,fragment,,,,"receive, CLICK","r­e­c­e­i­v­e, C­L­I­C­K"
+01132.3d0e60ced92087634f1433f12810096d,01132__salted__extended__cp200B__fragment.3d0e60ced92087634f1433f12810096d,extended,200B,fragment,,,,"Obligation, click, guaranteed","O​b​l​i​g​a​t​i​o​n, c​l​i​c​k, g​u​a​r​a​n​t​e​e​d"
+01132.3d0e60ced92087634f1433f12810096d,01132__salted__extended__cp200C__fragment.3d0e60ced92087634f1433f12810096d,extended,200C,fragment,,,,"Obligation, click, guaranteed","O‌b‌l‌i‌g‌a‌t‌i‌o‌n, c‌l‌i‌c‌k, g‌u‌a‌r‌a‌n‌t‌e‌e‌d"
+01132.3d0e60ced92087634f1433f12810096d,01132__salted__extended__cp200D__fragment.3d0e60ced92087634f1433f12810096d,extended,200D,fragment,,,,"Obligation, click, guaranteed","O‍b‍l‍i‍g‍a‍t‍i‍o‍n, c‍l‍i‍c‍k, g‍u‍a‍r‍a‍n‍t‍e‍e‍d"
+01132.3d0e60ced92087634f1433f12810096d,01132__salted__extended__cp00AD__fragment.3d0e60ced92087634f1433f12810096d,extended,00AD,fragment,,,,"Obligation, click, guaranteed","O­b­l­i­g­a­t­i­o­n, c­l­i­c­k, g­u­a­r­a­n­t­e­e­d"
+01145.a34477ade6db9376e4f8ccbfa8607881,01145__salted__extended__cp200B__fragment.a34477ade6db9376e4f8ccbfa8607881,extended,200B,fragment,,MORTGAGE,M​O​R​T​G​A​G​E,"lenders, loan, Loans","l​e​n​d​e​r​s, l​o​a​n, L​o​a​n​s"
+01145.a34477ade6db9376e4f8ccbfa8607881,01145__salted__extended__cp200C__fragment.a34477ade6db9376e4f8ccbfa8607881,extended,200C,fragment,,MORTGAGE,M‌O‌R‌T‌G‌A‌G‌E,"lenders, loan, Loans","l‌e‌n‌d‌e‌r‌s, l‌o‌a‌n, L‌o‌a‌n‌s"
+01145.a34477ade6db9376e4f8ccbfa8607881,01145__salted__extended__cp200D__fragment.a34477ade6db9376e4f8ccbfa8607881,extended,200D,fragment,,MORTGAGE,M‍O‍R‍T‍G‍A‍G‍E,"lenders, loan, Loans","l‍e‍n‍d‍e‍r‍s, l‍o‍a‍n, L‍o‍a‍n‍s"
+01145.a34477ade6db9376e4f8ccbfa8607881,01145__salted__extended__cp00AD__fragment.a34477ade6db9376e4f8ccbfa8607881,extended,00AD,fragment,,MORTGAGE,M­O­R­T­G­A­G­E,"lenders, loan, Loans","l­e­n­d­e­r­s, l­o­a­n, L­o­a­n­s"
+01151.e295c81d698d58f43f17bde22076cbef,01151__salted__extended__cp200B__fragment.e295c81d698d58f43f17bde22076cbef,extended,200B,fragment,,,,"Dear, click, Nigeria","D​e​a​r, c​l​i​c​k, N​i​g​e​r​i​a"
+01151.e295c81d698d58f43f17bde22076cbef,01151__salted__extended__cp200C__fragment.e295c81d698d58f43f17bde22076cbef,extended,200C,fragment,,,,"Dear, click, Nigeria","D‌e‌a‌r, c‌l‌i‌c‌k, N‌i‌g‌e‌r‌i‌a"
+01151.e295c81d698d58f43f17bde22076cbef,01151__salted__extended__cp200D__fragment.e295c81d698d58f43f17bde22076cbef,extended,200D,fragment,,,,"Dear, click, Nigeria","D‍e‍a‍r, c‍l‍i‍c‍k, N‍i‍g‍e‍r‍i‍a"
+01151.e295c81d698d58f43f17bde22076cbef,01151__salted__extended__cp00AD__fragment.e295c81d698d58f43f17bde22076cbef,extended,00AD,fragment,,,,"Dear, click, Nigeria","D­e­a­r, c­l­i­c­k, N­i­g­e­r­i­a"
+01158.5acbdb7eb695f96c08d960a56058481d,01158__salted__extended__cp200B__fragment.5acbdb7eb695f96c08d960a56058481d,extended,200B,fragment,,Refinance,R​e​f​i​n​a​n​c​e,"Refinance, mortgage, Mortgage","R​e​f​i​n​a​n​c​e, m​o​r​t​g​a​g​e, M​o​r​t​g​a​g​e"
+01158.5acbdb7eb695f96c08d960a56058481d,01158__salted__extended__cp200C__fragment.5acbdb7eb695f96c08d960a56058481d,extended,200C,fragment,,Refinance,R‌e‌f‌i‌n‌a‌n‌c‌e,"Refinance, mortgage, Mortgage","R‌e‌f‌i‌n‌a‌n‌c‌e, m‌o‌r‌t‌g‌a‌g‌e, M‌o‌r‌t‌g‌a‌g‌e"
+01158.5acbdb7eb695f96c08d960a56058481d,01158__salted__extended__cp200D__fragment.5acbdb7eb695f96c08d960a56058481d,extended,200D,fragment,,Refinance,R‍e‍f‍i‍n‍a‍n‍c‍e,"Refinance, mortgage, Mortgage","R‍e‍f‍i‍n‍a‍n‍c‍e, m‍o‍r‍t‍g‍a‍g‍e, M‍o‍r‍t‍g‍a‍g‍e"
+01158.5acbdb7eb695f96c08d960a56058481d,01158__salted__extended__cp00AD__fragment.5acbdb7eb695f96c08d960a56058481d,extended,00AD,fragment,,Refinance,R­e­f­i­n­a­n­c­e,"Refinance, mortgage, Mortgage","R­e­f­i­n­a­n­c­e, m­o­r­t­g­a­g­e, M­o­r­t­g­a­g­e"
+01161.174f2cb358ca3f08f4308f87ca64842f,01161__salted__extended__cp200B__fragment.174f2cb358ca3f08f4308f87ca64842f,extended,200B,fragment,,,,"receive, monthly, monthly","r​e​c​e​i​v​e, m​o​n​t​h​l​y, m​o​n​t​h​l​y"
+01161.174f2cb358ca3f08f4308f87ca64842f,01161__salted__extended__cp200C__fragment.174f2cb358ca3f08f4308f87ca64842f,extended,200C,fragment,,,,"receive, monthly, monthly","r‌e‌c‌e‌i‌v‌e, m‌o‌n‌t‌h‌l‌y, m‌o‌n‌t‌h‌l‌y"
+01161.174f2cb358ca3f08f4308f87ca64842f,01161__salted__extended__cp200D__fragment.174f2cb358ca3f08f4308f87ca64842f,extended,200D,fragment,,,,"receive, monthly, monthly","r‍e‍c‍e‍i‍v‍e, m‍o‍n‍t‍h‍l‍y, m‍o‍n‍t‍h‍l‍y"
+01161.174f2cb358ca3f08f4308f87ca64842f,01161__salted__extended__cp00AD__fragment.174f2cb358ca3f08f4308f87ca64842f,extended,00AD,fragment,,,,"receive, monthly, monthly","r­e­c­e­i­v­e, m­o­n­t­h­l­y, m­o­n­t­h­l­y"
+01165.8c661bf07a1a7a5fe8a9efc2439d17a1,01165__salted__extended__cp200B__fragment.8c661bf07a1a7a5fe8a9efc2439d17a1,extended,200B,fragment,,,,"mortgage, loan, loan","m​o​r​t​g​a​g​e, l​o​a​n, l​o​a​n"
+01165.8c661bf07a1a7a5fe8a9efc2439d17a1,01165__salted__extended__cp200C__fragment.8c661bf07a1a7a5fe8a9efc2439d17a1,extended,200C,fragment,,,,"mortgage, loan, loan","m‌o‌r‌t‌g‌a‌g‌e, l‌o‌a‌n, l‌o‌a‌n"
+01165.8c661bf07a1a7a5fe8a9efc2439d17a1,01165__salted__extended__cp200D__fragment.8c661bf07a1a7a5fe8a9efc2439d17a1,extended,200D,fragment,,,,"mortgage, loan, loan","m‍o‍r‍t‍g‍a‍g‍e, l‍o‍a‍n, l‍o‍a‍n"
+01165.8c661bf07a1a7a5fe8a9efc2439d17a1,01165__salted__extended__cp00AD__fragment.8c661bf07a1a7a5fe8a9efc2439d17a1,extended,00AD,fragment,,,,"mortgage, loan, loan","m­o­r­t­g­a­g­e, l­o­a­n, l­o­a­n"
+01167.2ac57a0189fa2b8713202b84e587b707,01167__salted__extended__cp200B__fragment.2ac57a0189fa2b8713202b84e587b707,extended,200B,fragment,,Postal,P​o​s​t​a​l,,
+01167.2ac57a0189fa2b8713202b84e587b707,01167__salted__extended__cp200C__fragment.2ac57a0189fa2b8713202b84e587b707,extended,200C,fragment,,Postal,P‌o‌s‌t‌a‌l,,
+01167.2ac57a0189fa2b8713202b84e587b707,01167__salted__extended__cp200D__fragment.2ac57a0189fa2b8713202b84e587b707,extended,200D,fragment,,Postal,P‍o‍s‍t‍a‍l,,
+01167.2ac57a0189fa2b8713202b84e587b707,01167__salted__extended__cp00AD__fragment.2ac57a0189fa2b8713202b84e587b707,extended,00AD,fragment,,Postal,P­o­s­t­a­l,,
+01169.4e5cf6c3e8863047dbba1bfca2ebab97,01169__salted__extended__cp200B__fragment.4e5cf6c3e8863047dbba1bfca2ebab97,extended,200B,fragment,,,,"CLICK, GUARANTEED","C​L​I​C​K, G​U​A​R​A​N​T​E​E​D"
+01169.4e5cf6c3e8863047dbba1bfca2ebab97,01169__salted__extended__cp200C__fragment.4e5cf6c3e8863047dbba1bfca2ebab97,extended,200C,fragment,,,,"CLICK, GUARANTEED","C‌L‌I‌C‌K, G‌U‌A‌R‌A‌N‌T‌E‌E‌D"
+01169.4e5cf6c3e8863047dbba1bfca2ebab97,01169__salted__extended__cp200D__fragment.4e5cf6c3e8863047dbba1bfca2ebab97,extended,200D,fragment,,,,"CLICK, GUARANTEED","C‍L‍I‍C‍K, G‍U‍A‍R‍A‍N‍T‍E‍E‍D"
+01169.4e5cf6c3e8863047dbba1bfca2ebab97,01169__salted__extended__cp00AD__fragment.4e5cf6c3e8863047dbba1bfca2ebab97,extended,00AD,fragment,,,,"CLICK, GUARANTEED","C­L­I­C­K, G­U­A­R­A­N­T­E­E­D"
+01182.209dbb3bedae1ecd5ed23fb03049244e,01182__salted__extended__cp200B__fragment.209dbb3bedae1ecd5ed23fb03049244e,extended,200B,fragment,,,,"Dear, communication, affordable","D​e​a​r, c​o​m​m​u​n​i​c​a​t​i​o​n, a​f​f​o​r​d​a​b​l​e"
+01182.209dbb3bedae1ecd5ed23fb03049244e,01182__salted__extended__cp200C__fragment.209dbb3bedae1ecd5ed23fb03049244e,extended,200C,fragment,,,,"Dear, communication, affordable","D‌e‌a‌r, c‌o‌m‌m‌u‌n‌i‌c‌a‌t‌i‌o‌n, a‌f‌f‌o‌r‌d‌a‌b‌l‌e"
+01182.209dbb3bedae1ecd5ed23fb03049244e,01182__salted__extended__cp200D__fragment.209dbb3bedae1ecd5ed23fb03049244e,extended,200D,fragment,,,,"Dear, communication, affordable","D‍e‍a‍r, c‍o‍m‍m‍u‍n‍i‍c‍a‍t‍i‍o‍n, a‍f‍f‍o‍r‍d‍a‍b‍l‍e"
+01182.209dbb3bedae1ecd5ed23fb03049244e,01182__salted__extended__cp00AD__fragment.209dbb3bedae1ecd5ed23fb03049244e,extended,00AD,fragment,,,,"Dear, communication, affordable","D­e­a­r, c­o­m­m­u­n­i­c­a­t­i­o­n, a­f­f­o­r­d­a­b­l­e"
+01184.5216074bef5bb01e0b1301d375283c51,01184__salted__extended__cp200B__fragment.5216074bef5bb01e0b1301d375283c51,extended,200B,fragment,,CLICK,C​L​I​C​K,,
+01184.5216074bef5bb01e0b1301d375283c51,01184__salted__extended__cp200C__fragment.5216074bef5bb01e0b1301d375283c51,extended,200C,fragment,,CLICK,C‌L‌I‌C‌K,,
+01184.5216074bef5bb01e0b1301d375283c51,01184__salted__extended__cp200D__fragment.5216074bef5bb01e0b1301d375283c51,extended,200D,fragment,,CLICK,C‍L‍I‍C‍K,,
+01184.5216074bef5bb01e0b1301d375283c51,01184__salted__extended__cp00AD__fragment.5216074bef5bb01e0b1301d375283c51,extended,00AD,fragment,,CLICK,C­L­I­C­K,,
+01203.f4c9144a594fb81ff323053fbd626a55,01203__salted__extended__cp200B__fragment.f4c9144a594fb81ff323053fbd626a55,extended,200B,fragment,,GUARANTEED,G​U​A​R​A​N​T​E​E​D,"mortgage, loan, fees","m​o​r​t​g​a​g​e, l​o​a​n, f​e​e​s"
+01203.f4c9144a594fb81ff323053fbd626a55,01203__salted__extended__cp200C__fragment.f4c9144a594fb81ff323053fbd626a55,extended,200C,fragment,,GUARANTEED,G‌U‌A‌R‌A‌N‌T‌E‌E‌D,"mortgage, loan, fees","m‌o‌r‌t‌g‌a‌g‌e, l‌o‌a‌n, f‌e‌e‌s"
+01203.f4c9144a594fb81ff323053fbd626a55,01203__salted__extended__cp200D__fragment.f4c9144a594fb81ff323053fbd626a55,extended,200D,fragment,,GUARANTEED,G‍U‍A‍R‍A‍N‍T‍E‍E‍D,"mortgage, loan, fees","m‍o‍r‍t‍g‍a‍g‍e, l‍o‍a‍n, f‍e‍e‍s"
+01203.f4c9144a594fb81ff323053fbd626a55,01203__salted__extended__cp00AD__fragment.f4c9144a594fb81ff323053fbd626a55,extended,00AD,fragment,,GUARANTEED,G­U­A­R­A­N­T­E­E­D,"mortgage, loan, fees","m­o­r­t­g­a­g­e, l­o­a­n, f­e­e­s"
+01216.e293653cab0c486ba135cf8fbe6700fc,01216__salted__extended__cp200B__fragment.e293653cab0c486ba135cf8fbe6700fc,extended,200B,fragment,,HGH,H​G​H,,
+01216.e293653cab0c486ba135cf8fbe6700fc,01216__salted__extended__cp200C__fragment.e293653cab0c486ba135cf8fbe6700fc,extended,200C,fragment,,HGH,H‌G‌H,,
+01216.e293653cab0c486ba135cf8fbe6700fc,01216__salted__extended__cp200D__fragment.e293653cab0c486ba135cf8fbe6700fc,extended,200D,fragment,,HGH,H‍G‍H,,
+01216.e293653cab0c486ba135cf8fbe6700fc,01216__salted__extended__cp00AD__fragment.e293653cab0c486ba135cf8fbe6700fc,extended,00AD,fragment,,HGH,H­G­H,,
+01230.0589bade8df0c343a49c6712f62dfca0,01230__salted__extended__cp200B__fragment.0589bade8df0c343a49c6712f62dfca0,extended,200B,fragment,,,,"tobacco, Guaranteed, Guaranteed","t​o​b​a​c​c​o, G​u​a​r​a​n​t​e​e​d, G​u​a​r​a​n​t​e​e​d"
+01230.0589bade8df0c343a49c6712f62dfca0,01230__salted__extended__cp200C__fragment.0589bade8df0c343a49c6712f62dfca0,extended,200C,fragment,,,,"tobacco, Guaranteed, Guaranteed","t‌o‌b‌a‌c‌c‌o, G‌u‌a‌r‌a‌n‌t‌e‌e‌d, G‌u‌a‌r‌a‌n‌t‌e‌e‌d"
+01230.0589bade8df0c343a49c6712f62dfca0,01230__salted__extended__cp200D__fragment.0589bade8df0c343a49c6712f62dfca0,extended,200D,fragment,,,,"tobacco, Guaranteed, Guaranteed","t‍o‍b‍a‍c‍c‍o, G‍u‍a‍r‍a‍n‍t‍e‍e‍d, G‍u‍a‍r‍a‍n‍t‍e‍e‍d"
+01230.0589bade8df0c343a49c6712f62dfca0,01230__salted__extended__cp00AD__fragment.0589bade8df0c343a49c6712f62dfca0,extended,00AD,fragment,,,,"tobacco, Guaranteed, Guaranteed","t­o­b­a­c­c­o, G­u­a­r­a­n­t­e­e­d, G­u­a­r­a­n­t­e­e­d"
+01236.903d52340bf3ed1a328b039bcd94e1c9,01236__salted__extended__cp200B__fragment.903d52340bf3ed1a328b039bcd94e1c9,extended,200B,fragment,,cartridges,c​a​r​t​r​i​d​g​e​s,,
+01236.903d52340bf3ed1a328b039bcd94e1c9,01236__salted__extended__cp200C__fragment.903d52340bf3ed1a328b039bcd94e1c9,extended,200C,fragment,,cartridges,c‌a‌r‌t‌r‌i‌d‌g‌e‌s,,
+01236.903d52340bf3ed1a328b039bcd94e1c9,01236__salted__extended__cp200D__fragment.903d52340bf3ed1a328b039bcd94e1c9,extended,200D,fragment,,cartridges,c‍a‍r‍t‍r‍i‍d‍g‍e‍s,,
+01236.903d52340bf3ed1a328b039bcd94e1c9,01236__salted__extended__cp00AD__fragment.903d52340bf3ed1a328b039bcd94e1c9,extended,00AD,fragment,,cartridges,c­a­r­t­r­i­d­g­e­s,,
+01240.7d6ae3682a3dd3fe457516b188eb105c,01240__salted__extended__cp200B__fragment.7d6ae3682a3dd3fe457516b188eb105c,extended,200B,fragment,,assistance,a​s​s​i​s​t​a​n​c​e,"PRESENTLY, NIGERIA, PRESENTLY","P​R​E​S​E​N​T​L​Y, N​I​G​E​R​I​A, P​R​E​S​E​N​T​L​Y"
+01240.7d6ae3682a3dd3fe457516b188eb105c,01240__salted__extended__cp200C__fragment.7d6ae3682a3dd3fe457516b188eb105c,extended,200C,fragment,,assistance,a‌s‌s‌i‌s‌t‌a‌n‌c‌e,"PRESENTLY, NIGERIA, PRESENTLY","P‌R‌E‌S‌E‌N‌T‌L‌Y, N‌I‌G‌E‌R‌I‌A, P‌R‌E‌S‌E‌N‌T‌L‌Y"
+01240.7d6ae3682a3dd3fe457516b188eb105c,01240__salted__extended__cp200D__fragment.7d6ae3682a3dd3fe457516b188eb105c,extended,200D,fragment,,assistance,a‍s‍s‍i‍s‍t‍a‍n‍c‍e,"PRESENTLY, NIGERIA, PRESENTLY","P‍R‍E‍S‍E‍N‍T‍L‍Y, N‍I‍G‍E‍R‍I‍A, P‍R‍E‍S‍E‍N‍T‍L‍Y"
+01240.7d6ae3682a3dd3fe457516b188eb105c,01240__salted__extended__cp00AD__fragment.7d6ae3682a3dd3fe457516b188eb105c,extended,00AD,fragment,,assistance,a­s­s­i­s­t­a­n­c­e,"PRESENTLY, NIGERIA, PRESENTLY","P­R­E­S­E­N­T­L­Y, N­I­G­E­R­I­A, P­R­E­S­E­N­T­L­Y"
+01242.3743099b115c6a8a273d8eca34a9c738,01242__salted__extended__cp200B__fragment.3743099b115c6a8a273d8eca34a9c738,extended,200B,fragment,,Cartridges,C​a​r​t​r​i​d​g​e​s,,
+01242.3743099b115c6a8a273d8eca34a9c738,01242__salted__extended__cp200C__fragment.3743099b115c6a8a273d8eca34a9c738,extended,200C,fragment,,Cartridges,C‌a‌r‌t‌r‌i‌d‌g‌e‌s,,
+01242.3743099b115c6a8a273d8eca34a9c738,01242__salted__extended__cp200D__fragment.3743099b115c6a8a273d8eca34a9c738,extended,200D,fragment,,Cartridges,C‍a‍r‍t‍r‍i‍d‍g‍e‍s,,
+01242.3743099b115c6a8a273d8eca34a9c738,01242__salted__extended__cp00AD__fragment.3743099b115c6a8a273d8eca34a9c738,extended,00AD,fragment,,Cartridges,C­a­r­t­r­i­d­g­e­s,,
+01250.2bfc033f9ced1c70e480ec75b0094431,01250__salted__extended__cp200B__fragment.2bfc033f9ced1c70e480ec75b0094431,extended,200B,fragment,,,,"Receive, receive, mailings","R​e​c​e​i​v​e, r​e​c​e​i​v​e, m​a​i​l​i​n​g​s"
+01250.2bfc033f9ced1c70e480ec75b0094431,01250__salted__extended__cp200C__fragment.2bfc033f9ced1c70e480ec75b0094431,extended,200C,fragment,,,,"Receive, receive, mailings","R‌e‌c‌e‌i‌v‌e, r‌e‌c‌e‌i‌v‌e, m‌a‌i‌l‌i‌n‌g‌s"
+01250.2bfc033f9ced1c70e480ec75b0094431,01250__salted__extended__cp200D__fragment.2bfc033f9ced1c70e480ec75b0094431,extended,200D,fragment,,,,"Receive, receive, mailings","R‍e‍c‍e‍i‍v‍e, r‍e‍c‍e‍i‍v‍e, m‍a‍i‍l‍i‍n‍g‍s"
+01250.2bfc033f9ced1c70e480ec75b0094431,01250__salted__extended__cp00AD__fragment.2bfc033f9ced1c70e480ec75b0094431,extended,00AD,fragment,,,,"Receive, receive, mailings","R­e­c­e­i­v­e, r­e­c­e­i­v­e, m­a­i­l­i­n­g­s"
+01253.26e421b9623002d636c29f79f68a58fb,01253__salted__extended__cp200B__fragment.26e421b9623002d636c29f79f68a58fb,extended,200B,fragment,,cartridges,c​a​r​t​r​i​d​g​e​s,,
+01253.26e421b9623002d636c29f79f68a58fb,01253__salted__extended__cp200C__fragment.26e421b9623002d636c29f79f68a58fb,extended,200C,fragment,,cartridges,c‌a‌r‌t‌r‌i‌d‌g‌e‌s,,
+01253.26e421b9623002d636c29f79f68a58fb,01253__salted__extended__cp200D__fragment.26e421b9623002d636c29f79f68a58fb,extended,200D,fragment,,cartridges,c‍a‍r‍t‍r‍i‍d‍g‍e‍s,,
+01253.26e421b9623002d636c29f79f68a58fb,01253__salted__extended__cp00AD__fragment.26e421b9623002d636c29f79f68a58fb,extended,00AD,fragment,,cartridges,c­a­r­t­r­i­d­g­e­s,,
+01255.e04eae4539f81463a930dfe44ebd6af8,01255__salted__extended__cp200B__fragment.e04eae4539f81463a930dfe44ebd6af8,extended,200B,fragment,,HGH,H​G​H,,
+01255.e04eae4539f81463a930dfe44ebd6af8,01255__salted__extended__cp200C__fragment.e04eae4539f81463a930dfe44ebd6af8,extended,200C,fragment,,HGH,H‌G‌H,,
+01255.e04eae4539f81463a930dfe44ebd6af8,01255__salted__extended__cp200D__fragment.e04eae4539f81463a930dfe44ebd6af8,extended,200D,fragment,,HGH,H‍G‍H,,
+01255.e04eae4539f81463a930dfe44ebd6af8,01255__salted__extended__cp00AD__fragment.e04eae4539f81463a930dfe44ebd6af8,extended,00AD,fragment,,HGH,H­G­H,,
+01257.f5908ef0550cdf91bd6ae55120ecb5ce,01257__salted__extended__cp200B__fragment.f5908ef0550cdf91bd6ae55120ecb5ce,extended,200B,fragment,,,,"click, obligation","c​l​i​c​k, o​b​l​i​g​a​t​i​o​n"
+01257.f5908ef0550cdf91bd6ae55120ecb5ce,01257__salted__extended__cp200C__fragment.f5908ef0550cdf91bd6ae55120ecb5ce,extended,200C,fragment,,,,"click, obligation","c‌l‌i‌c‌k, o‌b‌l‌i‌g‌a‌t‌i‌o‌n"
+01257.f5908ef0550cdf91bd6ae55120ecb5ce,01257__salted__extended__cp200D__fragment.f5908ef0550cdf91bd6ae55120ecb5ce,extended,200D,fragment,,,,"click, obligation","c‍l‍i‍c‍k, o‍b‍l‍i‍g‍a‍t‍i‍o‍n"
+01257.f5908ef0550cdf91bd6ae55120ecb5ce,01257__salted__extended__cp00AD__fragment.f5908ef0550cdf91bd6ae55120ecb5ce,extended,00AD,fragment,,,,"click, obligation","c­l­i­c­k, o­b­l­i­g­a­t­i­o­n"
+01259.b4dff1ed93bc931b271888cd42e41b85,01259__salted__extended__cp200B__fragment.b4dff1ed93bc931b271888cd42e41b85,extended,200B,fragment,,,,"SLEEP, tobacco, attained","S​L​E​E​P, t​o​b​a​c​c​o, a​t​t​a​i​n​e​d"
+01259.b4dff1ed93bc931b271888cd42e41b85,01259__salted__extended__cp200C__fragment.b4dff1ed93bc931b271888cd42e41b85,extended,200C,fragment,,,,"SLEEP, tobacco, attained","S‌L‌E‌E‌P, t‌o‌b‌a‌c‌c‌o, a‌t‌t‌a‌i‌n‌e‌d"
+01259.b4dff1ed93bc931b271888cd42e41b85,01259__salted__extended__cp200D__fragment.b4dff1ed93bc931b271888cd42e41b85,extended,200D,fragment,,,,"SLEEP, tobacco, attained","S‍L‍E‍E‍P, t‍o‍b‍a‍c‍c‍o, a‍t‍t‍a‍i‍n‍e‍d"
+01259.b4dff1ed93bc931b271888cd42e41b85,01259__salted__extended__cp00AD__fragment.b4dff1ed93bc931b271888cd42e41b85,extended,00AD,fragment,,,,"SLEEP, tobacco, attained","S­L­E­E­P, t­o­b­a­c­c­o, a­t­t­a­i­n­e­d"
+01267.6e9de9ba20f59c26028ebdb4550685fb,01267__salted__extended__cp200B__fragment.6e9de9ba20f59c26028ebdb4550685fb,extended,200B,fragment,,SYSTEMWORKS,S​Y​S​T​E​M​W​O​R​K​S,,
+01267.6e9de9ba20f59c26028ebdb4550685fb,01267__salted__extended__cp200C__fragment.6e9de9ba20f59c26028ebdb4550685fb,extended,200C,fragment,,SYSTEMWORKS,S‌Y‌S‌T‌E‌M‌W‌O‌R‌K‌S,,
+01267.6e9de9ba20f59c26028ebdb4550685fb,01267__salted__extended__cp200D__fragment.6e9de9ba20f59c26028ebdb4550685fb,extended,200D,fragment,,SYSTEMWORKS,S‍Y‍S‍T‍E‍M‍W‍O‍R‍K‍S,,
+01267.6e9de9ba20f59c26028ebdb4550685fb,01267__salted__extended__cp00AD__fragment.6e9de9ba20f59c26028ebdb4550685fb,extended,00AD,fragment,,SYSTEMWORKS,S­Y­S­T­E­M­W­O­R­K­S,,
+01280.34dde162b3c6b2e873fc9f094d28b0fd,01280__salted__extended__cp200B__fragment.34dde162b3c6b2e873fc9f094d28b0fd,extended,200B,fragment,,,,"wholesale, commissions, obligation","w​h​o​l​e​s​a​l​e, c​o​m​m​i​s​s​i​o​n​s, o​b​l​i​g​a​t​i​o​n"
+01280.34dde162b3c6b2e873fc9f094d28b0fd,01280__salted__extended__cp200C__fragment.34dde162b3c6b2e873fc9f094d28b0fd,extended,200C,fragment,,,,"wholesale, commissions, obligation","w‌h‌o‌l‌e‌s‌a‌l‌e, c‌o‌m‌m‌i‌s‌s‌i‌o‌n‌s, o‌b‌l‌i‌g‌a‌t‌i‌o‌n"
+01280.34dde162b3c6b2e873fc9f094d28b0fd,01280__salted__extended__cp200D__fragment.34dde162b3c6b2e873fc9f094d28b0fd,extended,200D,fragment,,,,"wholesale, commissions, obligation","w‍h‍o‍l‍e‍s‍a‍l‍e, c‍o‍m‍m‍i‍s‍s‍i‍o‍n‍s, o‍b‍l‍i‍g‍a‍t‍i‍o‍n"
+01280.34dde162b3c6b2e873fc9f094d28b0fd,01280__salted__extended__cp00AD__fragment.34dde162b3c6b2e873fc9f094d28b0fd,extended,00AD,fragment,,,,"wholesale, commissions, obligation","w­h­o­l­e­s­a­l­e, c­o­m­m­i­s­s­i­o­n­s, o­b­l­i­g­a­t­i­o­n"
+01308.c46f1215ccd8cedf162e0cf308b94dcd,01308__salted__extended__cp200B__fragment.c46f1215ccd8cedf162e0cf308b94dcd,extended,200B,fragment,,,,"participation, ATTAINED, profitable","p​a​r​t​i​c​i​p​a​t​i​o​n, A​T​T​A​I​N​E​D, p​r​o​f​i​t​a​b​l​e"
+01308.c46f1215ccd8cedf162e0cf308b94dcd,01308__salted__extended__cp200C__fragment.c46f1215ccd8cedf162e0cf308b94dcd,extended,200C,fragment,,,,"participation, ATTAINED, profitable","p‌a‌r‌t‌i‌c‌i‌p‌a‌t‌i‌o‌n, A‌T‌T‌A‌I‌N‌E‌D, p‌r‌o‌f‌i‌t‌a‌b‌l‌e"
+01308.c46f1215ccd8cedf162e0cf308b94dcd,01308__salted__extended__cp200D__fragment.c46f1215ccd8cedf162e0cf308b94dcd,extended,200D,fragment,,,,"participation, ATTAINED, profitable","p‍a‍r‍t‍i‍c‍i‍p‍a‍t‍i‍o‍n, A‍T‍T‍A‍I‍N‍E‍D, p‍r‍o‍f‍i‍t‍a‍b‍l‍e"
+01308.c46f1215ccd8cedf162e0cf308b94dcd,01308__salted__extended__cp00AD__fragment.c46f1215ccd8cedf162e0cf308b94dcd,extended,00AD,fragment,,,,"participation, ATTAINED, profitable","p­a­r­t­i­c­i­p­a­t­i­o­n, A­T­T­A­I­N­E­D, p­r­o­f­i­t­a­b­l­e"
+01311.43bfe86df65d53c5f7ca2365dc12582b,01311__salted__extended__cp200B__fragment.43bfe86df65d53c5f7ca2365dc12582b,extended,200B,fragment,,mortgage,m​o​r​t​g​a​g​e,,
+01311.43bfe86df65d53c5f7ca2365dc12582b,01311__salted__extended__cp200C__fragment.43bfe86df65d53c5f7ca2365dc12582b,extended,200C,fragment,,mortgage,m‌o‌r‌t‌g‌a‌g‌e,,
+01311.43bfe86df65d53c5f7ca2365dc12582b,01311__salted__extended__cp200D__fragment.43bfe86df65d53c5f7ca2365dc12582b,extended,200D,fragment,,mortgage,m‍o‍r‍t‍g‍a‍g‍e,,
+01311.43bfe86df65d53c5f7ca2365dc12582b,01311__salted__extended__cp00AD__fragment.43bfe86df65d53c5f7ca2365dc12582b,extended,00AD,fragment,,mortgage,m­o­r­t­g­a­g­e,,
+01335.ca70ab7f2d1accef8b3cf646e3004ef8,01335__salted__extended__cp200B__fragment.ca70ab7f2d1accef8b3cf646e3004ef8,extended,200B,fragment,,mortgage,m​o​r​t​g​a​g​e,,
+01335.ca70ab7f2d1accef8b3cf646e3004ef8,01335__salted__extended__cp200C__fragment.ca70ab7f2d1accef8b3cf646e3004ef8,extended,200C,fragment,,mortgage,m‌o‌r‌t‌g‌a‌g‌e,,
+01335.ca70ab7f2d1accef8b3cf646e3004ef8,01335__salted__extended__cp200D__fragment.ca70ab7f2d1accef8b3cf646e3004ef8,extended,200D,fragment,,mortgage,m‍o‍r‍t‍g‍a‍g‍e,,
+01335.ca70ab7f2d1accef8b3cf646e3004ef8,01335__salted__extended__cp00AD__fragment.ca70ab7f2d1accef8b3cf646e3004ef8,extended,00AD,fragment,,mortgage,m­o­r­t­g­a­g­e,,
+01339.d94a16532a6f42497266dcc327a40163,01339__salted__extended__cp200B__fragment.d94a16532a6f42497266dcc327a40163,extended,200B,fragment,,mortgage,m​o​r​t​g​a​g​e,,
+01339.d94a16532a6f42497266dcc327a40163,01339__salted__extended__cp200C__fragment.d94a16532a6f42497266dcc327a40163,extended,200C,fragment,,mortgage,m‌o‌r‌t‌g‌a‌g‌e,,
+01339.d94a16532a6f42497266dcc327a40163,01339__salted__extended__cp200D__fragment.d94a16532a6f42497266dcc327a40163,extended,200D,fragment,,mortgage,m‍o‍r‍t‍g‍a‍g‍e,,
+01339.d94a16532a6f42497266dcc327a40163,01339__salted__extended__cp00AD__fragment.d94a16532a6f42497266dcc327a40163,extended,00AD,fragment,,mortgage,m­o­r­t­g­a­g­e,,
+01342.7f89acf56fb4398340a0b07481e3193f,01342__salted__extended__cp200B__fragment.7f89acf56fb4398340a0b07481e3193f,extended,200B,fragment,,,,"purchase, Postal, MasterCard","p​u​r​c​h​a​s​e, P​o​s​t​a​l, M​a​s​t​e​r​C​a​r​d"
+01342.7f89acf56fb4398340a0b07481e3193f,01342__salted__extended__cp200C__fragment.7f89acf56fb4398340a0b07481e3193f,extended,200C,fragment,,,,"purchase, Postal, MasterCard","p‌u‌r‌c‌h‌a‌s‌e, P‌o‌s‌t‌a‌l, M‌a‌s‌t‌e‌r‌C‌a‌r‌d"
+01342.7f89acf56fb4398340a0b07481e3193f,01342__salted__extended__cp200D__fragment.7f89acf56fb4398340a0b07481e3193f,extended,200D,fragment,,,,"purchase, Postal, MasterCard","p‍u‍r‍c‍h‍a‍s‍e, P‍o‍s‍t‍a‍l, M‍a‍s‍t‍e‍r‍C‍a‍r‍d"
+01342.7f89acf56fb4398340a0b07481e3193f,01342__salted__extended__cp00AD__fragment.7f89acf56fb4398340a0b07481e3193f,extended,00AD,fragment,,,,"purchase, Postal, MasterCard","p­u­r­c­h­a­s­e, P­o­s­t­a­l, M­a­s­t­e­r­C­a­r­d"
+01355.a47c042a6e16456c5b49c18d5b3868cb,01355__salted__extended__cp200B__fragment.a47c042a6e16456c5b49c18d5b3868cb,extended,200B,fragment,,,,"receive, mailings","r​e​c​e​i​v​e, m​a​i​l​i​n​g​s"
+01355.a47c042a6e16456c5b49c18d5b3868cb,01355__salted__extended__cp200C__fragment.a47c042a6e16456c5b49c18d5b3868cb,extended,200C,fragment,,,,"receive, mailings","r‌e‌c‌e‌i‌v‌e, m‌a‌i‌l‌i‌n‌g‌s"
+01355.a47c042a6e16456c5b49c18d5b3868cb,01355__salted__extended__cp200D__fragment.a47c042a6e16456c5b49c18d5b3868cb,extended,200D,fragment,,,,"receive, mailings","r‍e‍c‍e‍i‍v‍e, m‍a‍i‍l‍i‍n‍g‍s"
+01355.a47c042a6e16456c5b49c18d5b3868cb,01355__salted__extended__cp00AD__fragment.a47c042a6e16456c5b49c18d5b3868cb,extended,00AD,fragment,,,,"receive, mailings","r­e­c­e­i­v­e, m­a­i­l­i­n­g­s"
+01359.deafa1d42658c6624c6809a446b7f369,01359__salted__extended__cp200B__fragment.deafa1d42658c6624c6809a446b7f369,extended,200B,fragment,,,,"Dear, Sir, kindly","D​e​a​r, S​i​r, k​i​n​d​l​y"
+01359.deafa1d42658c6624c6809a446b7f369,01359__salted__extended__cp200C__fragment.deafa1d42658c6624c6809a446b7f369,extended,200C,fragment,,,,"Dear, Sir, kindly","D‌e‌a‌r, S‌i‌r, k‌i‌n‌d‌l‌y"
+01359.deafa1d42658c6624c6809a446b7f369,01359__salted__extended__cp200D__fragment.deafa1d42658c6624c6809a446b7f369,extended,200D,fragment,,,,"Dear, Sir, kindly","D‍e‍a‍r, S‍i‍r, k‍i‍n‍d‍l‍y"
+01359.deafa1d42658c6624c6809a446b7f369,01359__salted__extended__cp00AD__fragment.deafa1d42658c6624c6809a446b7f369,extended,00AD,fragment,,,,"Dear, Sir, kindly","D­e­a­r, S­i­r, k­i­n­d­l­y"
+01363.85518bca7c7cb9f35e57f3adda762ac9,01363__salted__extended__cp200B__fragment.85518bca7c7cb9f35e57f3adda762ac9,extended,200B,fragment,,,,"Click, promotion","C​l​i​c​k, p​r​o​m​o​t​i​o​n"
+01363.85518bca7c7cb9f35e57f3adda762ac9,01363__salted__extended__cp200C__fragment.85518bca7c7cb9f35e57f3adda762ac9,extended,200C,fragment,,,,"Click, promotion","C‌l‌i‌c‌k, p‌r‌o‌m‌o‌t‌i‌o‌n"
+01363.85518bca7c7cb9f35e57f3adda762ac9,01363__salted__extended__cp200D__fragment.85518bca7c7cb9f35e57f3adda762ac9,extended,200D,fragment,,,,"Click, promotion","C‍l‍i‍c‍k, p‍r‍o‍m‍o‍t‍i‍o‍n"
+01363.85518bca7c7cb9f35e57f3adda762ac9,01363__salted__extended__cp00AD__fragment.85518bca7c7cb9f35e57f3adda762ac9,extended,00AD,fragment,,,,"Click, promotion","C­l­i­c­k, p­r­o­m­o­t­i­o­n"
+01372.5d236077d94148a0ca71751f8f0a2e58,01372__salted__extended__cp200B__fragment.5d236077d94148a0ca71751f8f0a2e58,extended,200B,fragment,,Herbal,H​e​r​b​a​l,,
+01372.5d236077d94148a0ca71751f8f0a2e58,01372__salted__extended__cp200C__fragment.5d236077d94148a0ca71751f8f0a2e58,extended,200C,fragment,,Herbal,H‌e‌r‌b‌a‌l,,
+01372.5d236077d94148a0ca71751f8f0a2e58,01372__salted__extended__cp200D__fragment.5d236077d94148a0ca71751f8f0a2e58,extended,200D,fragment,,Herbal,H‍e‍r‍b‍a‍l,,
+01372.5d236077d94148a0ca71751f8f0a2e58,01372__salted__extended__cp00AD__fragment.5d236077d94148a0ca71751f8f0a2e58,extended,00AD,fragment,,Herbal,H­e­r­b­a­l,,
+01374.b902d53d7f737be700d6de60a42122d9,01374__salted__extended__cp200B__fragment.b902d53d7f737be700d6de60a42122d9,extended,200B,fragment,,,,Dear,D​e​a​r
+01374.b902d53d7f737be700d6de60a42122d9,01374__salted__extended__cp200C__fragment.b902d53d7f737be700d6de60a42122d9,extended,200C,fragment,,,,Dear,D‌e‌a‌r
+01374.b902d53d7f737be700d6de60a42122d9,01374__salted__extended__cp200D__fragment.b902d53d7f737be700d6de60a42122d9,extended,200D,fragment,,,,Dear,D‍e‍a‍r
+01374.b902d53d7f737be700d6de60a42122d9,01374__salted__extended__cp00AD__fragment.b902d53d7f737be700d6de60a42122d9,extended,00AD,fragment,,,,Dear,D­e­a­r
+01382.37400f7a1f36cd45165c2a72a9ec8baa,01382__salted__extended__cp200B__fragment.37400f7a1f36cd45165c2a72a9ec8baa,extended,200B,fragment,,,,"earn, promotion, receive","e​a​r​n, p​r​o​m​o​t​i​o​n, r​e​c​e​i​v​e"
+01382.37400f7a1f36cd45165c2a72a9ec8baa,01382__salted__extended__cp200C__fragment.37400f7a1f36cd45165c2a72a9ec8baa,extended,200C,fragment,,,,"earn, promotion, receive","e‌a‌r‌n, p‌r‌o‌m‌o‌t‌i‌o‌n, r‌e‌c‌e‌i‌v‌e"
+01382.37400f7a1f36cd45165c2a72a9ec8baa,01382__salted__extended__cp200D__fragment.37400f7a1f36cd45165c2a72a9ec8baa,extended,200D,fragment,,,,"earn, promotion, receive","e‍a‍r‍n, p‍r‍o‍m‍o‍t‍i‍o‍n, r‍e‍c‍e‍i‍v‍e"
+01382.37400f7a1f36cd45165c2a72a9ec8baa,01382__salted__extended__cp00AD__fragment.37400f7a1f36cd45165c2a72a9ec8baa,extended,00AD,fragment,,,,"earn, promotion, receive","e­a­r­n, p­r­o­m­o­t­i­o­n, r­e­c­e­i­v­e"
+01384.e23f94030a4393f0825eacd9de99eb31,01384__salted__extended__cp200B__fragment.e23f94030a4393f0825eacd9de99eb31,extended,200B,fragment,,Invest,I​n​v​e​s​t,"consultation, Sincerely, click","c​o​n​s​u​l​t​a​t​i​o​n, S​i​n​c​e​r​e​l​y, c​l​i​c​k"
+01384.e23f94030a4393f0825eacd9de99eb31,01384__salted__extended__cp200C__fragment.e23f94030a4393f0825eacd9de99eb31,extended,200C,fragment,,Invest,I‌n‌v‌e‌s‌t,"consultation, Sincerely, click","c‌o‌n‌s‌u‌l‌t‌a‌t‌i‌o‌n, S‌i‌n‌c‌e‌r‌e‌l‌y, c‌l‌i‌c‌k"
+01384.e23f94030a4393f0825eacd9de99eb31,01384__salted__extended__cp200D__fragment.e23f94030a4393f0825eacd9de99eb31,extended,200D,fragment,,Invest,I‍n‍v‍e‍s‍t,"consultation, Sincerely, click","c‍o‍n‍s‍u‍l‍t‍a‍t‍i‍o‍n, S‍i‍n‍c‍e‍r‍e‍l‍y, c‍l‍i‍c‍k"
+01384.e23f94030a4393f0825eacd9de99eb31,01384__salted__extended__cp00AD__fragment.e23f94030a4393f0825eacd9de99eb31,extended,00AD,fragment,,Invest,I­n­v­e­s­t,"consultation, Sincerely, click","c­o­n­s­u­l­t­a­t­i­o­n, S­i­n­c­e­r­e­l­y, c­l­i­c­k"
+01388.dba0966da5886e99fab13981da6c3834,01388__salted__extended__cp200B__fragment.dba0966da5886e99fab13981da6c3834,extended,200B,fragment,,,,"obligation, Sincerely, removal","o​b​l​i​g​a​t​i​o​n, S​i​n​c​e​r​e​l​y, r​e​m​o​v​a​l"
+01388.dba0966da5886e99fab13981da6c3834,01388__salted__extended__cp200C__fragment.dba0966da5886e99fab13981da6c3834,extended,200C,fragment,,,,"obligation, Sincerely, removal","o‌b‌l‌i‌g‌a‌t‌i‌o‌n, S‌i‌n‌c‌e‌r‌e‌l‌y, r‌e‌m‌o‌v‌a‌l"
+01388.dba0966da5886e99fab13981da6c3834,01388__salted__extended__cp200D__fragment.dba0966da5886e99fab13981da6c3834,extended,200D,fragment,,,,"obligation, Sincerely, removal","o‍b‍l‍i‍g‍a‍t‍i‍o‍n, S‍i‍n‍c‍e‍r‍e‍l‍y, r‍e‍m‍o‍v‍a‍l"
+01388.dba0966da5886e99fab13981da6c3834,01388__salted__extended__cp00AD__fragment.dba0966da5886e99fab13981da6c3834,extended,00AD,fragment,,,,"obligation, Sincerely, removal","o­b­l­i­g­a­t­i­o­n, S­i­n­c­e­r­e­l­y, r­e­m­o­v­a­l"
+01395.cb33d1d72f42e4ab9268729917bf428b,01395__salted__extended__cp200B__fragment.cb33d1d72f42e4ab9268729917bf428b,extended,200B,fragment,,ADV,A​D​V,,
+01395.cb33d1d72f42e4ab9268729917bf428b,01395__salted__extended__cp200C__fragment.cb33d1d72f42e4ab9268729917bf428b,extended,200C,fragment,,ADV,A‌D‌V,,
+01395.cb33d1d72f42e4ab9268729917bf428b,01395__salted__extended__cp200D__fragment.cb33d1d72f42e4ab9268729917bf428b,extended,200D,fragment,,ADV,A‍D‍V,,
+01395.cb33d1d72f42e4ab9268729917bf428b,01395__salted__extended__cp00AD__fragment.cb33d1d72f42e4ab9268729917bf428b,extended,00AD,fragment,,ADV,A­D­V,,

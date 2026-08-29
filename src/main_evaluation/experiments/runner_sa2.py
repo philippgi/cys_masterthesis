@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 from config import BASE_DIR
-
 from src.main_evaluation.dataset_split.runner import run_dataset_split
 from src.main_evaluation.trigger_vocabulary.runner import run_trigger_vocabulary
 from src.main_evaluation.trigger_coverage.runner import run_trigger_coverage
@@ -16,7 +15,7 @@ from src.utils.console import print_step, print_section
 
 def run_sa2():
     dataset_dir = BASE_DIR / "data/datasets/split"
-    output_root = BASE_DIR / "data/output/SA2"
+    output_root = BASE_DIR / "data/output/experiments/SA2"
 
     strict_output = output_root / "strict"
     extended_output = output_root / "extended"
@@ -28,18 +27,33 @@ def run_sa2():
             "output_root": strict_output,
             "experiment_id": "SA2_strict",
             "salting_vocabulary": "strict",
+            "subject_max_insertions": 1,
+            "body_max_insertions": 3,
+            "salt_mode": "single",
+            "insert_after_index": 2,
+            "fragment_max_positions": None,
         },
         {
             "name": "EXTENDED",
             "output_root": extended_output,
             "experiment_id": "SA2_extended",
             "salting_vocabulary": "extended",
+            "subject_max_insertions": 1,
+            "body_max_insertions": 3,
+            "salt_mode": "single",
+            "insert_after_index": 2,
+            "fragment_max_positions": None,
         },
         {
             "name": "BROAD",
             "output_root": broad_output,
             "experiment_id": "SA2_broad",
             "salting_vocabulary": "broad",
+            "subject_max_insertions": 1,
+            "body_max_insertions": 3,
+            "salt_mode": "single",
+            "insert_after_index": 2,
+            "fragment_max_positions": None,
         },
     ]
 
@@ -48,7 +62,6 @@ def run_sa2():
     activate_spamassassin_config("sa2.cf")
     restart_spamassassin()
 
-    reset_pipeline_output()
     run_dataset_split(train_ratio=0.8)
 
     run_trigger_vocabulary(output_root=strict_output, dataset_split_dir=dataset_dir)
@@ -68,6 +81,11 @@ def run_sa2():
             output_root=exp["output_root"],
             dataset_split_dir=dataset_dir,
             salting_vocabulary=exp["salting_vocabulary"],
+            subject_max_insertions=exp["subject_max_insertions"],
+            body_max_insertions=exp["body_max_insertions"],
+            salt_mode=exp["salt_mode"],
+            insert_after_index=exp["insert_after_index"],
+            fragment_max_positions=exp["fragment_max_positions"],
         )
 
         run_spamassassin_evaluation(
@@ -84,6 +102,13 @@ def run_sa2():
             mechanism="rules_only",
             rule_scope="extended_local_content",
             salting_condition=exp["salting_vocabulary"],
+            salting_config={
+                "subject_max_insertions": exp["subject_max_insertions"],
+                "body_max_insertions": exp["body_max_insertions"],
+                "salt_mode": exp["salt_mode"],
+                "insert_after_index": exp["insert_after_index"],
+                "fragment_max_positions": exp["fragment_max_positions"],
+            },
         )
 
 

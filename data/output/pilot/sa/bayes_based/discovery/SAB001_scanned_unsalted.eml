@@ -1,0 +1,17 @@
+X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-25) on acdc0cfdfc9b
+X-Spam-Level: 
+X-Spam-Status: No, score=0.9 required=5.0 tests=BAYES_50,NO_RECEIVED,NO_RELAYS,
+	TVD_PH_BODY_ACCOUNTS_PRE,TVD_PH_SEC autolearn=disabled version=4.0.1
+X-Spam-Spammy: Verify, verification, account
+X-Spam-Hammy: H*ct:utf-8
+X-Spam-Spammy_Details: 0.998-3--Verify, 0.873-2--verification, 0.850-2--account
+X-Spam-Hammy_Details: 0.004-+--H*ct:utf-8
+From: pilot-test@secure-mail.com
+To: victim@company.com
+Subject: Security verification notice
+Date: Tue, 04 Aug 2026 11:20:51 -0000
+Message-ID: <178584245115.35948.13352836383932728803@smtp7.secure-mail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+

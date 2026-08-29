@@ -1,0 +1,15 @@
+{
+  "n_baseline_detected_emails": 126,
+  "n_baseline_with_neural": 126,
+  "n_salted_with_any_neural": 126,
+  "n_neural_lost_any": 0,
+  "n_neural_lost_all": 0,
+  "baseline_neural_symbol_counts": {
+    "NEURAL_SPAM": 126
+  },
+  "salted_neural_symbol_counts": {
+    "NEURAL_SPAM": 504
+  },
+  "baseline_neural_score_mean": 2.9644,
+  "salted_neural_score_mean": 2.959361
+}

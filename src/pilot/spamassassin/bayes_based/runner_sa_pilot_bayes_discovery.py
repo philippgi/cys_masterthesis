@@ -1,3 +1,11 @@
+"""
+Discovers Bayes-relevant tokens for the SpamAssassin pilot message.
+
+The prepared unsalted message is scanned with the Bayes pilot configuration.
+Spammy tokens reported by SpamAssassin are matched against the original Subject
+and plain-text body and exported as candidates for the salting evaluation.
+"""
+
 from __future__ import annotations
 
 import csv
@@ -5,7 +13,7 @@ import json
 from email import policy
 from email.parser import BytesParser
 
-from config import SOCKET_TIMEOUT, SPAMD_HOST, SPAMD_PORT
+from config import PILOT_SA_BAYES_CONFIG_NAME, SOCKET_TIMEOUT, SPAMD_HOST, SPAMD_PORT
 from src.main_evaluation.main_evaluation_utils.container_control import restart_spamassassin
 from src.main_evaluation.main_evaluation_utils.sa_config_switcher import activate_spamassassin_config
 from src.main_evaluation.spamassassin_evaluation.runner import SpamdClient
@@ -20,6 +28,14 @@ from src.utils.console import print_end, print_kv, print_section, print_step
 
 
 def _write_csv(path, rows: list[dict]) -> None:
+    """
+    Write token discovery rows to a semicolon-delimited CSV file.
+
+    Args:
+        path: Destination CSV path.
+        rows (list[dict]): Token discovery records.
+    """
+
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()), delimiter=";")
@@ -28,17 +44,43 @@ def _write_csv(path, rows: list[dict]) -> None:
 
 
 def _write_json(path, data: dict) -> None:
+    """
+    Write discovery metadata to a JSON file.
+
+    Args:
+        path: Destination JSON path.
+        data (dict): Discovery metadata to export.
+    """
+
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 
 def _select_tokens_present_in_text(text: str, tokens: list[str]) -> list[str]:
+    """
+    Select discovered tokens that occur in the provided text.
+
+    Args:
+        text (str): Subject or body text to inspect.
+        tokens (list[str]): Candidate tokens reported by SpamAssassin.
+
+    Returns:
+        list[str]: Tokens present in the text.
+    """
+
     text_lc = (text or "").lower()
     return [token for token in tokens if token and token.lower() in text_lc]
 
 
 def run_sa_pilot_bayes_discovery() -> None:
+    """
+    Run Bayes token discovery for the prepared unsalted pilot message.
+
+    The discovered token candidates and scan metadata are exported as CSV,
+    JSON, and the returned SpamAssassin message.
+    """
+
     print_step("SA Pilot - Bayes Discovery")
 
     test_unsalted = TEST_UNSALTED_DIR / f"{SAB001.case_id}_unsalted.eml"
@@ -48,7 +90,7 @@ def run_sa_pilot_bayes_discovery() -> None:
             "Run run_sa_pilot_bayes_prepare() first."
         )
 
-    activate_spamassassin_config("sa_pilot_bayes.cf")
+    activate_spamassassin_config(PILOT_SA_BAYES_CONFIG_NAME)
     restart_spamassassin()
     wait_until_spamd_ready(test_unsalted)
 
@@ -65,6 +107,7 @@ def run_sa_pilot_bayes_discovery() -> None:
     finally:
         client.close()
 
+    # Re-parse the original message to locate discovered tokens in Subject and body.
     raw_msg = test_unsalted.read_bytes()
     parsed_original = BytesParser(policy=policy.default).parsebytes(raw_msg)
     subject_text = str(parsed_original.get("Subject", ""))
@@ -76,6 +119,7 @@ def run_sa_pilot_bayes_discovery() -> None:
     body_tokens = _select_tokens_present_in_text(body_text, spammy_tokens)
     matched_tokens = sorted(set(subject_tokens) | set(body_tokens), key=str.lower)
 
+    # Preserve SpamAssassin's token order while recording where each token occurs.
     token_rows = [
         {
             "token": token,

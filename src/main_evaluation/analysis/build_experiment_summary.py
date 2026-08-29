@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+"""
+Builds the aggregated summary for a completed experiment.
+
+Variant-level and paired evaluation results are normalized and combined into
+baseline performance, bypass, score-drop, rule-loss, code-point, salting,
+Bayes, and neural statistics.
+"""
 
 from __future__ import annotations
 
@@ -11,6 +18,7 @@ from src.main_evaluation.analysis.rule_loss_analysis import run_rule_loss_analys
 from src.utils.console import print_step, print_section, print_kv, print_end
 from src.main_evaluation.analysis.bayes_analysis_spamassassin import run_bayes_analysis_spamassassin
 from src.main_evaluation.analysis.bayes_analysis_rspamd import run_bayes_analysis_rspamd
+from src.main_evaluation.analysis.neural_analysis_rspamd import run_neural_analysis_rspamd
 
 
 def _read_csv(path: Path) -> list[dict]:
@@ -39,22 +47,44 @@ def _to_int(value):
 
 
 def _safe_mean(values):
+    """
+    Calculate the mean of non-empty values.
+
+    Returns:
+        float | None: Mean value, or None if no values are available.
+    """
+
     values = [v for v in values if v is not None]
     return mean(values) if values else None
 
 
 def _safe_median(values):
+    """
+    Calculate the median of non-empty values.
+
+    Returns:
+        float | None: Median value, or None if no values are available.
+    """
+
     values = [v for v in values if v is not None]
     return median(values) if values else None
 
 
 def _safe_rate(num: int, denom: int):
+    """
+    Calculate a rate while avoiding division by zero.
+
+    Returns:
+        float | None: Calculated rate, or None if the denominator is zero.
+    """
+
     if denom == 0:
         return None
     return num / denom
 
 
 def _round_or_none(value, ndigits=6):
+    """Round a numeric value while preserving None."""
     if value is None:
         return None
     return round(value, ndigits)
@@ -71,6 +101,24 @@ def build_experiment_summary(
     salting_condition: str | None = None,
     salting_config: dict | None = None,
 ):
+    """
+    Build and export the aggregated summary for an experiment.
+
+    Args:
+        experiment_id (str): Experiment identifier.
+        results_csv (Path): Variant-level evaluation results.
+        paired_csv (Path): Paired baseline and salted evaluation results.
+        output_dir (Path): Directory for generated summary artifacts.
+        filter_name (str | None): Evaluated filtering system.
+        mechanism (str | None): Enabled detection mechanism.
+        rule_scope (str | None): Applied rule or symbol scope.
+        salting_condition (str | None): Evaluated salting condition.
+        salting_config (dict | None): Salting parameters used by the experiment.
+
+    Returns:
+        dict: Aggregated experiment metrics and mechanism-specific analyses.
+    """
+
     results_rows = _read_csv(results_csv)
     paired_rows = _read_csv(paired_csv)
 
@@ -303,22 +351,41 @@ def build_experiment_summary(
     # -----------------------------
     # Bayes analysis
     # -----------------------------
-    if filter_name == "Rspamd":
-        bayes_summary = run_bayes_analysis_rspamd(
+    if "bayes" in (mechanism or ""):
+        if filter_name == "Rspamd":
+            bayes_summary = run_bayes_analysis_rspamd(
+                results_csv=results_csv,
+                paired_csv=paired_csv,
+                output_dir=output_dir,
+            )
+        else:
+            bayes_summary = run_bayes_analysis_spamassassin(
+                results_csv=results_csv,
+                paired_csv=paired_csv,
+                output_dir=output_dir,
+            )
+    else:
+        bayes_summary = None
+
+    # -----------------------------
+    # Neural analysis
+    # -----------------------------
+    if "neural" in (mechanism or ""):
+        neural_summary = run_neural_analysis_rspamd(
             results_csv=results_csv,
             paired_csv=paired_csv,
             output_dir=output_dir,
         )
     else:
-        bayes_summary = run_bayes_analysis_spamassassin(
-            results_csv=results_csv,
-            paired_csv=paired_csv,
-            output_dir=output_dir,
-        )
+        neural_summary = None
 
     # -----------------------------
     # Rule loss analysis
     # -----------------------------
+    # Full per-rule aggregation (which rules disappear, at what rate) is
+    # handled by run_rule_loss_analysis(). The summary layer uses only the
+    # rule_count integer field for score-level statistics; it does not
+    # re-aggregate the raw rule name lists from results.csv.
     rule_loss_summary = run_rule_loss_analysis(
         results_csv=results_csv,
         paired_csv=paired_csv,
@@ -384,6 +451,7 @@ def build_experiment_summary(
         "salting_intensity": salting_intensity,
         "insertion_distribution": insertion_distribution,
         "bayes_analysis": bayes_summary,
+        "neural_analysis": neural_summary,
         "rule_loss_analysis": rule_loss_summary,
     }
 
@@ -513,7 +581,7 @@ def build_experiment_summary(
     lines.append("Bayes analysis")
     lines.append("--------------")
 
-    bayes_data = summary.get("bayes_analysis", {})
+    bayes_data = summary.get("bayes_analysis") or {}
 
     lines.append(f"Baseline-detected emails         : {bayes_data.get('n_baseline_detected_emails')}")
     lines.append(f"Baseline emails with Bayes       : {bayes_data.get('n_baseline_with_bayes')}")
@@ -521,6 +589,43 @@ def build_experiment_summary(
     lines.append(f"Bayes lost in at least one var.  : {bayes_data.get('n_bayes_lost_any')}")
     lines.append(f"Bayes lost in all variants       : {bayes_data.get('n_bayes_lost_all')}")
     lines.append("")
+
+    lines.append("Neural analysis")
+    lines.append("---------------")
+
+    neural_data = summary.get("neural_analysis") or {}
+
+    lines.append(f"Baseline-detected emails          : {neural_data.get('n_baseline_detected_emails')}")
+    lines.append(f"Baseline emails with Neural       : {neural_data.get('n_baseline_with_neural')}")
+    lines.append(f"Salted emails with any Neural     : {neural_data.get('n_salted_with_any_neural')}")
+    lines.append(f"Neural lost in at least one var.  : {neural_data.get('n_neural_lost_any')}")
+    lines.append(f"Neural lost in all variants       : {neural_data.get('n_neural_lost_all')}")
+    lines.append(f"Mean baseline Neural score        : {neural_data.get('baseline_neural_score_mean')}")
+    lines.append(f"Mean salted Neural score          : {neural_data.get('salted_neural_score_mean')}")
+    lines.append("")
+
+    baseline_neural_counts = neural_data.get("baseline_neural_symbol_counts", {})
+    salted_neural_counts = neural_data.get("salted_neural_symbol_counts", {})
+
+    lines.append("Baseline Neural symbols")
+    lines.append("~~~~~~~~~~~~~~~~~~~~~~~")
+    if not baseline_neural_counts:
+        lines.append("No Neural symbol data available.")
+    else:
+        for symbol, count in baseline_neural_counts.items():
+            lines.append(f"{symbol}:")
+            lines.append(f"  count : {count}")
+            lines.append("")
+
+    lines.append("Salted Neural symbols")
+    lines.append("~~~~~~~~~~~~~~~~~~~~~")
+    if not salted_neural_counts:
+        lines.append("No Neural symbol data available.")
+    else:
+        for symbol, count in salted_neural_counts.items():
+            lines.append(f"{symbol}:")
+            lines.append(f"  count : {count}")
+            lines.append("")
 
     if filter_name == "Rspamd":
         baseline_bayes_counts = bayes_data.get("baseline_bayes_symbol_counts", {})

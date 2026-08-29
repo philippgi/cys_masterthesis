@@ -1,0 +1,13 @@
+From: pilot@example.test
+To: victim@example.test
+Subject: Security notice
+Date: Tue, 04 Aug 2026 10:03:42 -0000
+Message-ID: <178583782205.21652.18286978871376567314@rspamd.pilot.test>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Hello,
+
+You are the victim.
+Send 0.5 BTC to 1BoatSLRHtKNngkdXEeobR76b53LETtpyT.

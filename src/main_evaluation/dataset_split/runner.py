@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """
-This module partitions the "SpamAssassin Public Corpus" into
-training and test datasets.
+Splits the SpamAssassin Public Corpus into reproducible training and test sets.
+
+Ham and spam subsets are collected separately, shuffled using the configured
+random seed, and copied into the generated train/test directory structure.
 """
 
 import os
@@ -18,8 +20,15 @@ from src.utils.console import print_step, print_section, print_kv, print_end, pr
 
 def collect_files(folder):
     """
-    Collect all email files from a given directory.
+    Collect all files from a dataset directory in deterministic order.
+
+    Args:
+        folder: Source directory containing email files.
+
+    Returns:
+        list[str]: Sorted file paths.
     """
+
     files = []
 
     for f in os.listdir(folder):
@@ -27,13 +36,22 @@ def collect_files(folder):
         if os.path.isfile(path):
             files.append(path)
 
+    files.sort()
     return files
 
 
 def split_files(files, train_ratio):
     """
-    Split a list of files into training and test subsets.
+    Split a file list into training and test subsets.
+
+    Args:
+        files (list[str]): Files to partition.
+        train_ratio (float): Fraction assigned to the training set.
+
+    Returns:
+        tuple[list[str], list[str]]: Training and test file lists.
     """
+
     random.shuffle(files)
     split_index = int(len(files) * train_ratio)
 
@@ -42,8 +60,13 @@ def split_files(files, train_ratio):
 
 def copy_files(files, target_dir):
     """
-    Copy email files into the specified target directory.
+    Copy email files into a target directory.
+
+    Args:
+        files (list[str]): Source file paths.
+        target_dir: Destination directory.
     """
+
     os.makedirs(target_dir, exist_ok=True)
 
     for f in files:
@@ -57,11 +80,19 @@ def copy_files(files, target_dir):
 
 def run_dataset_split(train_ratio=None, dataset_split_dir=None):
     """
-    Orchestrates dataset collection, partitioning, and export.
+    Create the configured ham/spam training and test dataset split.
+
+    Args:
+        train_ratio (float | None): Training fraction, or the configured default.
+        dataset_split_dir: Output directory for the generated split.
     """
 
     train_ratio = TRAIN_RATIO if train_ratio is None else train_ratio
     dataset_split_dir = dataset_split_dir or DATASET_SPLIT
+
+    # Remove any previous split so no stale files remain when the ratio changes
+    if os.path.exists(dataset_split_dir):
+        shutil.rmtree(dataset_split_dir)
 
     random.seed(RANDOM_SEED)
     ham_files = []
@@ -91,7 +122,6 @@ def run_dataset_split(train_ratio=None, dataset_split_dir=None):
 
     # Split files or activate full-dataset mode
     if train_ratio == 1.0:
-
         ham_train = ham_files
         ham_test = ham_files
         spam_train = spam_files
@@ -100,7 +130,6 @@ def run_dataset_split(train_ratio=None, dataset_split_dir=None):
         print_warning("Full-dataset mode enabled -> Train and test both contain the complete dataset.")
 
     else:
-
         ham_train, ham_test = split_files(ham_files, train_ratio)
         spam_train, spam_test = split_files(spam_files, train_ratio)
 

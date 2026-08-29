@@ -1,0 +1,10 @@
+rule;lost_in_bypass_any;lost_in_bypass_all;bypass_loss_rate_any;bypass_loss_rate_all
+XPRIO;1;1;0.25;0.25
+T_MONEY_PERCENT	autolearn=disabled;1;1;0.25;0.25
+RDNS_NONE;1;1;0.25;0.25
+PP_MIME_FAKE_ASCII_TEXT;1;1;0.25;0.25
+FROM_ILLEGAL_CHARS;1;1;0.25;0.25
+EXCUSE_REMOVE;1;1;0.25;0.25
+ENGLISH_UCE_SUBJECT;1;1;0.25;0.25
+DEAR_SOMETHING;1;1;0.25;0.25
+ADVANCE_FEE_5_NEW_MONEY;1;1;0.25;0.25

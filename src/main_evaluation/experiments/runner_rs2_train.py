@@ -12,16 +12,12 @@ from src.utils.console import print_step
 
 def run_rs2_train():
     activate_rspamd_config("rs2")
-    restart_rspamd()
-    restart_rspamd()
+    restart_rspamd()  # apply new config
 
     dataset_dir = BASE_DIR / "data/datasets/split"
 
     print_step("RS2 Training")
-
-    reset_pipeline_output()
     run_dataset_split(train_ratio=0.8)
-
     run_rspamd_bayes_training(
         dataset_split_dir=dataset_dir,
     )

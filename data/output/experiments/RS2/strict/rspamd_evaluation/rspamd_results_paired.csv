@@ -1,0 +1,152 @@
+message_id;baseline_score;baseline_spam_flag;baseline_rule_count;baseline_action;n_variants;salted_score_mean;salted_score_min;salted_score_max;salted_rule_count_mean;salted_any_spam;salted_all_spam;salted_any_bypass;salted_all_bypass
+00002.d94f1b97e48ed3b553b3508d116e6a09;5.999999;False;15;no action;4;5.999999;5.999999;5.999999;15;False;False;True;True
+00003.2ee33bc6eacdb11f38d052c44819ba6c;6.1;True;12;add header;4;6.1;6.1;6.1;12;True;True;False;False
+00009.1e1a8cb4b57532ab38aa23287523659d;15.14;True;27;reject;4;15.14;15.14;15.14;27;True;True;False;False
+00040.949a3d300eadb91d8745f1c1dab51133;9.930921;True;24;add header;4;9.75962;9.75962;9.75962;24;True;True;False;False
+00041.f1b3402799046db3c1f143a911dc085d;13.099005;True;22;add header;4;13.095587;13.095587;13.095587;22;True;True;False;False
+00045.7282c2c4e009744f2f3450d370009235;6.099999;True;13;add header;4;6.099999;6.099999;6.099999;13;True;True;False;False
+00054.62863160db27f89df8c73275b6dae134;6.6;True;18;add header;4;6.6;6.6;6.6;18;True;True;False;False
+00064.65b95365450ebe5eef61e7f1c60edc5e;11.09925;True;25;add header;4;11.07741825;11.070141;11.09925;25;True;True;False;False
+00067.ec108870b01dc3ccb8fabc5def869ca5;15.399999;True;26;reject;4;15.399999;15.399999;15.399999;26;True;True;False;False
+00090.52630c4c07cd069c7bc7658c1a7a7253;7.599999;True;13;add header;4;7.599999;7.599999;7.599999;13;True;True;False;False
+00105.d8f25617befc5289aa4ed9602457050b;13.1;True;22;add header;4;13.1;13.1;13.1;22;True;True;False;False
+00120.58579af867ff9a702cff23e7b8818a59;7.099999;True;13;add header;4;7.099999;7.099999;7.099999;13;True;True;False;False
+00127.3500d109361b544b0937523adb763588;9.6;True;21;add header;4;9.6;9.6;9.6;21;True;True;False;False
+00160.cec5f611ae665ff0add6c4928d47f2be;11.6;True;20;add header;4;11.59999975;11.599999;11.6;20;True;True;False;False
+00169.86268e75abd1bd4bda4d6c129681df34;6.099999;True;14;add header;4;6.099999;6.099999;6.099999;14;True;True;False;False
+00173.e10eb62e2c7808674c43d6a5e9e08a1c;10.899999;True;23;add header;4;10.899999;10.899999;10.899999;23;True;True;False;False
+00179.ef2f7cf60806a96b59f4477b025580ee;11.1;True;22;add header;4;10.6;10.6;10.6;21;True;True;False;False
+00180.751cb63992e172566b3a296d970c425d;10.509999;True;17;add header;4;10.009999;10.009999;10.009999;16;True;True;False;False
+00182.1b9ba0f95506a6f2bf256f40fad0687d;11.1;True;19;add header;4;11.1;11.1;11.1;19;True;True;False;False
+00186.a66b4fc4ab114c9cb37e1a31d1ea1aeb;8.6;True;14;add header;4;8.6;8.6;8.6;14;True;True;False;False
+00188.b12197b37ceb97fa0cd802566c1e08db;10.11;True;17;add header;4;9.61;9.61;9.61;16;True;True;False;False
+00190.ee2ea200e7efa602221c6492f9d9d8c0;14.61;True;19;add header;4;14.11;14.11;14.11;18;True;True;False;False
+00191.9ff80a41f015b7a6c409732e41c0df07;10.010557;True;18;add header;4;10.010557;10.010557;10.010557;18;True;True;False;False
+00196.dd21040c7757d477c967ae71b537810e;11.399999;True;24;add header;4;11.399999;11.399999;11.399999;24;True;True;False;False
+00198.150ad975a44e356b479b88d8b57edc40;15.609999;True;19;reject;4;15.109999;15.109999;15.109999;18;True;True;False;False
+00207.0b71ac81a360455c1514f5872564b1e1;13.199999;True;19;add header;4;12.699999;12.699999;12.699999;18;True;True;False;False
+00209.5276f967533f2ce0209c1eff631a86ff;8.6;True;14;add header;4;8.59999925;8.599999;8.6;14;True;True;False;False
+00211.4a52fb081c7087c4a82402342751e755;15.099999;True;19;reject;4;15.099999;15.099999;15.099999;19;True;True;False;False
+00214.1367039e50dc6b7adb0f2aa8aba83216;7.6;True;13;add header;4;7.6;7.6;7.6;13;True;True;False;False
+00217.43b4ef3d9c56cf42be9c37b546a19e78;18.1;True;26;reject;4;18.1;18.1;18.1;26;True;True;False;False
+00224.0654fe0af51e1dcefa0eb66eb932f55f;13.924999;True;18;add header;4;10.499999;10.499999;10.499999;17;True;True;False;False
+00228.cf58326ab05a757c7e759acc8d6b360d;10.0;True;23;add header;4;10.0;10.0;10.0;23;True;True;False;False
+00231.8c72952de376293bc38d30834c0bb580;10.399999;True;19;add header;4;10.399999;10.399999;10.399999;19;True;True;False;False
+00233.3c32285387ebc0675adb029b9e20e581;8.6;True;14;add header;4;8.6;8.6;8.6;14;True;True;False;False
+00236.a46588c69d43e80c618038b95eff2893;9.95;True;17;add header;4;9.95;9.95;9.95;17;True;True;False;False
+00248.b243bca51ee69d6e428ca2f45f0fe41b;8.599999;True;14;add header;4;8.59999975;8.599999;8.6;14;True;True;False;False
+00249.5f45607c1bffe89f60ba1ec9f878039a;11.1;True;19;add header;4;11.1;11.1;11.1;19;True;True;False;False
+00251.6b4b7e79e1706156839a00817d774e37;13.4;True;25;add header;4;13.4;13.4;13.4;25;True;True;False;False
+00261.12b64e557e52daf5fc5a52e47df2f4e3;11.099999;True;17;add header;4;11.099999;11.099999;11.099999;17;True;True;False;False
+00263.32b258c4cc08d235b2ca36fc16074f08;22.1;True;16;reject;4;27.34999925;22.1;29.099999;16.75;True;True;False;False
+00264.02b614f34aa0d5970959123b9386b285;8.099999;True;18;add header;4;8.099999;8.099999;8.099999;18;True;True;False;False
+00279.1d58a13e343c1e53aca2ed2121a3f815;11.1;True;20;add header;4;11.099999;11.099999;11.099999;20;True;True;False;False
+00280.026da2bd191f11081b8d8428134b0c66;12.5;True;26;add header;4;12.5;12.5;12.5;26;True;True;False;False
+00284.227c1ebb961320cd2086d904d698c49b;10.099999;True;14;add header;4;10.09999975;10.099999;10.1;14;True;True;False;False
+00291.7aa227e74e89bdd529a3875459d0d5a2;8.6;True;14;add header;4;8.6;8.6;8.6;14;True;True;False;False
+00292.dbf78a2aaa230d288eb80ab843804252;11.5;True;26;add header;4;11.5;11.5;11.5;26;True;True;False;False
+00296.85aa16f800e0aaf8755cdf23d7e035ff;9.1;True;13;add header;4;9.1;9.1;9.1;13;True;True;False;False
+00302.7f695c69d4cbe06e91cddd2ca7cddf33;12.6;True;19;add header;4;12.6;12.6;12.6;19;True;True;False;False
+00305.1f2a712e25638b0a4868155b37022cf1;16.9;True;24;reject;4;16.9;16.9;16.9;24;True;True;False;False
+00305.f80c21904d6d4f6facd036450a588b0d;5.999432;False;15;no action;4;5.99793575;5.997437;5.999432;15;False;False;True;True
+00308.fc90f8aab51648329b9e705c9021b204;9.099999;True;13;add header;4;9.099999;9.099999;9.099999;13;True;True;False;False
+00312.5034fee7d265abd7a4194e9300de24bf;14.9;True;21;add header;4;14.89999975;14.899999;14.9;21;True;True;False;False
+00337.813498483bc80a24c002e6e7e8e0f2cb;7.448667;True;20;add header;4;6.62421075;6.349392;7.448667;20;True;True;False;False
+00344.e6463530b23a12554d2e6f0e08ae10a7;6.1;True;14;add header;4;6.1;6.1;6.1;14;True;True;False;False
+00346.d93a823fb3350a5da8f0c612ce1156cd;9.38997;True;20;add header;4;9.38992925;9.38992;9.389957;20;True;True;False;False
+00356.ea7eb32330fa6bf65270023c0d99e2c5;12.1;True;25;add header;4;12.1;12.1;12.1;25;True;True;False;False
+00359.90bec90ebeaf05f024f48594e7d7b0d5;16.625;True;23;reject;4;13.125;13.125;13.125;22;True;True;False;False
+00361.e91ac048b0ede961d3f51009eee1c620;10.79;True;19;add header;4;7.29;7.29;7.29;18;True;True;False;False
+00369.845eeb9573484bd88a6a6224c7068d81;8.399999;True;24;add header;4;8.399999;8.399999;8.399999;24;True;True;False;False
+00373.ebe8670ac56b04125c25100a36ab0510;10.1;True;16;add header;4;10.1;10.1;10.1;16;True;True;False;False
+00384.2054d62f06fd10e4018a43e156b32acf;7.599999;True;13;add header;4;7.59999975;7.599999;7.6;13;True;True;False;False
+00386.6074f269f0bd1aec1546f9e654e8fcfe;13.374999;True;27;add header;4;13.37499975;13.374999;13.375;27;True;True;False;False
+00388.a884c42d4423d7e4718db0145b3b9d9b;13.720073;True;28;add header;4;13.63001825;13.6;13.720073;27.25;True;True;False;False
+00395.74aee42fac915ca758047506ec59a21f;20.599999;True;21;reject;4;20.599999;20.599999;20.599999;21;True;True;False;False
+00409.e59f63e813b6766a9a4ddf0790634ca3;11.6;True;16;add header;4;8.1;8.1;8.1;15;True;True;False;False
+00415.4af357c0282481dba8f1765f0bf09c09;10.099999;True;15;add header;4;10.09999975;10.099999;10.1;15;True;True;False;False
+00416.bff1badad869f205fdb54f311f060734;21.149999;True;24;reject;4;21.149999;21.149999;21.149999;24;True;True;False;False
+00426.36b36cbe96efe9001c4d80363ea7ed4e;11.099999;True;17;add header;4;11.099999;11.099999;11.099999;17;True;True;False;False
+00439.eacffbae5543e6be58178c0d3eb95041;17.675;True;24;reject;4;17.675;17.675;17.675;24;True;True;False;False
+00440.647d9eb44fd0cb069ea92be204966a8e;15.6;True;25;reject;4;15.6;15.6;15.6;25;True;True;False;False
+00441.77768298934252b2fa200e7d9482993b;13.099999;True;19;add header;4;13.099999;13.099999;13.099999;19;True;True;False;False
+00445.a5edbd936b830407d1a56b31ff3b82c0;16.040507;True;26;reject;4;16.087658;16.040507;16.229111;26;True;True;False;False
+00447.32e588c3a1d8888d737f360f825713b8;8.799999;True;14;add header;4;8.799999;8.799999;8.799999;14;True;True;False;False
+00455.8ccdcb205b6f8c3958bb3b2d39edca46;12.6;True;21;add header;4;12.6;12.6;12.6;21;True;True;False;False
+00458.62211764fde0dd7128ea4146268b40dd;15.375;True;25;reject;4;15.37499925;15.374999;15.375;25;True;True;False;False
+00467.3748c927c32a9c4e8988dad52a843b5c;7.599999;True;13;add header;4;7.599999;7.599999;7.599999;13;True;True;False;False
+00482.f839ea522f1ee459661a6b2fbd71e823;12.599999;True;20;add header;4;12.599999;12.599999;12.599999;20;True;True;False;False
+00483.e583ffb0efd3958cdef2e9f3b043ef0d;16.040507;True;26;reject;4;16.087658;16.040507;16.229111;26;True;True;False;False
+00485.a5d28b804adbceff7fd75ed9fc8138bb;8.6;True;21;add header;4;8.6;8.6;8.6;21;True;True;False;False
+00494.fd2efa67e63247ee89cdcf3a6fe7906d;9.664999;True;19;add header;4;9.664999;9.664999;9.664999;19;True;True;False;False
+00506.85af6cd716febc6265ac7b362a4a1da6;21.899999;True;26;reject;4;21.89999925;21.899999;21.9;26;True;True;False;False
+00509.385c788f39e46a86be4c6af8679a0c80;19.6;True;20;reject;4;19.6;19.6;19.6;20;True;True;False;False
+00510.ce04ead27e498e82285ea6dbb0837c13;6.060325;True;12;add header;4;6.064106499999999;6.060325;6.075451;12;True;True;False;False
+00523.8dad1340c87f606b1f0696df64d9063c;22.4;True;26;reject;4;22.4;22.4;22.4;26;True;True;False;False
+00554.c325ab7400fb7e3f053ed0cac4ed7545;10.6;True;18;add header;4;10.6;10.6;10.6;18;True;True;False;False
+00582.2db3b12f1cbf87ef3a64d26c35561a5b;7.899999;True;13;add header;4;7.899999;7.899999;7.899999;13;True;True;False;False
+00615.e47bff6118d4ff6d98581fa6f40ab871;11.099999;True;20;add header;4;11.099999;11.099999;11.099999;20;True;True;False;False
+00631.5b4f290bc474889ff457b314996553b1;17.599999;True;19;reject;4;17.599999;17.599999;17.599999;19;True;True;False;False
+00632.f90d0f620d4a4c4976e1c5884333f329;10.6;True;18;add header;4;10.6;10.6;10.6;18;True;True;False;False
+00643.d177c04238b4299813b7d8cca9fb2f18;8.6;True;13;add header;4;8.6;8.6;8.6;13;True;True;False;False
+00658.2324b3351e766248275bace98fd3c7b3;18.0;True;25;reject;4;18.0;18.0;18.0;25;True;True;False;False
+00659.668ba8daca71e86de0ee5e412b177015;14.799588;True;19;add header;4;14.798648;14.798648;14.798648;19;True;True;False;False
+00663.4baa9521293a04306b038be1f65d4471;15.799588;True;22;reject;4;15.798648;15.798648;15.798648;22;True;True;False;False
+00667.6bf743b1b5bdfe9340d438c0661e4bff;10.1;True;15;add header;4;10.1;10.1;10.1;15;True;True;False;False
+00678.7c54f6e0fac3e7d26a9513d2c60e2b98;18.6;True;27;reject;4;18.6;18.6;18.6;27;True;True;False;False
+00694.3aca5f2a3d0d2ccbc47ef868eb051abd;12.6;True;23;add header;4;12.59999925;12.599999;12.6;23;True;True;False;False
+00697.2d221d167d2814a6a6bc7a74b65bcb0e;17.1;True;21;reject;4;17.099999750000002;17.099999;17.1;21;True;True;False;False
+00701.ea27d8eea96c7d361ea78613d0a3c481;13.6;True;24;add header;4;13.6;13.6;13.6;24;True;True;False;False
+00718.2495a50c4eab3755f338b5fe589dd52d;8.899999;True;18;add header;4;8.899999;8.899999;8.899999;18;True;True;False;False
+00738.10deb784a63c0bdc5e78b019720f3e9f;9.2;True;22;add header;4;9.2;9.2;9.2;22;True;True;False;False
+00740.ce4777381c2bc6bee30bef6bd274233f;14.0;True;24;add header;4;14.0;14.0;14.0;24;True;True;False;False
+00795.61fe820f7755e4b4e66e715ea667b338;8.099999;True;19;add header;4;8.1;8.1;8.1;19;True;True;False;False
+00796.1f29c490fd2bd8581d19e3e193978a3d;9.899999;True;18;add header;4;9.899999;9.899999;9.899999;18;True;True;False;False
+00807.8abdd26ba778758f5e46b84a54ac62f4;11.1;True;17;add header;4;11.1;11.1;11.1;17;True;True;False;False
+00810.bceaa748f9cee012c466212d8a608acf;15.999999;True;21;reject;4;15.999999;15.999999;15.999999;21;True;True;False;False
+00830.079ed7d24f78024e023b82417a6fe2ca;8.1;True;13;add header;4;8.1;8.1;8.1;13;True;True;False;False
+00861.e8b94fc9514d2d2cbb541b01e2dda726;15.674999;True;24;reject;4;15.674999;15.674999;15.674999;24;True;True;False;False
+00891.730d12d96dcfa7812a51d12d9a3b6a1c;14.6;True;20;add header;4;14.6;14.6;14.6;20;True;True;False;False
+00925.6ba2770acb214c661a26e54b4d03c119;12.599999;True;20;add header;4;12.599999;12.599999;12.599999;20;True;True;False;False
+00939.8d335bc76836e51b449de9f6b38aa0f8;9.599804;True;23;add header;4;9.593283;9.591388;9.598968;23;True;True;False;False
+00940.33bee147237876bc1f28b1bf21b586a0;10.599999;True;14;add header;4;10.599999;10.599999;10.599999;14;True;True;False;False
+00947.e4d80402e902f1ea42cfc539bb279afd;8.19;True;25;add header;4;8.19;8.19;8.19;25;True;True;False;False
+00956.bd15831ffe9661a5395b8ec491a4fed2;11.399999;True;16;add header;4;11.399999;11.399999;11.399999;16;True;True;False;False
+00962.452e4bd0724bf1139c9bc4eb9ec0fe43;8.399999;True;24;add header;4;8.399999;8.399999;8.399999;24;True;True;False;False
+00973.ca8a425093e9994271e922f4d60f775c;13.599996;True;22;add header;4;13.599986999999999;13.599984;13.599996;22;True;True;False;False
+01008.5e932696d8f33950af53eb9461a014a2;9.6;True;19;add header;4;9.6;9.6;9.6;19;True;True;False;False
+01011.d4812088cad8553fb214dab8003add9b;14.6;True;20;add header;4;14.6;14.6;14.6;20;True;True;False;False
+01014.98c1d0a70f88efb979d9ca65e945363e;10.599999;True;20;add header;4;10.599999;10.599999;10.599999;20;True;True;False;False
+01016.ac6ce255291deba2f46cdd8ddba3ea01;7.4;True;13;add header;4;7.4;7.4;7.4;13;True;True;False;False
+01075.07ee7f1ab5ad6659c47baa5ef3691a80;12.6;True;12;add header;4;12.6;12.6;12.6;12;True;True;False;False
+01079.9eb95fd88f3d9d551f8c64359470ae7e;8.399999;True;23;add header;4;8.399999;8.399999;8.399999;23;True;True;False;False
+01130.f286229e3c2eeb5c682204de85d903c0;11.399999;True;18;add header;4;11.399999;11.399999;11.399999;18;True;True;False;False
+01132.3d0e60ced92087634f1433f12810096d;9.099999;True;20;add header;4;9.09999975;9.099999;9.1;20;True;True;False;False
+01145.a34477ade6db9376e4f8ccbfa8607881;14.1;True;21;add header;4;14.1;14.1;14.1;21;True;True;False;False
+01151.e295c81d698d58f43f17bde22076cbef;6.6;True;15;add header;4;6.6;6.6;6.6;15;True;True;False;False
+01158.5acbdb7eb695f96c08d960a56058481d;14.94;True;31;add header;4;14.94;14.94;14.94;31;True;True;False;False
+01165.8c661bf07a1a7a5fe8a9efc2439d17a1;7.89;True;21;add header;4;7.89;7.89;7.89;21;True;True;False;False
+01167.2ac57a0189fa2b8713202b84e587b707;10.499999;True;18;add header;4;10.499999;10.499999;10.499999;18;True;True;False;False
+01169.4e5cf6c3e8863047dbba1bfca2ebab97;12.6;True;23;add header;4;12.59999925;12.599999;12.6;23;True;True;False;False
+01203.f4c9144a594fb81ff323053fbd626a55;11.1;True;17;add header;4;11.1;11.1;11.1;17;True;True;False;False
+01216.e293653cab0c486ba135cf8fbe6700fc;12.399999;True;20;add header;4;12.399999;12.399999;12.399999;20;True;True;False;False
+01230.0589bade8df0c343a49c6712f62dfca0;7.6;True;14;add header;4;7.6;7.6;7.6;14;True;True;False;False
+01236.903d52340bf3ed1a328b039bcd94e1c9;8.19;True;25;add header;4;8.19;8.19;8.19;25;True;True;False;False
+01240.7d6ae3682a3dd3fe457516b188eb105c;20.09912;True;24;reject;4;20.098286;20.097758;20.09912;24;True;True;False;False
+01242.3743099b115c6a8a273d8eca34a9c738;19.6;True;20;reject;4;19.6;19.6;19.6;20;True;True;False;False
+01250.2bfc033f9ced1c70e480ec75b0094431;7.6;True;14;add header;4;7.6;7.6;7.6;14;True;True;False;False
+01253.26e421b9623002d636c29f79f68a58fb;8.399999;True;24;add header;4;8.399999;8.399999;8.399999;24;True;True;False;False
+01255.e04eae4539f81463a930dfe44ebd6af8;13.4;True;23;add header;4;13.4;13.4;13.4;23;True;True;False;False
+01259.b4dff1ed93bc931b271888cd42e41b85;9.6;True;17;add header;4;6.1;6.1;6.1;16;True;True;False;False
+01267.6e9de9ba20f59c26028ebdb4550685fb;12.45;True;26;add header;4;12.45;12.45;12.45;26;True;True;False;False
+01280.34dde162b3c6b2e873fc9f094d28b0fd;8.389999;True;19;add header;4;8.389999;8.389999;8.389999;19;True;True;False;False
+01308.c46f1215ccd8cedf162e0cf308b94dcd;12.3;True;22;add header;4;12.3;12.3;12.3;22;True;True;False;False
+01311.43bfe86df65d53c5f7ca2365dc12582b;10.399999;True;19;add header;4;10.399999;10.399999;10.399999;19;True;True;False;False
+01335.ca70ab7f2d1accef8b3cf646e3004ef8;17.649961;True;26;reject;4;17.649961;17.649961;17.649961;26;True;True;False;False
+01339.d94a16532a6f42497266dcc327a40163;8.899999;True;22;add header;4;8.899999;8.899999;8.899999;22;True;True;False;False
+01342.7f89acf56fb4398340a0b07481e3193f;14.1;True;19;add header;4;14.1;14.1;14.1;19;True;True;False;False
+01355.a47c042a6e16456c5b49c18d5b3868cb;8.1;True;18;add header;4;8.1;8.1;8.1;18;True;True;False;False
+01363.85518bca7c7cb9f35e57f3adda762ac9;7.348333;True;19;add header;4;7.348333;7.348333;7.348333;19;True;True;False;False
+01372.5d236077d94148a0ca71751f8f0a2e58;8.399999;True;24;add header;4;8.399999;8.399999;8.399999;24;True;True;False;False
+01382.37400f7a1f36cd45165c2a72a9ec8baa;8.599999;True;17;add header;4;8.099999;8.099999;8.099999;16;True;True;False;False
+01395.cb33d1d72f42e4ab9268729917bf428b;6.599999;True;18;add header;4;6.599999;6.599999;6.599999;18;True;True;False;False

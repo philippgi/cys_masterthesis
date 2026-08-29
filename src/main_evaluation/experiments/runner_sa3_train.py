@@ -15,11 +15,9 @@ def run_sa3_train():
     restart_spamassassin()
 
     dataset_dir = BASE_DIR / "data/datasets/split"
-    output_root = BASE_DIR / "data/output/SA3"
+    output_root = BASE_DIR / "data/output/experiments/SA3"
 
     print_step("SA3 Training")
-
-    reset_pipeline_output()
 
     run_dataset_split(train_ratio=0.8)
 

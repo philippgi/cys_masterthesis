@@ -1,0 +1,758 @@
+{
+  "metadata": {
+    "alpha": 1.0,
+    "min_df_spam": 19,
+    "N_spam": 1896,
+    "N_ham": 3900,
+    "strict_threshold": 3.0,
+    "extended_threshold": 2.5,
+    "broad_threshold": 1.5,
+    "token_definition": "lowercase, alphabetic tokens >=3 chars, URLs removed, English stopwords removed, HTML tags/entities stripped, common HTML artifacts removed"
+  },
+  "triggers": [
+    {
+      "token": "btamail",
+      "score": 4.659151962733173,
+      "spam_df": 49,
+      "ham_df": 0,
+      "spam_rate": 0.025843881856540084,
+      "ham_rate": 0.0
+    },
+    {
+      "token": "refinance",
+      "score": 4.378242602525795,
+      "spam_df": 37,
+      "ham_df": 0,
+      "spam_rate": 0.019514767932489453,
+      "ham_rate": 0.0
+    },
+    {
+      "token": "mastercard",
+      "score": 4.351036865508629,
+      "spam_df": 36,
+      "ham_df": 0,
+      "spam_rate": 0.0189873417721519,
+      "ham_rate": 0.0
+    },
+    {
+      "token": "mortgage",
+      "score": 4.269996716498545,
+      "spam_df": 98,
+      "ham_df": 2,
+      "spam_rate": 0.05168776371308017,
+      "ham_rate": 0.0005128205128205128
+    },
+    {
+      "token": "mailings",
+      "score": 4.252555258484728,
+      "spam_df": 156,
+      "ham_df": 4,
+      "spam_rate": 0.08227848101265822,
+      "ham_rate": 0.0010256410256410256
+    },
+    {
+      "token": "attn",
+      "score": 4.17088727045008,
+      "spam_df": 30,
+      "ham_df": 0,
+      "spam_rate": 0.015822784810126583,
+      "ham_rate": 0.0
+    },
+    {
+      "token": "annuity",
+      "score": 4.17088727045008,
+      "spam_df": 30,
+      "ham_df": 0,
+      "spam_rate": 0.015822784810126583,
+      "ham_rate": 0.0
+    },
+    {
+      "token": "systemworks",
+      "score": 4.137561972380023,
+      "spam_df": 29,
+      "ham_df": 0,
+      "spam_rate": 0.01529535864978903,
+      "ham_rate": 0.0
+    },
+    {
+      "token": "attained",
+      "score": 4.137561972380023,
+      "spam_df": 29,
+      "ham_df": 0,
+      "spam_rate": 0.01529535864978903,
+      "ham_rate": 0.0
+    },
+    {
+      "token": "deathtospamdeathtospamdeathtospam",
+      "score": 4.08232912547769,
+      "spam_df": 55,
+      "ham_df": 1,
+      "spam_rate": 0.0290084388185654,
+      "ham_rate": 0.0002564102564102564
+    },
+    {
+      "token": "lagos",
+      "score": 4.030596749236896,
+      "spam_df": 26,
+      "ham_df": 0,
+      "spam_rate": 0.013713080168776372,
+      "ham_rate": 0.0
+    },
+    {
+      "token": "testimonials",
+      "score": 3.9923220904906005,
+      "spam_df": 25,
+      "ham_df": 0,
+      "spam_rate": 0.013185654008438819,
+      "ham_rate": 0.0
+    },
+    {
+      "token": "hgh",
+      "score": 3.9923220904906005,
+      "spam_df": 25,
+      "ham_df": 0,
+      "spam_rate": 0.013185654008438819,
+      "ham_rate": 0.0
+    },
+    {
+      "token": "faithfully",
+      "score": 3.9525673319307684,
+      "spam_df": 24,
+      "ham_df": 0,
+      "spam_rate": 0.012658227848101266,
+      "ham_rate": 0.0
+    },
+    {
+      "token": "oprah",
+      "score": 3.9112115770562337,
+      "spam_df": 23,
+      "ham_df": 0,
+      "spam_rate": 0.012130801687763712,
+      "ham_rate": 0.0
+    },
+    {
+      "token": "payable",
+      "score": 3.8681184870312944,
+      "spam_df": 22,
+      "ham_df": 0,
+      "spam_rate": 0.011603375527426161,
+      "ham_rate": 0.0
+    },
+    {
+      "token": "inkjet",
+      "score": 3.823133533298802,
+      "spam_df": 21,
+      "ham_df": 0,
+      "spam_rate": 0.011075949367088608,
+      "ham_rate": 0.0
+    },
+    {
+      "token": "excite",
+      "score": 3.77608061064357,
+      "spam_df": 20,
+      "ham_df": 0,
+      "spam_rate": 0.010548523206751054,
+      "ham_rate": 0.0
+    },
+    {
+      "token": "wrinkle",
+      "score": 3.7267578232924388,
+      "spam_df": 19,
+      "ham_df": 0,
+      "spam_rate": 0.010021097046413503,
+      "ham_rate": 0.0
+    },
+    {
+      "token": "dieting",
+      "score": 3.7267578232924388,
+      "spam_df": 19,
+      "ham_df": 0,
+      "spam_rate": 0.010021097046413503,
+      "ham_rate": 0.0
+    },
+    {
+      "token": "cravings",
+      "score": 3.7267578232924388,
+      "spam_df": 19,
+      "ham_df": 0,
+      "spam_rate": 0.010021097046413503,
+      "ham_rate": 0.0
+    },
+    {
+      "token": "postal",
+      "score": 3.6848390445769312,
+      "spam_df": 37,
+      "ham_df": 1,
+      "spam_rate": 0.019514767932489453,
+      "ham_rate": 0.0002564102564102564
+    },
+    {
+      "token": "resell",
+      "score": 3.541075880946357,
+      "spam_df": 32,
+      "ham_df": 1,
+      "spam_rate": 0.016877637130801686,
+      "ham_rate": 0.0002564102564102564
+    },
+    {
+      "token": "herbal",
+      "score": 3.5097681729502304,
+      "spam_df": 31,
+      "ham_df": 1,
+      "spam_rate": 0.016350210970464137,
+      "ham_rate": 0.0002564102564102564
+    },
+    {
+      "token": "cartridges",
+      "score": 3.4774837125012166,
+      "spam_df": 30,
+      "ham_df": 1,
+      "spam_rate": 0.015822784810126583,
+      "ham_rate": 0.0002564102564102564
+    },
+    {
+      "token": "receipt",
+      "score": 3.4441584144311603,
+      "spam_df": 29,
+      "ham_df": 1,
+      "spam_rate": 0.01529535864978903,
+      "ham_rate": 0.0002564102564102564
+    },
+    {
+      "token": "guaranteed",
+      "score": 3.4129339380669586,
+      "spam_df": 149,
+      "ham_df": 10,
+      "spam_rate": 0.07858649789029536,
+      "ham_rate": 0.002564102564102564
+    },
+    {
+      "token": "mlm",
+      "score": 3.33148663505464,
+      "spam_df": 39,
+      "ham_df": 2,
+      "spam_rate": 0.020569620253164556,
+      "ham_rate": 0.0005128205128205128
+    },
+    {
+      "token": "lenders",
+      "score": 3.2989185325417374,
+      "spam_df": 25,
+      "ham_df": 1,
+      "spam_rate": 0.013185654008438819,
+      "ham_rate": 0.0002564102564102564
+    },
+    {
+      "token": "honesty",
+      "score": 3.2989185325417374,
+      "spam_df": 25,
+      "ham_df": 1,
+      "spam_rate": 0.013185654008438819,
+      "ham_rate": 0.0002564102564102564
+    },
+    {
+      "token": "earn",
+      "score": 3.249065977417767,
+      "spam_df": 83,
+      "ham_df": 6,
+      "spam_rate": 0.04377637130801688,
+      "ham_rate": 0.0015384615384615385
+    },
+    {
+      "token": "adv",
+      "score": 3.22386649735255,
+      "spam_df": 81,
+      "ham_df": 6,
+      "spam_rate": 0.04272151898734177,
+      "ham_rate": 0.0015384615384615385
+    },
+    {
+      "token": "promotional",
+      "score": 3.2178080191073706,
+      "spam_df": 23,
+      "ham_df": 1,
+      "spam_rate": 0.012130801687763712,
+      "ham_rate": 0.0002564102564102564
+    },
+    {
+      "token": "nbc",
+      "score": 3.2178080191073706,
+      "spam_df": 23,
+      "ham_df": 1,
+      "spam_rate": 0.012130801687763712,
+      "ham_rate": 0.0002564102564102564
+    },
+    {
+      "token": "pains",
+      "score": 3.129729975349939,
+      "spam_df": 21,
+      "ham_df": 1,
+      "spam_rate": 0.011075949367088608,
+      "ham_rate": 0.0002564102564102564
+    },
+    {
+      "token": "utmost",
+      "score": 3.0826770526947067,
+      "spam_df": 20,
+      "ham_df": 1,
+      "spam_rate": 0.010548523206751054,
+      "ham_rate": 0.0002564102564102564
+    },
+    {
+      "token": "specials",
+      "score": 3.0826770526947067,
+      "spam_df": 20,
+      "ham_df": 1,
+      "spam_rate": 0.010548523206751054,
+      "ham_rate": 0.0002564102564102564
+    },
+    {
+      "token": "assistance",
+      "score": 3.069543899652379,
+      "spam_df": 89,
+      "ham_df": 8,
+      "spam_rate": 0.0469409282700422,
+      "ham_rate": 0.0020512820512820513
+    },
+    {
+      "token": "loans",
+      "score": 3.0687790242992175,
+      "spam_df": 40,
+      "ham_df": 3,
+      "spam_rate": 0.02109704641350211,
+      "ham_rate": 0.0007692307692307692
+    },
+    {
+      "token": "confidentiality",
+      "score": 3.0435480536877675,
+      "spam_df": 39,
+      "ham_df": 3,
+      "spam_rate": 0.020569620253164556,
+      "ham_rate": 0.0007692307692307692
+    },
+    {
+      "token": "clearance",
+      "score": 3.0384368631878553,
+      "spam_df": 29,
+      "ham_df": 2,
+      "spam_rate": 0.01529535864978903,
+      "ham_rate": 0.0005128205128205128
+    },
+    {
+      "token": "strenuous",
+      "score": 3.0333542653435757,
+      "spam_df": 19,
+      "ham_df": 1,
+      "spam_rate": 0.010021097046413503,
+      "ham_rate": 0.0002564102564102564
+    },
+    {
+      "token": "originator",
+      "score": 3.0333542653435757,
+      "spam_df": 19,
+      "ham_df": 1,
+      "spam_rate": 0.010021097046413503,
+      "ham_rate": 0.0002564102564102564
+    },
+    {
+      "token": "cbs",
+      "score": 3.0333542653435757,
+      "spam_df": 19,
+      "ham_df": 1,
+      "spam_rate": 0.010021097046413503,
+      "ham_rate": 0.0002564102564102564
+    },
+    {
+      "token": "billing",
+      "score": 3.0333542653435757,
+      "spam_df": 19,
+      "ham_df": 1,
+      "spam_rate": 0.010021097046413503,
+      "ham_rate": 0.0002564102564102564
+    },
+    {
+      "token": "toll",
+      "score": 3.0188683554777582,
+      "spam_df": 57,
+      "ham_df": 5,
+      "spam_rate": 0.030063291139240507,
+      "ham_rate": 0.001282051282051282
+    },
+    {
+      "token": "commissions",
+      "score": 3.0176921773558174,
+      "spam_df": 38,
+      "ham_df": 3,
+      "spam_rate": 0.020042194092827006,
+      "ham_rate": 0.0007692307692307692
+    },
+    {
+      "token": "usd",
+      "score": 3.004000122845399,
+      "spam_df": 28,
+      "ham_df": 2,
+      "spam_rate": 0.014767932489451477,
+      "ham_rate": 0.0005128205128205128
+    },
+    {
+      "token": "deposit",
+      "score": 3.004000122845399,
+      "spam_df": 28,
+      "ham_df": 2,
+      "spam_rate": 0.014767932489451477,
+      "ham_rate": 0.0005128205128205128
+    },
+    {
+      "token": "beneficiary",
+      "score": 2.968373900641059,
+      "spam_df": 27,
+      "ham_df": 2,
+      "spam_rate": 0.014240506329113924,
+      "ham_rate": 0.0005128205128205128
+    },
+    {
+      "token": "sincerely",
+      "score": 2.9592178565505036,
+      "spam_df": 80,
+      "ham_df": 8,
+      "spam_rate": 0.04219409282700422,
+      "ham_rate": 0.0020512820512820513
+    },
+    {
+      "token": "promotion",
+      "score": 2.9452378379821056,
+      "spam_df": 53,
+      "ham_df": 5,
+      "spam_rate": 0.027953586497890294,
+      "ham_rate": 0.001282051282051282
+    },
+    {
+      "token": "aging",
+      "score": 2.8931969812984324,
+      "spam_df": 25,
+      "ham_df": 2,
+      "spam_rate": 0.013185654008438819,
+      "ham_rate": 0.0005128205128205128
+    },
+    {
+      "token": "premium",
+      "score": 2.8700150978418315,
+      "spam_df": 41,
+      "ham_df": 4,
+      "spam_rate": 0.021624472573839662,
+      "ham_rate": 0.0010256410256410256
+    },
+    {
+      "token": "profitable",
+      "score": 2.866109948760887,
+      "spam_df": 49,
+      "ham_df": 5,
+      "spam_rate": 0.025843881856540084,
+      "ham_rate": 0.001282051282051282
+    },
+    {
+      "token": "tobacco",
+      "score": 2.8534422227386003,
+      "spam_df": 24,
+      "ham_df": 2,
+      "spam_rate": 0.012658227848101266,
+      "ham_rate": 0.0005128205128205128
+    },
+    {
+      "token": "inexpensive",
+      "score": 2.8534422227386003,
+      "spam_df": 24,
+      "ham_df": 2,
+      "spam_rate": 0.012658227848101266,
+      "ham_rate": 0.0005128205128205128
+    },
+    {
+      "token": "sir",
+      "score": 2.8484286663082408,
+      "spam_df": 64,
+      "ham_df": 7,
+      "spam_rate": 0.03375527426160337,
+      "ham_rate": 0.0017948717948717949
+    },
+    {
+      "token": "sightings",
+      "score": 2.8484286663082408,
+      "spam_df": 64,
+      "ham_df": 7,
+      "spam_rate": 0.03375527426160337,
+      "ham_rate": 0.0017948717948717949
+    },
+    {
+      "token": "presently",
+      "score": 2.8120864678640656,
+      "spam_df": 23,
+      "ham_df": 2,
+      "spam_rate": 0.012130801687763712,
+      "ham_rate": 0.0005128205128205128
+    },
+    {
+      "token": "incurred",
+      "score": 2.8120864678640656,
+      "spam_df": 23,
+      "ham_df": 2,
+      "spam_rate": 0.012130801687763712,
+      "ham_rate": 0.0005128205128205128
+    },
+    {
+      "token": "insurance",
+      "score": 2.788082694531983,
+      "spam_df": 125,
+      "ham_df": 16,
+      "spam_rate": 0.06592827004219409,
+      "ham_rate": 0.0041025641025641026
+    },
+    {
+      "token": "consultation",
+      "score": 2.783823579891039,
+      "spam_df": 30,
+      "ham_df": 3,
+      "spam_rate": 0.015822784810126583,
+      "ham_rate": 0.0007692307692307692
+    },
+    {
+      "token": "requesting",
+      "score": 2.7689933778391262,
+      "spam_df": 22,
+      "ham_df": 2,
+      "spam_rate": 0.011603375527426161,
+      "ham_rate": 0.0005128205128205128
+    },
+    {
+      "token": "prescription",
+      "score": 2.7689933778391262,
+      "spam_df": 22,
+      "ham_df": 2,
+      "spam_rate": 0.011603375527426161,
+      "ham_rate": 0.0005128205128205128
+    },
+    {
+      "token": "madam",
+      "score": 2.7689933778391262,
+      "spam_df": 22,
+      "ham_df": 2,
+      "spam_rate": 0.011603375527426161,
+      "ham_rate": 0.0005128205128205128
+    },
+    {
+      "token": "dare",
+      "score": 2.7689933778391262,
+      "spam_df": 22,
+      "ham_df": 2,
+      "spam_rate": 0.011603375527426161,
+      "ham_rate": 0.0005128205128205128
+    },
+    {
+      "token": "click",
+      "score": 2.7550872177691836,
+      "spam_df": 408,
+      "ham_df": 66,
+      "spam_rate": 0.21518987341772153,
+      "ham_rate": 0.016923076923076923
+    },
+    {
+      "token": "affiliate",
+      "score": 2.724008424106634,
+      "spam_df": 21,
+      "ham_df": 2,
+      "spam_rate": 0.011075949367088608,
+      "ham_rate": 0.0005128205128205128
+    },
+    {
+      "token": "monthly",
+      "score": 2.714339200817498,
+      "spam_df": 63,
+      "ham_df": 8,
+      "spam_rate": 0.03322784810126582,
+      "ham_rate": 0.0020512820512820513
+    },
+    {
+      "token": "assist",
+      "score": 2.712737730853781,
+      "spam_df": 56,
+      "ham_df": 7,
+      "spam_rate": 0.029535864978902954,
+      "ham_rate": 0.0017948717948717949
+    },
+    {
+      "token": "unlimited",
+      "score": 2.712636873523707,
+      "spam_df": 35,
+      "ham_df": 4,
+      "spam_rate": 0.018459915611814346,
+      "ham_rate": 0.0010256410256410256
+    },
+    {
+      "token": "affordable",
+      "score": 2.712636873523707,
+      "spam_df": 35,
+      "ham_df": 4,
+      "spam_rate": 0.018459915611814346,
+      "ham_rate": 0.0010256410256410256
+    },
+    {
+      "token": "advertisement",
+      "score": 2.7115063361863974,
+      "spam_df": 42,
+      "ham_df": 5,
+      "spam_rate": 0.022151898734177215,
+      "ham_rate": 0.001282051282051282
+    },
+    {
+      "token": "potency",
+      "score": 2.6769555014514017,
+      "spam_df": 20,
+      "ham_df": 2,
+      "spam_rate": 0.010548523206751054,
+      "ham_rate": 0.0005128205128205128
+    },
+    {
+      "token": "nigeria",
+      "score": 2.6697989020850557,
+      "spam_df": 47,
+      "ham_df": 6,
+      "spam_rate": 0.024789029535864978,
+      "ham_rate": 0.0015384615384615385
+    },
+    {
+      "token": "fees",
+      "score": 2.664695549232422,
+      "spam_df": 60,
+      "ham_df": 8,
+      "spam_rate": 0.03164556962025317,
+      "ham_rate": 0.0020512820512820513
+    },
+    {
+      "token": "ordering",
+      "score": 2.6482050983860965,
+      "spam_df": 46,
+      "ham_df": 6,
+      "spam_rate": 0.024261603375527425,
+      "ham_rate": 0.0015384615384615385
+    },
+    {
+      "token": "earning",
+      "score": 2.643533058677855,
+      "spam_df": 26,
+      "ham_df": 3,
+      "spam_rate": 0.013713080168776372,
+      "ham_rate": 0.0007692307692307692
+    },
+    {
+      "token": "zzzz",
+      "score": 2.6276327141002707,
+      "spam_df": 19,
+      "ham_df": 2,
+      "spam_rate": 0.010021097046413503,
+      "ham_rate": 0.0005128205128205128
+    },
+    {
+      "token": "bills",
+      "score": 2.6261587905325054,
+      "spam_df": 45,
+      "ham_df": 6,
+      "spam_rate": 0.023734177215189875,
+      "ham_rate": 0.0015384615384615385
+    },
+    {
+      "token": "qualified",
+      "score": 2.6240156222931734,
+      "spam_df": 32,
+      "ham_df": 4,
+      "spam_rate": 0.016877637130801686,
+      "ham_rate": 0.0010256410256410256
+    },
+    {
+      "token": "removal",
+      "score": 2.6144631960136517,
+      "spam_df": 112,
+      "ham_df": 17,
+      "spam_rate": 0.05907172995780591,
+      "ham_rate": 0.004358974358974359
+    },
+    {
+      "token": "compliance",
+      "score": 2.6117138539425726,
+      "spam_df": 38,
+      "ham_df": 5,
+      "spam_rate": 0.020042194092827006,
+      "ham_rate": 0.001282051282051282
+    },
+    {
+      "token": "buyers",
+      "score": 2.60525839993156,
+      "spam_df": 25,
+      "ham_df": 3,
+      "spam_rate": 0.013185654008438819,
+      "ham_rate": 0.0007692307692307692
+    },
+    {
+      "token": "currency",
+      "score": 2.592707914297047,
+      "spam_df": 31,
+      "ham_df": 4,
+      "spam_rate": 0.016350210970464137,
+      "ham_rate": 0.0010256410256410256
+    },
+    {
+      "token": "communication",
+      "score": 2.585876481574007,
+      "spam_df": 109,
+      "ham_df": 17,
+      "spam_rate": 0.05748945147679325,
+      "ham_rate": 0.004358974358974359
+    },
+    {
+      "token": "loan",
+      "score": 2.536010737087829,
+      "spam_df": 47,
+      "ham_df": 7,
+      "spam_rate": 0.024789029535864978,
+      "ham_rate": 0.0017948717948717949
+    },
+    {
+      "token": "receive",
+      "score": 2.534009933676095,
+      "spam_df": 350,
+      "ham_df": 68,
+      "spam_rate": 0.18459915611814345,
+      "ham_rate": 0.017435897435897435
+    },
+    {
+      "token": "viagra",
+      "score": 2.5300586761534682,
+      "spam_df": 35,
+      "ham_df": 5,
+      "spam_rate": 0.018459915611814346,
+      "ham_rate": 0.001282051282051282
+    },
+    {
+      "token": "secrets",
+      "score": 2.527098155777977,
+      "spam_df": 29,
+      "ham_df": 4,
+      "spam_rate": 0.01529535864978903,
+      "ham_rate": 0.0010256410256410256
+    },
+    {
+      "token": "kindly",
+      "score": 2.524147886497193,
+      "spam_df": 23,
+      "ham_df": 3,
+      "spam_rate": 0.012130801687763712,
+      "ham_rate": 0.0007692307692307692
+    },
+    {
+      "token": "apologize",
+      "score": 2.5013508864221956,
+      "spam_df": 34,
+      "ham_df": 5,
+      "spam_rate": 0.017932489451476793,
+      "ham_rate": 0.001282051282051282
+    }
+  ]
+}

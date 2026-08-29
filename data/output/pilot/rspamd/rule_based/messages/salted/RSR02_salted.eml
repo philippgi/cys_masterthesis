@@ -1,0 +1,10 @@
+From: pilot@example.test
+To: victim@example.test
+Subject: =?utf-8?q?UR=E2=80=8BGENT?= SECURITY NOTICE
+Date: Tue, 04 Aug 2026 10:03:41 -0000
+Message-ID: <178583782141.21652.16112438724743809355@rspamd.pilot.test>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+This is a structural control case.

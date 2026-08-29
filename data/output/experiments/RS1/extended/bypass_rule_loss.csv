@@ -1,0 +1,3 @@
+rule;lost_in_bypass_any;lost_in_bypass_all;bypass_loss_rate_any;bypass_loss_rate_all
+R_BAD_CTE_7BIT;3;3;0.75;0.75
+R_MISSING_CHARSET;1;1;0.25;0.25

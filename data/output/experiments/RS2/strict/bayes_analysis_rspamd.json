@@ -1,0 +1,15 @@
+{
+  "n_baseline_detected_emails": 149,
+  "n_baseline_with_bayes": 149,
+  "n_salted_with_any_bayes": 149,
+  "n_bayes_lost_any": 1,
+  "n_bayes_lost_all": 0,
+  "baseline_bayes_symbol_counts": {
+    "BAYES_SPAM": 149
+  },
+  "salted_bayes_symbol_counts": {
+    "BAYES_SPAM": 593
+  },
+  "baseline_bayes_score_mean": 5.040104,
+  "salted_bayes_score_mean": 5.058706
+}

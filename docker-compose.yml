@@ -16,7 +16,7 @@ services:
       - "11333:11333"   # normal worker (rspamc scan + ANN-Train sammeln)
       - "11334:11334"   # Web interface
     volumes:
-      - ./configs/rspamd/active:/etc/rspamd/local.d
+      - ./configs/rspamd/active:/etc/rspamd/local.d:ro
       - ./docker/logs/rspamd:/var/log/rspamd
       - ./docker/rspamd-state:/var/lib/rspamd
       - ./data/datasets/split:/split:ro
@@ -40,26 +40,3 @@ services:
     image: mvance/unbound:1.22.0@sha256:76906da36d1806f3387338f15dcf8b357c51ce6897fb6450d6ce010460927e90
     container_name: masterthesis-rspamd-unbound
     restart: unless-stopped
-
-  postfix:
-    image: boky/postfix:v5.1.0-alpine@sha256:6e761312e833947f77af755072c0e77b67d298d127595470a79e9454008dd594
-    container_name: masterthesis-postfix
-    hostname: mail.lab.local
-    environment:
-      - POSTFIX_smtpd_reject_unlisted_recipient=no
-      - POSTFIX_local_recipient_maps=
-      - POSTFIX_alias_maps=
-      - POSTFIX_alias_database=
-      - ALLOWED_SENDER_DOMAINS=*
-      - POSTFIX_myhostname=mail.lab.local
-      - POSTFIX_mydestination=mail.lab.local, localhost
-      - POSTFIX_mynetworks=0.0.0.0/0
-      - POSTFIX_smtpd_recipient_restrictions=permit_mynetworks,reject_unauth_destination,permit
-      - POSTFIX_smtpd_milters=inet:rspamd:11332
-      - POSTFIX_non_smtpd_milters=inet:rspamd:11332
-      - POSTFIX_milter_default_action=accept
-      - POSTFIX_milter_protocol=6
-    depends_on:
-      - rspamd
-    ports:
-      - "2525:25"

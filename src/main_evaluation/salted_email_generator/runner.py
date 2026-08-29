@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
-This module orchestrates the salted email generation step.
+Orchestrates salted email generation for a selected dataset split and vocabulary.
+
+Candidate spam emails are loaded, the configured trigger vocabulary is selected,
+and salted variants are generated for all configured zero-width code points.
 """
 
 from config import (
@@ -39,6 +42,21 @@ def run_salted_email_generator(
     fragment_max_positions=None,
     dataset_type: str = "test",
 ):
+    """
+    Generate salted spam variants for the configured experiment settings.
+
+    Args:
+        output_root: Root directory for generated artifacts.
+        dataset_split_dir: Directory containing the dataset split.
+        salting_vocabulary (str | None): Trigger vocabulary scope to use.
+        subject_max_insertions (int | None): Maximum Subject insertions.
+        body_max_insertions (int | None): Maximum body insertions.
+        salt_mode (str | None): Salting mode, either "single" or "fragment".
+        insert_after_index (int | None): Position used for single-mode salting.
+        fragment_max_positions (int | None): Maximum insertion positions in fragment mode.
+        dataset_type (str): Dataset partition to process, such as "test" or "train".
+    """
+
     output_root = OUTPUT_ROOT if output_root is None else output_root
     dataset_split_dir = DATASET_SPLIT if dataset_split_dir is None else dataset_split_dir
     salting_vocabulary = (
@@ -62,6 +80,7 @@ def run_salted_email_generator(
         else insert_after_index
     )
 
+    # Apply fragment-specific limits only when fragment salting is enabled.
     if salt_mode == "fragment":
         fragment_max_positions = (
             SALT_FRAGMENT_MAX_POSITIONS
@@ -97,12 +116,14 @@ def run_salted_email_generator(
 
     print_step("Salted Email Generation")
 
+    # Process only emails selected by the trigger-coverage stage.
     candidate_rows = read_candidate_rows(salted_candidates_csv)
 
     strict_triggers = load_trigger_words(strict_trigger_words_path)
     extended_triggers = load_trigger_words(extended_trigger_words_path)
     broad_triggers = load_trigger_words(broad_trigger_words_path)
 
+    # Restrict generation to the vocabulary scope configured for the experiment.
     if salting_vocabulary == "strict":
         vocabularies = {"strict": strict_triggers}
     elif salting_vocabulary == "extended":
@@ -118,6 +139,7 @@ def run_salted_email_generator(
     salting_log_rows = []
     total_variants = 0
 
+    # Generate one salted variant per configured code point for each candidate email.
     for row in candidate_rows:
         message_id = row["message_id"]
         email_path = spam_dir / message_id
@@ -141,6 +163,7 @@ def run_salted_email_generator(
                     fragment_max_positions=fragment_max_positions,
                 )
 
+                # Store a variant only if at least one trigger occurrence was actually modified.
                 if (n_insert_subject + n_insert_body) == 0:
                     continue
 
@@ -154,6 +177,7 @@ def run_salted_email_generator(
                 output_path = salted_emails_dir / variant_filename
                 write_email(salted_msg, output_path, mbox_from_line=mbox_from_line)
 
+                # Record the transformation metadata required for paired evaluation.
                 salting_log_rows.append(
                     {
                         "message_id": message_id,

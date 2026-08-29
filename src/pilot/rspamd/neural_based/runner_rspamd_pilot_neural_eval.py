@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+"""
+Evaluates the effect of zero-width Unicode salting on the Rspamd neural pilot case.
+
+The unsalted pilot message is scanned as the baseline. A salted variant is
+generated from the case body and compared with respect to the overall score,
+neural score, and resulting classification.
+"""
+
 from __future__ import annotations
 
 import csv
@@ -7,18 +15,19 @@ import re
 from pathlib import Path
 
 from config import (
-    BASE_DIR,
-    PILOT_SALT_FRAGMENT_MAX_POSITIONS,
-    PILOT_SALT_INSERT_AFTER_INDEX,
-    PILOT_SALT_MODE,
+    PILOT_RS_NEURAL_OUTPUT_DIR,
+    PILOT_RS_NEURAL_FROM_ADDR,
+    PILOT_RS_NEURAL_TO_ADDR,
+    PILOT_RS_NEURAL_SALT_MODE,
+    PILOT_RS_NEURAL_INSERT_AFTER_INDEX,
 )
 from src.main_evaluation.rspamd_evaluation.runner import run_rspamd_scan
 from src.pilot.rspamd.neural_based.cases import NEURAL_CASES, CODEPOINT_CHAR, CODEPOINT_NAME
-from src.pilot.rspamd.rule_based.template_builder import create_paired_bytes, write_message
+from src.pilot.rspamd.neural_based.template_builder_neural import create_paired_bytes, write_message
 from src.utils.console import print_step, print_section, print_kv, print_end
 
 
-OUTPUT_ROOT = BASE_DIR / "data/output/pilot/rspamd/neural"
+OUTPUT_ROOT = PILOT_RS_NEURAL_OUTPUT_DIR
 TEST_UNSALTED_DIR = OUTPUT_ROOT / "messages" / "unsalted"
 TEST_SALTED_DIR = OUTPUT_ROOT / "messages" / "salted"
 RESULTS_DIR = OUTPUT_ROOT / "results"
@@ -64,7 +73,18 @@ def _scan_summary(email_path: Path) -> dict:
         "raw_output": scan["raw_output"],
     }
 
+
 def _extract_neural_details(raw_output) -> dict:
+    """
+    Extract detailed NEURAL_SPAM information from the raw Rspamd response.
+
+    Args:
+        raw_output: Raw Rspamd response as a dictionary or JSON string.
+
+    Returns:
+        dict: Neural score, description, and options if available.
+    """
+
     if not raw_output:
         return {}
 
@@ -113,14 +133,15 @@ def run_rspamd_pilot_neural_eval() -> None:
     print_kv("title", case.title)
 
     subject_tokens: list[str] = []
+
+    # Salt all unique body tokens of at least four characters.
     body_tokens = _unique_tokens(case.body)
 
     print_section("Salting targets")
     print_kv("subject_tokens", subject_tokens)
     print_kv("body_tokens", body_tokens)
-    print_kv("salt_mode", PILOT_SALT_MODE)
-    print_kv("insert_after_index", PILOT_SALT_INSERT_AFTER_INDEX)
-    print_kv("fragment_max_positions", PILOT_SALT_FRAGMENT_MAX_POSITIONS)
+    print_kv("salt_mode", PILOT_RS_NEURAL_SALT_MODE)
+    print_kv("insert_after_index", PILOT_RS_NEURAL_INSERT_AFTER_INDEX)
 
     print_section("Baseline scan")
     baseline = _scan_summary(unsalted_path)
@@ -143,8 +164,8 @@ def run_rspamd_pilot_neural_eval() -> None:
         target_tokens_subject=tuple(subject_tokens),
         target_tokens_body=tuple(body_tokens),
         codepoint=CODEPOINT_CHAR,
-        from_addr="pilot@example.test",
-        to_addr="victim@example.test",
+        from_addr=PILOT_RS_NEURAL_FROM_ADDR,
+        to_addr=PILOT_RS_NEURAL_TO_ADDR,
     )
     write_message(salted_path, salted_bytes)
 
@@ -204,9 +225,8 @@ def run_rspamd_pilot_neural_eval() -> None:
     summary = {
         "case_id": case.case_id,
         "title": case.title,
-        "salt_mode": PILOT_SALT_MODE,
-        "insert_after_index": PILOT_SALT_INSERT_AFTER_INDEX,
-        "fragment_max_positions": PILOT_SALT_FRAGMENT_MAX_POSITIONS,
+        "salt_mode": PILOT_RS_NEURAL_SALT_MODE,
+        "insert_after_index": PILOT_RS_NEURAL_INSERT_AFTER_INDEX,
         "selected_tokens_subject": subject_tokens,
         "selected_tokens_body": body_tokens,
         "unsalted_score": baseline["score"],
@@ -229,9 +249,8 @@ def run_rspamd_pilot_neural_eval() -> None:
         "codepoint": CODEPOINT_NAME,
         "target_tokens_subject": subject_tokens,
         "target_tokens_body": body_tokens,
-        "salt_mode": PILOT_SALT_MODE,
-        "insert_after_index": PILOT_SALT_INSERT_AFTER_INDEX,
-        "fragment_max_positions": PILOT_SALT_FRAGMENT_MAX_POSITIONS,
+        "salt_mode": PILOT_RS_NEURAL_SALT_MODE,
+        "insert_after_index": PILOT_RS_NEURAL_INSERT_AFTER_INDEX,
         "n_insert_subject": counts["n_insert_subject"],
         "n_insert_body": counts["n_insert_body"],
     }

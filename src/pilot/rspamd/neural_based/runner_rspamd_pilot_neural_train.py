@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+"""
+Trains the Rspamd neural classifier for the neural pilot study.
+
+Existing Redis and Rspamd state is reset before training. Spam and ham messages
+from the training split are then submitted to Rspamd with the corresponding
+ANN training class.
+"""
+
 from __future__ import annotations
 
 import shutil
@@ -9,14 +17,24 @@ from pathlib import Path
 
 from tqdm import tqdm
 
-from config import BASE_DIR
+from config import (
+    BASE_DIR,
+    RSPAMD_HOST,
+    RSPAMD_PORT,
+    TRAIN_RATIO,
+    PILOT_RS_NEURAL_CONFIG_NAME,
+)
 from src.main_evaluation.dataset_split.runner import run_dataset_split
 from src.main_evaluation.main_evaluation_utils.container_control import restart_rspamd
 from src.main_evaluation.main_evaluation_utils.rs_config_switcher import activate_rspamd_config
 from src.utils.console import print_step, print_section, print_end
 
 
-def _reset_rspamd_state():
+def _reset_rspamd_state() -> None:
+    """
+    Remove persisted Redis and Rspamd state before neural training.
+    """
+
     redis_dir = BASE_DIR / "docker/redis"
     rspamd_state_dir = BASE_DIR / "docker/rspamd-state"
 
@@ -31,7 +49,14 @@ def _reset_rspamd_state():
     rspamd_state_dir.mkdir(parents=True, exist_ok=True)
 
 
-def _wait_for_rspamd_ready(timeout: int = 30):
+def _wait_for_rspamd_ready(timeout: int = 30) -> None:
+    """
+    Wait until Rspamd accepts scan requests.
+
+    Args:
+        timeout (int): Maximum number of readiness checks.
+    """
+
     print_section("Waiting for Rspamd to become ready")
 
     test_file = BASE_DIR / "data/datasets/split/train/spam/00001.317e78fa8ee2f54cd4890fdc09ba8176"
@@ -45,7 +70,7 @@ def _wait_for_rspamd_ready(timeout: int = 30):
                 "5",
                 "--data-binary",
                 f"@{test_file}",
-                "http://127.0.0.1:11333/checkv2",
+                f"http://{RSPAMD_HOST}:{RSPAMD_PORT}/checkv2",
             ],
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
@@ -60,7 +85,19 @@ def _wait_for_rspamd_ready(timeout: int = 30):
     raise RuntimeError("Rspamd did not become ready in time")
 
 
-def _learn_directory(directory: Path, ann_class: str):
+def _learn_directory(directory: Path, ann_class: str) -> None:
+    """
+    Submit all messages in a directory for neural training.
+
+    Args:
+        directory (Path): Directory containing training messages.
+        ann_class (str): Neural training class, either spam or ham.
+
+    Raises:
+        ValueError: If an unsupported training class is provided.
+        RuntimeError: If a message cannot be submitted successfully.
+    """
+
     if ann_class not in {"spam", "ham"}:
         raise ValueError("ann_class must be 'spam' or 'ham'")
 
@@ -75,6 +112,7 @@ def _learn_directory(directory: Path, ann_class: str):
         colour="green",
         file=sys.stdout,
     ):
+        # ANN-Train assigns the submitted message to the selected neural training class.
         result = subprocess.run(
             [
                 "curl",
@@ -83,7 +121,7 @@ def _learn_directory(directory: Path, ann_class: str):
                 f"ANN-Train: {ann_class}",
                 "--data-binary",
                 f"@{path}",
-                "http://127.0.0.1:11333/checkv2",
+                f"http://{RSPAMD_HOST}:{RSPAMD_PORT}/checkv2",
             ],
             stdout=subprocess.DEVNULL,
             stderr=subprocess.PIPE,
@@ -98,13 +136,17 @@ def _learn_directory(directory: Path, ann_class: str):
 
 
 def run_rspamd_pilot_neural_train() -> None:
+    """
+    Reset the neural state and train Rspamd on the spam and ham training sets.
+    """
+
     print_step("Rspamd Pilot - Neural Train")
 
-    activate_rspamd_config("rs_pilot_neural")
+    activate_rspamd_config(PILOT_RS_NEURAL_CONFIG_NAME)
     _reset_rspamd_state()
     restart_rspamd()
 
-    run_dataset_split(train_ratio=0.8)
+    run_dataset_split(train_ratio=TRAIN_RATIO)
 
     dataset_dir = BASE_DIR / "data/datasets/split"
     train_spam_dir = dataset_dir / "train" / "spam"

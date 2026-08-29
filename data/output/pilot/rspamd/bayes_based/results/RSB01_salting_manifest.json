@@ -1,0 +1,21 @@
+{
+  "case_id": "RSB01",
+  "codepoint": "U+200B",
+  "target_tokens_subject": [],
+  "target_tokens_body": [
+    "your",
+    "free",
+    "mortgage",
+    "rate",
+    "quote",
+    "much",
+    "could",
+    "save",
+    "every",
+    "month"
+  ],
+  "salt_mode": "fragment",
+  "insert_after_index": 2,
+  "n_insert_subject": 0,
+  "n_insert_body": 10
+}

@@ -1,14 +1,26 @@
+"""
+Defines the curated rule-based SpamAssassin pilot cases.
+
+Each case specifies the message content, targeted tokens, expected rule,
+and expected behavior used during paired salting evaluation.
+"""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
 
+from config import PILOT_SA_RULE_CODEPOINT_CHAR, PILOT_SA_RULE_CODEPOINT_NAME
 
-CODEPOINT_NAME = "U+200B"
-CODEPOINT_CHAR = "\u200b"
+
+CODEPOINT_NAME = PILOT_SA_RULE_CODEPOINT_NAME
+CODEPOINT_CHAR = PILOT_SA_RULE_CODEPOINT_CHAR
 
 
 @dataclass(frozen=True)
 class SARuleCase:
+    """
+    Represent a single rule-based SpamAssassin pilot case.
+    """
     case_id: str
     title: str
     subject: str
@@ -17,7 +29,6 @@ class SARuleCase:
     target_tokens_body: tuple[str, ...]
     expected_rule: str
     expected_behavior: str = "break"
-
 
 SAR001 = SARuleCase(
     case_id="SAR001",

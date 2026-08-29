@@ -1,16 +1,11 @@
 #!/usr/bin/env python3
 """
-This module checks for each spam email in the test set whether trigger words
-from the strict and extended trigger vocabularies occur in the subject and/or
-body.
+Analyzes trigger-word coverage for spam emails.
 
-In addition to the raw trigger coverage, the module can also derive candidate
-flags for later salting:
-- is_candidate_strict
-- is_candidate_extended
-
-This makes the trigger_coverage output the central master dataset for the next
-pipeline stages.
+Subject and body content are tokenized using the same normalization logic as
+trigger-vocabulary construction. Coverage is evaluated separately for the
+strict, extended, and broad vocabularies and is used to derive salting
+candidate eligibility.
 """
 
 from collections import Counter
@@ -20,24 +15,19 @@ import json
 
 def tokenize_with_occurrences(text, cleanup_fn, token_regex, html_artifacts):
     """
-    Converts a text string into a list of normalized tokens.
-
-    The function applies the same normalization steps that are used during
-    trigger vocabulary construction:
-    - lowercase conversion
-    - pre-tokenization cleanup
-    - regex-based token extraction
-    - removal of known HTML artifacts
+    Tokenize text using the same normalization pipeline as vocabulary construction.
 
     Args:
-        text: Raw input text (e.g., email subject or body)
-        cleanup_fn: Normalization function applied before token extraction
-        token_regex: Compiled regex pattern defining valid tokens
-        html_artifacts: Set of tokens that should be removed as HTML artifacts
+        text (str): Subject or body text.
+        cleanup_fn: Pre-tokenization normalization function.
+        token_regex: Compiled token extraction pattern.
+        html_artifacts: Tokens excluded as known HTML artifacts.
 
     Returns:
-        A list of normalized tokens including repeated occurrences
+        list[str]: Normalized tokens including repeated occurrences.
     """
+
+    # Reuse the vocabulary-construction normalization to keep coverage matching consistent.
     text = text.lower()
     text = cleanup_fn(text)
 
@@ -49,15 +39,16 @@ def tokenize_with_occurrences(text, cleanup_fn, token_regex, html_artifacts):
 
 def count_trigger_occurrences(tokens, trigger_words):
     """
-    Counts how many token occurrences belong to the given trigger vocabulary.
+    Count occurrences of vocabulary trigger tokens.
 
     Args:
-        tokens: List of normalized tokens, possibly with repetitions
-        trigger_words: Set of trigger words to check against
+        tokens (list[str]): Normalized tokens including repetitions.
+        trigger_words: Trigger vocabulary.
 
     Returns:
-        The total number of trigger token occurrences in the token list
+        int: Total number of matching token occurrences.
     """
+
     counter = Counter(tokens)
     return sum(count for token, count in counter.items() if token in trigger_words)
 
@@ -73,14 +64,25 @@ def analyze_single_email(
     html_artifacts,
 ):
     """
-    Analyzes trigger coverage for a single email.
+    Analyze trigger coverage for one email.
 
-    The subject and body are tokenized separately so that trigger occurrences
-    can later be distinguished by field.
+    Subject and body are evaluated separately for all vocabulary scopes.
+
+    Args:
+        subject (str): Decoded Subject text.
+        body (str): Decoded body text.
+        strict_triggers: Strict trigger vocabulary.
+        extended_triggers: Extended trigger vocabulary.
+        broad_triggers: Broad trigger vocabulary.
+        cleanup_fn: Pre-tokenization normalization function.
+        token_regex: Compiled token extraction pattern.
+        html_artifacts: Tokens excluded as known HTML artifacts.
 
     Returns:
-        A dictionary containing per-email trigger coverage statistics
+        dict: Trigger counts, coverage flags, and candidate flags for all scopes.
     """
+
+    # Analyze Subject and body separately so coverage can be attributed to each field.
     subject_tokens = tokenize_with_occurrences(
         subject, cleanup_fn, token_regex, html_artifacts
     )
@@ -97,6 +99,7 @@ def analyze_single_email(
     broad_subject = count_trigger_occurrences(subject_tokens, broad_triggers)
     broad_body = count_trigger_occurrences(body_tokens, broad_triggers)
 
+    # An email is covered by a scope if at least one trigger occurs in Subject or body.
     strict_has_trigger = (strict_subject + strict_body) > 0
     extended_has_trigger = (extended_subject + extended_body) > 0
     broad_has_trigger = (broad_subject + broad_body) > 0
@@ -119,8 +122,15 @@ def analyze_single_email(
 
 def validate_salting_vocabulary(salting_vocabulary):
     """
-    Validates the configured salting vocabulary.
+    Validate the selected trigger vocabulary scope.
+
+    Args:
+        salting_vocabulary (str): Vocabulary scope to validate.
+
+    Raises:
+        ValueError: If the scope is not strict, extended, or broad.
     """
+
     if salting_vocabulary not in {"strict", "extended", "broad"}:
         raise ValueError(
             f"Invalid SALTING_VOCABULARY '{salting_vocabulary}'. "
@@ -130,15 +140,22 @@ def validate_salting_vocabulary(salting_vocabulary):
 
 def select_candidates_from_coverage(rows, salting_vocabulary):
     """
-    Splits the master coverage rows into salted candidates and excluded rows.
+    Select salting candidates from trigger-coverage results.
 
-    This is now derived directly from the trigger_coverage master output.
+    Args:
+        rows: Per-email coverage records.
+        salting_vocabulary (str): Vocabulary scope used for candidate selection.
+
+    Returns:
+        tuple[list, list]: Eligible candidate rows and excluded rows.
     """
+
     validate_salting_vocabulary(salting_vocabulary)
 
     candidates = []
     excluded = []
 
+    # Candidate eligibility is determined solely by coverage in the selected vocabulary scope.
     for row in rows:
         if salting_vocabulary == "strict":
             is_candidate = bool(row["is_candidate_strict"])
@@ -157,8 +174,17 @@ def select_candidates_from_coverage(rows, salting_vocabulary):
 
 def build_selection_summary(candidates, excluded, salting_vocabulary):
     """
-    Builds a compact summary for later documentation.
+    Build summary counts for salting candidate selection.
+
+    Args:
+        candidates: Emails eligible for salting.
+        excluded: Emails without trigger coverage in the selected scope.
+        salting_vocabulary (str): Vocabulary scope used for selection.
+
+    Returns:
+        dict: Candidate-selection summary.
     """
+
     validate_salting_vocabulary(salting_vocabulary)
 
     return {
@@ -171,8 +197,13 @@ def build_selection_summary(candidates, excluded, salting_vocabulary):
 
 def write_csv(results, output_path):
     """
-    Writes rows to a CSV file.
+    Write result rows to a CSV file.
+
+    Args:
+        results: Rows to export.
+        output_path: Destination CSV path.
     """
+
     if not results:
         return
 
@@ -186,15 +217,18 @@ def write_csv(results, output_path):
 
 def write_selection_outputs(rows, output_dir, salting_vocabulary):
     """
-    Writes compatibility outputs for downstream pipeline steps.
+    Write candidate-selection artifacts used by downstream pipeline stages.
 
-    Even though trigger_coverage is now the place where candidate eligibility
-    is derived, this helper still writes the historical files expected by later
-    modules:
-    - salted_candidates.csv
-    - excluded_spam.csv
-    - selection_summary.json
+    Args:
+        rows: Trigger-coverage records.
+        output_dir: Destination directory.
+        salting_vocabulary (str): Vocabulary scope used for candidate selection.
+
+    Returns:
+        dict: Candidate-selection summary.
     """
+
+    # Derive downstream salting candidates directly from the coverage results.
     candidates, excluded = select_candidates_from_coverage(
         rows=rows,
         salting_vocabulary=salting_vocabulary,

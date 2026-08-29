@@ -1,0 +1,30 @@
+{
+  "case_id": "RSN01",
+  "title": "Rspamd Neural pilot mortgage spam case",
+  "salt_mode": "single",
+  "insert_after_index": 2,
+  "selected_tokens_subject": [],
+  "selected_tokens_body": [
+    "hear",
+    "Interest",
+    "rates",
+    "have",
+    "just",
+    "been",
+    "lowered",
+    "again",
+    "delay"
+  ],
+  "unsalted_score": 5.499971,
+  "salted_score": 5.499947,
+  "delta_score": -2.4000000000690136e-05,
+  "unsalted_neural_symbol": "NEURAL_SPAM",
+  "salted_neural_symbol": "NEURAL_SPAM",
+  "unsalted_neural_score": 2.999971,
+  "salted_neural_score": 2.999947,
+  "delta_neural_score": -2.3999999999801958e-05,
+  "unsalted_action": "no action",
+  "salted_action": "no action",
+  "unsalted_spam_flag": false,
+  "salted_spam_flag": false
+}

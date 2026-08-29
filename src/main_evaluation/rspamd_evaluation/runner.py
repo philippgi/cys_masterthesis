@@ -1,49 +1,10 @@
 #!/usr/bin/env python3
 """
-Rspamd evaluation runner.
+Evaluates baseline and salted email variants with Rspamd.
 
-This module evaluates:
-- the paired unsalted baseline spam test set
-- the full ham test set
-- all generated salted spam variants
-
-with Rspamd.
-
-Important evaluation logic:
-- Baseline ham:
-    All ham test emails are scanned.
-- Baseline spam:
-    Only original spam test emails are scanned for which at least one
-    salted variant was actually generated. This keeps the baseline and
-    the salted set pairable on the original message_id level.
-- Salted spam:
-    All generated salted variants are scanned.
-
-Detection logic:
-- The primary detection threshold is the Rspamd "add header" threshold.
-- A message is treated as spam if its score is greater than or equal to
-  that threshold.
-- If the threshold is missing for some reason, the action is used as a
-  fallback ("add header", "reject", "soft reject").
-
-Rspamd-specific fields:
-- action:
-    The action returned by Rspamd, e.g. "no action", "add header", "reject"
-- rules:
-    All returned symbols, pipe-separated
-- has_bayes:
-    True if any symbol starts with "BAYES_"
-- bayes_symbol:
-    The strongest BAYES_* symbol for the message
-- bayes_score:
-    The score of the strongest BAYES_* symbol
-
-Output files:
-- rspamd_results.csv
-    Variant-level results, one row per scanned email / salted variant
-- rspamd_results_paired.csv
-    Original-level paired results, one row per original spam email with
-    aggregated salted statistics
+The runner scans paired baseline spam messages, the complete ham test set,
+and all generated salted spam variants. Rspamd responses are normalized into
+variant-level results and aggregated into paired original-message results.
 """
 
 from __future__ import annotations
@@ -68,15 +29,21 @@ from config import (
     RSPAMD_TIMEOUT,
 )
 
-# Parallelism for HTTP scans against the Rspamd worker.
-# Increase carefully only if the container remains stable.
-RSPAMD_MAX_WORKERS = 2
+# Limit concurrent HTTP scans to maintain stable Rspamd processing.
+RSPAMD_MAX_WORKERS = 1
 
 
 def load_salting_log(csv_path: Path) -> dict[str, dict[str, str]]:
     """
-    Loads the salting log and indexes it by salted variant filename.
+    Load salting metadata indexed by salted variant filename.
+
+    Args:
+        csv_path (Path): Path to the salting log.
+
+    Returns:
+        dict[str, dict[str, str]]: Salting metadata indexed by variant filename.
     """
+
     if not csv_path.exists():
         return {}
 
@@ -87,9 +54,15 @@ def load_salting_log(csv_path: Path) -> dict[str, dict[str, str]]:
 
 def load_salted_source_ids(csv_path: Path) -> set[str]:
     """
-    Loads all original message_ids for which at least one salted variant
-    was actually generated.
+    Load original message IDs for which salted variants were generated.
+
+    Args:
+        csv_path (Path): Path to the salting log.
+
+    Returns:
+        set[str]: Original message IDs represented in the salted dataset.
     """
+
     if not csv_path.exists():
         return set()
 
@@ -100,8 +73,16 @@ def load_salted_source_ids(csv_path: Path) -> set[str]:
 
 def derive_salt_location(n_insert_subject, n_insert_body) -> str:
     """
-    Derives the insertion location label from the salting counts.
+    Derive the salting location from Subject and body insertion counts.
+
+    Args:
+        n_insert_subject: Number of Subject insertions.
+        n_insert_body: Number of body insertions.
+
+    Returns:
+        str: One of "subject", "body", "both", or "none".
     """
+
     try:
         subject_count = int(n_insert_subject)
     except (TypeError, ValueError):
@@ -122,9 +103,8 @@ def derive_salt_location(n_insert_subject, n_insert_body) -> str:
 
 
 def to_float_or_none(value):
-    """
-    Converts a value to float if possible, otherwise returns None.
-    """
+    """Convert a value to float if possible, otherwise return None."""
+
     if value in (None, "", "None"):
         return None
 
@@ -136,17 +116,21 @@ def to_float_or_none(value):
 
 def determine_spam_flag(score, threshold, action: str) -> bool:
     """
-    Determines whether a message should count as spam in the evaluation.
+    Determine the binary spam classification from the Rspamd result.
 
-    Primary rule:
-    - score >= add_header_threshold
+    Args:
+        score: Rspamd message score.
+        threshold: Configured add-header threshold.
+        action (str): Rspamd action.
 
-    Fallback rule:
-    - action is one of the spam actions
+    Returns:
+        bool: True if the message is classified as spam.
     """
+
     score_value = to_float_or_none(score)
     threshold_value = to_float_or_none(threshold)
 
+    # Prefer the numeric add-header threshold; use the action only as a fallback.
     if score_value is not None and threshold_value is not None:
         return score_value >= threshold_value
 
@@ -163,20 +147,16 @@ def extract_symbols(symbols_dict: dict) -> tuple[
     float | None,
 ]:
     """
-    Extracts symbol information from the Rspamd JSON response.
+    Extract rule, Bayes, and neural information from the Rspamd symbol response.
+
+    Args:
+        symbols_dict (dict): Symbol metadata returned by Rspamd.
 
     Returns:
-    - sorted list of all symbol names
-    - has_bayes flag
-    - strongest Bayes symbol name
-    - strongest Bayes symbol score
-    - has_neural flag
-    - strongest Neural symbol name
-    - strongest Neural symbol score
-
-    "Strongest" is defined as the symbol with the highest absolute score
-    within the respective family.
+        tuple: Symbol names, Bayes presence/name/score, and neural
+        presence/name/score.
     """
+
     if not isinstance(symbols_dict, dict):
         return [], False, "", None, False, "", None
 
@@ -225,12 +205,18 @@ def extract_symbols(symbols_dict: dict) -> tuple[
 
 def run_rspamd_scan(email_path: Path) -> dict:
     """
-    Sends one raw RFC 5322 email to the Rspamd normal worker via HTTP
-    and parses the JSON response.
+    Scan one RFC 5322 email through the Rspamd HTTP API.
 
-    The endpoint /checkv2 returns structured JSON which is more stable
-    and easier to parse than plain-text rspamc output.
+    Args:
+        email_path (Path): Path to the email message.
+
+    Returns:
+        dict: Normalized classification, score, symbol, Bayes, and neural data.
+
+    Raises:
+        RuntimeError: If Rspamd returns a non-successful HTTP status.
     """
+
     message_bytes = email_path.read_bytes()
 
     conn = http.client.HTTPConnection(
@@ -312,8 +298,20 @@ def evaluate_email(
     salting_meta: dict | None = None,
 ) -> dict:
     """
-    Runs Rspamd on one email and returns a normalized result row.
+    Scan one email and build its normalized variant-level result row.
+
+    Args:
+        email_path (Path): Path to the email message.
+        dataset (str): Dataset type, such as baseline or salted.
+        label (str): Ground-truth class label.
+        message_id (str): Original message identifier.
+        variant_filename (str): Salted variant filename, if applicable.
+        salting_meta (dict | None): Associated salting metadata.
+
+    Returns:
+        dict: Normalized evaluation result row.
     """
+
     scan = run_rspamd_scan(email_path)
 
     salting_meta = salting_meta or {}
@@ -348,12 +346,18 @@ def evaluate_email(
 
 def build_paired_results(rows: list[dict]) -> list[dict]:
     """
-    Builds one paired/original-level result row per original spam email.
+    Aggregate variant-level spam results on the original-message level.
 
-    A paired row compares:
-    - the original baseline spam email
-    - all salted variants derived from that original email
+    Each paired row combines one baseline spam email with all salted variants
+    derived from that message.
+
+    Args:
+        rows (list[dict]): Variant-level evaluation results.
+
+    Returns:
+        list[dict]: Paired baseline and salted result rows.
     """
+
     baseline_by_message = {}
     salted_by_message = defaultdict(list)
 
@@ -403,9 +407,16 @@ def build_paired_results(rows: list[dict]) -> list[dict]:
 
 def scan_batch(jobs: list[dict], desc: str) -> list[dict]:
     """
-    Scans one batch of emails in parallel and returns result rows
-    in the original job order.
+    Scan a batch of emails while preserving the original job order.
+
+    Args:
+        jobs (list[dict]): Email scan jobs.
+        desc (str): Progress-bar description.
+
+    Returns:
+        list[dict]: Evaluation results in the same order as the input jobs.
     """
+
     if not jobs:
         return []
 
@@ -442,12 +453,13 @@ def scan_batch(jobs: list[dict], desc: str) -> list[dict]:
 
 def run_rspamd_evaluation(output_root=None, dataset_split_dir=None):
     """
-    Main entry point for the Rspamd evaluation.
+    Run the complete Rspamd evaluation workflow.
 
-    The function writes:
-    - variant-level results
-    - paired original-level results
+    Args:
+        output_root: Root directory for generated evaluation artifacts.
+        dataset_split_dir: Directory containing the train/test dataset split.
     """
+
     output_root = OUTPUT_ROOT if output_root is None else output_root
     dataset_split_dir = DATASET_SPLIT if dataset_split_dir is None else dataset_split_dir
 

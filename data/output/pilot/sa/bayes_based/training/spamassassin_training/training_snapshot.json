@@ -1,0 +1,32 @@
+{
+  "timestamp_utc": "2026-08-04T11:20:51.151755+00:00",
+  "container_name": "masterthesis-spamassassin",
+  "train_ham_dir_host": "C:\\Projekte\\masterthesis_cys\\data\\datasets\\split\\train\\ham",
+  "train_spam_dir_host": "C:\\Projekte\\masterthesis_cys\\data\\datasets\\split\\train\\spam",
+  "train_ham_dir_container": "/split/train/ham",
+  "train_spam_dir_container": "/split/train/spam",
+  "n_train_ham": 3120,
+  "n_train_spam": 1516,
+  "spamassassin_version": "SpamAssassin version 4.0.1\n  running on Perl version 5.40.1",
+  "commands": {
+    "clear": "docker exec masterthesis-spamassassin sa-learn --clear",
+    "learn_ham": "docker exec masterthesis-spamassassin sa-learn --ham /split/train/ham",
+    "learn_spam": "docker exec masterthesis-spamassassin sa-learn --spam /split/train/spam",
+    "sync": "docker exec masterthesis-spamassassin sa-learn --sync",
+    "dump_magic": "docker exec masterthesis-spamassassin sa-learn --dump magic"
+  },
+  "stdout": {
+    "clear": "",
+    "learn_ham": "Learned tokens from 3117 message(s) (3120 message(s) examined)\n",
+    "learn_spam": "Learned tokens from 1509 message(s) (1516 message(s) examined)\n",
+    "sync": "expired old bayes database entries in 5 seconds\n167247 entries kept, 80647 deleted\ntoken frequency: 1-occurrence tokens: 62.76%\ntoken frequency: less than 8 occurrences: 27.94%\n",
+    "dump_magic": "0.000          0          3          0  non-token data: bayes db version\n0.000          0       1509          0  non-token data: nspam\n0.000          0       3117          0  non-token data: nham\n0.000          0     167247          0  non-token data: ntokens\n0.000          0 1027944350          0  non-token data: oldest atime\n0.000          0 1039002727          0  non-token data: newest atime\n0.000          0          0          0  non-token data: last journal sync atime\n0.000          0 1785842449          0  non-token data: last expiry atime\n0.000          0   11059200          0  non-token data: last expire atime delta\n0.000          0      80647          0  non-token data: last expire reduction count\n"
+  },
+  "stderr": {
+    "clear": "",
+    "learn_ham": "",
+    "learn_spam": "",
+    "sync": "",
+    "dump_magic": ""
+  }
+}

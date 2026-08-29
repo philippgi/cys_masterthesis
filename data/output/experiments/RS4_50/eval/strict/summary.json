@@ -1,0 +1,167 @@
+{
+  "experiment_id": "RS4_strict_50",
+  "filter": "Rspamd",
+  "mechanism": "rules__plus_neural_retrained",
+  "rule_scope": "extended_local_content",
+  "salting_condition": "strict",
+  "salting_config": {
+    "subject_max_insertions": 1,
+    "body_max_insertions": 3,
+    "salt_mode": "single",
+    "insert_after_index": 2,
+    "fragment_max_positions": null
+  },
+  "inputs": {
+    "results_csv": "C:\\Projekte\\masterthesis_cys\\data\\output\\experiments\\RS4_50\\eval\\strict\\rspamd_evaluation\\rspamd_results.csv",
+    "paired_csv": "C:\\Projekte\\masterthesis_cys\\data\\output\\experiments\\RS4_50\\eval\\strict\\rspamd_evaluation\\rspamd_results_paired.csv"
+  },
+  "counts": {
+    "n_variant_rows_total": 1535,
+    "n_paired_rows_total": 151,
+    "n_baseline_spam": 151,
+    "n_baseline_ham": 780,
+    "n_salted_variants": 604,
+    "n_unique_salted_sources": 151,
+    "n_baseline_detected_spam": 126,
+    "n_baseline_not_detected_spam": 25,
+    "n_baseline_spam_detected_variant_level": 126,
+    "n_baseline_ham_false_positive": 26
+  },
+  "rates": {
+    "baseline_spam_detection_rate": 0.834437,
+    "baseline_ham_false_positive_rate": 0.033333,
+    "bypass_rate_any": 0.02381,
+    "bypass_rate_all": 0.02381,
+    "classification_stability_all_spam": 0.97619,
+    "classification_stability_any_spam": 0.97619
+  },
+  "means": {
+    "mean_baseline_score": 10.456467,
+    "mean_salted_score_mean": 10.334753,
+    "mean_salted_score_min": 10.293077,
+    "mean_score_drop": 0.121714,
+    "mean_best_case_score_drop": 0.16339,
+    "mean_baseline_rule_count": 20.626984,
+    "mean_salted_rule_count": 20.545635,
+    "mean_rule_loss": 0.081349
+  },
+  "medians": {
+    "median_score_drop": 0.0,
+    "median_best_case_score_drop": 0.0,
+    "median_rule_loss": 0.0
+  },
+  "classification_counts": {
+    "n_any_bypass": 3,
+    "n_all_bypass": 3,
+    "n_all_spam": 123,
+    "n_any_spam": 123
+  },
+  "codepoints": {
+    "00AD": {
+      "n_variants": 151,
+      "n_unique_sources": 151,
+      "n_baseline_detected_sources": 126,
+      "bypass_rate": 0.02381,
+      "spam_rate": 0.97619,
+      "mean_score": 10.348633,
+      "median_score": 9.3,
+      "mean_rule_count": 20.547619
+    },
+    "200B": {
+      "n_variants": 151,
+      "n_unique_sources": 151,
+      "n_baseline_detected_sources": 126,
+      "bypass_rate": 0.02381,
+      "spam_rate": 0.97619,
+      "mean_score": 10.348645,
+      "median_score": 9.3,
+      "mean_rule_count": 20.547619
+    },
+    "200C": {
+      "n_variants": 151,
+      "n_unique_sources": 151,
+      "n_baseline_detected_sources": 126,
+      "bypass_rate": 0.02381,
+      "spam_rate": 0.97619,
+      "mean_score": 10.348645,
+      "median_score": 9.3,
+      "mean_rule_count": 20.547619
+    },
+    "200D": {
+      "n_variants": 151,
+      "n_unique_sources": 151,
+      "n_baseline_detected_sources": 126,
+      "bypass_rate": 0.02381,
+      "spam_rate": 0.97619,
+      "mean_score": 10.29309,
+      "median_score": 9.3,
+      "mean_rule_count": 20.539683
+    }
+  },
+  "salting_intensity": {
+    "mean_subject_insertions": 0.443709,
+    "mean_body_insertions": 1.417219,
+    "mean_total_insertions": 1.860927,
+    "max_subject_insertions": 1,
+    "max_body_insertions": 3
+  },
+  "insertion_distribution": {
+    "1": 316,
+    "2": 104,
+    "3": 136,
+    "4": 48
+  },
+  "bayes_analysis": null,
+  "neural_analysis": {
+    "n_baseline_detected_emails": 126,
+    "n_baseline_with_neural": 126,
+    "n_salted_with_any_neural": 126,
+    "n_neural_lost_any": 0,
+    "n_neural_lost_all": 0,
+    "baseline_neural_symbol_counts": {
+      "NEURAL_SPAM": 126
+    },
+    "salted_neural_symbol_counts": {
+      "NEURAL_SPAM": 504
+    },
+    "baseline_neural_score_mean": 2.987758,
+    "salted_neural_score_mean": 2.986481
+  },
+  "rule_loss_analysis": {
+    "all_rule_loss": [
+      {
+        "rule": "R_BAD_CTE_7BIT",
+        "baseline_occurrences": 8,
+        "lost_in_any_variant": 5,
+        "lost_in_all_variants": 5,
+        "lost_rate_any_variant": 0.625,
+        "lost_rate_all_variants": 0.625
+      },
+      {
+        "rule": "R_MISSING_CHARSET",
+        "baseline_occurrences": 12,
+        "lost_in_any_variant": 7,
+        "lost_in_all_variants": 7,
+        "lost_rate_any_variant": 0.583333,
+        "lost_rate_all_variants": 0.583333
+      },
+      {
+        "rule": "NEURAL_HAM",
+        "baseline_occurrences": 4,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.25,
+        "lost_rate_all_variants": 0.25
+      }
+    ],
+    "all_bypass_rule_loss": [
+      {
+        "rule": "R_BAD_CTE_7BIT",
+        "lost_in_bypass_any": 3,
+        "lost_in_bypass_all": 3,
+        "bypass_loss_rate_any": 1.0,
+        "bypass_loss_rate_all": 1.0
+      }
+    ]
+  }
+}

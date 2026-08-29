@@ -1,0 +1,3 @@
+case_id;variant;score;spam_flag;bayes_rules;spammy_tokens;salt_mode;n_insert_subject;n_insert_body;lost_spammy_tokens;new_rules;message_path
+SAB001;unsalted;0.9;False;BAYES_50;Verify|verification|account;;;;;;C:\Projekte\masterthesis_cys\data\output\pilot\sa\bayes_based\eval\test_unsalted\SAB001_unsalted.eml
+SAB001;salted;1.0;False;BAYES_40;;fragment;1;4;Verify|verification|account;BAYES_40|UNICODE_OBFU_ZW;C:\Projekte\masterthesis_cys\data\output\pilot\sa\bayes_based\eval\test_salted\SAB001_salted.eml

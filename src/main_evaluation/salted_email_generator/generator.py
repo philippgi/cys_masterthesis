@@ -1,21 +1,11 @@
 #!/usr/bin/env python3
 """
-Core logic for generating salted .eml files.
+Generates salted email variants by inserting zero-width Unicode characters
+into trigger-word occurrences.
 
-This module creates salted variants of selected spam emails by inserting
-invisible Unicode characters into trigger words.
-
-Supported salting modes:
-- single:
-    Insert one codepoint into the token at one configured position.
-- fragment:
-    Insert the codepoint after multiple positions inside the token,
-    effectively fragmenting the token.
-
-The module preserves the original email structure as far as practical,
-while replacing only:
-- the Subject header
-- explicit text/plain parts
+The original message structure is preserved as far as possible. Salting is
+restricted to the Subject header and explicitly declared non-attachment
+text/plain MIME parts.
 """
 
 import csv
@@ -36,8 +26,15 @@ TOKEN_RE = re.compile(r"[A-Za-z]{3,}")
 
 def read_candidate_rows(csv_path: Path) -> list[dict]:
     """
-    Reads the salted candidate CSV produced by the trigger_coverage step.
+    Load candidate messages produced by the trigger-coverage stage.
+
+    Args:
+        csv_path (Path): Path to the candidate CSV file.
+
+    Returns:
+        list[dict]: Candidate message records.
     """
+
     with open(csv_path, "r", encoding="utf-8", newline="") as f:
         reader = csv.DictReader(f)
         return list(reader)
@@ -45,8 +42,15 @@ def read_candidate_rows(csv_path: Path) -> list[dict]:
 
 def load_trigger_words(json_path: Path) -> set[str]:
     """
-    Loads trigger tokens from a trigger vocabulary json file.
+    Load trigger tokens from a generated vocabulary file.
+
+    Args:
+        json_path (Path): Path to the vocabulary JSON file.
+
+    Returns:
+        set[str]: Trigger tokens contained in the vocabulary.
     """
+
     with open(json_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
@@ -55,14 +59,19 @@ def load_trigger_words(json_path: Path) -> set[str]:
 
 def parse_email(email_path: Path):
     """
-    Parses an RFC 5322 email file into an EmailMessage object.
+    Parse an RFC 5322 email while preserving an optional mbox From line.
 
-    If the file begins with an mbox-style 'From ' line, it is removed before
-    parsing because it is not part of the RFC 5322 header block.
+    Args:
+        email_path (Path): Path to the serialized email message.
+
+    Returns:
+        tuple: Parsed message and optional mbox From line.
     """
+
     raw = email_path.read_bytes()
     mbox_from_line = None
 
+    # Preserve an mbox-style From line separately because it is not part of RFC 5322 headers.
     if raw.startswith(b"From "):
         first_nl = raw.find(b"\n")
         if first_nl != -1:
@@ -75,10 +84,18 @@ def parse_email(email_path: Path):
 
 def get_decoded_text_plain(part) -> str:
     """
-    Returns the decoded text/plain payload.
+    Decode the textual content of a text/plain MIME part.
+
+    Args:
+        part: MIME part to decode.
+
+    Returns:
+        str: Decoded Unicode text.
     """
+
     try:
         return part.get_content()
+    # Fall back to explicit payload and charset decoding if get_content() fails.
     except Exception:
         payload = part.get_payload(decode=True) or b""
         charset = safe_charset(part.get_content_charset())
@@ -87,19 +104,25 @@ def get_decoded_text_plain(part) -> str:
 
 def replace_text_plain_payload_preserve_format(part, new_text: str) -> None:
     """
-    Replaces the payload of an explicit text/plain part while preserving the
-    original charset and Content-Transfer-Encoding as far as possible.
+    Replace a text/plain payload while preserving its original encoding metadata
+    as far as possible.
+
+    Args:
+        part: MIME part whose payload is replaced.
+        new_text (str): Modified Unicode text.
     """
+
     charset = safe_charset(part.get_content_charset())
     original_cte = (part.get("Content-Transfer-Encoding") or "").lower().strip()
 
     try:
+        # Prefer the original charset and fall back to UTF-8 if it cannot encode the salted text.
         new_bytes = new_text.encode(charset)
     except Exception:
         charset = "utf-8"
         new_bytes = new_text.encode(charset)
 
-    # Remove old payload + old CTE header
+    # Replace the payload and rebuild the Content-Transfer-Encoding header.
     part.set_payload(new_bytes)
     if part["Content-Transfer-Encoding"]:
         del part["Content-Transfer-Encoding"]
@@ -108,7 +131,7 @@ def replace_text_plain_payload_preserve_format(part, new_text: str) -> None:
     if part.get("Content-Type") is not None:
         part.set_param("charset", charset, header="Content-Type")
 
-    # Re-apply original transfer encoding as far as possible
+    # Reapply the original transfer encoding where possible.
     if original_cte == "base64":
         encoders.encode_base64(part)
     elif original_cte == "quoted-printable":
@@ -137,27 +160,34 @@ def salt_token(
     fragment_max_positions: int | None = None,
 ) -> str:
     """
-    Salts a token according to the selected mode.
+    Insert the configured zero-width character into a token.
 
-    Modes:
-    - single:
-        Insert one codepoint at exactly one configured position.
-    - fragment:
-        Insert the codepoint after multiple character positions in the token,
-        effectively fragmenting the token internally.
+    Args:
+        token (str): Token to modify.
+        codepoint (str): Unicode character to insert.
+        insert_after_index (int): Position used by single-mode salting.
+        mode (str): Salting mode, either "single" or "fragment".
+        fragment_max_positions (int | None): Maximum insertion positions in fragment mode.
+
+    Returns:
+        str: Salted token.
+
+    Raises:
+        ValueError: If an unsupported salting mode is requested.
     """
+
     if len(token) < 2:
         return token
 
     if mode == "single":
+        # Clamp the insertion position so the code point remains inside the token.
         safe_index = max(1, min(insert_after_index, len(token) - 1))
         return token[:safe_index] + codepoint + token[safe_index:]
 
     if mode == "fragment":
         chars = list(token)
 
-        # Possible insertion positions are between characters.
-        # Example: "offer" -> positions after char 1, 2, 3, 4
+        # Fragment mode inserts between characters, never before or after the token.
         possible_positions = list(range(1, len(chars)))
 
         if fragment_max_positions is not None:
@@ -178,9 +208,16 @@ def salt_token(
 
 def find_trigger_matches(text: str, trigger_words: set[str]) -> list:
     """
-    Finds trigger-word matches in a decoded text string.
-    Matching is case-insensitive against the trigger vocabulary.
+    Find case-insensitive trigger-word occurrences in decoded text.
+
+    Args:
+        text (str): Text to inspect.
+        trigger_words (set[str]): Lowercase trigger vocabulary.
+
+    Returns:
+        list: Regex matches corresponding to trigger words.
     """
+
     matches = []
 
     for match in TOKEN_RE.finditer(text):
@@ -201,9 +238,23 @@ def apply_salting_to_text(
     fragment_max_positions: int | None = None,
 ) -> tuple[str, list[dict], int]:
     """
-    Applies salting to the first matching trigger occurrences in a text field.
+    Salt the first matching trigger-word occurrences in a text field.
+
+    Args:
+        text (str): Subject or body text to modify.
+        trigger_words (set[str]): Trigger vocabulary.
+        codepoint (str): Unicode character to insert.
+        max_insertions (int): Maximum number of matching occurrences to modify.
+        insert_after_index (int): Position used by single-mode salting.
+        salt_mode (str): Salting mode.
+        fragment_max_positions (int | None): Maximum fragment-mode insertion positions.
+
+    Returns:
+        tuple[str, list[dict], int]: Salted text, modified targets, and insertion count.
     """
+
     matches = find_trigger_matches(text, trigger_words)
+    # Limit salting to the first matching occurrences up to the configured maximum.
     selected_matches = matches[:max_insertions]
 
     if not selected_matches:
@@ -212,7 +263,7 @@ def apply_salting_to_text(
     salted_text = text
     targets = []
 
-    # Replace from right to left so offsets remain stable.
+    # Replace matches from right to left so earlier character offsets remain valid.
     for match in reversed(selected_matches):
         original_token = match.group(0)
         salted_version = salt_token(
@@ -245,11 +296,18 @@ def apply_salting_to_text(
 
 def iter_text_plain_parts(msg):
     """
-    Yields all non-attachment text/plain parts of a message,
-    but only if text/plain is explicitly declared in the Content-Type header.
-    This avoids implicitly treating malformed or type-less messages as plain text
-    and prevents unintended MIME rewriting during salting.
+    Yield explicitly declared non-attachment text/plain MIME parts.
+
+    Implicit or type-less payloads are excluded to avoid unintended MIME
+    rewriting outside the defined salting scope.
+
+    Args:
+        msg: Parsed email message.
+
+    Yields:
+        Explicit non-attachment text/plain MIME parts.
     """
+
     if msg.is_multipart():
         for part in msg.walk():
             if part.get_content_disposition() == "attachment":
@@ -266,8 +324,13 @@ def iter_text_plain_parts(msg):
 
 def replace_subject(msg, new_subject: str) -> None:
     """
-    Replaces the Subject header of the message.
+    Replace or add the Subject header.
+
+    Args:
+        msg: Parsed email message.
+        new_subject (str): Modified Subject value.
     """
+
     if "Subject" in msg:
         msg.replace_header("Subject", new_subject)
     else:
@@ -285,12 +348,31 @@ def apply_salting_to_message(
     fragment_max_positions: int | None = None,
 ):
     """
-    Applies subject/body salting to a parsed email message and returns a
-    modified copy together with logging information.
+    Apply salting to the Subject and eligible text/plain body parts.
+
+    A deep copy of the original message is modified. Subject and body insertion
+    limits are applied independently, while the body limit is shared globally
+    across all eligible text/plain MIME parts.
+
+    Args:
+        original_msg: Parsed source message.
+        trigger_words (set[str]): Trigger vocabulary.
+        codepoint (str): Unicode character to insert.
+        subject_max_insertions (int): Maximum Subject insertions.
+        body_max_insertions (int): Maximum body insertions across all eligible parts.
+        insert_after_index (int): Position used by single-mode salting.
+        salt_mode (str): Salting mode.
+        fragment_max_positions (int | None): Maximum fragment-mode insertion positions.
+
+    Returns:
+        tuple: Salted message, Subject targets, body targets, insertion counts,
+        and whether an eligible body part was found.
     """
+
+    # Modify a copy so the original parsed message remains unchanged.
     msg = deepcopy(original_msg)
 
-    # Subject salting
+    # Apply the Subject insertion limit independently from the body limit.
     original_subject = str(msg.get("Subject", "") or "")
     salted_subject, subject_targets, n_insert_subject = apply_salting_to_text(
         text=original_subject,
@@ -303,7 +385,7 @@ def apply_salting_to_message(
     )
     replace_subject(msg, salted_subject)
 
-    # Body salting across text/plain parts, globally capped at body_max_insertions
+    # Share the configured body insertion limit across all eligible text/plain parts.
     remaining_body_insertions = body_max_insertions
     body_targets = []
     n_insert_body = 0
@@ -343,8 +425,18 @@ def build_variant_filename(
     salt_mode: str = "single",
 ) -> str:
     """
-    Builds the salted output filename based on the original email filename.
+    Build the deterministic filename of a salted message variant.
+
+    Args:
+        original_filename (str): Original message filename.
+        vocab_type (str): Trigger vocabulary scope.
+        codepoint_name (str): Unicode code-point identifier.
+        salt_mode (str): Applied salting mode.
+
+    Returns:
+        str: Generated variant filename.
     """
+
     source_path = Path(original_filename)
     stem = source_path.stem
     suffix = source_path.suffix or ".eml"
@@ -354,8 +446,14 @@ def build_variant_filename(
 
 def write_email(msg, output_path: Path, mbox_from_line: bytes | None = None) -> None:
     """
-    Serializes an EmailMessage object to an .eml file.
+    Serialize a modified email message to disk.
+
+    Args:
+        msg: Message to serialize.
+        output_path (Path): Destination path.
+        mbox_from_line (bytes | None): Optional preserved mbox From line.
     """
+
     with open(output_path, "wb") as f:
         if mbox_from_line is not None:
             f.write(mbox_from_line)
@@ -365,14 +463,14 @@ def write_email(msg, output_path: Path, mbox_from_line: bytes | None = None) -> 
 
 def write_salting_log(rows: list[dict], technical_csv: Path, readable_csv: Path) -> None:
     """
-    Writes both the technical salting log and a report.
+    Write technical and human-readable salting logs.
 
-    technical_csv:
-        Full log including json target structures.
-
-    readable_csv:
-        Simplified log showing which tokens were modified.
+    Args:
+        rows (list[dict]): Salting records.
+        technical_csv (Path): Destination for complete technical metadata.
+        readable_csv (Path): Destination for simplified token-level reporting.
     """
+
     if not rows:
         return
 
@@ -380,7 +478,7 @@ def write_salting_log(rows: list[dict], technical_csv: Path, readable_csv: Path)
     readable_rows = []
 
     for row in rows:
-        # Technical log
+        # Store complete machine-readable salting metadata.
         tech_rows.append(
             {
                 "message_id": row["message_id"],
@@ -397,7 +495,7 @@ def write_salting_log(rows: list[dict], technical_csv: Path, readable_csv: Path)
             }
         )
 
-        # Readable log
+        # Flatten modified tokens into a human-readable reporting format.
         subject_original = [t["original_token"] for t in row["subject_targets"]]
         subject_salted = [t["salted_token"] for t in row["subject_targets"]]
 

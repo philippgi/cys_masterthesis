@@ -1,0 +1,352 @@
+rule_type;selector;source;file;line;pattern
+body_raw;sa_raw_body;regexp;misc.lua;22;"re = '/<meta\\s+http-equiv=""refresh""\\s+content=""\\d+\\s*;\\s*url=/{sa_raw_body}i',"
+body_raw;sa_raw_body;regexp;misc.lua;31;"re = '/data:[^\\/]+\\/[^; ]+;base64,/{sa_raw_body}i',"
+body_raw;sa_raw_body;regexp;misc.lua;39;"re = '/data:text\\/(?:plain|html);base64,/{sa_raw_body}i',"
+body_sa_body;sa_body;regexp;misc.lua;47;re = '/\\b(?:my name is\\b|(?:i am|this is)\\s+(?:mr|mrs|ms|miss|master|sir|prof(?:essor)?|d(?:octo)?r|rev(?:erend)?)(?:\\.|\\b))/{sa_body}i',
+body_words;words;regexp;misc.lua;64;local my_victim = [[/(?:victim|prey)/{words}]]
+body_words;words;regexp;misc.lua;65;local your_webcam = [[/webcam/{words}]]
+body_words;words;regexp;misc.lua;66;local your_onan = [[/(?:mast[ur]{2}bati(?:on|ng)|onanism|solitary)/{words}]]
+body_words;words;regexp;misc.lua;67;local password_in_words = [[/^pass(?:(?:word)|(?:phrase))$/i{words}]]
+body_words;words;regexp;misc.lua;69;local wallet_word = [[/^wallet$/{words}]]
+header;header;regexp;headers.lua;141;"re = [[To=/^<?""?undisclosed[- ]recipients?\b.*:/i{header}]],"
+header;header;regexp;headers.lua;655;re = [[Subject=/^(antw|atb|aw|bls|odp|res?|rif|sv|ynt)[. ]*:/i{header} & !(header_exists(In-Reply-To) | header_exists(References))]],
+header;header;regexp;headers.lua;1000;re = string.format('X-Mailer=/^(?:%s)/{header}', table.concat(old_x_mailers, '|')),
+header;header;regexp;headers.lua;1009;re = string.format('X-Mailer=/^%s/{header}', apple_x_mailer),
+header;header;regexp;headers.lua;1020;re = string.format('X-Mailer=/^%s/{header}', apple_ios_x_mailer),
+header;header;regexp;headers.lua;1043;re = string.format('X-Mailer=/^(?:%s)/{header} && !X-Mailer=/^%s/{header}',
+header;header;regexp;headers.lua;1059;re = [[X-Mailer=/^Internet Mail Service \(5\./{header} & !Received=/^by \S+ with Internet Mail Service \(5\./{header}]],
+lua;lua;lua;controller/neural.lua;39;local ok, err = parser:parse_text(task:get_rawbody())
+header;header;lua;controller/neural.lua;179;local cls = task:get_request_header('ANN-Train') or task:get_request_header('Class')
+header;header;lua;controller/neural.lua;181;conn:send_error(400, 'missing class header (ANN-Train or Class)')
+header;header;lua;controller/neural.lua;191;local rule_name = task:get_request_header('Rule') or 'default'
+body_words;words;lua;bounce.lua;20;local function make_subj_bounce_keywords_re()
+body_words;words;lua;bounce.lua;23;local keywords = {
+header;header;lua;bounce.lua;39;return string.format([[Subject=/\b(%s)\b/i{header}]], table.concat(keywords, '|'))
+body_words;words;lua;bounce.lua;43;re = make_subj_bounce_keywords_re(),
+header;header;lua;bounce.lua;44;group = 'headers',
+mime;mime;lua;bounce.lua;71;local mime_from = task:get_from('mime')
+mime;mime;lua;bounce.lua;72;if mime_from then
+mime;mime;lua;bounce.lua;73;local from_user = mime_from[1].user:lower()
+header;header;lua;bounce.lua;80;elseif from_user == 'mdaemon' and task:has_header('X-MDDSN-Message') then
+body_words;words;lua;bounce.lua;85;local subj_keywords = task:has_symbol('SUBJ_BOUNCE_WORDS')
+body_words;words;lua;bounce.lua;87;if not (bounce_sender or subj_keywords) then
+body_words;words;lua;bounce.lua;91;if bounce_sender and subj_keywords then
+header;header;lua;bounce.lua;95;-- Look for a message/rfc822(-headers) part inside
+mime;mime;lua;bounce.lua;99;local mime_type, mime_subtype = p:get_type()
+header;header;lua;bounce.lua;100;if (mime_subtype == 'rfc822' or mime_subtype == 'rfc822-headers') and
+mime;mime;lua;bounce.lua;101;(mime_type == 'message' or mime_type == 'text') then
+mime;mime;lua;bounce.lua;102;rfc822_part = mime_type .. '/' .. mime_subtype
+body_words;words;lua;bounce.lua;109;elseif rfc822_part and subj_keywords then
+header;header;lua;headers_checks.lua;41;local received = task:get_received_headers()
+header;header;lua;headers_checks.lua;63;description = 'Message has no Received headers',
+header;header;lua;headers_checks.lua;71;description = 'Message has one Received header',
+header;header;lua;headers_checks.lua;79;description = 'Message has two Received headers',
+header;header;lua;headers_checks.lua;87;description = 'Message has 3-5 Received headers',
+header;header;lua;headers_checks.lua;95;description = 'Message has 5-7 Received headers',
+header;header;lua;headers_checks.lua;103;description = 'Message has 7-11 Received headers',
+header;header;lua;headers_checks.lua;111;description = 'Message has 12 or more Received headers',
+header;header;lua;headers_checks.lua;129;"local xprio = task:get_header('X-Priority');"
+header;header;lua;headers_checks.lua;150;description = 'Message has X-Priority header set to 0',
+header;header;lua;headers_checks.lua;158;description = 'Message has X-Priority header set to 1',
+header;header;lua;headers_checks.lua;166;description = 'Message has X-Priority header set to 2',
+header;header;lua;headers_checks.lua;174;description = 'Message has X-Priority header set to 3 or 4',
+header;header;lua;headers_checks.lua;182;description = 'Message has X-Priority header set to 5 or higher',
+raw_header;raw_header;lua;headers_checks.lua;186;local function get_raw_header(task, name)
+header;header;lua;headers_checks.lua;187;return ((task:get_header_full(name) or {})[1] or {})['value']
+raw_header;raw_header;lua;headers_checks.lua;196;local replyto = get_raw_header(task, 'Reply-To')
+mime;mime;lua;headers_checks.lua;219;local from = task:get_from { 'mime', 'orig' }
+raw_header;raw_header;lua;headers_checks.lua;220;local from_h = get_raw_header(task, 'From')
+header;header;lua;headers_checks.lua;250;if (not (task:get_header('List-Unsubscribe') or
+header;header;lua;headers_checks.lua;251;task:get_header('X-To-Get-Off-This-List') or
+header;header;lua;headers_checks.lua;252;task:get_header('X-List') or
+header;header;lua;headers_checks.lua;253;task:get_header('Auto-Submitted')))
+header;header;lua;headers_checks.lua;273;description = 'Reply-To header could not be parsed',
+header;header;lua;headers_checks.lua;281;description = 'Has Reply-To header',
+header;header;lua;headers_checks.lua;289;description = 'Reply-To header is identical to From header',
+header;header;lua;headers_checks.lua;297;description = 'Reply-To header is identical to SMTP From',
+header;header;lua;headers_checks.lua;329;description = 'Reply-To header has title',
+mime;mime;lua;headers_checks.lua;359;local check_mime_id = rspamd_config:register_symbol {
+header;header;lua;headers_checks.lua;365;-- Check if there is a MIME-Version header
+mime;mime;lua;headers_checks.lua;366;local missing_mime = false
+header;header;lua;headers_checks.lua;367;if not task:has_header('MIME-Version') then
+mime;mime;lua;headers_checks.lua;368;missing_mime = true
+header;header;lua;headers_checks.lua;371;-- Check presence of MIME specific headers
+header;header;lua;headers_checks.lua;372;local has_ct_header = task:has_header('Content-Type')
+header;header;lua;headers_checks.lua;373;local has_cte_header = task:has_header('Content-Transfer-Encoding')
+header;header;lua;headers_checks.lua;375;-- Add the symbol if we have MIME headers, but no MIME-Version
+header;header;lua;headers_checks.lua;377;if (has_ct_header or has_cte_header) and missing_mime then
+mime;mime;lua;headers_checks.lua;413;parent = check_mime_id,
+header;header;lua;headers_checks.lua;415;description = 'MIME-Version header is missing in MIME message',
+header;header;lua;headers_checks.lua;442;local rcvds = task:get_header_full('Received')
+header;header;lua;headers_checks.lua;464;return task:has_flag('broken_headers')
+header;header;lua;headers_checks.lua;485;local header_from = nil
+header;header;lua;headers_checks.lua;486;local cread = task:get_header('X-Confirm-Reading-To')
+mime;mime;lua;headers_checks.lua;488;if task:has_from('mime') then
+header;header;lua;headers_checks.lua;489;header_from = task:get_from('mime')[1]
+header;header;lua;headers_checks.lua;492;local header_cread = nil
+header;header;lua;headers_checks.lua;494;local headers_cread = util.parse_mail_address(cread, task:get_mempool())
+header;header;lua;headers_checks.lua;495;if headers_cread then
+header;header;lua;headers_checks.lua;496;header_cread = headers_cread[1]
+header;header;lua;headers_checks.lua;500;if header_from and header_cread then
+header;header;lua;headers_checks.lua;501;if not string.find(header_from['addr'], header_cread['addr']) then
+header;header;lua;headers_checks.lua;516;local mdn = task:get_header('Disposition-Notification-To')
+header;header;lua;headers_checks.lua;520;local header_rp = nil
+header;header;lua;headers_checks.lua;523;header_rp = task:get_from('smtp')[1]
+header;header;lua;headers_checks.lua;527;local headers_mdn = util.parse_mail_address(mdn, task:get_mempool())
+header;header;lua;headers_checks.lua;529;if headers_mdn and not header_rp then
+header;header;lua;headers_checks.lua;532;if header_rp and not headers_mdn then
+header;header;lua;headers_checks.lua;535;if not headers_mdn and not header_rp then
+header;header;lua;headers_checks.lua;540;for _, h in ipairs(headers_mdn) do
+header;header;lua;headers_checks.lua;541;if util.strequal_caseless(h['addr'], header_rp['addr']) then
+header;header;lua;headers_checks.lua;555;local headers_unique = {
+header;header;lua;headers_checks.lua;572;local multiple_unique_headers_id = rspamd_config:register_symbol {
+header;header;lua;headers_checks.lua;580;for hdr, mult in pairs(headers_unique) do
+header;header;lua;headers_checks.lua;581;local hc = task:get_header_count(hdr)
+header;header;lua;headers_checks.lua;603;description = 'Repeated unique headers'
+header;header;lua;headers_checks.lua;610;parent = multiple_unique_headers_id,
+header;header;lua;headers_checks.lua;612;description = 'Common headers were entirely absent',
+header;header;lua;headers_checks.lua;617;local from = task:get_header('From')
+header;header;lua;headers_checks.lua;625;description = 'Missing From header'
+mime;mime;lua;headers_checks.lua;630;local from = task:get_from('mime')
+lua;lua;lua;headers_checks.lua;633;return a.raw
+header;header;lua;headers_checks.lua;640;description = 'Multiple addresses in From header'
+header;header;lua;headers_checks.lua;645;return task:has_header('Mime-Version', true)
+header;header;lua;headers_checks.lua;649;group = 'headers'
+header;header;lua;headers_checks.lua;729;description = 'From header does not have a valid format',
+header;header;lua;headers_checks.lua;737;description = 'From header does not have a display name',
+header;header;lua;headers_checks.lua;745;description = 'From header display name is the same as the address',
+header;header;lua;headers_checks.lua;753;description = 'From header has a display name',
+header;header;lua;headers_checks.lua;761;description = 'From header display name contains excess whitespace',
+header;header;lua;headers_checks.lua;769;description = 'From header display name has a title (Mr/Mrs/Dr)',
+header;header;lua;headers_checks.lua;808;group = 'headers,mime',
+header;header;lua;headers_checks.lua;848;-- See if header recipients match envrcpts
+header;header;lua;headers_checks.lua;872;-- See if header recipients match envelope recipients
+header;header;lua;headers_checks.lua;952;"description = 'To header display name is ""Recipients""',"
+header;header;lua;headers_checks.lua;1011;-- TODO: rewrite this rule, it should not touch headers directly
+header;header;lua;headers_checks.lua;1019;local ct = p:get_header('Content-Type')
+header;header;lua;headers_checks.lua;1021;local cd = p:get_header('Content-Disposition')
+header;header;lua;headers_checks.lua;1023;local ci = p:get_header('Content-ID')
+mime;mime;lua;headers_checks.lua;1048;group = 'mime'
+header;header;lua;headers_checks.lua;1053;local ct = task:get_header('Content-Type')
+header;header;lua;headers_checks.lua;1093;local ct = part:get_header('Content-Type')
+header;header;lua;headers_checks.lua;1100;local cte = part:get_header('Content-Transfer-Encoding')
+mime;mime;lua;headers_checks.lua;1141;"local mimepart = part:get_mimepart();"
+mime;mime;lua;headers_checks.lua;1142;if (check_for_base64_text(mimepart) and not part:has_8bit()) then
+mime;mime;lua;headers_checks.lua;1163;local from = (task:get_from('mime') or {})[1] or {}
+header;header;lua;headers_checks.lua;1169;description = 'Invalid 8bit character in From header',
+mime;mime;lua;headers_checks.lua;1176;local rcpts = task:get_recipients('mime') or {}
+header;header;lua;headers_checks.lua;1184;description = 'Invalid 8bit character in recipients headers',
+mime;mime;lua;headers_checks.lua;1189;if rspamd_config:is_mime_utf8() then
+header;header;lua;headers_checks.lua;1204;return task:has_header('X-mailer', true)
+header;header;lua;regexp/compromised_hosts.lua;25;"re = ""header_exists('X-PHP-Originating-Script')"","
+header;header;lua;regexp/compromised_hosts.lua;26;"description = ""Has X-PHP-Originating-Script header"","
+header;header;lua;regexp/compromised_hosts.lua;31;"re = ""header_exists('X-PHP-Script')"","
+header;header;lua;regexp/compromised_hosts.lua;32;"description = ""Has X-PHP-Script header"","
+header;header;lua;regexp/compromised_hosts.lua;40;"re = ""header_exists('X-Source') || header_exists('X-Source-Args') || header_exists('X-Source-Dir')"","
+header;header;lua;regexp/compromised_hosts.lua;41;"description = ""Has X-Source headers"","
+header;header;lua;regexp/compromised_hosts.lua;48;local xas = task:get_header('X-Authenticated-Sender')
+header;header;lua;regexp/compromised_hosts.lua;61;description = 'Has X-Authenticated-Sender header',
+header;header;lua;regexp/compromised_hosts.lua;69;local xgmsv = task:get_header('X-Get-Message-Sender-Via')
+header;header;lua;regexp/compromised_hosts.lua;82;description = 'Has X-Get-Message-Sender-Via: header',
+header;header;lua;regexp/compromised_hosts.lua;87;-- X-AntiAbuse: This header was added to track abuse, please include it with any abuse report
+header;header;lua;regexp/compromised_hosts.lua;93;"re = ""header_exists('X-AntiAbuse')"","
+header;header;lua;regexp/compromised_hosts.lua;94;"description = ""Has X-AntiAbuse headers"","
+header;header;lua;regexp/compromised_hosts.lua;126;"re = ""header_exists('X-Authentication-Warning')"","
+header;header;lua;regexp/compromised_hosts.lua;127;"description = ""Has X-Authentication-Warning header"","
+header;header;lua;regexp/compromised_hosts.lua;193;local sender = task:get_header('Sender')
+header;header;lua;regexp/compromised_hosts.lua;203;local replyto = task:get_header('Reply-To')
+lua;lua;lua;regexp/misc.lua;22;"re = '/<meta\\s+http-equiv=""refresh""\\s+content=""\\d+\\s*;\\s*url=/{sa_raw_body}i',"
+lua;lua;lua;regexp/misc.lua;31;"re = '/data:[^\\/]+\\/[^; ]+;base64,/{sa_raw_body}i',"
+lua;lua;lua;regexp/misc.lua;39;"re = '/data:text\\/(?:plain|html);base64,/{sa_raw_body}i',"
+header;header;lua;regexp/misc.lua;71;local list_unsub = [[header_exists(List-Unsubscribe)]]
+header;header;lua;regexp/misc.lua;72;local x_php_origin = [[header_exists(X-PHP-Originating-Script)]]
+body_words;words;lua;regexp/misc.lua;76;btc_wallet_address, password_in_words, wallet_word,
+header;header;lua;regexp/headers.lua;18;-- Definitions of header regexps
+mime;mime;lua;regexp/headers.lua;27;local subject_needs_mime = 'Subject=/[\\x00-\\x08\\x0b\\x0c\\x0e-\\x1f\\x7f-\\xff]/X'
+mime;mime;lua;regexp/headers.lua;30;re = string.format('!(%s) & !(%s) & (%s)', subject_encoded_b64, subject_encoded_qp, subject_needs_mime),
+mime;mime;lua;regexp/headers.lua;32;mime_only = true,
+mime;mime;lua;regexp/headers.lua;39;local raw_from_needs_mime = 'From=/[\\x00-\\x08\\x0b\\x0c\\x0e-\\x1f\\x7f-\\xff]/X'
+mime;mime;lua;regexp/headers.lua;41;re = string.format('!(%s) & !(%s) & (%s)', from_encoded_b64, from_encoded_qp, raw_from_needs_mime),
+header;header;lua;regexp/headers.lua;44;description = 'From header needs encoding',
+mime;mime;lua;regexp/headers.lua;50;local raw_to_needs_mime = 'To=/[\\x00-\\x08\\x0b\\x0c\\x0e-\\x1f\\x7f-\\xff]/X'
+mime;mime;lua;regexp/headers.lua;52;re = string.format('!(%s) & !(%s) & (%s)', to_encoded_b64, to_encoded_qp, raw_to_needs_mime),
+header;header;lua;regexp/headers.lua;55;description = 'To header needs encoding',
+header;header;lua;regexp/headers.lua;76;description = 'HTTP URL preceded by the start of a line, quote, or whitespace, with normal or URL-encoded colons in From header',
+header;header;lua;regexp/headers.lua;80;-- Detects that there is no space in From header (e.g. Some Name<some@host>)
+header;header;lua;regexp/headers.lua;85;description = 'No space in From header',
+header;header;lua;regexp/headers.lua;97;-- Detects missing Subject header
+raw_header;raw_header;lua;regexp/headers.lua;99;re = '!raw_header_exists(Subject)',
+header;header;lua;regexp/headers.lua;102;description = 'Subject header is missing',
+header;header;lua;regexp/headers.lua;109;description = 'Subject header is empty',
+header;header;lua;regexp/headers.lua;112;local hdr = task:get_header('Subject')
+header;header;lua;regexp/headers.lua;120;-- Detects missing To header
+raw_header;raw_header;lua;regexp/headers.lua;122;re = '!raw_header_exists(To)',
+header;header;lua;regexp/headers.lua;124;description = 'To header is missing',
+header;header;lua;regexp/headers.lua;149;local has_mid = 'header_exists(Message-Id)'
+header;header;lua;regexp/headers.lua;151;re = '!header_exists(Message-Id)',
+header;header;lua;regexp/headers.lua;153;description = 'Message-ID header is missing',
+header;header;lua;regexp/headers.lua;163;description = 'Spambots signatures in received headers',
+header;header;lua;regexp/headers.lua;173;description = 'Charset header is missing',
+header;header;lua;regexp/headers.lua;219;-- From contains only 7bit characters (parsed headers are used)
+mime;mime;lua;regexp/headers.lua;220;local from_needs_mime = 'From=/[\\x00-\\x08\\x0b\\x0c\\x0e-\\x1f\\x7f-\\xff]/Hr'
+mime;mime;lua;regexp/headers.lua;223;re = string.format('%s & !%s', from_encoded_b64, from_needs_mime),
+header;header;lua;regexp/headers.lua;225;description = 'From header is unnecessarily encoded in base64',
+mime;mime;lua;regexp/headers.lua;232;re = string.format('%s & !%s', from_encoded_qp, from_needs_mime),
+header;header;lua;regexp/headers.lua;234;description = 'From header is unnecessarily encoded in quoted-printable',
+header;header;lua;regexp/headers.lua;238;-- To contains only 7bit characters (parsed headers are used)
+mime;mime;lua;regexp/headers.lua;239;local to_needs_mime = 'To=/[\\x00-\\x08\\x0b\\x0c\\x0e-\\x1f\\x7f-\\xff]/Hr'
+mime;mime;lua;regexp/headers.lua;242;re = string.format('%s & !%s', to_encoded_b64, to_needs_mime),
+header;header;lua;regexp/headers.lua;244;description = 'To header is unnecessarily encoded in base64',
+mime;mime;lua;regexp/headers.lua;251;re = string.format('%s & !%s', to_encoded_qp, to_needs_mime),
+header;header;lua;regexp/headers.lua;253;description = 'To header is unnecessarily encoded in quoted-printable',
+header;header;lua;regexp/headers.lua;258;-- Regexp that checks that Reply-To header is encoded with base64 (search in raw headers)
+header;header;lua;regexp/headers.lua;260;-- Reply-To contains only 7bit characters (parsed headers are used)
+mime;mime;lua;regexp/headers.lua;261;local replyto_needs_mime = 'Reply-To=/[\\x00-\\x08\\x0b\\x0c\\x0e-\\x1f\\x7f-\\xff]/Hr'
+mime;mime;lua;regexp/headers.lua;264;re = string.format('%s & !%s', replyto_encoded_b64, replyto_needs_mime),
+header;header;lua;regexp/headers.lua;266;description = 'Reply-To header is unnecessarily encoded in base64',
+header;header;lua;regexp/headers.lua;271;-- Regexp that checks that Reply-To header is encoded with quoted-printable (search in raw headers)
+mime;mime;lua;regexp/headers.lua;275;re = string.format('%s & !%s', replyto_encoded_qp, replyto_needs_mime),
+header;header;lua;regexp/headers.lua;277;description = 'Reply-To header is unnecessarily encoded in quoted-printable',
+header;header;lua;regexp/headers.lua;282;-- Regexp that checks that Cc header is encoded with base64 (search in raw headers)
+header;header;lua;regexp/headers.lua;284;-- Co contains only 7bit characters (parsed headers are used)
+mime;mime;lua;regexp/headers.lua;285;local cc_needs_mime = 'Cc=/[\\x00-\\x08\\x0b\\x0c\\x0e-\\x1f\\x7f-\\xff]/Hr'
+mime;mime;lua;regexp/headers.lua;288;re = string.format('%s & !%s', cc_encoded_b64, cc_needs_mime),
+header;header;lua;regexp/headers.lua;290;description = 'Cc header is unnecessarily encoded in base64',
+header;header;lua;regexp/headers.lua;295;-- Regexp that checks that Cc header is encoded with quoted-printable (search in raw headers)
+mime;mime;lua;regexp/headers.lua;299;re = string.format('%s & !%s', cc_encoded_qp, cc_needs_mime),
+header;header;lua;regexp/headers.lua;301;description = 'Cc header is unnecessarily encoded in quoted-printable',
+mime;mime;lua;regexp/headers.lua;306;local subj_needs_mime = 'Subject=/[\\x00-\\x08\\x0b\\x0c\\x0e-\\x1f\\x7f-\\xff]/Hr'
+mime;mime;lua;regexp/headers.lua;308;re = string.format('%s & !%s', subj_encoded_b64, subj_needs_mime),
+header;header;lua;regexp/headers.lua;310;description = 'Subject header is unnecessarily encoded in base64',
+mime;mime;lua;regexp/headers.lua;316;re = string.format('%s & !%s', subj_encoded_qp, subj_needs_mime),
+header;header;lua;regexp/headers.lua;318;description = 'Subject header is unnecessarily encoded in quoted-printable',
+header;header;lua;regexp/headers.lua;322;-- Detect forged outlook headers
+header;header;lua;regexp/headers.lua;323;-- OE X-Mailer header
+header;header;lua;regexp/headers.lua;332;-- Iplanet received header
+header;header;lua;regexp/headers.lua;347;-- Outlook specific headers
+header;header;lua;regexp/headers.lua;352;-- Forged outlook headers
+mime;mime;lua;regexp/headers.lua;368;local mime_html = 'content_type_is_type(text) & content_type_is_subtype(/.?html/)'
+mime;mime;lua;regexp/headers.lua;375;yahoo_bulk, any_outlook_mua, mime_html, tag_exists_html, tag_exists_head,
+header;header;lua;regexp/headers.lua;386;description = 'Suspicious boundary in Content-Type header',
+header;header;lua;regexp/headers.lua;413;-- Detect forged The Bat! headers
+header;header;lua;regexp/headers.lua;414;-- The Bat! X-Mailer header
+header;header;lua;regexp/headers.lua;420;-- Summary rule for forged The Bat! Message-ID header
+header;header;lua;regexp/headers.lua;427;-- Summary rule for forged The Bat! Message-ID header with unknown template
+header;header;lua;regexp/headers.lua;435;-- Detect forged KMail headers
+header;header;lua;regexp/headers.lua;436;-- KMail User-Agent header
+header;header;lua;regexp/headers.lua;440;-- Summary rule for forged KMail Message-ID header with unknown template
+header;header;lua;regexp/headers.lua;448;-- Detect forged Opera Mail headers
+header;header;lua;regexp/headers.lua;449;-- Opera Mail User-Agent header
+header;header;lua;regexp/headers.lua;453;-- Rule for forged Opera Mail Message-ID header
+header;header;lua;regexp/headers.lua;461;-- Detect forged Mozilla Mail/Thunderbird/Seamonkey/Postbox headers
+header;header;lua;regexp/headers.lua;473;-- Summary rule for forged Mozilla Mail Message-ID header
+header;header;lua;regexp/headers.lua;489;-- Summary rule for forged Thunderbird Message-ID header
+header;header;lua;regexp/headers.lua;504;-- Summary rule for forged Seamonkey Message-ID header
+header;header;lua;regexp/headers.lua;519;-- Summary rule for forged Postbox Message-ID header
+header;header;lua;regexp/headers.lua;541;description = 'Message-ID header is incorrect',
+header;header;lua;regexp/headers.lua;545;-- Only Content-Type header without other MIME headers
+header;header;lua;regexp/headers.lua;546;local cd = 'header_exists(Content-Disposition)'
+header;header;lua;regexp/headers.lua;547;local cte = 'header_exists(Content-Transfer-Encoding)'
+header;header;lua;regexp/headers.lua;548;local ct = 'header_exists(Content-Type)'
+raw_header;raw_header;lua;regexp/headers.lua;549;local mime_version = 'raw_header_exists(MIME-Version)'
+mime;mime;lua;regexp/headers.lua;552;re = string.format('!(%s) & !(%s) & (%s) & !(%s) & !(%s)', cd, cte, ct, mime_version, ct_text_plain),
+header;header;lua;regexp/headers.lua;554;description = 'Only Content-Type header without other MIME headers',
+mime;mime;lua;regexp/headers.lua;560;local mimeole_ms = 'X-MimeOLE=/^Produced By Microsoft MimeOLE/H'
+mime;mime;lua;regexp/headers.lua;563;re = string.format('(%s) & !(%s) & !(%s)', msgid_dollars_ok, mimeole_ms, rcvd_with_exchange),
+header;header;lua;regexp/headers.lua;573;description = 'Reply-type in Content-Type header',
+header;header;lua;regexp/headers.lua;583;description = 'Forged Yahoo Message-ID header',
+header;header;lua;regexp/headers.lua;587;-- Forged The Bat! MUA headers
+header;header;lua;regexp/headers.lua;595;description = 'Forged The Bat! MUA headers',
+header;header;lua;regexp/headers.lua;635;-- Two received headers with ip addresses
+header;header;lua;regexp/headers.lua;641;description = 'Has two Received headers containing bare IP addresses',
+header;header;lua;regexp/headers.lua;650;description = 'Quoted Reply-To header from Yahoo (seems to be forged)',
+header;header;lua;regexp/headers.lua;662;local has_msmail_pri = 'header_exists(X-MSMail-Priority)'
+header;header;lua;regexp/headers.lua;663;local has_mimeole = 'header_exists(X-MimeOLE)'
+header;header;lua;regexp/headers.lua;666;local has_x_android_message_id = 'header_exists(X-Android-Message-Id)'
+mime;mime;lua;regexp/headers.lua;670;has_mimeole,
+header;header;lua;regexp/headers.lua;679;-- Empty delimiters between header names and header values
+header;header;lua;regexp/headers.lua;680;local function gen_check_header_delimiter_empty(header_name)
+header;header;lua;regexp/headers.lua;682;for _, rh in ipairs(task:get_header_full(header_name) or {}) do
+header;header;lua;regexp/headers.lua;693;description = 'From header has no delimiter between header name and header value',
+header;header;lua;regexp/headers.lua;696;check_from_delim_empty = gen_check_header_delimiter_empty('From')
+header;header;lua;regexp/headers.lua;702;description = 'To header has no delimiter between header name and header value',
+header;header;lua;regexp/headers.lua;705;check_to_delim_empty = gen_check_header_delimiter_empty('To')
+header;header;lua;regexp/headers.lua;711;description = 'Cc header has no delimiter between header name and header value',
+header;header;lua;regexp/headers.lua;714;check_cc_delim_empty = gen_check_header_delimiter_empty('Cc')
+header;header;lua;regexp/headers.lua;720;description = 'Reply-To header has no delimiter between header name and header value',
+header;header;lua;regexp/headers.lua;723;check_repto_delim_empty = gen_check_header_delimiter_empty('Reply-To')
+header;header;lua;regexp/headers.lua;729;description = 'Date header has no delimiter between header name and header value',
+header;header;lua;regexp/headers.lua;732;check_date_delim_empty = gen_check_header_delimiter_empty('Date')
+header;header;lua;regexp/headers.lua;736;-- Definitions of received headers regexp
+header;header;lua;regexp/headers.lua;747;description = 'Fake HELO mail.ru in Received header from non-mail.ru sender address',
+header;header;lua;regexp/headers.lua;779;description = 'Fake smtp.yandex.ru Received header',
+header;header;lua;regexp/headers.lua;786;description = 'Forged generic Received header',
+header;header;lua;regexp/headers.lua;814;description = 'Invalid Postfix Received header',
+header;header;lua;regexp/headers.lua;821;description = 'Localhost HELO seen in Received header',
+header;header;lua;regexp/headers.lua;828;"description = ""X-PHP-Originating-Script header appears forged"","
+header;header;lua;regexp/headers.lua;855;'header_exists(X-Mailer-LID)',
+header;header;lua;regexp/headers.lua;856;'header_exists(X-Mailer-RecptId)',
+header;header;lua;regexp/headers.lua;857;'header_exists(X-Mailer-SID)',
+header;header;lua;regexp/headers.lua;858;'header_exists(X-Mailer-Sent-By)',
+header;header;lua;regexp/headers.lua;867;description = 'Content-Type header ends with a semi-colon',
+header;header;lua;regexp/headers.lua;915;re = string.format('%s || %s', 'header_exists(Organization)', 'header_exists(Organisation)'),
+header;header;lua;regexp/headers.lua;916;description = 'Has Organization header',
+header;header;lua;regexp/headers.lua;922;re = 'header_exists(Content-Description)',
+header;header;lua;regexp/headers.lua;923;description = 'Has Content-Description header',
+header;header;lua;regexp/headers.lua;930;"description = 'Content-Description header reads ""Mail message body"", commonly seen in spam',"
+header;header;lua;regexp/headers.lua;937;description = 'Fake X-PHP-Originating-Script header',
+header;header;lua;regexp/headers.lua;943;"re = ""header_exists('X-Originating-IP')"","
+header;header;lua;regexp/headers.lua;944;"description = ""Has X-Originating-IP header"","
+header;header;lua;regexp/headers.lua;950;re = string.format('%s', 'header_exists(List-Unsubscribe)'),
+header;header;lua;regexp/headers.lua;951;description = 'Has List-Unsubscribe header',
+header;header;lua;regexp/headers.lua;963;description = 'X-Mailer/User-Agent header has no version number',
+header;header;lua;regexp/headers.lua;968;-- Detects messages missing both X-Mailer and User-Agent header
+header;header;lua;regexp/headers.lua;969;local has_ua = 'header_exists(User-Agent)'
+header;header;lua;regexp/headers.lua;970;local has_xmailer = 'header_exists(X-Mailer)'
+header;header;lua;regexp/headers.lua;974;description = 'Message has neither X-Mailer nor User-Agent header',
+header;header;lua;regexp/headers.lua;982;-- but this header is widely abused by spammers.
+header;header;lua;regexp/headers.lua;999;description = 'X-Mailer header has a very old MUA version',
+header;header;lua;regexp/headers.lua;1025;-- X-Mailer header values which should not occur (in the modern mail) at all
+header;header;lua;regexp/headers.lua;1027;-- header name repeated in the header value
+header;header;lua;regexp/headers.lua;1029;-- Mozilla Thunderbird uses User-Agent header, not X-Mailer
+header;header;lua;regexp/headers.lua;1042;description = 'Forged X-Mailer header',
+header;header;lua;regexp/headers.lua;1049;-- X-Mailer headers like: 'Internet Mail Service (5.5.2650.21)' are being
+header;header;lua;regexp/headers.lua;1051;-- some mail servers. Example of genuine headers (DC-EXMPL is a hostname which
+header;header;lua;mid.lua;19;local mid = task:get_header('Message-ID')
+mime;mime;lua;mid.lua;85;type = 'callback,mime',
+mime;mime;lua;mid.lua;112;type = 'normal,mime',
+mime;mime;lua;mid.lua;125;if mid_realm and mime_from and mime_from[1] and mime_from[1].user then
+mime;mime;lua;mid.lua;126;if (mid_realm == mime_from[1].user) then
+body_words;words;lua;misc.lua;37;-- ND is relation of different words to total words
+body_words;words;lua;misc.lua;39;local tw = task:get_mempool():get_variable('total_words', 'int')
+header;header;lua;misc.lua;67;local date_time = task:get_header('Date')
+header;header;lua;misc.lua;95;description = 'Date header is missing',
+header;header;lua;misc.lua;104;description = 'Malformed Date header',
+header;header;lua;misc.lua;197;-- See if it matches the From header
+mime;mime;lua;misc.lua;215;type = 'mime',
+header;header;lua;misc.lua;245;"group = ""headers"","
+header;header;lua;misc.lua;253;local rcvds = task:get_received_headers()
+header;header;lua;misc.lua;270;-- Ignore artificial header from Rmilter
+header;header;lua;misc.lua;323;description = 'Authenticated hand-off was seen in Received headers',
+header;header;lua;misc.lua;335;-- Check Received headers
+header;header;lua;misc.lua;572;-- First check for a Reply-To header
+header;header;lua;misc.lua;573;local rt = task:get_header_full('Reply-To')
+header;header;lua;misc.lua;577;-- Get From and To headers
+header;header;lua;misc.lua;609;-- Parse Reply-To header
+header;header;lua;misc.lua;628;if not task:has_header('List-Unsubscribe') then
+header;header;lua;misc.lua;650;description = 'info@ From/To address with List-Unsubscribe headers',
+mime;mime;lua;misc.lua;663;local cte = p:get_mimepart():get_cte() or ''
+lua;lua;lua;misc.lua;664;if cte ~= '8bit' and p:has_8bit_raw() then
+mime;mime;lua;misc.lua;665;local _, _, attrs = p:get_mimepart():get_type_full()
+mime;mime;lua;misc.lua;711;if string.find(subtype:lower(), 'pkcs7%-mime') then
+mime;mime;lua;misc.lua;714;table.insert(opts, 'smime part')
+mime;mime;lua;misc.lua;755;group = 'mime_types',
+body_words;words;lua;html.lua;144;local l = p:get_words_count()
+body_words;words;lua;html.lua;146;local pic_words = 0
+body_words;words;lua;html.lua;156;-- We assume that a single picture 100x200 contains approx 3 words of text
+body_words;words;lua;html.lua;157;pic_words = pic_words + dim / 100
+body_words;words;lua;html.lua;164;if l + pic_words > 0 then
+body_words;words;lua;html.lua;165;local rel = pic_words / (l + pic_words)
+header;header;lua;rspamd.lua;29;dofile(local_rules .. '/regexp/headers.lua')
+header;header;lua;rspamd.lua;35;dofile(local_rules .. '/headers_checks.lua')
+header;header;lua;subject_checks.lua;29;local sbj = task:get_header('Subject')

@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """
-This module orchestrates the build of a trigger vocabulary
+Builds the trigger vocabularies from the training split.
+
+Document-frequency statistics are computed separately for spam and ham,
+candidate tokens are ranked by their spam association score, and thresholded
+into strict, extended, and broad trigger vocabularies.
 """
 
 import json
@@ -13,6 +17,13 @@ from src.utils.console import print_step, print_section, print_kv, print_end
 
 
 def run_trigger_vocabulary(output_root=None, dataset_split_dir=None):
+    """
+    Build and export the strict, extended, and broad trigger vocabularies.
+
+    Args:
+        output_root: Root directory for generated artifacts.
+        dataset_split_dir: Directory containing the training split.
+    """
 
     output_root = OUTPUT_ROOT if output_root is None else output_root
     dataset_split_dir = DATASET_SPLIT if dataset_split_dir is None else dataset_split_dir
@@ -22,16 +33,19 @@ def run_trigger_vocabulary(output_root=None, dataset_split_dir=None):
 
     print_step("Trigger Vocabulary Creation")
 
-    # Build DF counts
+    # Compute document frequencies separately for spam and ham training emails.
     df_spam, df_ham, N_spam, N_ham = build_df_counts(
         dataset_split_dir / "train" / "spam",
         dataset_split_dir / "train" / "ham",
     )
 
+    # Require both the configured absolute and relative minimum spam document frequency.
     min_df_spam = max(MIN_DF_SPAM, ceil(MIN_DF_SPAM_PERCENTAGE * N_spam))
 
+    # Score each token by its association with spam relative to ham.
     scores = compute_log_odds(df_spam, df_ham, N_spam, N_ham, ALPHA)
 
+    # Retain only sufficiently frequent spam tokens and attach their ranking statistics.
     candidates = [
         {
             "token": tok,
@@ -45,6 +59,7 @@ def run_trigger_vocabulary(output_root=None, dataset_split_dir=None):
         if df_spam[tok] >= min_df_spam
     ]
 
+    # Rank candidates primarily by spam association score and then by spam frequency.
     candidates.sort(
         key=lambda x: (x["score"], x["spam_df"], x["token"]),
         reverse=True,
@@ -58,7 +73,7 @@ def run_trigger_vocabulary(output_root=None, dataset_split_dir=None):
         "total_candidates": len(candidates),
         "count_score_ge_3_0": sum(1 for c in candidates if c["score"] >= 3.0),
         "count_score_ge_2_5": sum(1 for c in candidates if c["score"] >= 2.5),
-        "count_score_ge_2_0": sum(1 for c in candidates if c["score"] >= 2.0),
+        "count_score_ge_1_5": sum(1 for c in candidates if c["score"] >= 1.5),
         "score_at_50": candidates[49]["score"] if len(candidates) >= 50 else None,
         "score_at_100": candidates[99]["score"] if len(candidates) >= 100 else None,
         "score_at_200": candidates[199]["score"] if len(candidates) >= 200 else None,
@@ -82,10 +97,12 @@ def run_trigger_vocabulary(output_root=None, dataset_split_dir=None):
     with open(output_dir / "trigger_vocabulary_stats.json", "w", encoding="utf-8") as f:
         json.dump(stats, f, indent=2)
 
+    # Derive nested vocabulary scopes using progressively lower score thresholds.
     strict_threshold = 3.0
     extended_threshold = 2.5
     broad_threshold = 1.5
 
+    # Export each vocabulary together with the parameters required to reproduce it.
     strict = [c for c in candidates if c["score"] >= strict_threshold]
     extended = [c for c in candidates if c["score"] >= extended_threshold]
     broad = [c for c in candidates if c["score"] >= broad_threshold]
@@ -101,6 +118,7 @@ def run_trigger_vocabulary(output_root=None, dataset_split_dir=None):
         "token_definition": stats["token_definition"],
     }
 
+    # Export each vocabulary together with the parameters required to reproduce it.
     with open(output_dir / "trigger_words_strict.json", "w", encoding="utf-8") as f:
         json.dump({"metadata": metadata, "triggers": strict}, f, indent=2)
 

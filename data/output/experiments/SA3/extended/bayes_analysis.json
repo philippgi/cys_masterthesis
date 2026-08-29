@@ -1,0 +1,65 @@
+{
+  "n_baseline_detected_emails": 187,
+  "n_baseline_with_bayes": 187,
+  "n_salted_with_any_bayes": 187,
+  "n_bayes_lost_any": 0,
+  "n_bayes_lost_all": 0,
+  "baseline_bayes_score_mean": 0.978176,
+  "salted_bayes_score_mean": 0.972913,
+  "baseline_bayes_level_counts": {
+    "BAYES_00": 0,
+    "BAYES_05": 0,
+    "BAYES_20": 0,
+    "BAYES_40": 0,
+    "BAYES_50": 5,
+    "BAYES_60": 0,
+    "BAYES_80": 6,
+    "BAYES_95": 4,
+    "BAYES_99": 172,
+    "BAYES_999": 171
+  },
+  "salted_bayes_level_counts": {
+    "BAYES_00": 0,
+    "BAYES_05": 0,
+    "BAYES_20": 0,
+    "BAYES_40": 0,
+    "BAYES_50": 20,
+    "BAYES_60": 9,
+    "BAYES_80": 28,
+    "BAYES_95": 7,
+    "BAYES_99": 684,
+    "BAYES_999": 681
+  },
+  "bayes_transitions": [
+    {
+      "baseline_bayes": "BAYES_999",
+      "salted_best_bayes": "BAYES_999",
+      "count": 171
+    },
+    {
+      "baseline_bayes": "BAYES_80",
+      "salted_best_bayes": "BAYES_80",
+      "count": 6
+    },
+    {
+      "baseline_bayes": "BAYES_50",
+      "salted_best_bayes": "BAYES_50",
+      "count": 5
+    },
+    {
+      "baseline_bayes": "BAYES_95",
+      "salted_best_bayes": "BAYES_95",
+      "count": 3
+    },
+    {
+      "baseline_bayes": "BAYES_99",
+      "salted_best_bayes": "BAYES_95",
+      "count": 1
+    },
+    {
+      "baseline_bayes": "BAYES_95",
+      "salted_best_bayes": "BAYES_80",
+      "count": 1
+    }
+  ]
+}

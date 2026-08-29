@@ -1,56 +1,10 @@
 #!/usr/bin/env python3
 """
-Bayes analysis for SpamAssassin experiments.
+Analyzes SpamAssassin Bayes behavior for baseline-detected spam emails.
 
-This module analyzes Bayes-related rule behavior in SpamAssassin results.
-
-Purpose
--------
-The goal of this analysis step is to determine whether Unicode salting
-affects SpamAssassin's Bayesian classification signals.
-
-The module extracts all BAYES_* rules from the variant-level results and
-compares baseline-detected spam emails with their salted variants.
-
-Analyses performed
-------------------
-1. Baseline Bayes distribution
-   Counts how often each BAYES_* rule level appears in baseline-detected
-   spam emails.
-
-2. Salted Bayes distribution
-   Counts how often each BAYES_* rule level appears in salted variants of
-   baseline-detected spam emails.
-
-3. Bayes transition analysis
-   Compares the strongest baseline BAYES_* rule of each original email with
-   the strongest BAYES_* rule observed in its salted variants.
-
-4. Bayes loss analysis
-   Counts how often a baseline Bayes signal disappears completely in salted
-   variants.
-
-Inputs
-------
-spamassassin_results.csv
-    Variant-level evaluation results produced by the SpamAssassin runner.
-
-spamassassin_results_paired.csv
-    Paired baseline vs salted comparison results.
-
-Outputs
--------
-bayes_analysis.csv
-    Per-email Bayes transition statistics.
-
-bayes_level_counts.csv
-    Aggregated counts of BAYES_* rules in baseline and salted rows.
-
-bayes_analysis.json
-    Structured Bayes summary for further reuse.
-
-The results are also returned as a dictionary so that they can be integrated
-into the experiment summary.
+The analysis compares discrete BAYES_* rule levels between baseline messages
+and their salted variants, including level distributions, transitions, signal
+loss, and aggregated Bayes scores.
 """
 
 from __future__ import annotations
@@ -79,6 +33,18 @@ BAYES_RULE_ORDER = [
 
 BAYES_RULE_RANK = {rule: idx for idx, rule in enumerate(BAYES_RULE_ORDER)}
 
+BAYES_RULE_SCORE = {
+    "BAYES_00": 0.00,
+    "BAYES_05": 0.05,
+    "BAYES_20": 0.20,
+    "BAYES_40": 0.40,
+    "BAYES_50": 0.50,
+    "BAYES_60": 0.60,
+    "BAYES_80": 0.80,
+    "BAYES_95": 0.95,
+    "BAYES_99": 0.99,
+    "BAYES_999": 0.999,
+}
 
 # --------------------------------------------------
 # Utility
@@ -86,10 +52,15 @@ BAYES_RULE_RANK = {rule: idx for idx, rule in enumerate(BAYES_RULE_ORDER)}
 
 def _parse_rules(rule_string: str) -> list[str]:
     """
-    Splits the pipe-separated SpamAssassin rule string into a list.
+    Parse a pipe-separated SpamAssassin rule string.
 
-    The value "none" is ignored because it does not represent a real rule.
+    Args:
+        rule_string (str): Serialized rule list from the evaluation results.
+
+    Returns:
+        list[str]: Parsed rule names excluding empty and "none" entries.
     """
+
     if not rule_string:
         return []
 
@@ -102,18 +73,29 @@ def _parse_rules(rule_string: str) -> list[str]:
 
 def _extract_bayes_rules(rule_string: str) -> list[str]:
     """
-    Extracts all BAYES_* rules from a pipe-separated rule string.
+    Extract Bayes-related rules from a serialized rule list.
+
+    Args:
+        rule_string (str): Serialized SpamAssassin rule list.
+
+    Returns:
+        list[str]: Rules beginning with BAYES_.
     """
+
     return [rule for rule in _parse_rules(rule_string) if rule.startswith("BAYES_")]
 
 
 def _strongest_bayes_rule(bayes_rules: list[str]) -> str | None:
     """
-    Returns the strongest BAYES_* rule from a list.
+    Select the strongest known Bayes rule from a rule list.
 
-    Strength is determined by BAYES_RULE_ORDER. Unknown BAYES_* rules are
-    ignored.
+    Args:
+        bayes_rules (list[str]): Bayes-related SpamAssassin rules.
+
+    Returns:
+        str | None: Highest-ranked known Bayes rule, or None if absent.
     """
+
     known_rules = [rule for rule in bayes_rules if rule in BAYES_RULE_RANK]
     if not known_rules:
         return None
@@ -131,19 +113,17 @@ def run_bayes_analysis_spamassassin(
     output_dir: Path,
 ):
     """
-    Perform Bayes analysis.
+    Analyze SpamAssassin Bayes behavior for baseline-detected spam and salted variants.
 
-    Parameters
-    ----------
-    results_csv
-        Path to spamassassin_results.csv.
+    Args:
+        results_csv (Path): Variant-level evaluation results.
+        paired_csv (Path): Paired baseline and salted evaluation results.
+        output_dir (Path): Directory for analysis artifacts.
 
-    paired_csv
-        Path to spamassassin_results_paired.csv.
-
-    output_dir
-        Directory where analysis outputs will be written.
+    Returns:
+        dict: Aggregated Bayes distributions, transitions, losses, and score statistics.
     """
+
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # --------------------------------------------------
@@ -248,10 +228,11 @@ def run_bayes_analysis_spamassassin(
             n_salted_with_any_bayes += 1
 
         if baseline_rule is not None:
-            if not salted_any_bayes:
-                n_bayes_lost_any += 1
             if not salted_all_bayes:
                 # At least one salted variant lost the Bayes signal
+                n_bayes_lost_any += 1
+            if not salted_any_bayes:
+                # All salted variants lost the Bayes signal
                 n_bayes_lost_all += 1
 
         transition_key = (
@@ -272,6 +253,28 @@ def run_bayes_analysis_spamassassin(
         )
 
     transition_rows.sort(key=lambda row: row["message_id"])
+
+    baseline_bayes_scores = [
+        BAYES_RULE_SCORE[info["strongest_bayes"]]
+        for info in baseline_by_message.values()
+        if info["strongest_bayes"] in BAYES_RULE_SCORE
+    ]
+
+    salted_bayes_scores = [
+        BAYES_RULE_SCORE[v["strongest_bayes"]]
+        for variants in salted_by_message.values()
+        for v in variants
+        if v["strongest_bayes"] in BAYES_RULE_SCORE
+    ]
+
+    baseline_bayes_score_mean = (
+        round(sum(baseline_bayes_scores) / len(baseline_bayes_scores), 6)
+        if baseline_bayes_scores else None
+    )
+    salted_bayes_score_mean = (
+        round(sum(salted_bayes_scores) / len(salted_bayes_scores), 6)
+        if salted_bayes_scores else None
+    )
 
     # --------------------------------------------------
     # Write per-email transition CSV
@@ -344,6 +347,8 @@ def run_bayes_analysis_spamassassin(
         "n_salted_with_any_bayes": n_salted_with_any_bayes,
         "n_bayes_lost_any": n_bayes_lost_any,
         "n_bayes_lost_all": n_bayes_lost_all,
+        "baseline_bayes_score_mean": baseline_bayes_score_mean,
+        "salted_bayes_score_mean": salted_bayes_score_mean,
         "baseline_bayes_level_counts": {
             rule: baseline_bayes_counts.get(rule, 0) for rule in BAYES_RULE_ORDER
         },

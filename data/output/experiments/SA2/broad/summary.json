@@ -1,0 +1,563 @@
+{
+  "experiment_id": "SA2_broad",
+  "filter": "SpamAssassin",
+  "mechanism": "rules_only",
+  "rule_scope": "extended_local_content",
+  "salting_condition": "broad",
+  "salting_config": {
+    "subject_max_insertions": 1,
+    "body_max_insertions": 3,
+    "salt_mode": "single",
+    "insert_after_index": 2,
+    "fragment_max_positions": null
+  },
+  "inputs": {
+    "results_csv": "C:\\Projekte\\masterthesis_cys\\data\\output\\experiments\\SA2\\broad\\spamassassin_evaluation\\spamassassin_results.csv",
+    "paired_csv": "C:\\Projekte\\masterthesis_cys\\data\\output\\experiments\\SA2\\broad\\spamassassin_evaluation\\spamassassin_results_paired.csv"
+  },
+  "counts": {
+    "n_variant_rows_total": 2005,
+    "n_paired_rows_total": 245,
+    "n_baseline_spam": 245,
+    "n_baseline_ham": 780,
+    "n_salted_variants": 980,
+    "n_unique_salted_sources": 245,
+    "n_baseline_detected_spam": 158,
+    "n_baseline_not_detected_spam": 87,
+    "n_baseline_spam_detected_variant_level": 158,
+    "n_baseline_ham_false_positive": 2
+  },
+  "rates": {
+    "baseline_spam_detection_rate": 0.644898,
+    "baseline_ham_false_positive_rate": 0.002564,
+    "bypass_rate_any": 0.018987,
+    "bypass_rate_all": 0.018987,
+    "classification_stability_all_spam": 0.981013,
+    "classification_stability_any_spam": 0.981013
+  },
+  "means": {
+    "mean_baseline_score": 12.251899,
+    "mean_salted_score_mean": 11.722152,
+    "mean_salted_score_min": 11.701899,
+    "mean_score_drop": 0.529747,
+    "mean_best_case_score_drop": 0.55,
+    "mean_baseline_rule_count": 13.265823,
+    "mean_salted_rule_count": 12.859177,
+    "mean_rule_loss": 0.406646
+  },
+  "medians": {
+    "median_score_drop": 0.0,
+    "median_best_case_score_drop": 0.0,
+    "median_rule_loss": 0.0
+  },
+  "classification_counts": {
+    "n_any_bypass": 3,
+    "n_all_bypass": 3,
+    "n_all_spam": 155,
+    "n_any_spam": 155
+  },
+  "codepoints": {
+    "00AD": {
+      "n_variants": 245,
+      "n_unique_sources": 245,
+      "n_baseline_detected_sources": 158,
+      "bypass_rate": 0.018987,
+      "spam_rate": 0.981013,
+      "mean_score": 11.724051,
+      "median_score": 11.65,
+      "mean_rule_count": 12.85443
+    },
+    "200B": {
+      "n_variants": 245,
+      "n_unique_sources": 245,
+      "n_baseline_detected_sources": 158,
+      "bypass_rate": 0.018987,
+      "spam_rate": 0.981013,
+      "mean_score": 11.721519,
+      "median_score": 11.65,
+      "mean_rule_count": 12.860759
+    },
+    "200C": {
+      "n_variants": 245,
+      "n_unique_sources": 245,
+      "n_baseline_detected_sources": 158,
+      "bypass_rate": 0.018987,
+      "spam_rate": 0.981013,
+      "mean_score": 11.721519,
+      "median_score": 11.65,
+      "mean_rule_count": 12.860759
+    },
+    "200D": {
+      "n_variants": 245,
+      "n_unique_sources": 245,
+      "n_baseline_detected_sources": 158,
+      "bypass_rate": 0.018987,
+      "spam_rate": 0.981013,
+      "mean_score": 11.721519,
+      "median_score": 11.65,
+      "mean_rule_count": 12.860759
+    }
+  },
+  "salting_intensity": {
+    "mean_subject_insertions": 0.632653,
+    "mean_body_insertions": 1.779592,
+    "mean_total_insertions": 2.412245,
+    "max_subject_insertions": 1,
+    "max_body_insertions": 3
+  },
+  "insertion_distribution": {
+    "1": 396,
+    "2": 16,
+    "3": 336,
+    "4": 232
+  },
+  "bayes_analysis": null,
+  "neural_analysis": null,
+  "rule_loss_analysis": {
+    "all_rule_loss": [
+      {
+        "rule": "DEAR_SOMETHING",
+        "baseline_occurrences": 15,
+        "lost_in_any_variant": 15,
+        "lost_in_all_variants": 15,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "ENGLISH_UCE_SUBJECT",
+        "baseline_occurrences": 10,
+        "lost_in_any_variant": 10,
+        "lost_in_all_variants": 10,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "CTE_8BIT_MISMATCH",
+        "baseline_occurrences": 6,
+        "lost_in_any_variant": 6,
+        "lost_in_all_variants": 6,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "TO_NO_BRKTS_MSFT\tautolearn=disabled",
+        "baseline_occurrences": 3,
+        "lost_in_any_variant": 3,
+        "lost_in_all_variants": 3,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "DRUG_ED_ONLINE",
+        "baseline_occurrences": 3,
+        "lost_in_any_variant": 3,
+        "lost_in_all_variants": 3,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "TVD_APPROVED",
+        "baseline_occurrences": 2,
+        "lost_in_any_variant": 2,
+        "lost_in_all_variants": 2,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "MONEY_BACK",
+        "baseline_occurrences": 2,
+        "lost_in_any_variant": 2,
+        "lost_in_all_variants": 2,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "MIME_BASE64_TEXT",
+        "baseline_occurrences": 2,
+        "lost_in_any_variant": 2,
+        "lost_in_all_variants": 2,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "WEIRD_QUOTING\tautolearn=disabled",
+        "baseline_occurrences": 1,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "UPPERCASE_50_75\tautolearn=disabled",
+        "baseline_occurrences": 1,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "T_OBFU_DOC_ATTACH",
+        "baseline_occurrences": 1,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "THIS_AD\tautolearn=disabled",
+        "baseline_occurrences": 1,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "LOTS_OF_MONEY\tautolearn=disabled",
+        "baseline_occurrences": 1,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "FSL_CTYPE_WIN1251",
+        "baseline_occurrences": 1,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "FROM_ILLEGAL_CHARS",
+        "baseline_occurrences": 1,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "DEAR_FRIEND",
+        "baseline_occurrences": 1,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "ADVANCE_FEE_4_NEW_MONEY",
+        "baseline_occurrences": 1,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "RATWARE_MS_HASH\tautolearn=disabled",
+        "baseline_occurrences": 1,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 0,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 0.0
+      },
+      {
+        "rule": "XPRIO",
+        "baseline_occurrences": 13,
+        "lost_in_any_variant": 9,
+        "lost_in_all_variants": 9,
+        "lost_rate_any_variant": 0.692308,
+        "lost_rate_all_variants": 0.692308
+      },
+      {
+        "rule": "PP_MIME_FAKE_ASCII_TEXT",
+        "baseline_occurrences": 6,
+        "lost_in_any_variant": 4,
+        "lost_in_all_variants": 4,
+        "lost_rate_any_variant": 0.666667,
+        "lost_rate_all_variants": 0.666667
+      },
+      {
+        "rule": "MSOE_MID_WRONG_CASE\tautolearn=disabled",
+        "baseline_occurrences": 3,
+        "lost_in_any_variant": 2,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.666667,
+        "lost_rate_all_variants": 0.333333
+      },
+      {
+        "rule": "TO_NO_BRKTS_MSFT",
+        "baseline_occurrences": 23,
+        "lost_in_any_variant": 15,
+        "lost_in_all_variants": 15,
+        "lost_rate_any_variant": 0.652174,
+        "lost_rate_all_variants": 0.652174
+      },
+      {
+        "rule": "XPRIO\tautolearn=disabled",
+        "baseline_occurrences": 5,
+        "lost_in_any_variant": 3,
+        "lost_in_all_variants": 3,
+        "lost_rate_any_variant": 0.6,
+        "lost_rate_all_variants": 0.6
+      },
+      {
+        "rule": "URG_BIZ",
+        "baseline_occurrences": 10,
+        "lost_in_any_variant": 5,
+        "lost_in_all_variants": 5,
+        "lost_rate_any_variant": 0.5,
+        "lost_rate_all_variants": 0.5
+      },
+      {
+        "rule": "WEIRD_QUOTING",
+        "baseline_occurrences": 2,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.5,
+        "lost_rate_all_variants": 0.5
+      },
+      {
+        "rule": "T_MONEY_PERCENT\tautolearn=disabled",
+        "baseline_occurrences": 2,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.5,
+        "lost_rate_all_variants": 0.5
+      },
+      {
+        "rule": "RCVD_FAKE_HELO_DOTCOM\tautolearn=disabled",
+        "baseline_occurrences": 2,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.5,
+        "lost_rate_all_variants": 0.5
+      },
+      {
+        "rule": "BAD_CREDIT",
+        "baseline_occurrences": 10,
+        "lost_in_any_variant": 3,
+        "lost_in_all_variants": 3,
+        "lost_rate_any_variant": 0.3,
+        "lost_rate_all_variants": 0.3
+      },
+      {
+        "rule": "MIME_QP_LONG_LINE",
+        "baseline_occurrences": 11,
+        "lost_in_any_variant": 3,
+        "lost_in_all_variants": 3,
+        "lost_rate_any_variant": 0.272727,
+        "lost_rate_all_variants": 0.272727
+      },
+      {
+        "rule": "WEIRD_PORT",
+        "baseline_occurrences": 8,
+        "lost_in_any_variant": 2,
+        "lost_in_all_variants": 2,
+        "lost_rate_any_variant": 0.25,
+        "lost_rate_all_variants": 0.25
+      },
+      {
+        "rule": "T_FILL_THIS_FORM_SHORT",
+        "baseline_occurrences": 16,
+        "lost_in_any_variant": 4,
+        "lost_in_all_variants": 2,
+        "lost_rate_any_variant": 0.25,
+        "lost_rate_all_variants": 0.125
+      },
+      {
+        "rule": "LOW_PRICE",
+        "baseline_occurrences": 10,
+        "lost_in_any_variant": 2,
+        "lost_in_all_variants": 2,
+        "lost_rate_any_variant": 0.2,
+        "lost_rate_all_variants": 0.2
+      },
+      {
+        "rule": "SUBJECT_DIET",
+        "baseline_occurrences": 5,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.2,
+        "lost_rate_all_variants": 0.2
+      },
+      {
+        "rule": "T_TVD_MIME_EPI",
+        "baseline_occurrences": 5,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 0,
+        "lost_rate_any_variant": 0.2,
+        "lost_rate_all_variants": 0.0
+      },
+      {
+        "rule": "T_KAM_HTML_FONT_INVALID",
+        "baseline_occurrences": 6,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.166667,
+        "lost_rate_all_variants": 0.166667
+      },
+      {
+        "rule": "ADVANCE_FEE_5_NEW_MONEY",
+        "baseline_occurrences": 13,
+        "lost_in_any_variant": 2,
+        "lost_in_all_variants": 2,
+        "lost_rate_any_variant": 0.153846,
+        "lost_rate_all_variants": 0.153846
+      },
+      {
+        "rule": "T_MONEY_PERCENT",
+        "baseline_occurrences": 7,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.142857,
+        "lost_rate_all_variants": 0.142857
+      },
+      {
+        "rule": "MONEY_FRAUD_8",
+        "baseline_occurrences": 7,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.142857,
+        "lost_rate_all_variants": 0.142857
+      },
+      {
+        "rule": "FIN_FREE",
+        "baseline_occurrences": 7,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.142857,
+        "lost_rate_all_variants": 0.142857
+      },
+      {
+        "rule": "SPOOFED_FREEM_REPTO",
+        "baseline_occurrences": 15,
+        "lost_in_any_variant": 2,
+        "lost_in_all_variants": 2,
+        "lost_rate_any_variant": 0.133333,
+        "lost_rate_all_variants": 0.133333
+      },
+      {
+        "rule": "RDNS_DYNAMIC",
+        "baseline_occurrences": 15,
+        "lost_in_any_variant": 2,
+        "lost_in_all_variants": 2,
+        "lost_rate_any_variant": 0.133333,
+        "lost_rate_all_variants": 0.133333
+      },
+      {
+        "rule": "T_REMOTE_IMAGE",
+        "baseline_occurrences": 8,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 0,
+        "lost_rate_any_variant": 0.125,
+        "lost_rate_all_variants": 0.0
+      },
+      {
+        "rule": "T_FILL_THIS_FORM_SHORT\tautolearn=disabled",
+        "baseline_occurrences": 12,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.083333,
+        "lost_rate_all_variants": 0.083333
+      },
+      {
+        "rule": "SUSPICIOUS_RECIPS",
+        "baseline_occurrences": 16,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 0,
+        "lost_rate_any_variant": 0.0625,
+        "lost_rate_all_variants": 0.0
+      },
+      {
+        "rule": "MAILING_LIST_MULTI",
+        "baseline_occurrences": 40,
+        "lost_in_any_variant": 2,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.05,
+        "lost_rate_all_variants": 0.025
+      },
+      {
+        "rule": "RDNS_NONE",
+        "baseline_occurrences": 105,
+        "lost_in_any_variant": 4,
+        "lost_in_all_variants": 4,
+        "lost_rate_any_variant": 0.038095,
+        "lost_rate_all_variants": 0.038095
+      },
+      {
+        "rule": "SPOOFED_FREEMAIL_NO_RDNS",
+        "baseline_occurrences": 67,
+        "lost_in_any_variant": 2,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.029851,
+        "lost_rate_all_variants": 0.014925
+      },
+      {
+        "rule": "MSGID_FROM_MTA_HEADER",
+        "baseline_occurrences": 38,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 0,
+        "lost_rate_any_variant": 0.026316,
+        "lost_rate_all_variants": 0.0
+      },
+      {
+        "rule": "LOTS_OF_MONEY",
+        "baseline_occurrences": 44,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 0.022727,
+        "lost_rate_all_variants": 0.022727
+      }
+    ],
+    "all_bypass_rule_loss": [
+      {
+        "rule": "T_MONEY_PERCENT\tautolearn=disabled",
+        "lost_in_bypass_any": 1,
+        "lost_in_bypass_all": 1,
+        "bypass_loss_rate_any": 0.333333,
+        "bypass_loss_rate_all": 0.333333
+      },
+      {
+        "rule": "RDNS_NONE",
+        "lost_in_bypass_any": 1,
+        "lost_in_bypass_all": 1,
+        "bypass_loss_rate_any": 0.333333,
+        "bypass_loss_rate_all": 0.333333
+      },
+      {
+        "rule": "PP_MIME_FAKE_ASCII_TEXT",
+        "lost_in_bypass_any": 1,
+        "lost_in_bypass_all": 1,
+        "bypass_loss_rate_any": 0.333333,
+        "bypass_loss_rate_all": 0.333333
+      },
+      {
+        "rule": "FROM_ILLEGAL_CHARS",
+        "lost_in_bypass_any": 1,
+        "lost_in_bypass_all": 1,
+        "bypass_loss_rate_any": 0.333333,
+        "bypass_loss_rate_all": 0.333333
+      },
+      {
+        "rule": "ENGLISH_UCE_SUBJECT",
+        "lost_in_bypass_any": 1,
+        "lost_in_bypass_all": 1,
+        "bypass_loss_rate_any": 0.333333,
+        "bypass_loss_rate_all": 0.333333
+      },
+      {
+        "rule": "DEAR_SOMETHING",
+        "lost_in_bypass_any": 1,
+        "lost_in_bypass_all": 1,
+        "bypass_loss_rate_any": 0.333333,
+        "bypass_loss_rate_all": 0.333333
+      },
+      {
+        "rule": "ADVANCE_FEE_5_NEW_MONEY",
+        "lost_in_bypass_any": 1,
+        "lost_in_bypass_all": 1,
+        "bypass_loss_rate_any": 0.333333,
+        "bypass_loss_rate_all": 0.333333
+      }
+    ]
+  }
+}

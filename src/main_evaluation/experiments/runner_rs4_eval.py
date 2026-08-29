@@ -14,7 +14,7 @@ from src.utils.console import print_step, print_section
 
 def run_rs4_eval(ratio: float):
     dataset_dir = BASE_DIR / "data/datasets/split"
-    output_root = BASE_DIR / f"data/output/RS4_{int(ratio*100)}/eval"
+    output_root = BASE_DIR / f"data/output/experiments/RS4_{int(ratio*100)}/eval"
 
     strict_output = output_root / "strict"
     extended_output = output_root / "extended"

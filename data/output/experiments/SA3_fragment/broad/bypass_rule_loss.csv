@@ -1,0 +1,5 @@
+rule;lost_in_bypass_any;lost_in_bypass_all;bypass_loss_rate_any;bypass_loss_rate_all
+ENGLISH_UCE_SUBJECT;2;2;0.666667;0.666667
+DEAR_SOMETHING;2;2;0.666667;0.666667
+ADVANCE_FEE_5_NEW_MONEY;1;1;0.333333;0.333333
+BAYES_80;1;0;0.333333;0.0

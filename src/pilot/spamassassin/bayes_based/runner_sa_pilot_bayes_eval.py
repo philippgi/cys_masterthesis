@@ -1,3 +1,11 @@
+"""
+Evaluates the effect of salting Bayes-relevant tokens in the SpamAssassin pilot.
+
+Tokens identified during discovery are salted in the prepared pilot message.
+Unsalted and salted variants are then scanned and compared with respect to
+scores, Bayes rules, and reported spammy tokens.
+"""
+
 from __future__ import annotations
 
 import csv
@@ -5,11 +13,12 @@ import json
 from pathlib import Path
 
 from config import (
-    PILOT_SALT_FRAGMENT_MAX_POSITIONS,
-    PILOT_SALT_INSERT_AFTER_INDEX,
-    PILOT_SALT_MODE,
-    SALT_BODY_MAX_INSERTIONS,
-    SALT_SUBJECT_MAX_INSERTIONS,
+    PILOT_SA_BAYES_BODY_MAX_INSERTIONS,
+    PILOT_SA_BAYES_CONFIG_NAME,
+    PILOT_SA_BAYES_FRAGMENT_MAX_POSITIONS,
+    PILOT_SA_BAYES_INSERT_AFTER_INDEX,
+    PILOT_SA_BAYES_SALT_MODE,
+    PILOT_SA_BAYES_SUBJECT_MAX_INSERTIONS,
     SOCKET_TIMEOUT,
     SPAMD_HOST,
     SPAMD_PORT,
@@ -37,6 +46,14 @@ from src.utils.console import print_end, print_kv, print_section, print_step
 
 
 def _write_csv(path, rows: list[dict]) -> None:
+    """
+    Write evaluation rows to a semicolon-delimited CSV file.
+
+    Args:
+        path: Destination CSV path.
+        rows (list[dict]): Evaluation records to export.
+    """
+
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()), delimiter=";")
@@ -45,12 +62,30 @@ def _write_csv(path, rows: list[dict]) -> None:
 
 
 def _write_json(path, data: dict) -> None:
+    """
+    Write evaluation metadata to a JSON file.
+
+    Args:
+        path: Destination JSON path.
+        data (dict): Evaluation metadata to export.
+    """
+
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 
 def _load_discovery() -> dict:
+    """
+    Load the Bayes token discovery results for the current pilot case.
+
+    Returns:
+        dict: Discovery metadata and matched token targets.
+
+    Raises:
+        FileNotFoundError: If the discovery output is missing.
+    """
+
     json_path = DISCOVERY_DIR / f"{SAB001.case_id}_bayes_tokens_summary.json"
     if not json_path.exists():
         raise FileNotFoundError(
@@ -70,9 +105,29 @@ def _build_salted_from_existing(
     insert_after_index: int,
     fragment_max_positions: int | None,
 ) -> dict:
+    """
+    Generate a salted variant from the prepared unsalted pilot message.
+
+    Args:
+        unsalted_path (Path): Path to the prepared unsalted message.
+        salted_path (Path): Destination path for the salted message.
+        target_tokens_subject (tuple[str, ...]): Subject tokens targeted for salting.
+        target_tokens_body (tuple[str, ...]): Body tokens targeted for salting.
+        salt_mode (str): Salting mode to apply.
+        insert_after_index (int): Position used for single-mode insertion.
+        fragment_max_positions (int | None): Maximum positions used in fragment mode.
+
+    Returns:
+        dict: Salting metadata and insertion counts.
+    """
+
     original_msg, mbox_from_line = parse_email(unsalted_path)
 
-    trigger_words = {token.lower() for token in list(target_tokens_subject) + list(target_tokens_body)}
+    # Normalize target tokens for the generic salting pipeline, which expects lowercase trigger words.
+    trigger_words = {
+        token.lower()
+        for token in list(target_tokens_subject) + list(target_tokens_body)
+    }
 
     (
         salted_msg,
@@ -85,8 +140,8 @@ def _build_salted_from_existing(
         original_msg=original_msg,
         trigger_words=trigger_words,
         codepoint=CODEPOINT_CHAR,
-        subject_max_insertions=SALT_SUBJECT_MAX_INSERTIONS,
-        body_max_insertions=SALT_BODY_MAX_INSERTIONS,
+        subject_max_insertions=PILOT_SA_BAYES_SUBJECT_MAX_INSERTIONS,
+        body_max_insertions=PILOT_SA_BAYES_BODY_MAX_INSERTIONS,
         insert_after_index=insert_after_index,
         salt_mode=salt_mode,
         fragment_max_positions=fragment_max_positions,
@@ -112,6 +167,15 @@ def run_sa_pilot_bayes_eval(
     insert_after_index: int | None = None,
     fragment_max_positions: int | None = None,
 ) -> None:
+    """
+    Run the paired unsalted and salted SpamAssassin Bayes pilot evaluation.
+
+    Args:
+        salt_mode (str | None): Salting mode, or the configured default.
+        insert_after_index (int | None): Single-mode insertion position.
+        fragment_max_positions (int | None): Maximum fragment-mode insertion positions.
+    """
+
     print_step("SA Pilot - Bayes Eval")
 
     test_unsalted = TEST_UNSALTED_DIR / f"{SAB001.case_id}_unsalted.eml"
@@ -123,19 +187,21 @@ def run_sa_pilot_bayes_eval(
             "Run run_sa_pilot_bayes_prepare() first."
         )
 
-    salt_mode = PILOT_SALT_MODE if salt_mode is None else salt_mode
+    salt_mode = PILOT_SA_BAYES_SALT_MODE if salt_mode is None else salt_mode
     insert_after_index = (
-        PILOT_SALT_INSERT_AFTER_INDEX if insert_after_index is None else insert_after_index
+        PILOT_SA_BAYES_INSERT_AFTER_INDEX if insert_after_index is None else insert_after_index
     )
+    # Fragment mode optionally salts multiple positions per token; other modes ignore that setting.
     if salt_mode == "fragment":
         fragment_max_positions = (
-            PILOT_SALT_FRAGMENT_MAX_POSITIONS
+            PILOT_SA_BAYES_FRAGMENT_MAX_POSITIONS
             if fragment_max_positions is None
             else fragment_max_positions
         )
     else:
         fragment_max_positions = None
 
+    # Reuse only the tokens that were discovered as Bayes-relevant in the previous step.
     discovery = _load_discovery()
     target_tokens_subject = tuple(discovery.get("matched_tokens_subject", []))
     target_tokens_body = tuple(discovery.get("matched_tokens_body", []))
@@ -150,7 +216,7 @@ def run_sa_pilot_bayes_eval(
         fragment_max_positions=fragment_max_positions,
     )
 
-    activate_spamassassin_config("sa_pilot_bayes.cf")
+    activate_spamassassin_config(PILOT_SA_BAYES_CONFIG_NAME)
     restart_spamassassin()
     wait_until_spamd_ready(test_unsalted)
 
@@ -183,6 +249,7 @@ def run_sa_pilot_bayes_eval(
     unsalted_row = unsalted_scan["row"]
     salted_row = salted_scan["row"]
 
+    # Separate general rule extraction from the Bayes-only subset for clearer comparison.
     unsalted_rules = extract_rules(unsalted_row)
     salted_rules = extract_rules(salted_row)
     unsalted_bayes_rules = extract_bayes_rules(unsalted_rules)
@@ -191,6 +258,7 @@ def run_sa_pilot_bayes_eval(
     unsalted_spammy_tokens = unsalted_scan["spammy_tokens"]
     salted_spammy_tokens = salted_scan["spammy_tokens"]
 
+    # Highlight tokens and rules that disappeared or appeared after salting.
     lost_spammy_tokens = [t for t in unsalted_spammy_tokens if t not in salted_spammy_tokens]
     new_rules = [r for r in salted_rules if r not in unsalted_rules]
 

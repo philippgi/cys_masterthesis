@@ -1,0 +1,11 @@
+From: pilot@example.test
+To: victim@example.test
+Subject: =?utf-8?q?De=E2=80=8Blivery?= failed: message could not be delivered
+Date: Tue, 04 Aug 2026 10:03:41 -0000
+Message-ID: <178583782105.21652.17565924585648984052@rspamd.pilot.test>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Hello,
+Please see the details in the subject.

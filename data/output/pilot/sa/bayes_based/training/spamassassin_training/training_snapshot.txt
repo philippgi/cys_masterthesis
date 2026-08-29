@@ -1,0 +1,24 @@
+SpamAssassin Training Snapshot
+=============================
+
+Timestamp UTC: 2026-08-04T11:20:51.151755+00:00
+Container: masterthesis-spamassassin
+Ham training files: 3120
+Spam training files: 1516
+
+SpamAssassin version:
+SpamAssassin version 4.0.1
+  running on Perl version 5.40.1
+
+
+sa-learn --dump magic:
+0.000          0          3          0  non-token data: bayes db version
+0.000          0       1509          0  non-token data: nspam
+0.000          0       3117          0  non-token data: nham
+0.000          0     167247          0  non-token data: ntokens
+0.000          0 1027944350          0  non-token data: oldest atime
+0.000          0 1039002727          0  non-token data: newest atime
+0.000          0          0          0  non-token data: last journal sync atime
+0.000          0 1785842449          0  non-token data: last expiry atime
+0.000          0   11059200          0  non-token data: last expire atime delta
+0.000          0      80647          0  non-token data: last expire reduction count

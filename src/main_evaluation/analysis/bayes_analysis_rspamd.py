@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+"""
+Analyzes Rspamd Bayes behavior for baseline-detected spam emails.
+
+The analysis compares Bayes symbol presence and scores between baseline messages
+and their salted variants. Unlike SpamAssassin, Rspamd does not expose discrete
+Bayes levels, so the analysis focuses on symbol loss and score changes.
+"""
 
 from __future__ import annotations
 
@@ -6,6 +13,8 @@ import csv
 import json
 from collections import Counter, defaultdict
 from pathlib import Path
+
+from src.utils.console import print_step, print_section, print_kv, print_end
 
 
 def _read_csv(path: Path) -> list[dict]:
@@ -33,19 +42,17 @@ def run_bayes_analysis_rspamd(
     output_dir: Path,
 ):
     """
-    Rspamd-specific Bayes analysis.
+    Analyze Rspamd Bayes behavior for baseline-detected spam and salted variants.
 
-    Rspamd does not expose SpamAssassin-style discrete Bayes rule levels
-    such as BAYES_80 or BAYES_99. Instead, the evaluation CSV contains
-    explicit Bayes fields extracted from the Rspamd JSON response:
+    Args:
+        results_csv (Path): Variant-level evaluation results.
+        paired_csv (Path): Paired baseline and salted evaluation results.
+        output_dir (Path): Directory for analysis artifacts.
 
-    - has_bayes
-    - bayes_symbol
-    - bayes_score
-
-    This function therefore measures Bayes presence/loss and symbol counts
-    instead of SA-style Bayes levels.
+    Returns:
+        dict: Aggregated Bayes presence, loss, symbol, and score statistics.
     """
+
     results_rows = _read_csv(results_csv)
     paired_rows = _read_csv(paired_csv)
 
@@ -158,5 +165,12 @@ def run_bayes_analysis_rspamd(
     output_path = output_dir / "bayes_analysis_rspamd.json"
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(summary, f, indent=2)
+
+    print_step("Bayes Analysis (Rspamd)")
+
+    print_section("Output files")
+    print_kv("bayes_analysis_rspamd_json", output_path)
+
+    print_end("Bayes Analysis (Rspamd)")
 
     return summary

@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+"""
+Runs Bayesian training for the Rspamd pilot study.
+"""
+
 from __future__ import annotations
 
 from config import DATASET_SPLIT
@@ -7,6 +11,10 @@ from src.utils.console import print_step, print_end
 
 
 def run_rspamd_pilot_bayes_train() -> None:
+    """
+    Train the Rspamd Bayes classifier using the prepared dataset split.
+    """
+
     print_step("Rspamd Pilot - Bayes Train")
     run_rspamd_bayes_training(dataset_split_dir=DATASET_SPLIT)
     print_end("Rspamd Pilot - Bayes Train")

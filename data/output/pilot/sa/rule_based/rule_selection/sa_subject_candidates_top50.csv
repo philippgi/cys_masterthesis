@@ -1,0 +1,51 @@
+rule_name;rule_type;surface;breakability_u200b;score;description;expression;defined_in;defined_at_line
+SUBJ_YOUR_FAMILY;header;subject;likely;2.910 2.999 2.999 2.999;"Subject contains ""Your Family""";Subject =~ /Your Family/i;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_head_tests.cf;345
+SUBJ_AS_SEEN;header;subject;likely;2.711 3.099 3.099 1.461 # n=0;"Subject contains ""As Seen""";Subject =~ /\bAs Seen/i;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_head_tests.cf;330
+__TVD_PH_SUBJ_ACCESS_POST;header;subject;likely;;;Subject =~ /\b(?:(?:re-?)?activat[a-z]*|secure|verify|restore|flagged|limited|unusual|report|notif(?:y|ication)|suspen(?:d|ded|sion)) (?:[a-z_,-]+ )*?access\b/i;/var/lib/spamassassin/4.000001/updates_spamassassin_org/72_active.cf;10171
+__TVD_PH_SUBJ_52;header;subject;likely;;;Subject =~ /\b(?:account|online) profile\b/i;/var/lib/spamassassin/4.000001/updates_spamassassin_org/72_active.cf;10161
+__TVD_PH_SUBJ_04;header;subject;likely;;;Subject =~ /\baccounts? profile\b/i;/var/lib/spamassassin/4.000001/updates_spamassassin_org/72_active.cf;10137
+__CRBOUNCE_VERIF;header;subject;likely;;;Subject =~ /^(?:Your email requires verification verify:\S|Please Verify Your Email Address)/;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_vbounce.cf;175
+SUBJECT_DRUG_GAP_L;header;subject;likely;2.799 2.304 1.402 1.561;Subject contains a gappy version of 'levitra';Subject =~ /l.{0,2}e.{0,2}v.{0,2}i.{0,2}t.{0,2}r.{0,2}a/i;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_drugs.cf;43
+TVD_SUBJ_WIPE_DEBT;header;subject;likely;2.599 2.291 2.599 1.004 # n=2;Spam advertising a way to eliminate debt;Subject =~ /(?:wipe out|remove|get (?:rid|out) of|eradicate) .{0,20}(?:owe|debt|obligation)/i;/var/lib/spamassassin/4.000001/updates_spamassassin_org/72_active.cf;4758
+SUBJECT_DRUG_GAP_C;header;subject;likely;2.108 0.989 1.348 2.140;Subject contains a gappy version of 'cialis';Subject =~ /\bc(?!ialis(?:t|\xc3\xa9|\xe9))[\sc]{0,2}i[\si]{0,2}a[\sa]{0,2}l[\sl]{0,2}i[\si]{0,2}s{1,3}\b/i;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_drugs.cf;40
+SUBJECT_DIET;header;subject;likely;1.927 1.563 0.817 1.466;Subject talks about losing pounds;Subject =~ /\bLose .*(?:pounds|lbs|weight)/i;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_head_tests.cf;355
+ENGLISH_UCE_SUBJECT;header;subject;likely;0.953 1.542 2.569 2.899 # n=0;Subject contains an English UCE tag;Subject =~ /^[^0-9a-z]*adv(?:ert)?\b/i;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_head_tests.cf;204
+SUBJECT_FUZZY_CHEAP;header;subject;likely;0.641 1.831 0.833 0.001 # n=0;Attempt to obfuscate words in Subject:;Subject =~ /<inter W2><post P3>\b(?!cheap)<C><H><E><A><P>(?:\b|<E>)/i;/var/lib/spamassassin/4.000001/updates_spamassassin_org/25_replace.cf;113
+SUBJ_BUY;header;subject;likely;0.594 1.498 0.001 0.639;Subject line starts with Buy or Buying;Subject =~ /^buy/i;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_head_tests.cf;383
+TVD_SUBJ_ACC_NUM;header;subject;likely;0.1;Subject has spammy looking monetary reference;Subject =~ /\b[a-zA-Z]+ [\#\s]{1,4}\d+[A-Z]+/;/var/lib/spamassassin/4.000001/updates_spamassassin_org/72_active.cf;4740
+SUBJ_DOLLARS;header;subject;likely;0.1;Subject starts with dollar amount;Subject =~ /^\$[0-9.,]+\b/;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_head_tests.cf;333
+TVD_SUBJ_OWE;header;subject;likely;0 # n=0 n=1 n=2 n=3;Subject line states that the recipieint is in debt;Subject =~ /^\s*(?:\w+\s+)+you\s+(?:\w+\s+)*(?:owe|indebted)\s+(?:\w+\s+)+an\s*other/i;/var/lib/spamassassin/4.000001/updates_spamassassin_org/72_active.cf;4752
+TVD_SUBJ_FINGER_03;header;subject;likely;0 # n=0 n=1 n=2 n=3;"Entire subject is enclosed in asterisks ""* like so *""";Subject =~ /^\s*\*\s+(?:\w+\W+)+\*\s*$/;/var/lib/spamassassin/4.000001/updates_spamassassin_org/72_active.cf;4746
+TVD_SPACED_SUBJECT_WORD3;header;subject;likely;0 # n=0 n=1 n=2 n=3;"Entire subject is ""UPPERlowerUPPER"" with no whitespace";Subject =~ /^(?:(?:Re|Fw)[^:]{0,5}: )?[A-Z]+[a-z]+[A-Z]+$/;/var/lib/spamassassin/4.000001/updates_spamassassin_org/72_active.cf;4712
+SUBJECT_SEXUAL;header;subject;likely;0 # n=0 n=1 n=2 n=3;Subject indicates sexually-explicit content;Subject =~ /[s5][e3\xE8-\xEB]x[u\xB5\xF9-\xFC][a4\xE0-\xE6@][l!|1](?:[l!|1]y)?.{0,3}[e3\xE8-\xEB]xp[l!|1][i1!|l\xEC-\xEF]c[i1!|l\xEC-\xEF]t/i;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_porn.cf;44
+SUBJECT_FUZZY_TION;header;subject;likely;0 # n=0 n=1 n=2 n=3;Attempt to obfuscate words in Subject:;Subject =~ /<post P3>(?!tion)<T><I><O><N>/i;/var/lib/spamassassin/4.000001/updates_spamassassin_org/25_replace.cf;121
+SUBJECT_FUZZY_PENIS;header;subject;likely;0 # n=0 n=1 n=2 n=3;Attempt to obfuscate words in Subject:;Subject =~ /<inter W3><post P3>\b(?!pen\s?(?:ie?s|ny[ ']?s))<P><E><N><I><S>\b/i;/var/lib/spamassassin/4.000001/updates_spamassassin_org/25_replace.cf;117
+SUBJECT_FUZZY_MEDS;header;subject;likely;0 # n=0 n=1 n=2 n=3;Attempt to obfuscate words in Subject:;Subject =~ /(?:\b|_)(?!meds)<M><E><D><S>(?:\b|_)/i;/var/lib/spamassassin/4.000001/updates_spamassassin_org/25_replace.cf;104
+SUBJECT_DRUG_GAP_X;header;subject;likely;0 # n=0 n=1 n=2 n=3;Subject contains a gappy version of 'xanax';Subject =~ /x.{0,2}a.{0,2}n.{0,2}a.{0,2}x/i;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_drugs.cf;55
+SUBJECT_DRUG_GAP_S;header;subject;likely;0 # n=0 n=1 n=2 n=3;Subject contains a gappy version of 'soma';Subject =~ /\bs.{0,1}o.{0,1}m.{0,1}a\b/i;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_drugs.cf;47
+KOREAN_UCE_SUBJECT;header;subject;likely;0 # n=0 n=1 n=2 n=3;Subject: contains Korean unsolicited email tag;Subject =~ /[({[<][. ]*(?-i:\xbc\xba[. ]*\xc0\xce[. ]*)?(?-i:\xb1\xa4(?:[. ]*|[\x00-\x7f]{0,3})\xb0\xed|\xc1\xa4[. ]*\xba\xb8|\xc8\xab[. ]*\xba\xb8)[. ]*[)}\]>]/;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_head_tests.cf;239
+JAPANESE_UCE_SUBJECT;header;subject;likely;0 # n=0 n=1 n=2 n=3;Subject contains a Japanese UCE tag;"Subject =~ /\e\$B.*(?:L\$>5Bz|EE;R%a!<%k)(?:8x|9-)9p/";/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_head_tests.cf;213
+DRUGS_HDIA;header;subject;likely;0 # n=0 n=1 n=2 n=3;"Subject mentions ""hoodia""";Subject =~ /\bhoodia\b/i;/var/lib/spamassassin/4.000001/updates_spamassassin_org/72_active.cf;1018
+__VBOUNCE_YOUSENT;header;subject;likely;;;Subject =~ /^Warning - You sent a Virus Infected Email to /;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_vbounce.cf;244
+__VBOUNCE_WARNING;header;subject;likely;;;Subject =~ /^Warning:\s*E-?mail virus(?:es)? detected/i;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_vbounce.cf;249
+__VBOUNCE_VIR_FOUND;header;subject;likely;;;Subject =~ /^Virus Found in message/;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_vbounce.cf;310
+__VBOUNCE_VIOLATION;header;subject;likely;;;Subject =~ /^Content violation/i;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_vbounce.cf;252
+__VBOUNCE_UNDELIV;header;subject;likely;;;Subject =~ /^Undeliverable mail, invalid characters in header/;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_vbounce.cf;301
+__VBOUNCE_SYM_EMP;header;subject;likely;;;Subject =~ /^Symantec E-Mail-Proxy /;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_vbounce.cf;309
+__VBOUNCE_SYM_AVF;header;subject;likely;;;Subject =~ /^Symantec AVF detected /;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_vbounce.cf;308
+__VBOUNCE_SENDER;header;subject;likely;;;Subject =~ /^Virus to sender/;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_vbounce.cf;277
+__VBOUNCE_SCREENSAVER;header;subject;likely;;;Subject =~ /\b(?:Re: ?)Wicked screensaver\b/i;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_vbounce.cf;246
+__VBOUNCE_SCANMAIL;header;subject;likely;;;Subject =~ /^Scan.?Mail Message: .{0,30} virus found /i;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_vbounce.cf;268
+__VBOUNCE_REJECTED;header;subject;likely;;;Subject =~ /^EMAIL REJECTED$/;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_vbounce.cf;238
+__VBOUNCE_RAV;header;subject;likely;;;Subject =~ /^RAV Anti.?Virus scan results/;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_vbounce.cf;271
+__VBOUNCE_RAPPORT;header;subject;likely;;;Subject =~ /^Spam rapport \/ Spam report \S+ -\s+\(\S+\)$/;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_vbounce.cf;315
+__VBOUNCE_PT_BLOCKED;header;subject;likely;;;Subject =~ /^\*\*\*\s*Mensagem Bloqueada/i;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_vbounce.cf;324
+__VBOUNCE_NAV_DETECT;header;subject;likely;;;Subject =~ /^Norton AntiVirus detected and quarantined/;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_vbounce.cf;303
+__VBOUNCE_NAVFAIL;header;subject;likely;;;Subject =~ /^Norton Anti.?Virus failed to scan an attachment in a message you sent/;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_vbounce.cf;237
+__VBOUNCE_NAV2;header;subject;likely;;;Subject =~ /^NAV detected a virus in a document /;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_vbounce.cf;254
+__VBOUNCE_NAV;header;subject;likely;;;Subject =~ /^Norton Anti.?Virus detected and quarantined/;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_vbounce.cf;240
+__VBOUNCE_MMS;header;subject;likely;;;Subject =~ /^MMS Notification/;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_vbounce.cf;286
+__VBOUNCE_MELDING;header;subject;likely;;;Subject =~ /^Virusmelding$/;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_vbounce.cf;241
+__VBOUNCE_MAILMARSHAL2;header;subject;likely;;;Subject =~ /^MailMarshal has detected possible spam in your message/;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_vbounce.cf;236
+__VBOUNCE_JMAIL;header;subject;likely;;;Subject =~ /^Message Undeliverable: Possible Junk\/Spam Mail Identified$/;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_vbounce.cf;289
+__VBOUNCE_INTERSCAN3;header;subject;likely;;;Subject =~ /^InterScan NT Alert/;/var/lib/spamassassin/4.000001/updates_spamassassin_org/20_vbounce.cf;257

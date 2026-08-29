@@ -1,0 +1,182 @@
+{
+  "experiment_id": "RS3_broad",
+  "filter": "Rspamd",
+  "mechanism": "rules_plus_neural",
+  "rule_scope": "extended_local_content",
+  "salting_condition": "broad",
+  "salting_config": {
+    "subject_max_insertions": 1,
+    "body_max_insertions": 3,
+    "salt_mode": "single",
+    "insert_after_index": 2,
+    "fragment_max_positions": null
+  },
+  "inputs": {
+    "results_csv": "C:\\Projekte\\masterthesis_cys\\data\\output\\experiments\\RS3\\broad\\rspamd_evaluation\\rspamd_results.csv",
+    "paired_csv": "C:\\Projekte\\masterthesis_cys\\data\\output\\experiments\\RS3\\broad\\rspamd_evaluation\\rspamd_results_paired.csv"
+  },
+  "counts": {
+    "n_variant_rows_total": 2005,
+    "n_paired_rows_total": 245,
+    "n_baseline_spam": 245,
+    "n_baseline_ham": 780,
+    "n_salted_variants": 980,
+    "n_unique_salted_sources": 245,
+    "n_baseline_detected_spam": 204,
+    "n_baseline_not_detected_spam": 41,
+    "n_baseline_spam_detected_variant_level": 204,
+    "n_baseline_ham_false_positive": 54
+  },
+  "rates": {
+    "baseline_spam_detection_rate": 0.832653,
+    "baseline_ham_false_positive_rate": 0.069231,
+    "bypass_rate_any": 0.02451,
+    "bypass_rate_all": 0.02451,
+    "classification_stability_all_spam": 0.97549,
+    "classification_stability_any_spam": 0.97549
+  },
+  "means": {
+    "mean_baseline_score": 10.76935,
+    "mean_salted_score_mean": 10.62402,
+    "mean_salted_score_min": 10.598278,
+    "mean_score_drop": 0.14533,
+    "mean_best_case_score_drop": 0.171072,
+    "mean_baseline_rule_count": 20.985294,
+    "mean_salted_rule_count": 20.886029,
+    "mean_rule_loss": 0.099265
+  },
+  "medians": {
+    "median_score_drop": 0.0,
+    "median_best_case_score_drop": 0.0,
+    "median_rule_loss": 0.0
+  },
+  "classification_counts": {
+    "n_any_bypass": 5,
+    "n_all_bypass": 5,
+    "n_all_spam": 199,
+    "n_any_spam": 199
+  },
+  "codepoints": {
+    "00AD": {
+      "n_variants": 245,
+      "n_unique_sources": 245,
+      "n_baseline_detected_sources": 204,
+      "bypass_rate": 0.02451,
+      "spam_rate": 0.97549,
+      "mean_score": 10.632617,
+      "median_score": 10.3,
+      "mean_rule_count": 20.887255
+    },
+    "200B": {
+      "n_variants": 245,
+      "n_unique_sources": 245,
+      "n_baseline_detected_sources": 204,
+      "bypass_rate": 0.02451,
+      "spam_rate": 0.97549,
+      "mean_score": 10.632593,
+      "median_score": 10.3,
+      "mean_rule_count": 20.887255
+    },
+    "200C": {
+      "n_variants": 245,
+      "n_unique_sources": 245,
+      "n_baseline_detected_sources": 204,
+      "bypass_rate": 0.02451,
+      "spam_rate": 0.97549,
+      "mean_score": 10.632593,
+      "median_score": 10.3,
+      "mean_rule_count": 20.887255
+    },
+    "200D": {
+      "n_variants": 245,
+      "n_unique_sources": 245,
+      "n_baseline_detected_sources": 204,
+      "bypass_rate": 0.02451,
+      "spam_rate": 0.97549,
+      "mean_score": 10.598278,
+      "median_score": 10.3,
+      "mean_rule_count": 20.882353
+    }
+  },
+  "salting_intensity": {
+    "mean_subject_insertions": 0.632653,
+    "mean_body_insertions": 1.779592,
+    "mean_total_insertions": 2.412245,
+    "max_subject_insertions": 1,
+    "max_body_insertions": 3
+  },
+  "insertion_distribution": {
+    "1": 396,
+    "2": 16,
+    "3": 336,
+    "4": 232
+  },
+  "bayes_analysis": null,
+  "neural_analysis": {
+    "n_baseline_detected_emails": 204,
+    "n_baseline_with_neural": 204,
+    "n_salted_with_any_neural": 204,
+    "n_neural_lost_any": 0,
+    "n_neural_lost_all": 0,
+    "baseline_neural_symbol_counts": {
+      "NEURAL_SPAM": 204
+    },
+    "salted_neural_symbol_counts": {
+      "NEURAL_SPAM": 816
+    },
+    "baseline_neural_score_mean": 2.9784,
+    "salted_neural_score_mean": 2.958806
+  },
+  "rule_loss_analysis": {
+    "all_rule_loss": [
+      {
+        "rule": "FROM_NEEDS_ENCODING",
+        "baseline_occurrences": 1,
+        "lost_in_any_variant": 1,
+        "lost_in_all_variants": 1,
+        "lost_rate_any_variant": 1.0,
+        "lost_rate_all_variants": 1.0
+      },
+      {
+        "rule": "MIME_BASE64_TEXT_BOGUS",
+        "baseline_occurrences": 9,
+        "lost_in_any_variant": 6,
+        "lost_in_all_variants": 6,
+        "lost_rate_any_variant": 0.666667,
+        "lost_rate_all_variants": 0.666667
+      },
+      {
+        "rule": "R_MISSING_CHARSET",
+        "baseline_occurrences": 26,
+        "lost_in_any_variant": 11,
+        "lost_in_all_variants": 11,
+        "lost_rate_any_variant": 0.423077,
+        "lost_rate_all_variants": 0.423077
+      },
+      {
+        "rule": "R_BAD_CTE_7BIT",
+        "baseline_occurrences": 16,
+        "lost_in_any_variant": 6,
+        "lost_in_all_variants": 6,
+        "lost_rate_any_variant": 0.375,
+        "lost_rate_all_variants": 0.375
+      }
+    ],
+    "all_bypass_rule_loss": [
+      {
+        "rule": "R_BAD_CTE_7BIT",
+        "lost_in_bypass_any": 4,
+        "lost_in_bypass_all": 4,
+        "bypass_loss_rate_any": 0.8,
+        "bypass_loss_rate_all": 0.8
+      },
+      {
+        "rule": "R_MISSING_CHARSET",
+        "lost_in_bypass_any": 1,
+        "lost_in_bypass_all": 1,
+        "bypass_loss_rate_any": 0.2,
+        "bypass_loss_rate_all": 0.2
+      }
+    ]
+  }
+}

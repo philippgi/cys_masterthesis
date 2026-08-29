@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+"""
+Provides shared console formatting and progress helpers.
+"""
+
 from __future__ import annotations
 
 from typing import Mapping, Any
@@ -22,6 +26,13 @@ def print_kv(key: str, value: Any) -> None:
 
 
 def print_dict(data: Mapping[str, Any]) -> None:
+    """
+    Print all key-value pairs in a mapping.
+
+    Args:
+        data (Mapping[str, Any]): Mapping to print.
+    """
+
     for key, value in data.items():
         print_kv(key, value)
 
@@ -43,6 +54,18 @@ def print_end(title: str):
 
 
 def progress(iterable, desc: str, unit: str = "item"):
+    """
+    Create a configured tqdm progress iterator.
+
+    Args:
+        iterable: Iterable to wrap.
+        desc (str): Progress bar description.
+        unit (str): Unit label shown by tqdm.
+
+    Returns:
+        tqdm: Configured progress iterator.
+    """
+
     return tqdm(
         iterable,
         desc=desc,

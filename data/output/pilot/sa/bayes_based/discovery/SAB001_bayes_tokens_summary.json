@@ -1,0 +1,28 @@
+{
+  "case_id": "SAB001",
+  "title": "Basic verification mail",
+  "spam_flag": false,
+  "score": 0.9,
+  "threshold": 5.0,
+  "spammy_tokens": [
+    "Verify",
+    "verification",
+    "account"
+  ],
+  "matched_tokens": [
+    "account",
+    "verification",
+    "Verify"
+  ],
+  "matched_tokens_subject": [
+    "verification"
+  ],
+  "matched_tokens_body": [
+    "Verify",
+    "verification",
+    "account"
+  ],
+  "n_spammy_tokens": 3,
+  "n_matched_tokens": 3,
+  "scanned_message": "C:\\Projekte\\masterthesis_cys\\data\\output\\pilot\\sa\\bayes_based\\discovery\\SAB001_scanned_unsalted.eml"
+}

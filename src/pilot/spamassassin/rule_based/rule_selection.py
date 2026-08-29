@@ -1,40 +1,9 @@
 """
-SpamAssassin pilot rule selection.
+Selects lexical SpamAssassin rules for the rule-based pilot study.
 
-This module performs a filtering and prioritization step on the rule
-candidates discovered in the rule discovery phase.
-
-Purpose
--------
-The goal is to reduce the large set of discovered SpamAssassin rules to a
-manageable subset of high-quality candidates for the manual rule-based pilot.
-
-The selection focuses on rules that:
-- operate on lexical surfaces (subject or body)
-- are likely breakable via U+200B salting
-- do not belong to structural or metadata-based categories (e.g. MIME, DKIM)
-
-Workflow
---------
-1. Load candidate rules from the discovery CSV.
-2. Apply filtering criteria to remove:
-   - structural rules (headers, encoding, transport)
-   - non-lexical rules
-   - rules unlikely to be affected by salting
-3. Split remaining candidates into:
-   - subject-based rules
-   - body-based rules
-4. Rank candidates using a simple priority heuristic:
-   - lexical relevance (keywords like "verify", "password", ...)
-   - presence of description
-   - absolute rule score
-5. Export top-N candidates (top 50 each) for manual inspection.
-
-Notes
------
-- This is a heuristic pre-selection step for the pilot, not a formal rule analysis.
-- The output is intended to guide manual test case construction.
-- The ranking is deliberately simple and interpretable.
+Discovered candidates are filtered using heuristic inclusion and exclusion
+criteria, ranked by relevance, and exported as separate subject and body
+candidate lists for manual pilot case selection.
 """
 
 from __future__ import annotations
@@ -46,69 +15,56 @@ from config import BASE_DIR
 from src.utils.console import print_end, print_kv, print_section, print_step
 
 
-INPUT_CSV = BASE_DIR / "data/output/pilot/sa/rule_discovery/sa_rule_candidates.csv"
-OUTPUT_ROOT = BASE_DIR / "data/output/pilot/sa/rule_selection"
+INPUT_CSV = BASE_DIR / "data/output/pilot/sa/rule_based/rule_discovery/sa_rule_candidates.csv"
+OUTPUT_ROOT = BASE_DIR / "data/output/pilot/sa/rule_based/rule_selection"
 
 
+# Exclude rule names associated primarily with structural or transport features.
 EXCLUDE_NAME_HINTS = [
-    "ALL_CAPS",
-    "MIME",
-    "CHARSET",
-    "BASE64",
-    "HTML",
-    "DATE",
-    "FROM",
-    "TO",
-    "SUBJECT_NEEDS_ENCODING",
-    "MESSAGE_ID",
-    "RCVD",
-    "DNS",
-    "DKIM",
-    "SPF",
-    "DMARC",
-    "HELO",
-    "RDNS",
+    "ALL_CAPS", "MIME", "CHARSET", "BASE64", "HTML", "DATE", "FROM", "TO",
+    "SUBJECT_NEEDS_ENCODING", "MESSAGE_ID", "RCVD", "DNS", "DKIM", "SPF",
+    "DMARC", "HELO", "RDNS",
 ]
 
+# Apply equivalent exclusions to rule expressions.
 EXCLUDE_EXPR_HINTS = [
-    "all_caps",
-    "charset",
-    "mime",
-    "base64",
-    "html",
-    "message-id",
-    "received",
-    "dkim",
-    "spf",
-    "dmarc",
-    "date",
-    "from:",
-    "to:",
+    "all_caps", "charset", "mime", "base64", "html", "message-id",
+    "received", "dkim", "spf", "dmarc", "date", "from:", "to:",
 ]
 
+# Prefer expressions containing lexical patterns relevant to salting.
 INCLUDE_LEXICAL_HINTS = [
-    r"\b",
-    "subject =~",
-    "body ",
-    "rawbody ",
-    "full ",
-    "uri ",
-    "verify",
-    "account",
-    "password",
-    "family",
-    "secure",
-    "click",
-    "seen",
+    r"\b", "subject =~", "body ", "rawbody ", "full ", "uri ",
+    "verify", "account", "password", "family", "secure", "click", "seen",
 ]
 
 
 def _read_csv(path: Path) -> list[dict]:
+    """
+    Read rule candidates from a semicolon-delimited CSV file.
+
+    Args:
+        path (Path): Source CSV path.
+
+    Returns:
+        list[dict]: Candidate rule records.
+    """
+
     with open(path, "r", encoding="utf-8", newline="") as f:
         return list(csv.DictReader(f, delimiter=";"))
 
 
 def _write_csv(path: Path, rows: list[dict]) -> None:
+    """
+    Read rule candidates from a semicolon-delimited CSV file.
+
+    Args:
+        path (Path): Source CSV path.
+
+    Returns:
+        list[dict]: Candidate rule records.
+    """
+
     path.parent.mkdir(parents=True, exist_ok=True)
     if not rows:
         return
@@ -120,6 +76,16 @@ def _write_csv(path: Path, rows: list[dict]) -> None:
 
 
 def _to_float(value: str) -> float | None:
+    """
+    Parse the first numeric value from a score field.
+
+    Args:
+        value (str): SpamAssassin score field.
+
+    Returns:
+        float | None: Parsed score, or None if conversion fails.
+    """
+
     try:
         return float(str(value).split()[0])
     except Exception:
@@ -127,11 +93,32 @@ def _to_float(value: str) -> float | None:
 
 
 def _contains_any(text: str, hints: list[str]) -> bool:
+    """
+    Check whether text contains any configured hint.
+
+    Args:
+        text (str): Text to inspect.
+        hints (list[str]): Candidate substrings.
+
+    Returns:
+        bool: True if at least one hint is present.
+    """
+
     text_lower = text.lower()
     return any(h.lower() in text_lower for h in hints)
 
 
 def _is_candidate(row: dict) -> bool:
+    """
+    Determine whether a discovered rule is suitable for lexical pilot selection.
+
+    Args:
+        row (dict): Discovered rule record.
+
+    Returns:
+        bool: True if the rule satisfies the selection heuristics.
+    """
+
     rule_name = str(row.get("rule_name", ""))
     expression = str(row.get("expression", ""))
     surface = str(row.get("surface", ""))
@@ -139,32 +126,41 @@ def _is_candidate(row: dict) -> bool:
 
     if surface not in {"subject", "body"}:
         return False
-
     if breakability != "likely":
         return False
-
     if _contains_any(rule_name, EXCLUDE_NAME_HINTS):
         return False
-
     if _contains_any(expression, EXCLUDE_EXPR_HINTS):
         return False
-
     if not _contains_any(expression, INCLUDE_LEXICAL_HINTS):
         return False
-
     return True
 
 
 def _priority_score(row: dict) -> tuple:
+    """
+    Build the ranking tuple used to prioritize lexical candidates.
+
+    Args:
+        row (dict): Candidate rule record.
+
+    Returns:
+        tuple: Ranking values used for descending candidate selection.
+    """
+
     score = _to_float(str(row.get("score", "")))
     abs_score = abs(score) if score is not None else 0.0
 
     description = str(row.get("description", ""))
     expression = str(row.get("expression", ""))
 
-    lexical_bonus = 1 if _contains_any(expression, ["verify", "account", "password", "family", "secure", "seen"]) else 0
+    lexical_bonus = 1 if _contains_any(
+        expression,
+        ["verify", "account", "password", "family", "secure", "seen"],
+    ) else 0
     has_description = 1 if description else 0
 
+    # Prefer explicit lexical hints, available descriptions, and higher absolute scores.
     return (
         lexical_bonus,
         has_description,
@@ -174,6 +170,10 @@ def _priority_score(row: dict) -> tuple:
 
 
 def run_sa_rule_selection() -> None:
+    """
+    Filter, rank, and export the top subject and body rule candidates.
+    """
+
     print_step("SA Pilot - Rule Selection")
 
     rows = _read_csv(INPUT_CSV)

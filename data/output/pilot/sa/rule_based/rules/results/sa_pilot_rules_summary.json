@@ -1,0 +1,108 @@
+{
+  "paired_summary": [
+    {
+      "case_id": "SAR001",
+      "title": "Break SUBJ_YOUR_FAMILY with a single U+200B insertion",
+      "expected_rule": "SUBJ_YOUR_FAMILY",
+      "expected_behavior": "break",
+      "unsalted_rules": [
+        "NO_RECEIVED",
+        "NO_RELAYS",
+        "SUBJ_YOUR_FAMILY"
+      ],
+      "salted_rules": [
+        "NO_RECEIVED"
+      ],
+      "unsalted_hit": true,
+      "salted_hit": false,
+      "break_success": true,
+      "case_success": true,
+      "unsalted_score": 3.0,
+      "salted_score": -0.0
+    },
+    {
+      "case_id": "SAR002",
+      "title": "Break SUBJ_AS_SEEN with a single U+200B insertion",
+      "expected_rule": "SUBJ_AS_SEEN",
+      "expected_behavior": "break",
+      "unsalted_rules": [
+        "NO_RECEIVED",
+        "NO_RELAYS",
+        "SUBJ_AS_SEEN"
+      ],
+      "salted_rules": [
+        "NO_RECEIVED"
+      ],
+      "unsalted_hit": true,
+      "salted_hit": false,
+      "break_success": true,
+      "case_success": true,
+      "unsalted_score": 3.1,
+      "salted_score": -0.0
+    },
+    {
+      "case_id": "SAR003",
+      "title": "Break TVD_PH_SEC with a single U+200B insertion",
+      "expected_rule": "TVD_PH_SEC",
+      "expected_behavior": "break",
+      "unsalted_rules": [
+        "NO_RECEIVED",
+        "NO_RELAYS",
+        "TVD_PH_BODY_ACCOUNTS_PRE",
+        "TVD_PH_SEC"
+      ],
+      "salted_rules": [
+        "NO_RECEIVED"
+      ],
+      "unsalted_hit": true,
+      "salted_hit": false,
+      "break_success": true,
+      "case_success": true,
+      "unsalted_score": 0.1,
+      "salted_score": -0.0
+    },
+    {
+      "case_id": "SAR004",
+      "title": "Break TVD_PH_REC with a single U+200B insertion",
+      "expected_rule": "TVD_PH_REC",
+      "expected_behavior": "break",
+      "unsalted_rules": [
+        "NO_RECEIVED",
+        "NO_RELAYS",
+        "TVD_PH_REC"
+      ],
+      "salted_rules": [
+        "NO_RECEIVED"
+      ],
+      "unsalted_hit": true,
+      "salted_hit": false,
+      "break_success": true,
+      "case_success": true,
+      "unsalted_score": 0.1,
+      "salted_score": -0.0
+    },
+    {
+      "case_id": "SAR005",
+      "title": "Control case: SUBJ_ALL_CAPS should survive a single U+200B insertion",
+      "expected_rule": "SUBJ_ALL_CAPS",
+      "expected_behavior": "preserve",
+      "unsalted_rules": [
+        "NO_RECEIVED",
+        "NO_RELAYS",
+        "SUBJ_ALL_CAPS",
+        "URG_BIZ"
+      ],
+      "salted_rules": [
+        "NO_RECEIVED",
+        "NO_RELAYS",
+        "SUBJ_ALL_CAPS"
+      ],
+      "unsalted_hit": true,
+      "salted_hit": true,
+      "break_success": false,
+      "case_success": true,
+      "unsalted_score": 1.4,
+      "salted_score": 0.5
+    }
+  ]
+}

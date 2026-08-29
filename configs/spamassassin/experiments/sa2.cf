@@ -8,5 +8,7 @@ use_razor2 0
 use_pyzor 0
 use_dcc 0
 
+score ALL_TRUSTED 0
+
 score AWL 0
 score TXREP 0

@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 from config import BASE_DIR
-
 from src.main_evaluation.dataset_split.runner import run_dataset_split
 from src.main_evaluation.trigger_vocabulary.runner import run_trigger_vocabulary
 from src.main_evaluation.trigger_coverage.runner import run_trigger_coverage
@@ -16,7 +15,7 @@ from src.utils.console import print_step, print_section
 
 def run_rs1():
     dataset_dir = BASE_DIR / "data/datasets/split"
-    output_root = BASE_DIR / "data/output/RS1"
+    output_root = BASE_DIR / "data/output/experiments/RS1"
 
     strict_output = output_root / "strict"
     extended_output = output_root / "extended"
@@ -66,7 +65,6 @@ def run_rs1():
     activate_rspamd_config("rs1")
     restart_rspamd()
 
-    reset_pipeline_output()
     run_dataset_split(train_ratio=0.8)
 
     run_trigger_vocabulary(

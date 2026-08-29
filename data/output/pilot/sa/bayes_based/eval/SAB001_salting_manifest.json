@@ -1,0 +1,62 @@
+{
+  "case_id": "SAB001",
+  "codepoint": "U+200B",
+  "target_tokens_subject": [
+    "verification"
+  ],
+  "target_tokens_body": [
+    "Verify",
+    "verification",
+    "account"
+  ],
+  "salt_mode": "fragment",
+  "insert_after_index": 2,
+  "fragment_max_positions": 4,
+  "n_insert_subject": 1,
+  "n_insert_body": 4,
+  "subject_targets": [
+    {
+      "original_token": "verification",
+      "salted_token": "v​e​r​i​fication",
+      "start": 9,
+      "end": 21,
+      "salt_mode": "fragment",
+      "fragment_max_positions": 4
+    }
+  ],
+  "body_targets": [
+    {
+      "original_token": "account",
+      "salted_token": "a​c​c​o​unt",
+      "start": 5,
+      "end": 12,
+      "salt_mode": "fragment",
+      "fragment_max_positions": 4
+    },
+    {
+      "original_token": "verification",
+      "salted_token": "v​e​r​i​fication",
+      "start": 31,
+      "end": 43,
+      "salt_mode": "fragment",
+      "fragment_max_positions": 4
+    },
+    {
+      "original_token": "Verify",
+      "salted_token": "V​e​r​i​fy",
+      "start": 45,
+      "end": 51,
+      "salt_mode": "fragment",
+      "fragment_max_positions": 4
+    },
+    {
+      "original_token": "account",
+      "salted_token": "a​c​c​o​unt",
+      "start": 57,
+      "end": 64,
+      "salt_mode": "fragment",
+      "fragment_max_positions": 4
+    }
+  ],
+  "body_part_found": true
+}

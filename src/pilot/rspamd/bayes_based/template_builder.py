@@ -1,3 +1,11 @@
+"""
+Builds paired unsalted and salted email messages for the Rspamd Bayes pilot.
+
+Target tokens in the Subject and body are modified according to the configured
+salting mode and insertion limits. Both variants are serialized as UTF-8
+RFC 5322 messages for subsequent evaluation.
+"""
+
 from __future__ import annotations
 
 from email.message import EmailMessage
@@ -5,16 +13,14 @@ from email.utils import formatdate, make_msgid
 from pathlib import Path
 
 from config import (
-    PILOT_SALT_MODE,
-    PILOT_SALT_INSERT_AFTER_INDEX,
-    PILOT_SALT_SUBJECT_MAX_INSERTIONS,
-    PILOT_SALT_BODY_MAX_INSERTIONS,
+    PILOT_RS_BAYES_SALT_MODE,
+    PILOT_RS_BAYES_INSERT_AFTER_INDEX,
+    PILOT_RS_BAYES_SUBJECT_MAX_INSERTIONS,
+    PILOT_RS_BAYES_BODY_MAX_INSERTIONS,
 )
 
 
-# --- Salting helpers ---
-
-def _salt_token(token: str, codepoint: str, insert_after_index: int = 1) -> str:
+def _salt_token(token: str, codepoint: str, insert_after_index: int) -> str:
     if not token:
         return token
 
@@ -22,13 +28,20 @@ def _salt_token(token: str, codepoint: str, insert_after_index: int = 1) -> str:
     return token[:idx] + codepoint + token[idx:]
 
 
-def _apply_salting(
-    text: str,
-    targets: tuple[str, ...],
-    codepoint: str,
-    max_insertions: int,
-) -> tuple[str, int]:
+def _salt_token_fragment(token: str, codepoint: str) -> str:
+    if not token:
+        return token
 
+    result = []
+    for i, char in enumerate(token):
+        result.append(char)
+        if i < len(token) - 1:
+            result.append(codepoint)
+
+    return "".join(result)
+
+
+def _apply_salting(text, targets, codepoint, max_insertions):
     salted = text
     insertions = 0
 
@@ -37,17 +50,14 @@ def _apply_salting(
             break
 
         if token in salted:
-            if PILOT_SALT_MODE == "single":
+            if PILOT_RS_BAYES_SALT_MODE == "single":
                 replacement = _salt_token(
                     token,
                     codepoint,
-                    insert_after_index=PILOT_SALT_INSERT_AFTER_INDEX,
+                    PILOT_RS_BAYES_INSERT_AFTER_INDEX,
                 )
-            elif PILOT_SALT_MODE == "fragment":
-                replacement = _salt_token_fragment(token, codepoint)
-
             else:
-                replacement = token
+                replacement = _salt_token_fragment(token, codepoint)
 
             salted = salted.replace(token, replacement, 1)
             insertions += 1
@@ -55,14 +65,7 @@ def _apply_salting(
     return salted, insertions
 
 
-# --- Message builder ---
-
-def _build_message(
-    subject: str,
-    body: str,
-    from_addr: str,
-    to_addr: str,
-) -> bytes:
+def _build_message(subject, body, from_addr, to_addr):
     msg = EmailMessage()
     msg["From"] = from_addr
     msg["To"] = to_addr
@@ -79,55 +82,37 @@ def _build_message(
 
     return msg.as_bytes()
 
-def _salt_token_fragment(token: str, codepoint: str) -> str:
-    if not token:
-        return token
-
-    result = []
-    for i, char in enumerate(token):
-        result.append(char)
-        if i < len(token) - 1:
-            result.append(codepoint)
-
-    return "".join(result)
-
-
-# --- Public API (identisch zu SA!) ---
 
 def create_paired_bytes(
-    subject: str,
-    body: str,
-    target_tokens_subject: tuple[str, ...],
-    target_tokens_body: tuple[str, ...],
-    codepoint: str,
-    from_addr: str,
-    to_addr: str,
-) -> tuple[bytes, bytes, dict]:
-    salted_subject, n_insert_subject = _apply_salting(
-        text=subject,
-        targets=target_tokens_subject,
-        codepoint=codepoint,
-        max_insertions=PILOT_SALT_SUBJECT_MAX_INSERTIONS,
+    subject,
+    body,
+    target_tokens_subject,
+    target_tokens_body,
+    codepoint,
+    from_addr,
+    to_addr,
+):
+    salted_subject, n_sub = _apply_salting(
+        subject,
+        target_tokens_subject,
+        codepoint,
+        PILOT_RS_BAYES_SUBJECT_MAX_INSERTIONS,
     )
 
-    salted_body, n_insert_body = _apply_salting(
-        text=body,
-        targets=target_tokens_body,
-        codepoint=codepoint,
-        max_insertions=PILOT_SALT_BODY_MAX_INSERTIONS,
+    salted_body, n_body = _apply_salting(
+        body,
+        target_tokens_body,
+        codepoint,
+        PILOT_RS_BAYES_BODY_MAX_INSERTIONS,
     )
 
-    unsalted_bytes = _build_message(subject, body, from_addr, to_addr)
-    salted_bytes = _build_message(salted_subject, salted_body, from_addr, to_addr)
-
-    counts = {
-        "n_insert_subject": n_insert_subject,
-        "n_insert_body": n_insert_body,
-    }
-
-    return unsalted_bytes, salted_bytes, counts
+    return (
+        _build_message(subject, body, from_addr, to_addr),
+        _build_message(salted_subject, salted_body, from_addr, to_addr),
+        {"n_insert_subject": n_sub, "n_insert_body": n_body},
+    )
 
 
-def write_message(path: Path, content: bytes) -> None:
+def write_message(path: Path, content: bytes):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_bytes(content)

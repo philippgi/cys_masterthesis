@@ -1,8 +1,0 @@
-=== STEP 4: CHARSET DECODING (declared charset) ===
----- DECLARED CHARSET (effective) ----
-utf-8
-
----- UNICODE CODEPOINTS (first 250 chars) ----
-['0x44', ... , '0x50', '0x61', '0x79', '0x200b', '0x70', '0x61', '0x6c', ... , '0xd']
-
-U+200B positions in decoded text: [58]

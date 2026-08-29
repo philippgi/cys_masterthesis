@@ -1,21 +1,15 @@
 #!/usr/bin/env python3
 
 """
-Main - Practical Email Message Representation Pipeline
+Orchestrates the illustrative email message processing pipeline.
 
-This script orchestrates the steps for processing an email message on the receiver side, starting from the raw RFC5322
-byte stream and ending with a tokenized text representation.
+The pipeline processes a serialized RFC 5322 email through six stages:
+raw-byte inspection, MIME parsing, content-transfer decoding, charset
+decoding, Unicode normalization, and tokenization.
 
-Each step in the pipeline performs a well-defined transformation of the message representation:
-- Step 1: Raw message bytes
-- Step 2: Structured MIME message and part selection
-- Step 3: Content-Transfer-Decoding (bytes)
-- Step 4: Charset decoding (Unicode text)
-- Step 5: Unicode normalization (canonical text)
-- Step 6: Tokenization (word-like units)
-
-The pipeline is designed as an proof-of-concept to demonstrate that zero-width Unicode characters can survive common
-preprocessing stages and become semantically relevant only at the tokenization stage.
+Intermediate representations are printed to demonstrate how an inserted
+zero-width Unicode character is represented throughout the processing
+pipeline.
 """
 
 import re
@@ -27,8 +21,8 @@ from src.email_pipeline.step3_transfer import step3_transfer_decode_part
 from src.email_pipeline.step4_charset import step4_charset_decode
 from src.email_pipeline.step5_normalization import step5_normalize
 from src.email_pipeline.step6_segmentation import step6_word_segmentation
-from config import EML_PATH, BASE_DIR
 from src.utils.console import print_step, print_section
+from config import EML_PATH, BASE_DIR
 
 
 ANSI_ESCAPE_RE = re.compile(r"\x1B\[[0-?]*[ -/]*[@-~]")
@@ -36,9 +30,10 @@ ANSI_ESCAPE_RE = re.compile(r"\x1B\[[0-?]*[ -/]*[@-~]")
 
 class Tee:
     """
-    Writes stdout simultaneously to console and file.
-    ANSI escape sequences are preserved for console output
-    but removed from the log file.
+    Mirrors stdout to the console and a log file.
+
+    ANSI escape sequences are preserved for console output and removed
+    from the log file.
     """
 
     def __init__(self, console_stream, file_stream):
@@ -60,10 +55,10 @@ class Tee:
 
 def _run_pipeline_steps():
     """
-    Execute the complete message representation pipeline in a linear, reproducible order.
+    Execute the six message-processing stages in their defined order.
 
-    This function does not implement detection logic itself. Instead, it coordinates the individual transformation
-    steps and logs intermediate representations to make representation changes observable.
+    Each stage receives the representation produced by the preceding
+    stage and prints relevant intermediate results.
     """
 
     print_step("STEP 1: RAW INPUT")
@@ -87,8 +82,7 @@ def _run_pipeline_steps():
 
 def run_email_pipeline():
     """
-    Run the email pipeline and mirror all console output
-    into data/output/email_pipeline/pipeline_output.txt
+    Run the email pipeline and write its console output to the pipeline log.
     """
 
     output_dir = BASE_DIR / "data/output/email_pipeline"

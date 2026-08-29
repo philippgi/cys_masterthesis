@@ -1,0 +1,3 @@
+case_id;variant;score;threshold;action;spam_flag;has_bayes;bayes_symbol;bayes_score;n_insert_subject;n_insert_body;target_tokens_subject;target_tokens_body;message_path
+RSB01;unsalted;7.16279;6.0;add header;True;True;BAYES_SPAM;4.66279;0;0;;;C:\Projekte\masterthesis_cys\data\output\pilot\rspamd\bayes_based\messages\unsalted\RSB01_unsalted.eml
+RSB01;salted;7.16279;6.0;add header;True;True;BAYES_SPAM;4.66279;0;10;;your|free|mortgage|rate|quote|much|could|save|every|month;C:\Projekte\masterthesis_cys\data\output\pilot\rspamd\bayes_based\messages\salted\RSB01_salted_all_tokens.eml

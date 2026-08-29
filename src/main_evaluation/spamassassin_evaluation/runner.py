@@ -1,37 +1,10 @@
 #!/usr/bin/env python3
 """
-SpamAssassin evaluation runner.
+Evaluates baseline and salted email variants with SpamAssassin.
 
-This module evaluates the paired unsalted baseline spam test set
-(data/datasets/split/test/spam), the full ham test set
-(data/datasets/split/test/ham), and the salted spam variants
-(data/output/salted_email_generator/salted_emails) with SpamAssassin.
-
-Important evaluation logic:
-- Baseline ham: all ham test emails
-- Baseline spam: only original spam emails for which at least one salted
-  variant was actually generated
-- Salted spam: all generated salted variants
-
-For each scanned email, the module extracts:
-    - spam classification
-    - score
-    - threshold
-    - triggered rules
-
-For salted variants, the module also joins metadata from the salting log, such as:
-    - vocabulary type
-    - used Unicode code point
-    - insertion counts in subject and body
-
-Output files:
-- spamassassin_results.csv
-    Variant-level results (one row per scanned email / salted variant)
-- spamassassin_results_paired.csv
-    Original-level paired results (one row per original spam email with
-    aggregated salted statistics)
-
-All results are written into data/output/spamassassin_evaluation
+The runner scans paired baseline spam messages, the complete ham test set,
+and all generated salted spam variants. Results are written at both the
+variant level and the paired original-message level.
 """
 
 import csv
@@ -72,20 +45,29 @@ CONTENT_LENGTH_RE = re.compile(r"^Content-length:\s*(\d+)$", re.IGNORECASE)
 
 def read_email_bytes(path: Path) -> bytes:
     """
-    Reads the raw RFC 5322 email file.
-    The full raw message is required because SpamAssassin analyzes both
-    headers and body content.
+    Read a serialized RFC 5322 email message.
+
+    Args:
+        path (Path): Path to the email file.
+
+    Returns:
+        bytes: Raw message bytes.
     """
+
     return path.read_bytes()
 
 
 def load_salting_log(csv_path: Path) -> dict[str, dict[str, str]]:
     """
-    Loads the salting log and indexes it by variant filename.
+    Load salting metadata indexed by salted variant filename.
 
-    Expected key:
-        variant_filename
+    Args:
+        csv_path (Path): Path to the salting log.
+
+    Returns:
+        dict[str, dict[str, str]]: Salting metadata indexed by variant filename.
     """
+
     if not csv_path.exists():
         return {}
 
@@ -96,9 +78,15 @@ def load_salting_log(csv_path: Path) -> dict[str, dict[str, str]]:
 
 def load_salted_source_ids(csv_path: Path) -> set[str]:
     """
-    Loads all original message_ids for which at least one salted variant
-    was actually generated.
+    Load original message IDs for which salted variants were generated.
+
+    Args:
+        csv_path (Path): Path to the salting log.
+
+    Returns:
+        set[str]: Original message IDs represented in the salted dataset.
     """
+
     if not csv_path.exists():
         return set()
 
@@ -109,13 +97,16 @@ def load_salted_source_ids(csv_path: Path) -> set[str]:
 
 def derive_salt_location(n_insert_subject, n_insert_body) -> str:
     """
-    Derives the location label based on insertion.
-    Possible locations:
-        - none
-        - subject
-        - body
-        - both
+    Derive the salting location from Subject and body insertion counts.
+
+    Args:
+        n_insert_subject: Number of Subject insertions.
+        n_insert_body: Number of body insertions.
+
+    Returns:
+        str: One of "subject", "body", "both", or "none".
     """
+
     try:
         subject_count = int(n_insert_subject)
     except (TypeError, ValueError):
@@ -137,22 +128,22 @@ def derive_salt_location(n_insert_subject, n_insert_body) -> str:
 
 def parse_x_spam_status(x_spam_status: str):
     """
-    Extracts relevant information from X-Spam-Status.
+    Parse classification data from the SpamAssassin X-Spam-Status header.
 
-    Example:
-        X-Spam-Status: No, score=1.6 required=5.0 tests=HTML_MESSAGE,BAYES_99
+    Args:
+        x_spam_status (str): X-Spam-Status header value.
 
-    Extracted:
-        - spam_flag
-        - score
-        - threshold
-        - rule_names
+    Returns:
+        tuple: Spam flag, score, threshold, and triggered rule names.
     """
+
     if not x_spam_status:
         return False, None, None, []
 
+    # Use SpamAssassin's own X-Spam-Status classification as the binary result.
     spam_flag = x_spam_status.lower().startswith("yes")
 
+    # Extract score, threshold, and triggered rules from the returned header.
     score_match = SCORE_RE.search(x_spam_status)
     threshold_match = REQUIRED_RE.search(x_spam_status)
     tests_match = TESTS_RE.search(x_spam_status)
@@ -170,17 +161,22 @@ def parse_x_spam_status(x_spam_status: str):
 
 def build_paired_results(rows: list[dict]) -> list[dict]:
     """
-    Builds one paired/original-level result row per original spam email.
+    Aggregate variant-level spam results on the original-message level.
 
-    Variant-level results already exist in RESULT_CSV:
-        one row per scanned email / salted variant
+    Each paired row combines one baseline spam email with all salted variants
+    derived from that message.
 
-    This function creates original-level paired results:
-        one row per original spam email with aggregated salted statistics
+    Args:
+        rows (list[dict]): Variant-level evaluation results.
+
+    Returns:
+        list[dict]: Paired baseline and salted result rows.
     """
+
     baseline_by_message = {}
     salted_by_message = defaultdict(list)
 
+    # Group baseline spam and salted variants by their original message ID.
     for row in rows:
         if row["label"] != "spam":
             continue
@@ -197,10 +193,12 @@ def build_paired_results(rows: list[dict]) -> list[dict]:
         if not variants:
             continue
 
+        # Aggregate score, rule-count, and classification behavior across all salted variants.
         variant_scores = [v["score"] for v in variants if v["score"] is not None]
         variant_rule_counts = [v["rule_count"] for v in variants if v["rule_count"] is not None]
         variant_flags = [bool(v["spam_flag"]) for v in variants]
 
+        # Derive Any/All spam and bypass outcomes on the original-message level.
         paired_rows.append(
             {
                 "message_id": message_id,
@@ -229,8 +227,10 @@ def build_paired_results(rows: list[dict]) -> list[dict]:
 
 class SpamdClient:
     """
-    Client for communicating with spamd via a persistent TCP connection.
-    The client reconnects automatically if the connection is dropped.
+    Maintain a reusable TCP connection to spamd.
+
+    The client sends SPAMC HEADERS requests and reconnects once if a scan
+    fails because the persistent connection was interrupted.
     """
 
     def __init__(self, host: str, port: int, timeout: int = 30):
@@ -242,8 +242,9 @@ class SpamdClient:
 
     def connect(self) -> None:
         """
-        Opens a TCP connection to spamd and prepares a buffered reader.
+        Open a TCP connection to spamd and prepare a buffered reader.
         """
+
         self.close()
         self.sock = socket.create_connection((self.host, self.port), timeout=self.timeout)
         self.sock.settimeout(self.timeout)
@@ -251,8 +252,9 @@ class SpamdClient:
 
     def close(self) -> None:
         """
-        Closes the current connection if present.
+        Close the current spamd connection and associated reader.
         """
+
         try:
             if self.reader is not None:
                 self.reader.close()
@@ -270,19 +272,23 @@ class SpamdClient:
 
     def ensure_connected(self) -> None:
         """
-        Ensures that a connection exists.
+        Open a spamd connection if no active connection exists.
         """
+
         if self.sock is None or self.reader is None:
             self.connect()
 
     def build_request(self, message_bytes: bytes) -> bytes:
         """
-        Builds a SPAMC HEADERS request.
+        Build a SPAMC HEADERS request for one email message.
 
-        HEADERS tells spamd to:
-            - scan the message
-            - return the message with X-Spam-* headers added
+        Args:
+            message_bytes (bytes): Serialized RFC 5322 message.
+
+        Returns:
+            bytes: Complete SPAMC request.
         """
+
         return (
             f"HEADERS SPAMC/1.5\r\n"
             f"Content-length: {len(message_bytes)}\r\n"
@@ -292,15 +298,16 @@ class SpamdClient:
 
     def read_response(self):
         """
-        Reads one complete spamd response.
+        Read and parse one complete spamd response.
 
-        Expected structure:
-            SPAMD/1.1 0 EX_OK
-            Content-length: ...
-            Spam: True/False ; score / threshold
-            <empty line>
-            <returned message with X-Spam-* headers>
+        Returns:
+            tuple: Protocol line, spamd response headers, and returned message bytes.
+
+        Raises:
+            ConnectionError: If the response is incomplete.
+            ValueError: If Content-length is missing.
         """
+
         protocol_line = self.reader.readline()
         if not protocol_line:
             raise ConnectionError("spamd closed the connection before sending a response line.")
@@ -336,9 +343,20 @@ class SpamdClient:
 
     def scan_email(self, message_bytes: bytes):
         """
-        Sends one email to spamd and returns the parsed response parts.
-        If the connection fails, the client reconnects once and retries.
+        Scan one email through spamd using the persistent connection.
+
+        Args:
+            message_bytes (bytes): Serialized RFC 5322 message.
+
+        Returns:
+            tuple: Parsed spamd response components.
+
+        Raises:
+            OSError: If both connection attempts fail.
+            ConnectionError: If both response attempts fail.
+            ValueError: If both responses are malformed.
         """
+
         request_bytes = self.build_request(message_bytes)
 
         for attempt in range(2):
@@ -364,10 +382,21 @@ def evaluate_email(
     salting_meta: dict | None = None,
 ):
     """
-    Runs SpamAssassin on one email and returns a result row.
-    For baseline emails, salting_meta is empty.
-    For salted variants, salting_meta is taken from SALTING_LOG_CSV.
+    Scan one email and build its normalized variant-level result row.
+
+    Args:
+        client (SpamdClient): Connected spamd client.
+        email_path (Path): Path to the email message.
+        dataset (str): Dataset type, such as baseline or salted.
+        label (str): Ground-truth class label.
+        message_id (str): Original message identifier.
+        variant_filename (str): Salted variant filename, if applicable.
+        salting_meta (dict | None): Associated salting metadata.
+
+    Returns:
+        dict: Normalized SpamAssassin evaluation result.
     """
+
     message_bytes = read_email_bytes(email_path)
     protocol_line, spamd_headers, returned_message = client.scan_email(message_bytes)
 
@@ -405,15 +434,13 @@ def evaluate_email(
 
 def run_spamassassin_evaluation(output_root=None, dataset_split_dir=None):
     """
-    Runs the complete SpamAssassin evaluation.
+    Run the complete SpamAssassin evaluation workflow.
 
-    Workflow:
-        - paired baseline spam test set
-        - full baseline ham test set
-        - salted spam variants
-        - write variant-level results
-        - write original-level paired results
+    Args:
+        output_root: Root directory for generated evaluation artifacts.
+        dataset_split_dir: Directory containing the train/test dataset split.
     """
+
 
     output_root = OUTPUT_ROOT if output_root is None else output_root
     dataset_split_dir = DATASET_SPLIT if dataset_split_dir is None else dataset_split_dir
@@ -433,6 +460,7 @@ def run_spamassassin_evaluation(output_root=None, dataset_split_dir=None):
     salting_index = load_salting_log(SALTING_LOG_CSV)
     salted_source_ids = load_salted_source_ids(SALTING_LOG_CSV)
 
+    # Evaluate only baseline spam emails for which at least one salted variant exists.
     spam_files = [
         p for p in sorted(test_spam_dir.iterdir())
         if p.is_file() and p.name in salted_source_ids

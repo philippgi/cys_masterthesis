@@ -1,5 +1,0 @@
-=== STEP 3: CONTENT-TRANSFER DECODING (selected part) ===
----- DECODED BYTES (python repr) ----
-'We detected unusual activity on your Pay\xe2\x80\x8bpal account and have temporarily ...'
-
-UTF-8 sequence E2 80 8B found at byte offset: 58

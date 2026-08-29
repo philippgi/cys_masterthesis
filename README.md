@@ -1,6 +1,6 @@
 # Evaluating the Impact of Zero-Width Unicode Salting on Open-Source Email Filters and the Effectiveness of Adversarial Retraining
 
-This repository contains the implementation accompanying the Master's thesis of the same title. It includes the illustrative email-processing pipeline, the pilot study, the main experimental evaluation of SpamAssassin and Rspamd, the corresponding filter configurations, and the generated analysis framework.
+This repository contains the implementation accompanying the Master's thesis. It includes the illustrative email-processing pipeline, the pilot study, the main experimental evaluation of SpamAssassin and Rspamd, the corresponding filter configurations, and the generated analysis framework.
 
 The thesis provides the detailed research design, methodology, evaluation metrics, and interpretation of the results. This README focuses on the structure, execution, and configuration of the implementation.
 
